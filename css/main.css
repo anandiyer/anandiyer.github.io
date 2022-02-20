@@ -252,8 +252,8 @@ a:hover {
 }
 
 .site-logo {
-  height: 24px;
-  width: 212px;
+  height: 23px;
+  width: 205px;
   background: url("../images/site-logo.svg");
   background-size: contain;
 }

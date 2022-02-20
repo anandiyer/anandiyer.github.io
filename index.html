@@ -1,1 +1,453 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canonical Crypto</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/home.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+  <script src="js/jquery.3.6.0.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-44ZP5XBN8T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-44ZP5XBN8T');
+  </script>
+
+</head>
+
+<body>
+  <header class="site-header" id="header">
+    <div class="top-navigation">
+      <div class="left">
+        <a class="site-logo" href="/"></a>
+        <div class="nav-menu">
+          <ul>
+            <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
+            <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
+            <li class="page_item page-item-14 "><a href="#testimonials">Our Founders</a></li>
+            <li class="page_item page-item-14 "><a href="#contacts">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mobile-navigation">
+        <button class="menu-toggle button-toggle">
+          <span>
+            <div class="gbi gbicon-bars"></div>
+          </span>
+          <span>
+            <div class="gbi gbicon-times"></div>
+          </span>
+        </button><!-- .overlay-toggle -->
+      </div>
+      <div class="drawer-wrap">
+        <div class="drawer drawer-menu-explore">
+          <nav id="drawer-navigation" class="drawer-navigation">
+            <div class="nav-menu">
+              <ul>
+                <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
+                <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
+                <li class="page_item page-item-14 "><a href="#testimonials">Our Founders</a></li>
+                <li class="page_item page-item-14 "><a href="#contacts">Contact Us</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <a href="#contacts"><button class="default">Let’s Talk!</button></a>
+      <!-- Mobile menu -->
+    </div>
+  </header><!-- .site-header -->
+
+  <script>
+    var $ = jQuery;
+
+    function scrollToHash(hash, event) {
+      // event && event.preventDefault();
+      var target = $(hash);
+      if (!hash || !hash.slice(1)) {
+        $("html, body").animate({
+          scrollTop: 0,
+        },
+          1000
+        );
+      } else {
+        target = target.length ? target : $("[name=" + hash.slice(1) + "]");
+        if (target.length) {
+          $("html, body").animate({
+            scrollTop: target.offset().top - 70,
+          },
+            1000
+          );
+        }
+      }
+    }
+    $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .on("click", function (event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, "") ==
+          this.pathname.replace(/^\//, "") &&
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var hash = this.hash;
+          scrollToHash(hash, event);
+        }
+      });
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll > 0) {
+        $("#header").addClass("active");
+      } else {
+        $("#header").removeClass("active");
+      }
+    });
+    $(document).ready(function () {
+      if (location.hash) {
+        scrollToHash(location.hash);
+      }
+    });
+  </script>
+
+  <div id="page" class="site-container">
+    <div id="content" class="site-content">
+      <div class="page-home">
+        <div class="twinkle twinkle-1"></div>
+        <div class="twinkle twinkle-2"></div>
+        <div class="twinkle twinkle-3"></div>
+        <div class="twinkle twinkle-4"></div>
+        <section class="section-hero">
+          <div class="hero-bg"></div>
+          <div class="title">
+            <div class="title-p p1">Backing teams</div>
+            <div class="title-p p1">building in web3</div>
+            <div class="title-p p1 mobile">Backing teams</div>
+            <div class="title-p p2 mobile">building in web3</div>
+          </div>
+          <div class="footer">
+            <div class="discover-more">
+              <div class="icon-arrow-down"></div>
+              <a href="#portfolio" class="discover-more-link">SCROLL DOWN</a>
+            </div>
+            <!--
+            <div class="caption p">Backing teams building in web3</div>
+            -->
+          </div>
+        </section>
+        <section class="section-portfolio" id="portfolio">
+          <div class="section-title">Portfolio</div>
+          <div class="portfolio-title">
+            <div class="title">Select Portfolio</div>
+            <div class="right-content">
+                <div class="caption p">We work with technical founding teams who are building the picks-and-shovels for web3</div>
+              <a href="#" class="read-more">
+                <!-- READ MORE <i class="icon-read-more"></i> -->
+              </a>
+            </div>
+          </div>
+          <div class="companies-list">
+            <div class="company aero">
+              <div class="logo-wrapper">
+                <a href="https://www.burrata.xyz">
+                <img class="logo"
+                  src="images/home/company-logos/burrata.svg"
+                  ></img>
+                </a>
+              </div>
+              <a href="https://burrata.xyz">
+              <div class="name">Burrata</div>
+              <div class="aim">Identify framework for DeFi</div>
+              <div class="domain">burrata.xyz</div>
+              </a>
+            </div>
+
+            <div class="company cmd">
+              <div class="logo-wrapper">
+                <a href="https://mercurial.finance">
+                <img class="logo w-120"
+                  src="images/home/company-logos/mercurial.svg"></img>
+                </a>
+              </div>
+              <a href="https://mercurial.finance">
+              <div class="name">Mercurial</div>
+              <div class="aim">Stableswap on Solana</div>
+              <div class="domain">mercurial.finance</div>
+              </a>
+            </div>
+
+            <div class="company metabase">
+              <div class="logo-wrapper">
+                <a href="https://formfunction.xyz">
+                <img class="logo"
+                  src="images/home/company-logos/formfunction.jpeg"></img>
+                </a>
+              </div>
+              <a href="https://formfunction.xyz">
+              <div class="name">Formfunction</div>
+              <div class="aim">1/1 NFT Marketplace on Solana</div>
+              <div class="domain">formfunction.xyz</div>
+              </a>
+            </div>
+
+            <div class="company operator">
+              <div class="logo-wrapper">
+                <a href="https://poap.xyz">
+                <img class="logo"
+                  src="images/home/company-logos/POAP.svg"></img>
+                </a>
+              </div>
+              <a href="https://poap.xyz">
+              <div class="name">POAP</div>
+              <div class="aim">Proof of Attendance Protocol</div>
+              <div class="domain">poap.xyz</div>
+              </a>
+            </div>
+
+            <div class="company dadi">
+              <div class="logo-wrapper">
+                <a href="https://socket.tech">
+                <img class="logo"
+                  src="images/home/company-logos/socket.png"></img>
+                </a>
+              </div>
+              <a href="https://socket.tech">
+              <div class="name">Socket</div>
+              <div class="aim">Multi-chain bridge</div>
+              <div class="domain">socket.tech</div>
+              </a>
+            </div>
+
+            <div class="company gatherai">
+              <div class="logo-wrapper">
+                <a href="https://stacks.co">
+                <img class="logo"
+                  src="images/home/company-logos/stacks.jpeg"></img>
+                </a>
+              </div>
+              <a href="https://stacks.co">
+              <div class="name">Stacks</div>
+              <div class="aim">Smart contract programmability on Bitcoin</div>
+              <div class="domain">stacks.co</div>
+              </a>
+            </div>
+
+
+            <div class="company gatherai">
+              <div class="logo-wrapper">
+                <a href="https://thirdweb.com">
+                <img class="logo"
+                  src="images/home/company-logos/thirdweb.jpeg"></img>
+                </a>
+              </div>
+              <a href="https://thirdweb.com">
+              <div class="name">thirdweb</div>
+              <div class="aim">Low-code solutions for building web3 dapps</div>
+              <div class="domain">thirdweb.com</div>
+              </a>
+            </div>
+
+            <div class="company katoo">
+              <div class="logo-wrapper">
+                <a href="https://trusttoken.com">
+                <img class="logo"
+                  src="images/home/company-logos/trusttoken.svg"></img>
+                </a>
+              </div>
+               <a href="https://trusttoken.com">
+              <div class="name">TrustToken</div>
+              <div class="aim">DeFi protocol enabling uncollateralized lending</div>
+              <div class="domain">trusttoken.com</div>
+               </a>
+            </div>
+
+          </div>
+        </section>
+        <section class="section-about-me" id="about-me">
+          <section>
+            <div class="left">
+                <!-- <div class="section-title">About Anand</div> -->
+              <div class="title">Anand Iyer</div>
+              <!--
+              <div class="title">Managing Director Canonical</div>
+              <div class="title">Venture Partner Lightspeed</div>
+              -->
+              <img class="mvp mobile-only" src="images/home/anand_iyer.jpg"></img>
+              <div class="p description">Anand is the Founder of
+                  Canonical, an early stage fund investing in web3 & crypto infrastructure.
+                  Anand is a Venture Partner at Lightspeed.
+              </div>
+
+              <div class="p description">Prior to starting Canonical, Anand was a
+                  Visiting Partner at Pear where he focused on his crypto investments.
+                  Anand has been based in the San Francisco Bay Area, and has a strong
+                  track record of building and scaling companies. More about him here:
+                  <a href="https://linkedin.com/in/anandiyer">LinkedIn</a>
+              </div>
+              <!--
+              <a href="#" class="read-more">
+                READ MORE <i class="icon-read-more"></i>
+              </a>
+              -->
+            </div>
+            <div class="right">
+              <img class="mvp desktop-only" src="images/home/anand_iyer.jpg"></img>
+            </div>
+          </section>
+        </section>
+        <section class="section-hear-from-founders" id="testimonials">
+          <div class="title">Hear from our founders</div>
+          <div class="caption">Who were not bribed or coerced in anyway to say these nice things</div>
+          <div class="founders-list-wrapper">
+            <div class="founders-list">
+
+              <div class="founder">
+                <div class="comment">“Anand has been our biggest advocate starting from day one.
+                    He has helped us think through tough product decisions, activated his network for us,
+                    and been all-around an incredible mentor and investor—Anand has been vital in our
+                    journey starting Formfunction!”</div>
+                <a href="https://www.linkedin.com/in/tokatherineliu/">
+                <div class="founder-info">
+                  <img class="avatar"
+                    src="images/home/avatars/katherine.jpeg"></img>
+                  <div class="info">
+                    <div class="name">Katherine Liu</div>
+                    <div class="position">CEO, FORMFUNCTION</div>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+              <div class="founder">
+                <div class="comment">“Anand’s one of the most helpful investors we’ve gotten to work
+                    with, and is always there with the most thoughtful & sage advice when needed.”</div>
+                <a href="https://www.linkedin.com/in/matt-alston/">
+                <div class="founder-info">
+                  <img class="avatar"
+                    src="images/home/avatars/matt.jpeg"></img>
+                  <div class="info">
+                    <div class="name">Matt Alston</div>
+                    <div class="position">CEO, BONFIRE</div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="founders-list">
+
+              <div class="founder">
+                <div class="comment">“Most investors will just go quiet after their investments
+                    unless we reach out. For Anand, it is the other way around, he will seek out
+                    to help Mercurial actively, whether it is a good intro and a good
+                  interesting find in the crypto space. A+ :)”</div>
+                <a href="https://www.linkedin.com/in/siong/">
+                <div class="founder-info">
+                  <img class="avatar"
+                    src="images/home/avatars/siong.jpeg"></img>
+                  <div class="info">
+                    <div class="name">Siong Ong</div>
+                    <div class="position">CEO, MERCURIAL FINANCE</div>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+              <div class="founder">
+                <div class="comment">“@ai is most helpful $! Need to close a critical hire,
+                    get feedback on incentive design, or help w/ shaping your round? @ai
+                    has got your back”</div>
+                <a href="https://www.linkedin.com/in/osamakhn/">
+                <div class="founder-info">
+                  <img class="avatar"
+                    src="images/home/avatars/osama.jpeg"></img>
+                  <div class="info">
+                    <div class="name">Osama Khan</div>
+                    <div class="position">CEO, BURRATA</div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-contact" id="contacts">
+          <div class="left">
+            <div class="title">Building in web3? We'd love to hear form you.</div>
+            <div class="email-input">
+              <input type="text" placeholder="Your Email">
+              <i class="icon-send"></i>
+            </div>
+          </div>
+          <!--
+          <div class="right">
+            <a class="link" href="#">
+              Invest in a fund <i class="link-more"></i>
+            </a>
+            <a class="link" href="#">
+              Create abcdef things <i class="link-more"></i>
+            </a>
+            <a class="link" href="#">
+              Do something <i class="link-more"></i>
+            </a>
+            <a class="link" href="#">
+              Mot con vit xoe ra hai cai canh <i class="link-more"></i>
+            </a>
+          </div>
+          -->
+        </section>
+      </div>
+    </div><!-- #content -->
+  </div><!-- #page .container -->
+
+  <footer id="colophon" class="site-footer">
+    <div class="site-footer-container">
+      <div class="footer-bg"></div>
+      <div class="left">
+        <div class="site-logo"></div>
+      </div>
+      <div class="right">
+        <div class="social-links">
+          <ul>
+            <li class=""><a href="https://linkedin.com/in/anandiyer">Linkedin</a></li>
+            <li class=""><a href="https://twitter.com/ai">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="nav-menu">
+            <ul>
+              <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
+              <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
+              <li class="page_item page-item-14 "><a href="#testimonials">Testimonials</a></li>
+              <li class="page_item page-item-14 "><a href="#contacts">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-ps">
+      <div class="copy-rights">© 2022 Canonical Crypto. All right reserved.</div>
+      <div class="pp ts">
+        <a href="">Privacy Policy</a>
+        <a href="">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

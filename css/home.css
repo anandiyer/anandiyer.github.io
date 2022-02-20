@@ -1,0 +1,586 @@
+.twinkle {
+  position: absolute;
+  width: 336px;
+  height: 336px;
+
+  background: #6bbaff;
+  opacity: 0.5;
+  filter: blur(500px);
+}
+
+.twinkle-1 {
+  left: 866px;
+  top: 769px;
+}
+
+.twinkle-2 {
+  left: -31px;
+  top: 1295px;
+}
+
+.twinkle-3 {
+  width: 277px;
+  height: 277px;
+  right: 5px;
+  top: 3300px;
+}
+
+.twinkle-4 {
+  width: 455px;
+  height: 455px;
+  left: -51px;
+  top: 4242px;
+}
+
+.section-hero {
+  padding-top: 178px;
+  padding-bottom: 90px;
+  position: relative;
+}
+
+.section-hero .title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 94.5413px;
+  line-height: 113px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.section-hero .title .p1 {
+  text-align: left;
+}
+
+.section-hero .title .p2 {
+  text-align: center;
+  margin-right: 60px;
+}
+
+.section-hero .title .p3 {
+  text-align: right;
+}
+
+.section-hero .hero-bg {
+  top: 52px;
+  right: 61px;
+  position: absolute;
+  height: 248px;
+  width: 248px;
+  background-image: url("../images/home/hero-bg.svg");
+  background-size: contain;
+}
+
+.section-hero .footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.icon-arrow-down {
+  width: 42px;
+  height: 42px;
+  background-image: url("../images/home/arrow-down.svg");
+}
+
+.discover-more {
+  display: flex;
+  align-items: center;
+}
+
+.discover-more .discover-more-link {
+  margin-left: 15px;
+}
+
+.p {
+  font-family: Pangram;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-hero .footer .caption {
+  max-width: 464px;
+}
+
+.section-portfolio {
+  padding-top: 90px;
+  padding-bottom: 33px;
+}
+
+.section-title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: #a0a8ae;
+}
+
+.portfolio-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.portfolio-title .right-content {
+  max-width: 464px;
+}
+
+.portfolio-title .title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 113px;
+  /* identical to box height, or 189% */
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+
+.read-more {
+  font-family: Pangram;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1b94fe;
+  display: flex;
+  align-items: center;
+}
+
+.icon-read-more {
+  height: 12px;
+  width: 12px;
+  background-image: url("../images/home/arrow-right.svg");
+}
+
+.read-more .icon-read-more {
+  margin-top: 2px;
+  margin-left: 8px;
+}
+
+.portfolio-title .right-content .read-more {
+  margin-top: 32px;
+}
+
+.companies-list {
+  margin-top: 40px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.companies-list .company {
+  padding: 60px 0px;
+  padding-left: 26px;
+  width: 25%;
+}
+
+.companies-list .company .name {
+  margin-top: 24px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+}
+.companies-list .company .aim {
+  margin-top: 8px;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
+  width: 210px;
+  height: 48px;
+}
+.companies-list .company.katoo .aim {
+  width: 219px;
+}
+.companies-list .company .domain {
+  margin-top: 27px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+}
+
+.company .logo-wrapper {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+}
+.company .logo {
+  height: 120px;
+  width: auto;
+}
+.company .logo.w-120 {
+  width: 120px;
+  height: auto;
+}
+
+.company.aero .domain {
+  color: #fcbf2d;
+}
+.company.cmd .domain {
+  color: #796be1;
+}
+.company.metabase .domain {
+  color: #509ee3;
+}
+.company.operator .domain {
+  color: #fcdc4c;
+}
+.company.dadi .domain {
+  color: #ffffff;
+}
+.company.felux .domain {
+  color: #f40b52;
+}
+.company.gatherai .domain {
+  color: #14e2ac;
+}
+.company.katoo .domain {
+  color: #6943db;
+}
+
+section.section-about-me {
+  padding: 100px 0px;
+  max-width: 100%;
+  width: 100%;
+  background-color: white;
+}
+.section-about-me section {
+  display: flex;
+  justify-content: space-between;
+}
+.section-about-me .title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  color: #0b152f;
+  max-width: 436px;
+  margin-top: 24px;
+}
+.section-about-me .description {
+  margin-top: 48px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #6e727b;
+  max-width: 432px;
+}
+.section-about-me .read-more {
+  margin-top: 32px;
+}
+
+.section-about-me .mvp {
+  max-width: 464px;
+  height: auto;
+  min-width: 200px;
+}
+
+.section-hear-from-founders {
+  text-align: center;
+  padding: 100px 0px;
+}
+.section-hear-from-founders .title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-top: 24px;
+}
+.section-hear-from-founders .caption {
+  margin: auto;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 32px;
+  max-width: 638px;
+}
+
+.founders-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.founders-list {
+  display: flex;
+  flex-flow: column wrap;
+}
+.founders-list .founder {
+  max-width: 520px;
+  background: rgba(3, 8, 22, 0.7);
+  padding: 32px;
+  border: 1px solid #2b4cc9;
+  margin-top: 100px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: left;
+}
+
+.founders-list .founder .comment {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.founders-list .founder .avatar {
+  width: 77px;
+  height: 77px;
+}
+
+.founders-list .founder .founder-info {
+  display: flex;
+  margin-top: 32px;
+}
+
+.founders-list .founder .founder-info .info {
+  margin-left: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.founders-list .founder .founder-info .name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.founders-list .founder .founder-info .position {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.section-contact {
+  padding: 50px 0px 168px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-contact .title {
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  max-width: 553px;
+}
+
+.section-contact .email-input {
+  margin-top: 32px;
+  max-width: 437px;
+  position: relative;
+}
+
+.section-contact .email-input input {
+  max-height: 60px;
+  background: rgba(224, 236, 253, 0.4);
+  font-size: 20px;
+  line-height: 30px;
+  color: white;
+  border: none;
+}
+
+.email-input .icon-send {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 30px;
+  width: 30px;
+  display: block;
+  background: url("../images/home/icon-send.svg");
+}
+
+.section-contact .right .link {
+  text-align: left;
+  font-family: Space Grotesk;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  width: 463px;
+  display: flex;
+  align-items: center;
+  height: 97px;
+}
+
+.section-contact .right .link:not(:last-child) {
+  border-bottom: 2px solid rgba(229, 229, 229, 0.5);
+}
+
+.link-more {
+  margin-left: 12px;
+  display: block;
+  height: 18px;
+  width: 18px;
+  background-image: url("../images/home/arrow-right-white.svg");
+}
+
+.section-hero .title .mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .section-hero .hero-bg {
+    height: 25.9vw;
+    width: 25.9vw;
+    top: 7.69vw;
+    right: 0px;
+  }
+  .section-hero {
+    padding-top: 20.51vw;
+    padding-bottom: 7.69vw;
+  }
+  .section-hero .title .title-p {
+    font-size: 8.72vw;
+    line-height: 1.5;
+    display: none;
+  }
+  .section-hero .title .mobile {
+    display: block;
+  }
+  .section-hero .title .p3,
+  .section-hero .title .p2 {
+    text-align: left;
+  }
+
+  .section-hero .footer {
+    flex-flow: column nowrap;
+    margin-top: 4.1vw;
+  }
+
+  .discover-more {
+    order: 2;
+    margin-top: 4.1vw;
+  }
+
+  .section-portfolio {
+    padding-top: 7.69vw;
+  }
+
+  .portfolio-title .title {
+    font-size: 6.15vw;
+    line-height: 1.29;
+  }
+  .portfolio-title {
+    flex-flow: column wrap;
+  }
+  .portfolio-title .right-content,
+  .portfolio-title .right-content .read-more {
+    margin-top: 4.1vw;
+  }
+
+  .companies-list .company {
+    width: 50%;
+    padding: 0px;
+    height: 30vw;
+    flex-flow: column wrap;
+    display: flex;
+  }
+  .company .logo-wrapper {
+    width: 8.21vw;
+    height: 100%;
+    align-items: flex-start;
+    margin-right: 4.1vw;
+  }
+  .company .logo {
+    width: 100%;
+    height: auto;
+  }
+  .companies-list .company .name {
+    margin-top: 0px;
+    font-size: 4.1vw;
+    line-height: 1.25;
+  }
+  .companies-list .company .aim,
+  .companies-list .company.katoo .aim {
+    font-size: 3.59vw;
+    line-height: 1.2;
+    height: auto;
+    width: 29.49vw;
+  }
+  .companies-list .company .domain {
+    font-size: 2.56vw;
+    margin-top: 4.1vw;
+  }
+
+  section.section-about-me {
+    width: 100%;
+    padding: 10.26vw 0px;
+  }
+
+  .section-about-me section {
+    flex-flow: column wrap;
+  }
+  .section-about-me .title {
+    width: 100%;
+    font-size: 6.15vw;
+    line-height: 1.28;
+    max-width: none;
+  }
+  .section-about-me .mvp {
+    width: 100%;
+    max-width: none;
+    margin-top: 10.26vw;
+  }
+  .section-about-me .description {
+    width: 100%;
+    max-width: none;
+  }
+  .section-hear-from-founders {
+    padding-top: 13.85vw;
+    padding-bottom: 16.41vw;
+  }
+  .section-hear-from-founders .title {
+    font-size: 6.15vw;
+  }
+  .section-hear-from-founders .caption {
+    margin-top: 4.1vw;
+    margin-bottom: 4.1vw;
+  }
+  .founders-list-wrapper {
+    flex-flow: column nowrap;
+  }
+  .founders-list .founder {
+    margin-top: 6.15vw;
+    max-width: none;
+  }
+
+  .section-contact {
+    padding: 2.56vw 0px 14.36vw 0px;
+    flex-flow: column nowrap;
+  }
+  .section-contact .title {
+    font-size: 6.15vw;
+    line-height: 1.28;
+    width: 49.74vw;
+  }
+  .section-contact .right {
+    margin-top: 8.21vw;
+  }
+  .section-contact .right .link {
+    height: auto;
+    width: 100%;
+    padding: 4.1vw 0px;
+  }
+
+  .site-footer-container {
+    flex-flow: column nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+}

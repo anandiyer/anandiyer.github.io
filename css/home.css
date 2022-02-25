@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   transform: scale(3);
-  pointer-event: none;
+  pointer-events: none;
 }
 
 .twinkle-1 {

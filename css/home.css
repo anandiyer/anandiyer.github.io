@@ -211,18 +211,72 @@
 
 .company .logo-wrapper {
   height: 120px;
-  display: flex;
-  align-items: flex-end;
+  overflow: hidden;
 }
+
+.company .logo-wrapper a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .company .logo {
-  height: 120px;
-  width: auto;
+  max-height: 120px;
+  max-width: 160px;
 }
 .company .logo.w-120 {
   width: 120px;
   height: auto;
 }
 
+.company.thirdweb .domain {
+  color: #b01291;
+}
+.company.notifi .domain {
+  color: #be695d;
+}
+.company.portal .domain {
+  color: white;
+}
+.company.prime .domain {
+  color: white;
+}
+.company.rain .domain {
+  color: white;
+}
+.company.lavanet .domain {
+  color: #ec5e3f;
+}
+.company.coinshift .domain {
+  color: #386df7;
+}
+.company.farcaster .domain {
+  color: #815ec5;
+}
+.company.community .domain {
+  color: white;
+}
+.company.nibiru .domain {
+  color: #ab7fca;
+}
+.company.tokenproof .domain {
+  color: white;
+}
+.company.skip .domain {
+  color: white;
+}
+.company.sentio .domain {
+  color: #b939b4;
+}
+.company.zoltar .domain {
+  color: #0066ff;
+}
+.company.pwned .domain {
+  color: white;
+}
+.company.thala .domain {
+  color: white;
+}
 .company.aero .domain {
   color: #fcbf2d;
 }
@@ -286,10 +340,23 @@ section.section-about-me {
   min-width: 200px;
 }
 
+.section-twitter .twits-carousel {
+  display: flex;
+  overflow: scroll;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.section-twitter .twits-carousel .twit {
+  max-width: 350px;
+}
+
 .section-hear-from-founders {
   text-align: center;
   padding: 100px 0px;
 }
+
+.section-twitter .title,
 .section-hear-from-founders .title {
   font-family: Space Grotesk;
   font-style: normal;
@@ -485,19 +552,27 @@ section.section-about-me {
     margin-top: 4.1vw;
   }
 
+  .companies-list {
+    gap: 40px 10px;
+  }
+
   .companies-list .company {
-    width: 50%;
+    width: 48%;
     padding: 0px;
-    height: 30vw;
-    flex-flow: column wrap;
     display: flex;
   }
+
   .company .logo-wrapper {
     width: 8.21vw;
     height: 100%;
     align-items: flex-start;
     margin-right: 4.1vw;
   }
+
+  .company .logo-wrapper a {
+    align-items: flex-start;
+  }
+
   .company .logo {
     width: 100%;
     height: auto;

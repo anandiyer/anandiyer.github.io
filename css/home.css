@@ -342,13 +342,10 @@ section.section-about-me {
 
 .section-twitter .twits-carousel {
   display: flex;
-  overflow: scroll;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 40px;
   margin-top: 60px;
-}
-
-.section-twitter .twits-carousel .twit {
-  max-width: 350px;
 }
 
 .section-hear-from-founders {
@@ -368,6 +365,10 @@ section.section-about-me {
   color: #ffffff;
   margin-top: 24px;
 }
+.section-twitter .title {
+  margin-top: 54px;
+}
+
 .section-hear-from-founders .caption {
   margin: auto;
   color: rgba(255, 255, 255, 0.6);
@@ -500,6 +501,30 @@ section.section-about-me {
 
 .section-hero .title .mobile {
   display: none;
+}
+
+@media (min-width: 800px) {
+  .section-twitter .twits-carousel .twit {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 600px) {
+  .section-twitter .twits-carousel .twit {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-twitter .twits-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .section-twitter .twits-carousel .twit {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -657,7 +682,4 @@ section.section-about-me {
   .site-footer-container {
     flex-flow: column nowrap;
   }
-}
-
-@media (max-width: 600px) {
 }

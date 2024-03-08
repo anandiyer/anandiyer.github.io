@@ -301,6 +301,18 @@
 .company.katoo .domain {
   color: #6943db;
 }
+.company.gensyn .domain {
+  color: #9e3629;
+}
+.company.ritual .domain {
+  color: #ffffff;
+}
+.company.wasabi .domain {
+  color: #71c426;
+}
+.company.compass-labs .domain {
+  color: #cda85f;
+}
 
 section.section-about-me {
   padding: 100px 0px;

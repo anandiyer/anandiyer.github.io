@@ -134,6 +134,7 @@ body {
   font-family: Pangram;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 
 body::before {

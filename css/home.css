@@ -301,6 +301,43 @@
 .company.katoo .domain {
   color: #6943db;
 }
+.company.gensyn .domain {
+  color: #9e3629;
+}
+.company.ritual .domain {
+  color: #ffffff;
+}
+.company.wasabi .domain {
+  color: #71c426;
+}
+.company.compass-labs .domain {
+  color: #cda85f;
+}
+
+.meso-ring {
+  border-radius: 100%;
+  background: conic-gradient(
+    from 118.51deg at 49.92% 50.08%,
+    #99c5fb 0deg,
+    #f0f1ea 58.21deg,
+    #fdf6e6 126.9deg,
+    #fda4fe 148.58deg,
+    #cec4f8 203.54deg,
+    #f2f0fb 222.92deg,
+    #dbfaf3 282.93deg,
+    #f2dbfa 299.62deg,
+    #99c5fb 360deg
+  );
+  box-shadow: 0 6px 6px #0000001f, inset 0 6px 6px #ffffff7f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  padding: 2px;
+}
+.meso-ring img {
+  max-height: 110px !important;
+}
 
 section.section-about-me {
   padding: 100px 0px;
@@ -682,4 +719,8 @@ section.section-about-me {
   .site-footer-container {
     flex-flow: column nowrap;
   }
+}
+
+.link {
+  color: #386df7;
 }

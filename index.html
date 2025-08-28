@@ -1,468 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canonical Crypto</title>
-  <meta name="description" content="Canonical Crypto is an early stage venture capital fund that invests in technology companies building blockchain infrastructure" />
-  <meta name="keywords" content="crytpo, web3, infrastructure, blockchain, picks shovels, venture capital, vc, anand iyer" />
-
-  <meta property="og:image" content="https://canonical.cc/images/site-logo.png">
-  <meta property="og:title" content="Canonical Crypto" />
-  <meta property="og:description" content="Canonical Crypto is an early stage venture capital fund that invests in technology companies building blockchain infrastructure" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.canonical.cc" />
-
-  <meta name="twitter:title" content="Canonical Crypto"> 
-  <meta property="twitter:domain" content="canonical.cc">
-  <meta property="twitter:url" content="https://www.canonical.cc/">
-  <meta name="twitter:description" content="Canonical Crypto is an early stage venture capital fund that invests in technology companies building blockchain infrastructure"> 
-  <meta name="twitter:image" content="https://canonical.cc/images/site-logo.png">
-  
-  <link rel="stylesheet" type="text/css" href="css/style.css?t=1709950250265" />
-  <link rel="stylesheet" type="text/css" href="css/main.css?t=1709950250265" />
-  <link rel="stylesheet" type="text/css" href="css/home.css?t=1709950250265" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
-  <script src="js/jquery.3.6.0.min.js"></script>
-  <script src="js/main.js"></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-44ZP5XBN8T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-44ZP5XBN8T');
-  </script>
-
-</head>
-
-<body>
-  <header class="site-header" id="header">
-    <div class="top-navigation">
-      <div class="left">
-        <a class="site-logo" href="/"></a>
-        <div class="nav-menu">
-          <ul>
-            <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
-            <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="mobile-navigation">
-        <button class="menu-toggle button-toggle">
-          <span>
-            <div class="gbi gbicon-bars"></div>
-          </span>
-          <span>
-            <div class="gbi gbicon-times"></div>
-          </span>
-        </button><!-- .overlay-toggle -->
-      </div>
-      <div class="drawer-wrap">
-        <div class="drawer drawer-menu-explore">
-          <nav id="drawer-navigation" class="drawer-navigation">
-            <div class="nav-menu">
-              <ul>
-                <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
-                <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <a href="mailto:info@canonical.cc"><button class="default">Let’s Talk!</button></a>
-      <!-- Mobile menu -->
-    </div>
-  </header><!-- .site-header -->
-
-  <script>
-    var $ = jQuery;
-
-    function scrollToHash(hash, event) {
-      // event && event.preventDefault();
-      var target = $(hash);
-      if (!hash || !hash.slice(1)) {
-        $("html, body").animate({
-          scrollTop: 0,
-        },
-          1000
-        );
-      } else {
-        target = target.length ? target : $("[name=" + hash.slice(1) + "]");
-        if (target.length) {
-          $("html, body").animate({
-            scrollTop: target.offset().top - 70,
-          },
-            1000
-          );
-        }
-      }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Canonical - Investing in a post AGI future</title>
+    <meta name="description" content="Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future." />
+    <meta name="keywords" content="venture capital, AI infrastructure, decentralized AI, post-AGI, blockchain, AI investment, technology fund, startup funding" />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc" />
+    <meta property="og:title" content="Canonical - Investing in a post AGI future" />
+    <meta property="og:description" content="Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future." />
+    <meta property="og:image" content="https://canonical.cc/og-image.png" />
+    <meta property="og:site_name" content="Canonical" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc" />
+    <meta property="twitter:title" content="Canonical - Investing in a post AGI future" />
+    <meta property="twitter:description" content="Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future." />
+    <meta property="twitter:image" content="https://canonical.cc/og-image.png" />
+    <meta property="twitter:creator" content="@canonical_vc" />
+    <meta property="twitter:site" content="@canonical_vc" />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1e3a8a" />
+    <meta name="msapplication-TileColor" content="#1e3a8a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Canonical",
+      "description": "Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future.",
+      "url": "https://canonical.cc",
+      "logo": "https://canonical.cc/logo.png",
+      "sameAs": [
+        "https://x.com/canonicalcrypto"
+      ],
+      "@id": "https://canonical.cc",
+      "foundingDate": "2022",
+      "industry": "Venture Capital",
+      "location": {
+        "@type": "Place",
+        "name": "United States"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Anand Iyer"
+      },
+      "investmentFocus": [
+        "Artificial Intelligence",
+        "Decentralized Infrastructure",
+        "Blockchain Technology",
+        "Post-AGI Future"
+      ]
     }
-    $('a[href*="#"]')
-      // Remove links that don't actually link to anything
-      .not('[href="#"]')
-      .not('[href="#0"]')
-      .on("click", function (event) {
-        // On-page links
-        if (
-          location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
-          location.hostname == this.hostname
-        ) {
-          // Figure out element to scroll to
-          var hash = this.hash;
-          scrollToHash(hash, event);
-        }
-      });
-    $(window).scroll(function () {
-      var scroll = $(window).scrollTop();
-      if (scroll > 0) {
-        $("#header").addClass("active");
-      } else {
-        $("#header").removeClass("active");
-      }
-    });
-    $(document).ready(function () {
-      if (location.hash) {
-        scrollToHash(location.hash);
-      }
-    });
-  </script>
-
-  <div id="page" class="site-container">
-    <div id="content" class="site-content">
-      <div class="page-home">
-        <div class="twinkle twinkle-1"></div>
-        <div class="twinkle twinkle-2"></div>
-        <div class="twinkle twinkle-3"></div>
-        <div class="twinkle twinkle-4"></div>
-        <section class="section-hero">
-          <div class="hero-bg"></div>
-          <div class="title">
-            <div class="title-p p1">Backing teams</div>
-            <div class="title-p p1">building blockchain infrastructure</div>
-            <div class="title-p p1 mobile">Backing teams</div>
-            <div class="title-p p2 mobile">building blockchain infrastructure</div>
-          </div>
-          <div class="footer">
-            <div class="discover-more">
-              <div class="icon-arrow-down"></div>
-              <a href="#portfolio" class="discover-more-link">SCROLL DOWN</a>
-            </div>
-            <!--
-            <div class="caption p">Backing teams building in web3</div>
-            -->
-          </div>
-        </section>
-        <section class="section-portfolio" id="portfolio">
-          <div class="section-title">Portfolio</div>
-          <div class="portfolio-title">
-            <div class="title">Select Portfolio</div>
-            <div class="right-content">
-                <div class="caption p">We partner with technical founding teams who are building the picks-and-shovels of blockchain infrastructure</div>
-              <a href="#" class="read-more">
-                <!-- READ MORE <i class="icon-read-more"></i> -->
-              </a>
-            </div>
-          </div>
-          <div class="companies-list">
-            <!-- First Row -->
-            <div class="company gensyn">
-              <div class="logo-wrapper">
-                <a href="https://www.gensyn.ai/">
-                <img class="logo"
-                  src="images/home/company-logos/gensyn.png"></img>
-                </a>
-              </div>
-              <a href="https://www.gensyn.ai/">
-                <div class="name">Gensyn</div>
-                <div class="aim">Decentralized compute network for Machine Learning</div>
-                <div class="domain">gensyn.ai</div>
-              </a>
-            </div>
-            <div class="company farcaster">
-              <div class="logo-wrapper">
-                <a href="https://www.farcaster.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/farcaster-logo.png"></img>
-                </a>
-              </div>
-              <a href="https://www.farcaster.xyz/">
-                <div class="name">Farcaster</div>
-                <div class="aim">Decentralized social networking protocol</div>
-                <div class="domain">farcaster.xyz</div>
-              </a>
-            </div>
-            <div class="company lavanet">
-              <div class="logo-wrapper">
-                <a href="https://lavanet.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/lavanet-logo.svg"></img>
-                </a>
-              </div>
-              <a href="https://lavanet.xyz/">
-                <div class="name">Lava Network</div>
-                <div class="aim">Peer-peer RPC network and node services</div>
-                <div class="domain">lavanet.xyz</div>
-              </a>
-            </div>
-            <div class="company thala">
-              <div class="logo-wrapper">
-                <a href="https://www.thalalabs.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/thala-labs-logo.svg"></img>
-                </a>
-              </div>
-              <a href="https://www.thalalabs.xyz/">
-                <div class="name">Thala Labs</div>
-                <div class="aim">Decentralized stablecoin built on Move for Aptos</div>
-                <div class="domain">thalalabs.xyz</div>
-              </a>
-            </div>
-            
-            <!-- Second Row -->
-            <div class="company ritual">
-              <div class="logo-wrapper">
-                <a href="https://ritual.net/">
-                <img class="logo"
-                  src="images/home/company-logos/ritual.svg"></img>
-                </a>
-              </div>
-              <a href="https://ritual.net/">
-                <div class="name">Ritual</div>
-                <div class="aim">The AI Coprocessor for blockchains</div>
-                <div class="domain">ritual.net</div>
-              </a>
-            </div>
-            <div class="company thirdweb">
-              <div class="logo-wrapper">
-                <a href="https://thirdweb.com">
-                <img class="logo"
-                  src="images/home/company-logos/thirdweb.jpeg"></img>
-                </a>
-              </div>
-              <a href="https://thirdweb.com">
-                <div class="name">Thirdweb</div>
-                <div class="aim">Low-code solutions for building web3 dapps</div>
-                <div class="domain">thirdweb.com</div>
-              </a>
-            </div>
-            <div class="company wasabi">
-              <div class="logo-wrapper">
-                <a href="https://www.wasabi.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/wasabi.svg"></img>
-                </a>
-              </div>
-              <a href="https://www.wasabi.xyz/">
-                <div class="name">Wasabi</div>
-                <div class="aim">The NFT Leverage Protocol</div>
-                <div class="domain">wasabi.xyz</div>
-              </a>
-            </div>
-            <div class="company nibiru">
-              <div class="logo-wrapper">
-                <a href="https://nibiru.fi/">
-                <img class="logo"
-                  src="images/home/company-logos/nibiru-logo.jpg"></img>
-                </a>
-              </div>
-              <a href="https://nibiru.fi/">
-                <div class="name">Nibiru</div>
-                <div class="aim">Blockchain for DeFi primitives built on Cosmos</div>
-                <div class="domain">nibiru.fi</div>
-              </a>
-            </div>
-            
-            <!-- Third Row -->
-            <div class="company guardrail">
-              <div class="logo-wrapper">
-                <a href="https://guardrail.ai/">
-                <img class="logo"
-                  src="images/home/company-logos/guardrail.png"></img>
-                </a>
-              </div>
-              <a href="https://guardrail.ai/">
-                <div class="name">Guardrail</div>
-                <div class="aim">Real-time AI driven security monitoring for DeFi</div>
-                <div class="domain">guardrail.ai</div>
-              </a>
-            </div>
-            <div class="company compass-labs">
-              <div class="logo-wrapper">
-                <a href="https://www.compasslabs.ai/">
-                <img class="logo"
-                  src="images/home/company-logos/compass.png"></img>
-                </a>
-              </div>
-              <a href="https://www.compasslabs.ai/">
-                <div class="name">Compass Labs</div>
-                <div class="aim">We do for DeFi what Tensforflow did for AI</div>
-                <div class="domain">compasslabs.ai</div>
-              </a>
-            </div>
-            <div class="company sentio">
-              <div class="logo-wrapper">
-                <a href="https://www.sentio.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/sentio-logo.png"></img>
-                </a>
-              </div>
-              <a href="https://www.sentio.xyz/">
-                <div class="name">Sentio</div>
-                <div class="aim">Blockchain based observability and monitoring platform</div>
-                <div class="domain">sentio.xyz</div>
-              </a>
-            </div>
-            <div class="company rain">
-              <div class="logo-wrapper">
-                <a href="https://raincards.xyz">
-                <img class="logo"
-                  src="images/home/company-logos/raincards.svg"></img>
-                </a>
-              </div>
-              <a href="https://raincards.xyz">
-                <div class="name">Rain Financial</div>
-                <div class="aim">Corporate cards for crypto native teams</div>
-                <div class="domain">raincards.xyz</div>
-              </a>
-            </div>
-            
-            <!-- 4th Row -->
-            <div class="company meso">
-              <div class="logo-wrapper">
-                <a href="https://meso.network/">
-                <div class="meso-ring">
-                  <img class="logo" src="images/home/company-logos/meso.svg"></img>
+    </script>
+    
+    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
+            <div class="container mx-auto px-8 py-8">
+                <div class="flex items-center justify-between">
+                    <a href="/" class="logo-link">
+                        <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
+                    </a>
+                    <nav class="hidden md:flex items-center space-x-10">
+                        <button onclick="scrollToSection('about')" class="nav-link">
+                            ABOUT
+                        </button>
+                        <button onclick="scrollToSection('thesis')" class="nav-link">
+                            THESIS
+                        </button>
+                        <button onclick="scrollToSection('portfolio')" class="nav-link">
+                            PORTFOLIO
+                        </button>
+                        <button onclick="scrollToSection('team')" class="nav-link">
+                            TEAM
+                        </button>
+                    </nav>
                 </div>
-               </a>
-              </div>
-              <a href="https://meso.network/">
-                <div class="name">Meso</div>
-                <div class="aim">Instant transfers between banks and wallets.</div>
-                <div class="domain">meso.network</div>
-              </a>
             </div>
-            <div class="company coinshift">
-              <div class="logo-wrapper">
-                <a href="https://coinshift.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/coinshift-logo.svg"></img>
-                </a>
-              </div>
-              <a href="https://coinshift.xyz/">
-                <div class="name">Coinshift</div>
-                <div class="aim">Smart treasury management</div>
-                <div class="domain">coinshift.xyz</div>
-              </a>
-            </div>
-            <div class="company tokenproof">
-              <div class="logo-wrapper">
-                <a href="https://tokenproof.xyz/">
-                <img class="logo"
-                  src="images/home/company-logos/token-proof-logo.png"></img>
-                </a>
-              </div>
-              <a href="https://tokenproof.xyz/">
-                <div class="name">Tokenproof</div>
-                <div class="aim">Token-gating for proof of NFT ownership</div>
-                <div class="domain">tokenproof.xyz</div>
-              </a>
-            </div>
-            <div class="company sahara">
-              <div class="logo-wrapper">
-                <a href="https://saharalabs.ai/">
-                <img class="logo"
-                  src="images/home/company-logos/sahara.png"></img>
-                </a>
-              </div>
-              <a href="https://saharalabs.ai/">
-                <div class="name">Sahara</div>
-                <div class="aim">Decentralized AI Data Network</div>
-                <div class="domain">saharalabs.ai/</div>
-              </a>
-            </div>
-            
-          </div>
-        </section>
+        </header>
 
-        <section class="section-about-me" id="about-me">
-          <section>
-            <div class="left">
-                <!-- <div class="section-title">About Anand</div> -->
-              <div class="title">Anand Iyer</div>
-              <!--
-              <div class="title">Managing Director Canonical</div>
-              -->
-              <img class="mvp mobile-only" src="images/home/anand_iyer.jpg" />
-              <div class="p description">Anand is the Founder of
-                  Canonical, an early stage fund investing in web3 & crypto infrastructure.
-              </div>
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container mx-auto px-8">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Forging the AGI frontier
+                        </h1>
+                        <p class="hero-subtitle">
+                            We back technical founders building decentralized AI infrastructure.<br />
+                            From zero to one, we invest in the picks-and-shovels of the post-AGI future.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-              <div class="p description">Prior to starting Canonical, Anand was a
-                  Visiting Partner at Pear where he focused on their crypto investments.
-                  Anand has been based in the San Francisco Bay Area, and has a strong
-                  track record of founding, building and scaling companies. Learn more at
-		  <a class="link" target="_blank" href="https://anandiyer.com/">anandiyer.com</a> or <a class="link" target="_blank" href="https://twitter.com/ai">@ai</a>
-		  on <a class="link" target="_blank" href="https://twitter.com/farcaster_xyz">twitter/farcaster</a>.
-              </div>
-              <!--
-              <a href="#" class="read-more">
-                READ MORE <i class="icon-read-more"></i>
-              </a>
-              -->
+            <!-- About Section -->
+            <section id="about" class="section-padding">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h2 class="section-label">ABOUT</h2>
+                        <p class="about-text">
+				Canonical is a San Francisco-based early-stage venture firm focused on the infrastructure that will power a post-AGI world. Our mission is to help visionary entrepreneurs build transformative AI systems on open, decentralized infrastructure. We back deeply technical founders building at the intersection of AI and decentralized systems prioritizing open-source, permissionless primitives over closed, centralized platforms.
+                        </p>
+                        <p class="about-text">
+			Founded and led by operators who’ve been on the frontier since 2001, Canonical brings hands-on partnership from day zero and throughout the company-building journey. Our portfolio includes some of the most ambitious teams rethinking how AI is trained, deployed, and governed across compute, data, agents, and cryptographic coordination.
+                        </p>
+                        <p class="about-text">
+			If you’re building or investing in the picks and shovels of the post-AGI era, we’d love to connect.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thesis Section -->
+            <section id="thesis" class="section-padding">
+                <div class="container mx-auto px-8">
+                    <h2 class="section-title">Our Thesis</h2>
+                    <p class="section-subtitle">
+                        We invest where open infrastructure meets transformative AI capabilities.
+                    </p>
+                    
+                    <div class="thesis-grid">
+                        <div class="thesis-item">
+                            <span class="thesis-number">[01]</span>
+                            <h3 class="thesis-title">Open Infrastructure</h3>
+                            <p class="thesis-description">
+                                The most transformative AI systems will be built on open, decentralized infrastructure that ensures transparency and permissionless innovation.
+                            </p>
+                        </div>
+                        
+                        <div class="thesis-item">
+                            <span class="thesis-number">[02]</span>
+                            <h3 class="thesis-title">Blockchain as Foundation</h3>
+                            <p class="thesis-description">
+                                Blockchain provides the infrastructure layer that brings transparency, permissionless innovation, and equitable value distribution to AI systems.
+                            </p>
+                        </div>
+                        
+                        <div class="thesis-item">
+                            <span class="thesis-number">[03]</span>
+                            <h3 class="thesis-title">Pre-Product Focus</h3>
+                            <p class="thesis-description">
+                                We invest in builders of "open" AI networks, backing pre-product founders living in tomorrow's world from day zero.
+                            </p>
+                        </div>
+                        
+                        <div class="thesis-item">
+                            <span class="thesis-number">[04]</span>
+                            <h3 class="thesis-title">Technical Depth</h3>
+                            <p class="thesis-description">
+                                Our technical background allows us to deeply understand and support founders building complex infrastructure at the bleeding edge.
+                            </p>
+                        </div>
+                        
+                        <div class="thesis-item">
+                            <span class="thesis-number">[05]</span>
+                            <h3 class="thesis-title">Long-term Alignment</h3>
+                            <p class="thesis-description">
+                                We operate with patient capital and long-term vision, supporting founders through the entire journey of building transformative technology.
+                            </p>
+                        </div>
+                        
+                        <div class="thesis-item">
+                            <span class="thesis-number">[06]</span>
+                            <h3 class="thesis-title">Network Effects</h3>
+                            <p class="thesis-description">
+                                Our portfolio companies benefit from a high-impact network of builders, researchers, and investors at the forefront of AI and crypto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="section-padding">
+                <div class="max-w-7xl mx-auto px-8">
+                    <h2 class="section-title">Portfolio</h2>
+                    <p class="section-subtitle">
+                        We partner with teams building the infrastructure for a decentralized AI future.
+                    </p>
+                    
+                    <div class="overflow-x-auto portfolio-carousel">
+                        <div class="flex gap-8 pb-4" style="width: max-content">
+                            <!-- Portfolio companies will be loaded here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section id="team" class="section-padding">
+                <div class="container mx-auto px-8">
+                    <h2 class="section-title">Team</h2>
+                    
+                    <div class="team-card">
+                        <h3 class="team-name">Anand Iyer</h3>
+                        <p class="team-role">Managing Partner</p>
+                        
+                        <div class="team-content">
+                            <div class="team-image-container">
+                                <img src="https://www.canonical.cc/images/anand-iyer.jpg" alt="Anand Iyer" class="team-image" />
+                            </div>
+                            
+                            <div class="team-info">
+                                <div class="team-bio">
+                                    <p>
+                                        Anand Iyer is a founder-turned-investor and the Managing Partner of Canonical, an early stage venture firm based in San Francisco.
+                                    </p>
+                                    <p>
+                                        He previously was the CEO & Co-founder of Trusted, scaling it through fundraising and growth before its acquisition in 2018 by a public company, Care. Care & Trusted were subsequently acquired by IAC in 2020. A Silicon Valley veteran, Anand has also been a Venture Partner at Pear and Lightspeed, investing at the intersection of crypto and AI.
+                                    </p>
+                                    <p>
+                                        Earlier in his career, he built developer platforms at Microsoft, including Windows, Phone, and Azure. Exposed to Bitcoin in 2012, he's been investing in frontier tech for over a decade. His founder background and technical DNA gives him an edge in helping technical teams go from zero to one.
+                                    </p>
+                                    <p>
+                                        Anand has a degree in Computer Engineering from Purdue University.
+                                    </p>
+                                </div>
+                                
+                                <div class="social-links-container">
+                                    <a href="https://x.com/ai" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                        </svg>
+                                        @ai
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="http://linkedin.com/in/anandiyer/" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                        </svg>
+                                        LinkedIn
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="footer-text">
+                        © 2025 Canonical Crypto. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                        <a href="https://x.com/canonicalcrypto" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            Twitter
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="right">
-              <img class="mvp desktop-only" src="images/home/anand_iyer.jpg"></img>
-            </div>
-          </section>
-        </section>
-
-      </div>
-    </div><!-- #content -->
-  </div><!-- #page .container -->
-
-  <footer id="colophon" class="site-footer"> 
-    <br />
-    <div class="site-footer-container">
-      <div class="footer-bg"></div>
-      <div class="left">
-        <div class="site-logo"></div>
-      </div>
-      <div class="right">
-        <div class="social-links">
-          <ul>
-            <li class=""><a href="https://linkedin.com/in/anandiyer">Linkedin</a></li>
-            <li class=""><a href="https://twitter.com/ai">Twitter</a></li>
-            <li class=""><a href="https://anandiyer.com">About Anand</a></li>
-          </ul>
-        </div>
-        <div class="footer-menu">
-          <div class="nav-menu">
-            <ul>
-              <li class="page_item page-item-14 "><a href="#portfolio" aria-current="page">Portfolio</a></li>
-              <li class="page_item page-item-14 "><a href="#about-me">About</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        </footer>
     </div>
-    <div class="footer-ps">
-      <div class="copy-rights">© 2023 Canonical Crypto. All right reserved.</div>
-      <!--
-      <div class="pp ts">
-        <a href="">Privacy Policy</a>
-        <a href="">Terms of Service</a>
-      </div>
-      -->
-    </div>
-  </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>

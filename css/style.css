@@ -1,469 +1,603 @@
-/* --------------------------------------------------------------
-Reset
--------------------------------------------------------------- */
-/* stylelint-disable selector-list-comma-newline-after  */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-	/* stylelint-disable max-line-length */
-	border: 0;
-	font-family: inherit;
-	font-size: 100%;
-	font-style: inherit;
-	font-weight: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-
-/* stylelint-enable selector-list-comma-newline-after */
-html {
-	font-size: 62.5%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	overflow-x: hidden;
-	margin: 0 auto;
-	background: #fff;
-	word-wrap: break-word;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 50%, #1d4ed8 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-nav,
-section {
-	display: block;
+/* Typography */
+.font-aeonik {
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-table {
-	/* tables still need 'cellspacing="0"' in the markup */
-	border-collapse: separate;
-	border-spacing: 0;
+/* Container */
+.container {
+    max-width: 1280px;
 }
 
-caption,
-th,
-td {
-	font-weight: 300;
-	text-align: left;
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-	content: "";
+.px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-blockquote,
-q {
-	quotes: "" "";
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-a:focus {
-	outline: thin dotted;
+/* Header styles */
+#header {
+    background-color: transparent;
+    transition: all 0.3s ease;
 }
 
-a:hover,
-a:active {
-	outline: 0;
+#header.scrolled {
+    background-color: rgba(30, 58, 138, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-a img {
-	border: 0;
+.logo-link {
+    display: inline-block;
 }
 
-/* --------------------------------------------------------------
-Typography
--------------------------------------------------------------- */
-body,
-button {
-	color: #272c30;
-	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	font-size: 18px;
-	line-height: 1.6;
+.h-8 {
+    height: 2rem;
 }
 
-@media (max-width: 600px) {
-	body,
-	button {
-		font-size: 16px;
-	}
+.w-auto {
+    width: auto;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 600;
-	line-height: 1.2;
-	margin-bottom: 3%;
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* --------------------------------------------------------------
-Elements
--------------------------------------------------------------- */
-ul,
-ol {
-	margin: 0 0 1.4em 20px;
+.nav-link:hover {
+    color: #ffffff;
 }
 
-ul {
-	list-style: disc;
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
 }
 
-ol {
-	list-style: decimal;
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	margin: 0.6em 0 0.6em 1.5em;
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.hide-sub {
-	display: none !important;
+.hero-subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.entry-content ul,
-.entry-content ol {
-	padding-left: 1.8em;
+/* Section Spacing */
+.section-padding {
+    padding: 6rem 0;
 }
 
-.entry-content li {
-	margin-bottom: 2%;
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 8rem 0;
+    }
 }
 
-dt {
-	font-weight: 600;
+/* Background Section */
+.bg-section {
+    background-color: transparent;
 }
 
-dd {
-	margin: 0 1.5em 1.5em;
+/* About Section */
+.section-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-img {
-	height: auto;
-	max-width: 100%;
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
-figure {
-	margin: 0;
+.about-image-container {
+    flex-shrink: 0;
+    text-align: center;
 }
 
-/* Tables */
-table {
-	font-size: 18px;
-	margin-bottom: 5%;
-	padding: 0;
-	width: 100%;
+.about-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-table thead {
-	background: #f2f2f2;
+.about-text-container {
+    flex-grow: 1;
 }
 
-table thead th {
-	font-weight: 600;
+.about-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-table td,
-#content table th {
-	padding: 15px;
+.about-text:last-child {
+    margin-bottom: 0;
 }
 
-table td {
-	border-bottom: solid 1px #f2f2f2;
+/* Thesis Section */
+.section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-table tr:last-child td {
-	border-bottom: none;
+.section-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-table tr:nth-child(even) {
-	background: #f2f2f2;
+.thesis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
 }
 
-/* --------------------------------------------------------------
-Links
--------------------------------------------------------------- */
-
-a:hover,
-a:focus,
-a:active {
-	color: #5fb4ff;
+.thesis-item {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* --------------------------------------------------------------
-Form Elements
--------------------------------------------------------------- */
-button,
-input:not(input[type="radio"]),
-textarea {
-	font-size: 100%;
-	margin: 0;
-	vertical-align: baseline;
-	*vertical-align: middle;
-	-webkit-appearance: none;
-	box-sizing: border-box;
+.thesis-item:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
 }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-.button,
-.comment-navigation a {
-	background: #0072e5;
-	border: none;
-	border-radius: 3px;
-	color: #fff;
-	font-family: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: 600;
-	padding: 14px 20px;
-	-webkit-appearance: none;
-	transition: 0.2s ease-in-out;
+.thesis-number {
+    display: block;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-@media (max-width: 600px) {
-	button,
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"],
-	.button,
-	.comment-navigation a {
-		padding: 10px 16px;
-		font-size: 16px;
-	}
+.thesis-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover,
-.button:hover,
-.comment-navigation a:hover,
-.drawer .tax-widget a:hover,
-a.added_to_cart:hover {
-	box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.25);
-	-webkit-box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.25);
-	color: #fff;
-	cursor: pointer;
+.thesis-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active,
-.button:active,
-.button:focus,
-.comment-navigation a:focus,
-a.added_to_cart:active,
-a.added_to_cart:focus {
-	color: #fff;
-	box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.05);
+/* Portfolio Section */
+.portfolio-carousel {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label,
-label ~ input[type="checkbox"] {
-	width: auto;
+.portfolio-carousel::-webkit-scrollbar {
+    display: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	padding: 0;
+.overflow-x-auto {
+    overflow-x: auto;
 }
 
-input[type="search"] {
-	-webkit-appearance: textfield;
-	box-sizing: content-box;
+.flex {
+    display: flex;
 }
 
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+.gap-8 {
+    gap: 2rem;
 }
 
-select {
-	padding-right: 45px;
-	font-size: 100%;
-	margin: 0;
-	vertical-align: baseline;
-	*vertical-align: middle;
-	width: 100%;
-	-webkit-appearance: normal;
-	box-sizing: border-box;
+.pb-4 {
+    padding-bottom: 1rem;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+.flex-shrink-0 {
+    flex-shrink: 0;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="tel"],
-input[type="time"],
-input[type="month"],
-input[type="tel"],
-textarea,
-select,
-.select2-container .select2-selection--single {
-	color: #62707c;
-	background: #fff;
-	box-sizing: border-box;
-	-webkit-appearance: none;
-	padding: 15px;
-	border: solid 1px #d4dde5;
-	transition: 0.1s ease-in-out;
-	border-radius: 2px;
-	font-size: 17px;
-	width: 100%;
+.portfolio-card {
+    width: 320px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-@media (max-width: 1000px) {
-	input[type="text"],
-	input[type="email"],
-	input[type="url"],
-	input[type="password"],
-	input[type="search"],
-	input[type="number"],
-	input[type="date"],
-	input[type="datetime"],
-	input[type="datetime-local"],
-	input[type="week"],
-	input[type="tel"],
-	input[type="time"],
-	input[type="month"],
-	input[type="tel"],
-	textarea,
-	select,
-	.select2-container .select2-selection--single {
-		padding: 12px 10px;
-		font-size: 15px;
-	}
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
-input[type="checkbox"] {
-	-webkit-appearance: checkbox !important;
+.portfolio-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
-input[type="radio"] {
-	-webkit-appearance: radio !important;
+.logo-container {
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-right: 1rem;
 }
 
-input[type="number"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="tel"],
-input[type="time"],
-input[type="month"],
-input[type="tel"] {
-	width: auto;
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus,
-select:focus {
-	outline: none;
-	box-shadow: inset 0 0 4px 2px #f4f8fb;
-	border-color: #abb4bb;
-	color: #272c30;
+.company-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-select {
-	background: #fff url(images/angle-down.jpg) right no-repeat;
-	background-size: 12px;
-	background-position: right 15px top 20px;
+.company-description {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex-grow: 1;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-select:hover {
-	border-color: #d5dde4;
-	cursor: pointer;
+.company-website {
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-block;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-@media (max-width: 1000px) {
-	select {
-		background-position: right 15px top 17px;
-	}
+.company-website:hover {
+    color: #1d4ed8;
 }
 
-select::after {
-	content: "x";
+/* Team Section */
+.team-card {
+    max-width: 56rem;
+    margin: 3rem auto 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-select[multiple] {
-	background: none;
+.team-member {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-@media (max-width: 1000px) {
-	input[name="post_password"] {
-		display: inline-block;
-		margin-bottom: 10px;
-		width: 100%;
-	}
+.team-name {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-textarea {
-	overflow: auto;
-	padding: 10px;
-	vertical-align: top;
-	line-height: 1.4;
+.team-role {
+    font-size: 1.25rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-fieldset legend {
-	border-bottom: dotted 1px #d4dde5;
-	display: inline-block;
-	width: 100%;
-	margin-bottom: 20px;
-	font-weight: 600;
-	font-size: 20px;
+.team-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
-form label {
-	display: inline-block;
-	width: 100%;
-	font-weight: 600;
+.team-image-container {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.team-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 1rem;
+    object-fit: cover;
+    border: 3px solid rgba(30, 58, 138, 0.2);
+}
+
+.team-info {
+    flex-grow: 1;
+}
+
+.team-bio {
+    text-align: left;
+    margin-bottom: 2.5rem;
+}
+
+.team-bio p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 1rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.team-bio p:last-child {
+    margin-bottom: 0;
+}
+
+.social-links-container {
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-link-blue {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    background-color: #2563eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.social-link-blue:hover {
+    background-color: #1d4ed8;
+}
+
+/* Footer */
+.footer {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+/* Utility classes */
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.max-w-5xl {
+    max-width: 64rem;
+}
+
+.max-w-7xl {
+    max-width: 80rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.md\:flex-row {
+    flex-direction: row;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.space-x-6 > * + * {
+    margin-left: 1.5rem;
+}
+
+.space-x-10 > * + * {
+    margin-left: 2.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.md\:mt-0 {
+    margin-top: 0;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.h-4 {
+    height: 1rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+/* Responsive */
+.hidden {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .md\:flex {
+        display: flex;
+    }
+    
+    .md\:flex-row {
+        flex-direction: row;
+    }
+    
+    .md\:mt-0 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .thesis-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .about-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .about-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .px-8 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }

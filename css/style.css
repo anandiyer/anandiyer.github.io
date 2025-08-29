@@ -415,10 +415,9 @@ html {
 }
 
 .social-links-container {
-    text-align: center;
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -592,6 +591,16 @@ html {
     
     .about-text {
         font-size: 1.25rem;
+    }
+    
+    .team-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .team-image {
+        width: 150px;
+        height: 150px;
     }
 }
 

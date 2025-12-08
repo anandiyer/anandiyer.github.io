@@ -67,12 +67,29 @@ const portfolioCompanies = [
     {
         id: 9,
         name: "Sentient",
-        description: "Open AGI for everyone through decentralized infrastructure",
+        description: "Open AGI through decentralized infrastructure",
         website: "https://sentient.foundation",
-        logo: "https://pbs.twimg.com/profile_images/1812420751829422080/QV-SLzAa_400x400.jpg",
+        logo: "https://pbs.twimg.com/profile_images/1966252290500710400/iacpKDQc_400x400.jpg",
         order: 9
-    }
+    },
+    {
+        id: 10,
+        name: "Rain",
+        description: "Stablecoin powered finance",
+        website: "https://rain.xyz",
+        logo: "https://pbs.twimg.com/profile_images/1977841389653086208/5JABD8CK_400x400.jpg",
+        order: 10
+    }, 
+    {
+        id: 11,
+        name: "Mesta",
+        description: "Money movement network",
+        website: "https://mesta.xyz",
+        logo: "https://pbs.twimg.com/profile_images/1823757102625562624/XHTihpRU_400x400.jpg",
+        order: 11
+    }, 
 ];
+
 
 // Smooth scrolling function
 function scrollToSection(sectionId) {
@@ -164,10 +181,107 @@ function loadPortfolioCompanies() {
     }
 }
 
+// Create Substack post card HTML
+function createSubstackCard(post) {
+    const safeTitle = post.title || "";
+    const safeExcerpt = post.excerpt || "";
+    const safeTag = post.tag || "Essay";
+    const safeDate = post.date || "";
+    const safeReadTime = post.readTime || "";
+
+    return `
+        <article class="substack-card" onclick="openSubstackPost('${post.url}')">
+            <div>
+                <div class="substack-tag">${safeTag}</div>
+                <h3 class="substack-post-title font-aeonik">
+                    ${safeTitle}
+                </h3>
+                <div class="substack-post-meta font-aeonik">
+                    ${safeDate}${safeDate && safeReadTime ? " • " : ""}${safeReadTime}
+                </div>
+                <p class="substack-post-excerpt font-aeonik">
+                    ${safeExcerpt}
+                </p>
+            </div>
+            <div class="substack-post-cta font-aeonik">
+                <span>Read on Substack</span>
+                <span>&rarr;</span>
+            </div>
+        </article>
+    `;
+}
+
+// Open Substack post in a new tab
+function openSubstackPost(url) {
+    if (!url) return;
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+async function loadSubstackPosts() {
+    const rssUrl = "https://canonicalcrypto.substack.com/feed";
+
+    try {
+        // Use a public RSS-to-JSON proxy because RSS XML can't be fetched directly
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (!data.items || data.items.length === 0) return;
+
+        const latestPosts = data.items.slice(0, 4); // show latest 4
+
+        const container = document.getElementById("substack-posts-container");
+        container.innerHTML = latestPosts.map(post => {
+            const title = post.title;
+            const url = post.link;
+            const date = new Date(post.pubDate).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+            });
+
+            // Extract excerpt — Substack provides HTML content
+            const excerpt = post.description
+                .replace(/<[^>]+>/g, "")       // strip HTML tags
+                .split(". ")[0] + ".";         // first sentence only
+
+            return `
+                <article class="substack-card" onclick="openSubstackPost('${url}')">
+                    <div>
+                        <div class="substack-tag">Essay</div>
+
+                        <h3 class="substack-post-title font-aeonik">
+                            ${title}
+                        </h3>
+
+                        <div class="substack-post-meta font-aeonik">
+                            ${date}
+                        </div>
+
+                        <p class="substack-post-excerpt font-aeonik">
+                            ${excerpt}
+                        </p>
+                    </div>
+
+                    <div class="substack-post-cta font-aeonik">
+                        <span>Read on Substack</span>
+                        <span>&rarr;</span>
+                    </div>
+                </article>
+            `;
+        }).join("");
+
+    } catch (err) {
+        console.error("Error loading Substack feed:", err);
+    }
+}
+
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
     // Load portfolio companies
     loadPortfolioCompanies();
+
+    loadSubstackPosts();
     
     // Add scroll event listener for header
     window.addEventListener('scroll', handleHeaderScroll);
@@ -180,3 +294,4 @@ document.addEventListener('DOMContentLoaded', function() {
 window.scrollToSection = scrollToSection;
 window.openCompanyWebsite = openCompanyWebsite;
 window.handleImageError = handleImageError;
+window.openSubstackPost = openSubstackPost;

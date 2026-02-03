@@ -2,58 +2,58 @@
 const portfolioCompanies = [
     {
         id: 1,
+        name: "Rain",
+        description: "Stablecoin powered finance",
+        website: "https://rain.xyz",
+        logo: "https://pbs.twimg.com/profile_images/1977841389653086208/5JABD8CK_400x400.jpg",
+        order: 1
+    }, 
+    {
+        id: 2,
         name: "Gensyn",
         description: "Decentralized compute network for Machine Learning",
         website: "https://www.gensyn.ai",
         logo: "https://cdn.prod.website-files.com/66bc6da8fe284e4693088ff7/66bc6da8fe284e4693088ffe_Gensyn-Symbol.svg",
-        order: 1
+        order: 2
     },
     {
-        id: 2,
+        id: 5,
         name: "Ritual",
         description: "The AI Coprocessor for blockchains",
         website: "https://ritual.net",
         logo: "https://pbs.twimg.com/profile_images/1912582510631858176/-Xbw2AcT_400x400.jpg",
-        order: 2
+        order: 5
     },
     {
-        id: 3,
+        id: 4,
         name: "Sahara",
         description: "Decentralized AI Data Network",
         website: "https://saharalabs.ai",
         logo: "https://pbs.twimg.com/profile_images/1955663161928921088/nn_g5zL1_400x400.png",
-        order: 3
+        order: 4
     },
     {
-        id: 4,
+        id: 3,
         name: "Virtuals",
         description: "AI agent protocol",
         website: "https://virtuals.io",
         logo: "https://virtuals.io/favicon.ico",
-        order: 4
+        order: 3
     },
     {
-        id: 5,
+        id: 6,
         name: "Exo Labs",
         description: "Distributed inference for AI models",
         website: "https://exolabs.net",
         logo: "https://exolabs.net/favicon.ico",
-        order: 5
-    },
-    {
-        id: 6,
-        name: "OpenGradient",
-        description: "Building verifiable and sovereign AI",
-        website: "https://www.opengradient.ai",
-        logo: "https://pbs.twimg.com/profile_images/1902830433466978305/9V0NUEPt_400x400.jpg",
         order: 6
     },
     {
         id: 7,
-        name: "Tensorplex",
-        description: "AI infrastructure for decentralized computing",
-        website: "http://tensorplex.ai",
-        logo: "http://tensorplex.ai/favicon.ico",
+        name: "OpenGradient",
+        description: "Building verifiable and sovereign AI",
+        website: "https://www.opengradient.ai",
+        logo: "https://pbs.twimg.com/profile_images/1902830433466978305/9V0NUEPt_400x400.jpg",
         order: 7
     },
     {
@@ -74,19 +74,11 @@ const portfolioCompanies = [
     },
     {
         id: 10,
-        name: "Rain",
-        description: "Stablecoin powered finance",
-        website: "https://rain.xyz",
-        logo: "https://pbs.twimg.com/profile_images/1977841389653086208/5JABD8CK_400x400.jpg",
-        order: 10
-    }, 
-    {
-        id: 11,
         name: "Mesta",
         description: "Money movement network",
         website: "https://mesta.xyz",
         logo: "https://pbs.twimg.com/profile_images/1823757102625562624/XHTihpRU_400x400.jpg",
-        order: 11
+        order: 10
     }, 
 ];
 

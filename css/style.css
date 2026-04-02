@@ -454,13 +454,15 @@ html {
 /* Team Section */
 .team-grid {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 3rem;
-    align-items: flex-start;
 }
 
 .team-card {
-    flex: 1;
+    max-width: 56rem;
+    margin: 0 auto;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 1rem;
     padding: 3rem;
@@ -709,10 +711,6 @@ html {
         font-size: 1.25rem;
     }
     
-    .team-grid {
-        flex-direction: column;
-    }
-
     .team-content {
         flex-direction: column;
         gap: 2rem;

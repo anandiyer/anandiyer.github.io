@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Portfolio | Canonical</title>
+    <meta name="description" content="Canonical's portfolio of frontier companies building infrastructure for a post-AGI world." />
+    <meta name="keywords" content="venture capital, frontier tech, AI infrastructure, decentralized AI, post-AGI, blockchain, AI investment, portfolio companies" />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/portfolio" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/portfolio" />
+    <meta property="og:title" content="Portfolio | Canonical" />
+    <meta property="og:description" content="Canonical's portfolio of frontier companies building infrastructure for a post-AGI world." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/portfolio" />
+    <meta property="twitter:title" content="Portfolio | Canonical" />
+    <meta property="twitter:description" content="Canonical's portfolio of frontier companies building infrastructure for a post-AGI world." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
+            <div class="container mx-auto px-8 py-8">
+                <div class="flex items-center justify-between">
+                    <a href="/" class="logo-link">
+                        <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
+                    </a>
+                    <nav class="hidden md:flex items-center space-x-10">
+                        <a href="index.html#about" class="nav-link">ABOUT</a>
+                        <a href="index.html#thesis" class="nav-link">THESIS</a>
+                        <a href="portfolio.html" class="nav-link nav-link-active">PORTFOLIO</a>
+                        <a href="index.html#team" class="nav-link">TEAM</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Portfolio Hero -->
+            <section class="portfolio-page-hero">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">Our Portfolio</h1>
+                        <p class="section-subtitle">
+                        We partner with early stage technical teams building infrastructure for an AI-first future.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Grid -->
+            <section class="section-padding" style="padding-top: 0;">
+                <div class="max-w-7xl mx-auto px-8">
+                    <div class="portfolio-grid" id="portfolio-grid">
+                        <!-- Portfolio companies will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="footer-text">
+                        &copy; 2025 Canonical Crypto. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                        <a href="https://x.com/canonicalcrypto" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            Canonical on X
+                        </a>
+                        <a href="https://canonicalcrypto.substack.com" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            Canonical on Substack
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPortfolioGrid();
+        });
+    </script>
+</body>
+</html>

@@ -79,7 +79,47 @@ const portfolioCompanies = [
         website: "https://mesta.xyz",
         logo: "https://pbs.twimg.com/profile_images/1823757102625562624/XHTihpRU_400x400.jpg",
         order: 10
-    }, 
+    },
+    {
+        id: 11,
+        name: "Haptic",
+        description: "Physical AI infrastructure",
+        website: "https://www.hapticlabs.ai",
+        logo: "https://pbs.twimg.com/profile_images/2030060395877257218/2HKULAHy_400x400.jpg",
+        order: 11
+    },
+    {
+        id: 12,
+        name: "Robo",
+        description: "A standardized robot arm for teachable automation",
+        website: "https://robo.inc",
+        logo: "https://pbs.twimg.com/profile_images/2019951741710864384/mILHUQGE_400x400.jpg",
+        order: 12
+    },
+    {
+        id: 13,
+        name: "Nirvana AI",
+        description: "Robots for modern manufacturing",
+        website: "https://nrvna.ai",
+        logo: "https://media.licdn.com/dms/image/v2/D560BAQFQkAp9eFkj0A/company-logo_200_200/B56Zu7VjmIHEAI-/0/1768374549271/fractal_labs_inc_logo?e=1776902400&v=beta&t=iMB_nTv8xXYYOLFucqeCWSKE6SQaaA7l5DSmK5C9PV4",
+        order: 13
+    },
+    {
+        id: 14,
+        name: "Kocree",
+        description: "AI for scientific creativity",
+        website: "https://kocree.net",
+        logo: "https://kocree.net/kocree-logo.svg",
+        order: 14
+    },
+    {
+        id: 15,
+        name: "Glide",
+        description: "AI-powered custom business software",
+        website: "https://withglide.com",
+        logo: "https://pbs.twimg.com/profile_images/1649096007970615297/jQH9zotf_400x400.jpg",
+        order: 15
+    },
 ];
 
 
@@ -282,8 +322,19 @@ document.addEventListener('DOMContentLoaded', function() {
     handleHeaderScroll();
 });
 
+// Load portfolio grid (for portfolio.html page)
+function loadPortfolioGrid() {
+    const gridContainer = document.getElementById('portfolio-grid');
+    if (gridContainer) {
+        const sortedCompanies = portfolioCompanies.sort((a, b) => a.order - b.order);
+        const gridHTML = sortedCompanies.map(company => createPortfolioCard(company)).join('');
+        gridContainer.innerHTML = gridHTML;
+    }
+}
+
 // Make functions globally available
 window.scrollToSection = scrollToSection;
 window.openCompanyWebsite = openCompanyWebsite;
 window.handleImageError = handleImageError;
 window.openSubstackPost = openSubstackPost;
+window.loadPortfolioGrid = loadPortfolioGrid;

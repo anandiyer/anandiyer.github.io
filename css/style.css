@@ -77,6 +77,7 @@ html {
     background: none;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -767,6 +768,176 @@ html {
     color: white;
 }
 
+/* Company Page */
+
+.company-hero {
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+}
+
+.company-back-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: color 0.2s ease;
+}
+
+.company-back-link:hover {
+    color: white;
+}
+
+.company-header-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.company-logo-large {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-page-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-page-tagline {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.25rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-description-block {
+    max-width: 48rem;
+}
+
+.company-page-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-website-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-website-btn:hover {
+    background-color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-founders-section {
+    padding: 4rem 0 6rem;
+}
+
+.company-section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.founder-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.founder-photo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.founder-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-role {
+    font-size: 0.875rem;
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-bio {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #475569;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 @media (max-width: 1024px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -786,5 +957,22 @@ html {
     .portfolio-page-hero {
         padding-top: 8rem;
         padding-bottom: 2rem;
+    }
+
+    .company-hero {
+        padding-top: 7rem;
+    }
+
+    .company-page-name {
+        font-size: 2rem;
+    }
+
+    .company-logo-large {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .founders-grid {
+        grid-template-columns: 1fr;
     }
 }

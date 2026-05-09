@@ -270,7 +270,7 @@ function openSubstackPost(url) {
 }
 
 async function loadSubstackPosts() {
-    const rssUrl = "https://canonicalcrypto.substack.com/feed";
+    const rssUrl = "https://canonicalcc.substack.com/feed";
 
     try {
         // Use a public RSS-to-JSON proxy because RSS XML can't be fetched directly

@@ -41,8 +41,8 @@
         'Haptic': 'https://hapticlabs.ai',
         'Robo': 'https://robo.inc',
         'Nirvana AI': 'https://nrvana.ai',
-        'Eastworlds (Virtuals)': 'https://whitepaper.virtuals.io/',
-        'Eastworlds': 'https://whitepaper.virtuals.io/',
+        'Eastworlds (Virtuals)': 'https://eastworlds.io',
+        'Eastworlds': 'https://eastworlds.io',
         // Humanoid robotics
         'Figure AI': 'https://www.figure.ai',
         'Figure': 'https://www.figure.ai',

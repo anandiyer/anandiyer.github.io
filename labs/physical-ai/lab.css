@@ -1195,30 +1195,30 @@
 }
 
 /* ============ COMPANY OUTBOUND LINKS ============
-   Used everywhere a company name renders. Subtle by default (color inherits),
-   underline on hover. Keep these crawler-visible — no nofollow, real anchors. */
+   Used everywhere a company name renders. Real anchors, crawler-visible,
+   no nofollow. Visible underline cue so they read as clickable. */
 .pai-co-link {
-    color: inherit;
+    color: var(--pai-navy);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(30, 58, 138, 0.35);
+    border-bottom: 1px solid rgba(30, 58, 138, 0.55);
     transition: border-bottom-color 0.15s, color 0.15s;
+    font-weight: 500;
 }
 .pai-co-link:hover {
-    border-bottom-color: var(--pai-navy);
-    color: var(--pai-navy);
+    border-bottom-color: var(--pai-accent);
+    color: var(--pai-accent);
 }
 .pai-co-link:focus { outline: 2px solid rgba(249, 115, 22, 0.55); outline-offset: 1px; }
 
-/* On the navy-gradient sections (cards on dark), tweak the underline tone */
-.pai-chasm-name .pai-co-link,
-.pai-flow-target .pai-co-link,
-.pai-card-companies .pai-co-link {
-    border-bottom-color: rgba(30, 58, 138, 0.25);
+/* Portfolio rows in the drawer table — extra-clear link styling on the company name */
+.pai-d-portfolio-row .pai-co-link {
+    color: var(--pai-navy);
+    border-bottom: 1px solid var(--pai-navy);
+    font-weight: 600;
 }
-.pai-chasm-name .pai-co-link:hover,
-.pai-flow-target .pai-co-link:hover,
-.pai-card-companies .pai-co-link:hover {
-    border-bottom-color: var(--pai-navy);
+.pai-d-portfolio-row .pai-co-link:hover {
+    color: var(--pai-accent);
+    border-bottom-color: var(--pai-accent);
 }
 
 /* Investor-view "named portfolio companies" pills become anchor tags */

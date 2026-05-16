@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,30 +36,7 @@
 </head>
 <body>
     <div class="min-h-screen">
-        <!-- Header -->
-        <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
-            <div class="container mx-auto px-8 py-8">
-                <div class="flex items-center justify-between">
-                    <a href="/" class="logo-link">
-                        <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
-                    </a>
-                    <nav class="hidden md:flex items-center space-x-10">
-                        <a href="/#about" class="nav-link">ABOUT</a>
-                        <a href="/#thesis" class="nav-link">THESIS</a>
-                        <a href="/portfolio" class="nav-link nav-link-active">PORTFOLIO</a>
-                        <div class="nav-dropdown">
-                            <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">HACKS</button>
-                            <div class="nav-dropdown-menu" role="menu">
-                                <a href="https://dilutionlab.canonical.cc" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
-                                <a href="https://fundmodeler.canonical.cc" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
-                                <a href="/labs/power-law/" class="nav-dropdown-item" role="menuitem">Power Law Lab</a>
-                            </div>
-                        </div>
-                        <a href="/#team" class="nav-link">TEAM</a>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        {% include header.html active="portfolio" %}
 
         <main>
             <!-- Portfolio Hero -->
@@ -82,24 +61,7 @@
             </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container mx-auto px-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="footer-text">
-                        &copy; 2025 Canonical Crypto. All rights reserved.
-                    </p>
-                    <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                        <a href="https://x.com/canonicalcrypto" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            Canonical on X
-                        </a>
-                        <a href="https://canonicalcc.substack.com" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            Canonical on Substack
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include footer.html %}
     </div>
 
     <script src="js/script.js"></script>

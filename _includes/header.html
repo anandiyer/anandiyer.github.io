@@ -1,0 +1,53 @@
+<header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
+    <div class="container mx-auto px-8 py-8">
+        <div class="flex items-center justify-between">
+            <a href="https://canonical.cc/" class="logo-link">
+                <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
+            </a>
+            <nav class="hidden md:flex items-center space-x-10">
+                <a href="https://canonical.cc/#about" class="nav-link" data-canonical-anchor="about">ABOUT</a>
+                <a href="https://canonical.cc/#thesis" class="nav-link" data-canonical-anchor="thesis">THESIS</a>
+                <a href="https://canonical.cc/portfolio" class="nav-link{% if include.active == 'portfolio' %} nav-link-active{% endif %}">PORTFOLIO</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle{% if include.active == 'hacks' %} nav-link-active{% endif %}" type="button" aria-haspopup="true" aria-expanded="false">HACKS</button>
+                    <div class="nav-dropdown-menu" role="menu">
+                        <a href="https://dilutionlab.canonical.cc" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
+                        <a href="https://fundmodeler.canonical.cc" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
+                        <a href="https://canonical.cc/labs/power-law/" class="nav-dropdown-item" role="menuitem">Power Law Lab</a>
+                    </div>
+                </div>
+                <a href="https://canonical.cc/#team" class="nav-link" data-canonical-anchor="team">TEAM</a>
+            </nav>
+        </div>
+    </div>
+</header>
+<script>
+(function () {
+    if (window.__canonicalHeaderBound) return;
+    window.__canonicalHeaderBound = true;
+
+    function onScroll() {
+        var h = document.getElementById('header');
+        if (!h) return;
+        if (window.scrollY > 50) h.classList.add('scrolled');
+        else h.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[data-canonical-anchor]');
+        if (!a) return;
+        var onHome = (window.location.hostname === 'canonical.cc' || window.location.hostname === 'www.canonical.cc' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+                     && (window.location.pathname === '/' || window.location.pathname === '/index.html');
+        if (!onHome) return;
+        var sectionId = a.getAttribute('data-canonical-anchor');
+        var el = document.getElementById(sectionId);
+        if (!el) return;
+        e.preventDefault();
+        var top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        history.replaceState(null, '', '#' + sectionId);
+    });
+})();
+</script>

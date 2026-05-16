@@ -138,31 +138,6 @@ const portfolioCompanies = [
 ];
 
 
-// Smooth scrolling function
-function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-        const offset = 80; // Header height
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    }
-}
-
-// Header scroll effect
-function handleHeaderScroll() {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-}
-
 // Create portfolio card HTML
 function createPortfolioCard(company) {
     const cleanWebsite = company.website
@@ -338,11 +313,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadSubstackPosts();
 
-    // Add scroll event listener for header
-    window.addEventListener('scroll', handleHeaderScroll);
-
-    // Initial header state
-    handleHeaderScroll();
 });
 
 // Load portfolio grid (for portfolio.html page)
@@ -356,7 +326,6 @@ function loadPortfolioGrid() {
 }
 
 // Make functions globally available
-window.scrollToSection = scrollToSection;
 window.openCompanyWebsite = openCompanyWebsite;
 window.handleImageError = handleImageError;
 window.openSubstackPost = openSubstackPost;

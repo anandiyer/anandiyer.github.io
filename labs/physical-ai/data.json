@@ -1590,6 +1590,14 @@
       },
       "top_companies": [
         {
+          "name": "Eastworlds (Virtuals)",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Feb 2026 launch, 30+ humanoid fleet + 500K+ task dataset + VLA models",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/virtuals.html"
+        },
+        {
           "name": "Robo",
           "geo": "US",
           "valuation_m": null,
@@ -1634,7 +1642,9 @@
         "state-backed China funds"
       ],
       "canonical_pov": "Data collection is the most under-tracked and arguably most important physical AI category. China is building national humanoid data farms (395 humanoids across 9 national training facilities with 300 companies sharing standardized data) while the US relies on private RaaS data plus Scale AI. This is where China's structural advantage is widest and least visible to LPs.",
-      "caveats": []
+      "caveats": [
+        "Eastworlds (Virtuals Protocol's embodied-AI initiative, launched Feb 2026) operates a 30+ humanoid teleop fleet with an Embodied AI Data Lake — a US-side answer to AgiBot Pudong and Beijing X-Humanoid NLJIC. Counted here as a teleop-data play."
+      ]
     },
     {
       "id": "safety-verification",

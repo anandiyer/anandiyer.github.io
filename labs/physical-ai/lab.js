@@ -37,10 +37,12 @@
        (for outbound SEO juice). The CANONICAL pill rendered next to the name
        links to the internal /companies/<slug>.html page for engagement. */
     const COMPANY_URLS = {
-        // Canonical portfolio (3)
+        // Canonical portfolio
         'Haptic': 'https://hapticlabs.ai',
         'Robo': 'https://robo.inc',
         'Nirvana AI': 'https://nrvana.ai',
+        'Eastworlds (Virtuals)': 'https://whitepaper.virtuals.io/',
+        'Eastworlds': 'https://whitepaper.virtuals.io/',
         // Humanoid robotics
         'Figure AI': 'https://www.figure.ai',
         'Figure': 'https://www.figure.ai',

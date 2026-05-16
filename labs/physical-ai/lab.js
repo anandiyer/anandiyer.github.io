@@ -29,6 +29,214 @@
     };
     const BLACKLIST_INVESTORS = new Set(['state-backed china funds']);  // generic placeholder, not a focusable entity
 
+    /* Company → official corporate URL. Source of truth for outbound links.
+       Keep aligned with names in data.json scenes + subsectors[].top_companies.
+       Used by companyLink() everywhere a company is rendered. */
+    const COMPANY_URLS = {
+        // Humanoid robotics
+        'Figure AI': 'https://www.figure.ai',
+        'Figure': 'https://www.figure.ai',
+        'Apptronik': 'https://apptronik.com',
+        'Agility Robotics': 'https://agilityrobotics.com',
+        'Agility': 'https://agilityrobotics.com',
+        '1X Technologies': 'https://www.1x.tech',
+        '1X': 'https://www.1x.tech',
+        '1X NEO': 'https://www.1x.tech',
+        'Unitree': 'https://www.unitree.com',
+        'Unitree (quadruped legacy)': 'https://www.unitree.com',
+        'AgiBot (Zhiyuan)': 'https://www.zhiyuan-robot.com',
+        'AgiBot': 'https://www.zhiyuan-robot.com',
+        'Fourier': 'https://fourier.com',
+        'Neura Robotics': 'https://neura-robotics.com',
+        'Galbot': 'https://www.galbot.com',
+        'Robot Era': 'https://www.robotera.com',
+        'EngineAI': 'https://www.engineai.com',
+        'LimX': 'https://www.limxdynamics.com',
+        'Leju': 'https://www.lejurobot.com',
+        'X Square': 'https://x2.ai',
+        'Spirit AI': 'https://www.spiritai.com',
+
+        // Quadrupeds
+        'Boston Dynamics': 'https://bostondynamics.com',
+        'ANYbotics': 'https://www.anybotics.com',
+        'Deep Robotics': 'https://www.deeprobotics.cn',
+        'Ghost Robotics': 'https://www.ghostrobotics.io',
+
+        // Wheeled / warehouse
+        'Symbotic': 'https://www.symbotic.com',
+        'Locus Robotics': 'https://locusrobotics.com',
+        'Geek+': 'https://www.geekplus.com',
+        'GreyOrange': 'https://www.greyorange.com',
+        'AutoStore': 'https://www.autostoresystem.com',
+        'Exotec': 'https://www.exotec.com',
+
+        // Aerial / drones
+        'Skydio': 'https://www.skydio.com',
+        'Zipline': 'https://www.flyzipline.com',
+        'Brinc Drones': 'https://www.brincdrones.com',
+        'Brinc': 'https://www.brincdrones.com',
+        'Wingtra': 'https://wingtra.com',
+        'Quantum Systems': 'https://www.quantum-systems.com',
+
+        // Marine / underwater
+        'Saronic': 'https://www.saronic.com',
+        'Saildrone': 'https://www.saildrone.com',
+        'Anduril Dive-LD/XL': 'https://www.anduril.com',
+        'Anduril Dive': 'https://www.anduril.com',
+        'HavocAI': 'https://www.havocai.com',
+        'Vatn Systems': 'https://www.vatnsystems.com',
+        'Vatn': 'https://www.vatnsystems.com',
+
+        // Surgical
+        'CMR Surgical': 'https://cmrsurgical.com',
+        'Distalmotion': 'https://www.distalmotion.com',
+        'Moon Surgical': 'https://www.moonsurgical.com',
+        'Surgerii': 'https://www.surgerii.com',
+        'MMI': 'https://www.mmimicro.com',
+
+        // Exoskeletons / wearable
+        'German Bionic': 'https://www.germanbionic.com',
+        'Wandercraft': 'https://www.wandercraft.eu',
+        'Ekso Bionics': 'https://www.eksobionics.com',
+        'Roam Robotics': 'https://www.roamrobotics.com',
+
+        // Industrial / manufacturing
+        'Mind Robotics': 'https://www.mindrobotics.com',
+        'Hadrian': 'https://www.hadrian.co',
+        'FieldAI': 'https://fieldai.com',
+        'VulcanForms': 'https://vulcanforms.com',
+        'Path Robotics': 'https://www.path-robotics.com',
+        'Covariant': 'https://covariant.ai',
+        'Covariant (Amazon acquihire)': 'https://covariant.ai',
+
+        // Agricultural
+        'Monarch Tractor': 'https://www.monarchtractor.com',
+        'Carbon Robotics': 'https://carbonrobotics.com',
+        'Inari': 'https://inari.com',
+        'Burro': 'https://burro.ai',
+        'Ecorobotix': 'https://ecorobotix.com',
+
+        // Construction
+        'Bedrock Robotics': 'https://bedrockrobotics.com',
+        'Dusty Robotics': 'https://www.dustyrobotics.com',
+        'Canvas': 'https://canvas.build',
+        'Built Robotics': 'https://www.builtrobotics.com',
+
+        // Defense / dual-use
+        'Anduril': 'https://www.anduril.com',
+        'Shield AI': 'https://shield.ai',
+        'Helsing': 'https://helsing.ai',
+        'CHAOS Industries': 'https://chaos.com',
+        'Onebrief': 'https://www.onebrief.com',
+        'Castelion': 'https://www.castelion.com',
+        'Hermeus': 'https://www.hermeus.com',
+        'True Anomaly': 'https://www.trueanomaly.space',
+        'Forterra': 'https://forterrarobotics.com',
+
+        // Healthcare (non-surgical)
+        'Diligent Robotics (Moxi)': 'https://www.diligentrobots.com',
+        'Diligent Robotics': 'https://www.diligentrobots.com',
+        'Aethon (TUG)': 'https://aethon.com',
+        'Cyberdyne': 'https://www.cyberdyne.jp',
+        'Omnicell (pharmacy)': 'https://www.omnicell.com',
+        'Omnicell': 'https://www.omnicell.com',
+
+        // Consumer
+        'iRobot': 'https://www.irobot.com',
+        'Roborock': 'https://us.roborock.com',
+        'Ecovacs': 'https://www.ecovacs.com',
+        'Matic Robotics': 'https://maticrobots.com',
+
+        // Mobility / AV
+        'Waymo': 'https://waymo.com',
+        'Wayve': 'https://wayve.ai',
+        'Pony.ai': 'https://www.pony.ai',
+        'WeRide': 'https://www.weride.ai',
+        'Applied Intuition': 'https://www.appliedintuition.com',
+        'Aurora Innovation': 'https://aurora.tech',
+        'Aurora': 'https://aurora.tech',
+        'Nuro': 'https://www.nuro.ai',
+        'Waabi': 'https://waabi.ai',
+
+        // Hardware / actuation
+        'Harmonic Drive Systems': 'https://www.hds.co.jp',
+        'Nabtesco': 'https://www.nabtesco.com',
+        'Schaeffler': 'https://www.schaeffler.com',
+
+        // Sensors / perception
+        'Hesai': 'https://www.hesaitech.com',
+        'RoboSense': 'https://www.robosense.ai',
+        'Ouster': 'https://ouster.com',
+        'Ouster (post-Stereolabs)': 'https://ouster.com',
+        'Luminar': 'https://www.luminartech.com',
+        'Prophesee': 'https://www.prophesee.ai',
+
+        // Edge silicon
+        'Hailo': 'https://hailo.ai',
+        'Tenstorrent': 'https://tenstorrent.com',
+        'Axelera AI': 'https://www.axelera.ai',
+        'Nvidia Jetson Thor': 'https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor',
+        'Rebellions': 'https://rebellions.ai',
+
+        // Foundation models for robotics
+        'Skild AI': 'https://www.skild.ai',
+        'Skild': 'https://www.skild.ai',
+        'Physical Intelligence': 'https://www.physicalintelligence.company',
+        'Project Prometheus': 'https://www.physicalintelligence.company',
+        'World Labs (Fei-Fei Li)': 'https://www.worldlabs.ai',
+        'World Labs': 'https://www.worldlabs.ai',
+        'Dyna Robotics': 'https://www.dyna.co',
+
+        // Simulation / synthetic data
+        'Foretellix': 'https://www.foretellix.com',
+        'Nvidia Omniverse + Cosmos': 'https://www.nvidia.com/en-us/omniverse',
+        'Parallel Domain': 'https://paralleldomain.com',
+        'Cognata': 'https://www.cognata.com',
+
+        // Fleet ops / middleware
+        'Foxglove': 'https://foxglove.dev',
+        'Formant': 'https://formant.io',
+        'Intrinsic': 'https://www.intrinsic.ai',
+        'Roboflow': 'https://roboflow.com',
+
+        // Teleop / data collection
+        'Dexterity': 'https://dexterity.ai',
+        'Reflex Robotics': 'https://reflexrobotics.com',
+        'Sanctuary AI': 'https://www.sanctuary.ai',
+
+        // Safety / verification
+        'Edge Case Research': 'https://www.edge-case-research.com',
+        'Inverted AI': 'https://www.inverted.ai',
+        'Monolith AI': 'https://www.monolithai.com'
+    };
+
+    /* Returns an anchor element for a company name if a URL is mapped, else a plain text node.
+       Uses target=_blank with rel=noopener; SEO-friendly (no nofollow) so we pass juice. */
+    function companyLink(name, opts) {
+        const url = COMPANY_URLS[name];
+        if (!url) return document.createTextNode(name);
+        const a = el('a', {
+            href: url,
+            target: '_blank',
+            rel: 'noopener',
+            class: 'pai-co-link' + (opts && opts.className ? ' ' + opts.className : '')
+        }, name);
+        // Prevent click from bubbling to a card click handler when the link is inside a clickable card
+        a.addEventListener('click', (e) => e.stopPropagation());
+        return a;
+    }
+
+    /* Build a "Top: a · b · c" line as a fragment with company links where known. */
+    function companyListInline(names, separator) {
+        const sep = separator || ' · ';
+        const frag = document.createDocumentFragment();
+        names.forEach((name, i) => {
+            if (i > 0) frag.appendChild(document.createTextNode(sep));
+            frag.appendChild(companyLink(name));
+        });
+        return frag;
+    }
+
     /* Static explanations for filter chips, TLDR stats, and key terms.
        Keep terse; the goal is to remove ambiguity, not to write paragraphs. */
     const EXPLAIN = {
@@ -197,7 +405,9 @@
         const row = el('div', { class: 'pai-chasm-row' + (isTail ? ' pai-tail' : '') });
         if (b.flag) row.dataset.flag = b.flag;
         const name = el('span', { class: 'pai-chasm-name' });
-        name.appendChild(document.createTextNode(b.name));
+        // Wrap top-4 humanoid headline names in outbound links. Tail bars are sub-sector
+        // category names ("Surgical robotics") — those stay as plain text.
+        name.appendChild(isTail ? document.createTextNode(b.name) : companyLink(b.name));
         if (b.geo || b.round) {
             const sub = el('span', { class: 'pai-chasm-sub' });
             sub.textContent = [b.geo, b.round].filter(Boolean).join(' · ');
@@ -324,9 +534,18 @@
             const labelRight = cx < PAD_L + plotW - 110;
             const lx = labelRight ? cx + 12 : cx - 12;
             const anchor = labelRight ? 'start' : 'end';
-            root.appendChild(svg('text', {
+            const companyUrl = COMPANY_URLS[p.company];
+            const labelText = svg('text', {
                 x: lx, y: cy - 4, class: 'pai-point-label', 'text-anchor': anchor
-            }, p.company));
+            }, p.company);
+            if (companyUrl) {
+                const a = svg('a', { href: companyUrl, target: '_blank', rel: 'noopener', class: 'pai-svg-co-link' });
+                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', companyUrl);
+                a.appendChild(labelText);
+                root.appendChild(a);
+            } else {
+                root.appendChild(labelText);
+            }
             root.appendChild(svg('text', {
                 x: lx, y: cy + 9, class: 'pai-point-sub', 'text-anchor': anchor
             }, p.multiple + '×'));
@@ -339,9 +558,11 @@
         const sorted = [...points].sort((a, b) => b.multiple - a.multiple);
         sorted.forEach(p => {
             const cat = p.category === 'justified-by-revenue' ? 'justified' : p.category;
+            const nameEl = el('div', { class: 'pai-vf-name' });
+            nameEl.appendChild(companyLink(p.company));
             const row = el('div', { class: 'pai-vf-row' },
                 el('div', null,
-                    el('div', { class: 'pai-vf-name' }, p.company),
+                    nameEl,
                     el('div', { class: 'pai-vf-meta' }, fmtB(p.prev_val_m) + ' → ' + fmtB(p.new_val_m))
                 ),
                 el('div', { class: 'pai-vf-meta' }, p.months_between + 'mo'),
@@ -389,10 +610,18 @@
             }
         });
         const actorText = investors.join(' + ');
+        // Flow targets are company names — wrap in outbound link when known.
+        // Some entries have multiple companies separated by " · " (e.g. "EngineAI · LimX").
+        const targetEl = el('span', { class: 'pai-flow-target' });
+        const parts = company.split(' · ');
+        parts.forEach((p, i) => {
+            if (i > 0) targetEl.appendChild(document.createTextNode(' · '));
+            targetEl.appendChild(companyLink(p.trim()));
+        });
         const row = el('div', { class: 'pai-flow-row' },
             actor,
             el('span', { class: 'pai-flow-arrow' }, '→'),
-            el('span', { class: 'pai-flow-target' }, company)
+            targetEl
         );
         row.addEventListener('mousemove', (e) => {
             showTip(e, '<strong>' + company + '</strong>Backed by: ' + actorText +
@@ -483,10 +712,20 @@
             latestDot.addEventListener('mouseleave', hideTip);
             root.appendChild(latestDot);
 
-            // name label (just past first-cross dot)
-            root.appendChild(svg('text', {
+            // name label (just past first-cross dot) — wrap in SVG anchor for SEO crawler + click
+            const nameLabel = svg('text', {
                 x: xStart + 14, y: y - 5, class: 'pai-d-name'
-            }, u.name));
+            }, u.name);
+            const url = COMPANY_URLS[u.name];
+            if (url) {
+                const a = svg('a', { target: '_blank', rel: 'noopener' });
+                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', url);
+                a.setAttribute('href', url);
+                a.appendChild(nameLabel);
+                root.appendChild(a);
+            } else {
+                root.appendChild(nameLabel);
+            }
 
             // valuation label (right of latest dot)
             root.appendChild(svg('text', {
@@ -583,8 +822,12 @@
             buildStat('Deals', String(s.deals_count))
         );
 
-        const topNames = s.top_companies.slice(0, 5).map(c => c.name).join(' · ');
-        const companies = el('div', { class: 'pai-card-companies', html: 'Top: <em>' + topNames + '</em>' });
+        const topNames = s.top_companies.slice(0, 5).map(c => c.name);
+        const companies = el('div', { class: 'pai-card-companies' });
+        companies.appendChild(document.createTextNode('Top: '));
+        const emWrap = el('em');
+        emWrap.appendChild(companyListInline(topNames));
+        companies.appendChild(emWrap);
 
         const card = el('div', { class: 'pai-card' }, top, el('h3', null, s.name), stats, companies);
         card.dataset.id = s.id;
@@ -795,7 +1038,7 @@
         let anyLive = false;
         s.top_companies.forEach(c => {
             const nameCell = el('td');
-            nameCell.appendChild(document.createTextNode(c.name));
+            nameCell.appendChild(companyLink(c.name));
             if (c.flag) {
                 const flagEl = el('span', { class: 'pai-d-flag' + (c.flag === 'public-market-cap' ? ' public' : '') }, c.flag.replace(/-/g, ' '));
                 nameCell.appendChild(flagEl);
@@ -986,7 +1229,15 @@
             );
             const list = el('div', { class: 'pai-d-investors' });
             Array.from(entry.companies).forEach(c => {
-                list.appendChild(el('span', { class: 'pai-d-investor' }, c));
+                const url = COMPANY_URLS[c];
+                if (url) {
+                    list.appendChild(el('a', {
+                        class: 'pai-d-investor pai-d-investor-co',
+                        href: url, target: '_blank', rel: 'noopener'
+                    }, c));
+                } else {
+                    list.appendChild(el('span', { class: 'pai-d-investor' }, c));
+                }
             });
             compSec.appendChild(list);
             drawerInner.appendChild(compSec);

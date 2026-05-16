@@ -1126,6 +1126,52 @@
 }
 .pai-d-table .pai-d-flag.public { background: rgba(30, 58, 138, 0.1); color: var(--pai-navy); }
 
+/* ============ COMPANY OUTBOUND LINKS ============
+   Used everywhere a company name renders. Subtle by default (color inherits),
+   underline on hover. Keep these crawler-visible — no nofollow, real anchors. */
+.pai-co-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(30, 58, 138, 0.35);
+    transition: border-bottom-color 0.15s, color 0.15s;
+}
+.pai-co-link:hover {
+    border-bottom-color: var(--pai-navy);
+    color: var(--pai-navy);
+}
+.pai-co-link:focus { outline: 2px solid rgba(249, 115, 22, 0.55); outline-offset: 1px; }
+
+/* On the navy-gradient sections (cards on dark), tweak the underline tone */
+.pai-chasm-name .pai-co-link,
+.pai-flow-target .pai-co-link,
+.pai-card-companies .pai-co-link {
+    border-bottom-color: rgba(30, 58, 138, 0.25);
+}
+.pai-chasm-name .pai-co-link:hover,
+.pai-flow-target .pai-co-link:hover,
+.pai-card-companies .pai-co-link:hover {
+    border-bottom-color: var(--pai-navy);
+}
+
+/* Investor-view "named portfolio companies" pills become anchor tags */
+.pai-d-investor-co {
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+}
+.pai-d-investor-co:hover {
+    background: rgba(30, 58, 138, 0.08);
+    color: var(--pai-navy);
+}
+
+/* SVG anchors on velocity scatter + defense timeline labels — keep crawler-visible.
+   Cursor pointer on the underlying text, hover state via filter for the dot/label color. */
+.pai-svg-co-link, .pai-defense-chart a, .pai-velocity a { cursor: pointer; }
+.pai-defense-chart a text:hover, .pai-velocity a text:hover {
+    fill: var(--pai-accent);
+    text-decoration: underline;
+}
+
 /* Live quote dot + price line */
 .pai-live-dot {
     display: inline-block;

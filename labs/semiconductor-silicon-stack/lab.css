@@ -390,7 +390,20 @@
     color: var(--sem-ink-soft);
     background: rgba(15, 23, 42, 0.02);
     letter-spacing: 0.02em;
+    transition: background 0.15s, border-color 0.15s;
 }
+.sem-pill[title] { cursor: help; }
+.sem-pill[title]:hover { background: rgba(15, 23, 42, 0.06); border-color: var(--sem-ink-faint); }
+.sem-layer-col.challenger .sem-pill[title]:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: var(--sem-accent);
+}
+strong[title] {
+    cursor: help;
+    text-decoration: underline dotted rgba(30, 58, 138, 0.4);
+    text-underline-offset: 3px;
+}
+strong[title]:hover { text-decoration-color: var(--sem-accent); }
 .sem-layer-col.challenger .sem-pill {
     border-color: rgba(249, 115, 22, 0.4);
     background: rgba(249, 115, 22, 0.06);

@@ -1126,6 +1126,172 @@
 }
 .pai-d-table .pai-d-flag.public { background: rgba(30, 58, 138, 0.1); color: var(--pai-navy); }
 
+/* ============ CANONICAL PORTFOLIO ============ */
+/* Drawer table — orange pill linked to internal portfolio page */
+.pai-d-flag-canonical {
+    background: var(--pai-accent) !important;
+    color: #ffffff !important;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter 0.15s, transform 0.15s;
+    letter-spacing: 0.06em !important;
+    font-weight: 600 !important;
+}
+.pai-d-flag-canonical:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.pai-d-flag-canonical:focus { outline: 2px solid rgba(255, 255, 255, 0.6); outline-offset: 2px; }
+
+/* Subtle row highlight in the drawer table for Canonical portfolio rows */
+.pai-d-portfolio-row {
+    background: rgba(249, 115, 22, 0.04);
+    border-left: 2px solid var(--pai-accent);
+    padding-left: 0.5rem !important;
+}
+
+/* Card preview — star prefix on portfolio company names in "Top: ..." line */
+.pai-card-portfolio-name {
+    display: inline;
+    color: var(--pai-accent);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.pai-card-portfolio-name .pai-co-link {
+    color: var(--pai-accent);
+    border-bottom-color: rgba(249, 115, 22, 0.4);
+}
+.pai-card-portfolio-name .pai-co-link:hover {
+    color: var(--pai-accent);
+    border-bottom-color: var(--pai-accent);
+}
+
+/* Sector card — small corner badge if the card holds a Canonical portfolio company */
+.pai-card { position: relative; }
+.pai-card-portfolio-badge {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--pai-accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
+    cursor: help;
+}
+.pai-card-has-portfolio {
+    border-color: rgba(249, 115, 22, 0.25);
+}
+.pai-card-has-portfolio:hover {
+    border-color: var(--pai-accent);
+}
+/* Push the layer pill left so it doesn't collide with the corner badge */
+.pai-card-has-portfolio .pai-card-layer {
+    margin-right: 1.6rem;
+}
+
+/* ============ COMPANY OUTBOUND LINKS ============
+   Used everywhere a company name renders. Subtle by default (color inherits),
+   underline on hover. Keep these crawler-visible — no nofollow, real anchors. */
+.pai-co-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(30, 58, 138, 0.35);
+    transition: border-bottom-color 0.15s, color 0.15s;
+}
+.pai-co-link:hover {
+    border-bottom-color: var(--pai-navy);
+    color: var(--pai-navy);
+}
+.pai-co-link:focus { outline: 2px solid rgba(249, 115, 22, 0.55); outline-offset: 1px; }
+
+/* On the navy-gradient sections (cards on dark), tweak the underline tone */
+.pai-chasm-name .pai-co-link,
+.pai-flow-target .pai-co-link,
+.pai-card-companies .pai-co-link {
+    border-bottom-color: rgba(30, 58, 138, 0.25);
+}
+.pai-chasm-name .pai-co-link:hover,
+.pai-flow-target .pai-co-link:hover,
+.pai-card-companies .pai-co-link:hover {
+    border-bottom-color: var(--pai-navy);
+}
+
+/* Investor-view "named portfolio companies" pills become anchor tags */
+.pai-d-investor-co {
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+}
+.pai-d-investor-co:hover {
+    background: rgba(30, 58, 138, 0.08);
+    color: var(--pai-navy);
+}
+
+/* SVG anchors on velocity scatter + defense timeline labels — keep crawler-visible.
+   Cursor pointer on the underlying text, hover state via filter for the dot/label color. */
+.pai-svg-co-link, .pai-defense-chart a, .pai-velocity a { cursor: pointer; }
+.pai-defense-chart a text:hover, .pai-velocity a text:hover {
+    fill: var(--pai-accent);
+    text-decoration: underline;
+}
+
+/* Live quote dot + price line */
+.pai-live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pai-live-pulse 2s infinite;
+    cursor: help;
+}
+@keyframes pai-live-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.pai-live-meta {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: baseline;
+    margin-top: 0.25rem;
+    margin-left: 0;
+    padding-top: 0.2rem;
+    font-family: var(--pai-mono);
+    font-size: 0.72rem;
+    color: var(--pai-ink-muted);
+    flex-wrap: wrap;
+}
+.pai-live-ticker {
+    font-weight: 600;
+    color: #10b981;
+    letter-spacing: 0.04em;
+}
+.pai-live-price { color: var(--pai-ink); font-weight: 500; }
+.pai-live-delta { font-weight: 500; }
+.pai-live-up { color: #047857; }
+.pai-live-down { color: #b91c1c; }
+
+.pai-live-footnote {
+    font-family: var(--pai-mono);
+    font-size: 0.68rem;
+    color: var(--pai-ink-faint);
+    line-height: 1.45;
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed var(--pai-rule);
+    letter-spacing: 0.02em;
+}
+.pai-live-footnote-stale { color: var(--pai-ink-muted); }
+
 .pai-d-investors { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .pai-d-investor {
     font-family: var(--pai-mono);
@@ -1135,6 +1301,87 @@
     padding: 0.3rem 0.65rem;
     border-radius: 100px;
 }
+.pai-d-investor-btn {
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: var(--pai-mono);
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.pai-d-investor-btn:hover {
+    background: rgba(30, 58, 138, 0.08);
+    border-color: rgba(30, 58, 138, 0.3);
+    color: var(--pai-navy);
+}
+.pai-d-investor-btn:focus { outline: 2px solid rgba(249, 115, 22, 0.55); outline-offset: 1px; }
+.pai-d-section-note {
+    font-size: 0.78rem;
+    color: var(--pai-ink-faint);
+    margin-bottom: 0.7rem;
+    line-height: 1.45;
+}
+.pai-investor-label { background: rgba(249, 115, 22, 0.12); color: var(--pai-accent) !important; }
+.pai-investor-ann { color: var(--pai-accent) !important; font-family: var(--pai-mono); font-size: 0.75rem; }
+.pai-investor-layers { font-size: 0.85rem; letter-spacing: 0.05em; }
+.pai-investor-sector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 0.6rem;
+}
+.pai-investor-sector-card {
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px solid var(--pai-rule);
+    border-radius: 0.5rem;
+    padding: 0.85rem 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.pai-investor-sector-card:hover {
+    background: rgba(30, 58, 138, 0.05);
+    border-color: rgba(30, 58, 138, 0.3);
+    transform: translateY(-1px);
+}
+.pai-investor-sector-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.45rem;
+}
+.pai-investor-sector-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--pai-ink);
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+}
+.pai-investor-sector-stat {
+    font-family: var(--pai-mono);
+    font-size: 0.72rem;
+    color: var(--pai-ink-muted);
+}
+
+/* Make flow row investor names look clickable */
+.pai-flow-actor-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--pai-navy);
+    font-weight: 500;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    text-underline-offset: 3px;
+    transition: color 0.15s, text-decoration-color 0.15s;
+    text-decoration: underline dotted rgba(30, 58, 138, 0.35);
+}
+.pai-flow-china .pai-flow-actor-link {
+    color: var(--pai-accent);
+    text-decoration-color: rgba(249, 115, 22, 0.4);
+}
+.pai-flow-actor-link:hover {
+    text-decoration: underline solid currentColor;
+}
+.pai-flow-actor-link:focus { outline: 2px solid rgba(249, 115, 22, 0.55); outline-offset: 1px; }
 
 .pai-d-caveats {
     list-style: none;

@@ -3,95 +3,352 @@
     "version": "0.1",
     "updated": "2026-05-15",
     "window": "Q1 2023 - Q1 2026",
-    "sources": ["Harmonic", "Pitchbook Premium", "Crunchbase", "Sacra", "FT", "Reuters", "Bloomberg", "SEC/HKEX/SSE filings", "company press releases", "36Kr", "Caixin"],
+    "sources": [
+      "Harmonic",
+      "Pitchbook Premium",
+      "Crunchbase",
+      "Sacra",
+      "FT",
+      "Reuters",
+      "Bloomberg",
+      "SEC/HKEX/SSE filings",
+      "company press releases",
+      "36Kr",
+      "Caixin"
+    ],
     "notes": "Public market caps are point-in-time snapshots and stale within weeks. Private valuations stick to last-round post-money. Rounds 'in talks' are reported but not closed; flagged explicitly."
   },
-
   "scenes": {
     "valuation_chasm": {
-      "headline": "Four humanoid companies have raised more in 18 months than six entire sub-sectors combined.",
+      "headline": "4 humanoid companies have raised more in 18 months than 6 entire sub-sectors combined.",
       "lede": "Figure, Apptronik, Agility, and 1X have together captured more venture and strategic capital in 2024-25 than the entire surgical robotics, agricultural robotics, construction robotics, consumer robotics, exoskeleton, and quadruped industries combined. The chasm exists because humanoids are pricing in 2030 commercial deployment. The adjacent sectors are pricing in 2026 unit economics.",
       "pov": "The most under-appreciated opportunity in physical AI is surgical robotics. Intuitive's monopoly cracked for the first time in 25 years with Medtronic Hugo and CMR Versius Plus FDA clearance, yet VC dollars are 1/20th of humanoids despite 10x the proven unit economics. The chasm goes both ways.",
       "headline_bars": [
-        {"name": "Figure AI", "geo": "US", "valuation_m": 39000, "round": "Sep 2025 Series C"},
-        {"name": "1X Technologies", "geo": "NO/US", "valuation_m": 10000, "round": "target, in talks", "flag": "in-talks"},
-        {"name": "Apptronik", "geo": "US", "valuation_m": 5400, "round": "Series A ext Feb 2026", "flag": "estimated"},
-        {"name": "Agility Robotics", "geo": "US", "valuation_m": 2100, "round": "Series C 2025"}
+        {
+          "name": "Figure AI",
+          "geo": "US",
+          "valuation_m": 39000,
+          "round": "Sep 2025 Series C"
+        },
+        {
+          "name": "1X Technologies",
+          "geo": "NO/US",
+          "valuation_m": 10000,
+          "round": "target, in talks",
+          "flag": "in-talks"
+        },
+        {
+          "name": "Apptronik",
+          "geo": "US",
+          "valuation_m": 5400,
+          "round": "Series A ext Feb 2026",
+          "flag": "estimated"
+        },
+        {
+          "name": "Agility Robotics",
+          "geo": "US",
+          "valuation_m": 2100,
+          "round": "Series C 2025"
+        }
       ],
       "tail_bars": [
-        {"name": "Surgical robotics", "value_m": 1500, "note": "global VC, in window"},
-        {"name": "Construction robotics", "value_m": 1400, "note": "global VC, in window"},
-        {"name": "Agricultural robotics", "value_m": 500, "note": "global VC, in window"},
-        {"name": "Quadrupeds", "value_m": 200, "note": "excl. Unitree IPO"},
-        {"name": "Exoskeletons", "value_m": 100, "note": "global VC, in window"},
-        {"name": "Consumer robotics", "value_m": 50, "note": "post iRobot Ch.11"}
+        {
+          "name": "Surgical robotics",
+          "value_m": 1500,
+          "note": "global VC, in window"
+        },
+        {
+          "name": "Construction robotics",
+          "value_m": 1400,
+          "note": "global VC, in window"
+        },
+        {
+          "name": "Agricultural robotics",
+          "value_m": 500,
+          "note": "global VC, in window"
+        },
+        {
+          "name": "Quadrupeds",
+          "value_m": 200,
+          "note": "excl. Unitree IPO"
+        },
+        {
+          "name": "Exoskeletons",
+          "value_m": 100,
+          "note": "global VC, in window"
+        },
+        {
+          "name": "Consumer robotics",
+          "value_m": 50,
+          "note": "post iRobot Ch.11"
+        }
       ],
       "summary_multiple": "15.6x",
-      "summary_label": "Top 4 humanoid valuations to six-sector sum"
+      "summary_label": "Top 4 humanoid valuations to 6-sector sum"
     },
-
     "round_velocity": {
       "headline": "The fastest markups in physical AI are not in humanoids.",
-      "lede": "Bedrock Robotics, a construction robotics startup from ex-Waymo engineers, went from $80M cumulative to a $1.75B Series B in seven months. That's a 21.9x markup with revenue from production deployments still measured in the millions. Figure's 15x over 19 months is the headline, but Bedrock's velocity is the leading indicator: when a single category gets a Waymo-pedigree mega-round, it pulls the entire stack with it.",
+      "lede": "Bedrock Robotics, a construction robotics startup from ex-Waymo engineers, went from $80M cumulative to a $1.75B Series B in 7 months. That's a 21.9x markup with revenue from production deployments still measured in the millions. Figure's 15x over 19 months is the headline, but Bedrock's velocity is the leading indicator: when a single category gets a Waymo-pedigree mega-round, it pulls the entire stack with it.",
       "pov": "Round velocity above 2x with less than 12 months between rounds is the cleanest bubble signal in physical AI. Most of the top-left quadrant won't have proportional revenue scaling. The exception is Anduril, which is why it's the only defense unicorn with a revenue base that justifies the multiple.",
       "data_points": [
-        {"company": "Bedrock Robotics", "months_between": 7, "multiple": 21.9, "prev_val_m": 80, "new_val_m": 1750, "category": "bubble", "sub_sector": "construction-robotics"},
-        {"company": "Figure AI", "months_between": 19, "multiple": 15.0, "prev_val_m": 2600, "new_val_m": 39000, "category": "bubble", "sub_sector": "humanoid-robotics"},
-        {"company": "Apptronik", "months_between": 11, "multiple": 3.3, "prev_val_m": 1600, "new_val_m": 5400, "category": "elevated", "sub_sector": "humanoid-robotics"},
-        {"company": "Skild AI", "months_between": 7, "multiple": 3.1, "prev_val_m": 4500, "new_val_m": 14000, "category": "elevated", "sub_sector": "foundation-models-for-robotics"},
-        {"company": "Shield AI", "months_between": 12, "multiple": 2.4, "prev_val_m": 5300, "new_val_m": 12700, "category": "elevated", "sub_sector": "defense-dual-use"},
-        {"company": "Saronic", "months_between": 13, "multiple": 2.3, "prev_val_m": 4000, "new_val_m": 9250, "category": "elevated", "sub_sector": "marine-underwater-robotics"},
-        {"company": "Anduril", "months_between": 11, "multiple": 2.0, "prev_val_m": 30500, "new_val_m": 61000, "category": "justified-by-revenue", "sub_sector": "defense-dual-use"},
-        {"company": "Mind Robotics", "months_between": 2, "multiple": 1.7, "prev_val_m": 2000, "new_val_m": 3400, "category": "elevated", "sub_sector": "industrial-automation"}
+        {
+          "company": "Bedrock Robotics",
+          "months_between": 7,
+          "multiple": 21.9,
+          "prev_val_m": 80,
+          "new_val_m": 1750,
+          "category": "bubble",
+          "sub_sector": "construction-robotics"
+        },
+        {
+          "company": "Figure AI",
+          "months_between": 19,
+          "multiple": 15,
+          "prev_val_m": 2600,
+          "new_val_m": 39000,
+          "category": "bubble",
+          "sub_sector": "humanoid-robotics"
+        },
+        {
+          "company": "Apptronik",
+          "months_between": 11,
+          "multiple": 3.3,
+          "prev_val_m": 1600,
+          "new_val_m": 5400,
+          "category": "elevated",
+          "sub_sector": "humanoid-robotics"
+        },
+        {
+          "company": "Skild AI",
+          "months_between": 7,
+          "multiple": 3.1,
+          "prev_val_m": 4500,
+          "new_val_m": 14000,
+          "category": "elevated",
+          "sub_sector": "foundation-models-for-robotics"
+        },
+        {
+          "company": "Shield AI",
+          "months_between": 12,
+          "multiple": 2.4,
+          "prev_val_m": 5300,
+          "new_val_m": 12700,
+          "category": "elevated",
+          "sub_sector": "defense-dual-use"
+        },
+        {
+          "company": "Saronic",
+          "months_between": 13,
+          "multiple": 2.3,
+          "prev_val_m": 4000,
+          "new_val_m": 9250,
+          "category": "elevated",
+          "sub_sector": "marine-underwater-robotics"
+        },
+        {
+          "company": "Anduril",
+          "months_between": 11,
+          "multiple": 2,
+          "prev_val_m": 30500,
+          "new_val_m": 61000,
+          "category": "justified-by-revenue",
+          "sub_sector": "defense-dual-use"
+        },
+        {
+          "company": "Mind Robotics",
+          "months_between": 2,
+          "multiple": 1.7,
+          "prev_val_m": 2000,
+          "new_val_m": 3400,
+          "category": "elevated",
+          "sub_sector": "industrial-automation"
+        }
       ]
     },
-
     "us_china_flows": {
       "headline": "US kingmakers underwrite the model. China underwrites the factory.",
-      "lede": "The US humanoid ecosystem is funded by cloud strategics with RaaS exit paths and 10x revenue multiples. The Chinese ecosystem is funded by tech giants, state guidance funds, and EV-OEM strategic capital, and exits to public markets. Two paths to the same physical world, two completely different unit economics.",
+      "lede": "The US humanoid ecosystem is funded by cloud strategics with RaaS exit paths and 10x revenue multiples. The Chinese ecosystem is funded by tech giants, state guidance funds, and EV-OEM strategic capital, and exits to public markets. 2 paths to the same physical world, 2 completely different unit economics.",
       "caveat": "China shipped ~90% of humanoid units in 2025 but captured ~30% of dollars. And ~75% of those units went to universities and research institutions. Unitree's own IPO prospectus discloses >50% of revenue from the scientific research and education sector. The volume narrative needs a quality flag.",
       "pov": "Unit volume in China is not yet commercial deployment. The structural advantage is real but the customer base is narrow. Watch for the first Chinese humanoid manufacturer to disclose >50% commercial revenue. That's the inflection.",
       "us_flows": [
-        {"investors": ["OpenAI"], "company": "1X"},
-        {"investors": ["Microsoft", "Amazon", "OpenAI"], "company": "Figure"},
-        {"investors": ["Google", "Mercedes"], "company": "Apptronik"},
-        {"investors": ["Amazon", "SoftBank", "Nvidia"], "company": "Agility"},
-        {"investors": ["SoftBank", "Nvidia", "Bezos Expeditions"], "company": "Skild"},
-        {"investors": ["CapitalG", "Lux", "Bezos Expeditions"], "company": "Physical Intelligence"},
-        {"investors": ["JPMorgan", "BlackRock", "Bezos"], "company": "Project Prometheus"}
+        {
+          "investors": [
+            "OpenAI"
+          ],
+          "company": "1X"
+        },
+        {
+          "investors": [
+            "Microsoft",
+            "Amazon",
+            "OpenAI"
+          ],
+          "company": "Figure"
+        },
+        {
+          "investors": [
+            "Google",
+            "Mercedes"
+          ],
+          "company": "Apptronik"
+        },
+        {
+          "investors": [
+            "Amazon",
+            "SoftBank",
+            "Nvidia"
+          ],
+          "company": "Agility"
+        },
+        {
+          "investors": [
+            "SoftBank",
+            "Nvidia",
+            "Bezos Expeditions"
+          ],
+          "company": "Skild"
+        },
+        {
+          "investors": [
+            "CapitalG",
+            "Lux",
+            "Bezos Expeditions"
+          ],
+          "company": "Physical Intelligence"
+        },
+        {
+          "investors": [
+            "JPMorgan",
+            "BlackRock",
+            "Bezos"
+          ],
+          "company": "Project Prometheus"
+        }
       ],
       "us_exit_path": "private mega-rounds, $1K/mo RaaS",
       "china_flows": [
-        {"investors": ["Alibaba", "Geely"], "company": "Unitree"},
-        {"investors": ["Tencent", "JD.com"], "company": "AgiBot"},
-        {"investors": ["HongShan", "Beijing Robot Fund"], "company": "EngineAI, LimX"},
-        {"investors": ["HK govt", "Geely", "BAIC"], "company": "Galbot, Robot Era"},
-        {"investors": ["CITIC Goldstone"], "company": "Leju"},
-        {"investors": ["Meituan", "Alibaba"], "company": "X Square, Spirit AI"}
+        {
+          "investors": [
+            "Alibaba",
+            "Geely"
+          ],
+          "company": "Unitree"
+        },
+        {
+          "investors": [
+            "Tencent",
+            "JD.com"
+          ],
+          "company": "AgiBot"
+        },
+        {
+          "investors": [
+            "HongShan",
+            "Beijing Robot Fund"
+          ],
+          "company": "EngineAI, LimX"
+        },
+        {
+          "investors": [
+            "HK govt",
+            "Geely",
+            "BAIC"
+          ],
+          "company": "Galbot, Robot Era"
+        },
+        {
+          "investors": [
+            "CITIC Goldstone"
+          ],
+          "company": "Leju"
+        },
+        {
+          "investors": [
+            "Meituan",
+            "Alibaba"
+          ],
+          "company": "X Square, Spirit AI"
+        }
       ],
       "china_exit_path": "STAR Market, HKEX, A-share"
     },
-
     "defense_unicorns": {
-      "headline": "From two unicorns to twenty-two in three years.",
-      "lede": "In 2022, exactly two pure-play defense tech companies were valued above $1B: Anduril and Shield AI. By mid-2026, the count has crossed 22, and Anduril alone has tripled to $61B post Series H in twelve months, anchored by a $20B DoD enterprise agreement signed March 2026. Andreessen Horowitz has been the most active defense investor with 18 deals across the period.",
+      "headline": "From 2 unicorns to 22 in 3 years.",
+      "lede": "In 2022, exactly 2 pure-play defense tech companies were valued above $1B: Anduril and Shield AI. By mid-2026, the count has crossed 22, and Anduril alone has tripled to $61B post Series H in 12 months, anchored by a $20B DoD enterprise agreement signed March 2026. Andreessen Horowitz has been the most active defense investor with 18 deals across the period.",
       "pov": "The most under-examined story is the capital structure. Shield AI's March 2026 round is $1.5B equity at $12.7B plus $500M Blackstone fixed-return preferred. The first sign defense unicorns are institutionalizing balance sheets with structured credit. The category is maturing into a real procurement layer, not a bubble.",
       "unicorns": [
-        {"name": "Anduril", "first_unicorn_year": 2022, "latest_val_m": 61000, "latest_round": "Series H May 2026", "highlight": true},
-        {"name": "Shield AI", "first_unicorn_year": 2022, "latest_val_m": 12700, "latest_round": "Series G Mar 2026", "structured_note": "$1.5B equity + $500M Blackstone preferred"},
-        {"name": "Saronic", "first_unicorn_year": 2024, "latest_val_m": 9250, "latest_round": "Series D Mar 2026"},
-        {"name": "Helsing", "first_unicorn_year": 2024, "latest_val_m": 18000, "latest_round": "Series D in talks", "flag": "in-talks"},
-        {"name": "CHAOS Industries", "first_unicorn_year": 2025, "latest_val_m": 4500, "latest_round": "Series D Nov 2025"},
-        {"name": "Onebrief", "first_unicorn_year": 2025, "latest_val_m": 1100, "latest_round": "$300M+ cumulative"},
-        {"name": "Castelion", "first_unicorn_year": 2025, "latest_val_m": 1500, "latest_round": "Series B Dec 2025"},
-        {"name": "Hermeus", "first_unicorn_year": 2026, "latest_val_m": 1000, "latest_round": "Series D Apr 2026"},
-        {"name": "True Anomaly", "first_unicorn_year": 2026, "latest_val_m": 2000, "latest_round": "Series C Apr 2026"},
-        {"name": "Forterra", "first_unicorn_year": 2025, "latest_val_m": 1200, "latest_round": "Series C Nov 2025"},
-        {"name": "Quantum Systems", "first_unicorn_year": 2024, "latest_val_m": 1000, "latest_round": "Series C 2024"}
+        {
+          "name": "Anduril",
+          "first_unicorn_year": 2022,
+          "latest_val_m": 61000,
+          "latest_round": "Series H May 2026",
+          "highlight": true
+        },
+        {
+          "name": "Shield AI",
+          "first_unicorn_year": 2022,
+          "latest_val_m": 12700,
+          "latest_round": "Series G Mar 2026",
+          "structured_note": "$1.5B equity + $500M Blackstone preferred"
+        },
+        {
+          "name": "Saronic",
+          "first_unicorn_year": 2024,
+          "latest_val_m": 9250,
+          "latest_round": "Series D Mar 2026"
+        },
+        {
+          "name": "Helsing",
+          "first_unicorn_year": 2024,
+          "latest_val_m": 18000,
+          "latest_round": "Series D in talks",
+          "flag": "in-talks"
+        },
+        {
+          "name": "CHAOS Industries",
+          "first_unicorn_year": 2025,
+          "latest_val_m": 4500,
+          "latest_round": "Series D Nov 2025"
+        },
+        {
+          "name": "Onebrief",
+          "first_unicorn_year": 2025,
+          "latest_val_m": 1100,
+          "latest_round": "$300M+ cumulative"
+        },
+        {
+          "name": "Castelion",
+          "first_unicorn_year": 2025,
+          "latest_val_m": 1500,
+          "latest_round": "Series B Dec 2025"
+        },
+        {
+          "name": "Hermeus",
+          "first_unicorn_year": 2026,
+          "latest_val_m": 1000,
+          "latest_round": "Series D Apr 2026"
+        },
+        {
+          "name": "True Anomaly",
+          "first_unicorn_year": 2026,
+          "latest_val_m": 2000,
+          "latest_round": "Series C Apr 2026"
+        },
+        {
+          "name": "Forterra",
+          "first_unicorn_year": 2025,
+          "latest_val_m": 1200,
+          "latest_round": "Series C Nov 2025"
+        },
+        {
+          "name": "Quantum Systems",
+          "first_unicorn_year": 2024,
+          "latest_val_m": 1000,
+          "latest_round": "Series C 2024"
+        }
       ]
     }
   },
-
   "subsectors": [
     {
       "id": "humanoid-robotics",
@@ -101,22 +358,96 @@
       "capital_2024_25_m": 5100,
       "yoy_growth_pct": 169,
       "deals_count": 26,
-      "geo_split": {"US": 50, "China": 38, "EU": 10, "RoW": 2},
+      "geo_split": {
+        "US": 50,
+        "China": 38,
+        "EU": 10,
+        "RoW": 2
+      },
       "top_companies": [
-        {"name": "Figure AI", "geo": "US", "valuation_m": 39000, "last_round_label": "Series C Sep 2025"},
-        {"name": "Apptronik", "geo": "US", "valuation_m": 5400, "last_round_label": "Series A ext Feb 2026", "flag": "estimated"},
-        {"name": "1X Technologies", "geo": "RoW", "valuation_m": 10000, "last_round_label": "target, in talks", "flag": "in-talks"},
-        {"name": "Agility Robotics", "geo": "US", "valuation_m": 2100, "last_round_label": "Series C 2025"},
-        {"name": "Unitree", "geo": "China", "valuation_m": 6100, "last_round_label": "STAR Market IPO target Mar 2026"},
-        {"name": "AgiBot (Zhiyuan)", "geo": "China", "valuation_m": 2100, "last_round_label": "pre-HK IPO", "flag": "estimated"},
-        {"name": "Fourier", "geo": "China", "valuation_m": 1100, "last_round_label": "2025"},
-        {"name": "Neura Robotics", "geo": "EU", "valuation_m": 1200, "last_round_label": "Series B Jan 2025"},
-        {"name": "Galbot", "geo": "China", "valuation_m": 3000, "last_round_label": "Dec 2025 + Mar 2026"},
-        {"name": "Robot Era", "geo": "China", "valuation_m": 1400, "last_round_label": "Apr 2026"}
+        {
+          "name": "Figure AI",
+          "geo": "US",
+          "valuation_m": 39000,
+          "last_round_label": "Series C Sep 2025"
+        },
+        {
+          "name": "Apptronik",
+          "geo": "US",
+          "valuation_m": 5400,
+          "last_round_label": "Series A ext Feb 2026",
+          "flag": "estimated"
+        },
+        {
+          "name": "1X Technologies",
+          "geo": "RoW",
+          "valuation_m": 10000,
+          "last_round_label": "target, in talks",
+          "flag": "in-talks"
+        },
+        {
+          "name": "Agility Robotics",
+          "geo": "US",
+          "valuation_m": 2100,
+          "last_round_label": "Series C 2025"
+        },
+        {
+          "name": "Unitree",
+          "geo": "China",
+          "valuation_m": 6100,
+          "last_round_label": "STAR Market IPO target Mar 2026"
+        },
+        {
+          "name": "AgiBot (Zhiyuan)",
+          "geo": "China",
+          "valuation_m": 2100,
+          "last_round_label": "pre-HK IPO",
+          "flag": "estimated"
+        },
+        {
+          "name": "Fourier",
+          "geo": "China",
+          "valuation_m": 1100,
+          "last_round_label": "2025"
+        },
+        {
+          "name": "Neura Robotics",
+          "geo": "EU",
+          "valuation_m": 1200,
+          "last_round_label": "Series B Jan 2025"
+        },
+        {
+          "name": "Galbot",
+          "geo": "China",
+          "valuation_m": 3000,
+          "last_round_label": "Dec 2025 + Mar 2026"
+        },
+        {
+          "name": "Robot Era",
+          "geo": "China",
+          "valuation_m": 1400,
+          "last_round_label": "Apr 2026"
+        }
       ],
-      "top_investors": ["Alibaba", "HongShan", "Beijing Robot Industry Dev Fund", "Matrix Partners China", "Tencent", "JD.com", "Meituan", "Nvidia NVentures", "Bezos Expeditions", "SoftBank"],
+      "top_investors": [
+        "Alibaba",
+        "HongShan",
+        "Beijing Robot Industry Dev Fund",
+        "Matrix Partners China",
+        "Tencent",
+        "JD.com",
+        "Meituan",
+        "Nvidia NVentures",
+        "Bezos Expeditions",
+        "SoftBank"
+      ],
       "canonical_pov": "Humanoid funding is concentrated in 4 US companies that have together raised more in 18 months than the entire surgical robotics industry has in its history. The only pure-play humanoid manufacturer with audited profitability at scale is Unitree, and the prospectus reveals their profitability is a 2024-25 turnaround story, not the 'profitable since 2020' narrative their PR has carried. The bear case sits in plain sight: Unitree's R&D-to-revenue ratio is 7.73%, suggesting under-investment in the next platform.",
-      "caveats": ["~75% of 2025 Chinese unit shipments to research institutions per HelloChinaTech", "Unitree prospectus discloses >50% of revenue from scientific research and education sector", "AgiBot valuation $2.1B is estimated, no primary source identified", "1X $10B round reported as 'in talks' not closed"]
+      "caveats": [
+        "~75% of 2025 Chinese unit shipments to research institutions per HelloChinaTech",
+        "Unitree prospectus discloses >50% of revenue from scientific research and education sector",
+        "AgiBot valuation $2.1B is estimated, no primary source identified",
+        "1X $10B round reported as 'in talks' not closed"
+      ]
     },
     {
       "id": "quadrupeds",
@@ -126,17 +457,51 @@
       "capital_2024_25_m": 200,
       "yoy_growth_pct": -10,
       "deals_count": 6,
-      "geo_split": {"US": 35, "China": 50, "EU": 15, "RoW": 0},
+      "geo_split": {
+        "US": 35,
+        "China": 50,
+        "EU": 15,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Boston Dynamics", "geo": "US", "valuation_m": null, "last_round_label": "Hyundai-owned"},
-        {"name": "ANYbotics", "geo": "EU", "valuation_m": null, "last_round_label": "Series B 2022"},
-        {"name": "Unitree (quadruped legacy)", "geo": "China", "valuation_m": null, "last_round_label": "see Humanoid"},
-        {"name": "Deep Robotics", "geo": "China", "valuation_m": null, "last_round_label": null},
-        {"name": "Ghost Robotics", "geo": "US", "valuation_m": 750, "last_round_label": "$750M LIG Nex1 tender 2024", "flag": "estimated"}
+        {
+          "name": "Boston Dynamics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Hyundai-owned"
+        },
+        {
+          "name": "ANYbotics",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Series B 2022"
+        },
+        {
+          "name": "Unitree (quadruped legacy)",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "see Humanoid"
+        },
+        {
+          "name": "Deep Robotics",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Ghost Robotics",
+          "geo": "US",
+          "valuation_m": 750,
+          "last_round_label": "$750M LIG Nex1 tender 2024",
+          "flag": "estimated"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "The quadruped market has converged toward defense and utility inspection. Spot and Ghost Vision 60 are now mostly purchased by Pentagon and energy utilities, not consumer or research markets. Unitree retains ~70% of global quadruped sales but is pivoting capital and R&D toward humanoids. The prospectus shows the dramatic revenue mix flip from quadrupeds (65% 2024) to humanoids (51%+ 2025).",
-      "caveats": ["Ghost Robotics $750M LIG Nex1 tender reported but close not independently confirmed", "Boston Dynamics unit and revenue data largely private"]
+      "caveats": [
+        "Ghost Robotics $750M LIG Nex1 tender reported but close not independently confirmed",
+        "Boston Dynamics unit and revenue data largely private"
+      ]
     },
     {
       "id": "wheeled-warehouse-robots",
@@ -146,18 +511,64 @@
       "capital_2024_25_m": 970,
       "yoy_growth_pct": -48,
       "deals_count": 70,
-      "geo_split": {"US": 55, "China": 25, "EU": 15, "RoW": 5},
+      "geo_split": {
+        "US": 55,
+        "China": 25,
+        "EU": 15,
+        "RoW": 5
+      },
       "top_companies": [
-        {"name": "Symbotic", "geo": "US", "valuation_m": 38500, "last_round_label": "NASDAQ May 2026", "flag": "public-market-cap"},
-        {"name": "Locus Robotics", "geo": "US", "valuation_m": 2000, "last_round_label": "$438M total"},
-        {"name": "Geek+", "geo": "China", "valuation_m": null, "last_round_label": "late-stage, $545M raised"},
-        {"name": "GreyOrange", "geo": "US", "valuation_m": null, "last_round_label": "$545M cumulative"},
-        {"name": "AutoStore", "geo": "EU", "valuation_m": null, "last_round_label": "Oslo public"},
-        {"name": "Exotec", "geo": "EU", "valuation_m": null, "last_round_label": "Series D 2022"}
+        {
+          "name": "Symbotic",
+          "geo": "US",
+          "valuation_m": 38500,
+          "last_round_label": "NASDAQ May 2026",
+          "flag": "public-market-cap",
+          "ticker": "SYM"
+        },
+        {
+          "name": "Locus Robotics",
+          "geo": "US",
+          "valuation_m": 2000,
+          "last_round_label": "$438M total"
+        },
+        {
+          "name": "Geek+",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "late-stage, $545M raised"
+        },
+        {
+          "name": "GreyOrange",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$545M cumulative"
+        },
+        {
+          "name": "AutoStore",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Oslo public"
+        },
+        {
+          "name": "Exotec",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Series D 2022"
+        }
       ],
-      "top_investors": ["ATL Partners", "Insight Partners", "Tiger Global", "BlackRock", "Mithril"],
+      "top_investors": [
+        "ATL Partners",
+        "Insight Partners",
+        "Tiger Global",
+        "BlackRock",
+        "Mithril"
+      ],
       "canonical_pov": "Symbotic vs. Amazon's internal Sequoia/Proteus is the bellwether. Third-party warehouse robotics survives only if Symbotic-style multi-customer scale is preserved. Amazon's automation target (75% by 2033, 600K fewer hires) is the demand-side ceiling for the entire third-party warehouse robotics industry.",
-      "caveats": ["Warehouse VC -48% YoY in 2025 per Tracxn", "Symbotic market cap is public and moves daily"]
+      "caveats": [
+        "Warehouse VC -48% YoY in 2025 per Tracxn",
+        "Symbotic market cap is public and moves daily"
+      ]
     },
     {
       "id": "aerial-drones",
@@ -167,17 +578,55 @@
       "capital_2024_25_m": 2000,
       "yoy_growth_pct": 60,
       "deals_count": 38,
-      "geo_split": {"US": 60, "China": 10, "EU": 25, "RoW": 5},
+      "geo_split": {
+        "US": 60,
+        "China": 10,
+        "EU": 25,
+        "RoW": 5
+      },
       "top_companies": [
-        {"name": "Skydio", "geo": "US", "valuation_m": 4400, "last_round_label": "Series F Apr 2026"},
-        {"name": "Zipline", "geo": "US", "valuation_m": 7600, "last_round_label": "Jan 2026"},
-        {"name": "Brinc Drones", "geo": "US", "valuation_m": null, "last_round_label": "$75M+ cumulative"},
-        {"name": "Wingtra", "geo": "EU", "valuation_m": null, "last_round_label": null},
-        {"name": "Quantum Systems", "geo": "EU", "valuation_m": 1000, "last_round_label": "Series C 2024"}
+        {
+          "name": "Skydio",
+          "geo": "US",
+          "valuation_m": 4400,
+          "last_round_label": "Series F Apr 2026"
+        },
+        {
+          "name": "Zipline",
+          "geo": "US",
+          "valuation_m": 7600,
+          "last_round_label": "Jan 2026"
+        },
+        {
+          "name": "Brinc Drones",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$75M+ cumulative"
+        },
+        {
+          "name": "Wingtra",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Quantum Systems",
+          "geo": "EU",
+          "valuation_m": 1000,
+          "last_round_label": "Series C 2024"
+        }
       ],
-      "top_investors": ["Nvidia NVentures", "a16z", "Founders Fund", "Linse Capital"],
+      "top_investors": [
+        "Nvidia NVentures",
+        "a16z",
+        "Founders Fund",
+        "Linse Capital"
+      ],
       "canonical_pov": "Skydio's Blue UAS Cleared List plus the Trump Drone Dominance EO creates a regulatory moat against DJI. But Skydio's hardware-only revenue grew 80% while software is ~30% of mix. The moat may be regulatory, not technical.",
-      "caveats": ["Excludes defense-specific drone companies (counted in Defense)", "China drones underrepresented due to DJI dominance and IPO timing"]
+      "caveats": [
+        "Excludes defense-specific drone companies (counted in Defense)",
+        "China drones underrepresented due to DJI dominance and IPO timing"
+      ]
     },
     {
       "id": "marine-underwater-robotics",
@@ -187,17 +636,55 @@
       "capital_2024_25_m": 2500,
       "yoy_growth_pct": 200,
       "deals_count": 14,
-      "geo_split": {"US": 85, "China": 5, "EU": 10, "RoW": 0},
+      "geo_split": {
+        "US": 85,
+        "China": 5,
+        "EU": 10,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Saronic", "geo": "US", "valuation_m": 9250, "last_round_label": "Series D Mar 2026"},
-        {"name": "Saildrone", "geo": "US", "valuation_m": 600, "last_round_label": "2024"},
-        {"name": "Anduril Dive-LD/XL", "geo": "US", "valuation_m": null, "last_round_label": "DIU Feb 2024"},
-        {"name": "HavocAI", "geo": "US", "valuation_m": null, "last_round_label": null},
-        {"name": "Vatn Systems", "geo": "US", "valuation_m": null, "last_round_label": null}
+        {
+          "name": "Saronic",
+          "geo": "US",
+          "valuation_m": 9250,
+          "last_round_label": "Series D Mar 2026"
+        },
+        {
+          "name": "Saildrone",
+          "geo": "US",
+          "valuation_m": 600,
+          "last_round_label": "2024"
+        },
+        {
+          "name": "Anduril Dive-LD/XL",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "DIU Feb 2024"
+        },
+        {
+          "name": "HavocAI",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Vatn Systems",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        }
       ],
-      "top_investors": ["Kleiner Perkins", "Elad Gil", "a16z", "Lux Capital", "Founders Fund"],
+      "top_investors": [
+        "Kleiner Perkins",
+        "Elad Gil",
+        "a16z",
+        "Lux Capital",
+        "Founders Fund"
+      ],
       "canonical_pov": "Marine autonomy is at the start of a 5-year deployment curve mirroring 2018-2022 aerial. The Navy's Replicator program plus structural US shipyard underproduction creates structural demand the venture market is only beginning to underwrite. Saronic's 320x revenue multiple vs. Saildrone's 14x reflects who investors think wins the procurement narrative.",
-      "caveats": ["Saronic $400M 2025 revenue projection may conflate with $392M multi-year Navy OTA contract value"]
+      "caveats": [
+        "Saronic $400M 2025 revenue projection may conflate with $392M multi-year Navy OTA contract value"
+      ]
     },
     {
       "id": "surgical-robotics",
@@ -207,15 +694,49 @@
       "capital_2024_25_m": 1500,
       "yoy_growth_pct": 22,
       "deals_count": 24,
-      "geo_split": {"US": 40, "China": 15, "EU": 40, "RoW": 5},
+      "geo_split": {
+        "US": 40,
+        "China": 15,
+        "EU": 40,
+        "RoW": 5
+      },
       "top_companies": [
-        {"name": "CMR Surgical", "geo": "EU", "valuation_m": null, "last_round_label": "$200M Apr 2025"},
-        {"name": "Distalmotion", "geo": "EU", "valuation_m": null, "last_round_label": "$150M 2023"},
-        {"name": "Moon Surgical", "geo": "US", "valuation_m": null, "last_round_label": "J&J + Nvidia backed"},
-        {"name": "Surgerii", "geo": "China", "valuation_m": null, "last_round_label": "$100M 2025"},
-        {"name": "MMI", "geo": "EU", "valuation_m": null, "last_round_label": null}
+        {
+          "name": "CMR Surgical",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "$200M Apr 2025"
+        },
+        {
+          "name": "Distalmotion",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "$150M 2023"
+        },
+        {
+          "name": "Moon Surgical",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "J&J + Nvidia backed"
+        },
+        {
+          "name": "Surgerii",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "$100M 2025"
+        },
+        {
+          "name": "MMI",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": null
+        }
       ],
-      "top_investors": ["J&J JJDC", "Nvidia NVentures", "Cathay Capital"],
+      "top_investors": [
+        "J&J JJDC",
+        "Nvidia NVentures",
+        "Cathay Capital"
+      ],
       "canonical_pov": "Surgical robotics is finally seeing Intuitive's monopoly cracked. Medtronic Hugo and CMR Versius Plus in 2025-26 are the first credible US-market soft-tissue competitors in 25 years. But VC dollars are 1/20th of humanoids despite ~10x the proven unit economics. The disconnect is the most underappreciated opportunity in physical AI.",
       "caveats": []
     },
@@ -227,14 +748,45 @@
       "capital_2024_25_m": 100,
       "yoy_growth_pct": 15,
       "deals_count": 8,
-      "geo_split": {"US": 30, "China": 5, "EU": 55, "RoW": 10},
+      "geo_split": {
+        "US": 30,
+        "China": 5,
+        "EU": 55,
+        "RoW": 10
+      },
       "top_companies": [
-        {"name": "German Bionic", "geo": "EU", "valuation_m": null, "last_round_label": "Archimedes acq 2026"},
-        {"name": "Wandercraft", "geo": "EU", "valuation_m": null, "last_round_label": "FDA Atalante 2024"},
-        {"name": "Ekso Bionics", "geo": "US", "valuation_m": 42, "last_round_label": "NASDAQ:EKSO", "flag": "public-market-cap"},
-        {"name": "Roam Robotics", "geo": "US", "valuation_m": null, "last_round_label": null}
+        {
+          "name": "German Bionic",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Archimedes acq 2026"
+        },
+        {
+          "name": "Wandercraft",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "FDA Atalante 2024"
+        },
+        {
+          "name": "Ekso Bionics",
+          "geo": "US",
+          "valuation_m": 42,
+          "last_round_label": "NASDAQ:EKSO",
+          "flag": "public-market-cap",
+          "ticker": "EKSO"
+        },
+        {
+          "name": "Roam Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        }
       ],
-      "top_investors": ["Mubea", "Hyundai", "Honda"],
+      "top_investors": [
+        "Mubea",
+        "Hyundai",
+        "Honda"
+      ],
       "canonical_pov": "Exoskeletons remain the most under-capitalized physical AI category relative to the size of the labor-strain TAM. 1/3 of workplace injuries are overexertion. Despite that, the entire global venture pool is smaller than a single Figure round.",
       "caveats": []
     },
@@ -246,18 +798,70 @@
       "capital_2024_25_m": 3000,
       "yoy_growth_pct": 85,
       "deals_count": 42,
-      "geo_split": {"US": 70, "China": 15, "EU": 12, "RoW": 3},
+      "geo_split": {
+        "US": 70,
+        "China": 15,
+        "EU": 12,
+        "RoW": 3
+      },
       "top_companies": [
-        {"name": "Mind Robotics", "geo": "US", "valuation_m": 3400, "last_round_label": "Series B May 2026"},
-        {"name": "Hadrian", "geo": "US", "valuation_m": null, "last_round_label": "Q4 2025"},
-        {"name": "FieldAI", "geo": "US", "valuation_m": 2000, "last_round_label": "$405M 2025"},
-        {"name": "VulcanForms", "geo": "US", "valuation_m": null, "last_round_label": "$220M 2025"},
-        {"name": "Path Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$300M+ cumulative"},
-        {"name": "Covariant (Amazon acquihire)", "geo": "US", "valuation_m": null, "last_round_label": "Aug 2024"}
+        {
+          "name": "Nirvana AI",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/nirvana-ai.html"
+        },
+        {
+          "name": "Mind Robotics",
+          "geo": "US",
+          "valuation_m": 3400,
+          "last_round_label": "Series B May 2026"
+        },
+        {
+          "name": "Hadrian",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Q4 2025"
+        },
+        {
+          "name": "FieldAI",
+          "geo": "US",
+          "valuation_m": 2000,
+          "last_round_label": "$405M 2025"
+        },
+        {
+          "name": "VulcanForms",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$220M 2025"
+        },
+        {
+          "name": "Path Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$300M+ cumulative"
+        },
+        {
+          "name": "Covariant (Amazon acquihire)",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Aug 2024"
+        }
       ],
-      "top_investors": ["Eclipse Ventures", "Kleiner Perkins", "Accel", "a16z", "Khosla Ventures", "CapitalG"],
+      "top_investors": [
+        "Eclipse Ventures",
+        "Kleiner Perkins",
+        "Accel",
+        "a16z",
+        "Khosla Ventures",
+        "CapitalG"
+      ],
       "canonical_pov": "Mind Robotics is the auto-OEM spin-out template. The 'factory floor as proprietary training environment' thesis is now competitive with the Figure/Apptronik humanoid playbook, and arguably better for capital efficiency since the data acquisition cost is embedded in the host's operating business. Watch which other OEMs spin out robotics units. BMW, Mercedes, Ford, Stellantis are all candidates.",
-      "caveats": ["Mind Robotics cumulative $1.015B raised in 6 months may be the fastest scaling in physical AI history"]
+      "caveats": [
+        "Mind Robotics cumulative $1.015B raised in 6 months may be the fastest scaling in physical AI history"
+      ]
     },
     {
       "id": "agricultural-robotics",
@@ -267,17 +871,54 @@
       "capital_2024_25_m": 500,
       "yoy_growth_pct": -15,
       "deals_count": 16,
-      "geo_split": {"US": 65, "China": 5, "EU": 25, "RoW": 5},
+      "geo_split": {
+        "US": 65,
+        "China": 5,
+        "EU": 25,
+        "RoW": 5
+      },
       "top_companies": [
-        {"name": "Monarch Tractor", "geo": "US", "valuation_m": null, "last_round_label": "Caterpillar acq Nov 2025"},
-        {"name": "Carbon Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$70M Series D 2024"},
-        {"name": "Inari", "geo": "US", "valuation_m": null, "last_round_label": "$103M 2024"},
-        {"name": "Burro", "geo": "US", "valuation_m": null, "last_round_label": null},
-        {"name": "Ecorobotix", "geo": "EU", "valuation_m": null, "last_round_label": null}
+        {
+          "name": "Monarch Tractor",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Caterpillar acq Nov 2025"
+        },
+        {
+          "name": "Carbon Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$70M Series D 2024"
+        },
+        {
+          "name": "Inari",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$103M 2024"
+        },
+        {
+          "name": "Burro",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Ecorobotix",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": null
+        }
       ],
-      "top_investors": ["Caterpillar", "Astanor", "Nvidia NVentures", "DCVC"],
+      "top_investors": [
+        "Caterpillar",
+        "Astanor",
+        "Nvidia NVentures",
+        "DCVC"
+      ],
       "canonical_pov": "Monarch's collapse-and-acquisition by Caterpillar is the morality play. Autonomy claims got too far ahead of field performance, dealer lawsuits exposed the gap, and the legacy OEM scooped the IP at a discount. Expect this pattern repeated for autonomous tractors that overpromise on Level 4 field autonomy.",
-      "caveats": ["Monarch acquisition terms undisclosed"]
+      "caveats": [
+        "Monarch acquisition terms undisclosed"
+      ]
     },
     {
       "id": "construction-robotics",
@@ -287,16 +928,53 @@
       "capital_2024_25_m": 1400,
       "yoy_growth_pct": 125,
       "deals_count": 18,
-      "geo_split": {"US": 80, "China": 5, "EU": 12, "RoW": 3},
+      "geo_split": {
+        "US": 80,
+        "China": 5,
+        "EU": 12,
+        "RoW": 3
+      },
       "top_companies": [
-        {"name": "FieldAI", "geo": "US", "valuation_m": 2000, "last_round_label": "$405M 2025"},
-        {"name": "Bedrock Robotics", "geo": "US", "valuation_m": 1750, "last_round_label": "Series B Feb 2026"},
-        {"name": "Dusty Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$69.3M cumulative"},
-        {"name": "Canvas", "geo": "US", "valuation_m": null, "last_round_label": "drywall robot"},
-        {"name": "Built Robotics", "geo": "US", "valuation_m": null, "last_round_label": "wound down workforce 2024"}
+        {
+          "name": "FieldAI",
+          "geo": "US",
+          "valuation_m": 2000,
+          "last_round_label": "$405M 2025"
+        },
+        {
+          "name": "Bedrock Robotics",
+          "geo": "US",
+          "valuation_m": 1750,
+          "last_round_label": "Series B Feb 2026"
+        },
+        {
+          "name": "Dusty Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$69.3M cumulative"
+        },
+        {
+          "name": "Canvas",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "drywall robot"
+        },
+        {
+          "name": "Built Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "wound down workforce 2024"
+        }
       ],
-      "top_investors": ["Eclipse Ventures", "CapitalG", "Valor Atreides AI", "8VC", "Khosla", "Emerson Collective"],
-      "canonical_pov": "Construction robotics' boom is actually two mega-rounds (FieldAI $405M, Bedrock $270M) plus steady Series A activity at $27M average. The category is real but not at scale. Investors are pricing earthmoving autonomy at later-stage premiums and installation robotics at Series A risk.",
+      "top_investors": [
+        "Eclipse Ventures",
+        "CapitalG",
+        "Valor Atreides AI",
+        "8VC",
+        "Khosla",
+        "Emerson Collective"
+      ],
+      "canonical_pov": "Construction robotics' boom is actually 2 mega-rounds (FieldAI $405M, Bedrock $270M) plus steady Series A activity at $27M average. The category is real but not at scale. Investors are pricing earthmoving autonomy at later-stage premiums and installation robotics at Series A risk.",
       "caveats": []
     },
     {
@@ -307,20 +985,78 @@
       "capital_2024_25_m": 22000,
       "yoy_growth_pct": 94,
       "deals_count": 120,
-      "geo_split": {"US": 75, "China": 0, "EU": 22, "RoW": 3},
+      "geo_split": {
+        "US": 75,
+        "China": 0,
+        "EU": 22,
+        "RoW": 3
+      },
       "top_companies": [
-        {"name": "Anduril", "geo": "US", "valuation_m": 61000, "last_round_label": "Series H May 2026"},
-        {"name": "Shield AI", "geo": "US", "valuation_m": 12700, "last_round_label": "Series G Mar 2026 ($1.5B equity + $500M Blackstone preferred)"},
-        {"name": "Saronic", "geo": "US", "valuation_m": 9250, "last_round_label": "Series D Mar 2026"},
-        {"name": "Helsing", "geo": "EU", "valuation_m": 18000, "last_round_label": "Series D in talks", "flag": "in-talks"},
-        {"name": "CHAOS Industries", "geo": "US", "valuation_m": 4500, "last_round_label": "Series D Nov 2025"},
-        {"name": "Castelion", "geo": "US", "valuation_m": 1500, "last_round_label": "Series B Dec 2025"},
-        {"name": "True Anomaly", "geo": "US", "valuation_m": 2000, "last_round_label": "Apr 2026"},
-        {"name": "Forterra", "geo": "US", "valuation_m": 1200, "last_round_label": "Series C Nov 2025"}
+        {
+          "name": "Anduril",
+          "geo": "US",
+          "valuation_m": 61000,
+          "last_round_label": "Series H May 2026"
+        },
+        {
+          "name": "Shield AI",
+          "geo": "US",
+          "valuation_m": 12700,
+          "last_round_label": "Series G Mar 2026 ($1.5B equity + $500M Blackstone preferred)"
+        },
+        {
+          "name": "Saronic",
+          "geo": "US",
+          "valuation_m": 9250,
+          "last_round_label": "Series D Mar 2026"
+        },
+        {
+          "name": "Helsing",
+          "geo": "EU",
+          "valuation_m": 18000,
+          "last_round_label": "Series D in talks",
+          "flag": "in-talks"
+        },
+        {
+          "name": "CHAOS Industries",
+          "geo": "US",
+          "valuation_m": 4500,
+          "last_round_label": "Series D Nov 2025"
+        },
+        {
+          "name": "Castelion",
+          "geo": "US",
+          "valuation_m": 1500,
+          "last_round_label": "Series B Dec 2025"
+        },
+        {
+          "name": "True Anomaly",
+          "geo": "US",
+          "valuation_m": 2000,
+          "last_round_label": "Apr 2026"
+        },
+        {
+          "name": "Forterra",
+          "geo": "US",
+          "valuation_m": 1200,
+          "last_round_label": "Series C Nov 2025"
+        }
       ],
-      "top_investors": ["a16z (18 deals)", "Founders Fund", "Eclipse", "General Catalyst", "8VC", "NightDragon", "Lightspeed", "Blackstone (preferred)"],
+      "top_investors": [
+        "a16z (18 deals)",
+        "Founders Fund",
+        "Eclipse",
+        "General Catalyst",
+        "8VC",
+        "NightDragon",
+        "Lightspeed",
+        "Blackstone (preferred)"
+      ],
       "canonical_pov": "The most under-examined story is the capital structure. Shield AI's March 2026 round is the first signal defense unicorns are institutionalizing balance sheets with structured credit. The category is maturing into a real procurement layer, not a bubble. Anduril is the only defense unicorn with revenue ($2.2B 2025) proportional to its valuation. Most others are pricing in multi-year DoD procurement that hasn't materialized.",
-      "caveats": ["$22B+ figure depends on PitchBook vs Crunchbase methodology", "PitchBook $49.1B 2025 deal-value figure includes debt and structured financing, not pure equity"]
+      "caveats": [
+        "$22B+ figure depends on PitchBook vs Crunchbase methodology",
+        "PitchBook $49.1B 2025 deal-value figure includes debt and structured financing, not pure equity"
+      ]
     },
     {
       "id": "healthcare-non-surgical",
@@ -330,12 +1066,37 @@
       "capital_2024_25_m": 250,
       "yoy_growth_pct": 10,
       "deals_count": 12,
-      "geo_split": {"US": 55, "China": 10, "EU": 25, "RoW": 10},
+      "geo_split": {
+        "US": 55,
+        "China": 10,
+        "EU": 25,
+        "RoW": 10
+      },
       "top_companies": [
-        {"name": "Diligent Robotics (Moxi)", "geo": "US", "valuation_m": null, "last_round_label": "Series B"},
-        {"name": "Aethon (TUG)", "geo": "US", "valuation_m": null, "last_round_label": null},
-        {"name": "Cyberdyne", "geo": "RoW", "valuation_m": null, "last_round_label": "Japan public"},
-        {"name": "Omnicell (pharmacy)", "geo": "US", "valuation_m": null, "last_round_label": "public"}
+        {
+          "name": "Diligent Robotics (Moxi)",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Series B"
+        },
+        {
+          "name": "Aethon (TUG)",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Cyberdyne",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "Japan public"
+        },
+        {
+          "name": "Omnicell (pharmacy)",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "public"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "The eldercare plus pharmacy robotics opportunity is genuinely larger than humanoids' near-term TAM and almost completely under-funded relative to demographic trajectory. This is Canonical's most defensible contrarian sleeve.",
@@ -349,13 +1110,43 @@
       "capital_2024_25_m": 50,
       "yoy_growth_pct": -75,
       "deals_count": 5,
-      "geo_split": {"US": 30, "China": 60, "EU": 8, "RoW": 2},
+      "geo_split": {
+        "US": 30,
+        "China": 60,
+        "EU": 8,
+        "RoW": 2
+      },
       "top_companies": [
-        {"name": "iRobot", "geo": "US", "valuation_m": null, "last_round_label": "Ch.11 Dec 2025, sold to Shenzhen Picea"},
-        {"name": "Roborock", "geo": "China", "valuation_m": null, "last_round_label": "public"},
-        {"name": "Ecovacs", "geo": "China", "valuation_m": null, "last_round_label": "public"},
-        {"name": "Matic Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$30M Series A"},
-        {"name": "1X NEO", "geo": "RoW", "valuation_m": null, "last_round_label": "see Humanoid"}
+        {
+          "name": "iRobot",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Ch.11 Dec 2025, sold to Shenzhen Picea"
+        },
+        {
+          "name": "Roborock",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "public"
+        },
+        {
+          "name": "Ecovacs",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "public"
+        },
+        {
+          "name": "Matic Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$30M Series A"
+        },
+        {
+          "name": "1X NEO",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "see Humanoid"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "Consumer robotics outside of vacuum and lawn-mower is essentially impossible to fund in 2025-26. iRobot's bankruptcy is the cautionary tale, and even 1X is repositioning. The category is moving to 'consumer humanoids' but that's a 2028+ TAM.",
@@ -369,20 +1160,81 @@
       "capital_2024_25_m": 28000,
       "yoy_growth_pct": 340,
       "deals_count": 34,
-      "geo_split": {"US": 70, "China": 20, "EU": 10, "RoW": 0},
+      "geo_split": {
+        "US": 70,
+        "China": 20,
+        "EU": 10,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Waymo", "geo": "US", "valuation_m": 126000, "last_round_label": "Series D Feb 2026"},
-        {"name": "Wayve", "geo": "EU", "valuation_m": 8600, "last_round_label": "Series D Feb 2026"},
-        {"name": "Pony.ai", "geo": "China", "valuation_m": null, "last_round_label": "Nasdaq IPO Fall 2024", "flag": "public-market-cap"},
-        {"name": "WeRide", "geo": "China", "valuation_m": null, "last_round_label": "Nasdaq IPO Fall 2024", "flag": "public-market-cap"},
-        {"name": "Applied Intuition", "geo": "US", "valuation_m": 15000, "last_round_label": "Series F Jun 2025"},
-        {"name": "Aurora Innovation", "geo": "US", "valuation_m": null, "last_round_label": "Nasdaq", "flag": "public-market-cap"},
-        {"name": "Nuro", "geo": "US", "valuation_m": 600, "last_round_label": "Series E 2024"},
-        {"name": "Waabi", "geo": "US", "valuation_m": 750, "last_round_label": "Series C Khosla-led"}
+        {
+          "name": "Waymo",
+          "geo": "US",
+          "valuation_m": 126000,
+          "last_round_label": "Series D Feb 2026"
+        },
+        {
+          "name": "Wayve",
+          "geo": "EU",
+          "valuation_m": 8600,
+          "last_round_label": "Series D Feb 2026"
+        },
+        {
+          "name": "Pony.ai",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "Nasdaq IPO Fall 2024",
+          "flag": "public-market-cap",
+          "ticker": "PONY"
+        },
+        {
+          "name": "WeRide",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "Nasdaq IPO Fall 2024",
+          "flag": "public-market-cap",
+          "ticker": "WRD"
+        },
+        {
+          "name": "Applied Intuition",
+          "geo": "US",
+          "valuation_m": 15000,
+          "last_round_label": "Series F Jun 2025"
+        },
+        {
+          "name": "Aurora Innovation",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Nasdaq",
+          "flag": "public-market-cap",
+          "ticker": "AUR"
+        },
+        {
+          "name": "Nuro",
+          "geo": "US",
+          "valuation_m": 600,
+          "last_round_label": "Series E 2024"
+        },
+        {
+          "name": "Waabi",
+          "geo": "US",
+          "valuation_m": 750,
+          "last_round_label": "Series C Khosla-led"
+        }
       ],
-      "top_investors": ["Alphabet", "Dragoneer", "DST Global", "Sequoia", "Eclipse Ventures", "Khosla Ventures"],
+      "top_investors": [
+        "Alphabet",
+        "Dragoneer",
+        "DST Global",
+        "Sequoia",
+        "Eclipse Ventures",
+        "Khosla Ventures"
+      ],
       "canonical_pov": "AV's recovery is real but is a barbell. Waymo plus Wayve at one end, Chinese pre-IPO bridges at the other, and almost nothing in the middle. The bubble didn't reflate uniformly. It bifurcated. Trucking AV (Waabi, Kodiak) is the underweighted sleeve relative to robotaxi attention.",
-      "caveats": ["Most of the $28B figure is Waymo's $16B February 2026 raise", "Cruise wound down Dec 2024 after $10B+ cumulative losses, the largest single AV writedown"]
+      "caveats": [
+        "Most of the $28B figure is Waymo's $16B February 2026 raise",
+        "Cruise wound down Dec 2024 after $10B+ cumulative losses, the largest single AV writedown"
+      ]
     },
     {
       "id": "hardware-actuation",
@@ -392,15 +1244,37 @@
       "capital_2024_25_m": 50,
       "yoy_growth_pct": null,
       "deals_count": 4,
-      "geo_split": {"US": 10, "China": 30, "EU": 30, "RoW": 30},
+      "geo_split": {
+        "US": 10,
+        "China": 30,
+        "EU": 30,
+        "RoW": 30
+      },
       "top_companies": [
-        {"name": "Harmonic Drive Systems", "geo": "RoW", "valuation_m": null, "last_round_label": "Japan public"},
-        {"name": "Nabtesco", "geo": "RoW", "valuation_m": null, "last_round_label": "Japan public"},
-        {"name": "Schaeffler", "geo": "EU", "valuation_m": null, "last_round_label": "Germany public, Neura partner"}
+        {
+          "name": "Harmonic Drive Systems",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "Japan public"
+        },
+        {
+          "name": "Nabtesco",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "Japan public"
+        },
+        {
+          "name": "Schaeffler",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Germany public, Neura partner"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "The pick-and-shovel play for humanoids is harmonic drive / strain wave gear and high-torque-density actuators. This layer is dominated by Japanese and German incumbents. Not a single US/EU venture-backed actuator company has reached $100M revenue. Unitree's prospectus discloses they manufacture their own motors, reducers, encoders, and dexterous hands in-house, with purchased parts accounting for only 14-18% of total cost, a vertical-integration playbook the US ecosystem has not replicated.",
-      "caveats": ["Most companies in this layer are public incumbents, not VC-backed"]
+      "caveats": [
+        "Most companies in this layer are public incumbents, not VC-backed"
+      ]
     },
     {
       "id": "sensors-perception",
@@ -410,17 +1284,56 @@
       "capital_2024_25_m": 0,
       "yoy_growth_pct": null,
       "deals_count": 8,
-      "geo_split": {"US": 35, "China": 50, "EU": 15, "RoW": 0},
+      "geo_split": {
+        "US": 35,
+        "China": 50,
+        "EU": 15,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Hesai", "geo": "China", "valuation_m": null, "last_round_label": "Nasdaq IPO Feb 2023", "flag": "public-market-cap"},
-        {"name": "RoboSense", "geo": "China", "valuation_m": null, "last_round_label": "HKEX Jan 2024", "flag": "public-market-cap"},
-        {"name": "Ouster (post-Stereolabs)", "geo": "US", "valuation_m": 2000, "last_round_label": "$35M + 1.8M shares for Stereolabs Feb 2026", "flag": "public-market-cap"},
-        {"name": "Luminar", "geo": "US", "valuation_m": null, "last_round_label": "Ch.11 late 2025, assets to MicroVision $33M"},
-        {"name": "Prophesee", "geo": "EU", "valuation_m": null, "last_round_label": "$127M cumulative"}
+        {
+          "name": "Hesai",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "Nasdaq IPO Feb 2023",
+          "flag": "public-market-cap",
+          "ticker": "HSAI"
+        },
+        {
+          "name": "RoboSense",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "HKEX Jan 2024",
+          "flag": "public-market-cap",
+          "ticker": "2498.HK"
+        },
+        {
+          "name": "Ouster (post-Stereolabs)",
+          "geo": "US",
+          "valuation_m": 2000,
+          "last_round_label": "$35M + 1.8M shares for Stereolabs Feb 2026",
+          "flag": "public-market-cap",
+          "ticker": "OUST"
+        },
+        {
+          "name": "Luminar",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Ch.11 late 2025, assets to MicroVision $33M"
+        },
+        {
+          "name": "Prophesee",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "$127M cumulative"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "The 'perception' sub-sector is the largest single graveyard of physical AI. Billions raised via SPAC, 80%+ destroyed. But Ouster is the survivor story. From ~$408M (May 2025) to ~$2.2B (May 2026), now repositioned as 'Physical AI's first unified sensing and perception platform' post-Stereolabs acquisition. The lesson for LPs: post-SPAC consolidation produces survivors when management pivots from auto OEM dependence to broader physical AI markets.",
-      "caveats": ["Net VC into sensors/perception is negative on mark-to-market basis when including SPAC destruction", "RoboSense robotics LiDAR sales +1,142% YoY in 2025, structural shift the brief should not miss"]
+      "caveats": [
+        "Net VC into sensors/perception is negative on mark-to-market basis when including SPAC destruction",
+        "RoboSense robotics LiDAR sales +1,142% YoY in 2025, structural shift the brief should not miss"
+      ]
     },
     {
       "id": "edge-silicon",
@@ -430,17 +1343,53 @@
       "capital_2024_25_m": 600,
       "yoy_growth_pct": 20,
       "deals_count": 8,
-      "geo_split": {"US": 30, "China": 5, "EU": 15, "RoW": 50},
+      "geo_split": {
+        "US": 30,
+        "China": 5,
+        "EU": 15,
+        "RoW": 50
+      },
       "top_companies": [
-        {"name": "Hailo", "geo": "RoW", "valuation_m": 1200, "last_round_label": "Series C ext Apr 2024, reportedly halved in SPAC talks"},
-        {"name": "Tenstorrent", "geo": "US", "valuation_m": 2600, "last_round_label": "Series D Dec 2024"},
-        {"name": "Axelera AI", "geo": "EU", "valuation_m": null, "last_round_label": "$68M Series B Jun 2024"},
-        {"name": "Nvidia Jetson Thor", "geo": "US", "valuation_m": null, "last_round_label": "Aug 2025 launch, $3,499"},
-        {"name": "Rebellions", "geo": "RoW", "valuation_m": 2300, "last_round_label": "Korea pre-IPO Mar 2026"}
+        {
+          "name": "Hailo",
+          "geo": "RoW",
+          "valuation_m": 1200,
+          "last_round_label": "Series C ext Apr 2024, reportedly halved in SPAC talks"
+        },
+        {
+          "name": "Tenstorrent",
+          "geo": "US",
+          "valuation_m": 2600,
+          "last_round_label": "Series D Dec 2024"
+        },
+        {
+          "name": "Axelera AI",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "$68M Series B Jun 2024"
+        },
+        {
+          "name": "Nvidia Jetson Thor",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Aug 2025 launch, $3,499"
+        },
+        {
+          "name": "Rebellions",
+          "geo": "RoW",
+          "valuation_m": 2300,
+          "last_round_label": "Korea pre-IPO Mar 2026"
+        }
       ],
-      "top_investors": ["SoftBank", "Samsung", "Bezos Expeditions"],
+      "top_investors": [
+        "SoftBank",
+        "Samsung",
+        "Bezos Expeditions"
+      ],
       "canonical_pov": "'Edge silicon for robotics' as a venture category is largely a marketing label. Hailo and Axelera are the only pure-plays with robotics as a stated focus, and Hailo just had to pivot to robotics from a stalled automotive narrative. The real 'edge silicon for robotics' company is Nvidia, with Jetson Thor capturing >70% mind share of humanoid OEMs.",
-      "caveats": ["Hailo SPAC discussions ongoing, valuation may have halved"]
+      "caveats": [
+        "Hailo SPAC discussions ongoing, valuation may have halved"
+      ]
     },
     {
       "id": "foundation-models-for-robotics",
@@ -450,19 +1399,72 @@
       "capital_2024_25_m": 3500,
       "yoy_growth_pct": 450,
       "deals_count": 12,
-      "geo_split": {"US": 75, "China": 5, "EU": 15, "RoW": 5},
+      "geo_split": {
+        "US": 75,
+        "China": 5,
+        "EU": 15,
+        "RoW": 5
+      },
       "top_companies": [
-        {"name": "Skild AI", "geo": "US", "valuation_m": 14000, "last_round_label": "Jan 2026 (was $4.5B summer 2025)"},
-        {"name": "Physical Intelligence", "geo": "US", "valuation_m": 5600, "last_round_label": "Series B Nov 2025, $11B reportedly in talks", "flag": "in-talks"},
-        {"name": "Project Prometheus", "geo": "US", "valuation_m": 38000, "last_round_label": "$6.2B initial Nov 2025, $10B at $38B in talks per FT", "flag": "in-talks"},
-        {"name": "Wayve", "geo": "EU", "valuation_m": 8600, "last_round_label": "Series D Feb 2026, see also AV"},
-        {"name": "Covariant", "geo": "US", "valuation_m": null, "last_round_label": "Amazon acquihire Aug 2024"},
-        {"name": "World Labs (Fei-Fei Li)", "geo": "US", "valuation_m": 1000, "last_round_label": "$230M+ at $1B+ 2024"},
-        {"name": "Dyna Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$120M Series A Sep 2025"}
+        {
+          "name": "Skild AI",
+          "geo": "US",
+          "valuation_m": 14000,
+          "last_round_label": "Jan 2026 (was $4.5B summer 2025)"
+        },
+        {
+          "name": "Physical Intelligence",
+          "geo": "US",
+          "valuation_m": 5600,
+          "last_round_label": "Series B Nov 2025, $11B reportedly in talks",
+          "flag": "in-talks"
+        },
+        {
+          "name": "Project Prometheus",
+          "geo": "US",
+          "valuation_m": 38000,
+          "last_round_label": "$6.2B initial Nov 2025, $10B at $38B in talks per FT",
+          "flag": "in-talks"
+        },
+        {
+          "name": "Wayve",
+          "geo": "EU",
+          "valuation_m": 8600,
+          "last_round_label": "Series D Feb 2026, see also AV"
+        },
+        {
+          "name": "Covariant",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Amazon acquihire Aug 2024"
+        },
+        {
+          "name": "World Labs (Fei-Fei Li)",
+          "geo": "US",
+          "valuation_m": 1000,
+          "last_round_label": "$230M+ at $1B+ 2024"
+        },
+        {
+          "name": "Dyna Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$120M Series A Sep 2025"
+        }
       ],
-      "top_investors": ["SoftBank", "CapitalG", "Lux Capital", "Bezos Expeditions", "Nvidia NVentures", "JPMorgan", "BlackRock"],
+      "top_investors": [
+        "SoftBank",
+        "CapitalG",
+        "Lux Capital",
+        "Bezos Expeditions",
+        "Nvidia NVentures",
+        "JPMorgan",
+        "BlackRock"
+      ],
       "canonical_pov": "Foundation models for robotics collapsed onto 4 names in 18 months: PI, Skild, Wayve, Project Prometheus. Bezos personally betting $6.2B+ on Prometheus while also leading PI's prior round is the clearest signal of where the apex of physical AI capital is going. The category will likely consolidate to 2-3 winners by 2027.",
-      "caveats": ["Project Prometheus $10B/$38B round reported by FT but not closed", "PI $11B round reported by Bloomberg/TC but not closed"]
+      "caveats": [
+        "Project Prometheus $10B/$38B round reported by FT but not closed",
+        "PI $11B round reported by Bloomberg/TC but not closed"
+      ]
     },
     {
       "id": "simulation-synthetic-data",
@@ -472,15 +1474,48 @@
       "capital_2024_25_m": 1500,
       "yoy_growth_pct": 45,
       "deals_count": 9,
-      "geo_split": {"US": 70, "China": 5, "EU": 15, "RoW": 10},
+      "geo_split": {
+        "US": 70,
+        "China": 5,
+        "EU": 15,
+        "RoW": 10
+      },
       "top_companies": [
-        {"name": "Applied Intuition", "geo": "US", "valuation_m": 15000, "last_round_label": "Series F Jun 2025, $830M ARR 2025"},
-        {"name": "Foretellix", "geo": "RoW", "valuation_m": null, "last_round_label": "$135M cumulative, layoffs Jan 2026"},
-        {"name": "Nvidia Omniverse + Cosmos", "geo": "US", "valuation_m": null, "last_round_label": "platform, not a company"},
-        {"name": "Parallel Domain", "geo": "US", "valuation_m": null, "last_round_label": "merged with Foretellix Nov 2025"},
-        {"name": "Cognata", "geo": "RoW", "valuation_m": null, "last_round_label": "$23.5M, pivot to defense"}
+        {
+          "name": "Applied Intuition",
+          "geo": "US",
+          "valuation_m": 15000,
+          "last_round_label": "Series F Jun 2025, $830M ARR 2025"
+        },
+        {
+          "name": "Foretellix",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "$135M cumulative, layoffs Jan 2026"
+        },
+        {
+          "name": "Nvidia Omniverse + Cosmos",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "platform, not a company"
+        },
+        {
+          "name": "Parallel Domain",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "merged with Foretellix Nov 2025"
+        },
+        {
+          "name": "Cognata",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "$23.5M, pivot to defense"
+        }
       ],
-      "top_investors": ["Lux Capital", "Eclipse"],
+      "top_investors": [
+        "Lux Capital",
+        "Eclipse"
+      ],
       "canonical_pov": "The simulation layer is where Nvidia's gravitational pull is most absolute. Every named humanoid, AV, and FM company uses Cosmos or Isaac Sim. Applied Intuition is the only company that has built a credible non-Nvidia franchise at $830M ARR. The Nvidia question is whether competitive simulation can survive Cosmos becoming free.",
       "caveats": []
     },
@@ -492,14 +1527,50 @@
       "capital_2024_25_m": 120,
       "yoy_growth_pct": 30,
       "deals_count": 6,
-      "geo_split": {"US": 90, "China": 0, "EU": 10, "RoW": 0},
+      "geo_split": {
+        "US": 90,
+        "China": 0,
+        "EU": 10,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Foxglove", "geo": "US", "valuation_m": null, "last_round_label": "$40M Series B Nov 2025, Bessemer-led"},
-        {"name": "Formant", "geo": "US", "valuation_m": null, "last_round_label": "$21M Oct 2023"},
-        {"name": "Intrinsic", "geo": "US", "valuation_m": null, "last_round_label": "Alphabet, folded into Google Feb 2026"},
-        {"name": "Roboflow", "geo": "US", "valuation_m": null, "last_round_label": "$40M Series B Aug 2024"}
+        {
+          "name": "Haptic",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/haptic.html"
+        },
+        {
+          "name": "Foxglove",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$40M Series B Nov 2025, Bessemer-led"
+        },
+        {
+          "name": "Formant",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$21M Oct 2023"
+        },
+        {
+          "name": "Intrinsic",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "Alphabet, folded into Google Feb 2026"
+        },
+        {
+          "name": "Roboflow",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$40M Series B Aug 2024"
+        }
       ],
-      "top_investors": ["Bessemer Venture Partners", "BMW i Ventures"],
+      "top_investors": [
+        "Bessemer Venture Partners",
+        "BMW i Ventures"
+      ],
       "canonical_pov": "Robotics middleware as a venture category is small. Foxglove's $58M cumulative is the high water mark. But it's strategically central. Foxglove's MCAP becoming the ROS 2 + Isaac standard makes it the GitHub of robot data. The category has a standard-setting winner emerging.",
       "caveats": []
     },
@@ -511,15 +1582,57 @@
       "capital_2024_25_m": 350,
       "yoy_growth_pct": 200,
       "deals_count": 8,
-      "geo_split": {"US": 40, "China": 55, "EU": 5, "RoW": 0},
+      "geo_split": {
+        "US": 40,
+        "China": 55,
+        "EU": 5,
+        "RoW": 0
+      },
       "top_companies": [
-        {"name": "Dexterity", "geo": "US", "valuation_m": 1650, "last_round_label": "Series C-equiv Mar 2025"},
-        {"name": "Reflex Robotics", "geo": "US", "valuation_m": null, "last_round_label": "$7M seed Mar 2024"},
-        {"name": "Sanctuary AI", "geo": "US", "valuation_m": null, "last_round_label": "$148.6M cumulative, restructuring"},
-        {"name": "AgiBot Pudong Data Center", "geo": "China", "valuation_m": null, "last_round_label": "3000sqm, ~100 robots, 30-50K data points/day"},
-        {"name": "Beijing X-Humanoid (NLJIC)", "geo": "China", "valuation_m": null, "last_round_label": "2000sqm, 133 humanoids across 13 models"}
+        {
+          "name": "Robo",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage, ROBO-1 arm + LeRobot-compatible stack",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/robo.html"
+        },
+        {
+          "name": "Dexterity",
+          "geo": "US",
+          "valuation_m": 1650,
+          "last_round_label": "Series C-equiv Mar 2025"
+        },
+        {
+          "name": "Reflex Robotics",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$7M seed Mar 2024"
+        },
+        {
+          "name": "Sanctuary AI",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "$148.6M cumulative, restructuring"
+        },
+        {
+          "name": "AgiBot Pudong Data Center",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "3000sqm, ~100 robots, 30-50K data points/day"
+        },
+        {
+          "name": "Beijing X-Humanoid (NLJIC)",
+          "geo": "China",
+          "valuation_m": null,
+          "last_round_label": "2000sqm, 133 humanoids across 13 models"
+        }
       ],
-      "top_investors": ["Lightspeed", "Khosla Ventures", "state-backed China funds"],
+      "top_investors": [
+        "Lightspeed",
+        "Khosla Ventures",
+        "state-backed China funds"
+      ],
       "canonical_pov": "Data collection is the most under-tracked and arguably most important physical AI category. China is building national humanoid data farms (395 humanoids across 9 national training facilities with 300 companies sharing standardized data) while the US relies on private RaaS data plus Scale AI. This is where China's structural advantage is widest and least visible to LPs.",
       "caveats": []
     },
@@ -531,30 +1644,115 @@
       "capital_2024_25_m": 60,
       "yoy_growth_pct": 5,
       "deals_count": 4,
-      "geo_split": {"US": 50, "China": 0, "EU": 35, "RoW": 15},
+      "geo_split": {
+        "US": 50,
+        "China": 0,
+        "EU": 35,
+        "RoW": 15
+      },
       "top_companies": [
-        {"name": "Foretellix", "geo": "RoW", "valuation_m": null, "last_round_label": "see Simulation"},
-        {"name": "Edge Case Research", "geo": "US", "valuation_m": null, "last_round_label": null},
-        {"name": "Inverted AI", "geo": "US", "valuation_m": null, "last_round_label": "predictive human behavior, Foretellix partner"},
-        {"name": "Monolith AI", "geo": "EU", "valuation_m": null, "last_round_label": "Coreweave-acquired Oct 2025"}
+        {
+          "name": "Foretellix",
+          "geo": "RoW",
+          "valuation_m": null,
+          "last_round_label": "see Simulation"
+        },
+        {
+          "name": "Edge Case Research",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": null
+        },
+        {
+          "name": "Inverted AI",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "predictive human behavior, Foretellix partner"
+        },
+        {
+          "name": "Monolith AI",
+          "geo": "EU",
+          "valuation_m": null,
+          "last_round_label": "Coreweave-acquired Oct 2025"
+        }
       ],
       "top_investors": [],
       "canonical_pov": "Safety/verification is a category in search of a regulatory forcing function. UNECE virtual-validation mandates are the canary. Until then it's a sub-component of simulation.",
       "caveats": []
     }
   ],
-
   "adjacencies": {
     "description": "Categories not core to physical AI but adjacent and frequently confused with it. Flagged so the taxonomy stays disciplined.",
     "scientific_industrial_ai": {
       "name": "Scientific & Laboratory Robotics / Industrial AI",
-      "companies": ["Project Prometheus", "Periodic Labs", "Thinking Machines Lab"],
+      "companies": [
+        "Project Prometheus",
+        "Periodic Labs",
+        "Thinking Machines Lab"
+      ],
       "note": "Not embodied robotics but competes for the same capital pool. Project Prometheus alone is $6.2B+ raised."
     },
     "digital_agents": {
       "name": "Digital Agents (Not Embodied)",
-      "companies": ["Manus (Meta acq blocked by NDRC Apr 2026)", "Recursive Superintelligence ($650M May 2026)"],
+      "companies": [
+        "Manus (Meta acq blocked by NDRC Apr 2026)",
+        "Recursive Superintelligence ($650M May 2026)"
+      ],
       "note": "Pitched alongside physical AI but disembodied. Flag clearly to avoid taxonomy drift."
     }
+  },
+  "live_quotes": {
+    "updated": "2026-05-16",
+    "source": "Stooq",
+    "quotes": {
+      "SYM": {
+        "price": 47.32,
+        "open": 48.79,
+        "change_pct": -3.01,
+        "date": "2026-05-15"
+      },
+      "PONY": {
+        "price": 8.29,
+        "open": 8.5,
+        "change_pct": -2.47,
+        "date": "2026-05-15"
+      },
+      "WRD": {
+        "price": 7.14,
+        "open": 7.43,
+        "change_pct": -3.9,
+        "date": "2026-05-15"
+      },
+      "AUR": {
+        "price": 7.71,
+        "open": 7.97,
+        "change_pct": -3.26,
+        "date": "2026-05-15"
+      },
+      "HSAI": {
+        "price": 22.44,
+        "open": 22.56,
+        "change_pct": -0.53,
+        "date": "2026-05-15"
+      },
+      "2498.HK": {
+        "price": 33.96,
+        "open": 34.5,
+        "change_pct": -1.57,
+        "date": "2026-05-15"
+      },
+      "OUST": {
+        "price": 34.86,
+        "open": 33.38,
+        "change_pct": 4.43,
+        "date": "2026-05-15"
+      }
+    },
+    "errors": [
+      {
+        "ticker": "EKSO",
+        "error": "No close price for ekso.us (row: EKSO.US,N/D,N/D,N/D,N/D,N/D,N/D,N/D)"
+      }
+    ]
   }
 }

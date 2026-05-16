@@ -1126,6 +1126,74 @@
 }
 .pai-d-table .pai-d-flag.public { background: rgba(30, 58, 138, 0.1); color: var(--pai-navy); }
 
+/* ============ CANONICAL PORTFOLIO ============ */
+/* Drawer table — orange pill linked to internal portfolio page */
+.pai-d-flag-canonical {
+    background: var(--pai-accent) !important;
+    color: #ffffff !important;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter 0.15s, transform 0.15s;
+    letter-spacing: 0.06em !important;
+    font-weight: 600 !important;
+}
+.pai-d-flag-canonical:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.pai-d-flag-canonical:focus { outline: 2px solid rgba(255, 255, 255, 0.6); outline-offset: 2px; }
+
+/* Subtle row highlight in the drawer table for Canonical portfolio rows */
+.pai-d-portfolio-row {
+    background: rgba(249, 115, 22, 0.04);
+    border-left: 2px solid var(--pai-accent);
+    padding-left: 0.5rem !important;
+}
+
+/* Card preview — star prefix on portfolio company names in "Top: ..." line */
+.pai-card-portfolio-name {
+    display: inline;
+    color: var(--pai-accent);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.pai-card-portfolio-name .pai-co-link {
+    color: var(--pai-accent);
+    border-bottom-color: rgba(249, 115, 22, 0.4);
+}
+.pai-card-portfolio-name .pai-co-link:hover {
+    color: var(--pai-accent);
+    border-bottom-color: var(--pai-accent);
+}
+
+/* Sector card — small corner badge if the card holds a Canonical portfolio company */
+.pai-card { position: relative; }
+.pai-card-portfolio-badge {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--pai-accent);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
+    cursor: help;
+}
+.pai-card-has-portfolio {
+    border-color: rgba(249, 115, 22, 0.25);
+}
+.pai-card-has-portfolio:hover {
+    border-color: var(--pai-accent);
+}
+/* Push the layer pill left so it doesn't collide with the corner badge */
+.pai-card-has-portfolio .pai-card-layer {
+    margin-right: 1.6rem;
+}
+
 /* ============ COMPANY OUTBOUND LINKS ============
    Used everywhere a company name renders. Subtle by default (color inherits),
    underline on hover. Keep these crawler-visible — no nofollow, real anchors. */

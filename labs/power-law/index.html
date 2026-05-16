@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Power Law Outlier Lab | Canonical</title>
+    <meta name="description" content="An interactive lab for LPs. Manipulate the shape of a venture fund's outcome distribution and see what actually drives fund returns." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/power-law" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/power-law" />
+    <meta property="og:title" content="Power Law Outlier Lab | Canonical" />
+    <meta property="og:description" content="An interactive lab for LPs. Manipulate the shape of a venture fund's outcome distribution and see what actually drives fund returns." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/power-law" />
+    <meta property="twitter:title" content="Power Law Outlier Lab | Canonical" />
+    <meta property="twitter:description" content="An interactive lab for LPs. Manipulate the shape of a venture fund's outcome distribution and see what actually drives fund returns." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="twitter:creator" content="@canonicalcrypto" />
+    <meta property="twitter:site" content="@canonicalcrypto" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css?v=20260514f">
+    <link rel="stylesheet" href="lab.css?v=1">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header (identical to canonical.cc) -->
+        <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
+            <div class="container mx-auto px-8 py-8">
+                <div class="flex items-center justify-between">
+                    <a href="/" class="logo-link">
+                        <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
+                    </a>
+                    <nav class="hidden md:flex items-center space-x-10">
+                        <a href="/#about" class="nav-link">ABOUT</a>
+                        <a href="/#thesis" class="nav-link">THESIS</a>
+                        <a href="/portfolio" class="nav-link">PORTFOLIO</a>
+                        <div class="nav-dropdown">
+                            <button class="nav-link nav-dropdown-toggle nav-link-active" type="button" aria-haspopup="true" aria-expanded="false">HACKS</button>
+                            <div class="nav-dropdown-menu" role="menu">
+                                <a href="https://dilutionlab.canonical.cc" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
+                                <a href="https://fundmodeler.canonical.cc" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
+                                <a href="/labs/power-law/" class="nav-dropdown-item" role="menuitem">Power Law Lab</a>
+                            </div>
+                        </div>
+                        <a href="/#team" class="nav-link">TEAM</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <section class="lab-hero">
+                <div class="container mx-auto px-8">
+                    <div class="lab-hero-content">
+                        <span class="lab-eyebrow">CANONICAL LABS · POWER LAW OUTLIER LAB</span>
+                        <h1 class="lab-title">A venture fund simulator.</h1>
+                        <p class="lab-subtitle">
+                            Describe a fund — its size, the number of investments, the failure rate, the shape of the right tail — and we run <strong>10,000 simulated versions</strong> of that fund.
+                            The histogram shows the full distribution of plausible outcomes, not just the headline number on a pitch deck.
+                        </p>
+                        <div class="use-cases">
+                            <div class="use-case">
+                                <span class="use-case-tag">If you're an LP</span>
+                                <span class="use-case-body">Plug in a manager's stated strategy (N, ownership, reserves). Is their projected 3x in the top decile of plausible outcomes, or the median? Use this <em>before</em> the IC meeting.</span>
+                            </div>
+                            <div class="use-case">
+                                <span class="use-case-tag">If you're a GP</span>
+                                <span class="use-case-body">Show your LPs why your N matters, why concentration discipline matters, and why the right tail is your real thesis. Drop a screenshot in your deck.</span>
+                            </div>
+                            <div class="use-case">
+                                <span class="use-case-tag">If you're curious</span>
+                                <span class="use-case-body">Click any scenario below. Each one isolates a single counter-intuitive thing the math does that most fund pitches gloss over.</span>
+                            </div>
+                        </div>
+                        <div class="preset-chips" id="preset-chips" role="group" aria-label="Fund presets">
+                            <span class="preset-chips-label">Start with a preset:</span>
+                            <button class="preset-chip active tip-wrap" data-preset="seed" tabindex="0">
+                                Seed
+                                <span class="tip-content tip-content--below">
+                                    <strong>Seed preset.</strong> $50M fund, 25 investments, 50% loss rate, fat right tail (α=1.2, cap 500x). Models a concentrated seed strategy in the style of public empirical work (Correlation Ventures, Kauffman).
+                                </span>
+                            </button>
+                            <button class="preset-chip tip-wrap" data-preset="seriesA" tabindex="0">
+                                Series A
+                                <span class="tip-content tip-content--below">
+                                    <strong>Series A preset.</strong> $150M fund, 18 investments, 35% loss rate, moderate tail (α=1.5, cap 120x). Tighter than seed, less upside per company, but fewer total losses.
+                                </span>
+                            </button>
+                            <button class="preset-chip tip-wrap" data-preset="growth" tabindex="0">
+                                Growth
+                                <span class="tip-content tip-content--below">
+                                    <strong>Growth preset.</strong> $400M fund, 12 investments, 15% loss rate, thin tail (α=1.8, cap 30x). The distribution looks almost normal — growth math is not power-law dominated.
+                                </span>
+                            </button>
+                            <button class="preset-chip tip-wrap" data-preset="custom" tabindex="0">
+                                Custom
+                                <span class="tip-content tip-content--below">
+                                    <strong>Custom.</strong> Your current settings don't match any built-in preset. Tweak any slider and this label appears.
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scenario callout (hidden by default; populated by scenarios) -->
+            <section id="scenario-callout" class="scenario-callout hidden">
+                <div class="container mx-auto px-8">
+                    <div class="scenario-callout-inner">
+                        <div class="scenario-callout-header">
+                            <span class="scenario-callout-label">SCENARIO</span>
+                            <button class="scenario-callout-dismiss" id="scenario-dismiss" aria-label="Dismiss scenario">×</button>
+                        </div>
+                        <h3 class="scenario-callout-title" id="scenario-title"></h3>
+                        <div class="scenario-callout-body" id="scenario-body"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main lab area -->
+            <section class="lab-main">
+                <div class="container mx-auto px-8">
+                    <div class="lab-grid">
+
+                        <!-- Controls -->
+                        <aside class="lab-controls">
+                            <div class="control-section">
+                                <h4 class="control-section-title">Fund</h4>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-fundSize">
+                                        <span class="control-label-text">
+                                            Fund size
+                                            <span class="tip-wrap" tabindex="0" aria-label="More about fund size">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Fund size.</strong> Total dollars committed by LPs.
+                                                    Drives every dollar-denominated number downstream — at the same N and reserves, a bigger fund means bigger checks.
+                                                    Typical seed funds: $30–100M; Series A: $150–400M; growth: $500M+.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-fundSize">$50M</span>
+                                    </label>
+                                    <input type="range" id="ctl-fundSize" min="10" max="500" step="5" value="50" title="Total committed capital, in $M" />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-N">
+                                        <span class="control-label-text">
+                                            Initial investments (N)
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Number of first checks.</strong> How many companies you initially invest in.
+                                                    More names = lower variance and a thinner right tail (you'll probably miss the outlier).
+                                                    Concentrated seed funds: 15–30. Index-style funds: 50+.
+                                                    <em>This is the single most consequential portfolio-construction choice.</em>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-N">25</span>
+                                    </label>
+                                    <input type="range" id="ctl-N" min="5" max="100" step="1" value="25" title="Number of initial investments" />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-reserves">
+                                        <span class="control-label-text">
+                                            Reserves %
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Reserves.</strong> Share of the fund held back to follow on in later rounds.
+                                                    Higher reserves = smaller initial checks but more ammunition to defend ownership in winners.
+                                                    Industry default is 30–50%.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-reserves">40%</span>
+                                    </label>
+                                    <input type="range" id="ctl-reserves" min="0" max="70" step="1" value="40" title="% of fund reserved for follow-on rounds" />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-ownership">
+                                        <span class="control-label-text">
+                                            Ownership multiplier
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Ownership multiplier.</strong> Scales every company's outcome multiple by this factor.
+                                                    2.0x = you owned twice as much of every company at exit — what you get from bigger initial checks, lower dilution, or smarter pro-rata defense.
+                                                    Linear effect on fund TVPI.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-ownership">1.0x</span>
+                                    </label>
+                                    <input type="range" id="ctl-ownership" min="0.5" max="2.5" step="0.05" value="1.0" title="Scales per-company outcome multiple" />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-followon">
+                                        <span class="control-label-text">
+                                            Follow-on strategy
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Where reserve dollars go.</strong>
+                                                    <p><em>Pro-rata:</em> reserves split evenly across the portfolio.</p>
+                                                    <p><em>Super pro-rata:</em> reserves loaded into your realized winners (top 30% by multiple).</p>
+                                                    <p><em>None:</em> reserves returned to LPs at 1.0x, no follow-on.</p>
+                                                    The concentration choice has a bigger impact on fund TVPI than most LPs realize.
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <select id="ctl-followon" class="control-select" title="How reserve capital is deployed">
+                                        <option value="prorata" selected>Pro-rata (split equally)</option>
+                                        <option value="superprorata">Super pro-rata (winners)</option>
+                                        <option value="none">None (return reserves)</option>
+                                    </select>
+                                </div>
+                                <div class="control-row derived">
+                                    <span class="control-derived">Initial check ≈ <strong id="val-checkSize">$1.2M</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="control-section">
+                                <h4 class="control-section-title">Outcome shape</h4>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-lossRate">
+                                        <span class="control-label-text">
+                                            Loss rate
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Loss rate.</strong> Share of companies that return $0 (total loss).
+                                                    Real empirical ranges: seed 45–65%, Series A 25–40%, growth 10–20%.
+                                                    Higher loss rate doesn't move expected TVPI linearly — the lost dollars come out of the bottom of the distribution, not the top.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-lossRate">65%</span>
+                                    </label>
+                                    <input type="range" id="ctl-lossRate" min="0" max="90" step="1" value="65" title="% of investments that go to zero" />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-alpha">
+                                        <span class="control-label-text">
+                                            Tail thickness (α)
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Tail thickness.</strong> The shape parameter of the Pareto distribution.
+                                                    <strong>Lower α = fatter tail</strong> = the rare 100x outlier matters much more.
+                                                    1.1–1.3 = seed-style fat tail; 1.5–1.8 = Series A; 2.0+ = growth.
+                                                    <em>The most consequential slider in this lab — try moving it just 0.2 and watch the histogram redraw.</em>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-alpha">1.50</span>
+                                    </label>
+                                    <input type="range" id="ctl-alpha" min="1.05" max="3.0" step="0.05" value="1.5" title="Pareto shape α. Lower = fatter right tail." />
+                                </div>
+                                <div class="control-row">
+                                    <label class="control-label" for="ctl-tailCap">
+                                        <span class="control-label-text">
+                                            Tail cap
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Tail cap.</strong> Hard maximum outcome multiple for any single company.
+                                                    Sets a ceiling on the right tail to keep the math finite.
+                                                    100–500x is reasonable for seed; 30x for growth.
+                                                    Real outliers like early Uber or Coinbase landed well past 1000x — bump this up to see what that does.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-tailCap">100x</span>
+                                    </label>
+                                    <input type="range" id="ctl-tailCap" min="10" max="1000" step="5" value="100" title="Maximum possible outcome multiple" />
+                                </div>
+                                <div class="control-row derived">
+                                    <span class="control-derived">E[per-co multiple] = <strong id="val-evMultiple">3.1x</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="control-section">
+                                <h4 class="control-section-title">Fund economics</h4>
+                                <div class="control-row inline">
+                                    <label class="control-label" for="ctl-mgmtFee">
+                                        <span class="control-label-text">
+                                            Mgmt fee
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Management fee.</strong> Annual fee as % of committed capital, charged for the fund life.
+                                                    Standard 2% × 10 years = 20% drag on gross returns.
+                                                    Lower fees pass through directly to LP net TVPI.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-mgmtFee">2.0%</span>
+                                    </label>
+                                    <input type="range" id="ctl-mgmtFee" min="0" max="3" step="0.1" value="2.0" title="Annual management fee %" />
+                                </div>
+                                <div class="control-row inline">
+                                    <label class="control-label" for="ctl-carry">
+                                        <span class="control-label-text">
+                                            Carry
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Carried interest.</strong> GP's share of profits above 1.0x of committed capital.
+                                                    Standard is 20%. European waterfall is assumed — carry is only paid after LPs receive their full commitment back.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-carry">20%</span>
+                                    </label>
+                                    <input type="range" id="ctl-carry" min="0" max="30" step="1" value="20" title="GP carry %" />
+                                </div>
+                                <div class="control-row inline">
+                                    <label class="control-label" for="ctl-life">
+                                        <span class="control-label-text">
+                                            Fund life (yrs)
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Fund life.</strong> Years over which management fees accrue.
+                                                    Doesn't model exit timing — TVPI is reported as a horizon-free multiple.
+                                                    A 12-year fund pays 24% in fees at 2%; an 8-year fund pays 16%.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-life">10</span>
+                                    </label>
+                                    <input type="range" id="ctl-life" min="5" max="15" step="1" value="10" title="Years over which fees accrue" />
+                                </div>
+                            </div>
+
+                            <div class="control-section">
+                                <h4 class="control-section-title">Simulation</h4>
+                                <div class="control-row inline">
+                                    <label class="control-label" for="ctl-trials">
+                                        <span class="control-label-text">
+                                            Trials
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Monte Carlo trials.</strong> Number of simulated funds.
+                                                    10,000 is enough for stable median/quantile estimates; crank to 100,000 for sharper p99.
+                                                    More trials = more confidence, slower simulation.
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="control-value" id="val-trials">10,000</span>
+                                    </label>
+                                    <input type="range" id="ctl-trials" min="1000" max="100000" step="1000" value="10000" title="Number of Monte Carlo trials" />
+                                </div>
+                                <div class="control-buttons">
+                                    <button class="control-btn tip-wrap" id="btn-rerun" type="button" tabindex="0">
+                                        Rerun
+                                        <span class="tip-content tip-content--below">
+                                            Re-runs the Monte Carlo simulation with the current parameters. Useful after changing trials, or to refresh the random draws and see how stable the result is.
+                                        </span>
+                                    </button>
+                                    <button class="control-btn tip-wrap" id="btn-reset" type="button" tabindex="0">
+                                        Reset
+                                        <span class="tip-content tip-content--below">
+                                            Returns all controls to the default Seed preset.
+                                        </span>
+                                    </button>
+                                    <button class="control-btn primary tip-wrap" id="btn-share" type="button" tabindex="0">
+                                        Copy share link
+                                        <span class="tip-content tip-content--below">
+                                            Copies a URL with the current settings encoded in the hash. Send to share an exact fund configuration — the recipient lands on the same simulation.
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <!-- Output -->
+                        <section class="lab-output">
+
+                            <!-- KPI Ribbon -->
+                            <div class="kpi-ribbon">
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        E[TVPI]
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Expected TVPI.</strong> The mean fund TVPI across all 10,000 simulated runs.
+                                                Dragged upward by right-tail outliers — the rare 20x outcomes inflate the average even though most funds don't hit them.
+                                                <em>If a pitch deck quotes one number, it's usually this. It's the most flattering one.</em>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-mean">—</div>
+                                </div>
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        p50 TVPI
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Median TVPI.</strong> Half of the 10,000 simulated funds returned more, half returned less.
+                                                The "typical" outcome.
+                                                The gap between p50 and E[TVPI] is the power law working — in a normal distribution they'd be close.
+                                                Watch them drift apart as you fatten the tail.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-p50">—</div>
+                                </div>
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        P(&gt;3x)
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Probability of returning 3x+.</strong> The fraction of simulated funds that returned 3.0x net to LPs or more.
+                                                The "good fund" threshold.
+                                                For seed-style strategies this lands around 10–20%; for growth it's typically &lt;5%.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-p3x">—</div>
+                                </div>
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        P(&gt;5x)
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Probability of returning 5x+.</strong> The "outlier fund" threshold.
+                                                Single-digit-percent territory even for great strategies — these are the funds that build a firm's reputation.
+                                                A strategy that can't produce a meaningfully positive P(&gt;5x) is not selling venture risk.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-p5x">—</div>
+                                </div>
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        P(loss)
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Probability of losing capital.</strong> Fraction of simulated funds that returned less than 1.0x to LPs (failed to return committed capital).
+                                                Always non-trivial in venture — 25–35% is typical for a seed fund.
+                                                Don't pretend this number is zero.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-ploss">—</div>
+                                </div>
+                                <div class="kpi">
+                                    <div class="kpi-label">
+                                        Sim time
+                                        <span class="tip-wrap" tabindex="0">
+                                            <span class="tip-icon">i</span>
+                                            <span class="tip-content">
+                                                <strong>Simulation time.</strong> How long the Monte Carlo run took, in milliseconds.
+                                                Mostly a debug indicator — if it climbs past a second, lower the trials slider.
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="kpi-value" id="kpi-time">—</div>
+                                </div>
+                            </div>
+
+                            <!-- Histogram (hero) -->
+                            <div class="hist-card">
+                                <div class="hist-card-header">
+                                    <h3 class="hist-card-title">Fund TVPI — distribution across <span id="hist-trial-count">10,000</span> simulated funds</h3>
+                                    <p class="hist-card-sub">Each bar = the % of simulated funds that landed in that TVPI bucket. Quantile markers (p10–p90) overlaid in white.</p>
+                                </div>
+                                <div id="histogram" class="histogram"></div>
+                                <div class="hist-legend">
+                                    <span class="legend-swatch loss"></span> &lt;1x (loss)
+                                    <span class="legend-swatch mediocre"></span> 1–3x
+                                    <span class="legend-swatch winner"></span> 3–10x
+                                    <span class="legend-swatch outlier"></span> 10x+
+                                </div>
+                            </div>
+
+                            <!-- Sources of return -->
+                            <div class="sources-card">
+                                <h3 class="sources-title">Where the return came from</h3>
+                                <p class="sources-sub">Averaged across all simulated funds. The fewer winners drive the return, the more the math is power-law shaped.</p>
+                                <div class="sources-grid">
+                                    <div class="source-item">
+                                        <div class="source-num" id="src-top1">—</div>
+                                        <div class="source-cap">
+                                            Top 1 company
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Top 1 contribution.</strong> Across all simulations, on average, what % of the fund's total dollar return came from the single largest winner.
+                                                    The signature power-law number.
+                                                    In seed strategies it's often 40–60%; in growth it's closer to 20–30%.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="source-hint">share of total fund return</div>
+                                    </div>
+                                    <div class="source-item">
+                                        <div class="source-num" id="src-top3">—</div>
+                                        <div class="source-cap">
+                                            Top 3
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Top 3 contribution.</strong> Same idea as Top 1, but for the three largest winners combined.
+                                                    If this exceeds 80%, the fund is fundamentally power-law dominated — most of your TVPI comes from three calls.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="source-hint">share of total fund return</div>
+                                    </div>
+                                    <div class="source-item">
+                                        <div class="source-num" id="src-top10">—</div>
+                                        <div class="source-cap">
+                                            Top 10
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>Top 10 contribution.</strong> Share of fund return from the top 10 winners combined.
+                                                    For most seed strategies this is north of 90% — meaning the bottom 15+ investments contribute almost nothing.
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="source-hint">share of total fund return</div>
+                                    </div>
+                                    <div class="source-item highlight">
+                                        <div class="source-num" id="src-notop">—</div>
+                                        <div class="source-cap">
+                                            TVPI without your top winner
+                                            <span class="tip-wrap" tabindex="0">
+                                                <span class="tip-icon">i</span>
+                                                <span class="tip-content">
+                                                    <strong>TVPI minus the top hit.</strong> What the fund's net TVPI would have been if the single largest winner had returned $0 instead.
+                                                    The most underappreciated number in venture — most "good" funds become 1.0x funds once you remove their best deal.
+                                                    <em>This is the LP question a GP can't dodge.</em>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="source-hint">delete the biggest hit — what's left?</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Scripted scenarios -->
+            <section class="scenarios-section">
+                <div class="container mx-auto px-8">
+                    <h2 class="section-title">Explore</h2>
+                    <p class="section-subtitle">Six scenarios. Each loads a preset and a short argument. Disagree freely.</p>
+                    <div class="scenarios-grid" id="scenarios-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Methodology -->
+            <section class="methodology-section">
+                <div class="container mx-auto px-8">
+                    <details class="methodology">
+                        <summary class="methodology-summary">
+                            <span>Methodology — what's actually being simulated</span>
+                            <span class="methodology-chevron">+</span>
+                        </summary>
+                        <div class="methodology-body">
+                            <h4>The model</h4>
+                            <p>
+                                Each company independently draws an outcome multiple from a <strong>mixture distribution</strong>: with probability <em>loss rate</em> it returns 0; otherwise it draws from a Pareto distribution with shape <em>α</em>, lower bound 1, truncated at <em>tail cap</em>. Pareto is the standard parametric form for venture outcomes — it produces the long tail empirical fund data shows.
+                            </p>
+                            <h4>Sampling</h4>
+                            <p>
+                                Survivor sampling: <code>u ~ Uniform(0, U_max)</code> where <code>U_max = 1 − (1 / tailCap)^α</code>, then <code>x = 1 / (1 − u)^(1/α)</code>. Truncating at <em>tail cap</em> bounds the largest possible outcome. With α near 1 the tail is fat and a single 100x outcome dominates; with α near 3 the tail collapses and the distribution looks almost normal.
+                            </p>
+                            <h4>Fund economics</h4>
+                            <p>
+                                Initial check = (1 − reserves) × fundSize / N. Follow-on capital is split across the portfolio according to your selected strategy (pro-rata = equal split; super pro-rata = top 30% of winners by realized multiple; none = reserves returned to LPs at 1.0x). Gross return is summed across all positions and scaled by the ownership multiplier. We subtract management fees over the fund life and apply carry on profits above 1.0x of committed capital. The reported TVPI is net to LP.
+                            </p>
+                            <h4>Calibration</h4>
+                            <p>
+                                Seed preset (α=1.5, loss rate 65%, cap 100x) is consistent with public empirical work — Correlation Ventures, Kauffman, AngelList. Series A and Growth presets shift loss rate down and tail thickness up, matching the conventional view that later stages have lower variance.
+                            </p>
+                            <h4>Limitations (read these)</h4>
+                            <ul>
+                                <li><strong>Company outcomes are assumed independent.</strong> They aren't — vintage years, sector concentration, and macro shocks correlate failures. Real fund TVPI variance is wider than this model shows.</li>
+                                <li><strong>Outcomes are net of dilution.</strong> The Pareto sample represents what your initial check became at exit. Cap-table mechanics are folded into the distribution, not modeled separately.</li>
+                                <li><strong>Time is collapsed.</strong> The simulation reports TVPI, not DPI, and treats the fund life as a single horizon. Time-value-of-money matters for IRR but not for the visceral point this lab is making.</li>
+                                <li><strong>This is a teaching tool.</strong> Don't use it to underwrite a manager. Use it to argue with their pitch deck.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="footer-text">
+                        © 2025 Canonical Crypto. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                        <a href="https://x.com/canonicalcrypto" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            Canonical on X
+                        </a>
+                        <a href="https://canonicalcc.substack.com" target="_blank" rel="noopener noreferrer" class="footer-link">
+                            Canonical on Substack
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="lab.js?v=1"></script>
+    <!-- Header scroll behavior, lifted from main script.js -->
+    <script>
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        }
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll();
+    </script>
+</body>
+</html>

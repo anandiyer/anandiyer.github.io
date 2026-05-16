@@ -1,0 +1,876 @@
+/* Power Law Outlier Lab — lab-specific styles
+   Inherits from /css/style.css (body gradient, header, nav, footer) */
+
+/* Tooltip system — used across all inputs and chips */
+.tip-wrap {
+    position: relative;
+}
+.tip-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 0.35rem;
+    cursor: help;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    user-select: none;
+    vertical-align: middle;
+}
+.tip-icon:hover,
+.tip-wrap:hover .tip-icon,
+.tip-wrap:focus-within .tip-icon {
+    background: rgba(250, 204, 21, 0.35);
+    color: #facc15;
+}
+
+.tip-content {
+    /* Default position is off-screen viewport-fixed; JS sets real coords on hover.
+       Critical: this keeps the tooltip from contributing to its ancestors' scrollWidth,
+       which was making the controls column overflow even when hidden. */
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    width: 280px;
+    max-width: calc(100vw - 2rem);
+    background: rgba(15, 23, 42, 0.97);
+    border: 1px solid rgba(250, 204, 21, 0.4);
+    border-radius: 0.5rem;
+    padding: 0.75rem 0.875rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: normal;
+    text-align: left;
+}
+
+/* .tip-content--below is a flag read by JS to decide above-vs-below positioning.
+   No CSS positioning rules here — JS handles it. */
+
+.tip-content strong {
+    color: #facc15;
+    font-weight: 600;
+}
+.tip-content em {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+.tip-content code {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.05rem 0.3rem;
+    border-radius: 0.2rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    color: #93c5fd;
+}
+.tip-content p {
+    margin-bottom: 0.4rem;
+}
+.tip-content p:last-child { margin-bottom: 0; }
+
+.tip-wrap:hover > .tip-content,
+.tip-wrap:focus-within > .tip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* When tooltip would clip off the right edge of the controls panel,
+   anchor it to the right instead. */
+.tip-content--right {
+    left: auto;
+    right: 0;
+}
+
+/* Hero */
+.lab-hero {
+    padding: 8rem 0 2rem;
+    text-align: center;
+}
+
+.lab-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lab-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+.lab-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+}
+
+.lab-subtitle {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 720px;
+    margin: 0 auto 2rem;
+}
+
+.use-cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 2.5rem auto 2.5rem;
+    text-align: left;
+}
+
+.use-case {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.use-case-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #facc15;
+}
+
+.use-case-body {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 400;
+}
+
+.use-case-body em {
+    color: rgba(255, 255, 255, 0.95);
+    font-style: italic;
+}
+
+.preset-chips {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.375rem 0.875rem 0.375rem 1rem;
+    border-radius: 999px;
+}
+
+.preset-chips-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.05em;
+    padding-right: 0.25rem;
+}
+
+.preset-chip {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.preset-chip:hover {
+    color: #ffffff;
+}
+
+.preset-chip.active {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+}
+
+/* Scenario callout */
+.scenario-callout {
+    padding: 0 0 1.5rem;
+}
+
+.scenario-callout.hidden { display: none; }
+
+.scenario-callout-inner {
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.12), rgba(251, 191, 36, 0.06));
+    border: 1px solid rgba(250, 204, 21, 0.35);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.scenario-callout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.scenario-callout-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #facc15;
+}
+
+.scenario-callout-dismiss {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    font-family: inherit;
+}
+
+.scenario-callout-dismiss:hover {
+    color: #ffffff;
+}
+
+.scenario-callout-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.scenario-callout-body p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+}
+
+.scenario-callout-body p:last-child { margin-bottom: 0; }
+
+/* Lab main */
+.lab-main {
+    padding: 1rem 0 4rem;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Controls */
+.lab-controls {
+    position: sticky;
+    top: 100px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* .tip-content.floating is a marker class JS adds to coordinate state.
+   The actual top/left are set as inline styles. No CSS needed here. */
+
+.control-section {
+    margin-bottom: 1.75rem;
+}
+
+.control-section:last-child {
+    margin-bottom: 0;
+}
+
+.control-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.control-row {
+    margin-bottom: 1rem;
+}
+
+.control-row.inline { margin-bottom: 0.75rem; }
+.control-row.derived { margin-bottom: 0; padding-top: 0.25rem; }
+
+.control-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    gap: 0.5rem;
+}
+
+.control-label-text {
+    display: inline-flex;
+    align-items: center;
+    flex: 1;
+}
+
+.control-value {
+    color: #facc15;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.875rem;
+}
+
+.control-derived {
+    display: block;
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 0.375rem;
+}
+
+.control-derived strong {
+    color: #93c5fd;
+    font-weight: 500;
+}
+
+.control-hint {
+    display: block;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 0.375rem;
+    line-height: 1.4;
+}
+
+/* Range input styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.15);
+    height: 4px;
+    border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: rgba(255, 255, 255, 0.15);
+    height: 4px;
+    border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -7px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #facc15;
+    border: 2px solid rgba(30, 58, 138, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #facc15;
+    border: 2px solid rgba(30, 58, 138, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.15);
+}
+
+/* Select */
+.control-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.control-select:focus {
+    outline: none;
+    border-color: #facc15;
+}
+
+.control-select option {
+    background: #1e3a8a;
+    color: #ffffff;
+}
+
+/* Control buttons */
+.control-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.control-btn.primary {
+    background: #facc15;
+    color: #1e3a8a;
+    border-color: #facc15;
+    grid-column: 1 / -1;
+}
+
+.control-btn.primary:hover {
+    background: #fde047;
+}
+
+/* Output */
+.lab-output {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* KPI ribbon */
+.kpi-ribbon {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.kpi {
+    background: rgba(30, 58, 138, 0.6);
+    padding: 1rem 1rem;
+    text-align: center;
+}
+
+.kpi-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 0.375rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.kpi-value {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s ease;
+}
+
+.kpi-value.flash {
+    color: #facc15;
+}
+
+/* Histogram card */
+.hist-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.75rem;
+}
+
+.hist-card-header {
+    margin-bottom: 1rem;
+}
+
+.hist-card-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.375rem;
+}
+
+.hist-card-sub {
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.histogram {
+    width: 100%;
+    height: 360px;
+}
+
+.histogram svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.hist-bar {
+    transition: fill 0.2s ease;
+}
+
+.hist-bar.loss { fill: #ef4444; }
+.hist-bar.mediocre { fill: #93c5fd; }
+.hist-bar.winner { fill: #fbbf24; }
+.hist-bar.outlier { fill: #facc15; filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6)); }
+
+.hist-axis text {
+    fill: rgba(255, 255, 255, 0.65);
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+    font-size: 10px;
+}
+
+.hist-axis line, .hist-axis path {
+    stroke: rgba(255, 255, 255, 0.15);
+}
+
+.quantile-line {
+    stroke: rgba(255, 255, 255, 0.85);
+    stroke-width: 1.5;
+    stroke-dasharray: 3 3;
+}
+
+.quantile-label {
+    fill: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    text-anchor: middle;
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+}
+
+.quantile-label-bg {
+    fill: rgba(30, 58, 138, 0.95);
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 0.5;
+    rx: 3;
+}
+
+.hist-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.legend-swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 0.375rem;
+    vertical-align: middle;
+}
+
+.legend-swatch.loss { background: #ef4444; }
+.legend-swatch.mediocre { background: #93c5fd; }
+.legend-swatch.winner { background: #fbbf24; }
+.legend-swatch.outlier { background: #facc15; box-shadow: 0 0 6px rgba(250, 204, 21, 0.6); }
+
+/* Sources of return */
+.sources-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.75rem;
+}
+
+.sources-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.375rem;
+}
+
+.sources-sub {
+    font-size: 0.825rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.25rem;
+}
+
+.sources-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.source-item {
+    background: rgba(30, 58, 138, 0.5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.source-item.highlight {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.source-num {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #facc15;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.25rem;
+}
+
+.source-item.highlight .source-num {
+    color: #fca5a5;
+}
+
+.source-cap {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-bottom: 0.125rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.source-hint {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.3;
+}
+
+/* Scenarios section */
+.scenarios-section {
+    padding: 4rem 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.scenario-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    text-align: left;
+    color: inherit;
+    font-family: inherit;
+    width: 100%;
+}
+
+.scenario-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(250, 204, 21, 0.4);
+}
+
+.scenario-card-num {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(250, 204, 21, 0.85);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+}
+
+.scenario-card-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.625rem;
+    line-height: 1.3;
+}
+
+.scenario-card-tagline {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.55;
+}
+
+.scenario-card-cta {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #facc15;
+    font-weight: 500;
+}
+
+.scenario-card-cta span { transition: transform 0.2s ease; margin-left: 0.25rem; }
+.scenario-card:hover .scenario-card-cta span { transform: translateX(3px); }
+
+/* Methodology */
+.methodology-section {
+    padding: 2rem 0 4rem;
+}
+
+.methodology {
+    max-width: 56rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+}
+
+.methodology-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.methodology-summary::-webkit-details-marker { display: none; }
+
+.methodology-chevron {
+    color: #facc15;
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.methodology[open] .methodology-chevron {
+    transform: rotate(45deg);
+}
+
+.methodology-body {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+.methodology-body h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #facc15;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.methodology-body h4:first-child { margin-top: 0; }
+
+.methodology-body p {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.methodology-body ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.methodology-body li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.methodology-body code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+    color: #93c5fd;
+}
+
+.methodology-body strong { color: #ffffff; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-controls {
+        position: relative;
+        top: 0;
+        max-height: none;
+    }
+
+    .kpi-ribbon { grid-template-columns: repeat(3, 1fr); }
+    .sources-grid { grid-template-columns: repeat(2, 1fr); }
+    .scenarios-grid { grid-template-columns: repeat(2, 1fr); }
+    .use-cases { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .lab-hero { padding-top: 6rem; }
+    .kpi-ribbon { grid-template-columns: repeat(2, 1fr); }
+    .sources-grid { grid-template-columns: 1fr 1fr; }
+    .scenarios-grid { grid-template-columns: 1fr; }
+    .histogram { height: 280px; }
+    .preset-chips { flex-wrap: wrap; }
+}

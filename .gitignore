@@ -1,0 +1,15 @@
+# Personal Claude Code state — local-only, not for the repo
+.claude/settings.local.json
+.claude/worktrees/
+.claude/static-server.js
+
+# OS junk
+.DS_Store
+
+# Jekyll local build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+.bundle/
+vendor/

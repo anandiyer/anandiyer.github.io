@@ -390,6 +390,59 @@
     color: var(--sem-ink-soft);
     background: rgba(15, 23, 42, 0.02);
     letter-spacing: 0.02em;
+    transition: background 0.15s, border-color 0.15s;
+}
+.sem-pill[data-tip] { cursor: pointer; }
+.sem-pill[data-tip]:hover { background: rgba(15, 23, 42, 0.06); border-color: var(--sem-ink-faint); }
+.sem-layer-col.challenger .sem-pill[data-tip]:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: var(--sem-accent);
+}
+strong[data-tip] {
+    cursor: pointer;
+    text-decoration: underline dotted rgba(30, 58, 138, 0.4);
+    text-underline-offset: 3px;
+}
+strong[data-tip]:hover { text-decoration-color: var(--sem-accent); }
+
+/* ============ SVG DIAGRAM LINKS ============ */
+.sem-svg-link { cursor: pointer; transition: filter 0.15s ease, transform 0.15s ease; transform-box: fill-box; transform-origin: center; }
+.sem-svg-link:hover { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6)); }
+.sem-svg-link:hover rect { stroke: var(--sem-accent); stroke-width: 2.5px; }
+.sem-svg-link:focus { outline: none; }
+.sem-svg-link:focus-visible rect { stroke: var(--sem-accent); stroke-width: 3px; }
+
+/* ============ CUSTOM TOOLTIP OVERLAY ============ */
+.sem-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(10, 14, 26, 0.97);
+    color: #ffffff;
+    border: 1px solid rgba(249, 115, 22, 0.45);
+    border-radius: 0.45rem;
+    padding: 0.65rem 0.85rem;
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    max-width: 320px;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.12s ease;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.005em;
+}
+.sem-tooltip.show { opacity: 1; visibility: visible; }
+.sem-tooltip-hint {
+    display: block;
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: var(--sem-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sem-accent-soft);
 }
 .sem-layer-col.challenger .sem-pill {
     border-color: rgba(249, 115, 22, 0.4);

@@ -1,5 +1,5 @@
-/* Physical AI Capital Flow Map - interactive layer.
-   Fetches /labs/physical-ai/data.json, renders:
+/* Physical AI & Robotics - interactive layer.
+   Fetches /physical-ai-robotics/data.json, renders:
      - Scene 1: valuation chasm horizontal bars
      - Scene 2: round velocity SVG scatter + mobile fallback list
      - Scene 3: US / China flow rows
@@ -1205,7 +1205,7 @@
 
         // Footer
         const updated = (DATA.meta && DATA.meta.updated) ? DATA.meta.updated : '';
-        const sub = encodeURIComponent('Physical AI Map — ' + s.name);
+        const sub = encodeURIComponent('Physical AI & Robotics — ' + s.name);
         drawerInner.appendChild(el('div', { class: 'pai-d-footer' },
             el('span', null, 'Last updated ' + updated + ' · v' + (DATA.meta && DATA.meta.version || '0.1')),
             el('a', { href: 'mailto:hello@canonical.cc?subject=' + sub }, 'Discuss this sub-sector →')
@@ -1320,7 +1320,7 @@
         }
 
         // Footer
-        const sub = encodeURIComponent('Physical AI Map — ' + entry.display);
+        const sub = encodeURIComponent('Physical AI & Robotics — ' + entry.display);
         drawerInner.appendChild(el('div', { class: 'pai-d-footer' },
             el('span', null, 'Coverage view · v' + (DATA.meta && DATA.meta.version || '0.1')),
             el('a', { href: 'mailto:hello@canonical.cc?subject=' + sub }, 'Discuss ' + entry.display + ' →')

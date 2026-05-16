@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Refresh public market close prices for the Physical AI Map.
+ * Refresh public market close prices for the Physical AI & Robotics page.
  *
- * Reads tickers from labs/physical-ai/data.json (each public company has a
+ * Reads tickers from physical-ai-robotics/data.json (each public company has a
  * `ticker` field), fetches latest close prices from Stooq, and writes them
  * back under `data.live_quotes.quotes`. Run by a daily GitHub Action (see
  * .github/workflows/refresh-quotes.yml). Can also be run locally:

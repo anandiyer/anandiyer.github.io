@@ -226,7 +226,7 @@
         const url = COMPANY_URLS[name];
         if (!url) return document.createTextNode(name);
         const a = el('a', {
-            href: url,
+            href: withRef(url),
             target: '_blank',
             rel: 'noopener',
             class: 'pai-co-link' + (opts && opts.className ? ' ' + opts.className : '')
@@ -348,6 +348,34 @@
         if (n == null || isNaN(n)) return '—';
         const sign = n > 0 ? '+' : '';
         return sign + n.toFixed(2) + '%';
+    }
+
+    /* withRef — append ?ref=canonicalcc to outbound https links for referral tracking.
+       Skips: mailto/tel/etc., internal canonical.cc links, and URLs already carrying a ref. */
+    function withRef(url) {
+        if (!url || typeof url !== 'string') return url;
+        try {
+            const u = new URL(url, window.location.origin);
+            if (u.protocol !== 'http:' && u.protocol !== 'https:') return url;
+            // Skip internal links (canonical.cc + current host for local previews)
+            if (u.hostname === 'canonical.cc' || u.hostname === 'www.canonical.cc' || u.hostname === window.location.hostname) return url;
+            if (u.searchParams.has('ref')) return url;
+            u.searchParams.set('ref', 'canonicalcc');
+            return u.toString();
+        } catch (e) {
+            return url;
+        }
+    }
+
+    /* One-time scan to apply withRef to any anchor that's already in the DOM
+       (static HTML in index.html + JS-rendered chunks before this runs). Idempotent. */
+    function applyRefToAllOutboundLinks(root) {
+        const scope = root || document;
+        scope.querySelectorAll('a[href]').forEach(a => {
+            const original = a.getAttribute('href');
+            const updated = withRef(original);
+            if (updated !== original) a.setAttribute('href', updated);
+        });
     }
 
     /* ---------- LIVE QUOTES ----------
@@ -549,8 +577,9 @@
                 x: lx, y: cy - 4, class: 'pai-point-label', 'text-anchor': anchor
             }, p.company);
             if (companyUrl) {
-                const a = svg('a', { href: companyUrl, target: '_blank', rel: 'noopener', class: 'pai-svg-co-link' });
-                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', companyUrl);
+                const refUrl = withRef(companyUrl);
+                const a = svg('a', { href: refUrl, target: '_blank', rel: 'noopener', class: 'pai-svg-co-link' });
+                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', refUrl);
                 a.appendChild(labelText);
                 root.appendChild(a);
             } else {
@@ -728,9 +757,10 @@
             }, u.name);
             const url = COMPANY_URLS[u.name];
             if (url) {
+                const refUrl = withRef(url);
                 const a = svg('a', { target: '_blank', rel: 'noopener' });
-                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', url);
-                a.setAttribute('href', url);
+                a.setAttributeNS('http://www.w3.org/1999/xlink', 'href', refUrl);
+                a.setAttribute('href', refUrl);
                 a.appendChild(nameLabel);
                 root.appendChild(a);
             } else {
@@ -1095,7 +1125,7 @@
                 const meta = el('div', { class: 'pai-live-meta' });
                 meta.appendChild(el('a', {
                     class: 'pai-live-ticker',
-                    href: tickerExchangeUrl(c.ticker),
+                    href: withRef(tickerExchangeUrl(c.ticker)),
                     target: '_blank',
                     rel: 'noopener noreferrer',
                     title: 'View ' + c.ticker + ' on Google Finance'
@@ -1279,7 +1309,7 @@
                 if (url) {
                     list.appendChild(el('a', {
                         class: 'pai-d-investor pai-d-investor-co',
-                        href: url, target: '_blank', rel: 'noopener'
+                        href: withRef(url), target: '_blank', rel: 'noopener'
                     }, c));
                 } else {
                     list.appendChild(el('span', { class: 'pai-d-investor' }, c));
@@ -1408,6 +1438,10 @@
         const f = readFilters();
         if (f.sector) openSector(f.sector);
         else if (f.investor) openInvestor(f.investor);
+
+        // One-shot ref pass to catch any anchors from static HTML in index.html
+        // (substack, X profile, etc.). JS-rendered links already pass through withRef.
+        applyRefToAllOutboundLinks();
 
         // close drawer interactions
         drawerOverlay.addEventListener('click', closeDrawer);

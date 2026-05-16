@@ -9,18 +9,36 @@
                 <a href="https://canonical.cc/#thesis" class="nav-link" data-canonical-anchor="thesis">THESIS</a>
                 <a href="https://canonical.cc/portfolio" class="nav-link{% if include.active == 'portfolio' %} nav-link-active{% endif %}">PORTFOLIO</a>
                 <div class="nav-dropdown">
-                    <button class="nav-link nav-dropdown-toggle{% if include.active == 'hacks' %} nav-link-active{% endif %}" type="button" aria-haspopup="true" aria-expanded="false">HACKS</button>
+                    <button class="nav-link nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">LABS</button>
                     <div class="nav-dropdown-menu" role="menu">
-                        <a href="https://dilutionlab.canonical.cc" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
-                        <a href="https://fundmodeler.canonical.cc" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
+                        <a href="https://canonical.cc/labs/dilutionlab/" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
+                        <a href="https://canonical.cc/labs/fundmodeler/" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
                         <a href="https://canonical.cc/labs/power-law/" class="nav-dropdown-item" role="menuitem">Power Law Lab</a>
                         <a href="https://canonical.cc/physical-ai-robotics/" class="nav-dropdown-item" role="menuitem">Physical AI &amp; Robotics</a>
+                        <a href="https://canonical.cc/labs/semiconductor-silicon-stack/" class="nav-dropdown-item" role="menuitem">Semiconductor Stack</a>
                     </div>
                 </div>
                 <a href="https://canonical.cc/#team" class="nav-link" data-canonical-anchor="team">TEAM</a>
             </nav>
+            <button class="nav-menu-toggle md:hidden" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </div>
+    <nav id="nav-mobile" class="nav-mobile md:hidden">
+        <a href="https://canonical.cc/#about" class="nav-mobile-link" data-canonical-anchor="about">ABOUT</a>
+        <a href="https://canonical.cc/#thesis" class="nav-mobile-link" data-canonical-anchor="thesis">THESIS</a>
+        <a href="https://canonical.cc/portfolio" class="nav-mobile-link">PORTFOLIO</a>
+        <div class="nav-mobile-section">LABS</div>
+        <a href="https://canonical.cc/labs/dilutionlab/" class="nav-mobile-sublink">Dilution Lab</a>
+        <a href="https://canonical.cc/labs/fundmodeler/" class="nav-mobile-sublink">Fund Modeler</a>
+        <a href="https://canonical.cc/labs/power-law/" class="nav-mobile-sublink">Power Law Lab</a>
+        <a href="https://canonical.cc/physical-ai-robotics/" class="nav-mobile-sublink">Physical AI &amp; Robotics</a>
+        <a href="https://canonical.cc/labs/semiconductor-silicon-stack/" class="nav-mobile-sublink">Semiconductor Stack</a>
+        <a href="https://canonical.cc/#team" class="nav-mobile-link" data-canonical-anchor="team">TEAM</a>
+    </nav>
 </header>
 <script>
 (function () {
@@ -50,5 +68,20 @@
         window.scrollTo({ top: top, behavior: 'smooth' });
         history.replaceState(null, '', '#' + sectionId);
     });
+
+    var toggle = document.querySelector('.nav-menu-toggle');
+    var mobileNav = document.getElementById('nav-mobile');
+    if (toggle && mobileNav) {
+        toggle.addEventListener('click', function () {
+            var open = mobileNav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mobileNav.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                mobileNav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 })();
 </script>

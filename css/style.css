@@ -1040,3 +1040,137 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Mobile hamburger menu */
+.nav-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(30, 58, 138, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.5rem 2rem 1.5rem;
+}
+
+.nav-mobile.open {
+    display: flex;
+}
+
+.nav-mobile-link {
+    display: block;
+    padding: 0.85rem 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.nav-mobile-link:hover,
+.nav-mobile-link:active {
+    color: #ffffff;
+}
+
+.nav-mobile-section {
+    padding: 1rem 0 0.25rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.nav-mobile-sublink {
+    display: block;
+    padding: 0.55rem 0 0.55rem 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.875rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.nav-mobile-sublink:hover,
+.nav-mobile-sublink:active {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .nav-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Labs section cards (homepage) */
+.lab-card {
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.lab-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.lab-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.lab-card-description {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.lab-card-cta {
+    color: #1e3a8a;
+    font-size: 0.875rem;
+    font-weight: 500;
+}

@@ -31,8 +31,16 @@
 
     /* Company → official corporate URL. Source of truth for outbound links.
        Keep aligned with names in data.json scenes + subsectors[].top_companies.
-       Used by companyLink() everywhere a company is rendered. */
+       Used by companyLink() everywhere a company is rendered.
+
+       Canonical portfolio companies are linked to their corporate domains here
+       (for outbound SEO juice). The CANONICAL pill rendered next to the name
+       links to the internal /companies/<slug>.html page for engagement. */
     const COMPANY_URLS = {
+        // Canonical portfolio (3)
+        'Haptic': 'https://hapticlabs.ai',
+        'Robo': 'https://robo.inc',
+        'Nirvana AI': 'https://nrvana.ai',
         // Humanoid robotics
         'Figure AI': 'https://www.figure.ai',
         'Figure': 'https://www.figure.ai',
@@ -809,6 +817,9 @@
     }
 
     function buildCard(s) {
+        const portfolioCompanies = (s.top_companies || []).filter(c => c.canonical_portfolio);
+        const hasPortfolio = portfolioCompanies.length > 0;
+
         const top = el('div', { class: 'pai-card-top' },
             el('span', { class: 'pai-card-num' }, s.number),
             el('span', { class: 'pai-card-layer' }, s.layer)
@@ -822,14 +833,38 @@
             buildStat('Deals', String(s.deals_count))
         );
 
-        const topNames = s.top_companies.slice(0, 5).map(c => c.name);
+        // For the card preview, surface our portfolio companies first regardless of valuation rank,
+        // then fill with the next 4 (or however many) non-portfolio names.
+        const portfolioNames = portfolioCompanies.map(c => c.name);
+        const nonPortfolio = (s.top_companies || []).filter(c => !c.canonical_portfolio).slice(0, 5 - portfolioNames.length).map(c => c.name);
+        const topNames = portfolioNames.concat(nonPortfolio);
+
         const companies = el('div', { class: 'pai-card-companies' });
         companies.appendChild(document.createTextNode('Top: '));
         const emWrap = el('em');
-        emWrap.appendChild(companyListInline(topNames));
+        // Inline rendering with star prefix for portfolio company names
+        topNames.forEach((name, i) => {
+            if (i > 0) emWrap.appendChild(document.createTextNode(' · '));
+            const isPortfolio = portfolioNames.includes(name);
+            if (isPortfolio) {
+                const wrap = el('span', { class: 'pai-card-portfolio-name' });
+                wrap.appendChild(document.createTextNode('★ '));
+                wrap.appendChild(companyLink(name));
+                emWrap.appendChild(wrap);
+            } else {
+                emWrap.appendChild(companyLink(name));
+            }
+        });
         companies.appendChild(emWrap);
 
-        const card = el('div', { class: 'pai-card' }, top, el('h3', null, s.name), stats, companies);
+        const card = el('div', { class: 'pai-card' + (hasPortfolio ? ' pai-card-has-portfolio' : '') }, top, el('h3', null, s.name), stats, companies);
+        if (hasPortfolio) {
+            // Floating corner indicator for sectors with Canonical portfolio coverage
+            card.appendChild(el('span', {
+                class: 'pai-card-portfolio-badge',
+                title: portfolioCompanies.map(c => c.name).join(', ') + ' — Canonical portfolio'
+            }, '★'));
+        }
         card.dataset.id = s.id;
         card.addEventListener('click', () => openSector(s.id));
 
@@ -1038,10 +1073,19 @@
         let anyLive = false;
         s.top_companies.forEach(c => {
             const nameCell = el('td');
+            if (c.canonical_portfolio) nameCell.classList.add('pai-d-portfolio-row');
             nameCell.appendChild(companyLink(c.name));
             if (c.flag) {
                 const flagEl = el('span', { class: 'pai-d-flag' + (c.flag === 'public-market-cap' ? ' public' : '') }, c.flag.replace(/-/g, ' '));
                 nameCell.appendChild(flagEl);
+            }
+            // Canonical portfolio pill — links to the internal /companies/<slug>.html page
+            if (c.canonical_portfolio && c.portfolio_url) {
+                nameCell.appendChild(el('a', {
+                    class: 'pai-d-flag pai-d-flag-canonical',
+                    href: c.portfolio_url,
+                    title: 'A Canonical portfolio company'
+                }, '★ Canonical'));
             }
             // Ticker row: always show for public-market-cap companies. Add live price if available.
             if (c.ticker) {

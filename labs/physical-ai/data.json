@@ -806,6 +806,14 @@
       },
       "top_companies": [
         {
+          "name": "Nirvana AI",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/nirvana-ai.html"
+        },
+        {
           "name": "Mind Robotics",
           "geo": "US",
           "valuation_m": 3400,
@@ -1527,6 +1535,14 @@
       },
       "top_companies": [
         {
+          "name": "Haptic",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/haptic.html"
+        },
+        {
           "name": "Foxglove",
           "geo": "US",
           "valuation_m": null,
@@ -1573,6 +1589,14 @@
         "RoW": 0
       },
       "top_companies": [
+        {
+          "name": "Robo",
+          "geo": "US",
+          "valuation_m": null,
+          "last_round_label": "early stage, ROBO-1 arm + LeRobot-compatible stack",
+          "canonical_portfolio": true,
+          "portfolio_url": "https://canonical.cc/companies/robo.html"
+        },
         {
           "name": "Dexterity",
           "geo": "US",

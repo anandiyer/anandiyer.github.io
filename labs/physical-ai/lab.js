@@ -12,7 +12,22 @@
     'use strict';
 
     let DATA = null;
+    let INVESTORS = null;  // Map<normalizedKey, { display, sectors: Set<id>, companies: Set<string>, annotations: Set<string> }>
+    let LIVE_QUOTES = null;  // ticker → { price, change_pct, date }. Populated from data.live_quotes if present.
     const tip = document.getElementById('pai-tip');
+
+    /* Investor name aliases — collapse known variants so a single click finds everything.
+       Keep the right-hand side as the canonical display form. */
+    const INVESTOR_ALIASES = {
+        'eclipse': 'Eclipse Ventures',
+        'khosla': 'Khosla Ventures',
+        'lux': 'Lux Capital',
+        'bezos': 'Bezos Expeditions',
+        'nvidia': 'Nvidia NVentures',
+        'a16z (18 deals)': 'a16z',
+        'blackstone (preferred)': 'Blackstone'
+    };
+    const BLACKLIST_INVESTORS = new Set(['state-backed china funds']);  // generic placeholder, not a focusable entity
 
     /* Static explanations for filter chips, TLDR stats, and key terms.
        Keep terse; the goal is to remove ambiguity, not to write paragraphs. */
@@ -106,6 +121,36 @@
         return sign + n + '%';
     }
 
+    function fmtPriceUSD(n) {
+        if (n == null || isNaN(n)) return '—';
+        return '$' + n.toFixed(2);
+    }
+
+    function fmtSignedPct1(n) {
+        if (n == null || isNaN(n)) return '—';
+        const sign = n > 0 ? '+' : '';
+        return sign + n.toFixed(2) + '%';
+    }
+
+    /* ---------- LIVE QUOTES ----------
+       Browser CORS blocks Stooq/Yahoo direct, so we don't fetch client-side.
+       Instead, a daily GitHub Action (see .github/workflows/refresh-quotes.yml)
+       fetches close prices server-side and commits them to data.json under
+       `live_quotes.quotes`. The JS here just reads what's there. */
+    function tickerExchangeUrl(ticker) {
+        if (!ticker) return null;
+        if (/\.HK$/i.test(ticker)) {
+            const num = ticker.replace(/\.HK$/i, '');
+            return 'https://www.google.com/finance/quote/' + num + ':HKG';
+        }
+        return 'https://www.google.com/finance/quote/' + encodeURIComponent(ticker) + ':NASDAQ';
+    }
+    function tickerExchangeLabel(ticker) {
+        if (!ticker) return '';
+        if (/\.HK$/i.test(ticker)) return 'HKEX: ' + ticker.replace(/\.HK$/i, '');
+        return 'NASDAQ: ' + ticker;
+    }
+
     /* ---------- Tooltip ---------- */
     function showTip(e, html) {
         tip.innerHTML = html;
@@ -137,7 +182,7 @@
 
         s.headline_bars.forEach(b => container.appendChild(buildChasmRow(b, false, maxVal)));
 
-        container.appendChild(el('div', { class: 'pai-chasm-divider' }, '— vs. six entire sub-sectors —'));
+        container.appendChild(el('div', { class: 'pai-chasm-divider' }, '— vs. 6 entire sub-sectors —'));
 
         s.tail_bars.forEach(b => container.appendChild(buildChasmRow({
             name: b.name,
@@ -328,14 +373,30 @@
     }
 
     function buildFlowRow(investors, company) {
+        const actor = el('span', { class: 'pai-flow-actor' });
+        investors.forEach((inv, i) => {
+            const norm = normalizeInvestorKey(inv);
+            if (norm) {
+                actor.appendChild(el('button', {
+                    class: 'pai-flow-actor-link',
+                    onclick: (e) => { e.stopPropagation(); openInvestor(norm.key); }
+                }, inv));
+            } else {
+                actor.appendChild(document.createTextNode(inv));
+            }
+            if (i < investors.length - 1) {
+                actor.appendChild(document.createTextNode(' + '));
+            }
+        });
         const actorText = investors.join(' + ');
         const row = el('div', { class: 'pai-flow-row' },
-            el('span', { class: 'pai-flow-actor' }, actorText),
+            actor,
             el('span', { class: 'pai-flow-arrow' }, '→'),
             el('span', { class: 'pai-flow-target' }, company)
         );
         row.addEventListener('mousemove', (e) => {
-            showTip(e, '<strong>' + company + '</strong>Backed by: <em>' + actorText + '</em>');
+            showTip(e, '<strong>' + company + '</strong>Backed by: ' + actorText +
+                '<br/><em>click any investor for their coverage</em>');
         });
         row.addEventListener('mouseleave', hideTip);
         return row;
@@ -449,7 +510,8 @@
             layer: p.get('layer') || 'all',
             geo: p.get('geo') || 'global',
             sort: p.get('sort') || 'capital',
-            sector: p.get('sector') || null
+            sector: p.get('sector') || null,
+            investor: p.get('investor') || null
         };
     }
 
@@ -459,6 +521,7 @@
         if (f.geo && f.geo !== 'global') p.set('geo', f.geo);
         if (f.sort && f.sort !== 'capital') p.set('sort', f.sort);
         if (f.sector) p.set('sector', f.sector);
+        if (f.investor) p.set('investor', f.investor);
         const qs = p.toString();
         const url = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
         window.history.replaceState(null, '', url);
@@ -546,6 +609,60 @@
         );
     }
 
+    /* ---------- INVESTOR INDEX ---------- */
+    function normalizeInvestorKey(rawName) {
+        if (!rawName) return null;
+        // Strip parentheticals; lowercase; collapse whitespace
+        const stripped = rawName.replace(/\s*\([^)]*\)\s*$/, '').trim().toLowerCase();
+        if (!stripped) return null;
+        if (BLACKLIST_INVESTORS.has(stripped)) return null;
+        // Apply alias map (against full original lowercased form first, then stripped)
+        const fullLower = rawName.toLowerCase().trim();
+        const aliasFull = INVESTOR_ALIASES[fullLower];
+        const aliasStripped = INVESTOR_ALIASES[stripped];
+        const display = aliasFull || aliasStripped || rawName.replace(/\s*\([^)]*\)\s*$/, '').trim();
+        return { key: display.toLowerCase(), display };
+    }
+
+    function splitInvestorString(s) {
+        // Handle multi-investor entries like "Microsoft + Amazon + OpenAI" or "Alibaba, Geely"
+        return s.split(/\s*(?:\+|,|&)\s*/).map(x => x.trim()).filter(Boolean);
+    }
+
+    function buildInvestorIndex() {
+        const idx = new Map();
+        function add(rawName, sectorId, companyName) {
+            const norm = normalizeInvestorKey(rawName);
+            if (!norm) return;
+            if (!idx.has(norm.key)) {
+                idx.set(norm.key, {
+                    display: norm.display,
+                    sectors: new Set(),
+                    companies: new Set(),
+                    annotations: new Set()
+                });
+            }
+            const entry = idx.get(norm.key);
+            if (sectorId) entry.sectors.add(sectorId);
+            if (companyName) entry.companies.add(companyName);
+            // Pull annotation from parens if any
+            const annMatch = rawName.match(/\(([^)]+)\)\s*$/);
+            if (annMatch) entry.annotations.add(annMatch[1].trim());
+        }
+        DATA.subsectors.forEach(s => {
+            (s.top_investors || []).forEach(inv => {
+                splitInvestorString(inv).forEach(part => add(part, s.id, null));
+            });
+        });
+        const flows = DATA.scenes.us_china_flows;
+        if (flows) {
+            (flows.us_flows || []).concat(flows.china_flows || []).forEach(f => {
+                f.investors.forEach(inv => add(inv, null, f.company));
+            });
+        }
+        return idx;
+    }
+
     /* ---------- DRAWER ---------- */
     const drawer = document.getElementById('drawer');
     const drawerInner = document.getElementById('drawer-inner');
@@ -556,8 +673,25 @@
         if (!s) return;
         const f = readFilters();
         f.sector = id;
+        f.investor = null;
         writeFilters(f);
         renderDrawer(s);
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        drawerOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function openInvestor(key) {
+        if (!INVESTORS) return;
+        const lookupKey = key.toLowerCase();
+        const entry = INVESTORS.get(lookupKey);
+        if (!entry) return;
+        const f = readFilters();
+        f.investor = entry.display;
+        f.sector = null;
+        writeFilters(f);
+        renderInvestor(entry);
         drawer.classList.add('open');
         drawer.setAttribute('aria-hidden', 'false');
         drawerOverlay.classList.add('open');
@@ -571,6 +705,7 @@
         document.body.style.overflow = '';
         const f = readFilters();
         f.sector = null;
+        f.investor = null;
         writeFilters(f);
     }
 
@@ -657,12 +792,36 @@
         );
         table.appendChild(thead);
         const tbody = el('tbody');
+        let anyLive = false;
         s.top_companies.forEach(c => {
             const nameCell = el('td');
             nameCell.appendChild(document.createTextNode(c.name));
             if (c.flag) {
                 const flagEl = el('span', { class: 'pai-d-flag' + (c.flag === 'public-market-cap' ? ' public' : '') }, c.flag.replace(/-/g, ' '));
                 nameCell.appendChild(flagEl);
+            }
+            // Ticker row: always show for public-market-cap companies. Add live price if available.
+            if (c.ticker) {
+                const live = LIVE_QUOTES && LIVE_QUOTES[c.ticker];
+                const meta = el('div', { class: 'pai-live-meta' });
+                meta.appendChild(el('a', {
+                    class: 'pai-live-ticker',
+                    href: tickerExchangeUrl(c.ticker),
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                    title: 'View ' + c.ticker + ' on Google Finance'
+                }, tickerExchangeLabel(c.ticker)));
+                if (live && live.price != null) {
+                    anyLive = true;
+                    meta.appendChild(el('span', { class: 'pai-live-dot', title: 'Daily close · ' + (live.date || '') }));
+                    meta.appendChild(el('span', { class: 'pai-live-price' }, fmtPriceUSD(live.price)));
+                    if (live.change_pct != null) {
+                        meta.appendChild(el('span', {
+                            class: 'pai-live-delta ' + (live.change_pct >= 0 ? 'pai-live-up' : 'pai-live-down')
+                        }, fmtSignedPct1(live.change_pct)));
+                    }
+                }
+                nameCell.appendChild(meta);
             }
             tbody.appendChild(el('tr', null,
                 nameCell,
@@ -673,6 +832,16 @@
         });
         table.appendChild(tbody);
         compSec.appendChild(table);
+        if (anyLive && DATA.live_quotes && DATA.live_quotes.updated) {
+            compSec.appendChild(el('div', { class: 'pai-live-footnote' },
+                'Daily-refreshed close prices via Stooq, last updated ' + DATA.live_quotes.updated +
+                '. Stored Val column is the point-in-time market cap from data.json (quarterly refresh).'
+            ));
+        } else if (s.top_companies.some(c => c.ticker)) {
+            compSec.appendChild(el('div', { class: 'pai-live-footnote pai-live-footnote-stale' },
+                'Live daily-refresh pending. Click any ticker symbol above for the current price on Google Finance.'
+            ));
+        }
         drawerInner.appendChild(compSec);
 
         // Investors
@@ -681,7 +850,25 @@
                 el('div', { class: 'pai-d-section-label' }, 'Active investors')
             );
             const invList = el('div', { class: 'pai-d-investors' });
-            s.top_investors.forEach(i => invList.appendChild(el('span', { class: 'pai-d-investor' }, i)));
+            s.top_investors.forEach(rawEntry => {
+                // Each top_investors entry might be a single name or a + separated group.
+                // Render each name as a clickable pill that opens that investor's coverage view.
+                const parts = splitInvestorString(rawEntry);
+                parts.forEach(part => {
+                    const norm = normalizeInvestorKey(part);
+                    if (!norm) {
+                        invList.appendChild(el('span', { class: 'pai-d-investor' }, part));
+                        return;
+                    }
+                    // Display: if the part has a parenthetical annotation, preserve it
+                    const annMatch = part.match(/\(([^)]+)\)\s*$/);
+                    const label = annMatch ? norm.display + ' (' + annMatch[1] + ')' : norm.display;
+                    invList.appendChild(el('button', {
+                        class: 'pai-d-investor pai-d-investor-btn',
+                        onclick: (e) => { e.stopPropagation(); openInvestor(norm.key); }
+                    }, label));
+                });
+            });
             invSec.appendChild(invList);
             drawerInner.appendChild(invSec);
         }
@@ -703,6 +890,113 @@
         drawerInner.appendChild(el('div', { class: 'pai-d-footer' },
             el('span', null, 'Last updated ' + updated + ' · v' + (DATA.meta && DATA.meta.version || '0.1')),
             el('a', { href: 'mailto:hello@canonical.cc?subject=' + sub }, 'Discuss this sub-sector →')
+        ));
+
+        drawer.scrollTop = 0;
+    }
+
+    function renderInvestor(entry) {
+        drawerInner.innerHTML = '';
+
+        drawerInner.appendChild(el('button', {
+            class: 'pai-drawer-close',
+            'aria-label': 'Close panel',
+            onclick: closeDrawer
+        }, '×'));
+
+        // Resolve sectors and aggregate
+        const sectors = Array.from(entry.sectors).map(id => DATA.subsectors.find(s => s.id === id)).filter(Boolean);
+        sectors.sort((a, b) => (b.capital_2024_25_m || 0) - (a.capital_2024_25_m || 0));
+
+        const totalCapital = sectors.reduce((sum, s) => sum + (s.capital_2024_25_m || 0), 0);
+        const layerBreakdown = { embodiment: 0, domain: 0, stack: 0 };
+        sectors.forEach(s => { layerBreakdown[s.layer] = (layerBreakdown[s.layer] || 0) + 1; });
+
+        // Header
+        const header = el('div', { class: 'pai-d-header' },
+            el('div', { class: 'pai-d-meta-row' },
+                el('span', { class: 'pai-card-layer pai-investor-label' }, 'INVESTOR'),
+                entry.annotations.size
+                    ? el('span', { class: 'pai-d-num pai-investor-ann' }, Array.from(entry.annotations).join(' · '))
+                    : null
+            ),
+            el('h2', { class: 'pai-d-title', id: 'drawer-title' }, entry.display)
+        );
+        drawerInner.appendChild(header);
+
+        // Stats: # sub-sectors, # named companies, layer breakdown
+        const stats = el('div', { class: 'pai-d-stats' });
+        stats.appendChild(el('div', null,
+            el('div', { class: 'pai-d-stat-k' }, 'Sub-sectors'),
+            el('div', { class: 'pai-d-stat-v' }, String(sectors.length))
+        ));
+        stats.appendChild(el('div', null,
+            el('div', { class: 'pai-d-stat-k' }, 'Sector capital total'),
+            el('div', { class: 'pai-d-stat-v' }, fmtB(totalCapital))
+        ));
+        stats.appendChild(el('div', null,
+            el('div', { class: 'pai-d-stat-k' }, 'Layer mix'),
+            el('div', { class: 'pai-d-stat-v pai-investor-layers' },
+                (layerBreakdown.embodiment ? layerBreakdown.embodiment + 'E ' : '') +
+                (layerBreakdown.domain ? layerBreakdown.domain + 'D ' : '') +
+                (layerBreakdown.stack ? layerBreakdown.stack + 'S' : '')
+            )
+        ));
+        drawerInner.appendChild(stats);
+
+        // Reading
+        drawerInner.appendChild(el('div', { class: 'pai-d-section' },
+            el('div', { class: 'pai-d-section-label' }, 'How to read this'),
+            el('div', { class: 'pai-d-pov-body' },
+                entry.display + ' shows up as a top-named investor in the sub-sectors below. ' +
+                'Sector capital total is the sum of all 2024–25 venture into those sub-sectors, not ' +
+                entry.display + '\'s own check size. Use it as a coverage map, not a deployment ledger.'
+            )
+        ));
+
+        // Sub-sectors list
+        if (sectors.length) {
+            const secList = el('div', { class: 'pai-d-section' },
+                el('div', { class: 'pai-d-section-label' }, 'Sub-sectors (' + sectors.length + ')')
+            );
+            const grid = el('div', { class: 'pai-investor-sector-grid' });
+            sectors.forEach(s => {
+                const card = el('div', { class: 'pai-investor-sector-card', onclick: () => openSector(s.id) },
+                    el('div', { class: 'pai-investor-sector-top' },
+                        el('span', { class: 'pai-card-num' }, s.number),
+                        el('span', { class: 'pai-card-layer' }, s.layer)
+                    ),
+                    el('div', { class: 'pai-investor-sector-name' }, s.name),
+                    el('div', { class: 'pai-investor-sector-stat' },
+                        fmtB(s.capital_2024_25_m) + ' · ' + s.deals_count + ' deals'
+                    )
+                );
+                grid.appendChild(card);
+            });
+            secList.appendChild(grid);
+            drawerInner.appendChild(secList);
+        }
+
+        // Named companies (from us_china_flows)
+        if (entry.companies.size) {
+            const compSec = el('div', { class: 'pai-d-section' },
+                el('div', { class: 'pai-d-section-label' }, 'Named portfolio companies (' + entry.companies.size + ')'),
+                el('div', { class: 'pai-d-section-note' },
+                    'Pulled from the US/China humanoid flows scene. Other portfolio investments live in the sub-sector cards.')
+            );
+            const list = el('div', { class: 'pai-d-investors' });
+            Array.from(entry.companies).forEach(c => {
+                list.appendChild(el('span', { class: 'pai-d-investor' }, c));
+            });
+            compSec.appendChild(list);
+            drawerInner.appendChild(compSec);
+        }
+
+        // Footer
+        const sub = encodeURIComponent('Physical AI Map — ' + entry.display);
+        drawerInner.appendChild(el('div', { class: 'pai-d-footer' },
+            el('span', null, 'Coverage view · v' + (DATA.meta && DATA.meta.version || '0.1')),
+            el('a', { href: 'mailto:hello@canonical.cc?subject=' + sub }, 'Discuss ' + entry.display + ' →')
         ));
 
         drawer.scrollTop = 0;
@@ -766,6 +1060,15 @@
             updatedEl.textContent = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
         }
 
+        INVESTORS = buildInvestorIndex();
+
+        // Live quotes are populated server-side by a daily GitHub Action (see
+        // .github/workflows/refresh-quotes.yml) and committed to data.live_quotes.quotes.
+        // We just read what's in the file; no client-side fetching (browser CORS blocks Stooq/Yahoo).
+        if (DATA.live_quotes && DATA.live_quotes.quotes) {
+            LIVE_QUOTES = DATA.live_quotes.quotes;
+        }
+
         renderChasm();
         renderVelocity();
         renderFlows();
@@ -804,9 +1107,10 @@
         });
         document.addEventListener('focusout', hideTip);
 
-        // open sector from URL if present
+        // open sector or investor from URL if present (sector wins if both present)
         const f = readFilters();
         if (f.sector) openSector(f.sector);
+        else if (f.investor) openInvestor(f.investor);
 
         // close drawer interactions
         drawerOverlay.addEventListener('click', closeDrawer);

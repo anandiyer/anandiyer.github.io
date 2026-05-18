@@ -13,13 +13,13 @@
   --color-rule: #e2e8f0;
   --color-rule-strong: #cbd5e1;
 
-  /* text — exact canonical.cc palette (used inside white cards) */
+  /* text — canonical.cc palette (inside white cards) */
   --color-ink: #111827;
   --color-ink-soft: #475569;
   --color-ink-muted: #64748b;
   --color-ink-faint: #94a3b8;
 
-  /* navy / accent — exact canonical.cc palette */
+  /* navy / accent — canonical.cc palette */
   --color-navy: #1e3a8a;
   --color-navy-soft: #1e40af;
   --color-navy-light: #1d4ed8;
@@ -28,13 +28,19 @@
   --color-accent-faint: #bfdbfe;
   --color-accent-bg: rgba(37, 99, 235, 0.1);
 
+  /* amber accent — power-law-lab palette */
+  --color-amber: #facc15;
+  --color-amber-hover: #fde047;
+  --color-amber-soft: rgba(250, 204, 21, 0.35);
+  --color-amber-border: rgba(250, 204, 21, 0.4);
+  --color-amber-bg: rgba(250, 204, 21, 0.12);
+
   --color-positive: #059669;
   --color-negative: #dc2626;
   --color-warning: #b45309;
 
   --radius-card: 0.75rem;
 
-  /* canonical.cc body gradient — applied to <body> */
   --gradient-canonical: linear-gradient(
     180deg,
     #1e3a8a 0%,
@@ -42,7 +48,6 @@
     #1d4ed8 100%
   );
 
-  /* canonical.cc card shadow */
   --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
@@ -91,7 +96,107 @@ body {
   color: var(--color-ink);
 }
 
-/* canonical.cc nav-dropdown — identical CSS */
+/* ─── Tooltip (power-law-lab style) ─── */
+.tip-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: help;
+}
+.tip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+.tip-wrap:hover .tip-icon,
+.tip-wrap:focus .tip-icon {
+  color: var(--color-amber);
+  border-color: var(--color-amber-soft);
+  background: var(--color-amber-soft);
+}
+/* inside white cards, use ink colors for the icon */
+.card .tip-icon {
+  color: var(--color-ink-faint);
+  border-color: var(--color-rule);
+}
+.card .tip-wrap:hover .tip-icon,
+.card .tip-wrap:focus .tip-icon {
+  color: #b8960f;
+  border-color: rgba(180, 150, 15, 0.35);
+  background: rgba(250, 204, 21, 0.15);
+}
+
+.tip-content {
+  position: absolute;
+  z-index: 100;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  width: 280px;
+  max-width: calc(100vw - 2rem);
+  padding: 12px 14px;
+  background: rgba(15, 23, 42, 0.97);
+  border: 1px solid var(--color-amber-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+.tip-content strong {
+  color: var(--color-amber);
+  font-weight: 600;
+}
+.tip-wrap:hover .tip-content,
+.tip-wrap:focus .tip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* position below variant */
+.tip-content.tip-below {
+  bottom: auto;
+  top: calc(100% + 8px);
+  transform: translateX(-50%) translateY(-4px);
+}
+.tip-wrap:hover .tip-content.tip-below,
+.tip-wrap:focus .tip-content.tip-below {
+  transform: translateX(-50%) translateY(0);
+}
+/* align-left variant (prevent left overflow) */
+.tip-content.tip-left {
+  left: 0;
+  transform: translateX(0) translateY(4px);
+}
+.tip-wrap:hover .tip-content.tip-left,
+.tip-wrap:focus .tip-content.tip-left {
+  transform: translateX(0) translateY(0);
+}
+.tip-content.tip-below.tip-left {
+  transform: translateX(0) translateY(-4px);
+}
+.tip-wrap:hover .tip-content.tip-below.tip-left,
+.tip-wrap:focus .tip-content.tip-below.tip-left {
+  transform: translateX(0) translateY(0);
+}
+
+/* nav dropdown (shared canonical header) */
 .nav-dropdown {
   position: relative;
   display: inline-block;

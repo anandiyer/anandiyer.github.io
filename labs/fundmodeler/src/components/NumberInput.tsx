@@ -1,98 +1,167 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 type Variant = "money" | "pct" | "int" | "decimal" | "year";
 
-type Props = {
-  label: string;
-  hint?: string;
-  value: number;
-  onChange: (n: number) => void;
-  variant?: Variant;
-  step?: number;
-  min?: number;
-  max?: number;
-};
-
-function toDisplay(raw: number, variant: Variant): string {
-  if (!Number.isFinite(raw)) return "";
-  if (variant === "pct") return (raw * 100).toString();
-  if (variant === "int" || variant === "year") return Math.round(raw).toString();
-  return raw.toString();
-}
-
-function parse(value: string, variant: Variant): number | null {
-  const cleaned = value.replace(/[,\s_]/g, "");
-  if (cleaned === "" || cleaned === "-" || cleaned === ".") return null;
-  const n = Number(cleaned);
-  if (Number.isNaN(n)) return null;
-  if (variant === "pct") return n / 100;
-  return n;
-}
-
 export function NumberInput({
-  label,
-  hint,
   value,
   onChange,
   variant = "decimal",
-  step,
   min,
   max,
-}: Props) {
-  const [text, setText] = useState(() => toDisplay(value, variant));
-
-  useEffect(() => {
-    const externallyChanged = toDisplay(value, variant);
-    if (externallyChanged !== text) {
-      const parsed = parse(text, variant);
-      if (parsed === null || Math.abs((parsed ?? 0) - value) > 1e-9) {
-        setText(externallyChanged);
-      }
+  step,
+  label,
+  prefix,
+  suffix,
+  className = "",
+}: {
+  value: number;
+  onChange: (v: number) => void;
+  variant?: Variant;
+  min?: number;
+  max?: number;
+  step?: number;
+  label?: string;
+  prefix?: string;
+  suffix?: string;
+  className?: string;
+}) {
+  const toDisplay = (v: number) => {
+    switch (variant) {
+      case "money":
+        return String(Math.round(v));
+      case "pct":
+        return String(parseFloat((v * 100).toFixed(4)));
+      case "int":
+      case "year":
+        return String(Math.round(v));
+      case "decimal":
+        return String(v);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, variant]);
-
-  const commit = (raw: string) => {
-    const parsed = parse(raw, variant);
-    if (parsed === null) return;
-    let n = parsed;
-    if (typeof min === "number") n = Math.max(min, n);
-    if (typeof max === "number") n = Math.min(max, n);
-    onChange(n);
   };
 
-  const prefix = variant === "money" ? "$" : null;
-  const suffix = variant === "pct" ? "%" : null;
+  const fromDisplay = (s: string): number => {
+    const n = parseFloat(s);
+    if (Number.isNaN(n)) return value;
+    switch (variant) {
+      case "pct":
+        return n / 100;
+      default:
+        return n;
+    }
+  };
+
+  const clamp = (n: number) => {
+    let v = n;
+    if (min !== undefined) v = Math.max(min, v);
+    if (max !== undefined) v = Math.min(max, v);
+    return v;
+  };
+
+  const [display, setDisplay] = useState(() => toDisplay(value));
+  const [focused, setFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!focused) {
+      setDisplay(toDisplay(value));
+    }
+  }, [value, focused]);
+
+  const commit = () => {
+    const raw = fromDisplay(display);
+    const clamped = clamp(raw);
+    onChange(clamped);
+    setDisplay(toDisplay(clamped));
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "6px 8px",
+    paddingLeft: prefix ? "24px" : "8px",
+    paddingRight: suffix ? "28px" : "8px",
+    border: "1px solid #e2e8f0",
+    borderRadius: "6px",
+    fontSize: "13px",
+    fontVariantNumeric: "tabular-nums",
+    outline: "none",
+    backgroundColor: "#fff",
+    transition: "border-color 0.15s, box-shadow 0.15s",
+    ...(focused
+      ? {
+          borderColor: "#2563eb",
+          boxShadow: "0 0 0 2px rgba(37,99,235,0.15)",
+        }
+      : {}),
+  };
 
   return (
-    <label className="block">
-      <div className="flex items-baseline justify-between gap-2">
-        <span className="text-xs text-ink-soft font-medium">{label}</span>
-        {hint && <span className="text-[11px] text-ink-faint">{hint}</span>}
-      </div>
-      <div className="mt-1 flex items-center rounded-md border border-rule bg-white focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/15 transition">
+    <div className={className}>
+      {label && (
+        <label
+          style={{
+            display: "block",
+            fontSize: "11px",
+            fontWeight: 500,
+            color: "#64748b",
+            marginBottom: "4px",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+          }}
+        >
+          {label}
+        </label>
+      )}
+      <div style={{ position: "relative" }}>
         {prefix && (
-          <span className="pl-2.5 text-ink-faint text-sm select-none">{prefix}</span>
+          <span
+            style={{
+              position: "absolute",
+              left: "8px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "13px",
+              color: "#94a3b8",
+              pointerEvents: "none",
+            }}
+          >
+            {prefix}
+          </span>
         )}
         <input
-          type="text"
-          inputMode="decimal"
-          className="tabular w-full bg-transparent px-2.5 py-1.5 text-sm text-ink-strong outline-none"
-          value={text}
+          ref={inputRef}
+          type="number"
+          value={display}
           step={step}
-          onChange={(e) => {
-            setText(e.target.value);
-            commit(e.target.value);
+          style={inputStyle}
+          onFocus={() => setFocused(true)}
+          onBlur={() => {
+            setFocused(false);
+            commit();
           }}
-          onBlur={(e) => {
-            commit(e.target.value);
-            setText(toDisplay(value, variant));
+          onChange={(e) => setDisplay(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              commit();
+              inputRef.current?.blur();
+            }
           }}
         />
         {suffix && (
-          <span className="pr-2.5 text-ink-faint text-sm select-none">{suffix}</span>
+          <span
+            style={{
+              position: "absolute",
+              right: "8px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              fontSize: "13px",
+              color: "#94a3b8",
+              pointerEvents: "none",
+            }}
+          >
+            {suffix}
+          </span>
         )}
       </div>
-    </label>
+    </div>
   );
 }

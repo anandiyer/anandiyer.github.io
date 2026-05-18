@@ -2,36 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon — inherited from canonical.cc root -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+
+    <!-- SEO -->
+    <title>Fund Modeler — Free VC Fund Modeling Tool | Canonical</title>
     <meta name="theme-color" content="#1e3a8a" />
     <meta
       name="description"
-      content="A free fund modeling tool for VC GPs. Size your fund, model portfolio construction, and forecast TVPI / DPI / MOIC / IRR. By Canonical."
+      content="Free fund modeling tool for VC GPs and LPs. Model portfolio construction, fee structure, reserves, and forecast TVPI, DPI, MOIC, and IRR with a real-time J-curve. By Canonical."
     />
-    <meta property="og:title" content="Canonical Fundmodeler · Model your VC fund" />
+    <meta
+      name="keywords"
+      content="VC fund model, venture capital, fund modeling, TVPI calculator, IRR calculator, DPI, MOIC, J-curve, portfolio construction, LP tools, GP tools, fund economics, carried interest, management fees, reserve ratio, Canonical"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fund Modeler — Free VC Fund Modeling Tool | Canonical" />
     <meta
       property="og:description"
-      content="Free fund modeling for VC GPs. Built by Canonical."
+      content="Model your VC fund's portfolio construction, fee structure, and outcomes. See TVPI, DPI, IRR, and the J-curve in real time. Free, browser-only, no account required."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/fundmodeler/" />
+    <meta property="og:site_name" content="Canonical" />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta name="twitter:title" content="Fund Modeler — Free VC Fund Modeling Tool | Canonical" />
+    <meta
+      name="twitter:description"
+      content="Model your VC fund's portfolio construction, fee structure, and outcomes. TVPI, DPI, IRR, J-curve — all in your browser."
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://canonical.cc/labs/fundmodeler/" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
-    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="stylesheet"
       href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular"
     />
+
+    <!-- Shared canonical.cc stylesheet (provides header, footer, nav classes) -->
+    <link rel="stylesheet" href="/css/style.css" />
+
     <style>
-      /* Fundmodeler body is off-white; force the shared canonical header
-         to its "scrolled" navy appearance so the white nav text stays
-         readable instead of being invisible against the light body. */
+      /* Force shared header to navy appearance on this page */
       #header {
         background-color: rgba(30, 58, 138, 0.95) !important;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
       }
     </style>
-    <title>Canonical Fundmodeler · Model your VC fund</title>
   </head>
   <body>
     <div id="root"></div>

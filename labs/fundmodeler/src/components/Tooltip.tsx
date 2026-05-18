@@ -1,38 +1,36 @@
 import type { ReactNode } from "react";
 
-type Props = {
-  children: ReactNode;
-  text: string;
-  side?: "top" | "bottom";
-  align?: "left" | "center" | "right";
-};
-
-export function Tooltip({
-  children,
-  text,
-  side = "bottom",
-  align = "center",
-}: Props) {
-  const sideClass =
-    side === "bottom" ? "top-full mt-2" : "bottom-full mb-2";
-  const alignClass =
-    align === "left"
-      ? "left-0"
-      : align === "right"
-        ? "right-0"
-        : "left-1/2 -translate-x-1/2";
+/**
+ * Power-law-lab-style tooltip with amber accent.
+ * Renders an (i) icon that shows a floating tooltip on hover.
+ *
+ * Usage:
+ *   <Tip tip={<><strong>Net TVPI.</strong> Total value relative to paid-in capital...</>} />
+ *   <Tip tip="simple text" below />
+ */
+export function Tip({
+  tip,
+  below,
+  alignLeft,
+  className = "",
+}: {
+  tip: ReactNode;
+  below?: boolean;
+  alignLeft?: boolean;
+  className?: string;
+}) {
+  const contentClasses = [
+    "tip-content",
+    below ? "tip-below" : "",
+    alignLeft ? "tip-left" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <span className="group relative inline-flex items-center gap-1 cursor-help">
-      <span className="border-b border-dotted border-ink-faint/60">
-        {children}
-      </span>
-      <span
-        role="tooltip"
-        className={`pointer-events-none absolute ${sideClass} ${alignClass} invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-100 bg-white border border-rule rounded-md shadow-md px-3 py-2 text-xs text-ink-soft normal-case tracking-normal font-normal leading-snug w-60 z-50`}
-      >
-        {text}
-      </span>
+    <span className={`tip-wrap ${className}`} tabIndex={0}>
+      <span className="tip-icon">i</span>
+      <span className={contentClasses}>{tip}</span>
     </span>
   );
 }

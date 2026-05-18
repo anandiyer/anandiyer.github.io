@@ -1,19 +1,14 @@
+import { useState } from "react";
+import { fmtMoneyCompact, fmtMultiple, fmtPct } from "../lib/format";
+import { Tip } from "./Tooltip";
 import type { ModelResult } from "../model/types";
-import { fmtMultiple, fmtPct } from "../lib/format";
 
-type Props = {
-  fundName: string;
-  fundSize: number;
-  vintageYear: number;
-  numInvestments: number;
-  result: ModelResult;
-  onRenameFund: (name: string) => void;
-};
-
-function fmtFundSize(n: number): string {
-  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(0)}M`;
-  return `$${(n / 1000).toFixed(0)}K`;
+function verdict(tvpi: number): { label: string; color: string } {
+  if (tvpi >= 3) return { label: "Exceptional", color: "#34d399" };
+  if (tvpi >= 2) return { label: "Strong", color: "#6ee7b7" };
+  if (tvpi >= 1.5) return { label: "Solid", color: "#a7f3d0" };
+  if (tvpi >= 1) return { label: "Returning capital", color: "#fbbf24" };
+  return { label: "Below water", color: "#f87171" };
 }
 
 export function Hero({
@@ -23,56 +18,129 @@ export function Hero({
   numInvestments,
   result,
   onRenameFund,
-}: Props) {
-  const tvpi = result.netTVPI;
-  const verdict =
-    tvpi >= 3 ? "an outstanding fund" :
-    tvpi >= 2.5 ? "a top-quartile fund" :
-    tvpi >= 2 ? "a solid fund" :
-    tvpi >= 1.5 ? "a modest fund" :
-    tvpi >= 1 ? "capital preserved" :
-    "below-water";
+}: {
+  fundName: string;
+  fundSize: number;
+  vintageYear: number;
+  numInvestments: number;
+  result: ModelResult;
+  onRenameFund: (name: string) => void;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(fundName);
+  const v = verdict(result.netTVPI);
 
   return (
-    <>
-      <section className="pt-2 pb-10 max-w-3xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.05]">
-          Model your venture fund.
-        </h1>
-        <p className="mt-6 text-lg sm:text-xl text-white/75 leading-relaxed">
-          A free, browser-only fund model for VC GPs. Plug in your fund size,
-          check sizes, reserves, and outcome distribution — and watch TVPI, DPI,
-          IRR, and the J-curve update live. Scenarios save to the URL so you
-          can share them; nothing leaves your device.
-        </p>
-      </section>
-
-      <section className="pb-8 pt-6 border-t border-white/15 max-w-3xl">
-        <div
-          className="text-[11px] uppercase tracking-[0.18em] text-white/55 mb-3"
-          style={{ fontWeight: 500 }}
-        >
-          Your scenario
-        </div>
+    <div className="mb-8">
+      {/* Editable fund name */}
+      {editing ? (
         <input
-          type="text"
-          value={fundName}
-          onChange={(e) => onRenameFund(e.target.value)}
-          aria-label="Fund name"
-          className="block w-full text-3xl sm:text-4xl tracking-tight text-white bg-transparent border-b border-transparent hover:border-white/30 focus:border-white/60 focus:outline-none -ml-1 px-1"
+          autoFocus
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onBlur={() => {
+            setEditing(false);
+            if (draft.trim()) onRenameFund(draft.trim());
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setEditing(false);
+              if (draft.trim()) onRenameFund(draft.trim());
+            }
+            if (e.key === "Escape") {
+              setEditing(false);
+              setDraft(fundName);
+            }
+          }}
+          style={{
+            background: "transparent",
+            border: "none",
+            borderBottom: "1px solid rgba(255,255,255,0.4)",
+            color: "#fff",
+            fontSize: "2rem",
+            fontWeight: 300,
+            letterSpacing: "-0.02em",
+            outline: "none",
+            width: "100%",
+            padding: "0 0 4px 0",
+          }}
         />
-        <p className="mt-4 text-base sm:text-lg leading-relaxed text-white/80">
-          A {fmtFundSize(fundSize)} fund, {vintageYear} vintage,{" "}
-          {numInvestments} investments. Modeled return:{" "}
-          <span className="text-white kpi-num">{fmtMultiple(tvpi)}</span> net to
-          LPs at{" "}
-          <span className="text-white kpi-num">
-            {fmtPct(result.netIRR, 1)}
-          </span>{" "}
-          IRR
-          <span className="text-white/55"> — {verdict}.</span>
-        </p>
-      </section>
-    </>
+      ) : (
+        <h1
+          onClick={() => {
+            setEditing(true);
+            setDraft(fundName);
+          }}
+          style={{
+            fontSize: "2rem",
+            fontWeight: 300,
+            letterSpacing: "-0.02em",
+            color: "#fff",
+            cursor: "pointer",
+            margin: 0,
+          }}
+          title="Click to rename"
+        >
+          {fundName}
+        </h1>
+      )}
+
+      {/* Subtitle row */}
+      <div
+        className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm"
+        style={{ color: "rgba(255,255,255,0.6)" }}
+      >
+        <span>{fmtMoneyCompact(fundSize)} fund</span>
+        <span>&middot;</span>
+        <span>{vintageYear} vintage</span>
+        <span>&middot;</span>
+        <span>{numInvestments} investments</span>
+      </div>
+
+      {/* Verdict badge */}
+      <div className="mt-4 flex items-center gap-3 flex-wrap">
+        <span
+          className="kpi-num"
+          style={{ fontSize: "1.75rem", fontWeight: 400, color: "#fff" }}
+        >
+          {fmtMultiple(result.netTVPI)}
+        </span>
+        <span style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.5)" }}>
+          net TVPI
+        </span>
+        <span
+          style={{
+            fontSize: "0.8rem",
+            color: "rgba(255,255,255,0.5)",
+            marginLeft: "8px",
+          }}
+        >
+          {fmtPct(result.netIRR)} net IRR
+        </span>
+        <span
+          style={{
+            display: "inline-block",
+            padding: "2px 10px",
+            borderRadius: "999px",
+            fontSize: "11px",
+            fontWeight: 500,
+            color: "#111",
+            backgroundColor: v.color,
+            marginLeft: "8px",
+          }}
+        >
+          {v.label}
+        </span>
+        <Tip
+          tip={
+            <>
+              <strong>Fund verdict.</strong> Based on net TVPI: Exceptional
+              (3x+), Strong (2-3x), Solid (1.5-2x), Returning capital (1-1.5x),
+              Below water (&lt;1x). Click the fund name above to rename it.
+            </>
+          }
+        />
+      </div>
+    </div>
   );
 }

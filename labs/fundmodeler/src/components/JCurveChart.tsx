@@ -120,8 +120,8 @@ export function JCurveChart({
         </AreaChart>
       </ResponsiveContainer>
       <div
-        className="flex gap-6 mt-3 justify-center"
-        style={{ fontSize: "11px", color: "#94a3b8" }}
+        className="flex justify-center"
+        style={{ fontSize: "11px", color: "#94a3b8", gap: "1.5rem", marginTop: "0.75rem" }}
       >
         <span>
           <span

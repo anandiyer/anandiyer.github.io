@@ -74,8 +74,8 @@ export function InputsPanel({
 
       {/* Main inputs — always visible */}
       <div
-        className="grid gap-4"
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}
+        className="grid"
+        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1rem" }}
       >
         <div>
           <Label
@@ -164,8 +164,8 @@ export function InputsPanel({
 
       {/* Computed metrics */}
       <div
-        className="flex flex-wrap gap-x-6 gap-y-1 mt-4"
-        style={{ fontSize: "11px", color: "#64748b" }}
+        className="flex flex-wrap"
+        style={{ fontSize: "11px", color: "#64748b", columnGap: "1.5rem", rowGap: "0.25rem", marginTop: "1rem" }}
       >
         <span className="flex items-center">
           Entry ownership: {fmtPct(impliedOwnership, 1)}
@@ -239,10 +239,13 @@ export function InputsPanel({
       {/* Advanced inputs */}
       {expanded && (
         <div
-          className="grid gap-4 mt-4 pt-4"
+          className="grid"
           style={{
             gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
             borderTop: "1px solid #e2e8f0",
+            gap: "1rem",
+            marginTop: "1rem",
+            paddingTop: "1rem",
           }}
         >
           <div>

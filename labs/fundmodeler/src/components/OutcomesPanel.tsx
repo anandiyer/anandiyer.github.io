@@ -79,10 +79,11 @@ export function OutcomesPanel({
 
       {/* Table header */}
       <div
-        className="grid items-end gap-2"
+        className="grid items-end"
         style={{
           gridTemplateColumns: "minmax(100px,1fr) 70px 70px 65px 90px 90px 32px",
           borderBottom: "1px solid #e2e8f0",
+          gap: "0.5rem",
         }}
       >
         <div style={headerStyle}>Outcome</div>
@@ -139,12 +140,13 @@ export function OutcomesPanel({
         return (
           <div
             key={o.id}
-            className="grid items-center gap-2"
+            className="grid items-center"
             style={{
               gridTemplateColumns:
                 "minmax(100px,1fr) 70px 70px 65px 90px 90px 32px",
               padding: "6px 0",
               borderBottom: "1px solid #f1f5f9",
+              gap: "0.5rem",
             }}
           >
             <input
@@ -229,13 +231,14 @@ export function OutcomesPanel({
 
       {/* Totals row */}
       <div
-        className="grid items-center gap-2"
+        className="grid items-center"
         style={{
           gridTemplateColumns:
             "minmax(100px,1fr) 70px 70px 65px 90px 90px 32px",
           padding: "8px 0 0",
           borderTop: "1px solid #e2e8f0",
           marginTop: "4px",
+          gap: "0.5rem",
         }}
       >
         <div

@@ -48,8 +48,11 @@ function KpiCard({
 export function KpiRow({ result }: { result: ModelResult }) {
   return (
     <div
-      className="grid gap-4"
-      style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}
+      style={{
+        display: "grid",
+        gap: "1rem",
+        gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+      }}
     >
       <KpiCard
         label="Net TVPI"

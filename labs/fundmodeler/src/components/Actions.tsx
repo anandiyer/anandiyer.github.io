@@ -43,7 +43,7 @@ export function Actions({
   onReset: () => void;
 }) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center" style={{ gap: "0.5rem" }}>
       <button
         style={btnStyle}
         onClick={shareLink}

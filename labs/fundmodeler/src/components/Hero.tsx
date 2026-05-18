@@ -31,7 +31,7 @@ export function Hero({
   const v = verdict(result.netTVPI);
 
   return (
-    <div className="mb-8">
+    <div style={{ marginBottom: "2rem" }}>
       {/* Editable fund name */}
       {editing ? (
         <input
@@ -87,8 +87,8 @@ export function Hero({
 
       {/* Subtitle row */}
       <div
-        className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm"
-        style={{ color: "rgba(255,255,255,0.6)" }}
+        className="flex flex-wrap items-center text-sm"
+        style={{ color: "rgba(255,255,255,0.6)", marginTop: "0.5rem", columnGap: "1rem", rowGap: "0.25rem" }}
       >
         <span>{fmtMoneyCompact(fundSize)} fund</span>
         <span>&middot;</span>
@@ -98,7 +98,7 @@ export function Hero({
       </div>
 
       {/* Verdict badge */}
-      <div className="mt-4 flex items-center gap-3 flex-wrap">
+      <div className="flex items-center flex-wrap" style={{ marginTop: "1rem", gap: "0.75rem" }}>
         <span
           className="kpi-num"
           style={{ fontSize: "1.75rem", fontWeight: 400, color: "#fff" }}

@@ -5,7 +5,7 @@ export function Header() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch("https://canonical.cc/partials/header.html", { cache: "no-store" })
+    fetch("/partials/header.html", { cache: "no-store" })
       .then((r) => r.text())
       .then(setHtml)
       .catch(() => {});

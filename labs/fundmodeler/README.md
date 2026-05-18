@@ -1,6 +1,6 @@
 # canonical · fundmodeler
 
-A free fund-modeling tool for VC GPs. Live at **[fundmodeler.canonical.cc](https://fundmodeler.canonical.cc)**.
+A free fund-modeling tool for VC GPs. Live at **[canonical.cc/labs/fundmodeler](https://canonical.cc/labs/fundmodeler/)**.
 
 Built by [Canonical](https://canonical.cc).
 
@@ -25,25 +25,22 @@ npm test             # vitest on the math engine
 npm run build        # static dist/
 ```
 
-## Deployment (GitHub Pages, one-time setup)
+## Deployment
 
-This repo deploys to `fundmodeler.canonical.cc` automatically on push to `main`.
+The SPA is built and merged into the canonical.cc Jekyll site by the repo-root workflow at `.github/workflows/deploy.yml`. On push to `master`, that workflow:
 
-**One-time setup after creating the GitHub repo:**
+1. Builds the Jekyll site to `_site/`.
+2. Runs `npm ci && npm test && npm run build` in this directory, producing `labs/fundmodeler/dist/`.
+3. Copies `dist/*` into `_site/labs/fundmodeler/`.
+4. Uploads `_site/` as the Pages artifact and deploys.
 
-1. **Repo settings → Pages → Source:** select **GitHub Actions**.
-2. **Repo settings → Pages → Custom domain:** enter `fundmodeler.canonical.cc` and click Save. (The `public/CNAME` file in this repo already declares it; this step triggers HTTPS cert provisioning.)
-3. **DNS at your registrar** (one record):
-   ```
-   Type:  CNAME
-   Name:  fundmodeler
-   Value: <your-github-username>.github.io.
-   TTL:   3600 (or registrar default)
-   ```
-   Propagation: 5–60 min. HTTPS becomes available ~15 min after DNS resolves.
-4. Push to `main`. The Action runs tests, builds, and publishes.
+Vite is configured with `base: '/labs/fundmodeler/'` so the built asset paths resolve under that subpath.
 
-After that, every push to `main` redeploys automatically.
+**One-time setup, the first time this workflow ships:**
+
+1. **Repo Settings → Pages → Build and deployment → Source:** switch from "Deploy from a branch" to "GitHub Actions". (Until you toggle this, the workflow file exists but Pages keeps building from `master` directly via the legacy Jekyll build, so the SPA won't be merged in.)
+2. **Cloudflare:** remove the page rule that 301-redirects `canonical.cc/labs/fundmodeler/*` → `fundmodeler.canonical.cc/*`. With this gone, the same path now serves directly from the Jekyll deployment.
+3. (Optional) The legacy `canonical-fund-modeler` repo can be archived — it's no longer the source of truth.
 
 ## Architecture
 

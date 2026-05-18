@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { KpiRow } from "./components/KpiRow";
 import { JCurveChart } from "./components/JCurveChart";
@@ -83,7 +84,7 @@ function App() {
           />
         </div>
 
-        <footer className="mt-16 pt-8 border-t border-white/15 text-xs text-white/65 flex flex-col sm:flex-row sm:justify-between gap-2">
+        <div className="mt-16 pt-8 border-t border-white/15 text-xs text-white/65 flex flex-col sm:flex-row sm:justify-between gap-2">
           <div>
             Built by{" "}
             <a
@@ -100,8 +101,9 @@ function App() {
             Scenarios live in your browser. Share via link — nothing leaves your
             device.
           </div>
-        </footer>
+        </div>
       </main>
+      <Footer />
     </div>
   );
 }

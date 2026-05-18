@@ -15,7 +15,8 @@ type Props = {
 const HEADER_CLASS =
   "text-[10px] uppercase tracking-wider text-ink-faint font-medium";
 
-const GRID_COLS = "grid-cols-[1fr_72px_72px_60px_1fr_1fr_22px]";
+const GRID_COLS =
+  "grid-cols-[1fr_72px_72px_60px_minmax(140px,200px)_minmax(160px,240px)_22px]";
 
 export function OutcomesPanel({
   outcomes,

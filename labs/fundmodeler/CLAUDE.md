@@ -2,14 +2,14 @@
 
 ## What this is
 
-A free, browser-only fund-modeling tool for VC GPs. Lives at `fundmodeler.canonical.cc`. Reference: Carta's Fund Forecasting tool.
+A free, browser-only fund-modeling tool for VC GPs. Served at `canonical.cc/labs/fundmodeler/` as part of the main canonical.cc Jekyll site (built and merged in by `.github/workflows/deploy.yml` at the repo root). Reference: Carta's Fund Forecasting tool.
 
 ## Stack
 
 - Vite + React 19 + TypeScript + Tailwind v4
 - Recharts for the J-curve
 - Vitest for engine tests
-- Deploys static to GitHub Pages on push to `main`
+- Deploys via the repo-root `.github/workflows/deploy.yml`, which builds Jekyll, builds this SPA, then copies `labs/fundmodeler/dist/` into `_site/labs/fundmodeler/` before publishing. Vite `base` is `/labs/fundmodeler/`.
 
 ## Architecture
 
@@ -40,6 +40,6 @@ A free, browser-only fund-modeling tool for VC GPs. Lives at `fundmodeler.canoni
 
 ## Deploy
 
-- `.github/workflows/deploy.yml` is the source of truth. On push to `main`: runs tests, builds, publishes to Pages.
-- `public/CNAME` must contain `fundmodeler.canonical.cc` exactly. Do not remove.
-- DNS: CNAME `fundmodeler` → `<gh-user>.github.io.` at the registrar. Once.
+- Source of truth is the repo-root `.github/workflows/deploy.yml`. On push to `master`: builds Jekyll → `_site/`, builds this SPA → `labs/fundmodeler/dist/`, copies `dist/*` into `_site/labs/fundmodeler/`, then publishes to Pages.
+- The legacy standalone `fundmodeler.canonical.cc` subdomain is deprecated. After this refactor lands, the Cloudflare 301 redirect from `canonical.cc/labs/fundmodeler/` → `fundmodeler.canonical.cc/` must be removed; otherwise visitors will still bounce to the old subdomain.
+- `Header.tsx` and `index.html` reference `/partials/header.html` and `/css/style.css` as same-origin paths. Do not change to absolute URLs — that re-introduces the CORS-redirect trap that previously broke header rendering.

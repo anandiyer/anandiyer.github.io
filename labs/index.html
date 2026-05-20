@@ -1,0 +1,109 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Labs | Canonical</title>
+    <meta name="description" content="Canonical Labs — free, interactive tools we build for founders, GPs, and LPs." />
+    <meta name="keywords" content="venture capital tools, fund modeling, cap table, dilution, power law, semiconductor, physical AI, founder tools, Canonical Labs" />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/" />
+    <meta property="og:title" content="Labs | Canonical" />
+    <meta property="og:description" content="Free, interactive tools we build for founders, GPs, and LPs." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/" />
+    <meta property="twitter:title" content="Labs | Canonical" />
+    <meta property="twitter:description" content="Free, interactive tools we build for founders, GPs, and LPs." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+</head>
+<body>
+    <div class="min-h-screen home">
+        {% include header.html %}
+
+        <main>
+            <!-- Labs Hero -->
+            <section class="portfolio-page-hero">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">Canonical <span class="accent">Labs</span></h1>
+                        <p class="section-subtitle">
+                            Free, interactive tools we build for founders, GPs, and LPs.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Labs Grid -->
+            <section class="section-padding" style="padding-top: 0;">
+                <div class="max-w-7xl mx-auto px-8">
+                    <div class="labs-grid">
+                        <a href="/labs/dilutionlab/" class="lab-card">
+                            <h3 class="lab-card-title">Dilution Lab</h3>
+                            <p class="lab-card-description">
+                                Model SAFEs, priced rounds, option pools, and exit math. See what every term sheet actually costs you.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                        <a href="/labs/fundmodeler/" class="lab-card">
+                            <h3 class="lab-card-title">Fund Modeler</h3>
+                            <p class="lab-card-description">
+                                Size your fund, model portfolio construction, and forecast TVPI, DPI, MOIC, and IRR.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                        <a href="/labs/power-law/" class="lab-card">
+                            <h3 class="lab-card-title">Power Law Lab</h3>
+                            <p class="lab-card-description">
+                                Manipulate a venture fund's outcome distribution and see what actually drives fund returns.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                        <a href="/physical-ai-robotics/" class="lab-card">
+                            <h3 class="lab-card-title">Physical AI &amp; Robotics</h3>
+                            <p class="lab-card-description">
+                                3 years of venture investment in physical AI &amp; robotics, mapped across 22 sub-sectors.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                        <a href="/labs/semiconductor-silicon-stack/" class="lab-card">
+                            <h3 class="lab-card-title">Semiconductor Stack</h3>
+                            <p class="lab-card-description">
+                                Who owns each layer of silicon today, and the 40+ startups credibly trying to take a piece of it.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                        <a href="/labs/lookalike/" class="lab-card">
+                            <h3 class="lab-card-title">Lookalike Finder</h3>
+                            <p class="lab-card-description">
+                                Paste a LinkedIn URL or X handle and find people with the same career DNA — trajectory and archetype, not just job title.
+                            </p>
+                            <span class="lab-card-cta">Try it &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {% include footer.html %}
+    </div>
+</body>
+</html>

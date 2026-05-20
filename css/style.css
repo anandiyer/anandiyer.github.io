@@ -1175,6 +1175,23 @@ html {
     font-weight: 500;
 }
 
+/* Labs index page — 2-column grid of all lab cards (mobile adaptive) */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.labs-grid .lab-card {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ============================================================
    Homepage accent system (.home)
    Yellow font accents matching /labs/power-law (lab.css).

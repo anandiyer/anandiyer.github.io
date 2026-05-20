@@ -31,7 +31,7 @@ export function Footer() {
               <p style="color:rgba(255,255,255,0.7);font-size:0.875rem;margin:0;">&copy; 2025 Canonical. All rights reserved.</p>
               <div style="display:flex;align-items:center;gap:1.5rem;">
                 <a href="https://x.com/canonicalcc" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.7);font-size:0.875rem;text-decoration:none;">Canonical on X</a>
-                <a href="https://canonicalcc.substack.com" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.7);font-size:0.875rem;text-decoration:none;">Canonical on Substack</a>
+                <a href="https://blog.canonical.cc" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.7);font-size:0.875rem;text-decoration:none;">Canonical on Substack</a>
               </div>
             </div>
           </footer>

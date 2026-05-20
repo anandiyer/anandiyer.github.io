@@ -245,7 +245,7 @@ function openSubstackPost(url) {
 }
 
 async function loadSubstackPosts() {
-    const rssUrl = "https://canonicalcc.substack.com/feed";
+    const rssUrl = "https://blog.canonical.cc/feed";
 
     try {
         // Use a public RSS-to-JSON proxy because RSS XML can't be fetched directly

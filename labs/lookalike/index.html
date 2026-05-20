@@ -19,8 +19,9 @@
     <!-- Shared canonical.cc stylesheet: carries the global header, footer,
          nav-dropdown and layout utilities so this lab matches the site exactly. -->
     <link rel="stylesheet" href="https://canonical.cc/css/style.css?v=20260515" />
-    <!-- Lab-specific styles load after, so they win on any overlap. -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- Lab-specific styles load after, so they win on any overlap.
+         ?v= busts Cloudflare's edge cache on each release — bump on changes. -->
+    <link rel="stylesheet" href="style.css?v=20260520" />
   </head>
   <body>
     <!-- Shared canonical.cc header (verbatim markup + global stylesheet classes). -->
@@ -32,11 +33,10 @@
           </a>
           <nav class="hidden md:flex items-center space-x-10">
             <a href="https://canonical.cc/#about" class="nav-link">ABOUT</a>
-            <a href="https://blog.canonical.cc" class="nav-link">BLOG</a>
             <a href="https://canonical.cc/#thesis" class="nav-link">THESIS</a>
             <a href="https://canonical.cc/portfolio" class="nav-link">PORTFOLIO</a>
             <div class="nav-dropdown">
-              <a href="https://canonical.cc/labs/" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">LABS</a>
+              <a href="https://canonical.cc/#labs" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">LABS</a>
               <div class="nav-dropdown-menu" role="menu">
                 <a href="https://canonical.cc/labs/dilutionlab/" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
                 <a href="https://canonical.cc/labs/fundmodeler/" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
@@ -54,10 +54,9 @@
         </div>
         <nav class="nav-mobile" id="nav-mobile" hidden>
           <a href="https://canonical.cc/#about" class="nav-link">ABOUT</a>
-          <a href="https://blog.canonical.cc" class="nav-link">BLOG</a>
           <a href="https://canonical.cc/#thesis" class="nav-link">THESIS</a>
           <a href="https://canonical.cc/portfolio" class="nav-link">PORTFOLIO</a>
-          <a href="https://canonical.cc/labs/" class="nav-link">LABS</a>
+          <a href="https://canonical.cc/#labs" class="nav-link">LABS</a>
           <a href="https://canonical.cc/#team" class="nav-link">TEAM</a>
         </nav>
       </div>
@@ -171,6 +170,6 @@
         });
       })();
     </script>
-    <script src="app.js"></script>
+    <script src="app.js?v=20260520"></script>
   </body>
 </html>

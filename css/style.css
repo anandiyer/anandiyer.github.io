@@ -1174,3 +1174,69 @@ html {
     font-size: 0.875rem;
     font-weight: 500;
 }
+
+/* ============================================================
+   Homepage accent system (.home)
+   Yellow font accents matching /labs/power-law (lab.css).
+   Scoped to .home so other pages sharing style.css are unaffected.
+   ============================================================ */
+.home {
+    --accent: #facc15;        /* yellow-400 — on blue background */
+    --accent-hover: #fde047;  /* yellow-300 — hover */
+    --accent-ink: #b45309;    /* amber-700 — readable gold on white cards */
+}
+
+/* Inline keyword highlight — hero + section titles, on the blue background */
+.home .accent {
+    color: var(--accent);
+}
+
+/* Hero eyebrow above the headline */
+.home .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* ABOUT label → yellow */
+.home .section-label {
+    color: var(--accent);
+}
+
+/* Thesis index numbers → warm gold (readable on the white card) */
+.home .thesis-number {
+    color: var(--accent-ink);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+/* Labs card call-to-action → warm gold */
+.home .lab-card-cta {
+    color: var(--accent-ink);
+    font-weight: 600;
+}
+
+/* "View all" links sit on the blue background → yellow */
+.home .portfolio-view-all-link,
+.home .substack-view-all-link {
+    color: var(--accent);
+}
+.home .portfolio-view-all-link:hover,
+.home .substack-view-all-link:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+/* Cards pick up a subtle yellow top edge on hover, tying them to the theme */
+.home .thesis-item,
+.home .lab-card {
+    border-top: 2px solid transparent;
+}
+.home .thesis-item:hover,
+.home .lab-card:hover {
+    border-top-color: var(--accent);
+}

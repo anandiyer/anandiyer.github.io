@@ -37,7 +37,7 @@
     <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://canonical.cc/css/style.css?v=20260514f">
-    <link rel="stylesheet" href="lab.css?v=1">
+    <link rel="stylesheet" href="lab.css?v=2">
 </head>
 <body>
     <div class="min-h-screen">
@@ -55,7 +55,7 @@
                         </p>
                         <div class="pai-meta">
                             <div class="pai-meta-item"><span class="pai-meta-key">Window</span><span class="pai-meta-val">Q1 2023 &rarr; Q1 2026</span></div>
-                            <div class="pai-meta-item"><span class="pai-meta-key">Geography</span><span class="pai-meta-val">Global, China flagged</span></div>
+                            <div class="pai-meta-item"><span class="pai-meta-key">Geography</span><span class="pai-meta-val">Global &middot; US, China, Europe tagged</span></div>
                             <div class="pai-meta-item"><span class="pai-meta-key">Sources</span><span class="pai-meta-val">Harmonic &middot; Pitchbook &middot; Crunchbase &middot; primary filings</span></div>
                             <div class="pai-meta-item"><span class="pai-meta-key">Updated</span><span class="pai-meta-val" id="pai-updated">May 15, 2026</span></div>
                         </div>
@@ -96,6 +96,7 @@
                         <li><a href="#scene-1" data-spy="scene-1">Chasm</a></li>
                         <li><a href="#scene-2" data-spy="scene-2">Velocity</a></li>
                         <li><a href="#scene-3" data-spy="scene-3">US &amp; China</a></li>
+                        <li><a href="#scene-europe" data-spy="scene-europe">Europe</a></li>
                         <li><a href="#scene-4" data-spy="scene-4">Defense</a></li>
                         <li><a href="#explorer" data-spy="explorer">Explorer</a></li>
                         <li><a href="#methodology" data-spy="methodology">Methodology</a></li>
@@ -200,6 +201,35 @@
                 </div>
             </section>
 
+            <!-- SCENE 3.5: EUROPE -->
+            <section class="pai-scene" id="scene-europe">
+                <div class="container mx-auto px-8">
+                    <div class="pai-scene-grid">
+                        <div class="pai-scene-text">
+                            <div class="pai-section-label"><span class="pai-section-num">[04]</span> Europe</div>
+                            <h2 class="pai-scene-h2">Europe doesn't out-raise. It <em>out-specializes</em>.</h2>
+                            <p class="pai-lede">
+                                Europe is roughly 5% of global robotics venture dollars, so on a pure capital chart it looks like a rounding error next to the US and China. That framing misses the point. Europe doesn't compete for the humanoid OEM crown, it owns specific, defensible categories outright: surgical robotics, clinical exoskeletons, warehouse automation, and the actuators and joints the humanoid race runs on.
+                            </p>
+                            <div class="pai-pov">
+                                <div class="pai-pov-label">Canonical POV</div>
+                                <p>The most under-covered story on this entire map is Ukraine. It has become the world's largest live robotics testbed, from ~7 drone makers in 2021 to ~500 by 2025. None of it shows up on a cap-table map because it's funded by state procurement and Brave1 grants, not priced equity. If you only watch valuations, you miss where the fastest real-world robotics iteration on earth is happening.</p>
+                            </div>
+                        </div>
+                        <div class="pai-europe-viz">
+                            <div class="pai-viz" id="viz-europe-leadership">
+                                <div class="pai-viz-title">
+                                    <span>Where Europe leads &middot; EU share of capital by category</span>
+                                    <span class="pai-viz-source">click a champion to open it</span>
+                                </div>
+                                <div class="pai-europe-leadership" id="europe-leadership"></div>
+                            </div>
+                            <div class="pai-ukraine-callout" id="europe-ukraine"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- SCENE 4: DEFENSE UNICORNS -->
             <section class="pai-scene" id="scene-4">
                 <div class="container mx-auto px-8">
@@ -212,7 +242,7 @@
                             <div class="pai-defense-chart" id="defense-chart"></div>
                         </div>
                         <div class="pai-scene-text">
-                            <div class="pai-section-label"><span class="pai-section-num">[04]</span> Defense Autonomy</div>
+                            <div class="pai-section-label"><span class="pai-section-num">[05]</span> Defense Autonomy</div>
                             <h2 class="pai-scene-h2">From 2 unicorns to <em>22 in 3 years</em>.</h2>
                             <p class="pai-lede">
                                 In 2022, exactly 2 pure-play defense tech companies were valued above $1B: Anduril and Shield AI. By mid-2026, the count has crossed 22, and Anduril alone has tripled to $61B post Series H in 12 months, anchored by a $20B DoD enterprise agreement signed March 2026. Andreessen Horowitz has been the most active defense investor with 18 deals across the period.
@@ -229,7 +259,7 @@
             <!-- EXPLORER -->
             <section class="pai-explorer-section" id="explorer">
                 <div class="container mx-auto px-8">
-                    <div class="pai-section-label"><span class="pai-section-num">[05]</span> Sub-sector Explorer</div>
+                    <div class="pai-section-label"><span class="pai-section-num">[06]</span> Sub-sector Explorer</div>
                     <h2 class="pai-scene-h2 pai-h2-explorer">Click into any of the <em>22 sub-sectors</em> for top companies, totals, and active investors.</h2>
                     <p class="pai-explorer-intro">Filter by stack layer, geography, or sort by capital deployed. Every sub-sector has a Canonical POV blurb and a data-caveat flag.</p>
 
@@ -271,7 +301,7 @@
             <!-- METHODOLOGY -->
             <section class="pai-method-section" id="methodology">
                 <div class="container mx-auto px-8">
-                    <div class="pai-section-label"><span class="pai-section-num">[06]</span> Methodology</div>
+                    <div class="pai-section-label"><span class="pai-section-num">[07]</span> Methodology</div>
                     <h2 class="pai-scene-h2 pai-h2-method">How this <em>was built</em>, and where the data is weakest.</h2>
                     <div class="pai-method-grid">
                         <div class="pai-method-col">
@@ -301,7 +331,7 @@
                 <div class="container mx-auto px-8">
                     <div class="pai-cta-grid">
                         <div>
-                            <div class="pai-section-label pai-section-label-light"><span class="pai-section-num">[07]</span> Talk to Canonical</div>
+                            <div class="pai-section-label pai-section-label-light"><span class="pai-section-num">[08]</span> Talk to Canonical</div>
                             <h2 class="pai-cta-h2">If you're building or investing in the <em>picks-and-shovels</em> of physical AI, we want to hear from you.</h2>
                             <p class="pai-cta-p">Canonical leads early-stage investments in technical teams building at the frontier. SF-based, founder-obsessed, pre-product friendly.</p>
                         </div>
@@ -334,6 +364,26 @@
     <!-- Tooltip element used by hero scenes -->
     <div class="pai-tip" id="pai-tip" role="tooltip" aria-hidden="true"></div>
 
-    <script src="lab.js?v=1"></script>
+    <!-- Feedback widget (floating). Posts to labs-api.canonical.cc/feedback → Slack #hack-central -->
+    <div class="pai-fb" id="pai-fb">
+        <button class="pai-fb-toggle" id="pai-fb-toggle" type="button" aria-expanded="false" aria-controls="pai-fb-panel">
+            <span class="pai-fb-toggle-icon">✎</span> Feedback
+        </button>
+        <div class="pai-fb-panel" id="pai-fb-panel" role="dialog" aria-label="Send feedback" hidden>
+            <div class="pai-fb-head">
+                <span class="pai-fb-title">Tell us what we got wrong</span>
+                <button class="pai-fb-close" id="pai-fb-close" type="button" aria-label="Close feedback">&times;</button>
+            </div>
+            <p class="pai-fb-sub">Missing a company or a whole region? Wrong number? Goes straight to our team.</p>
+            <textarea class="pai-fb-text" id="pai-fb-text" rows="4" placeholder="e.g. You're missing the Ukraine drone ecosystem, or Helsing's valuation is stale…"></textarea>
+            <input class="pai-fb-email" id="pai-fb-email" type="email" placeholder="Email (optional, if you want a reply)" />
+            <div class="pai-fb-actions">
+                <button class="pai-fb-send" id="pai-fb-send" type="button">Send feedback</button>
+            </div>
+            <div class="pai-fb-status" id="pai-fb-status" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <script src="lab.js?v=2"></script>
 </body>
 </html>

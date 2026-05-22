@@ -232,7 +232,7 @@
     scroll-margin-top: 130px;
 }
 
-#explorer, #methodology, #map {
+#explorer, #methodology, #map, #scene-europe {
     scroll-margin-top: 130px;
 }
 
@@ -569,6 +569,89 @@
 }
 .pai-flow-us .pai-flow-exit strong { color: var(--pai-navy); }
 .pai-flow-china .pai-flow-exit strong { color: var(--pai-accent); }
+
+/* ============ EUROPE SCENE ============ */
+.pai-europe-viz { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.pai-europe-leadership { display: flex; flex-direction: column; gap: 1.1rem; }
+.pai-eu-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.pai-eu-row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.pai-eu-cat { font-weight: 600; color: var(--pai-ink); font-size: 0.92rem; }
+.pai-eu-share {
+    font-family: var(--pai-mono);
+    font-size: 0.78rem;
+    color: var(--pai-navy);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.pai-eu-bar {
+    height: 7px;
+    background: rgba(15, 23, 42, 0.07);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.pai-eu-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--pai-navy) 0%, #3b5bdb 100%);
+    border-radius: 4px;
+    transition: width 0.9s cubic-bezier(.2,.8,.2,1);
+}
+.pai-eu-champs {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--pai-ink-muted);
+}
+
+/* Ukraine callout — orange-accented box, the standout story */
+.pai-ukraine-callout {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.06), rgba(30, 58, 138, 0.05));
+    border: 1px solid rgba(249, 115, 22, 0.25);
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.6rem;
+    color: var(--pai-ink);
+}
+.pai-uk-head {
+    font-family: var(--pai-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--pai-accent);
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+}
+.pai-uk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem 1.4rem;
+    margin-bottom: 1.1rem;
+}
+.pai-uk-stat-v {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--pai-ink);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+}
+.pai-uk-stat-l {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    color: var(--pai-ink-muted);
+}
+.pai-uk-companies {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--pai-ink-muted);
+    padding-top: 1rem;
+    border-top: 1px solid var(--pai-rule);
+}
+.pai-uk-companies-label { font-family: var(--pai-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--pai-ink-faint); }
+
+/* Distressed flag (e.g. German Bionic insolvency) — red warning pill */
+.pai-d-flag-distressed {
+    background: rgba(185, 28, 28, 0.12) !important;
+    color: #b91c1c !important;
+}
 
 /* ============ DEFENSE TIMELINE ============ */
 .pai-defense-chart svg { width: 100%; height: auto; display: block; overflow: visible; }
@@ -1491,3 +1574,88 @@
 
 /* When the canonical.cc header is in "scrolled" state, give the subnav a touch more contrast */
 #header.scrolled ~ main .pai-subnav { background: rgba(30, 58, 138, 0.95); }
+
+/* ============ FEEDBACK WIDGET ============ */
+.pai-fb {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 120;
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+}
+.pai-fb-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--pai-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    padding: 0.7rem 1.15rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 8px 24px -6px rgba(249, 115, 22, 0.55), 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.pai-fb-toggle:hover { transform: translateY(-2px); background: #ea6a0c; }
+.pai-fb-toggle-icon { font-size: 0.95rem; }
+
+.pai-fb-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.6rem);
+    width: min(360px, calc(100vw - 2.5rem));
+    background: #ffffff;
+    color: var(--pai-ink);
+    border-radius: 0.85rem;
+    padding: 1.25rem 1.3rem 1.1rem;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--pai-rule);
+}
+.pai-fb-panel[hidden] { display: none; }
+.pai-fb-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; }
+.pai-fb-title { font-weight: 600; font-size: 1rem; color: var(--pai-ink); }
+.pai-fb-close {
+    background: none; border: none; font-size: 1.5rem; line-height: 1;
+    color: var(--pai-ink-faint); cursor: pointer; padding: 0 0.2rem;
+}
+.pai-fb-close:hover { color: var(--pai-ink); }
+.pai-fb-sub { font-size: 0.82rem; color: var(--pai-ink-muted); line-height: 1.45; margin: 0 0 0.85rem; }
+.pai-fb-text, .pai-fb-email {
+    width: 100%;
+    border: 1px solid var(--pai-rule-strong);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: var(--pai-ink);
+    background: var(--pai-card-bg-2);
+    resize: vertical;
+    transition: border-color 0.15s;
+}
+.pai-fb-text:focus, .pai-fb-email:focus { outline: none; border-color: var(--pai-accent); }
+.pai-fb-email { margin-top: 0.6rem; }
+.pai-fb-actions { display: flex; justify-content: flex-end; margin-top: 0.8rem; }
+.pai-fb-send {
+    background: var(--pai-navy);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+}
+.pai-fb-send:hover { background: var(--pai-navy-deep); }
+.pai-fb-send:disabled { opacity: 0.6; cursor: default; }
+.pai-fb-status { font-size: 0.8rem; margin-top: 0.6rem; min-height: 1rem; }
+.pai-fb-status.ok { color: #15803d; }
+.pai-fb-status.err { color: #b91c1c; }
+
+@media (max-width: 640px) {
+    .pai-fb { right: 0.9rem; bottom: 0.9rem; }
+    .pai-fb-toggle { padding: 0.6rem 1rem; font-size: 0.8rem; }
+}

@@ -43,6 +43,24 @@
         'Nirvana AI': 'https://nrvana.ai',
         'Eastworlds (Virtuals)': 'https://eastworlds.io',
         'Eastworlds': 'https://eastworlds.io',
+
+        // Europe (added in Europe-coverage pass)
+        'Dexory': 'https://www.dexory.com',
+        'Verity': 'https://verity.net',
+        'Tekever': 'https://www.tekever.com',
+        'Agile Robots': 'https://www.agile-robots.com',
+        'Sereact': 'https://www.sereact.ai',
+        'Wandelbots': 'https://www.wandelbots.com',
+        'Monumental': 'https://www.monumental.co',
+        'Oxa': 'https://www.oxa.tech',
+        'maxon': 'https://www.maxongroup.com',
+        'RIVR': 'https://www.rivr.ai',
+        'mimic': 'https://www.mimicrobotics.com',
+        'Lely': 'https://www.lely.com',
+        'PAL Robotics': 'https://pal-robotics.com',
+        'Milrem Robotics': 'https://milremrobotics.com',
+        'Skyeton': 'https://www.skyeton.com',
+        'Wild Hornets': 'https://wildhornets.com.ua',
         // Humanoid robotics
         'Figure AI': 'https://www.figure.ai',
         'Figure': 'https://www.figure.ai',
@@ -670,6 +688,67 @@
         return row;
     }
 
+    /* ---------- SCENE 3.5: Europe ---------- */
+    function renderEurope() {
+        const eu = DATA.scenes.europe;
+        if (!eu) return;
+
+        // Category leadership rows: each shows EU share bar + champion company links
+        const lead = document.getElementById('europe-leadership');
+        if (lead) {
+            lead.innerHTML = '';
+            const maxShare = Math.max(...eu.leadership.map(c => c.eu_share));
+            eu.leadership.forEach(cat => {
+                const row = el('div', { class: 'pai-eu-row' });
+                // header: category name + share
+                const head = el('div', { class: 'pai-eu-row-head' },
+                    el('span', { class: 'pai-eu-cat' }, cat.category),
+                    el('span', { class: 'pai-eu-share' }, cat.eu_share + '% EU')
+                );
+                const barWrap = el('div', { class: 'pai-eu-bar' });
+                const fill = el('div', { class: 'pai-eu-fill' });
+                fill.style.width = '0%';
+                barWrap.appendChild(fill);
+                setTimeout(() => { fill.style.width = (cat.eu_share / maxShare * 100) + '%'; }, 80);
+                // champions
+                const champs = el('div', { class: 'pai-eu-champs' });
+                champs.appendChild(document.createTextNode(cat.note + ' — '));
+                cat.champions.forEach((name, i) => {
+                    if (i > 0) champs.appendChild(document.createTextNode(' · '));
+                    champs.appendChild(companyLink(name));
+                });
+                row.appendChild(head);
+                row.appendChild(barWrap);
+                row.appendChild(champs);
+                lead.appendChild(row);
+            });
+        }
+
+        // Ukraine callout
+        const uk = document.getElementById('europe-ukraine');
+        if (uk && eu.ukraine) {
+            uk.innerHTML = '';
+            uk.appendChild(el('div', { class: 'pai-uk-head' }, eu.ukraine.headline));
+            const grid = el('div', { class: 'pai-uk-grid' });
+            eu.ukraine.stats.forEach(s => {
+                grid.appendChild(el('div', { class: 'pai-uk-stat' },
+                    el('div', { class: 'pai-uk-stat-v' }, s.value),
+                    el('div', { class: 'pai-uk-stat-l' }, s.label)
+                ));
+            });
+            uk.appendChild(grid);
+            if (eu.ukraine.companies && eu.ukraine.companies.length) {
+                const co = el('div', { class: 'pai-uk-companies' });
+                co.appendChild(el('span', { class: 'pai-uk-companies-label' }, 'Production leaders: '));
+                eu.ukraine.companies.forEach((name, i) => {
+                    if (i > 0) co.appendChild(document.createTextNode(' · '));
+                    co.appendChild(companyLink(name));
+                });
+                uk.appendChild(co);
+            }
+        }
+    }
+
     /* ---------- SCENE 4: Defense Unicorn Timeline ---------- */
     function renderDefense() {
         const host = document.getElementById('defense-chart');
@@ -1108,7 +1187,7 @@
             if (c.canonical_portfolio) nameCell.classList.add('pai-d-portfolio-row');
             nameCell.appendChild(companyLink(c.name));
             if (c.flag) {
-                const flagEl = el('span', { class: 'pai-d-flag' + (c.flag === 'public-market-cap' ? ' public' : '') }, c.flag.replace(/-/g, ' '));
+                const flagEl = el('span', { class: 'pai-d-flag pai-d-flag-' + c.flag + (c.flag === 'public-market-cap' ? ' public' : '') }, c.flag.replace(/-/g, ' '));
                 nameCell.appendChild(flagEl);
             }
             // Canonical portfolio pill — links to the internal /companies/<slug>.html page
@@ -1399,6 +1478,7 @@
         renderChasm();
         renderVelocity();
         renderFlows();
+        renderEurope();
         renderDefense();
         bindFilters();
         syncChips();
@@ -1447,6 +1527,81 @@
         drawerOverlay.addEventListener('click', closeDrawer);
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+        });
+
+        bindFeedback();
+    }
+
+    /* ---------- FEEDBACK WIDGET ---------- */
+    // POSTs to the shared Cloudflare Worker (same endpoint Lookalike Finder uses).
+    // source + channel let the Worker route this to Slack #hack-central.
+    const FEEDBACK_ENDPOINT =
+        (['localhost', '127.0.0.1'].includes(window.location.hostname))
+            ? 'http://localhost:8787/feedback'
+            : 'https://labs-api.canonical.cc/feedback';
+
+    function bindFeedback() {
+        const toggle = document.getElementById('pai-fb-toggle');
+        const panel = document.getElementById('pai-fb-panel');
+        const closeBtn = document.getElementById('pai-fb-close');
+        const text = document.getElementById('pai-fb-text');
+        const email = document.getElementById('pai-fb-email');
+        const send = document.getElementById('pai-fb-send');
+        const status = document.getElementById('pai-fb-status');
+        if (!toggle || !panel) return;
+
+        function open() {
+            panel.hidden = false;
+            toggle.setAttribute('aria-expanded', 'true');
+            text.focus();
+        }
+        function close() {
+            panel.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+        toggle.addEventListener('click', () => (panel.hidden ? open() : close()));
+        closeBtn.addEventListener('click', close);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !panel.hidden) close();
+        });
+
+        send.addEventListener('click', async () => {
+            const comment = text.value.trim();
+            if (!comment) { text.focus(); return; }
+            send.disabled = true;
+            status.className = 'pai-fb-status';
+            status.textContent = 'Sending…';
+            const payload = {
+                source: 'physical-ai-robotics',
+                channel: 'hack-central',
+                comment: comment,
+                email: email.value.trim() || null,
+                page: window.location.href,
+                // a little context on what they were looking at
+                view: (function () {
+                    const f = readFilters();
+                    return { sector: f.sector || null, investor: f.investor || null, layer: f.layer, geo: f.geo, sort: f.sort };
+                })(),
+                ts: new Date().toISOString()
+            };
+            try {
+                const res = await fetch(FEEDBACK_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                status.className = 'pai-fb-status ok';
+                status.textContent = '✓ Thanks — sent to the Canonical team.';
+                text.value = '';
+                email.value = '';
+                setTimeout(close, 1800);
+            } catch (err) {
+                console.error('Feedback send failed', err);
+                status.className = 'pai-fb-status err';
+                status.textContent = 'Couldn’t send. Email hello@canonical.cc instead?';
+                send.disabled = false;
+            }
         });
     }
 

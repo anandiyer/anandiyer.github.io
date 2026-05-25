@@ -242,7 +242,14 @@ function handleEvent(ev) {
     case "stage": setStep(ev.step, ev.state || "active"); break;
     case "status": $("status").textContent = ev.text || ""; break;
     case "profile": renderProfile(ev.profile); break;
-    case "results": renderMatches(ev.matches || []); break;
+    case "results":
+      renderMatches(ev.matches || []);
+      // After the first successful result-set lands, prompt the user to share.
+      // The widget guards on sessionStorage so it only fires once per session.
+      if ((ev.matches || []).length > 0 && window.canonicalShare && typeof window.canonicalShare.showLookalikeModal === "function") {
+        setTimeout(function () { window.canonicalShare.showLookalikeModal(); }, 1400);
+      }
+      break;
     case "quota":
       if (ev.remaining != null)
         $("quota").textContent = `${ev.remaining} lookup${ev.remaining === 1 ? "" : "s"} left today`;

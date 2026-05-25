@@ -30,11 +30,11 @@
     <meta property="twitter:site" content="@canonicalcc" />
 
     <meta name="theme-color" content="#1e3a8a" />
-    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css?v=20260514f">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
     <link rel="stylesheet" href="lab.css?v=1">
 </head>
 <body>
@@ -52,6 +52,7 @@
                             Describe a fund — its size, the number of investments, the failure rate, the shape of the right tail — and we run <strong>10,000 simulated versions</strong> of that fund.
                             The histogram shows the full distribution of plausible outcomes, not just the headline number on a pitch deck.
                         </p>
+                        {% include lab-share.html github_path="labs/power-law" %}
                         <div class="use-cases">
                             <div class="use-case">
                                 <span class="use-case-tag">If you're an LP</span>

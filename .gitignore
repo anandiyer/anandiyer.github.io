@@ -13,3 +13,6 @@ _site/
 Gemfile.lock
 .bundle/
 vendor/
+
+# TypeScript incremental build cache
+*.tsbuildinfo

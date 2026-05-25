@@ -7,6 +7,7 @@ import { InputsPanel } from "./components/InputsPanel";
 import { OutcomesPanel } from "./components/OutcomesPanel";
 import { CashflowTable } from "./components/CashflowTable";
 import { Actions } from "./components/Actions";
+import { ShareStrip, ShareFab } from "./components/ShareWidget";
 import { useFundStore } from "./store";
 
 function Explainer() {
@@ -131,6 +132,9 @@ function Explainer() {
             one or two calls.
           </p>
         </div>
+      </div>
+      <div style={{ marginTop: "2.5rem", textAlign: "left" }}>
+        <ShareStrip />
       </div>
     </section>
   );
@@ -297,6 +301,7 @@ function App() {
         </div>
       </main>
       <Footer />
+      <ShareFab />
     </div>
   );
 }

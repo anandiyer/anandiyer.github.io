@@ -2,6 +2,8 @@
 .claude/settings.local.json
 .claude/worktrees/
 .claude/static-server.js
+# Shared skills live in their own repo (canonical-claude-skills), cloned in here
+.claude/skills/
 
 # OS junk
 .DS_Store

@@ -30,6 +30,12 @@ const ICONS = {
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>',
 };
 
+// Thumbs-up / thumbs-down glyphs (Lucide) for the per-match feedback control.
+const THUMB_UP =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>';
+const THUMB_DOWN =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3 3.88Z"/></svg>';
+
 const $ = (id) => document.getElementById(id);
 const el = (tag, cls, html) => {
   const n = document.createElement(tag);
@@ -44,6 +50,10 @@ const pct = (x) => Math.round((x || 0) * 100);
 let running = false;
 let lastInput = "";
 let lastHints = null;
+// Run id minted by the worker for the current search. Every thumbs vote carries
+// it so the backend can tie the vote to the exact queries + source that
+// produced the result. Reset at the start of each run; set on the `runid` event.
+let currentRunId = null;
 // AbortController for the in-flight SSE — lets the refine flow cancel the
 // current bad run cleanly when the user submits hints mid-pipeline.
 let inflight = null;
@@ -90,9 +100,18 @@ function setStep(id, state) {
   });
 }
 
+// Tag outbound links so the destination's analytics attribute the click to
+// canonical.cc. Only decorates http(s) URLs and never double-adds the param.
+function withRef(href) {
+  const s = String(href || "");
+  if (!/^https?:\/\//i.test(s)) return s;
+  if (/[?&]ref=canonicalcc(?:&|$)/.test(s)) return s;
+  return s + (s.includes("?") ? "&" : "?") + "ref=canonicalcc";
+}
+
 // LinkedIn / X / source link buttons for any profile object.
 function linkBtn(href, kind, label) {
-  return `<a class="link-btn" href="${esc(href)}" target="_blank" rel="noopener">${ICONS[kind]}<span>${label}</span></a>`;
+  return `<a class="link-btn" href="${esc(withRef(href))}" target="_blank" rel="noopener">${ICONS[kind]}<span>${label}</span></a>`;
 }
 function renderLinks(container, obj) {
   const parts = [];
@@ -124,7 +143,18 @@ function scoreRing(score) {
   return wrap;
 }
 
-// Feedback affordance: a toggle that reveals a textarea → POSTs to /feedback.
+// One POST to the worker's /feedback endpoint. Fire-and-forget by default; the
+// caller decides whether to await for UI confirmation.
+function postFeedback(payload) {
+  return fetch(ENDPOINT + "/feedback", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+// Comment-only feedback affordance (used on the SOURCE profile card, where a
+// thumbs verdict doesn't make sense — "wrong person" is handled by Refine).
 function renderFeedback(container, target) {
   container.innerHTML =
     `<button class="fb-toggle" type="button">✎ Feedback on this result</button>
@@ -152,17 +182,76 @@ function renderFeedback(container, target) {
     send.disabled = true;
     send.textContent = "Sending…";
     try {
-      await fetch(ENDPOINT + "/feedback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: lastInput, target, comment }),
-      });
+      await postFeedback({ runId: currentRunId, input: lastInput, target, comment });
       container.innerHTML = `<span class="fb-thanks">✓ Thanks — your feedback was recorded.</span>`;
     } catch {
       send.disabled = false;
       send.textContent = "Send feedback";
       ta.insertAdjacentHTML("afterend", `<span class="fb-thanks" style="color:#dc2626">Couldn't send — try again.</span>`);
     }
+  });
+}
+
+// Per-match feedback: one-click 👍/👎 (revealed on card hover via CSS). A 👎
+// auto-expands an optional comment box for the "why". Every vote carries the
+// runId + result URL so the worker can feed it back into Exa retrieval.
+function renderMatchFeedback(container, match) {
+  const resultUrl = match.linkedin || match.x || match.url || "";
+  container.innerHTML =
+    `<div class="fb-vote" role="group" aria-label="Was this a good match?">
+       <button class="fb-thumb up" type="button" aria-label="Good match" title="Good match">${THUMB_UP}</button>
+       <button class="fb-thumb down" type="button" aria-label="Bad match" title="Bad match">${THUMB_DOWN}</button>
+       <span class="fb-vote-thanks" aria-live="polite"></span>
+     </div>
+     <div class="fb-form is-hidden">
+       <textarea placeholder="What was off about this match? (optional — helps us fix it)"></textarea>
+       <div class="fb-actions">
+         <button class="fb-send" type="button">Send</button>
+         <button class="fb-cancel" type="button">Skip</button>
+       </div>
+     </div>`;
+  const voteEl = container.querySelector(".fb-vote");
+  const up = container.querySelector(".fb-thumb.up");
+  const down = container.querySelector(".fb-thumb.down");
+  const thanks = container.querySelector(".fb-vote-thanks");
+  const form = container.querySelector(".fb-form");
+  const ta = container.querySelector("textarea");
+  const send = container.querySelector(".fb-send");
+  const cancel = container.querySelector(".fb-cancel");
+  let verdict = null;
+
+  function vote(v, comment) {
+    verdict = v;
+    voteEl.classList.add("is-voted"); // keep thumbs visible after a vote
+    up.classList.toggle("is-active", v === "up");
+    down.classList.toggle("is-active", v === "down");
+    postFeedback({
+      runId: currentRunId,
+      resultUrl,
+      resultName: match.name,
+      verdict: v,
+      input: lastInput,
+      ...(comment ? { comment } : {}),
+    }).catch(() => {});
+  }
+
+  up.addEventListener("click", () => {
+    vote("up");
+    form.classList.add("is-hidden");
+    thanks.textContent = "✓ Thanks";
+  });
+  down.addEventListener("click", () => {
+    vote("down");
+    thanks.textContent = "";
+    form.classList.remove("is-hidden"); // auto-expand the "why" on a downvote
+    ta.focus();
+  });
+  cancel.addEventListener("click", () => { form.classList.add("is-hidden"); thanks.textContent = "✓ Thanks"; });
+  send.addEventListener("click", () => {
+    // The downvote is already recorded; this just attaches the optional comment.
+    vote(verdict || "down", ta.value.trim());
+    form.classList.add("is-hidden");
+    thanks.textContent = "✓ Thanks — recorded.";
   });
 }
 
@@ -223,7 +312,7 @@ function renderMatches(matches) {
     card.appendChild(links);
 
     const fb = el("div", "fb");
-    renderFeedback(fb, m.name);
+    renderMatchFeedback(fb, m);
     card.appendChild(fb);
 
     grid.appendChild(card);
@@ -239,6 +328,7 @@ function showNotice(html, isError) {
 
 function handleEvent(ev) {
   switch (ev.type) {
+    case "runid": currentRunId = ev.runId || null; break;
     case "stage": setStep(ev.step, ev.state || "active"); break;
     case "status": $("status").textContent = ev.text || ""; break;
     case "profile": renderProfile(ev.profile); break;
@@ -292,6 +382,7 @@ async function run(input, hints) {
   running = true;
   lastInput = input.trim();
   lastHints = hints || null;
+  currentRunId = null; // cleared until the worker emits a fresh runid this run
   inflight = new AbortController();
   // Fresh search (no hints) resets the session guards so a new input can
   // re-warn / re-pop the modal. Refines keep them set — once the user has

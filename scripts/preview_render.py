@@ -25,6 +25,8 @@ RENDERED = [
     "labs/physical-ai/index.html",
     "labs/power-law/index.html",
     "labs/semiconductor-silicon-stack/index.html",
+    "labs/data-centers/index.html",
+    "labs/decentralized-ai/index.html",
     "labs/physical-ai-robotics/index.html",
     "physical-ai-robotics/index.html",
     # partials/* are Jekyll passthroughs the SPA (fundmodeler) fetches at
@@ -50,6 +52,8 @@ SHALLOW_LINK_LAB_DIRS = [
     "labs/dilutionlab",
     "labs/power-law",
     "labs/semiconductor-silicon-stack",
+    "labs/data-centers",
+    "labs/decentralized-ai",
     "labs/physical-ai-robotics",
     "physical-ai-robotics",
 ]

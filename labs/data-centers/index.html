@@ -1,0 +1,883 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Centers &amp; Neoclouds | Canonical Labs</title>
+    <meta name="description" content="How AI data centers and neoclouds actually work — the stack from power to silicon, the players across seven layers, why power is the binding constraint, and the economics. Built by Canonical." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/data-centers/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/data-centers/" />
+    <meta property="og:title" content="Data Centers &amp; Neoclouds | Canonical Labs" />
+    <meta property="og:description" content="The AI data center buildout, explained soup to nuts — the stack, the players, the power constraint, and the economics." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/data-centers/" />
+    <meta property="twitter:title" content="Data Centers &amp; Neoclouds | Canonical Labs" />
+    <meta property="twitter:description" content="Why data centers are suddenly the most important real estate on earth — the stack, the players, the power, the economics." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="twitter:creator" content="@canonicalcc" />
+    <meta property="twitter:site" content="@canonicalcc" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com?ref=canonicalcc">
+    <link rel="preconnect" href="https://fonts.gstatic.com?ref=canonicalcc" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular&ref=canonicalcc" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap&ref=canonicalcc" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+    <link rel="stylesheet" href="lab.css?v=1">
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+
+        <main>
+            <!-- HERO -->
+            <section class="dc-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="dc-hero-content">
+                        <span class="dc-eyebrow">[00] &nbsp; Canonical Labs &middot; Data Centers &amp; Neoclouds</span>
+                        <h1 class="dc-title">The most important real estate on <em>earth</em>.</h1>
+                        <p class="dc-subtitle">
+                            A data center is a building full of computers: power comes in, heat comes out, compute happens in between. Three years of AI demand turned that boring utility into the scarcest, most-fought-over asset in tech. This is the whole thing explained from the ground up &mdash; the stack, the players, the power constraint, and the economics. Companion to the <a href="/labs/semiconductor-silicon-stack/">Semiconductor Stack</a> and <a href="/labs/decentralized-ai/">Decentralized AI</a> maps.
+                        </p>
+                        {% include lab-share.html github_path="labs/data-centers" %}
+                        <div class="dc-meta">
+                            <div class="dc-meta-item"><span class="dc-meta-key">Coverage</span><span class="dc-meta-val">7 stack layers</span></div>
+                            <div class="dc-meta-item"><span class="dc-meta-key">Players mapped</span><span class="dc-meta-val">31 across the stack</span></div>
+                            <div class="dc-meta-item"><span class="dc-meta-key">Sources</span><span class="dc-meta-val">BVP Atlas &middot; PitchBook &middot; Sacra &middot; public filings</span></div>
+                            <div class="dc-meta-item"><span class="dc-meta-key">Updated</span><span class="dc-meta-val">May 28, 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TL;DR STRIP -->
+            <section class="dc-tldr">
+                <div class="container mx-auto px-8">
+                    <div class="dc-tldr-intro">The AI data center buildout in four numbers.</div>
+                    <div class="dc-tldr-grid">
+                        <div class="dc-tldr-item">
+                            <div class="dc-stat"><em>$700</em><span class="dc-stat-unit">B</span></div>
+                            <div class="dc-tldr-label"><strong>Projected AI capex in 2026.</strong> Hyperscalers spent ~$130B in Q1 2026 alone. (<a href="https://www.notboring.co?ref=canonicalcc" target="_blank" rel="noopener">Packy McCormick</a>; <a href="https://x.com/ShanuMathew93?ref=canonicalcc" target="_blank" rel="noopener">Shanu Mathew</a>.)</div>
+                        </div>
+                        <div class="dc-tldr-item">
+                            <div class="dc-stat">$7.6<span class="dc-stat-unit">T</span></div>
+                            <div class="dc-tldr-label"><strong>Cumulative through 2031.</strong> <a href="https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack?ref=canonicalcc" target="_blank" rel="noopener">BVP</a>, <a href="https://www.notboring.co?ref=canonicalcc" target="_blank" rel="noopener">Packy McCormick</a>, and <a href="https://cloudedjudgement.substack.com?ref=canonicalcc" target="_blank" rel="noopener">Jamin Ball</a> independently converge near the same number.</div>
+                        </div>
+                        <div class="dc-tldr-item">
+                            <div class="dc-stat">11<span class="dc-stat-unit">%</span></div>
+                            <div class="dc-tldr-label"><strong>xAI's GPU fleet utilization.</strong> Hyperscalers run 5&ndash;10%. The most expensive hardware ever built mostly sits idle.</div>
+                        </div>
+                        <div class="dc-tldr-item">
+                            <div class="dc-stat">1<span class="dc-stat-unit">GW</span></div>
+                            <div class="dc-tldr-label"><strong>A single hyperscale campus.</strong> That's a small city's worth of power &mdash; and power, not chips, is the real bottleneck.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SUB-NAV -->
+            <div class="dc-subnav" id="dc-subnav">
+                <div class="container mx-auto px-8">
+                    <ul class="dc-subnav-list">
+                        <li><a href="#overview">What It Is</a></li>
+                        <li><a href="#inflection">The Inflection</a></li>
+                        <li><a href="#stack">The Stack</a></li>
+                        <li><a href="#players">Neoclouds</a></li>
+                        <li><a href="#explorer">Explorer</a></li>
+                        <li><a href="#power">Power</a></li>
+                        <li><a href="#utilization">Utilization</a></li>
+                        <li><a href="#economics">Economics</a></li>
+                        <li><a href="#regulation">Regulation</a></li>
+                        <li><a href="#horizon">What's Next</a></li>
+                        <li><a href="#risks">Risks</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- [01] WHAT IS A DATA CENTER -->
+            <section class="dc-scene" id="overview">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[01]</span> The 50,000-Foot View</div>
+                    <h2 class="dc-scene-h2">A data center is a building full of <em>computers</em>.</h2>
+                    <p class="dc-lede">Power comes in, heat comes out, compute happens in between. That's it. We went from corporate server rooms, to the cloud, to today's AI-driven explosion &mdash; but the physics never changed. The single most-quoted efficiency number is <strong>PUE</strong> (Power Usage Effectiveness): total facility power divided by the power that actually reaches the chips. A PUE of 1.2 means for every watt of compute, you burn 0.2 watts on cooling and overhead. Perfect is 1.0; nobody gets there.</p>
+
+                    <div class="dc-diagram-wrap">
+                        <svg viewBox="0 0 1080 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A data center: grid power in, through cooling, to compute racks, with network out and heat exhausted.">
+                            <defs>
+                                <linearGradient id="dc-flow-navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#162456"/></linearGradient>
+                                <linearGradient id="dc-flow-acc" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+                            </defs>
+                            <text x="40" y="40" fill="#15803d" font-family="JetBrains Mono" font-size="11" letter-spacing="2">POWER IN</text>
+                            <rect x="40" y="90" width="180" height="70" rx="6" fill="url(#dc-flow-navy)"/>
+                            <text x="130" y="120" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="15" font-weight="600" text-anchor="middle">Grid / PPA</text>
+                            <text x="130" y="142" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">transformers, UPS, backup</text>
+                            <line x1="226" y1="125" x2="266" y2="125" stroke="#64748b" stroke-width="2"/><polygon points="262,120 274,125 262,130" fill="#64748b"/>
+                            <rect x="280" y="90" width="180" height="70" rx="6" fill="url(#dc-flow-navy)"/>
+                            <text x="370" y="120" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="15" font-weight="600" text-anchor="middle">Cooling</text>
+                            <text x="370" y="142" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">air → liquid → immersion</text>
+                            <line x1="466" y1="125" x2="506" y2="125" stroke="#64748b" stroke-width="2"/><polygon points="502,120 514,125 502,130" fill="#64748b"/>
+                            <rect x="520" y="90" width="200" height="70" rx="6" fill="url(#dc-flow-acc)" stroke="#c2410c"/>
+                            <text x="620" y="120" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="15" font-weight="600" text-anchor="middle">Compute racks</text>
+                            <text x="620" y="142" fill="#fde6d2" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">GPUs, networking, storage</text>
+                            <line x1="726" y1="125" x2="766" y2="125" stroke="#64748b" stroke-width="2"/><polygon points="762,120 774,125 762,130" fill="#64748b"/>
+                            <rect x="780" y="90" width="180" height="70" rx="6" fill="url(#dc-flow-navy)"/>
+                            <text x="870" y="120" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="15" font-weight="600" text-anchor="middle">Network out</text>
+                            <text x="870" y="142" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">tokens, training, inference</text>
+                            <text x="620" y="60" fill="#dc2626" font-family="JetBrains Mono" font-size="11" letter-spacing="1" text-anchor="middle">↑ HEAT OUT</text>
+                            <line x1="620" y1="70" x2="620" y2="88" stroke="#dc2626" stroke-width="2"/><polygon points="615,74 620,64 625,74" fill="#dc2626"/>
+                            <text x="500" y="210" fill="#94a3b8" font-family="JetBrains Mono" font-size="10" text-anchor="middle">PUE = total facility power ÷ power that reaches the chips</text>
+                        </svg>
+                    </div>
+
+                    <div class="dc-pov">
+                        <span class="dc-pov-label">Canonical POV</span>
+                        <p>Everything else on this page is a consequence of that one diagram. The AI boom didn't change what a data center <em>is</em> &mdash; it changed the numbers. Racks went from 5&ndash;10 kW to 40&ndash;80 kW (and 1 MW is coming), which broke air cooling, which broke the grid connection, which broke the permitting timeline. Follow the heat and you'll find every bottleneck.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [02] THE AI INFLECTION -->
+            <section class="dc-scene" id="inflection">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[02]</span> The AI Inflection</div>
+                    <h2 class="dc-scene-h2">Why the last three years changed <em>everything</em>.</h2>
+                    <p class="dc-lede">Training a frontier model needs orders of magnitude more compute than the cloud workloads data centers were built for. A single frontier training cluster draws double-digit megawatts, packs thousands of GPUs, and costs eight figures a year just to run. Multiply that across every lab and hyperscaler and you get the largest infrastructure capex cycle in history.</p>
+
+                    <div class="dc-metrics" style="max-width:none">
+                        <div class="dc-metric"><span class="v">~$130B</span><span class="k">hyperscaler capex, Q1 2026 alone</span></div>
+                        <div class="dc-metric"><span class="v">$700B</span><span class="k">projected full-year 2026 capex</span></div>
+                        <div class="dc-metric"><span class="v">$1T+</span><span class="k">projected 2027 capex</span></div>
+                        <div class="dc-metric"><span class="v">$7.6T</span><span class="k">cumulative through 2031 (convergent estimates)</span></div>
+                    </div>
+
+                    <div class="dc-pov">
+                        <span class="dc-pov-label">Canonical POV</span>
+                        <p>Three independent analysts &mdash; <a href="https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack?ref=canonicalcc" target="_blank" rel="noopener">Bessemer's Atlas</a>, <a href="https://www.notboring.co?ref=canonicalcc" target="_blank" rel="noopener">Packy McCormick</a>, and <a href="https://cloudedjudgement.substack.com?ref=canonicalcc" target="_blank" rel="noopener">Jamin Ball</a> &mdash; land within rounding distance of $7.5&ndash;7.6T cumulative spend through 2031. When three people modelling from different starting points converge, the number is less a forecast and more a planning assumption the whole industry is already underwriting. The investable question is no longer "will it get built" but "which layer captures the margin."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [03] THE STACK -->
+            <section class="dc-scene" id="stack">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[03]</span> The Stack</div>
+                    <h2 class="dc-scene-h2">What's inside, <em>layer by layer</em>.</h2>
+                    <p class="dc-lede">From the GPU-as-a-service product at the top to the silicon at the bottom, every layer is its own market with its own incumbents and challengers. Click any company to open it.</p>
+
+                    <div class="dc-diagram-wrap">
+                        <svg viewBox="0 0 1080 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The data center stack: seven layers from neoclouds down to facilities, each with representative companies.">
+                            <defs>
+                                <linearGradient id="dc-lg-layer" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#162456"/></linearGradient>
+                                <linearGradient id="dc-lg-co" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+                            </defs>
+                            <text x="70" y="28" fill="#1e3a8a" font-family="JetBrains Mono" font-size="11" letter-spacing="2">LAYER</text>
+                            <text x="548" y="28" fill="#f97316" font-family="JetBrains Mono" font-size="11" letter-spacing="2">REPRESENTATIVE PLAYERS</text>
+
+                            <!-- ROW 1 Neoclouds -->
+                            <g>
+                                <rect x="70" y="44" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="68" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">1 · Neoclouds</text>
+                                <text x="86" y="86" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">GPU-as-a-service, AI-native</text>
+                                <a href="https://www.coreweave.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="CoreWeave — IPO'd Mar 2025 (CRWV), ~$65B mkt cap, $5.1B 2025 revenue."><title>CoreWeave</title><rect x="548" y="54" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="602" y="77" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">CoreWeave</text></a>
+                                <a href="https://www.crusoe.ai?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Crusoe — energy-first neocloud (stranded gas → compute). $4.14B raised."><title>Crusoe</title><rect x="665" y="54" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="719" y="77" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Crusoe</text></a>
+                                <a href="https://lambdalabs.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Lambda — GPU cloud for training/inference. ~$5.9B valuation (Series E)."><title>Lambda</title><rect x="782" y="54" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="836" y="77" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Lambda</text></a>
+                                <a href="https://nebius.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Nebius — European neocloud, ex-Yandex cloud unit (NBIS)."><title>Nebius</title><rect x="899" y="54" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="953" y="77" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Nebius</text></a>
+                            </g>
+                            <!-- ROW 2 Operations -->
+                            <g>
+                                <rect x="70" y="122" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="146" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">2 · Operations &amp; managed services</text>
+                                <text x="86" y="164" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">who actually runs the cluster</text>
+                                <a href="https://www.penguinsolutions.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Penguin Solutions (PENG) — end-to-end AI infra ops. Runs Voltage Park's 24,000-H100 fleet; $648M Advanced Computing revenue (FY25)."><title>Penguin Solutions</title><rect x="548" y="132" width="226" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="661" y="155" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Penguin Solutions</text></a>
+                                <a href="https://www.nvidia.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="NVIDIA Mission Control / DGX Cloud — NVIDIA's own managed-ops play."><title>NVIDIA DGX Cloud</title><rect x="784" y="132" width="224" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="896" y="155" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">NVIDIA DGX Cloud</text></a>
+                            </g>
+                            <!-- ROW 3 Compute -->
+                            <g>
+                                <rect x="70" y="200" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="224" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">3 · Compute silicon</text>
+                                <text x="86" y="242" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">GPUs, custom ASICs, accelerators</text>
+                                <a href="https://www.nvidia.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="NVIDIA — 80%+ share. H100 → B200 → Rubin → Feynman."><title>NVIDIA</title><rect x="548" y="210" width="86" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="591" y="233" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">NVIDIA</text></a>
+                                <a href="https://www.amd.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="AMD — MI300X, 192GB HBM3, competing on memory capacity."><title>AMD</title><rect x="642" y="210" width="86" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="685" y="233" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">AMD</text></a>
+                                <a href="https://cloud.google.com/tpu?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Google TPU — custom ASIC for internal + cloud workloads."><title>Google TPU</title><rect x="736" y="210" width="86" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="779" y="233" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">Google TPU</text></a>
+                                <a href="https://www.cerebras.ai?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Cerebras — wafer-scale engine, unique architecture."><title>Cerebras</title><rect x="830" y="210" width="86" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="873" y="233" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Cerebras</text></a>
+                                <a href="https://www.d-matrix.ai?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="d-Matrix — digital in-memory inference compute. $275M Series C (Nov 2025)."><title>d-Matrix</title><rect x="924" y="210" width="84" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="966" y="233" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">d-Matrix</text></a>
+                            </g>
+                            <!-- ROW 4 Networking -->
+                            <g>
+                                <rect x="70" y="278" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="302" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">4 · Networking &amp; interconnect</text>
+                                <text x="86" y="320" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">spine-leaf, InfiniBand vs. Ethernet</text>
+                                <a href="https://www.arista.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Arista Networks — data-center switching for AI fabrics (ANET)."><title>Arista</title><rect x="548" y="288" width="146" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="621" y="311" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Arista</text></a>
+                                <a href="https://www.broadcom.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Broadcom — Ethernet switching silicon + custom ASICs (AVGO)."><title>Broadcom</title><rect x="704" y="288" width="146" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="777" y="311" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Broadcom</text></a>
+                                <a href="https://ayarlabs.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Ayar Labs — optical I/O for chip-to-chip communication."><title>Ayar Labs</title><rect x="860" y="288" width="148" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="934" y="311" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Ayar Labs</text></a>
+                            </g>
+                            <!-- ROW 5 Cooling -->
+                            <g>
+                                <rect x="70" y="356" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="380" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">5 · Cooling</text>
+                                <text x="86" y="398" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">why 40–80 kW racks need liquid</text>
+                                <a href="https://www.motivaircorp.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Motivair — liquid cooling for AI racks (acquired by Schneider Electric)."><title>Motivair</title><rect x="548" y="366" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="602" y="389" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Motivair</text></a>
+                                <a href="https://www.coolitsystems.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="CoolIT — direct liquid cooling (DLC) for GPU clusters."><title>CoolIT</title><rect x="665" y="366" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="719" y="389" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">CoolIT</text></a>
+                                <a href="https://www.grcooling.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Green Revolution Cooling — single-phase immersion cooling."><title>GRC</title><rect x="782" y="366" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="836" y="389" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">GRC</text></a>
+                                <a href="https://www.jetcool.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="JetCool — microconvective cooling for high-density racks (acquired by Flex)."><title>JetCool</title><rect x="899" y="366" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="953" y="389" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">JetCool</text></a>
+                            </g>
+                            <!-- ROW 6 Power -->
+                            <g>
+                                <rect x="70" y="434" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="458" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">6 · Power &amp; energy</text>
+                                <text x="86" y="476" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">the binding constraint</text>
+                                <a href="https://www.constellationenergy.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Constellation Energy — Three Mile Island restart for AI compute (CEG)."><title>Constellation</title><rect x="548" y="444" width="146" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="621" y="467" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">Constellation</text></a>
+                                <a href="https://oklo.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Oklo — Sam Altman-backed small modular reactors (OKLO)."><title>Oklo</title><rect x="704" y="444" width="146" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="777" y="467" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Oklo</text></a>
+                                <a href="https://nanonuclearenergy.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Nano Nuclear — micro-reactors for edge/remote data centers (NNE)."><title>Nano Nuclear</title><rect x="860" y="444" width="148" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="934" y="467" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Nano Nuclear</text></a>
+                            </g>
+                            <!-- ROW 7 Facilities -->
+                            <g>
+                                <rect x="70" y="512" width="458" height="56" rx="5" fill="url(#dc-lg-layer)"/>
+                                <text x="86" y="536" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="14" font-weight="600">7 · Facilities (REITs &amp; operators)</text>
+                                <text x="86" y="554" fill="#cbd5e1" font-family="Aeonik Regular, system-ui" font-size="11">the buildings themselves</text>
+                                <a href="https://www.equinix.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Equinix — largest DC REIT globally, $80B+ mkt cap (EQIX)."><title>Equinix</title><rect x="548" y="522" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="602" y="545" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Equinix</text></a>
+                                <a href="https://www.digitalrealty.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Digital Realty — 2nd-largest DC REIT, $50B+ mkt cap (DLR)."><title>Digital Realty</title><rect x="665" y="522" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="719" y="545" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="11" text-anchor="middle">Digital Realty</text></a>
+                                <a href="https://www.vantage-dc.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="Vantage Data Centers — $2B+ Series C (Jan 2026) for AI expansion."><title>Vantage</title><rect x="782" y="522" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="836" y="545" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">Vantage</text></a>
+                                <a href="https://www.qtsdatacenters.com?ref=canonicalcc" target="_blank" rel="noopener" class="dc-svg-link" data-tip="QTS — taken private by Blackstone for $10B, expanding aggressively."><title>QTS</title><rect x="899" y="522" width="109" height="36" rx="5" fill="url(#dc-lg-co)" stroke="#c2410c"/><text x="953" y="545" fill="#fff" font-family="Aeonik Regular, system-ui" font-size="12" text-anchor="middle">QTS</text></a>
+                            </g>
+                        </svg>
+                        <div class="dc-diagram-legend">
+                            <span><span class="swatch" style="background:#1e3a8a"></span>Stack layer</span>
+                            <span><span class="swatch" style="background:#f97316"></span>Representative player</span>
+                            <span>Click any box &rarr; opens the company</span>
+                        </div>
+                    </div>
+
+                    <div class="dc-pov">
+                        <span class="dc-pov-label">Canonical POV</span>
+                        <p>The interesting investing question is which layers convert from real-estate economics to software-like economics. The building is a commodity; the silicon is a near-monopoly (see our <a href="/labs/semiconductor-silicon-stack/">Semiconductor Stack</a> map). The margin pools that look most under-served sit in the <em>boring middle</em>: power procurement, liquid cooling at 40&ndash;80 kW per rack, and the operations layer that keeps thousands of GPUs actually running.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [04] HYPERSCALERS VS NEOCLOUDS -->
+            <section class="dc-scene" id="players">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[04]</span> Hyperscalers vs. Neoclouds</div>
+                    <h2 class="dc-scene-h2">The great <em>unbundling</em>.</h2>
+                    <p class="dc-lede">The <strong><a href="https://aws.amazon.com?ref=canonicalcc" target="_blank" rel="noopener">AWS</a> / <a href="https://azure.microsoft.com?ref=canonicalcc" target="_blank" rel="noopener">Azure</a> / <a href="https://cloud.google.com?ref=canonicalcc" target="_blank" rel="noopener">Google Cloud</a></strong> hyperscalers are vertically integrated, general-purpose clouds that bolted AI on. Neoclouds are GPU-first and AI-native, built specifically for training and inference. They exist because hyperscalers are slow to allocate GPU capacity, pricing is opaque, and an AI startup needs a fundamentally different product than an enterprise cloud customer. A parallel trend: sovereign clouds, as Saudi Arabia, the UAE, Japan, and France build national AI compute.</p>
+
+                    <div class="dc-project-grid">
+                        <article class="dc-project">
+                            <div class="dc-project-tags"><span class="dc-tag layer">Neoclouds</span><span class="dc-tag stage">Public (CRWV)</span></div>
+                            <h3 class="dc-project-name"><a href="https://www.coreweave.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="The bellwether neocloud. IPO'd March 2025; ~$65B market cap by Oct 2025.">CoreWeave</a></h3>
+                            <p class="dc-project-role">The neocloud bellwether</p>
+                            <p>The reference example of the category and the first to go public. GPU-first cloud purpose-built for AI, financed with an aggressive mix of equity and GPU-backed debt &mdash; roughly $28B raised across equity + debt in the 12 months through March 2026, including an $8.5B credit facility.</p>
+                            <div class="dc-metrics">
+                                <div class="dc-metric"><span class="v">$5.1B</span><span class="k">2025 revenue (+170% YoY)</span></div>
+                                <div class="dc-metric"><span class="v">~$65B</span><span class="k">market cap (Oct 2025)</span></div>
+                            </div>
+                            <div class="dc-project-pov"><span class="lab">Canonical POV</span><p>CoreWeave proved neoclouds can reach public-market scale &mdash; but its model is a leveraged bet that GPU demand and pricing hold up long enough to service GPU-collateralized debt. The bull and bear case are the same fact.</p></div>
+                            <div class="dc-project-team"><strong>Stage:</strong> Nasdaq: CRWV (IPO March 2025).</div>
+                            <a class="dc-project-link" href="https://www.coreweave.com?ref=canonicalcc" target="_blank" rel="noopener">Visit CoreWeave <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dc-project">
+                            <div class="dc-project-tags"><span class="dc-tag layer">Neoclouds</span><span class="dc-tag stage">Series D</span></div>
+                            <h3 class="dc-project-name"><a href="https://www.crusoe.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Energy-first neocloud: started by turning stranded/flared gas into compute.">Crusoe Energy</a></h3>
+                            <p class="dc-project-role">Energy-first neocloud</p>
+                            <p>Crusoe's wedge is power: it started by turning stranded and flared natural gas into compute, and now positions energy as the differentiator in a power-constrained market. $4.14B raised in total, including a $600M Series D (Founders Fund, Dec 2024) and a $750M Brookfield credit facility (June 2025).</p>
+                            <div class="dc-metrics">
+                                <div class="dc-metric"><span class="v">$4.14B</span><span class="k">total raised</span></div>
+                                <div class="dc-metric"><span class="v">$750M</span><span class="k">Brookfield credit facility</span></div>
+                            </div>
+                            <div class="dc-project-pov"><span class="lab">Canonical POV</span><p>If power is the binding constraint (it is), the neocloud that owns its energy story has the most durable moat. Crusoe is the clearest expression of "the data center business is really an energy business."</p></div>
+                            <div class="dc-project-team"><strong>Backers:</strong> Founders Fund, Brookfield.</div>
+                            <a class="dc-project-link" href="https://www.crusoe.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Crusoe <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dc-project">
+                            <div class="dc-project-tags"><span class="dc-tag layer">Neoclouds</span><span class="dc-tag stage">Series E</span></div>
+                            <h3 class="dc-project-name"><a href="https://lambdalabs.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="GPU cloud for training/inference. ~$5.9B valuation post Series E (Nov 2025).">Lambda</a></h3>
+                            <p class="dc-project-role">GPU cloud for builders</p>
+                            <p>One of the longest-running GPU clouds, popular with researchers and startups for on-demand and reserved capacity. ~$5.9B valuation post Series E (Nov 2025), $3B+ raised in total, with an early-2025 mix of a $480M equity raise plus a $500M GPU-backed loan &mdash; the same equity-plus-hardware-debt pattern as CoreWeave.</p>
+                            <div class="dc-metrics">
+                                <div class="dc-metric"><span class="v">~$5.9B</span><span class="k">valuation (Series E)</span></div>
+                                <div class="dc-metric"><span class="v">$3B+</span><span class="k">total raised</span></div>
+                            </div>
+                            <div class="dc-project-pov"><span class="lab">Canonical POV</span><p>Lambda's developer mindshare is the asset hyperscalers can't easily buy. The question for every neocloud is the same: does the brand and product stickiness outlast the GPU depreciation schedule?</p></div>
+                            <div class="dc-project-team"><strong>Stage:</strong> Series E, Nov 2025.</div>
+                            <a class="dc-project-link" href="https://lambdalabs.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Lambda <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dc-support">
+                        <span class="dc-support-label">More neoclouds</span>
+                        <div class="dc-support-grid">
+                            <div class="dc-support-item"><strong><a href="https://www.voltagepark.com?ref=canonicalcc" target="_blank" rel="noopener">Voltage Park</a></strong> &mdash; launched managed Kubernetes (June 2025), moving up-stack from raw infrastructure to platform services.</div>
+                            <div class="dc-support-item"><strong><a href="https://nebius.com?ref=canonicalcc" target="_blank" rel="noopener">Nebius</a></strong> &mdash; the ex-Yandex cloud unit, now a European neocloud play (NBIS).</div>
+                            <div class="dc-support-item"><strong><a href="https://www.together.ai?ref=canonicalcc" target="_blank" rel="noopener">Together AI</a></strong> &mdash; inference-focused, with a strong open-source model-hosting business.</div>
+                            <div class="dc-support-item"><strong><a href="https://www.nscale.com?ref=canonicalcc" target="_blank" rel="noopener">Nscale</a></strong> &mdash; among the top AI-infra startups by total funding raised.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [05] COMPANY EXPLORER -->
+            <section class="dc-scene" id="explorer">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[05]</span> Company Landscape</div>
+                    <h2 class="dc-scene-h2">Every major player, mapped by <em>layer</em>.</h2>
+                    <p class="dc-lede">Filter by stack layer or search by name, stage, or what they do. Click any card to open the company. Public funding and market data only &mdash; no proprietary deal-flow. Every outbound link carries <code>?ref=canonicalcc</code>.</p>
+                    <div class="dc-explorer-wrap">
+                        <div class="dc-filter-bar" id="dc-filters" role="group" aria-label="Filter by stack layer"></div>
+                        <div class="dc-search-row">
+                            <input type="search" class="dc-search" id="dc-search" placeholder="Search companies, layers, or descriptions…" aria-label="Search the explorer" autocomplete="off" />
+                            <span class="dc-explorer-count" id="dc-count"></span>
+                        </div>
+                        <div class="dc-explorer-grid" id="dc-explorer-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [06] POWER -->
+            <section class="dc-scene" id="power">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[06]</span> Power: The Binding Constraint</div>
+                    <h2 class="dc-scene-h2">It's not the chips. It's the <em>power</em>.</h2>
+                    <p class="dc-lede">You can buy GPUs with money. You cannot buy a grid connection with money &mdash; in some regions the interconnection queue is a 5&ndash;7 year wait. So AI builders are doing whatever it takes: signing 20-year Power Purchase Agreements, building generation behind the meter (gas, solar, nuclear), and restarting shuttered nuclear plants. A single frontier cluster is double-digit megawatts; a hyperscale campus is 500 MW to 1 GW+ &mdash; a small city.</p>
+
+                    <div class="dc-barchart">
+                        <h4>Power draw, megawatts (illustrative)</h4>
+                        <div class="dc-bar-row"><span class="dc-bar-label">Frontier cluster</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="5%"></span></span><span class="dc-bar-val">~50 MW</span></div>
+                        <div class="dc-bar-row"><span class="dc-bar-label">Large factory</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="10%"></span></span><span class="dc-bar-val">~100 MW</span></div>
+                        <div class="dc-bar-row"><span class="dc-bar-label">Mid-size city</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="30%"></span></span><span class="dc-bar-val">~300 MW</span></div>
+                        <div class="dc-bar-row accent"><span class="dc-bar-label">Hyperscale campus</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="100%"></span></span><span class="dc-bar-val">1,000 MW</span></div>
+                        <p class="dc-barchart-note">Orders of magnitude, not precise figures &mdash; the point is that a single AI campus now rivals a city. That's why utilities, regulators, and grid operators are suddenly in the room.</p>
+                    </div>
+
+                    <div class="dc-project-grid" style="margin-top:1.2rem">
+                        <article class="dc-project">
+                            <div class="dc-project-tags"><span class="dc-tag layer">Power &amp; Energy</span><span class="dc-tag stage">Public (CEG)</span></div>
+                            <h3 class="dc-project-name"><a href="https://www.constellationenergy.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Signed a deal to restart Three Mile Island to power AI compute.">Constellation Energy</a></h3>
+                            <p class="dc-project-role">The nuclear renaissance, literally</p>
+                            <p>Constellation's deal to restart the Three Mile Island nuclear plant to supply AI compute is the single most symbolic moment of the buildout: AI demand is reviving capacity the US had written off. The economics of guaranteed, carbon-free, 20-year offtake are exactly what hyperscalers want.</p>
+                            <div class="dc-project-pov"><span class="lab">Canonical POV</span><p>When AI companies sign 20-year nuclear contracts, they're telling you they believe demand is structural, not a bubble. Watch the offtake terms &mdash; they're a cleaner demand signal than any capex forecast.</p></div>
+                            <div class="dc-project-team"><strong>Stage:</strong> Nasdaq: CEG.</div>
+                            <a class="dc-project-link" href="https://www.constellationenergy.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Constellation <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dc-project">
+                            <div class="dc-project-tags"><span class="dc-tag layer">Power &amp; Energy</span><span class="dc-tag stage">Public (OKLO)</span></div>
+                            <h3 class="dc-project-name"><a href="https://oklo.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Sam Altman-backed small modular reactor company.">Oklo</a></h3>
+                            <p class="dc-project-role">Small modular reactors</p>
+                            <p>Oklo (Sam Altman-backed) is building small modular reactors (SMRs) &mdash; factory-built, smaller nuclear units that can be sited next to load. If SMRs work at cost, they are the clean behind-the-meter answer to the interconnection-queue problem.</p>
+                            <div class="dc-project-pov"><span class="lab">Canonical POV</span><p>SMRs are a 2028+ story with real regulatory and cost risk, but the prize is enormous: dispatchable, carbon-free power you can build on your own timeline instead of the grid's.</p></div>
+                            <div class="dc-project-team"><strong>Stage:</strong> NYSE: OKLO.</div>
+                            <a class="dc-project-link" href="https://oklo.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Oklo <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dc-support">
+                        <span class="dc-support-label">Also in the power layer</span>
+                        <div class="dc-support-grid">
+                            <div class="dc-support-item"><strong><a href="https://nanonuclearenergy.com?ref=canonicalcc" target="_blank" rel="noopener">Nano Nuclear</a></strong> &mdash; micro-reactors aimed at edge and remote data centers, where grid access is the limiting factor.</div>
+                            <div class="dc-support-item"><strong>Behind-the-meter &amp; storage</strong> &mdash; on-site generation (gas, solar) plus large battery banks to smooth the spiky power profile of training runs is becoming standard kit. A wave of battery-storage startups is targeting DC power-smoothing and grid-edge backup &mdash; an under-mapped, fast-emerging layer.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [07] GPU UTILIZATION -->
+            <section class="dc-scene" id="utilization">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[07]</span> The GPU Utilization Problem</div>
+                    <h2 class="dc-scene-h2">The most expensive hardware ever built sits mostly <em>idle</em>.</h2>
+                    <p class="dc-lede">xAI's fleet reportedly runs at 11% utilization; hyperscalers at 5&ndash;10% (per Cloudflare CEO Matthew Prince). Why? We spent 25 years inventing VMs, containers, and schedulers to share CPUs efficiently &mdash; almost none of that exists for GPUs yet. GPU multi-tenancy is genuinely hard: memory isolation, kernel scheduling, and security boundaries are unsolved at the level CPUs enjoy.</p>
+
+                    <div class="dc-barchart">
+                        <h4>Utilization, % (illustrative)</h4>
+                        <div class="dc-bar-row"><span class="dc-bar-label">CPU (cloud)</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="65%"></span></span><span class="dc-bar-val">~65%</span></div>
+                        <div class="dc-bar-row"><span class="dc-bar-label">Server (pre-cloud)</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="15%"></span></span><span class="dc-bar-val">~15%</span></div>
+                        <div class="dc-bar-row accent"><span class="dc-bar-label">xAI GPUs</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="11%"></span></span><span class="dc-bar-val">11%</span></div>
+                        <div class="dc-bar-row accent"><span class="dc-bar-label">Hyperscaler GPUs</span><span class="dc-bar-track"><span class="dc-bar-fill" data-w="8%"></span></span><span class="dc-bar-val">5–10%</span></div>
+                        <p class="dc-barchart-note">CPUs took two decades of virtualization tooling to reach high utilization. GPUs are roughly where servers were before VMware &mdash; which is either a crisis or the biggest software opportunity in infrastructure.</p>
+                    </div>
+
+                    <div class="dc-pov">
+                        <span class="dc-pov-label">Canonical POV</span>
+                        <p>Current fixes &mdash; NVIDIA MIG, time-slicing, vGPU, and Kubernetes fractional-GPU schedulers (Run:ai, ClearML) &mdash; are early. There's also a distributed alternative: <a href="/labs/decentralized-ai/">Exo-style</a> pooling of consumer hardware for inference (an M4 Max can push ~3.7M tok/sec). Whoever builds "VMware for GPUs" turns a 10% utilization problem into a 10x effective-supply unlock &mdash; arguably the highest-leverage software bet in the entire stack.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [08] ECONOMICS -->
+            <section class="dc-scene" id="economics">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[08]</span> Economics</div>
+                    <h2 class="dc-scene-h2">How a data center actually <em>makes money</em>.</h2>
+                    <p class="dc-lede">Three revenue models stack on top of each other: colocation (rent the space), managed hosting (rent the infrastructure), and cloud (rent the compute). Each step up the ladder trades real-estate economics for software-like margins. Revenue is locked in with take-or-pay contracts; many operators use a REIT structure. Play with the core levers below.</p>
+
+                    <div class="dc-calc" id="dc-calc">
+                        <div class="dc-calc-inputs">
+                            <h4>Inputs</h4>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-mw">IT capacity</label><span class="dc-calc-readout" id="dc-mw-out">30 MW</span></div>
+                                <input type="range" id="dc-mw" min="1" max="500" step="1" value="30" />
+                            </div>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-pue">PUE</label><span class="dc-calc-readout" id="dc-pue-out">1.20</span></div>
+                                <input type="range" id="dc-pue" min="1.05" max="1.6" step="0.01" value="1.2" />
+                                <div class="dc-calc-hint">Lower is better. Liquid cooling pushes modern AI facilities toward ~1.1.</div>
+                            </div>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-pwr">Power price</label><span class="dc-calc-readout" id="dc-pwr-out">6.0 ¢/kWh</span></div>
+                                <input type="range" id="dc-pwr" min="3" max="15" step="0.5" value="6" />
+                            </div>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-util">Utilization</label><span class="dc-calc-readout" id="dc-util-out">70%</span></div>
+                                <input type="range" id="dc-util" min="20" max="95" step="1" value="70" />
+                            </div>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-rev">Compute price sold</label><span class="dc-calc-readout" id="dc-rev-out">30 ¢/kWh</span></div>
+                                <input type="range" id="dc-rev" min="10" max="80" step="1" value="30" />
+                                <div class="dc-calc-hint">Blended revenue per IT kWh delivered to customers.</div>
+                            </div>
+                            <div class="dc-calc-field">
+                                <div class="dc-calc-field-top"><label for="dc-capex">Build cost</label><span class="dc-calc-readout" id="dc-capex-out">$10.0M / MW</span></div>
+                                <input type="range" id="dc-capex" min="6" max="16" step="0.5" value="10" />
+                            </div>
+                        </div>
+                        <div class="dc-calc-outputs">
+                            <h4>Illustrative annual unit economics</h4>
+                            <div class="dc-calc-out hero"><span class="k">Annual revenue</span><span class="v" id="dc-o-rev">—</span></div>
+                            <div class="dc-calc-out"><span class="k">Annual power cost</span><span class="v" id="dc-o-power">—</span></div>
+                            <div class="dc-calc-out"><span class="k">Power-only gross margin</span><span class="v" id="dc-o-margin">—</span></div>
+                            <div class="dc-calc-out"><span class="k">Build capex</span><span class="v" id="dc-o-capex">—</span></div>
+                            <div class="dc-calc-out hero"><span class="k">Simple payback</span><span class="v" id="dc-o-payback">—</span></div>
+                        </div>
+                        <p class="dc-calc-disclaimer">Illustrative only. This models power-cost economics against blended compute revenue; it ignores staff, maintenance, financing, GPU depreciation, and contract structure. Real deals live or die on those omitted lines &mdash; this is a teaching tool, not a model.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [09] REGULATION -->
+            <section class="dc-scene" id="regulation">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[09]</span> Regulation &amp; Government</div>
+                    <h2 class="dc-scene-h2">Where governments help, and where they <em>block</em>.</h2>
+                    <p class="dc-lede">Data centers create jobs and tax revenue but consume enormous power and water, so local politics are messy. The map is splitting into three postures.</p>
+
+                    <div class="dc-culture-grid">
+                        <div class="dc-culture-card">
+                            <h3><em>Blocking</em> — moratoriums</h3>
+                            <p>Virginia (the largest US data-center market) is debating limits; Ireland has paused new builds; Singapore restricts capacity. NEPA and environmental review can add years to a US build. Grid operators increasingly worry data centers consume too much available power.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3><em>Incentivizing</em> — the land grab</h3>
+                            <p>Texas, Ohio, and Indiana compete aggressively with tax breaks and fast permitting. For a build where time-to-power is the scarcest resource, "we'll permit you in months, not years" is worth more than the tax incentive itself.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3><em>Mandating</em> — sovereign AI</h3>
+                            <p>A growing list of countries require domestic AI compute for national security and data sovereignty &mdash; creating guaranteed demand for in-country capacity (Saudi Arabia, UAE, Japan, France), often on favorable terms.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>The water question</h3>
+                            <p>Cooling consumes water as well as power. As builds concentrate in a few favorable regions, water rights and community impact are becoming as politically charged as the megawatts &mdash; and are the most common trigger for local opposition.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [10] WHAT'S NEXT -->
+            <section class="dc-scene" id="horizon">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[10]</span> The 2027&ndash;2030 Horizon</div>
+                    <h2 class="dc-scene-h2">Where this all <em>goes</em>.</h2>
+                    <p class="dc-lede">A few things look close to certain, and one big question stays open.</p>
+
+                    <div class="dc-culture-grid">
+                        <div class="dc-culture-card">
+                            <h3>Liquid cooling becomes <em>standard</em></h3>
+                            <p>Air can't handle 40 kW+ per rack. With 1 MW racks arriving on the Rubin Ultra generation, facility design changes fundamentally &mdash; liquid (and immersion) move from optional to required, and that reshapes who wins the cooling layer.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>The memory wars &amp; <em>Feynman</em></h3>
+                            <p>NVIDIA's Feynman chip (2028) pairs 3D-stacked SRAM with 16-Hi HBM &mdash; the play is to retain the training monopoly while closing the inference gap. The $20B Groq acquisition fits the same pattern: absorb potential disruption rather than compete with it.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>Breaking the <em>memory wall</em></h3>
+                            <p>Models grew ~10,000,000x in a decade; memory bandwidth didn't keep up, so accelerators spend most of their time waiting on data. Startups like <a href="https://majestic-labs.ai?ref=canonicalcc" target="_blank" rel="noopener">Majestic Labs</a> attack this with memory-centric servers &mdash; one shared pool giving processors ~1,000x more fast memory. Majestic claims a single rack matches the fast-memory capacity of 25 NVIDIA NVL72 Vera Rubin racks at a fraction of the power. If it holds, the unit of inference shifts from the GPU to the memory system.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>The <em>interconnect</em> wall</h3>
+                            <p>As clusters pass 100k GPUs, the bottleneck moves from FLOPs to moving data between chips &mdash; and copper runs out of reach. Co-packaged optics and optical I/O (<a href="https://ayarlabs.com?ref=canonicalcc" target="_blank" rel="noopener">Ayar Labs</a>) put the photons on the package; photonic interposers reimagine the wiring entirely. We map the photonic-compute pure-plays in the <a href="/labs/semiconductor-silicon-stack/">Semiconductor Stack</a>.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>Edge vs. <em>centralized</em></h3>
+                            <p>Does inference migrate to the edge (consumer devices, on-prem) or stay in centralized mega-clusters? Reselling excess capacity &mdash; the AWS supply-chain-services playbook applied to compute &mdash; could turn idle GPUs into a liquid market.</p>
+                        </div>
+                        <div class="dc-culture-card">
+                            <h3>The endgame <em>question</em></h3>
+                            <p>Does inference become effectively infinite and nearly free as efficiency compounds &mdash; or does demand always outpace supply, keeping compute scarce and power the permanent constraint? The whole investment thesis hinges on which way that breaks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [11] RISKS -->
+            <section class="dc-scene" id="risks">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[11]</span> Why This Could Fail</div>
+                    <h2 class="dc-scene-h2">The bear case, with equal <em>rigor</em>.</h2>
+                    <p class="dc-lede">A buildout this large has a long list of ways to disappoint. The serious ones:</p>
+
+                    <div class="dc-risk-grid">
+                        <div class="dc-risk"><span class="dc-risk-num">01</span><h4>The GPU-debt doom loop</h4><p>Neoclouds finance GPUs with GPU-collateralized debt. If utilization or pricing softens, the collateral depreciates faster than the loans amortize. A demand wobble could cascade through the most leveraged operators first.</p></div>
+                        <div class="dc-risk"><span class="dc-risk-num">02</span><h4>Capex outruns revenue</h4><p>$7.6T cumulative spend assumes AI revenue scales to justify it. If monetization lags the buildout &mdash; a real risk &mdash; the industry is left with stranded, depreciating capacity and a brutal write-down cycle.</p></div>
+                        <div class="dc-risk"><span class="dc-risk-num">03</span><h4>Power doesn't arrive in time</h4><p>5&ndash;7 year interconnection queues, SMRs that slip to the 2030s, and local opposition could mean the chips exist but can't be powered. Time-to-power, not capital, becomes the hard ceiling on growth.</p></div>
+                        <div class="dc-risk"><span class="dc-risk-num">04</span><h4>The utilization fix arrives</h4><p>If someone builds "VMware for GPUs," effective supply could jump 5&ndash;10x without a single new building &mdash; great for buyers, but it would gut the scarcity premium underwriting today's neocloud and facility valuations.</p></div>
+                        <div class="dc-risk"><span class="dc-risk-num">05</span><h4>Regulatory &amp; community backlash</h4><p>Moratoriums, water-rights fights, and grid-reliability mandates are spreading. The biggest markets (Virginia, Ireland, Singapore) are already pushing back, and the politics get worse as power bills rise for everyone else.</p></div>
+                        <div class="dc-risk"><span class="dc-risk-num">06</span><h4>Hyperscalers re-bundle</h4><p>Neoclouds exist because hyperscalers were slow. If AWS/Azure/GCP fix allocation, pricing, and product for AI workloads, the structural reason for an independent neocloud layer weakens &mdash; and they have infinitely deeper balance sheets.</p></div>
+                    </div>
+
+                    <div class="dc-pov">
+                        <span class="dc-pov-label">Canonical POV</span>
+                        <p>Most of the bull case is priced into the obvious layers &mdash; silicon and the public neoclouds. We'd rather underwrite the layers where centralized alternatives are structurally inadequate and demand is non-negotiable: power procurement, liquid cooling, and the operations talent that keeps it all running. Those are the picks-and-shovels of the picks-and-shovels.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [12] METHODOLOGY -->
+            <section class="dc-method-section" id="methodology">
+                <div class="container mx-auto px-8">
+                    <div class="dc-section-label"><span class="dc-section-num">[12]</span> Methodology</div>
+                    <h2 class="dc-scene-h2">How this <em>was built</em>, and where the data is weakest.</h2>
+                    <div class="dc-method-grid">
+                        <div class="dc-method-col">
+                            <h3>Sources &amp; approach</h3>
+                            <ul class="dc-method-list">
+                                <li><span class="dc-method-k">Framework</span><span class="dc-method-v"><a href="https://www.bvp.com/atlas/roadmap-the-ai-data-center-stack?ref=canonicalcc" target="_blank" rel="noopener">Bessemer's "Roadmap: the AI Data Center Stack"</a> for the layer taxonomy.</span></li>
+                                <li><span class="dc-method-k">Capex</span><span class="dc-method-v">Packy McCormick, Jamin Ball, and Shanu Mathew for the $700B/2026, $1T+/2027, and ~$7.6T cumulative figures; McKinsey and Goldman Sachs for buildout context.</span></li>
+                                <li><span class="dc-method-k">Company data</span><span class="dc-method-v">Public funding rounds, market caps, and revenue via PitchBook, Sacra, and primary filings/press releases.</span></li>
+                                <li><span class="dc-method-k">Refresh</span><span class="dc-method-v">Static snapshot, May 2026. <a href="https://blog.canonical.cc">Subscribe</a> for updates.</span></li>
+                            </ul>
+                        </div>
+                        <div class="dc-method-col">
+                            <h3>Known limitations</h3>
+                            <ul class="dc-method-list">
+                                <li><span class="dc-method-k">Public only</span><span class="dc-method-v">This page deliberately excludes proprietary deal-flow, internal valuations, and any confidential Canonical portfolio information. Only publicly available data is shown.</span></li>
+                                <li><span class="dc-method-k">Estimates</span><span class="dc-method-v">Capex trajectories and the power/utilization bars are order-of-magnitude illustrations from third-party analysts, not audited figures.</span></li>
+                                <li><span class="dc-method-k">Calculator</span><span class="dc-method-v">The unit-economics tool is a teaching model: it ignores staff, maintenance, financing, and GPU depreciation. Don't underwrite a deal with it.</span></li>
+                                <li><span class="dc-method-k">Moving fast</span><span class="dc-method-v">Funding, market caps, and roadmaps change weekly. Spot something stale or wrong? <a href="mailto:ai@canonical.cc?subject=Data%20Centers%20-%20coverage%20gap">Tell us.</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="dc-cta">
+                <div class="container mx-auto px-8">
+                    <div class="dc-cta-grid">
+                        <div>
+                            <div class="dc-section-label dc-section-label-light"><span class="dc-section-num">[13]</span> Talk to Canonical</div>
+                            <h2 class="dc-cta-h2">If you're building in the data center stack, we want to <em>hear from you</em>.</h2>
+                            <p class="dc-cta-p"><a href="/#about">Canonical</a> leads early-stage investments in technical teams building at the frontier of AI infrastructure &mdash; power, cooling, operations, and the software that makes compute efficient. See our <a href="/portfolio">portfolio</a> and <a href="/#thesis">thesis</a>.</p>
+                        </div>
+                        <div class="dc-cta-actions">
+                            <a href="mailto:ai@canonical.cc?subject=Building%20in%20data%20center%20infrastructure" class="dc-btn"><span>I'm building &rarr; pitch us</span><span class="dc-btn-arrow">&rarr;</span></a>
+                            <a href="/labs/semiconductor-silicon-stack/" class="dc-btn"><span>See the Semiconductor Stack map</span><span class="dc-btn-arrow">&rarr;</span></a>
+                            <a href="https://blog.canonical.cc" target="_blank" rel="noopener noreferrer" class="dc-btn"><span>Subscribe to updates</span><span class="dc-btn-arrow">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dc-disclaimer">
+                <div class="container mx-auto px-8">
+                    <p>Built by <a href="https://x.com/ai" target="_blank" rel="noopener noreferrer">Anand Iyer</a> at <a href="/">Canonical</a> &middot; v1.0 &middot; Educational tool. Not investment advice. Public data only; point-in-time and not exhaustive.</p>
+                </div>
+            </div>
+        </main>
+
+        {% include footer.html %}
+    </div>
+
+    <!-- ============ EXPLORER DATA + INTERACTIVITY ============ -->
+    <script>
+    (function () {
+        var REF = '?ref=canonicalcc';
+        var PROJECTS = [
+            { name: 'CoreWeave', layer: 'Neoclouds', stage: 'Public (CRWV)', dna: '~$65B mkt cap', innovation: 'GPU-first cloud; $5.1B 2025 revenue (+170%)', url: 'https://www.coreweave.com' },
+            { name: 'Crusoe Energy', layer: 'Neoclouds', stage: 'Series D', dna: 'Founders Fund · $4.14B raised', innovation: 'Energy-first neocloud (stranded gas → compute)', url: 'https://www.crusoe.ai' },
+            { name: 'Lambda', layer: 'Neoclouds', stage: 'Series E', dna: '~$5.9B valuation · $3B+ raised', innovation: 'GPU cloud for training & inference', url: 'https://lambdalabs.com' },
+            { name: 'Voltage Park', layer: 'Neoclouds', stage: 'Growth', dna: 'Nonprofit-backed', innovation: 'Managed Kubernetes; moving up-stack', url: 'https://www.voltagepark.com' },
+            { name: 'Nebius', layer: 'Neoclouds', stage: 'Public (NBIS)', dna: 'ex-Yandex cloud unit', innovation: 'European neocloud play', url: 'https://nebius.com' },
+            { name: 'Together AI', layer: 'Neoclouds', stage: 'Growth', dna: 'Inference-focused', innovation: 'Open-source model hosting + inference', url: 'https://www.together.ai' },
+            { name: 'Nscale', layer: 'Neoclouds', stage: 'Funded', dna: 'Top AI-infra funding', innovation: 'AI infrastructure / GPU cloud', url: 'https://www.nscale.com' },
+            { name: 'Equinix', layer: 'Facilities & REITs', stage: 'Public (EQIX)', dna: '$80B+ mkt cap', innovation: 'Largest data-center REIT globally', url: 'https://www.equinix.com' },
+            { name: 'Digital Realty', layer: 'Facilities & REITs', stage: 'Public (DLR)', dna: '$50B+ mkt cap', innovation: 'Second-largest DC REIT', url: 'https://www.digitalrealty.com' },
+            { name: 'Vantage Data Centers', layer: 'Facilities & REITs', stage: 'Series C', dna: '$2B+ (Jan 2026)', innovation: 'AI-specific data-center expansion', url: 'https://www.vantage-dc.com' },
+            { name: 'QTS', layer: 'Facilities & REITs', stage: 'Private (Blackstone)', dna: '$10B take-private', innovation: 'Hyperscale operator, expanding fast', url: 'https://www.qtsdatacenters.com' },
+            { name: 'Constellation Energy', layer: 'Power & Energy', stage: 'Public (CEG)', dna: 'Three Mile Island restart', innovation: 'Nuclear power for AI compute', url: 'https://www.constellationenergy.com' },
+            { name: 'Oklo', layer: 'Power & Energy', stage: 'Public (OKLO)', dna: 'Sam Altman-backed', innovation: 'Small modular reactors (SMRs)', url: 'https://oklo.com' },
+            { name: 'Nano Nuclear', layer: 'Power & Energy', stage: 'Public (NNE)', dna: 'Micro-reactors', innovation: 'Reactors for edge/remote data centers', url: 'https://nanonuclearenergy.com' },
+            { name: 'Motivair', layer: 'Cooling', stage: 'Acquired (Schneider)', dna: 'Liquid cooling', innovation: 'Liquid cooling systems for AI racks', url: 'https://www.motivaircorp.com' },
+            { name: 'CoolIT Systems', layer: 'Cooling', stage: 'Private', dna: 'DLC leader', innovation: 'Direct liquid cooling for GPU clusters', url: 'https://www.coolitsystems.com' },
+            { name: 'Green Revolution Cooling', layer: 'Cooling', stage: 'Private', dna: 'Immersion', innovation: 'Single-phase immersion cooling', url: 'https://www.grcooling.com' },
+            { name: 'JetCool', layer: 'Cooling', stage: 'Acquired (Flex)', dna: 'Microconvective', innovation: 'Microconvective cooling for dense racks', url: 'https://www.jetcool.com' },
+            { name: 'Arista Networks', layer: 'Networking', stage: 'Public (ANET)', dna: 'Spine-leaf switching', innovation: 'Data-center switching for AI fabrics', url: 'https://www.arista.com' },
+            { name: 'Broadcom', layer: 'Networking', stage: 'Public (AVGO)', dna: 'Ethernet + ASICs', innovation: 'Ethernet switching silicon & custom ASICs', url: 'https://www.broadcom.com' },
+            { name: 'Ayar Labs', layer: 'Networking', stage: 'Private', dna: 'Optical I/O', innovation: 'Chip-to-chip optical interconnect', url: 'https://ayarlabs.com' },
+            { name: 'NVIDIA', layer: 'Compute Silicon', stage: 'Public (NVDA)', dna: '80%+ share', innovation: 'H100 → B200 → Rubin → Feynman; InfiniBand', url: 'https://www.nvidia.com' },
+            { name: 'AMD', layer: 'Compute Silicon', stage: 'Public (AMD)', dna: 'MI300X, 192GB HBM3', innovation: 'GPU compute, memory-capacity play', url: 'https://www.amd.com' },
+            { name: 'Google TPU', layer: 'Compute Silicon', stage: 'Public (GOOGL)', dna: 'Custom ASIC', innovation: 'TPU for internal + cloud workloads', url: 'https://cloud.google.com/tpu' },
+            { name: 'AWS Trainium', layer: 'Compute Silicon', stage: 'Public (AMZN)', dna: 'Custom ASIC', innovation: 'Trainium/Inferentia chips for AWS', url: 'https://aws.amazon.com' },
+            { name: 'Cerebras', layer: 'Compute Silicon', stage: 'Private', dna: 'Wafer-scale', innovation: 'Wafer-scale engine, unique architecture', url: 'https://www.cerebras.ai' },
+            { name: 'Groq', layer: 'Compute Silicon', stage: 'Acquired (NVIDIA, $20B)', dna: 'SRAM-heavy', innovation: 'Deterministic LPU inference', url: 'https://groq.com' },
+            { name: 'd-Matrix', layer: 'Compute Silicon', stage: 'Series C', dna: '$275M (Nov 2025)', innovation: 'Digital in-memory inference compute', url: 'https://www.d-matrix.ai' },
+            { name: 'Majestic Labs', layer: 'Compute Silicon', stage: 'Private', dna: 'Memory-wall architecture', innovation: 'Memory-centric server: ~1,000x fast memory; 1 rack ≈ 25 NVL72 racks (claimed)', url: 'https://majestic-labs.ai' },
+            { name: 'Penguin Solutions', layer: 'Operations', stage: 'Public (PENG)', dna: 'ex-SMART Global · $648M ACS rev', innovation: 'End-to-end AI infra: design, build, deploy, manage', url: 'https://www.penguinsolutions.com' },
+            { name: 'NVIDIA DGX Cloud', layer: 'Operations', stage: 'Public (NVDA)', dna: 'NVIDIA-managed', innovation: 'Mission Control + DGX Cloud managed ops', url: 'https://www.nvidia.com' }
+        ];
+        var LAYERS = ['All', 'Neoclouds', 'Facilities & REITs', 'Power & Energy', 'Cooling', 'Networking', 'Compute Silicon', 'Operations'];
+
+        var filtersEl = document.getElementById('dc-filters');
+        var gridEl = document.getElementById('dc-explorer-grid');
+        var searchEl = document.getElementById('dc-search');
+        var countEl = document.getElementById('dc-count');
+        if (!filtersEl || !gridEl) return;
+
+        var activeLayer = 'All';
+        var query = '';
+
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        LAYERS.forEach(function (layer) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'dc-chip' + (layer === 'All' ? ' active' : '');
+            var n = layer === 'All' ? PROJECTS.length : PROJECTS.filter(function (p) { return p.layer === layer; }).length;
+            btn.innerHTML = esc(layer) + '<span class="n">' + n + '</span>';
+            btn.addEventListener('click', function () {
+                activeLayer = layer;
+                Array.prototype.forEach.call(filtersEl.children, function (c) { c.classList.remove('active'); });
+                btn.classList.add('active');
+                render();
+            });
+            filtersEl.appendChild(btn);
+        });
+
+        PROJECTS.forEach(function (p, i) {
+            var a = document.createElement('a');
+            a.className = 'dc-xcard';
+            a.href = p.url + REF;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.setAttribute('data-i', i);
+            a.innerHTML =
+                '<div class="dc-xcard-top"><span class="dc-xcard-name">' + esc(p.name) + '</span><span class="dc-xcard-stage">' + esc(p.stage) + '</span></div>' +
+                '<div class="dc-xcard-layer">' + esc(p.layer) + '</div>' +
+                '<p class="dc-xcard-innov">' + esc(p.innovation) + '</p>' +
+                '<div class="dc-xcard-foot"><span class="dc-xcard-dna">' + esc(p.dna) + '</span><span class="dc-xcard-arrow">&rarr;</span></div>';
+            gridEl.appendChild(a);
+        });
+
+        var emptyEl = document.createElement('div');
+        emptyEl.className = 'dc-explorer-empty';
+        emptyEl.textContent = 'No companies match those filters.';
+        emptyEl.hidden = true;
+        gridEl.appendChild(emptyEl);
+
+        function render() {
+            var shown = 0;
+            PROJECTS.forEach(function (p, i) {
+                var card = gridEl.querySelector('.dc-xcard[data-i="' + i + '"]');
+                var matchLayer = activeLayer === 'All' || p.layer === activeLayer;
+                var hay = (p.name + ' ' + p.layer + ' ' + p.stage + ' ' + p.dna + ' ' + p.innovation).toLowerCase();
+                var matchQuery = !query || hay.indexOf(query) !== -1;
+                var visible = matchLayer && matchQuery;
+                card.hidden = !visible;
+                if (visible) shown++;
+            });
+            emptyEl.hidden = shown !== 0;
+            countEl.innerHTML = '<strong>' + shown + '</strong> / ' + PROJECTS.length + ' companies';
+        }
+
+        if (searchEl) {
+            searchEl.addEventListener('input', function () {
+                query = searchEl.value.trim().toLowerCase();
+                render();
+            });
+        }
+        render();
+    })();
+    </script>
+
+    <!-- ============ BAR-CHART REVEAL ON SCROLL ============ -->
+    <script>
+    (function () {
+        var fills = Array.prototype.slice.call(document.querySelectorAll('.dc-bar-fill[data-w]'));
+        if (!fills.length) return;
+        function fill(el) { el.style.width = el.getAttribute('data-w'); }
+        if (!('IntersectionObserver' in window)) { fills.forEach(fill); return; }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) { fill(e.target); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.4 });
+        fills.forEach(function (el) { io.observe(el); });
+    })();
+    </script>
+
+    <!-- ============ UNIT-ECONOMICS CALCULATOR ============ -->
+    <script>
+    (function () {
+        var el = function (id) { return document.getElementById(id); };
+        var mw = el('dc-mw'), pue = el('dc-pue'), pwr = el('dc-pwr'), util = el('dc-util'), rev = el('dc-rev'), capex = el('dc-capex');
+        if (!mw) return;
+        var HOURS = 8760;
+
+        function money(n) {
+            var abs = Math.abs(n);
+            if (abs >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
+            if (abs >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
+            if (abs >= 1e3) return '$' + Math.round(n / 1e3) + 'K';
+            return '$' + Math.round(n);
+        }
+
+        function compute() {
+            var MW = +mw.value, PUE = +pue.value, PWR = +pwr.value / 100, UTIL = +util.value / 100, REV = +rev.value / 100, CAPEX = +capex.value;
+            el('dc-mw-out').textContent = MW + ' MW';
+            el('dc-pue-out').textContent = PUE.toFixed(2);
+            el('dc-pwr-out').textContent = (+pwr.value).toFixed(1) + ' ¢/kWh';
+            el('dc-util-out').textContent = util.value + '%';
+            el('dc-rev-out').textContent = rev.value + ' ¢/kWh';
+            el('dc-capex-out').textContent = '$' + (+capex.value).toFixed(1) + 'M / MW';
+
+            var itKWh = MW * 1000 * HOURS * UTIL;
+            var facilityKWh = itKWh * PUE;
+            var revenue = itKWh * REV;
+            var powerCost = facilityKWh * PWR;
+            var grossProfit = revenue - powerCost;
+            var margin = revenue > 0 ? (grossProfit / revenue) * 100 : 0;
+            var buildCapex = MW * CAPEX * 1e6;
+            var payback = grossProfit > 0 ? buildCapex / grossProfit : Infinity;
+
+            el('dc-o-rev').textContent = money(revenue);
+            el('dc-o-power').textContent = money(powerCost);
+            el('dc-o-margin').textContent = margin.toFixed(0) + '%';
+            el('dc-o-capex').textContent = money(buildCapex);
+            var pb = el('dc-o-payback');
+            if (!isFinite(payback) || payback < 0) { pb.textContent = 'never'; pb.classList.add('neg'); }
+            else { pb.textContent = payback.toFixed(1) + ' yrs'; pb.classList.remove('neg'); }
+        }
+
+        [mw, pue, pwr, util, rev, capex].forEach(function (s) { s.addEventListener('input', compute); });
+        compute();
+    })();
+    </script>
+
+    <!-- ============ SUB-NAV SCROLLSPY ============ -->
+    <script>
+    (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.dc-subnav-list a'));
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var byId = {};
+        links.forEach(function (a) {
+            var id = a.getAttribute('href').slice(1);
+            var sec = document.getElementById(id);
+            if (sec) byId[id] = a;
+        });
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    links.forEach(function (l) { l.classList.remove('active'); });
+                    var a = byId[entry.target.id];
+                    if (a) { a.classList.add('active'); a.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+                }
+            });
+        }, { rootMargin: '-140px 0px -65% 0px', threshold: 0 });
+        Object.keys(byId).forEach(function (id) {
+            var sec = document.getElementById(id);
+            if (sec) observer.observe(sec);
+        });
+    })();
+    </script>
+
+    <!-- ============ CUSTOM TOOLTIP OVERLAY ============ -->
+    <script>
+    (function () {
+        var tip = document.createElement('div');
+        tip.className = 'dc-tooltip';
+        tip.setAttribute('role', 'tooltip');
+        tip.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tip);
+        var current = null, hideTimer = null;
+        function show(elx, evt) {
+            var text = elx.getAttribute('data-tip');
+            if (!text) return;
+            var isLink = elx.tagName === 'A' || (elx.querySelector && elx.querySelector('a'));
+            tip.textContent = text;
+            if (isLink) {
+                var hint = document.createElement('span');
+                hint.className = 'dc-tooltip-hint';
+                hint.textContent = 'click → opens site';
+                tip.appendChild(hint);
+            }
+            tip.classList.add('show');
+            tip.setAttribute('aria-hidden', 'false');
+            current = elx;
+            position(evt);
+        }
+        function position(evt) {
+            if (!current) return;
+            var pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+            var x = evt.clientX + pad, y = evt.clientY + pad;
+            if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
+            if (y + h > window.innerHeight - 8) y = evt.clientY - h - pad;
+            if (x < 8) x = 8;
+            if (y < 8) y = 8;
+            tip.style.left = x + 'px';
+            tip.style.top = y + 'px';
+        }
+        function hide() { tip.classList.remove('show'); tip.setAttribute('aria-hidden', 'true'); current = null; }
+        document.addEventListener('mouseover', function (e) {
+            var t = e.target.closest ? e.target.closest('[data-tip]') : null;
+            if (!t || t === current) return;
+            if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+            show(t, e);
+        }, true);
+        document.addEventListener('mousemove', function (e) {
+            if (!current) return;
+            var t = e.target.closest ? e.target.closest('[data-tip]') : null;
+            if (t && t !== current) { show(t, e); }
+            else if (!t) { hide(); }
+            else { position(e); }
+        }, true);
+        document.addEventListener('mouseout', function (e) {
+            if (!current) return;
+            var related = e.relatedTarget;
+            var stillIn = related && related.closest && related.closest('[data-tip]');
+            if (!stillIn) { hideTimer = setTimeout(hide, 60); }
+        }, true);
+        window.addEventListener('scroll', hide, { passive: true });
+        window.addEventListener('blur', hide);
+    })();
+    </script>
+</body>
+</html>

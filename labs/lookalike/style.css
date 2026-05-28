@@ -334,16 +334,11 @@ a:hover { color: #ffffff; }
 .fb-cancel { background: none; border: none; cursor: pointer; color: var(--card-muted); font: inherit; font-size: 0.8rem; }
 .fb-thanks { color: var(--positive); font-size: 0.82rem; font-weight: 500; }
 
-/* per-match thumbs — hidden until the card is hovered/focused (or always shown
-   on touch devices, and once a vote has been cast). */
+/* per-match thumbs — always visible so the affordance is discoverable; the
+   muted resting colour keeps them quiet until hovered/voted. */
 .match .fb-vote {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  opacity: 0; transition: opacity 0.15s ease;
 }
-.match:hover .fb-vote,
-.match:focus-within .fb-vote,
-.match .fb-vote.is-voted { opacity: 1; }
-@media (hover: none) { .match .fb-vote { opacity: 1; } }
 
 .fb-thumb {
   background: none; border: 1px solid var(--card-line); border-radius: 0.5rem;

@@ -210,7 +210,6 @@ function renderMatchFeedback(container, match) {
          <button class="fb-cancel" type="button">Skip</button>
        </div>
      </div>`;
-  const voteEl = container.querySelector(".fb-vote");
   const up = container.querySelector(".fb-thumb.up");
   const down = container.querySelector(".fb-thumb.down");
   const thanks = container.querySelector(".fb-vote-thanks");
@@ -222,7 +221,6 @@ function renderMatchFeedback(container, match) {
 
   function vote(v, comment) {
     verdict = v;
-    voteEl.classList.add("is-voted"); // keep thumbs visible after a vote
     up.classList.toggle("is-active", v === "up");
     down.classList.toggle("is-active", v === "down");
     postFeedback({
@@ -407,8 +405,8 @@ async function run(input, hints) {
   $("status").textContent = hints
     ? "Retrying with your hints — re-reading the open web…"
     : "Starting — reconstructing the profile from the open web…";
-  // make it obvious something is happening on Enter
-  $("stage").scrollIntoView({ behavior: "smooth", block: "start" });
+  // Stay anchored at the search box — the stage renders directly below it, so
+  // progress is visible without yanking the viewport down as results stream in.
 
   try {
     const res = await fetch(ENDPOINT + "/lookalike", {
@@ -450,7 +448,6 @@ async function run(input, hints) {
     $("spinner").style.display = "none";
     if (!$("results-wrap").classList.contains("is-hidden")) {
       $("status").textContent = "Done — your closest matches are below.";
-      $("results-wrap").scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       $("status").textContent = "";
     }

@@ -79,7 +79,23 @@ const portfolioCompanies = [
         website: "https://mesta.xyz",
         logo: "https://pbs.twimg.com/profile_images/1823757102625562624/XHTihpRU_400x400.jpg",
         order: 10
-    }, 
+    },
+    {
+        id: 11,
+        name: "Neyon",
+        description: "Operations layer for AI factories",
+        website: "https://neyon.ai",
+        logo: "images/portfolio/neyon.svg",
+        order: 11
+    },
+    {
+        id: 12,
+        name: "ChipSage",
+        description: "AI-native chip design platform",
+        website: "https://chipsagelabs.ai",
+        logo: "images/portfolio/chipsage.svg",
+        order: 12
+    },
 ];
 
 

@@ -82,7 +82,7 @@ const portfolioCompanies = [
     },
     {
         id: 11,
-        name: "Neyon",
+        name: "Neyon AI",
         description: "Operations layer for AI factories",
         website: "https://neyon.ai",
         logo: "images/portfolio/neyon.svg",

@@ -135,6 +135,22 @@ const portfolioCompanies = [
         slug: "glide",
         order: 15
     },
+    {
+        id: 16,
+        name: "Neyon AI",
+        description: "Operations layer for AI factories",
+        website: "https://neyon.ai",
+        logo: "images/portfolio/neyon.svg",
+        order: 16
+    },
+    {
+        id: 17,
+        name: "ChipSage",
+        description: "AI-native chip design platform",
+        website: "https://chipsagelabs.ai",
+        logo: "images/portfolio/chipsage.svg",
+        order: 17
+    },
 ];
 
 

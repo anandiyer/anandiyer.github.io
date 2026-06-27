@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="chipsage-title">
+  <title id="chipsage-title">ChipSage Labs symbol</title>
+  <defs>
+    <radialGradient id="cs-metal" cx="42%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="38%" stop-color="#e7eaef"/>
+      <stop offset="72%" stop-color="#c2c7d0"/>
+      <stop offset="100%" stop-color="#9aa0ab"/>
+    </radialGradient>
+    <linearGradient id="cs-bevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#6f7682" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="cs-leaf" x1="0.15" y1="0.1" x2="0.85" y2="0.95">
+      <stop offset="0%" stop-color="#7df0db"/>
+      <stop offset="45%" stop-color="#49e1c9"/>
+      <stop offset="100%" stop-color="#1fb89e"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="432" height="432" rx="86" ry="86" fill="url(#cs-metal)"/>
+  <rect x="40" y="40" width="432" height="432" rx="86" ry="86" fill="url(#cs-bevel)"/>
+  <rect x="41.5" y="41.5" width="429" height="429" rx="84.5" ry="84.5" fill="none" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3"/>
+  <path d="M150 330 C150 210 250 150 372 150 C372 272 312 372 192 372 C192 372 168 372 150 372 C150 360 150 345 150 330 Z"
+        fill="url(#cs-leaf)"/>
+  <path d="M168 360 C228 300 300 230 360 168"
+        fill="none" stroke="#ffffff" stroke-opacity="0.65" stroke-width="11" stroke-linecap="round"/>
+</svg>

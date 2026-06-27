@@ -1,0 +1,124 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>ChipSage | Canonical Portfolio</title>
+    <meta name="description" content="ChipSage — AI-native chip design platform. A Canonical portfolio company." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/portfolio/chipsage" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/portfolio/chipsage" />
+    <meta property="og:title" content="ChipSage | Canonical Portfolio" />
+    <meta property="og:description" content="ChipSage — AI-native chip design platform. A Canonical portfolio company." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=20260514f">
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- Header -->
+        {% include header.html active="portfolio" %}
+
+        <main>
+            <!-- Company Hero -->
+            <section class="company-hero">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <!-- Back link -->
+                        <a href="../portfolio" class="company-back-link font-aeonik">
+                            &larr; Back to Portfolio
+                        </a>
+
+                        <!-- Company header -->
+                        <div class="company-header-block">
+                            <div class="company-logo-large">
+                                <img
+                                    src="../images/portfolio/chipsage.svg"
+                                    alt="ChipSage logo"
+                                    class="company-logo-img"
+                                />
+                            </div>
+                            <div class="company-header-info">
+                                <h1 class="company-page-name font-aeonik">ChipSage</h1>
+                                <p class="company-page-tagline font-aeonik">AI-native chip design platform</p>
+                            </div>
+                        </div>
+
+                        <!-- Company description -->
+                        <div class="company-description-block">
+                            <p class="company-page-description font-aeonik">
+                                ChipSage is building an AI-native chip design platform, bringing modern machine learning to the semiconductor design workflow to make silicon development faster and more accessible.
+                            </p>
+
+                            <a
+                                href="https://chipsagelabs.ai"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="company-website-btn font-aeonik"
+                            >
+                                Visit chipsagelabs.ai
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Founders Section -->
+            <section class="company-founders-section">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h2 class="company-section-label font-aeonik">FOUNDERS</h2>
+
+                        <div class="founders-grid">
+                            <div class="founder-card">
+                                <div class="founder-photo">
+                                    <img src="../images/portfolio/founders/nojan.jpeg" alt="Nojan Sheybani" class="founder-photo-img" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+                                </div>
+                                <h3 class="founder-name font-aeonik">Nojan Sheybani</h3>
+                                <p class="founder-role font-aeonik">Co-Founder &amp; CEO</p>
+                                <p class="founder-bio font-aeonik">
+                                    UCSD ECE PhD focused on hardware/software co-design of privacy-preserving computation — fully homomorphic encryption and zk-SNARKs. Previously a researcher at Intel Labs (DARPA DPRIVE), Visa, and Cisco, and most recently on the technical staff at Nexus.
+                                </p>
+                            </div>
+
+                            <div class="founder-card">
+                                <div class="founder-photo">
+                                    <img src="../images/portfolio/founders/kevin.jpeg" alt="Kevin Immanuel Gubbi" class="founder-photo-img" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+                                </div>
+                                <h3 class="founder-name font-aeonik">Kevin Immanuel Gubbi</h3>
+                                <p class="founder-role font-aeonik">Co-Founder &amp; CTO</p>
+                                <p class="founder-bio font-aeonik">
+                                    UC Davis Computer Engineering PhD specializing in hardware security and AI/ML/RL for EDA and chip design. Has built physical-design and sign-off flows for research silicon — RISC-V and ML cores — with prior work at Samsung Semiconductor and AMD.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        {% include footer.html %}
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.getElementById('header').classList.add('scrolled');
+    </script>
+</body>
+</html>

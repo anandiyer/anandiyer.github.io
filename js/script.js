@@ -16,7 +16,7 @@ const portfolioCompanies = [
         website: "https://www.gensyn.ai",
         logo: "https://cdn.prod.website-files.com/66bc6da8fe284e4693088ff7/66bc6da8fe284e4693088ffe_Gensyn-Symbol.svg",
         slug: "gensyn",
-        order: 2
+        order: 8
     },
     {
         id: 5,
@@ -25,7 +25,7 @@ const portfolioCompanies = [
         website: "https://ritual.net",
         logo: "https://pbs.twimg.com/profile_images/1912582510631858176/-Xbw2AcT_400x400.jpg",
         slug: "ritual",
-        order: 5
+        order: 11
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const portfolioCompanies = [
         website: "https://saharalabs.ai",
         logo: "https://pbs.twimg.com/profile_images/2036127147329462276/w878A4Vk_400x400.jpg",
         slug: "sahara",
-        order: 4
+        order: 10
     },
     {
         id: 3,
@@ -43,7 +43,7 @@ const portfolioCompanies = [
         website: "https://virtuals.io",
         logo: "https://virtuals.io/favicon.ico",
         slug: "virtuals",
-        order: 3
+        order: 9
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const portfolioCompanies = [
         website: "https://exolabs.net",
         logo: "https://exolabs.net/favicon.ico",
         slug: "exo-labs",
-        order: 6
+        order: 12
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ const portfolioCompanies = [
         website: "https://www.opengradient.ai",
         logo: "https://pbs.twimg.com/profile_images/1902830433466978305/9V0NUEPt_400x400.jpg",
         slug: "opengradient",
-        order: 7
+        order: 13
     },
     {
         id: 8,
@@ -70,7 +70,7 @@ const portfolioCompanies = [
         website: "https://www.synthefy.com",
         logo: "https://www.synthefy.com/favicon.ico",
         slug: "synthefy",
-        order: 8
+        order: 2
     },
     {
         id: 9,
@@ -79,7 +79,7 @@ const portfolioCompanies = [
         website: "https://sentient.foundation",
         logo: "https://pbs.twimg.com/profile_images/1966252290500710400/iacpKDQc_400x400.jpg",
         slug: "sentient",
-        order: 9
+        order: 14
     },
     {
         id: 10,
@@ -88,7 +88,7 @@ const portfolioCompanies = [
         website: "https://mesta.xyz",
         logo: "https://pbs.twimg.com/profile_images/1823757102625562624/XHTihpRU_400x400.jpg",
         slug: "mesta",
-        order: 10
+        order: 5
     },
     {
         id: 11,
@@ -97,7 +97,7 @@ const portfolioCompanies = [
         website: "https://www.hapticlabs.ai",
         logo: "https://pbs.twimg.com/profile_images/2030060395877257218/2HKULAHy_400x400.jpg",
         slug: "haptic",
-        order: 11
+        order: 6
     },
     {
         id: 12,
@@ -106,7 +106,7 @@ const portfolioCompanies = [
         website: "https://robo.inc",
         logo: "https://pbs.twimg.com/profile_images/2019951741710864384/mILHUQGE_400x400.jpg",
         slug: "robo",
-        order: 12
+        order: 7
     },
     {
         id: 13,
@@ -115,7 +115,7 @@ const portfolioCompanies = [
         website: "https://nrvna.ai",
         logo: "https://media.licdn.com/dms/image/v2/D560BAQFQkAp9eFkj0A/company-logo_200_200/B56Zu7VjmIHEAI-/0/1768374549271/fractal_labs_inc_logo?e=1776902400&v=beta&t=iMB_nTv8xXYYOLFucqeCWSKE6SQaaA7l5DSmK5C9PV4",
         slug: "nirvana-ai",
-        order: 13
+        order: 15
     },
     {
         id: 14,
@@ -124,7 +124,7 @@ const portfolioCompanies = [
         website: "https://kocree.net",
         logo: "https://kocree.net/kocree-logo.svg",
         slug: "kocree",
-        order: 14
+        order: 16
     },
     {
         id: 15,
@@ -133,7 +133,7 @@ const portfolioCompanies = [
         website: "https://withglide.com",
         logo: "https://pbs.twimg.com/profile_images/1649096007970615297/jQH9zotf_400x400.jpg",
         slug: "glide",
-        order: 15
+        order: 17
     },
     {
         id: 16,
@@ -141,7 +141,8 @@ const portfolioCompanies = [
         description: "Operations layer for AI factories",
         website: "https://neyon.ai",
         logo: "images/portfolio/neyon.svg",
-        order: 16
+        slug: "neyon",
+        order: 4
     },
     {
         id: 17,
@@ -149,7 +150,8 @@ const portfolioCompanies = [
         description: "AI-native chip design platform",
         website: "https://chipsagelabs.ai",
         logo: "images/portfolio/chipsage.svg",
-        order: 17
+        slug: "chipsage",
+        order: 3
     },
 ];
 
@@ -160,10 +162,8 @@ function createPortfolioCard(company) {
         ? company.website.replace('https://', '').replace('http://', '')
         : '';
 
-    // Determine the correct path prefix based on current page location
-    const isInSubdir = window.location.pathname.includes('/companies/');
-    const pathPrefix = isInSubdir ? '' : 'companies/';
-    const companyPageUrl = company.slug ? `${pathPrefix}${company.slug}` : company.website;
+    // Company detail pages live at /portfolio/<slug> (with /companies/<slug> kept as a redirect for backwards compatibility)
+    const companyPageUrl = company.slug ? `/portfolio/${company.slug}` : company.website;
 
     return `
         <div class="portfolio-card flex-shrink-0" onclick="window.location.href='${companyPageUrl}'">

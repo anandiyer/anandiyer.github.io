@@ -1,10 +1,13 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% include google-analytics.html %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Canonical - Investing in a post AGI future</title>
-    <meta name="description" content="Canonical leads early-stage investments in technical founding teams. We invest early in the picks-and-shovels of the post-AGI future." />
+    <title>Canonical — Pre-seed venture for post-AGI infrastructure</title>
+    <meta name="description" content="Canonical writes $500K–$1.5M first checks into deeply technical, pre-product founders building the infrastructure of a post-AGI world." />
     <meta name="keywords" content="venture capital, AI infrastructure, decentralized AI, post-AGI, blockchain, AI investment, technology fund, startup funding, robotics, quantum"/>
     <meta name="author" content="Canonical" />
     <meta name="robots" content="index, follow" />
@@ -13,8 +16,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://canonical.cc" />
-    <meta property="og:title" content="Canonical - Investing in a post AGI future" />
-    <meta property="og:description" content="Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future." />
+    <meta property="og:title" content="Canonical — Pre-seed venture for post-AGI infrastructure" />
+    <meta property="og:description" content="Canonical writes $500K–$1.5M first checks into deeply technical, pre-product founders building the infrastructure of a post-AGI world." />
     <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
     <meta property="og:site_name" content="Canonical" />
     <meta property="og:locale" content="en_US" />
@@ -22,11 +25,11 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://canonical.cc" />
-    <meta property="twitter:title" content="Canonical - Investing in a post AGI future" />
-    <meta property="twitter:description" content="Canonical backs technical founders building decentralized AI infrastructure. We invest early in the picks-and-shovels of the post-AGI future." />
+    <meta property="twitter:title" content="Canonical — Pre-seed venture for post-AGI infrastructure" />
+    <meta property="twitter:description" content="Canonical writes $500K–$1.5M first checks into deeply technical, pre-product founders building the infrastructure of a post-AGI world." />
     <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
-    <meta property="twitter:creator" content="@canonicalcrypto" />
-    <meta property="twitter:site" content="@canonicalcrypto" />
+    <meta property="twitter:creator" content="@canonicalcc" />
+    <meta property="twitter:site" content="@canonicalcc" />
     
     <!-- Additional SEO -->
     <meta name="theme-color" content="#1e3a8a" />
@@ -40,13 +43,13 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Canonical",
-      "description": "Canonical leads early-stage investments in technical founding teams. We invest early in the picks-and-shovels of the post-AGI future.",
-      "url": "https://canonical.cc",
-      "logo": "https://canonical.cc/images/site-logo.png",
+      "description": "Canonical writes $500K–$1.5M first checks into deeply technical, pre-product founders building the infrastructure of a post-AGI world.",
+      "url": "",
+      "logo": "/images/site-logo.png",
       "sameAs": [
-        "https://x.com/canonicalcrypto"
+        "https://x.com/canonicalcc"
       ],
-      "@id": "https://canonical.cc",
+      "@id": "",
       "foundingDate": "2022",
       "industry": "Venture Capital",
       "location": {
@@ -66,50 +69,28 @@
     }
     </script>
     
-    <link rel="icon" type="image/x-icon" href="https://www.canonical.cc/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260520a">
 </head>
 <body>
-    <div class="min-h-screen">
-        <!-- Header -->
-        <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
-            <div class="container mx-auto px-8 py-8">
-                <div class="flex items-center justify-between">
-                    <a href="/" class="logo-link">
-                        <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
-                    </a>
-                    <nav class="hidden md:flex items-center space-x-10">
-                        <button onclick="scrollToSection('about')" class="nav-link">
-                            ABOUT
-                        </button>
-                        <button onclick="scrollToSection('thesis')" class="nav-link">
-                            THESIS
-                        </button>
-                        <button onclick="scrollToSection('portfolio')" class="nav-link">
-                            PORTFOLIO
-                        </button>
-                        <button onclick="scrollToSection('team')" class="nav-link">
-                            TEAM
-                        </button>
-                    </nav>
-                </div>
-            </div>
-        </header>
+    <div class="min-h-screen home">
+        {% include header.html %}
 
         <main>
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="container mx-auto px-8">
                     <div class="hero-content">
+                        <span class="hero-eyebrow">Pre-seed &middot; Pre-product &middot; Pre-deck</span>
                         <h1 class="hero-title">
-                            Backing founders building for a post-AGI future
+                            Before the deck. Before the demo.<br /><span class="accent">Before the company.</span>
                         </h1>
                         <p class="hero-subtitle">
-                            We back technical "n-of-1" founding teams building at the formative stages.
-                            From zero to one, we invest in the picks-and-shovels of the post-AGI future.
+                            Canonical writes <span class="accent">$500K&ndash;$1.5M</span> first checks into deeply technical founders building the infrastructure of a post-AGI world.
+                            We meet you at <span class="accent">day zero</span> &mdash; when the idea is still forming and the company doesn't exist yet.
                         </p>
                     </div>
                 </div>
@@ -121,7 +102,7 @@
                     <div class="max-w-5xl mx-auto">
                         <h2 class="section-label">ABOUT</h2>
                         <p class="about-text">
-				Canonical is a San Francisco-based early-stage venture firm focused on the infrastructure that will power a post-AGI world. Our mission is to help visionary technical founders build transformative systems and infrastructure.                    </p>
+				Canonical is a San Francisco-based early-stage venture firm focused on the infrastructure that will power a <span class="accent">post-AGI world</span>. Our mission is to help visionary technical founders build transformative systems and infrastructure.                    </p>
                         <p class="about-text">
 			Founded and led by operators who have been on the frontier of technology since 2001, Canonical brings hands-on partnership from day zero and throughout the company-building journey. Our portfolio includes some of the most ambitious teams rethinking how money moves, how AI is trained, deployed, and governed across compute, data, agents, and cryptographic coordination, robotics and othe primitives that will become steady-state in a post-AGI world.
                         </p>
@@ -135,7 +116,7 @@
             <!-- Thesis Section -->
             <section id="thesis" class="section-padding">
                 <div class="container mx-auto px-8">
-                    <h2 class="section-title">Our Thesis</h2>
+                    <h2 class="section-title">Our <span class="accent">Thesis</span></h2>
                     <p class="section-subtitle">
                         We invest in foundational systems.
                     </p>
@@ -143,49 +124,49 @@
                     <div class="thesis-grid">
                         <div class="thesis-item">
                             <span class="thesis-number">[00]</span>
-                            <h3 class="thesis-title">Open Infrastructure</h3>
+                            <h3 class="thesis-title">Physical AI &amp; Robotics</h3>
                             <p class="thesis-description">
-                                The most transformative AI systems will be built on open infrastructure that ensures transparency and permissionless innovation.
+                                Intelligence is leaving the screen. We back the foundation models, simulators, and hardware that let machines see, move, and act in the physical world &mdash; from factory floors to homes.
                             </p>
                         </div>
-                        
+
                         <div class="thesis-item">
                             <span class="thesis-number">[01]</span>
-                            <h3 class="thesis-title">Blockchain as Foundation</h3>
+                            <h3 class="thesis-title">Silicon</h3>
                             <p class="thesis-description">
-                                Blockchain provides the infrastructure layer that brings transparency, permissionless innovation, and equitable value distribution to finance and AI systems.
+                                Every layer of the AI stack ultimately runs on silicon. We back founders rethinking compute and memory &mdash; novel architectures, packaging, and the primitives that will carry post-AGI workloads.
                             </p>
                         </div>
-                        
+
                         <div class="thesis-item">
                             <span class="thesis-number">[02]</span>
-                            <h3 class="thesis-title">Pre-Product Focus</h3>
+                            <h3 class="thesis-title">Open Infrastructure</h3>
                             <p class="thesis-description">
-                                We invest in builders of "open" AI networks, backing pre-product founders living in tomorrow's world from day zero.
+                                Closed labs and centralized clouds won't be the only architecture of AGI. We back open networks across the post-AGI stack: decentralized compute and training, verifiable AI, agentic protocols, and the programmable money rails that move value at machine speed.
                             </p>
                         </div>
-                        
+
                         <div class="thesis-item">
                             <span class="thesis-number">[03]</span>
                             <h3 class="thesis-title">Technical Depth</h3>
                             <p class="thesis-description">
-                                Our technical background allows us to deeply understand and support founders building complex infrastructure at the bleeding edge.
+                                We've been founders and operators building developer platforms and zero-to-one companies for over two decades. We read the repo, debate the architecture, and earn our seat through the technical decisions &mdash; not the term sheet.
                             </p>
                         </div>
-                        
+
                         <div class="thesis-item">
                             <span class="thesis-number">[04]</span>
                             <h3 class="thesis-title">Long-term Alignment</h3>
                             <p class="thesis-description">
-                                We operate with patient capital and long-term vision, supporting founders through the entire journey of building transformative technology.
+                                Pre-product founders need investors who aren't optimizing for the next markup. We hold concentration, follow on with conviction, and stay through the company-building arc &mdash; not just the financing rounds.
                             </p>
                         </div>
-                        
+
                         <div class="thesis-item">
                             <span class="thesis-number">[05]</span>
                             <h3 class="thesis-title">Network Effects</h3>
                             <p class="thesis-description">
-                                Our portfolio companies benefit from a high-impact network of builders, researchers, and investors at the forefront of AI and blockchain infrastructure.
+                                Canonical founders plug into a high-signal network of operators, researchers, and builders at the frontier &mdash; the people you'd want in the group chat when something breaks at 2am or when you're hiring your first systems engineer.
                             </p>
                         </div>
                     </div>
@@ -195,15 +176,98 @@
             <!-- Portfolio Section -->
             <section id="portfolio" class="section-padding">
                 <div class="max-w-7xl mx-auto px-8">
-                    <h2 class="section-title">Select Portfolio</h2>
+                    <h2 class="section-title">Select <span class="accent">Portfolio</span></h2>
                     <p class="section-subtitle">
-                        We partner with teams building the infrastructure for a decentralized AI future.
+                        We partner with early stage technical teams building infrastructure for an AI-first future.
                     </p>
                     
                     <div class="overflow-x-auto portfolio-carousel">
                         <div class="flex gap-8 pb-4" style="width: max-content">
                             <!-- Portfolio companies will be loaded here by JavaScript -->
                         </div>
+                    </div>
+
+                    <div class="portfolio-footer">
+                        <a
+                            href="/portfolio"
+                            class="portfolio-view-all-link"
+                        >
+                            View full portfolio &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Labs Section -->
+            <section id="labs" class="section-padding">
+                <div class="max-w-7xl mx-auto px-8">
+                    <h2 class="section-title">Canonical <span class="accent">Labs</span></h2>
+                    <p class="section-subtitle">
+                        Free, interactive tools we build for founders, GPs, and LPs.
+                    </p>
+
+                    <div class="overflow-x-auto portfolio-carousel">
+                        <div class="flex gap-8 pb-4" style="width: max-content">
+                            <a href="/labs/dilutionlab/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Dilution Lab</h3>
+                                <p class="lab-card-description">
+                                    Model SAFEs, priced rounds, option pools, and exit math. See what every term sheet actually costs you.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/labs/fundmodeler/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Fund Modeler</h3>
+                                <p class="lab-card-description">
+                                    Size your fund, model portfolio construction, and forecast TVPI, DPI, MOIC, and IRR.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/labs/power-law/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Power Law Lab</h3>
+                                <p class="lab-card-description">
+                                    Manipulate a venture fund's outcome distribution and see what actually drives fund returns.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/physical-ai-robotics/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Physical AI &amp; Robotics</h3>
+                                <p class="lab-card-description">
+                                    3 years of venture investment in physical AI &amp; robotics, mapped across 22 sub-sectors.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/labs/semiconductor-silicon-stack/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Semiconductor Stack</h3>
+                                <p class="lab-card-description">
+                                    Who owns each layer of silicon today, and the 40+ startups credibly trying to take a piece of it.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/labs/lookalike/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Lookalike Finder</h3>
+                                <p class="lab-card-description">
+                                    Paste a LinkedIn URL or X handle and find people with the same career DNA — trajectory and archetype, not just job title.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                            <a href="/labs/capital-call-planner/" class="lab-card flex-shrink-0">
+                                <h3 class="lab-card-title">Capital Call Planner</h3>
+                                <p class="lab-card-description">
+                                    For LPs and family offices: forecast capital calls and distributions, size your liquidity sleeve, and pace new commitments.
+                                </p>
+                                <span class="lab-card-cta">Try it &rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-footer">
+                        <a
+                            href="/labs/"
+                            class="portfolio-view-all-link"
+                        >
+                            View all labs projects &rarr;
+                        </a>
                     </div>
                 </div>
             </section>
@@ -212,7 +276,7 @@
             <!-- Substack Section -->
             <section id="substack" class="section-padding">
                 <div class="max-w-7xl mx-auto px-8">
-                    <h2 class="section-title">Canonical on Substack</h2>
+                    <h2 class="section-title">Canonical on <span class="accent">Substack</span></h2>
                     <p class="section-subtitle">
                         Essays and updates from Canonical
                     </p>
@@ -225,7 +289,7 @@
 
                     <div class="substack-footer">
                         <a 
-                            href="https://canonicalcrypto.substack.com" 
+                            href="https://blog.canonical.cc" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             class="substack-view-all-link"
@@ -242,52 +306,106 @@
             <!-- Team Section -->
             <section id="team" class="section-padding">
                 <div class="container mx-auto px-8">
-                    <h2 class="section-title">Team</h2>
+                    <h2 class="section-title"><span class="accent">Team</span></h2>
                     
-                    <div class="team-card">
-                        <h3 class="team-name">Anand Iyer</h3>
-                        <p class="team-role">Managing Partner</p>
-                        
-                        <div class="team-content">
-                            <div class="team-image-container">
-                                <img src="https://www.canonical.cc/images/anand-iyer.jpg" alt="Anand Iyer" class="team-image" />
-                            </div>
-                            
-                            <div class="team-info">
-                                <div class="team-bio">
-                                    <p>
-                                        Anand Iyer is a founder-turned-investor and the Managing Partner of Canonical, an early stage venture firm based in San Francisco.
-                                    </p>
-                                    <p>
-                                        He previously was the CEO & Co-founder of Trusted, scaling it through fundraising and growth before its acquisition in 2018 by a public company, Care. Care & Trusted were subsequently acquired by IAC in 2020. A Silicon Valley veteran, Anand has also been a Venture Partner at Pear and Lightspeed, investing in AI and blockchain infrastructure.
-                                    </p>
-                                    <p>
-                                        Earlier in his career, he built developer platforms at Microsoft, including Windows, Phone, and Azure. Exposed to Bitcoin in 2012, he's been investing in frontier tech for over a decade. His founder background and technical DNA gives him an edge in helping technical teams go from zero to one.
-                                    </p>
-                                    <p>
-                                        Anand has a degree in Computer Engineering from Purdue University.
-                                    </p>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <h3 class="team-name">Anand Iyer</h3>
+                            <p class="team-role">Managing Partner</p>
+
+                            <div class="team-content">
+                                <div class="team-image-container">
+                                    <img src="/images/anand-iyer.jpg" alt="Anand Iyer" class="team-image" />
                                 </div>
-                                
-                                <div class="social-links-container">
-                                    <a href="https://x.com/ai" target="_blank" rel="noopener noreferrer" class="social-link-blue">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                        </svg>
-                                        @ai
-                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                        </svg>
-                                    </a>
-                                    <a href="http://linkedin.com/in/anandiyer/" target="_blank" rel="noopener noreferrer" class="social-link-blue">
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                                        </svg>
-                                        LinkedIn
-                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                        </svg>
-                                    </a>
+
+                                <div class="team-info">
+                                    <div class="team-bio">
+                                        <p>
+                                            Anand Iyer is a founder-turned-investor and the Managing Partner of Canonical, an early stage venture firm based in San Francisco.
+                                        </p>
+                                        <p>
+                                            He previously was the CEO & Co-founder of Trusted, scaling it through fundraising and growth before its acquisition in 2018 by a public company, Care. Care & Trusted were subsequently acquired by IAC in 2020. A Silicon Valley veteran, Anand has also been a Venture Partner at Pear and Lightspeed, investing in AI and blockchain infrastructure.
+                                        </p>
+                                        <p>
+                                            Earlier in his career, he built developer platforms at Microsoft, including Windows, Phone, and Azure. Exposed to Bitcoin in 2012, he's been investing in frontier tech for over a decade. His founder background and technical DNA gives him an edge in helping technical teams go from zero to one.
+                                        </p>
+                                        <p>
+                                            Anand has a degree in Computer Engineering from Purdue University.
+                                        </p>
+                                    </div>
+
+                                    <div class="social-links-container">
+                                        <a href="https://x.com/ai" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                            </svg>
+                                            @ai
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="http://linkedin.com/in/anandiyer/" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                            </svg>
+                                            LinkedIn
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <h3 class="team-name">Anthony Avedissian</h3>
+                            <p class="team-role">Partner</p>
+
+                            <div class="team-content">
+                                <div class="team-image-container">
+                                    <img src="images/anthony-avedissian.jpg" alt="Anthony Avedissian" class="team-image" />
+                                </div>
+
+                                <div class="team-info">
+                                    <div class="team-bio">
+                                        <p>
+                                            Anthony Avedissian is a Partner at Canonical.
+                                        </p>
+                                        <p>
+                                            He previously co-founded Seed Club Ventures, a $25M early-stage venture fund focused on AI and decentralized infrastructure. Anthony has made 70+ pre-seed and seed stage investments across AI, Robotics, Energy, and Crypto.
+                                        </p>
+                                        <p>
+                                            Earlier in his career, Anthony was an investor at Amber Capital, a $2B activist hedge fund, where he focused on large cap public energy and telecoms companies. He later founded Anteo Health, taking the company from zero to one.
+                                        </p>
+                                        <p>
+                                            His hands-on experience as a founder and investor drives his passion for supporting technical founders building transformative companies.
+                                        </p>
+                                        <p>
+                                            Anthony studied at Imperial College London and University of York.
+                                        </p>
+                                    </div>
+
+                                    <div class="social-links-container">
+                                        <a href="https://x.com/antavedissian" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                            </svg>
+                                            @antavedissian
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/anthonyavedissian/" target="_blank" rel="noopener noreferrer" class="social-link-blue">
+                                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                            </svg>
+                                            LinkedIn
+                                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -296,24 +414,7 @@
             </section>
         </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container mx-auto px-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="footer-text">
-                        © 2025 Canonical Crypto. All rights reserved.
-                    </p>
-                    <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                        <a href="https://x.com/canonicalcrypto" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            Canonical on X
-                        </a>
-                        <a href="https://canonicalcrypto.substack.com" target="_blank" rel="noopener noreferrer" class="footer-link">
-                            Canonical on Substack
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include footer.html %}
     </div>
 
     <script src="js/script.js"></script>

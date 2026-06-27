@@ -1,0 +1,22 @@
+{%- comment -%}
+  Lab share strip — single source of truth.
+
+  Drop this into any lab page where the share strip should appear (usually
+  immediately before the closing tag of the lab's <header class="hero">):
+
+      {% include lab-share.html github_path="labs/dilutionlab" %}
+
+  Params:
+    github_path    — path under anandiyer/anandiyer.github.io to link "View source"
+                     (e.g. "labs/dilutionlab", "labs/physical-ai-robotics")
+    no_bottom_line — "true" to suppress the line below the icons. Use when the
+                     element after the strip has no top border of its own, so
+                     the bottom border would float untethered above plain text.
+
+  The CSS link and JS script tag emit alongside the mount div so each lab
+  only needs this one include. The script is `defer`'d so it doesn't block
+  hero render.
+{%- endcomment -%}
+<link rel="stylesheet" href="/css/lab-share.css?v={{ site.asset_version }}">
+<div data-lab-share data-github-path="{{ include.github_path }}"{% if include.no_bottom_line == "true" %} data-no-bottom-line{% endif %}></div>
+<script src="/js/lab-share.js?v={{ site.asset_version }}" defer></script>

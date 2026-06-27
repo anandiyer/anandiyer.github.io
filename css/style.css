@@ -50,6 +50,11 @@ html {
     transition: all 0.3s ease;
 }
 
+#header .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 #header.scrolled {
     background-color: rgba(30, 58, 138, 0.95);
     backdrop-filter: blur(10px);
@@ -77,6 +82,7 @@ html {
     background: none;
     border: none;
     cursor: pointer;
+    text-decoration: none;
     font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -86,12 +92,8 @@ html {
 
 /* Hero Section */
 .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 0 2rem;
+    padding: 10rem 2rem 6rem;
 }
 
 .hero-content {
@@ -120,12 +122,12 @@ html {
 
 /* Section Spacing */
 .section-padding {
-    padding: 6rem 0;
+    padding: 3rem 0;
 }
 
 @media (min-width: 768px) {
     .section-padding {
-        padding: 8rem 0;
+        padding: 5rem 0;
     }
 }
 
@@ -194,7 +196,7 @@ html {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
     font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -452,9 +454,17 @@ html {
 
 
 /* Team Section */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
 .team-card {
     max-width: 56rem;
-    margin: 3rem auto 0;
+    margin: 0 auto;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 1rem;
     padding: 3rem;
@@ -707,10 +717,294 @@ html {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .team-image {
         width: 150px;
         height: 150px;
+    }
+}
+
+/* Portfolio Page */
+
+.portfolio-page-hero {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.portfolio-grid .portfolio-card {
+    width: 100%;
+    flex-shrink: unset;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link-active {
+    opacity: 1;
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 2px;
+}
+
+/* Nav dropdown */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(0.5rem);
+    min-width: 12rem;
+    background-color: rgba(30, 58, 138, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 60;
+}
+
+.nav-dropdown::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0.75rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0.75rem);
+}
+
+.nav-dropdown-item {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+/* View all portfolio link (homepage) */
+.portfolio-footer {
+    text-align: right;
+    margin-top: 2.5rem;
+}
+
+.portfolio-view-all-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.portfolio-view-all-link:hover {
+    color: white;
+}
+
+/* Company Page */
+
+.company-hero {
+    padding-top: 5.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.company-back-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-bottom: 2.5rem;
+    transition: color 0.2s ease;
+}
+
+.company-back-link:hover {
+    color: white;
+}
+
+.company-header-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.company-logo-large {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company-page-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-page-tagline {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.25rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-description-block {
+    max-width: 48rem;
+}
+
+.company-page-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-website-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.company-website-btn:hover {
+    background-color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.company-founders-section {
+    padding: 4rem 0 6rem;
+}
+
+.company-section-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.founder-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.founder-photo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.founder-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-role {
+    font-size: 0.875rem;
+    color: #2563eb;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.founder-bio {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #475569;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -719,4 +1013,248 @@ html {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-page-hero {
+        padding-top: 8rem;
+        padding-bottom: 2rem;
+    }
+
+    .company-hero {
+        padding-top: 7rem;
+    }
+
+    .company-page-name {
+        font-size: 2rem;
+    }
+
+    .company-logo-large {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .founders-grid {
+        grid-template-columns: 1fr;
+    }
 }
+
+/* Mobile hamburger menu */
+.nav-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.nav-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(30, 58, 138, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.5rem 2rem 1.5rem;
+}
+
+.nav-mobile.open {
+    display: flex;
+}
+
+.nav-mobile-link {
+    display: block;
+    padding: 0.85rem 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.nav-mobile-link:hover,
+.nav-mobile-link:active {
+    color: #ffffff;
+}
+
+.nav-mobile-section {
+    padding: 1rem 0 0.25rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.nav-mobile-sublink {
+    display: block;
+    padding: 0.55rem 0 0.55rem 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.875rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.nav-mobile-sublink:hover,
+.nav-mobile-sublink:active {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .nav-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Labs section cards (homepage) */
+.lab-card {
+    width: 280px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.lab-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.lab-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.lab-card-description {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.lab-card-cta {
+    color: #1e3a8a;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Labs index page — 2-column grid of all lab cards (mobile adaptive) */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.labs-grid .lab-card {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   Homepage accent system (.home)
+   Yellow font accents matching /labs/power-law (lab.css).
+   Scoped to .home so other pages sharing style.css are unaffected.
+   ============================================================ */
+.home {
+    --accent: #facc15;        /* yellow-400 — on blue background */
+    --accent-hover: #fde047;  /* yellow-300 — hover */
+    --accent-ink: #b45309;    /* amber-700 — readable gold on white cards */
+}
+
+/* Inline keyword highlight — hero + section titles, on the blue background */
+.home .accent {
+    color: var(--accent);
+}
+
+/* Hero eyebrow above the headline */
+.home .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* ABOUT label → yellow */
+.home .section-label {
+    color: var(--accent);
+}
+
+/* Thesis index numbers → warm gold (readable on the white card) */
+.home .thesis-number {
+    color: var(--accent-ink);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+/* Labs card call-to-action → warm gold */
+.home .lab-card-cta {
+    color: var(--accent-ink);
+    font-weight: 600;
+}
+
+/* "View all" links sit on the blue background → yellow */
+.home .portfolio-view-all-link,
+.home .substack-view-all-link {
+    color: var(--accent);
+}
+.home .portfolio-view-all-link:hover,
+.home .substack-view-all-link:hover {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+/* Cards pick up a subtle yellow top edge on hover, tying them to the theme */
+.home .thesis-item,
+.home .lab-card {
+    border-top: 2px solid transparent;
+}
+.home .thesis-item:hover,
+.home .lab-card:hover {
+    border-top-color: var(--accent);
+}
+

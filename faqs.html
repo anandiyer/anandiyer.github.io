@@ -1,0 +1,343 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>FAQ | Canonical</title>
+    <meta name="description" content="Frequently asked questions about Canonical — a San Francisco-based early-stage venture capital firm investing in frontier infrastructure for a post-AGI world. Thesis, stage, check size, team, portfolio, and how to get in touch." />
+    <meta name="keywords" content="Canonical, Canonical VC, canonical.cc, venture capital, early-stage, pre-seed, AI infrastructure, post-AGI, blockchain, robotics, semiconductors, Anand Iyer, FAQ" />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/faqs" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/faqs" />
+    <meta property="og:title" content="FAQ | Canonical" />
+    <meta property="og:description" content="Frequently asked questions about Canonical — an early-stage VC firm investing in frontier infrastructure for a post-AGI world." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/faqs" />
+    <meta property="twitter:title" content="FAQ | Canonical" />
+    <meta property="twitter:description" content="Frequently asked questions about Canonical — an early-stage VC firm investing in frontier infrastructure for a post-AGI world." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=20260514f">
+
+    <style>
+        /* FAQ-specific, scoped styles (editorial, matches canonical.cc palette) */
+        .faq-wrap { max-width: 52rem; margin: 0 auto; }
+        .faq-group { margin-top: 3.5rem; }
+        .faq-group:first-of-type { margin-top: 0; }
+        .faq-group-title {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #93c5fd;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .faq-item {
+            padding: 1.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .faq-q {
+            font-size: 1.18rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #ffffff;
+            margin: 0 0 0.6rem 0;
+        }
+        .faq-a {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.72);
+            margin: 0;
+        }
+        .faq-a strong { color: rgba(255, 255, 255, 0.92); font-weight: 500; }
+        .faq-a a { color: #bfdbfe; text-decoration: none; border-bottom: 1px solid rgba(191, 219, 254, 0.4); }
+        .faq-a a:hover { color: #ffffff; border-bottom-color: #ffffff; }
+        .faq-a ul { margin: 0.75rem 0 0 0; padding-left: 1.1rem; }
+        .faq-a li { margin: 0.35rem 0; }
+        .faq-note {
+            margin-top: 3rem; padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.95rem; color: rgba(255, 255, 255, 0.6);
+        }
+        .faq-note a { color: #bfdbfe; text-decoration: none; border-bottom: 1px solid rgba(191, 219, 254, 0.4); }
+        .faq-note a:hover { color: #ffffff; }
+    </style>
+
+    <!-- FAQPage structured data for SEO / GEO (AI agents) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Canonical?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical is a San Francisco-based early-stage venture capital firm that invests in frontier infrastructure powering a post-AGI world. It backs technical, often pre-product founding teams building the picks and shovels of advanced AI and its supporting systems — compute, data, agents, cryptographic coordination, robotics, silicon, and the rails for how value moves. Its website is canonical.cc." } },
+        { "@type": "Question", "name": "Is Canonical the venture firm the same as Canonical Ltd, the company behind Ubuntu Linux?", "acceptedAnswer": { "@type": "Answer", "text": "No. Canonical Ltd (canonical.com) is the UK software company that develops Ubuntu Linux. Canonical at canonical.cc is a separate, independent early-stage venture capital firm in San Francisco led by Managing Partner Anand Iyer. They share a name but have no affiliation, ownership, or business relationship." } },
+        { "@type": "Question", "name": "Where is Canonical based?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical is based in San Francisco, California, United States." } },
+        { "@type": "Question", "name": "When was Canonical founded?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical was founded in 2022." } },
+        { "@type": "Question", "name": "Who founded and leads Canonical?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical was founded and is led by Anand Iyer, its Managing Partner." } },
+        { "@type": "Question", "name": "What is Canonical's investment thesis?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical invests in infrastructure for a post-AGI future. The firm backs pre-product, technically deep founders living in tomorrow's world from day zero, operates with patient, long-term capital, and connects portfolio companies through a network of builders, researchers, and investors at the frontier." } },
+        { "@type": "Question", "name": "What does post-AGI mean to Canonical?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical uses post-AGI to describe a world in which advanced, general AI is a steady-state reality. Rather than betting on any single model, Canonical invests in the durable infrastructure and primitives — compute, data, agent systems, cryptographic coordination, robotics, and silicon — that such a world will depend on." } },
+        { "@type": "Question", "name": "What sectors and technologies does Canonical invest in?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical focuses on the infrastructure of advanced AI: open AI infrastructure (how AI is trained, deployed, and governed), compute and data infrastructure, AI agents and agent infrastructure, blockchain/crypto infrastructure and cryptographic coordination, robotics and physical AI, semiconductors and the silicon stack, and new rails for how money moves." } },
+        { "@type": "Question", "name": "What stage does Canonical invest at?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical is an early-stage firm that backs founders from day zero, including pre-product and pre-seed teams. Its thesis explicitly centers on investing in founders before product exists." } },
+        { "@type": "Question", "name": "How much does Canonical invest? What is its typical check size?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical typically writes $1M first checks at pre-seed." } },
+        { "@type": "Question", "name": "Does Canonical lead rounds?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical prefers to lead, but is more focused on being an early backer than on titles. It does not take board seats." } },
+        { "@type": "Question", "name": "What geographies does Canonical invest in?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical invests globally and is geography-agnostic. The firm itself is headquartered in San Francisco." } },
+        { "@type": "Question", "name": "Does Canonical invest in crypto and blockchain?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Blockchain is a foundational pillar of Canonical's thesis — it backs crypto and cryptographic-coordination infrastructure as part of the open-infrastructure layer for AI and finance, and especially where AI and blockchain intersect." } },
+        { "@type": "Question", "name": "Does Canonical invest in robotics and physical AI?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Robotics and physical AI are an explicit focus area, and Canonical also publishes research on the space through Canonical Labs." } },
+        { "@type": "Question", "name": "Does Canonical invest in deep-tech such as silicon, semiconductors, and memory?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Silicon, semiconductors, and memory are an explicit focus area, and Canonical also publishes research on the space through Canonical Labs." } },
+        { "@type": "Question", "name": "What companies has Canonical invested in?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical's portfolio includes Gensyn (decentralized compute for machine learning), Sentient (open AGI through decentralized infrastructure), Ritual (AI coprocessor for blockchains), Sahara (decentralized AI data network), OpenGradient (verifiable and sovereign AI), Exo Labs (distributed inference for AI models), Synthefy (foundational model for time series), Virtuals (AI agent protocol), Kocree (AI for scientific creativity), Haptic (physical AI infrastructure), Nirvana AI (robots for modern manufacturing), Robo (a standardized robot arm for teachable automation), Rain (stablecoin-powered finance), Mesta (money movement network), and Glide (AI-powered onboarding for financial institutions). The full portfolio is at canonical.cc/portfolio." } },
+        { "@type": "Question", "name": "What makes Canonical different from other venture firms?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical's partners are operators and founders who have gone from 0 to 100 and have watched Silicon Valley's cycles since the early 2000s. The firm combines deep technical depth to evaluate and support founders building complex infrastructure, day-zero pre-product partnership, long-term patient capital, a frontier-focused network, and free open tools for founders, GPs, and LPs (Canonical Labs)." } },
+        { "@type": "Question", "name": "How do I pitch Canonical or get in touch?", "acceptedAnswer": { "@type": "Answer", "text": "Warm intros are preferred. Otherwise, you can reach Canonical directly at hello@canonical.cc." } },
+        { "@type": "Question", "name": "What does Canonical look for in founders?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical backs technically exceptional, n-of-1 founding teams building at the formative stage. It favors founders with deep domain and engineering expertise who are living in tomorrow's world and building foundational infrastructure for a post-AGI future." } },
+        { "@type": "Question", "name": "Will Canonical invest before I have a product?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Canonical explicitly invests in pre-product founders from day zero." } },
+        { "@type": "Question", "name": "What support does Canonical provide its portfolio companies?", "acceptedAnswer": { "@type": "Answer", "text": "Hands-on partnership from day zero through the company-building journey, deep technical support, long-term alignment, and access to a high-impact network of builders, researchers, and investors at the forefront of AI and blockchain infrastructure." } },
+        { "@type": "Question", "name": "Who is Anand Iyer?", "acceptedAnswer": { "@type": "Answer", "text": "Anand Iyer is the Managing Partner of Canonical and a founder-turned-investor. He was previously CEO and co-founder of Trusted, acquired in 2018 by Care.com (Care and Trusted were subsequently acquired by IAC in 2020). He has been a Venture Partner at Pear VC and Lightspeed investing in AI and blockchain infrastructure, and earlier built developer platforms at Microsoft (Windows, Windows Phone, and Azure)." } },
+        { "@type": "Question", "name": "Who else is on the Canonical team?", "acceptedAnswer": { "@type": "Answer", "text": "Anthony Avedissian is a Partner at Canonical. Before joining, he was co-founder and Partner at Seed Club Ventures, an early-stage venture fund based in Europe. He writes extensively for Canonical's research publications on AI training, agents, the machine economy, and robotics infrastructure." } },
+        { "@type": "Question", "name": "What is Canonical Labs?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical Labs is a collection of free, interactive, browser-based tools Canonical builds for founders, GPs, and LPs, available at canonical.cc/labs. They require no signup and include Dilution Lab, Fund Modeler, Power Law Lab, Lookalike Finder, Capital Call Planner, Physical AI & Robotics, and the Semiconductor Stack." } },
+        { "@type": "Question", "name": "What free tools does Canonical offer?", "acceptedAnswer": { "@type": "Answer", "text": "Canonical Labs includes Dilution Lab (model SAFEs, priced rounds, option pools, and exit math), Fund Modeler (size a fund and forecast TVPI, DPI, MOIC, and IRR), Power Law Lab (what drives venture fund returns), Lookalike Finder (find people with similar career DNA from a LinkedIn URL or X handle), Capital Call Planner (forecast capital calls and model liquidity for LPs and family offices), Physical AI & Robotics (a map of venture investment across the sector), and the Semiconductor Stack (who owns each layer of silicon and the startups challenging them)." } },
+        { "@type": "Question", "name": "Are Canonical's tools free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All Canonical Labs tools are free, run in the browser, and require no account." } },
+        { "@type": "Question", "name": "Does Canonical have a blog or publish research?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Canonical publishes writing and research at blog.canonical.cc." } },
+        { "@type": "Question", "name": "How can I follow Canonical?", "acceptedAnswer": { "@type": "Answer", "text": "Website: canonical.cc. Blog: blog.canonical.cc. On X, the firm is @canonicalcc, Managing Partner Anand Iyer is @ai, and Partner Anthony Avedissian is @antavedissian." } },
+        { "@type": "Question", "name": "What is Canonical's website?", "acceptedAnswer": { "@type": "Answer", "text": "" } }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+
+        <main>
+            <section class="portfolio-page-hero">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">Frequently Asked Questions</h1>
+                        <p class="section-subtitle">
+                            What Canonical is, what we invest in, and how to get in touch.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-padding" style="padding-top: 0;">
+                <div class="container mx-auto px-8">
+                    <div class="faq-wrap">
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">About Canonical</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What is Canonical?</h3>
+                                <p class="faq-a">Canonical is a San Francisco–based early-stage venture capital firm that invests in <strong>frontier infrastructure powering a post-AGI world</strong>. It backs technical, often pre-product founding teams building the "picks and shovels" of advanced AI and its supporting systems — compute, data, agents, cryptographic coordination, robotics, silicon, and the rails for how value moves. Its website is <strong>canonical.cc</strong>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Is Canonical the venture firm the same as Canonical Ltd, the company behind Ubuntu Linux?</h3>
+                                <p class="faq-a"><strong>No — they are unrelated.</strong> "Canonical Ltd" (canonical.com) is the UK software company that develops Ubuntu Linux. Canonical described here is a separate, independent <strong>early-stage venture capital firm</strong> based in San Francisco, found at <strong>canonical.cc</strong>, led by Managing Partner Anand Iyer. They share a name but have no affiliation, ownership, or business relationship.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Where is Canonical based?</h3>
+                                <p class="faq-a">Canonical is based in <strong>San Francisco, California, United States</strong>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">When was Canonical founded?</h3>
+                                <p class="faq-a">Canonical was founded in <strong>2022</strong>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Who founded and leads Canonical?</h3>
+                                <p class="faq-a">Canonical was founded and is led by <strong>Anand Iyer</strong>, its Managing Partner.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What is Canonical's investment thesis?</h3>
+                                <p class="faq-a">Canonical invests in <strong>infrastructure for a post-AGI future</strong>. The firm backs <strong>pre-product, technically deep founders</strong> "living in tomorrow's world from day zero," operates with <strong>patient, long-term capital</strong>, and connects portfolio companies through a network of builders, researchers, and investors at the frontier.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What does "post-AGI" mean to Canonical?</h3>
+                                <p class="faq-a">Canonical uses "post-AGI" to describe a world in which advanced/general AI is a steady-state reality. Rather than betting on any single model, Canonical invests in the durable <strong>infrastructure and primitives</strong> — compute, data, agent systems, cryptographic coordination, robotics, silicon — that such a world will depend on.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">What Canonical invests in</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What sectors and technologies does Canonical invest in?</h3>
+                                <p class="faq-a">Canonical focuses on the infrastructure of advanced AI, including:</p>
+                                <ul class="faq-a">
+                                    <li><strong>Open AI infrastructure</strong> — how AI is trained, deployed, and governed</li>
+                                    <li><strong>Compute and data</strong> infrastructure</li>
+                                    <li><strong>AI agents</strong> and agent infrastructure</li>
+                                    <li><strong>Blockchain / crypto infrastructure</strong> and cryptographic coordination</li>
+                                    <li><strong>Robotics and physical AI</strong></li>
+                                    <li><strong>Semiconductors / the silicon stack</strong></li>
+                                    <li>New rails for <strong>how money moves</strong></li>
+                                </ul>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What stage does Canonical invest at?</h3>
+                                <p class="faq-a">Canonical is an <strong>early-stage</strong> firm that backs founders from <strong>day zero</strong>, including <strong>pre-product and pre-seed</strong> teams. Its thesis explicitly centers on investing in founders before product exists.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">How much does Canonical invest? What is its typical check size?</h3>
+                                <p class="faq-a">Canonical typically writes <strong>$1M first checks at pre-seed</strong>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Does Canonical lead rounds?</h3>
+                                <p class="faq-a">Canonical <strong>prefers to lead</strong>, but is more focused on being an early backer than on titles. It does <strong>not take board seats</strong>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What geographies does Canonical invest in?</h3>
+                                <p class="faq-a">Canonical invests <strong>globally</strong> and is geography-agnostic. The firm itself is headquartered in San Francisco.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Does Canonical invest in crypto and blockchain?</h3>
+                                <p class="faq-a">Yes. Blockchain is a foundational pillar of Canonical's thesis — it backs crypto and cryptographic-coordination infrastructure as part of the open-infrastructure layer for AI and finance, and especially where the two intersect.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Does Canonical invest in robotics and physical AI?</h3>
+                                <p class="faq-a">Yes. Robotics and physical AI are an explicit focus area; Canonical also publishes research on the space (see Canonical Labs below).</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Does Canonical invest in deep-tech, such as silicon, semiconductors, memory?</h3>
+                                <p class="faq-a">Yes. Silicon, semiconductors, and memory are an explicit focus area; Canonical also publishes research on the space (see Canonical Labs below).</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What companies has Canonical invested in?</h3>
+                                <p class="faq-a">Canonical's portfolio includes:</p>
+                                <ul class="faq-a">
+                                    <li><strong>Gensyn</strong> — decentralized compute network for machine learning.</li>
+                                    <li><strong>Sentient</strong> — open AGI through decentralized infrastructure.</li>
+                                    <li><strong>Ritual</strong> — the AI coprocessor for blockchains.</li>
+                                    <li><strong>Sahara</strong> — decentralized AI data network.</li>
+                                    <li><strong>OpenGradient</strong> — verifiable and sovereign AI.</li>
+                                    <li><strong>Exo Labs</strong> — distributed inference for AI models.</li>
+                                    <li><strong>Synthefy</strong> — foundational model for time series.</li>
+                                    <li><strong>Virtuals</strong> — AI agent protocol.</li>
+                                    <li><strong>Kocree</strong> — AI for scientific creativity.</li>
+                                    <li><strong>Haptic</strong> — physical AI infrastructure.</li>
+                                    <li><strong>Nirvana AI</strong> — robots for modern manufacturing.</li>
+                                    <li><strong>Robo</strong> — a standardized robot arm for teachable automation.</li>
+                                    <li><strong>Rain</strong> — stablecoin-powered finance.</li>
+                                    <li><strong>Mesta</strong> — money movement network.</li>
+                                    <li><strong>Glide</strong> — AI-powered onboarding for financial institutions.</li>
+                                </ul>
+                                <p class="faq-a" style="margin-top: 0.9rem;">The full, current portfolio is at <a href="/portfolio">canonical.cc/portfolio</a>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What makes Canonical different from other venture firms?</h3>
+                                <ul class="faq-a">
+                                    <li><strong>Operator and founder pedigree</strong> — the partners are operators and founders who have been through the journey from 0 to 100 and know what it takes, and the roller-coaster a startup is.</li>
+                                    <li><strong>Silicon Valley over cycles</strong> — they have watched the rise and fall of Silicon Valley since the early 2000s, weathered many storms, and remain as catalyzed as ever about technology.</li>
+                                    <li><strong>Technical depth</strong> — an engineering background to evaluate and support founders building complex infrastructure at the bleeding edge.</li>
+                                    <li><strong>Day-zero, pre-product partnership</strong> — hands-on from before there's a product.</li>
+                                    <li><strong>Long-term, patient capital</strong> and a frontier-focused network of builders and researchers.</li>
+                                    <li><strong>Free, open tools</strong> for founders, GPs, and LPs (see Canonical Labs).</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">For founders</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">How do I pitch Canonical or get in touch?</h3>
+                                <p class="faq-a">Warm intros are preferred. Otherwise, you can reach Canonical directly at <a href="mailto:hello@canonical.cc">hello@canonical.cc</a>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What does Canonical look for in founders?</h3>
+                                <p class="faq-a">Canonical backs <strong>technically exceptional, "n-of-1" founding teams</strong> building at the formative stage. It favors founders with deep domain/engineering expertise who are "living in tomorrow's world" and building foundational infrastructure for a post-AGI future.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Will Canonical invest before I have a product?</h3>
+                                <p class="faq-a">Yes — Canonical explicitly invests in <strong>pre-product</strong> founders from day zero.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What support does Canonical provide its portfolio companies?</h3>
+                                <p class="faq-a">Hands-on partnership from day zero through the company-building journey, deep technical support, long-term alignment, and access to a high-impact network of builders, researchers, and investors at the forefront of AI and blockchain infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">Team</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Who is Anand Iyer?</h3>
+                                <p class="faq-a">Anand Iyer is the <strong>Managing Partner of Canonical</strong> and a founder-turned-investor. He was previously <strong>CEO and co-founder of Trusted</strong>, which was acquired in 2018 by Care.com (Care and Trusted were subsequently acquired by IAC in 2020). He has been a <strong>Venture Partner at Pear VC and Lightspeed</strong>, investing in AI and blockchain infrastructure, and earlier built developer platforms at <strong>Microsoft</strong> (Windows, Windows Phone, and Azure).</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Who else is on the Canonical team?</h3>
+                                <p class="faq-a">Anthony Avedissian is a <strong>Partner at Canonical</strong>. Before joining Canonical, he was co-founder and <strong>Partner at Seed Club Ventures</strong>, an early-stage venture fund based in Europe. He writes extensively for Canonical's research publications on topics including AI training, agents, the machine economy, and robotics infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">Canonical Labs</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What is Canonical Labs?</h3>
+                                <p class="faq-a">Canonical Labs is a collection of <strong>free, interactive web tools</strong> Canonical builds for founders, GPs, and LPs. They run entirely in the browser, require no signup, and are available at <a href="/labs/">canonical.cc/labs</a>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What free tools does Canonical offer?</h3>
+                                <ul class="faq-a">
+                                    <li><strong>Dilution Lab</strong> — model SAFEs, priced rounds, option pools, and exit math.</li>
+                                    <li><strong>Fund Modeler</strong> — size a fund and forecast TVPI, DPI, MOIC, and IRR.</li>
+                                    <li><strong>Power Law Lab</strong> — explore what actually drives venture fund returns.</li>
+                                    <li><strong>Lookalike Finder</strong> — paste a LinkedIn URL or X handle to find people with similar career DNA.</li>
+                                    <li><strong>Capital Call Planner</strong> — forecast capital calls and model liquidity for LPs and family offices.</li>
+                                    <li><strong>Physical AI &amp; Robotics</strong> — a map of venture investment across the sector.</li>
+                                    <li><strong>Semiconductor Stack</strong> — who owns each layer of silicon, and the startups challenging them.</li>
+                                </ul>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Are Canonical's tools free to use?</h3>
+                                <p class="faq-a">Yes. All Canonical Labs tools are <strong>free</strong>, run in the browser, and require no account.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-group">
+                            <h2 class="faq-group-title">Content &amp; contact</h2>
+                            <div class="faq-item">
+                                <h3 class="faq-q">Does Canonical have a blog or publish research?</h3>
+                                <p class="faq-a">Yes — Canonical publishes writing and research at <a href="https://blog.canonical.cc">blog.canonical.cc</a>.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">How can I follow Canonical?</h3>
+                                <ul class="faq-a">
+                                    <li>Website: <a href="/">canonical.cc</a></li>
+                                    <li>Blog: <a href="https://blog.canonical.cc">blog.canonical.cc</a></li>
+                                    <li>X (Twitter): the firm is <a href="https://x.com/canonicalcc"><strong>@canonicalcc</strong></a>; Managing Partner Anand Iyer is <a href="https://x.com/ai"><strong>@ai</strong></a>; Partner Anthony Avedissian is <a href="https://x.com/antavedissian"><strong>@antavedissian</strong></a>.</li>
+                                </ul>
+                            </div>
+                            <div class="faq-item">
+                                <h3 class="faq-q">What is Canonical's website?</h3>
+                                <p class="faq-a"><a href="/">https://canonical.cc</a></p>
+                            </div>
+                        </div>
+
+                        <p class="faq-note">
+                            Building frontier infrastructure for a post-AGI world? Warm intros are preferred, otherwise reach us at <a href="mailto:hello@canonical.cc">hello@canonical.cc</a>. Explore the free tools at <a href="/labs/">Canonical Labs</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {% include footer.html %}
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1037 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI that is not centralized | Canonical Labs</title>
+    <meta name="description" content="Decentralized AI — 35 projects providing real utility across distributed training, private inference, verifiable compute, and sovereign AI infrastructure. Built by Canonical." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/decentralized-ai/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/decentralized-ai/" />
+    <meta property="og:title" content="AI that is not centralized | Canonical" />
+    <meta property="og:description" content="The decentralized AI stack mapped. 35 projects, 9 stack layers, real utility." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/decentralized-ai/" />
+    <meta property="twitter:title" content="AI that is not centralized | Canonical" />
+    <meta property="twitter:description" content="Decentralized AI mapped. 35 projects building sovereign infrastructure, distributed training, and private inference. AI that is not centralized." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="twitter:creator" content="@canonicalcc" />
+    <meta property="twitter:site" content="@canonicalcc" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com?ref=canonicalcc">
+    <link rel="preconnect" href="https://fonts.gstatic.com?ref=canonicalcc" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular&ref=canonicalcc" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap&ref=canonicalcc" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+    <link rel="stylesheet" href="lab.css?v=1">
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+
+        <main>
+            <!-- HERO -->
+            <section class="dai-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="dai-hero-content">
+                        <span class="dai-eyebrow">[00] &nbsp; Canonical Labs &middot; AI that is not centralized</span>
+                        <h1 class="dai-title">AI that is <em>not</em> centralized.</h1>
+                        <p class="dai-subtitle">
+                            Sovereign AI, distributed training, and privacy-focused inference were theoretical for years. Now the demand signals are unmistakable: regulatory sovereignty mandates, GPU scarcity pricing out startups, a surveillance-era backlash against centralized model providers, and AI agents that need verifiable compute to manage real assets. 35 projects are building the infrastructure layer. Companion to the <a href="/labs/semiconductor-silicon-stack/">Semiconductor Stack</a> and <a href="/labs/physical-ai-robotics/">Physical AI</a> maps.
+                        </p>
+                        {% include lab-share.html github_path="labs/decentralized-ai" %}
+                        <div class="dai-meta">
+                            <div class="dai-meta-item"><span class="dai-meta-key">Coverage</span><span class="dai-meta-val">9 stack layers</span></div>
+                            <div class="dai-meta-item"><span class="dai-meta-key">Projects tracked</span><span class="dai-meta-val">35 across the stack</span></div>
+                            <div class="dai-meta-item"><span class="dai-meta-key">Sources</span><span class="dai-meta-val">Docs &middot; GitHub &middot; Messari &middot; arXiv &middot; ePrint</span></div>
+                            <div class="dai-meta-item"><span class="dai-meta-key">Updated</span><span class="dai-meta-val">May 27, 2026</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TL;DR STRIP -->
+            <section class="dai-tldr">
+                <div class="container mx-auto px-8">
+                    <div class="dai-tldr-intro">The state of decentralized AI in four numbers.</div>
+                    <div class="dai-tldr-grid">
+                        <div class="dai-tldr-item">
+                            <div class="dai-stat"><em>72</em><span class="dai-stat-unit">B</span></div>
+                            <div class="dai-tldr-label"><strong>Largest model trained by a decentralized network.</strong> <a href="https://bittensor.com?ref=canonicalcc" target="_blank" rel="noopener">Bittensor's</a> Covenant-72B, 70+ contributors on commodity hardware. Beat LLaMA-2-70B on MMLU.</div>
+                        </div>
+                        <div class="dai-tldr-item">
+                            <div class="dai-stat">161<span class="dai-stat-unit">M+</span></div>
+                            <div class="dai-tldr-label"><strong>Machine payments settled on <a href="https://www.x402.org?ref=canonicalcc" target="_blank" rel="noopener">x402</a></strong>, the HTTP-native agent payment rail &mdash; ~69K active agents. Real agent-to-agent commerce, not theory.</div>
+                        </div>
+                        <div class="dai-tldr-item">
+                            <div class="dai-stat">$128<span class="dai-stat-unit">M+</span></div>
+                            <div class="dai-tldr-label"><strong><a href="https://aethir.com?ref=canonicalcc" target="_blank" rel="noopener">Aethir's</a> 2025 revenue</strong> from decentralized GPU cloud. Real enterprise billing from 150+ clients, not token emissions.</div>
+                        </div>
+                        <div class="dai-tldr-item">
+                            <div class="dai-stat">2<span class="dai-stat-unit">M+</span></div>
+                            <div class="dai-tldr-label"><strong>Users on <a href="https://venice.ai?ref=canonicalcc" target="_blank" rel="noopener">Venice</a>,</strong> the privacy-first AI platform. 6.3B tokens processed monthly with zero data retention.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SUB-NAV -->
+            <div class="dai-subnav" id="dai-subnav">
+                <div class="container mx-auto px-8">
+                    <ul class="dai-subnav-list">
+                        <li><a href="#explorer">The Landscape</a></li>
+                        <li><a href="#culture">Why Different</a></li>
+                        <li><a href="#blockchain">AI Blockchain</a></li>
+                        <li><a href="#training">Training</a></li>
+                        <li><a href="#inference">Inference</a></li>
+                        <li><a href="#verification">Verification</a></li>
+                        <li><a href="#agents">Agents</a></li>
+                        <li><a href="#data">Data</a></li>
+                        <li><a href="#compute">Compute</a></li>
+                        <li><a href="#commerce">Commerce</a></li>
+                        <li><a href="#novel">Novel</a></li>
+                        <li><a href="#risks">Risks</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- [01] THE LANDSCAPE / EXPLORER -->
+            <section class="dai-scene" id="explorer">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[01]</span> The Landscape</div>
+                    <h2 class="dai-scene-h2">Every centralized AI dependency now has a decentralized alternative. Here's the <em>whole map</em>.</h2>
+                    <p class="dai-lede">For years "decentralized AI" was a category in search of a reason to exist. Not anymore: every layer of the stack &mdash; training, inference, verification, agents, data, and compute &mdash; now has a credible decentralized challenger. Filter by layer or search by name, innovation, or team. Click any card to open the project; every outbound link carries <code>?ref=canonicalcc</code>.</p>
+
+                    <div class="dai-explorer-wrap">
+                        <div class="dai-filter-bar" id="dai-filters" role="group" aria-label="Filter by stack layer"></div>
+                        <div class="dai-search-row">
+                            <input type="search" class="dai-search" id="dai-search" placeholder="Search projects, innovations, or teams…" aria-label="Search the explorer" autocomplete="off" />
+                            <span class="dai-explorer-count" id="dai-count"></span>
+                        </div>
+                        <div class="dai-explorer-grid" id="dai-explorer-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [02] WHY IT'S DIFFERENT -->
+            <section class="dai-scene" id="culture">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[02]</span> Why It's Different</div>
+                    <h2 class="dai-scene-h2">These projects are antithetical to the Silicon Valley mould. That's the <em>point</em>.</h2>
+                    <p class="dai-lede">The typical AI company raises a mega-round, trains a proprietary model on hoarded data, wraps it in a closed API, and extracts margin through information asymmetry. The decentralized stack inverts every part of that playbook &mdash; and the teams building it are researchers and infrastructure veterans, not Web3 tourists.</p>
+
+                    <div class="dai-culture-grid">
+                        <div class="dai-culture-card">
+                            <h3>Open <em>by architecture</em>, not as marketing</h3>
+                            <p><a href="https://pluralis.ai?ref=canonicalcc" target="_blank" rel="noopener">Pluralis's</a> models are trainable but unextractable &mdash; the protocol owns them, not a corporation. <a href="https://www.gensyn.ai?ref=canonicalcc" target="_blank" rel="noopener">Gensyn's</a> RepOps are bitwise-deterministic, so anyone can verify training. Bittensor's Covenant-72B weights are Apache-licensed. This is not "open-source as loss leader." It is open as a structural property of the system.</p>
+                        </div>
+                        <div class="dai-culture-card">
+                            <h3>Cryptography <em>replaces trust</em></h3>
+                            <p><a href="https://www.eigencloud.xyz?ref=canonicalcc" target="_blank" rel="noopener">EigenCloud's</a> deterministic inference hit 100% reproducibility across 10,000 runs. <a href="https://venice.ai?ref=canonicalcc" target="_blank" rel="noopener">Venice's</a> E2EE mode encrypts prompts on-device &mdash; neither Venice nor the GPU providers ever see the data. These are not policy promises ("we won't look"). They are mathematical guarantees.</p>
+                        </div>
+                        <div class="dai-culture-card">
+                            <h3>The teams <em>look different</em></h3>
+                            <p>Pluralis is 9 PhDs from Amazon. <a href="https://www.sentient.xyz?ref=canonicalcc" target="_blank" rel="noopener">Sentient's</a> co-founder invented Flash OFDM (the tech behind 4G). <a href="https://near.org?ref=canonicalcc" target="_blank" rel="noopener">NEAR's</a> founder co-authored the Transformer paper. These are Princeton professors, Oxford roboticists, Google researchers and Amazon ML scientists who see crypto as the right coordination mechanism for their work.</p>
+                        </div>
+                        <div class="dai-culture-card">
+                            <h3>Economics are <em>structural</em>, not extractive</h3>
+                            <p><a href="https://akash.network?ref=canonicalcc" target="_blank" rel="noopener">Akash</a> uses reverse auctions with no platform markup. <a href="https://www.vana.org?ref=canonicalcc" target="_blank" rel="noopener">Vana's</a> Data DAOs give users ownership stakes in models trained on their data. <a href="https://www.virtuals.io?ref=canonicalcc" target="_blank" rel="noopener">Virtuals'</a> Genesis launches cap per-wallet allocation at 0.5% and distribute by contribution, not capital.</p>
+                        </div>
+                    </div>
+
+                    <div class="dai-pov">
+                        <span class="dai-pov-label">Canonical POV</span>
+                        <p>Centralized AI companies compound value through data moats and switching costs; decentralized projects compound through network effects and protocol adoption. The former produces higher short-term margins, the latter more durable long-term defensibility. The investment question is whether AI infrastructure will be winner-take-all (favor centralized) or multi-vendor (favor decentralized). Regulatory pressure, GPU scarcity, and sovereign-AI mandates all point toward multi-vendor. If you believe that, this is where you deploy capital.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [03] THE AI BLOCKCHAIN -->
+            <section class="dai-scene" id="blockchain">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[03]</span> The AI Blockchain</div>
+                    <h2 class="dai-scene-h2">Bittensor doesn't fit neatly on the stack. That's because it <em>is</em> the stack.</h2>
+                    <p class="dai-lede">Bittensor is not a training solution or an inference network or a data marketplace. It is a blockchain that creates incentive markets for <em>any</em> AI workload. It doesn't compete with individual layers &mdash; it enables them.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project dai-marquee">
+                            <div class="dai-project-tags"><span class="dai-tag layer">AI Blockchain</span><span class="dai-tag stage">Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://bittensor.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Substrate-based blockchain. 128 active subnets, each an independent market for one AI task.">Bittensor</a></h3>
+                            <p class="dai-project-role">The incentive layer for all of AI</p>
+                            <p>An open-source protocol that creates specialized markets (subnets) where miners compete to perform AI tasks, validators score outputs, and TAO emissions flow to the best performers. 128 active subnets (expanding to 256), each an independent economy for one task. Dynamic TAO (Feb 2025) gave each subnet its own Alpha token &mdash; the market, not a committee, now decides which AI problems get resources. Subnet 3 (Templar) does distributed training; Subnet 64 (Chutes) serves 9T+ tokens of inference at 85% below AWS; Subnet 4 reaches 4M+ users.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">72B</span><span class="k">Covenant model, beat LLaMA-2-70B on MMLU</span></div>
+                                <div class="dai-metric"><span class="v">$43M+</span><span class="k">AI usage revenue, Q1 2026</span></div>
+                                <div class="dai-metric"><span class="v">128</span><span class="k">active subnets</span></div>
+                                <div class="dai-metric"><span class="v">Dec 2025</span><span class="k">first halving (7,200 &rarr; 3,600 TAO/day)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The right analogy is not "decentralized OpenAI" &mdash; it is "Ethereum for AI": a general-purpose incentive machine that spawns specialized markets for any capability the world needs. The existential question is the subsidy ratio: inference subnets run at 22:1 to 40:1 emissions-to-revenue. Every project on this map should watch Bittensor's post-halving economics as a leading indicator for the entire sector.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Co-founded by Jacob Steeves (ex-Google) and Ala Shaabana (PhD CS, McMaster). Stewarded by the Opentensor Foundation.</div>
+                            <a class="dai-project-link" href="https://bittensor.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Bittensor <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [04] DISTRIBUTED TRAINING -->
+            <section class="dai-scene" id="training">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[04]</span> Distributed Training</div>
+                    <h2 class="dai-scene-h2">70 strangers trained a better model than Meta. That changes <em>everything</em>.</h2>
+                    <p class="dai-lede">Training is the hardest problem in decentralized AI &mdash; it requires coordinating gradient updates across unreliable nodes with heterogeneous hardware over unpredictable networks. Four projects attack it from different angles, and two have already proven it works at frontier scale.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Training</span><span class="dai-tag stage">Mainnet (Delphi)</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.gensyn.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="L1 protocol aggregating idle GPUs worldwide, with cryptographic verification of training.">Gensyn</a></h3>
+                            <p class="dai-project-role">Verifiable distributed ML training</p>
+                            <p>Aggregates idle GPUs worldwide into a single training network with cryptographic proof the work was done correctly. The core innovation is Verde: Probabilistic Proof-of-Learning using RepOps &mdash; bitwise-deterministic ML primitives that guarantee identical results across heterogeneous hardware. Cheating solvers get slashed. Delphi mainnet (an AI-settled prediction market) launched April 2026; the $AI token TGE followed on Binance Alpha, KuCoin, and Coinbase.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">$43M</span><span class="k">Series A, a16z crypto led</span></div>
+                                <div class="dai-metric"><span class="v">10B</span><span class="k">$AI total supply (Gensyn L2)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Inference verification is easy (re-run and compare). Training verification is an unsolved problem because training is non-deterministic across hardware. If Gensyn cracks this at scale, it becomes the trust layer for every distributed training network.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Founded 2020 at Entrepreneur First. Ben Fielding (CEO), Harry Grieve (CTO). Backed by a16z crypto, Galaxy Digital, CoinFund.</div>
+                            <a class="dai-project-link" href="https://www.gensyn.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Gensyn <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Training</span><span class="dai-tag stage">Research / Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.primeintellect.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Research lab building tooling for globally distributed, asynchronous AI training.">Prime Intellect</a></h3>
+                            <p class="dai-project-role">Decentralized frontier model training</p>
+                            <p>Builds the tooling for globally distributed, asynchronous training across heterogeneous, permissionless GPUs on regular internet. OpenDiLoCo cuts inter-node communication; PRIME-RL handles async reinforcement learning; TOPLOC verifies inference from untrusted workers. INTELLECT-2 (May 2025) trained a 32B reasoning model via fully async RL across 100+ GPUs on three continents &mdash; improving on QwQ-32B &mdash; with all code, data, and weights open-sourced.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">32B</span><span class="k">INTELLECT-2 reasoning model</span></div>
+                                <div class="dai-metric"><span class="v">$70.4M</span><span class="k">total raised</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Arguably the most technically important project in decentralized AI. Unlike most projects here, it is not a DePIN with a token &mdash; it is a research lab producing open-source infrastructure. The INTELLECT series is doing for decentralized training what Bitcoin's whitepaper did for decentralized money: proving the concept works at meaningful scale.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Vincent Weisser (CEO), Johannes Hagemann (CTO, ex-Aleph Alpha). Backed by Founders Fund, CoinFund, Distributed Global.</div>
+                            <a class="dai-project-link" href="https://www.primeintellect.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Prime Intellect <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Training</span><span class="dai-tag stage">Research</span></div>
+                            <h3 class="dai-project-name"><a href="https://pluralis.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Protocol Learning: model-parallel training where no party ever holds the full weights.">Pluralis</a></h3>
+                            <p class="dai-project-role">Protocol Learning &mdash; unextractable models</p>
+                            <p>Developing Protocol Learning: decentralized, communication-efficient, model-parallel training where no single party ever possesses the full weights. The model "lives" in the protocol, split across geographically distributed nodes. A compression method achieves 95%+ compression with no convergence loss on standard 300 Mbps internet. The model is trainable and usable but <em>unextractable</em> &mdash; contributors get paid because no one can copy it and walk away. Node0 (Feb 2026) trained an 8B LLaMA on par with centralized training across four locations.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">$7.6M</span><span class="k">seed, USV + CoinFund co-led</span></div>
+                                <div class="dai-metric"><span class="v">9</span><span class="k">Amazon ML PhDs</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The highest-risk, highest-upside project on this entire map. Unextractability creates a digital commons that is usable but not appropriable. If Protocol Learning scales, it breaks the foundation-model oligopoly at the root. No token yet, pure research &mdash; the kind of team VCs should track closely even if production is 18-24 months out.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Alexander Long (PhD CS, UNSW, ex-Amazon). Angels include Balaji Srinivasan and Clem Delangue.</div>
+                            <a class="dai-project-link" href="https://pluralis.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Pluralis <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Training + Agents</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://nousresearch.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Open-source AI lab: Hermes models, Psyche training network, DisTrO optimizer, Hermes Agent.">Nous Research</a></h3>
+                            <p class="dai-project-role">The open-source AI lab with a blockchain</p>
+                            <p>Builds frontier open models (Hermes), a decentralized training network (Psyche on Solana), a distributed optimizer (DisTrO), and 2026's fastest-growing agent framework (Hermes Agent). DisTrO reduces inter-GPU communication bandwidth by up to 10,000x, making distributed pre-training practical on consumer internet. Hermes 4.3 was the first model trained end-to-end on Psyche, nearly matching 70B-class performance at half the parameter cost.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">~105K</span><span class="k">Hermes Agent GitHub stars in 10 weeks</span></div>
+                                <div class="dai-metric"><span class="v">$50M</span><span class="k">Series A (Paradigm), $1B token valuation</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The strongest proof that decentralized training can produce frontier-quality models. What makes Nous singular is the full-stack position: the most popular open-weight models + a working training network + the fastest-growing agent framework + a $1B Paradigm mark. DisTrO's 10,000x bandwidth reduction is a genuine breakthrough on the bottleneck every training project faces.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Jeffrey Quesnelle (CEO, YaRN author), Teknium, Karan Malhotra. Includes Diederik Kingma, co-inventor of Adam. $65M total.</div>
+                            <a class="dai-project-link" href="https://nousresearch.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Nous Research <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dai-pov">
+                        <span class="dai-pov-label">Canonical POV</span>
+                        <p>Training is the layer where the thesis is most decisively proven and least commoditized. Prime Intellect and Nous have shipped competitive models from permissionless swarms; Gensyn and Pluralis are solving the trust and extractability problems that make those swarms durable. This is research-grade computer science, not product wrappers &mdash; underwrite the teams accordingly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [05] PRIVATE INFERENCE -->
+            <section class="dai-scene" id="inference">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[05]</span> Private Inference</div>
+                    <h2 class="dai-scene-h2">Your AI conversations are more intimate than your bank statements. Act <em>accordingly</em>.</h2>
+                    <p class="dai-lede">Every major AI provider retains user data, trains on conversations, and can censor outputs. Four projects offer different architectures for private, sovereign inference.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Inference</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://venice.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Multimodal AI on open-source models with verifiable zero-knowledge privacy.">Venice</a></h3>
+                            <p class="dai-project-role">Privacy-first AI for consumers</p>
+                            <p>ChatGPT with end-to-end encryption and no data retention, running exclusively on open-source models across text, image, code, video, and music. Progressive privacy tiers: Standard (browser-only history), TEE mode (hardware enclaves via Phala + NEAR AI Cloud), and E2EE mode (March 2026) where prompts are encrypted on-device and only decrypted inside a verified enclave &mdash; neither Venice nor GPU providers ever see the data.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">2M+</span><span class="k">registered users</span></div>
+                                <div class="dai-metric"><span class="v">6.3B</span><span class="k">tokens / month</span></div>
+                                <div class="dai-metric"><span class="v">110+</span><span class="k">developer apps</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The strongest consumer proof point in decentralized AI &mdash; real traction, not whitepaper vapor. Venice integrates new open-source releases within hours; as open-source closes the gap with GPT-5 and Claude, its privacy moat becomes the deciding factor for a growing segment of users.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Erik Voorhees (founder of ShapeShift) and Teana Baker-Taylor (ex-Circle/USDC). The thesis: the fight for financial privacy now applies to AI.</div>
+                            <a class="dai-project-link" href="https://venice.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Venice <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Inference</span><span class="dai-tag stage">Open Source</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.exolabs.net?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Apache-2.0 framework that pools consumer devices into a single AI inference cluster.">Exo</a></h3>
+                            <p class="dai-project-role">BitTorrent for AI inference</p>
+                            <p>Pools consumer devices &mdash; MacBooks, Mac Studios, phones &mdash; into a single inference cluster, sharding large models across devices that no single machine could run. True P2P with no central coordinator. RDMA over Thunderbolt 5 (macOS 26.2) cut inter-device latency from 300&micro;s to 3-9&micro;s, a 99% reduction matching datacenter InfiniBand. Exposes OpenAI-, Claude-, and Ollama-compatible APIs.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">44K+</span><span class="k">GitHub stars</span></div>
+                                <div class="dai-metric"><span class="v">235B</span><span class="k">Qwen3 at 31.9 tok/s on 4 Mac Studios</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Exo makes private, local inference practical at frontier-model scale. Before RDMA over Thunderbolt 5, consumer distributed inference was a toy; after it, a cluster of Macs matches datacenter latency at a fraction of the cost. No tokenomics &mdash; pure open-source tooling, which is both its strength (no mercenary dynamics) and its limit (no built-in flywheel).</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Alex Cheema (Oxford Physics) and Mohamed Baioumy (PhD AI &amp; Robotics, Oxford).</div>
+                            <a class="dai-project-link" href="https://www.exolabs.net?ref=canonicalcc" target="_blank" rel="noopener">Visit Exo <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Inference</span><span class="dai-tag stage">Early Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.eigencloud.xyz?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Decentralized inference on idle Apple Silicon, built under EigenCloud. Led by Gajesh Naik.">Project Darkbloom</a></h3>
+                            <p class="dai-project-role">Decentralized inference on Apple Silicon</p>
+                            <p>Turns idle Apple Silicon Macs into distributed compute nodes, targeting the 100M+ machines worldwide. Claims 50% cost reduction vs. AWS/Google Cloud, 95% revenue share for operators, an OpenAI-compatible API, and hardware-backed verification inherited from EigenCloud's restaked-ETH security. Launched April 2026 alongside EigenAI (bit-exact, 100% reproducible inference) and EigenCompute.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">95%</span><span class="k">operator revenue share</span></div>
+                                <div class="dai-metric"><span class="v">50%</span><span class="k">claimed cost cut vs. AWS</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The intersection of EigenCloud's verifiable compute and the Exo-style thesis that consumer Apple Silicon is untapped. The 95% operator share is designed to bootstrap supply. Watch it as a complement to Exo &mdash; Darkbloom adds the economic and verification layer Exo deliberately leaves out.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Gajesh Naik &mdash; built a $7M+ DeFi protocol at 13, now a research engineer at Eigen Labs.</div>
+                            <a class="dai-project-link" href="https://www.eigencloud.xyz?ref=canonicalcc" target="_blank" rel="noopener">Visit EigenCloud <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Inference / Privacy</span><span class="dai-tag stage">Mainnet (ETH L2)</span></div>
+                            <h3 class="dai-project-name"><a href="https://nillion.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Network that stores and computes on data without ever seeing it (MPC + TEE).">Nillion</a></h3>
+                            <p class="dai-project-role">The blind computer</p>
+                            <p>Stores and computes on data without ever seeing it. Unlike traditional encryption (decrypt, compute, re-encrypt), Nillion processes data while it stays encrypted. Multi-Party Computation splits secrets across nodes; TEE-based nilCC nodes execute private compute; nilDB stores distributed shares. Migrated to an Ethereum L2 in early 2026; the Blacklight verification layer launched February 2026.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">500K+</span><span class="k">verifiers</span></div>
+                                <div class="dai-metric"><span class="v">~195M</span><span class="k">secrets processed</span></div>
+                                <div class="dai-metric"><span class="v">$100M+</span><span class="k">raised by ecosystem projects</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>While most projects focus on <em>verifiable</em> compute (proving correctness), Nillion focuses on <em>confidential</em> compute (ensuring nobody sees the data). If AI agents process health, financial, and identity data, confidential compute is not optional &mdash; it is infrastructure. The Uber/Hedera/Indiegogo founding team is unusually strong.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Andrew Masanto (co-founder, Hedera), Alex Page (CEO, ex-Goldman), Conrad Whelan (founding engineer at Uber), Slava Rubin (founder of Indiegogo).</div>
+                            <a class="dai-project-link" href="https://nillion.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Nillion <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [06] VERIFIABLE COMPUTE -->
+            <section class="dai-scene" id="verification">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[06]</span> Verifiable Compute</div>
+                    <h2 class="dai-scene-h2">If AI agents manage real money, "trust us" is not an architecture. <em>Verify.</em></h2>
+                    <p class="dai-lede">Four projects build cryptographic proof that the right model ran on the right data &mdash; because agents are managing real assets on-chain, and DeFi protocols need guarantees, not API promises.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Verification</span><span class="dai-tag stage">Testnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://ritual.net?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Sovereign execution layer for AI — an L1 with AI computation embedded in consensus.">Ritual</a></h3>
+                            <p class="dai-project-role">AI as a blockchain primitive</p>
+                            <p>A Layer-1 with AI computation embedded directly into consensus. Its Infernet product lets smart contracts request AI inference, receive results, and verify them cryptographically via ZK proofs, TEE attestation, or optimistic verification. Works with any EVM-compatible chain today, without waiting for Ritual Chain mainnet. Partnerships with Story Protocol, MyShell, and Nillion.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">EVM</span><span class="k">integrate without migrating chains</span></div>
+                                <div class="dai-metric"><span class="v">Polychain</span><span class="k">+ Paradigm backed</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The most ambitious attempt to make AI a first-class citizen of blockchain consensus. EVM compatibility is the right go-to-market &mdash; existing protocols integrate without migrating. Watch for the first DeFi protocol that ships a production AI integration on Infernet.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Niraj Pant and Akilesh Potti (both ex-Polychain GPs). Founding members ex-Paradigm, ex-Sequoia.</div>
+                            <a class="dai-project-link" href="https://ritual.net?ref=canonicalcc" target="_blank" rel="noopener">Visit Ritual <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Verification</span><span class="dai-tag stage">TGE</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.opengradient.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="L1 purpose-built to host, execute, and cryptographically verify AI inference.">OpenGradient</a></h3>
+                            <p class="dai-project-role">The auditable AI layer</p>
+                            <p>A Layer-1 built to host, execute, and verify AI inference. Its PIPE engine separates inference execution from verification settlement, solving the tension between AI latency and blockchain finality. Multiple verification modes (Vanilla, ZKML via EZKL, TEE-attested). MemSync is the sleeper: a universal memory layer giving AI assistants persistent context across ChatGPT, Claude, and Perplexity. TGE on Binance, April 2026.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">2M+</span><span class="k">inferences</span></div>
+                                <div class="dai-metric"><span class="v">2,000+</span><span class="k">models on hub</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>PIPE is a genuinely novel contribution and MemSync gives them a consumer-facing wedge that isn't purely crypto-native. If agents start managing real money, verifiable inference becomes a regulatory requirement, not a nice-to-have.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Matthew Wang (CEO, ex-Two Sigma), Adam Balogh (CTO, ex-Head of AI Platform at Palantir). a16z CSX.</div>
+                            <a class="dai-project-link" href="https://www.opengradient.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit OpenGradient <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Verification</span><span class="dai-tag stage">Mainnet Alpha</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.eigencloud.xyz?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Ethereum restaking protocol evolved into a verifiable cloud (EigenDA, EigenAI, EigenCompute).">EigenCloud</a></h3>
+                            <p class="dai-project-role">The verifiable cloud</p>
+                            <p>An Ethereum restaking protocol (formerly EigenLayer) where staked ETH serves as security collateral for decentralized services. Evolved into a "verifiable cloud" with EigenDA (data availability), EigenAI (verifiable inference), and EigenCompute ("AWS with cryptographic proofs"). EigenAI delivers bit-exact deterministic inference: 100% reproducibility across 10,000 runs with under 2% overhead.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">100%</span><span class="k">reproducible inference (10K runs)</span></div>
+                                <div class="dai-metric"><span class="v">280+</span><span class="k">crypto-AI projects using AVSs</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>From an AI standpoint the restaked-ETH TVL is beside the point &mdash; what matters is EigenAI's bit-exact determinism: identical inference across 10,000 runs, which is what lets a smart contract trust a model's output. Restaking just supplies the cryptoeconomic security underneath; the verifiable-cloud pivot is what makes EigenCloud relevant to AI at all.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Sreeram Kannan &mdash; former tenured professor at the University of Washington, PhD UIUC (Information Theory).</div>
+                            <a class="dai-project-link" href="https://www.eigencloud.xyz?ref=canonicalcc" target="_blank" rel="noopener">Visit EigenCloud <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Verification</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.ora.io?ref=canonicalcc" target="_blank" rel="noopener" data-tip="On-chain AI oracle (opML). Invented the Initial Model Offering (IMO).">ORA Protocol</a></h3>
+                            <p class="dai-project-role">On-chain AI oracle</p>
+                            <p>Brings AI inference on-chain via the Onchain AI Oracle &mdash; any smart contract can call a model and receive verifiable results. Uses optimistic ML (opML) rather than zkML, making LLaMA 3 and Stable Diffusion practical on-chain. Also invented the Initial Model Offering: tokenizing open-source models (ERC-7641 RevShare tokens) so developers can raise funding and share revenue. Deployed across Ethereum, Optimism, Arbitrum, Base, Polygon, and more.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">$23M</span><span class="k">raised (Polychain, HashKey)</span></div>
+                                <div class="dai-metric"><span class="v">3</span><span class="k">trusted by Compound, Uniswap, EF</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The most practical path to making smart contracts "intelligent." The IMO mechanism creates a novel funding model for open-source AI &mdash; potentially more sustainable than corporate charity.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Kartin Wong (ex-Google SWE, ex-TikTok), Suede Kam (Math/Econ, UT Austin).</div>
+                            <a class="dai-project-link" href="https://www.ora.io?ref=canonicalcc" target="_blank" rel="noopener">Visit ORA <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [07] AI AGENT ECONOMY -->
+            <section class="dai-scene" id="agents">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[07]</span> The AI Agent Economy</div>
+                    <h2 class="dai-scene-h2">The next billion "users" of blockchain will not be humans. They will be <em>agents</em>.</h2>
+                    <p class="dai-lede">Four core projects build the infrastructure for autonomous agents that operate across platforms, manage assets, and coordinate with each other &mdash; plus three enabling layers underneath.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Agents</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.virtuals.io?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Decentralized launchpad and co-ownership layer for AI agents on Base and Solana.">Virtuals Protocol</a></h3>
+                            <p class="dai-project-role">The Shopify for AI agents</p>
+                            <p>Create, tokenize, deploy, and monetize autonomous agents across X, Telegram, TikTok, and Roblox. The GAME framework separates planning from execution; the Genesis fair-launch mechanism caps per-wallet allocation at 0.5%; smart contracts auto-execute buyback-and-burn when agents earn. SAM is the first on-chain agent controlling real-world robots.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">18,000+</span><span class="k">tokenized agents</span></div>
+                                <div class="dai-metric"><span class="v">$600M</span><span class="k">payment volume (Nov 2025)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The most traction of any AI agent platform by a wide margin &mdash; a functioning economy. Watch SAM and the robotics integration; that is where agents cross from digital to physical.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Jansen Teng (CEO, ex-BCG, Imperial) and Wee Kee Tiew (ex-PE, Imperial). Launched Oct 2024.</div>
+                            <a class="dai-project-link" href="https://www.virtuals.io?ref=canonicalcc" target="_blank" rel="noopener">Visit Virtuals <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Agents</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.elizaos.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Most widely adopted open-source framework for Web3 AI agents. ~60% dev mindshare.">ElizaOS</a></h3>
+                            <p class="dai-project-role">The React of Web3 AI agents</p>
+                            <p>The de facto standard framework for building autonomous Web3 agents. Plugin architecture (actions, providers, services) with a model-agnostic LLM layer. v2 added event-driven architecture, Hierarchical Task Networks, a unified cross-chain wallet, and a package registry. Chainlink CCIP integration unlocked cross-chain operations across Ethereum, Base, BNB Chain, and Solana.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">50,000+</span><span class="k">agents built</span></div>
+                                <div class="dai-metric"><span class="v">$20B+</span><span class="k">combined ecosystem value</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Analogous to what React became for web frontends. The plugin model and community size create hard-to-replicate network effects. The risk: framework standardization is a thin-margin "picks and shovels" play. The opportunity: every agent platform needs a framework, and ElizaOS is already there.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Shaw Walters (Eliza Labs). Partnerships with Stanford's Future of Digital Currency Initiative and Chainlink.</div>
+                            <a class="dai-project-link" href="https://www.elizaos.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit ElizaOS <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Agents</span><span class="dai-tag stage">Post-TGE</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.sentient.xyz?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Open-source AGI platform: The GRID, ROMA multi-agent framework, Sentient Chat.">Sentient</a></h3>
+                            <p class="dai-project-role">Open-source AGI infrastructure</p>
+                            <p>Three products: The GRID (intelligence network), ROMA (a recursive multi-agent reasoning framework), and Sentient Chat (no-code agent creation). The OML protocol "OMLizes" models with cryptographic fingerprints that survive fine-tuning, creating verifiable ownership for open-source contributors. ROMA scored 81.7% on FRAMES and tops open-source multi-agent leaderboards.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">1M+</span><span class="k">interactions</span></div>
+                                <div class="dai-metric"><span class="v">$85M</span><span class="k">from Founders Fund</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>OML tackles the sustainability problem of open-source AI. Meta releasing Llama is corporate charity, not a durable model; OML creates verifiable ownership and economic flows for contributors. The Princeton/IISc pedigree and $85M war chest make this one of the most credibly resourced projects here.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Sandeep Nailwal (Polygon co-founder), Pramod Viswanath (Princeton, co-invented Flash OFDM), Himanshu Tyagi (IISc).</div>
+                            <a class="dai-project-link" href="https://www.sentient.xyz?ref=canonicalcc" target="_blank" rel="noopener">Visit Sentient <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Agents</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://near.org?ref=canonicalcc" target="_blank" rel="noopener" data-tip="L1 sharded blockchain pivoted into AI infra. Founder co-authored the Transformer paper.">NEAR Protocol</a></h3>
+                            <p class="dai-project-role">The chain that thinks</p>
+                            <p>A Layer-1 pivoted into AI infrastructure. Chain Abstraction lets a single NEAR account sign transactions on 25+ chains via MPC. NEAR AI Cloud (Intel TDX + NVIDIA confidential computing) powers Private Chat; Shade Agents run autonomous DeFi strategies inside TEEs. Nightshade 2.0 hit 400,000 TPS; post-quantum cryptography (FIPS-204) was integrated in May 2026.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">1,200+</span><span class="k">active DApps</span></div>
+                                <div class="dai-metric"><span class="v">$45M+</span><span class="k">ecosystem grants</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>NEAR's founder literally co-invented the architecture behind every modern LLM. Polosukhin: "The users of blockchain will be AI agents, not humans." Post-quantum integration shows forward thinking most L1s haven't started.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Illia Polosukhin &mdash; co-author of "Attention Is All You Need," came to blockchain from Google Research.</div>
+                            <a class="dai-project-link" href="https://near.org?ref=canonicalcc" target="_blank" rel="noopener">Visit NEAR <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dai-support">
+                        <span class="dai-support-label">Supporting agent infrastructure</span>
+                        <div class="dai-support-grid">
+                            <div class="dai-support-item"><strong><a href="https://phala.network?ref=canonicalcc" target="_blank" rel="noopener">Phala Network</a></strong> &mdash; TEE-based confidential computing where agents hold secret keys and execute sensitive logic. 1B+ LLM tokens/day; dstack runtime donated to the Linux Foundation. The privacy layer agent platforms need underneath.</div>
+                            <div class="dai-support-item"><strong><a href="https://www.arc.fun?ref=canonicalcc" target="_blank" rel="noopener">ARC (AI Rig Complex)</a></strong> &mdash; the Rust-based Rig framework for high-performance production agents, plus the Ryzome marketplace. Fills a gap: most frameworks are Python/TypeScript; Rust gives the speed and memory safety finance and healthcare require.</div>
+                            <div class="dai-support-item"><strong><a href="https://mor.org?ref=canonicalcc" target="_blank" rel="noopener">Morpheus</a></strong> &mdash; a P2P network of Smart Agents on Arbitrum + Base. Lumerin routing matches requests to optimal compute; SmartRank evaluates contract trustworthiness. Fair launch, no VC. Key contributor: Erik Voorhees.</div>
+                            <div class="dai-support-item"><strong><a href="https://plasticlabs.ai?ref=canonicalcc" target="_blank" rel="noopener">Plastic Labs / Honcho</a></strong> &mdash; memory and identity for agents. Honcho models <em>who you are</em> using theory-of-mind reasoning, integrated as a memory provider in Nous's Hermes Agent. Roadmap: a user-owned, decentralized identity network. (Also see Commerce.)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [08] DATA INFRASTRUCTURE -->
+            <section class="dai-scene" id="data">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[08]</span> Data Infrastructure</div>
+                    <h2 class="dai-scene-h2">AI models are only as good as their data. Five projects build the <em>pipes</em>.</h2>
+                    <p class="dai-lede">Store, serve, and verify the provenance of AI training data &mdash; and pay the people who create it.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Data</span><span class="dai-tag stage">Testnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://saharalabs.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Blockchain platform for decentralized AI data services and asset ownership.">Sahara AI</a></h3>
+                            <p class="dai-project-role">The fair data supply chain</p>
+                            <p>A platform for decentralized data services, knowledge management, and AI asset ownership: contributors provide labeled data and get paid, with on-chain provenance via digital watermarks. A four-layer architecture uses TEEs, differential privacy, homomorphic encryption, and secret sharing.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">1.4M</span><span class="k">daily active accounts (testnet)</span></div>
+                                <div class="dai-metric"><span class="v">30+</span><span class="k">enterprise clients</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Addresses the most fundamental structural problem in AI: the disconnect between data creation and value capture. A Microsoft/Amazon/MIT client list suggests real demand; 1.4M daily actives on testnet is an unusually strong pre-mainnet signal (though testnet metrics are gameable).</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Sean Ren (tenured CS professor at USC) and Tyler Zhou (ex-Binance Labs). Advisors from Anthropic, Together AI, Nous.</div>
+                            <a class="dai-project-link" href="https://saharalabs.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Sahara <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Data</span><span class="dai-tag stage">Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://0g.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Modular L1 built as an operating system for on-chain AI workloads.">0G (Zero Gravity)</a></h3>
+                            <p class="dai-project-role">The AI data highway</p>
+                            <p>A modular Layer-1 operating system for on-chain AI: 0G Chain + 0G Storage (Proof of Random Access) + 0G DA + 0G Compute. Claims 50 GB/s DA throughput per partition with 11,000 TPS per shard and 500ms blocks. Aristotle Mainnet launched September 2025.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">650M</span><span class="k">testnet transactions</span></div>
+                                <div class="dai-metric"><span class="v">100+</span><span class="k">partnerships (Alibaba Cloud, Pyth)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>0G tackles the most fundamental bottleneck for on-chain AI: data throughput. If the 50 GB/s holds in production, it is a step-change in what's possible &mdash; though the figure is a controlled-testnet measurement against a general-purpose settlement layer.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Michael Heinrich (CEO, ex-Bridgewater) and Ming Wu (CTO, 11+ years at Microsoft Research Asia, co-founded Conflux).</div>
+                            <a class="dai-project-link" href="https://0g.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit 0G <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Data</span><span class="dai-tag stage">Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.vana.org?ref=canonicalcc" target="_blank" rel="noopener" data-tip="L1 where individuals pool data into Data DAOs and earn stakes in models trained on it.">Vana</a></h3>
+                            <p class="dai-project-role">User-owned data for AI</p>
+                            <p>An EVM-compatible L1 where individuals pool personal data into Data DAOs and earn ownership stakes in the models trained on it. Data Validators in TEEs process private data without exposure; each Data DAO issues VRC-20 tokens. Vana partnered with Flower Labs to train COLLECTIVE-1, a 7B model built from scratch on user-contributed data.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">1M+</span><span class="k">users</span></div>
+                                <div class="dai-metric"><span class="v">20+</span><span class="k">live Data DAOs</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The only project that has actually trained a real foundation model on user-contributed data with verifiable ownership. It operationalizes "your data, your value" rather than theorizing about it. The MIT/Fed/World Bank pedigree is unusual for crypto.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Anna Kazlauskas (CEO, MIT CS + economics; mined ETH from her dorm in 2015; worked at the Fed and World Bank).</div>
+                            <a class="dai-project-link" href="https://www.vana.org?ref=canonicalcc" target="_blank" rel="noopener">Visit Vana <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Data</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.getgrass.io?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Decentralized web scraping using residential bandwidth for AI training data.">Grass</a></h3>
+                            <p class="dai-project-role">Decentralized web scraping for AI</p>
+                            <p>Turns unused residential bandwidth into web-scraping infrastructure for AI training data. Users install a browser extension; their device scrapes public web data, cleans it, and routes it through validators. A ZK Processor produces proofs that scraped content wasn't tampered with. The residential-IP angle is the moat &mdash; labs need residential IPs because sites block datacenter traffic.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">2.5M</span><span class="k">nodes across 190 countries</span></div>
+                                <div class="dai-metric"><span class="v">7,000+ TB</span><span class="k">web data delivered to labs</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>A unique position: not compute, not inference, but data collection. 2.5M residential nodes is a supply-side moat no centralized company can replicate. Legal questions around scraping at scale are unresolved &mdash; but if training data becomes a regulated commodity, Grass's ZK-verified pipeline becomes the compliance layer.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Andrej Radonjic (CEO). $14.5M from Polychain Capital, Tribe Capital.</div>
+                            <a class="dai-project-link" href="https://www.getgrass.io?ref=canonicalcc" target="_blank" rel="noopener">Visit Grass <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dai-support">
+                        <span class="dai-support-label">Supporting data infrastructure</span>
+                        <div class="dai-support-grid">
+                            <div class="dai-support-item"><strong><a href="https://www.arweave.org?ref=canonicalcc" target="_blank" rel="noopener">Arweave / AO</a></strong> &mdash; permanent, immutable storage (pay once, store forever) plus the AO parallel-compute layer, where every computation's inputs, outputs, and state are permanently stored for fully auditable AI. $213M+ deposits, no VC pre-mine, 7M+ users. The "permanent computer" thesis uniquely solves AI provenance.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [09] COMPUTE MARKETPLACE -->
+            <section class="dai-scene" id="compute">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[09]</span> Compute Marketplace</div>
+                    <h2 class="dai-scene-h2">The picks-and-shovels of decentralized AI. Real revenue, real GPUs, real <em>workloads</em>.</h2>
+                    <p class="dai-lede">Buy and sell GPU compute in an open market. This is the most mature layer &mdash; some of these networks have operated for 7+ years and bill real enterprise revenue.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Compute</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://akash.network?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Open-source permissionless compute marketplace on Cosmos. Reverse-auction pricing.">Akash Network</a></h3>
+                            <p class="dai-project-role">The decentralized cloud</p>
+                            <p>A permissionless compute marketplace where users specify resources and price, and providers compete in a reverse auction &mdash; GPU compute at 60-85% below AWS/Azure/GCP with no platform markup. AkashML offers one-click model endpoints; Homenode adds consumer GPU contribution; Starcluster plans to acquire ~7,200 NVIDIA GB200 GPUs via vetted Nodekeepers.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">$1M+</span><span class="k">quarterly lease revenue</span></div>
+                                <div class="dai-metric"><span class="v">8 yrs</span><span class="k">operating (founded 2018)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The credibility anchor: $1M+ quarterly revenue, 70% GPU utilization, 8 years of operation. The thesis was never to out-scale AWS &mdash; it was to be the long tail, the censorship-resistant option, the 60-85% cheaper alternative. On those terms, Akash is delivering.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Greg Osuri (25-year open-source veteran). One of the oldest DePIN projects.</div>
+                            <a class="dai-project-link" href="https://akash.network?ref=canonicalcc" target="_blank" rel="noopener">Visit Akash <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Compute</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://aethir.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Decentralized GPU cloud with real enterprise SLA contracts at scale.">Aethir</a></h3>
+                            <p class="dai-project-role">Enterprise-grade decentralized GPU cloud</p>
+                            <p>Decentralized cloud compute with true enterprise contracts &mdash; SLA guarantees and dedicated GPU clusters. 430,000+ GPUs across 94 countries. The standout: $128M+ in <em>actual</em> 2025 revenue from 150+ clients (real billing, not emissions), plus a $260M take-or-pay contract with NASDAQ-listed Axe Compute for 2,304 NVIDIA B300 GPUs &mdash; verifiable via SEC filings.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">$128M+</span><span class="k">actual 2025 revenue</span></div>
+                                <div class="dai-metric"><span class="v">$260M</span><span class="k">Axe Compute contract</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>$128M+ in real revenue and a NASDAQ company signing a $260M GPU contract are numbers that make centralized clouds pay attention. Aethir is less "decentralized" in the purist sense &mdash; enterprise SLAs require coordination &mdash; but dramatically more attractive to enterprise buyers. The Axe deal is arguably the largest single contract in DePIN history.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Mark Rydon (ex-Bechtel) and Daniel Wang (CEO, ex-Riot Games). CTO Kyle Okamoto (ex-CEO Ericsson IoT).</div>
+                            <a class="dai-project-link" href="https://aethir.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Aethir <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Compute</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://io.net?ref=canonicalcc" target="_blank" rel="noopener" data-tip="DePIN on Solana aggregating 100,000+ idle GPUs. Uses the Ray distributed framework.">io.net</a></h3>
+                            <p class="dai-project-role">The GPU aggregator</p>
+                            <p>A DePIN on Solana aggregating idle GPUs worldwide via the Ray distributed computing framework (the same production infrastructure OpenAI uses). IO Cloud is the marketplace, IO Intelligence serves pre-trained models, IO Worker handles provider management. Claims 72% cost reduction vs. centralized.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">450</span><span class="k">petaFLOPS</span></div>
+                                <div class="dai-metric"><span class="v">138</span><span class="k">countries</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The largest decentralized GPU aggregator by raw node count. Ray integration is pragmatic, and focusing on AI/ML cluster orchestration (vs. general compute) is the right product decision.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Ahmad Shadid and Tory Green (CEO, Stanford, ex-CFO/COO at Hum Capital).</div>
+                            <a class="dai-project-link" href="https://io.net?ref=canonicalcc" target="_blank" rel="noopener">Visit io.net <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Compute</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://rendernetwork.com?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Decentralized GPU compute for 3D rendering expanding into AI. Child of OTOY.">Render Network</a></h3>
+                            <p class="dai-project-role">From Hollywood to AI</p>
+                            <p>Decentralized GPU compute for 3D rendering (film/VFX, gaming) expanding into AI inference &mdash; a child company of OTOY (Academy-Award-winning OctaneRender). Burn-Mint tokenomics quote jobs in fiat and burn RENDER after completion. A "Dispersed" subnet integrated 600+ open-weight models; RNP-023 adds Salad's ~60,000 consumer GPUs.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">71M+</span><span class="k">cumulative frames rendered</span></div>
+                                <div class="dai-metric"><span class="v">35-40%</span><span class="k">of volume now AI workloads</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The deepest real-world utility roots &mdash; serving Hollywood studios years before "DePIN" existed. The pivot into AI is strategically sound: GPU rendering and AI inference share identical hardware. The Salad integration could dramatically expand supply.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Jules Urbach &mdash; 25+ year computer-graphics pioneer; OTOY subsidiary won an Academy Award.</div>
+                            <a class="dai-project-link" href="https://rendernetwork.com?ref=canonicalcc" target="_blank" rel="noopener">Visit Render <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dai-support">
+                        <span class="dai-support-label">Supporting compute projects</span>
+                        <div class="dai-support-grid">
+                            <div class="dai-support-item"><strong><a href="https://livepeer.org?ref=canonicalcc" target="_blank" rel="noopener">Livepeer</a></strong> &mdash; decentralized video transcoding (founded 2017) pivoting to AI: 134.4M minutes processed in Q1 2026, with AI inference now 60% of protocol activity (up from 0% in 18 months). The existing orchestrator network is a supply-side moat.</div>
+                            <div class="dai-support-item"><strong><a href="https://nosana.io?ref=canonicalcc" target="_blank" rel="noopener">Nosana</a></strong> &mdash; a Solana-native, containerized P2P GPU marketplace where Docker models auto-deploy. 50,000+ GPU hosts registered; the Whirlpool expansion adds AMD, Intel, and Apple Silicon.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [10] AGENTIC COMMERCE -->
+            <section class="dai-scene" id="commerce">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[10]</span> Agentic Commerce</div>
+                    <h2 class="dai-scene-h2">AI agents can't open bank accounts. That's why they use <em>stablecoins</em>.</h2>
+                    <p class="dai-lede">Agents are structurally locked out of traditional finance &mdash; no bank accounts, no cards, no KYC-able identity. Crypto wallets are the only financial infrastructure that can be created programmatically and operated autonomously. The coalition backing these rails &mdash; Coinbase, Stripe, Google, Visa, AWS, Anthropic &mdash; tells you where this is heading.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Commerce</span><span class="dai-tag stage">Production</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.x402.org?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Open protocol activating HTTP 402 for instant stablecoin payments between agents and services.">x402 Protocol</a></h3>
+                            <p class="dai-project-role">HTTP-native machine payments</p>
+                            <p>Activates the long-dormant HTTP 402 ("Payment Required") status code so any API endpoint becomes a pay-per-request service with on-chain settlement in seconds. The agent signs a gasless EIP-3009 stablecoin transfer; a facilitator settles on-chain. "Stripe for machines," natively on-chain. Created by Coinbase (May 2025); the x402 Foundation (with Cloudflare) joined the Linux Foundation in 2026.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">161M+</span><span class="k">cumulative transactions</span></div>
+                                <div class="dai-metric"><span class="v">~69K</span><span class="k">active agents</span></div>
+                                <div class="dai-metric"><span class="v">~$600M</span><span class="k">annualized volume</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>When Stripe integrates it on Base, AWS embeds it in Bedrock AgentCore, and Visa partners with Coinbase for settlement, the thesis is validated. The economics are unanswerable: sub-$0.001 L2 fees vs. $0.30 + 2.9% on cards. For an agent making 10,000 API calls in a workflow, card rails are not expensive &mdash; they are mathematically impossible.</p></div>
+                            <div class="dai-project-team"><strong>Governance:</strong> Coinbase, Cloudflare, Stripe. Founding members include Google, Visa, AWS, Circle, Anthropic, Mastercard, Shopify.</div>
+                            <a class="dai-project-link" href="https://www.x402.org?ref=canonicalcc" target="_blank" rel="noopener">Visit x402 <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Commerce</span><span class="dai-tag stage">Growth</span></div>
+                            <h3 class="dai-project-name"><a href="https://skyfire.xyz?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Payment rails plus agent identity verification — KYA (Know Your Agent) + KYAPay.">Skyfire</a></h3>
+                            <p class="dai-project-role">Identity + payments for AI agents</p>
+                            <p>Combines payment rails with agent identity verification. The KYA (Know Your Agent) framework is KYC for machines: a verifiable credential system that distinguishes legitimate agents from bots, declares intent, and provides tokenized payment credentials. KYAPay settles in USDC; Agent Checkout lets agents sign up, log in, and pay autonomously. Partnerships with F5, Experian, and Akamai.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">~30</span><span class="k">launch partners</span></div>
+                                <div class="dai-metric"><span class="v">$9.5M</span><span class="k">raised (Coinbase Ventures, a16z CSX)</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Skyfire occupies the critical gap: x402 handles payment mechanics but doesn't answer "should this agent be trusted to transact?" Enterprise adoption requires identity and compliance &mdash; KYA is becoming the identity primitive alongside the payment rails.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Amir Sarhangi (CEO) and Craig DeWitt. Founded 2023.</div>
+                            <a class="dai-project-link" href="https://skyfire.xyz?ref=canonicalcc" target="_blank" rel="noopener">Visit Skyfire <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+
+                    <div class="dai-support">
+                        <span class="dai-support-label">The agentic commerce stack &mdash; supporting protocols</span>
+                        <div class="dai-support-grid">
+                            <div class="dai-support-item"><strong><a href="https://www.coinbase.com/developer-platform?ref=canonicalcc" target="_blank" rel="noopener">Coinbase AgentKit</a></strong> &mdash; full-stack agent wallet infrastructure powering the wallet layer beneath x402. In a 14-week beta, 1,000+ participants created 9,500+ agents executing 187,000 autonomous transactions.</div>
+                            <div class="dai-support-item"><strong><a href="https://stripe.com?ref=canonicalcc" target="_blank" rel="noopener">Machine Payments Protocol (MPP)</a></strong> &mdash; co-developed by Stripe and Tempo. "OAuth for money": agents pre-authorize a limit, sign off-chain micropayment vouchers, and the server batches them into one on-chain settlement. Visa extended it to cards; Lightspark to Lightning.</div>
+                            <div class="dai-support-item"><strong><a href="https://world.org?ref=canonicalcc" target="_blank" rel="noopener">World AgentKit</a></strong> &mdash; attaches cryptographic proof of <em>human</em> identity (World ID + ZK proofs) to x402 payments, so a merchant can verify a real, unique human stands behind an agent without learning who.</div>
+                            <div class="dai-support-item"><strong><a href="https://www.mastercard.com?ref=canonicalcc" target="_blank" rel="noopener">Mastercard Agent Pay</a></strong> &mdash; extends MDES tokenization (the tech behind Apple/Google Pay) to agents, with configurable spending caps and consent policies. Live across the US, Australia, NZ, LatAm, ASEAN, and Europe; integrated into ChatGPT shopping.</div>
+                            <div class="dai-support-item"><strong><a href="https://aws.amazon.com/bedrock/?ref=canonicalcc" target="_blank" rel="noopener">AWS Bedrock AgentCore</a></strong> &mdash; managed x402 integration for all AWS-hosted agents, with 10,000+ x402 endpoints available for discovery. The enterprise distribution moment.</div>
+                            <div class="dai-support-item"><strong><a href="https://www.visa.com?ref=canonicalcc" target="_blank" rel="noopener">Visa Intelligent Commerce</a></strong> &mdash; Visa's explicit x402 integration via Coinbase/Nevermined. 100+ partners; predicts millions of agent-initiated purchases by Holiday 2026. The $15T card network endorsing crypto rails.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [11] NOVEL PRIMITIVES -->
+            <section class="dai-scene" id="novel">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[11]</span> Novel Primitives</div>
+                    <h2 class="dai-scene-h2">New cryptographic and economic approaches that don't fit existing categories &mdash; and that's why they <em>matter</em>.</h2>
+                    <p class="dai-lede">Two projects rethink the relationship between AI computation and the blockchain itself.</p>
+
+                    <div class="dai-project-grid">
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Novel</span><span class="dai-tag stage">Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://pearlresearch.ai?ref=canonicalcc" target="_blank" rel="noopener" data-tip="L1 powered by Proof-of-Useful-Work: mining is a byproduct of AI matrix multiplication. Peer-reviewed ePrint 2025/685.">Pearl Research</a></h3>
+                            <p class="dai-project-role">Proof-of-Useful-Work from AI computation</p>
+                            <p>A Layer-1 powered by Proof-of-Useful-Work (PoUW), where mining is a native byproduct of AI matrix multiplication rather than wasteful random hashing &mdash; "the Bitcoin of the AI compute era." A peer-reviewed primitive (<a href="https://eprint.iacr.org/2025/685?ref=canonicalcc" target="_blank" rel="noopener">ePrint 2025/685</a>) adds low-rank noise to input matrices, extracts a verifiable trace from tiled GPU multiplication, then recovers the exact product; the trace doubles as a PoW lottery ticket. A Plonky2 zk-STARK wraps it for cheap on-chain verification without revealing weights.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">~576</span><span class="k">PH/s hashrate</span></div>
+                                <div class="dai-metric"><span class="v">Together AI</span><span class="k">discounted inference partnership</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>The most intellectually novel project on this entire map. The cryptographic primitive is peer-reviewed and solves a problem everyone thought impossible: making mining do useful AI work with zero overhead. The Together AI partnership shows it isn't theoretical. The Princeton/Columbia/Hebrew University pedigree puts it in a different credibility class. Watch this one closely.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Omri Weinstein &mdash; PhD Princeton, Associate Professor at Hebrew University (on leave from Columbia). Research focus: complexity lower bounds.</div>
+                            <a class="dai-project-link" href="https://pearlresearch.ai?ref=canonicalcc" target="_blank" rel="noopener">Visit Pearl Research <span class="arr">&rarr;</span></a>
+                        </article>
+
+                        <article class="dai-project">
+                            <div class="dai-project-tags"><span class="dai-tag layer">Novel</span><span class="dai-tag stage">Mainnet</span></div>
+                            <h3 class="dai-project-name"><a href="https://www.allora.network?ref=canonicalcc" target="_blank" rel="noopener" data-tip="Intelligence layer coordinating competing ML models into optimized inferences.">Allora Network</a></h3>
+                            <p class="dai-project-role">Self-improving decentralized intelligence</p>
+                            <p>An "intelligence layer" that coordinates competing ML models. Define an objective (e.g. "predict ETH price in 10 minutes") and the network aggregates outputs from independent models, weighted by historical accuracy &mdash; "a decentralized Kaggle that runs 24/7." Workers submit inferences, Reputers score accuracy, and a meta-learning layer re-weights the ensemble. Self-improving: accurate models earn more, attracting better models.</p>
+                            <div class="dai-metrics">
+                                <div class="dai-metric"><span class="v">692M+</span><span class="k">inferences</span></div>
+                                <div class="dai-metric"><span class="v">288K+</span><span class="k">active workers</span></div>
+                            </div>
+                            <div class="dai-project-pov"><span class="lab">Canonical POV</span><p>Rather than training one model, Allora creates a competitive marketplace where accuracy is the only thing that matters. 692M inferences demonstrate real throughput, and the self-improving dynamic is the kind of network effect that compounds.</p></div>
+                            <div class="dai-project-team"><strong>Team:</strong> Nick Emmons (CEO, ex-Lead Blockchain Engineer at John Hancock, co-founded Upshot). $35M from Polychain, Framework, Blockchain Capital.</div>
+                            <a class="dai-project-link" href="https://www.allora.network?ref=canonicalcc" target="_blank" rel="noopener">Visit Allora <span class="arr">&rarr;</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [12] WHY THIS COULD FAIL -->
+            <section class="dai-scene" id="risks">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[12]</span> Why This Could Fail</div>
+                    <h2 class="dai-scene-h2">The bear case matters as much as the bull case. Here it <em>is</em>.</h2>
+                    <p class="dai-lede">This report maps the opportunity. Intellectual honesty requires mapping the risks with equal rigor. Sophisticated investors should weight these against the thesis.</p>
+
+                    <div class="dai-risk-grid">
+                        <div class="dai-risk"><span class="dai-risk-num">01</span><h4>The subsidy cliff is real and imminent</h4><p>Most networks are propped up by token emissions, not organic demand. Bittensor's inference subnets run at 22:1 to 40:1 emission-to-revenue ratios; the Dec 2025 halving cut emissions in half. Akash took 7 years to reach $1M/quarter organically &mdash; most networks don't have 7 years of runway.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">02</span><h4>Stablecoin infrastructure is a single point of failure</h4><p>The entire agentic-commerce thesis runs on USDC. If Circle faces a bank run, regulatory action, or is forced to freeze addresses, autonomous agents lose their money with no recourse, no FDIC insurance, and no legal personhood to file claims. The 2023 SVB depeg is not ancient history.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">03</span><h4>The facilitator centralization problem</h4><p>x402 relies on "facilitators" to execute gasless transactions. If facilitators are censored, fail, or collude, the protocol halts. This is a centralization risk hiding inside a decentralized protocol &mdash; who runs them, and what happens when they go down?</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">04</span><h4>MEV and frontrunning in agent payments</h4><p>If agents autonomously sign transactions on public chains, they are vulnerable to frontrunning, sandwich attacks, and facilitator griefing. An agent paying for inference via x402 on Base can be MEV'd by a searcher watching the mempool &mdash; a structural vulnerability few discuss.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">05</span><h4>Regulatory kill switches exist</h4><p>The EU AI Act, SEC enforcement, and OFAC sanctions could halt autonomous agent wallets overnight. An agent receiving payment from a sanctioned address triggers compliance obligations no framework currently handles. Whether an AI agent can even be a contractual counterparty is unresolved everywhere.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">06</span><h4>TEE hardware is a shared dependency</h4><p>Five of nine layers depend on Trusted Execution Environments. Intel SGX has been broken repeatedly (Plundervolt, LVI, &AElig;PIC); TDX and NVIDIA confidential computing are newer and untested at scale. One TEE vulnerability would simultaneously compromise Venice, EigenCloud, NEAR, Sahara, Phala, and Nillion.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">07</span><h4>The TradFi response is not passive</h4><p>Visa's Intelligent Commerce and Mastercard's Agent Pay are competitive responses, not endorsements. If they launch closed-loop agent APIs with chargeback protection and enterprise SLAs, crypto-native protocols could lose the enterprise market entirely.</p></div>
+                        <div class="dai-risk"><span class="dai-risk-num">08</span><h4>"Decentralized" often isn't</h4><p>Aethir's revenue comes from SLA contracts requiring centralized coordination. EigenCloud's restaked ETH is concentrated among a few large operators. Many "decentralized" training runs happen across 4-10 affiliated nodes. The gap between thesis and operational reality is often wider than the marketing suggests.</p></div>
+                    </div>
+
+                    <div class="dai-pov">
+                        <span class="dai-pov-label">Canonical POV</span>
+                        <p>The bear case is not that decentralized AI is impossible &mdash; the proof points here show it works. The bear case is that it works at research scale but fails at production scale, or succeeds technically but loses commercially to incumbents with better UX and legal protections. The investors who generate returns here will distinguish projects solving <strong>real bottlenecks</strong> (where centralized alternatives are structurally inadequate) from those solving theoretical problems (where centralized alternatives are merely imperfect). GPU scarcity, privacy mandates, and agent payment rails fall in the first category. Many other use cases fall in the second.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [13] METHODOLOGY -->
+            <section class="dai-method-section" id="methodology">
+                <div class="container mx-auto px-8">
+                    <div class="dai-section-label"><span class="dai-section-num">[13]</span> Methodology</div>
+                    <h2 class="dai-scene-h2">How this <em>was built</em>, and where the data is weakest.</h2>
+
+                    <div class="dai-method-grid">
+                        <div class="dai-method-col">
+                            <h3>Sources &amp; approach</h3>
+                            <ul class="dai-method-list">
+                                <li><span class="dai-method-k">Sources</span><span class="dai-method-v">Project documentation, GitHub, Messari, The Block, CoinDesk, Delphi Digital, arXiv and ePrint papers, CoinGecko, company blogs, primary press releases, founder profiles, academic CVs.</span></li>
+                                <li><span class="dai-method-k">Window</span><span class="dai-method-v">Projects assessed as of May 2026. Metrics are latest available.</span></li>
+                                <li><span class="dai-method-k">Taxonomy</span><span class="dai-method-v">9 stack layers. Confidential Infrastructure (Phala, Nillion) is cross-cutting. Projects may span layers; primary classification used.</span></li>
+                                <li><span class="dai-method-k">Scope</span><span class="dai-method-v">35 projects selected for demonstrated real utility. Hundreds excluded as vapor, forks, or wrapper tokens. <a href="https://blog.canonical.cc">Subscribe</a> for the next update.</span></li>
+                            </ul>
+                        </div>
+                        <div class="dai-method-col">
+                            <h3>Known limitations</h3>
+                            <ul class="dai-method-list">
+                                <li><span class="dai-method-k">Self-reported</span><span class="dai-method-v">Traction metrics are self-reported unless verified by Messari or on-chain data. "Daily active accounts" on testnet may not equate to real users and are trivially gameable (no gas).</span></li>
+                                <li><span class="dai-method-k">Throughput</span><span class="dai-method-v">Claims like 0G's 50 GB/s DA and DisTrO's 10,000x bandwidth reduction are measured under controlled conditions; production performance under adversarial load is unverified.</span></li>
+                                <li><span class="dai-method-k">Revenue</span><span class="dai-method-v">Subsidies make revenue misleading for token-incentivized networks. Aethir's $166M "ARR" is a run-rate projection from one peak quarter; full-year revenue ($128M+) is the cleaner figure used here.</span></li>
+                                <li><span class="dai-method-k">Token prices</span><span class="dai-method-v">Deliberately excluded. This report assesses utility, not capital raised, and does not constitute investment advice. Spot something wrong or missing? <a href="mailto:ai@canonical.cc?subject=Decentralized%20AI%20-%20coverage%20gap">Tell us.</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [14] CTA -->
+            <section class="dai-cta">
+                <div class="container mx-auto px-8">
+                    <div class="dai-cta-grid">
+                        <div>
+                            <div class="dai-section-label dai-section-label-light"><span class="dai-section-num">[14]</span> Talk to Canonical</div>
+                            <h2 class="dai-cta-h2">If you're building at the intersection of AI, distributed systems, and <em>cryptography</em>, we want to hear from you.</h2>
+                            <p class="dai-cta-p"><a href="/#about">Canonical</a> leads early-stage investments in technical teams building at the frontier. SF-based, founder-obsessed, pre-product friendly. These projects are doing things differently from the Silicon Valley mould &mdash; and that's exactly where we look. See our <a href="/portfolio">portfolio</a> and <a href="/#thesis">thesis</a>.</p>
+                        </div>
+                        <div class="dai-cta-actions">
+                            <a href="mailto:ai@canonical.cc?subject=Building%20in%20decentralized%20AI" class="dai-btn"><span>I'm building &rarr; pitch us</span><span class="dai-btn-arrow">&rarr;</span></a>
+                            <a href="/labs/semiconductor-silicon-stack/" class="dai-btn"><span>See the Semiconductor Stack map</span><span class="dai-btn-arrow">&rarr;</span></a>
+                            <a href="https://blog.canonical.cc" target="_blank" rel="noopener noreferrer" class="dai-btn"><span>Subscribe to updates</span><span class="dai-btn-arrow">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footnote disclaimer -->
+            <div class="dai-disclaimer">
+                <div class="container mx-auto px-8">
+                    <p>Built by <a href="https://x.com/ai" target="_blank" rel="noopener noreferrer">Anand Iyer</a> at <a href="/">Canonical</a> &middot; v1.0 &middot; Educational tool. Not investment advice. Data is point-in-time and not exhaustive.</p>
+                </div>
+            </div>
+        </main>
+
+        {% include footer.html %}
+    </div>
+
+    <!-- ============ EXPLORER DATA + INTERACTIVITY ============ -->
+    <script>
+    (function () {
+        // ---- Explorer dataset: all 35 projects, mapped to stack layers. ----
+        var REF = '?ref=canonicalcc';
+        var PROJECTS = [
+            { name: 'Bittensor', layer: 'AI Blockchain', stage: 'Mainnet', dna: 'Google · Academic', innovation: 'Subnet incentive markets for any AI task', url: 'https://bittensor.com' },
+            { name: 'Gensyn', layer: 'Training', stage: 'Mainnet', dna: 'a16z · EF London', innovation: 'Verifiable training (RepOps, Verde)', url: 'https://www.gensyn.ai' },
+            { name: 'Prime Intellect', layer: 'Training', stage: 'Production', dna: 'Aleph Alpha · Founders Fund', innovation: 'OpenDiLoCo, INTELLECT-2 (32B)', url: 'https://www.primeintellect.ai' },
+            { name: 'Nous Research', layer: 'Training', stage: 'Production', dna: 'Paradigm · $1B valuation', innovation: 'Psyche/DisTrO training, Hermes Agent', url: 'https://nousresearch.com' },
+            { name: 'Pluralis', layer: 'Training', stage: 'Research', dna: 'Amazon PhDs · USV', innovation: 'Protocol Learning, unextractable models', url: 'https://pluralis.ai' },
+            { name: 'Venice', layer: 'Inference', stage: 'Production', dna: 'Crypto OG (Voorhees)', innovation: 'E2EE + TEE private AI, 2M users', url: 'https://venice.ai' },
+            { name: 'Exo', layer: 'Inference', stage: 'Open Source', dna: 'Oxford AI PhDs', innovation: 'RDMA distributed inference, 44K stars', url: 'https://www.exolabs.net' },
+            { name: 'Darkbloom', layer: 'Inference', stage: 'Early Mainnet', dna: 'Eigen Labs (Gajesh Naik)', innovation: 'Apple Silicon + EigenCloud verification', url: 'https://www.eigencloud.xyz' },
+            { name: 'Nillion', layer: 'Inference', stage: 'Mainnet (ETH L2)', dna: 'Uber · Hedera · Indiegogo', innovation: 'Blind computation, MPC', url: 'https://nillion.com' },
+            { name: 'Ritual', layer: 'Verification', stage: 'Testnet', dna: 'Polychain · Paradigm', innovation: 'AI precompiles in L1 consensus', url: 'https://ritual.net' },
+            { name: 'OpenGradient', layer: 'Verification', stage: 'TGE', dna: 'Two Sigma · Palantir', innovation: 'PIPE engine, MemSync, 2K models', url: 'https://www.opengradient.ai' },
+            { name: 'EigenCloud', layer: 'Verification', stage: 'Mainnet Alpha', dna: 'UW Professor (Kannan)', innovation: 'Verifiable inference, 100% reproducible (10K runs)', url: 'https://www.eigencloud.xyz' },
+            { name: 'ORA', layer: 'Verification', stage: 'Production', dna: 'Google · TikTok', innovation: 'opML oracle, IMO model tokenization', url: 'https://www.ora.io' },
+            { name: 'Virtuals', layer: 'Agents', stage: 'Production', dna: 'BCG · Imperial', innovation: 'GAME framework, 18K agents, co-ownership', url: 'https://www.virtuals.io' },
+            { name: 'ElizaOS', layer: 'Agents', stage: 'Production', dna: 'Web3 native (Shaw)', innovation: 'Agent OS, 50K agents built', url: 'https://www.elizaos.ai' },
+            { name: 'Sentient', layer: 'Agents', stage: 'Post-TGE', dna: 'Princeton · Polygon', innovation: 'OML protocol, ROMA, $85M seed', url: 'https://www.sentient.xyz' },
+            { name: 'NEAR', layer: 'Agents', stage: 'Production', dna: 'Google AI (Polosukhin)', innovation: 'Chain abstraction, Transformer co-author', url: 'https://near.org' },
+            { name: 'Phala', layer: 'Agents', stage: 'Production', dna: 'Tencent · Didi', innovation: 'TEE infra, 1B tokens/day, Linux Foundation', url: 'https://phala.network' },
+            { name: 'ARC', layer: 'Agents', stage: 'Growth', dna: 'Rust ecosystem', innovation: 'Rust agent framework (Rig), Ryzome', url: 'https://www.arc.fun' },
+            { name: 'Morpheus', layer: 'Agents', stage: 'Production', dna: 'ShapeShift (Voorhees)', innovation: 'Decentralized agent router, fair launch', url: 'https://mor.org' },
+            { name: 'Plastic Labs / Honcho', layer: 'Agents', stage: 'Growth', dna: 'Variant · Mozilla Ventures', innovation: 'Agent memory + user identity, Hermes integration', url: 'https://plasticlabs.ai' },
+            { name: 'x402', layer: 'Commerce', stage: 'Production', dna: 'Coinbase · Cloudflare · Linux Foundation', innovation: 'HTTP-native machine payments, 161M+ txns', url: 'https://www.x402.org' },
+            { name: 'Skyfire', layer: 'Commerce', stage: 'Growth', dna: 'a16z CSX · Coinbase Ventures', innovation: 'KYA agent identity + KYAPay settlement', url: 'https://skyfire.xyz' },
+            { name: 'Sahara', layer: 'Data', stage: 'Testnet', dna: 'USC Professor · Binance', innovation: 'Privacy-preserving data services, 1.4M DAU', url: 'https://saharalabs.ai' },
+            { name: '0G', layer: 'Data', stage: 'Mainnet', dna: 'Bridgewater · MSRA', innovation: '50 GB/s DA, PoRA storage', url: 'https://0g.ai' },
+            { name: 'Vana', layer: 'Data', stage: 'Mainnet', dna: 'MIT · Fed · World Bank', innovation: 'Data DAOs, COLLECTIVE-1 model', url: 'https://www.vana.org' },
+            { name: 'Grass', layer: 'Data', stage: 'Production', dna: 'Polychain · Tribe Capital', innovation: '2.5M scraping nodes, ZK provenance', url: 'https://www.getgrass.io' },
+            { name: 'Arweave / AO', layer: 'Data', stage: 'Mainnet', dna: 'No VC pre-mine', innovation: 'Permanent storage + parallel compute', url: 'https://www.arweave.org' },
+            { name: 'Akash', layer: 'Compute', stage: 'Production', dna: '8-year open-source vet', innovation: 'Reverse-auction GPU market, $1M+ revenue', url: 'https://akash.network' },
+            { name: 'Aethir', layer: 'Compute', stage: 'Production', dna: 'Riot Games · Ericsson', innovation: 'Enterprise GPU cloud, $128M+ revenue', url: 'https://aethir.com' },
+            { name: 'io.net', layer: 'Compute', stage: 'Production', dna: 'Stanford', innovation: '450 petaFLOPS, Ray framework', url: 'https://io.net' },
+            { name: 'Render', layer: 'Compute', stage: 'Production', dna: '25-year graphics pioneer', innovation: '71M frames, AI pivot, Academy Award tech', url: 'https://rendernetwork.com' },
+            { name: 'Livepeer', layer: 'Compute', stage: 'Production', dna: 'Groupon · CMU', innovation: 'Video → AI pivot, 134M min/quarter', url: 'https://livepeer.org' },
+            { name: 'Nosana', layer: 'Compute', stage: 'Mainnet', dna: 'Amsterdam open-source', innovation: 'Solana-native containerized inference', url: 'https://nosana.io' },
+            { name: 'Pearl Research', layer: 'Novel', stage: 'Mainnet', dna: 'Princeton · Columbia · Hebrew U', innovation: 'Proof-of-Useful-Work from MatMul', url: 'https://pearlresearch.ai' },
+            { name: 'Allora', layer: 'Novel', stage: 'Mainnet', dna: 'John Hancock · Upshot', innovation: 'Self-improving model marketplace', url: 'https://www.allora.network' }
+        ];
+
+        var LAYERS = ['All', 'AI Blockchain', 'Training', 'Inference', 'Verification', 'Agents', 'Commerce', 'Data', 'Compute', 'Novel'];
+
+        var filtersEl = document.getElementById('dai-filters');
+        var gridEl = document.getElementById('dai-explorer-grid');
+        var searchEl = document.getElementById('dai-search');
+        var countEl = document.getElementById('dai-count');
+        if (!filtersEl || !gridEl) return;
+
+        var activeLayer = 'All';
+        var query = '';
+
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        // Build filter chips with per-layer counts.
+        LAYERS.forEach(function (layer) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'dai-chip' + (layer === 'All' ? ' active' : '');
+            btn.setAttribute('data-layer', layer);
+            var n = layer === 'All' ? PROJECTS.length : PROJECTS.filter(function (p) { return p.layer === layer; }).length;
+            btn.innerHTML = esc(layer) + '<span class="n">' + n + '</span>';
+            btn.addEventListener('click', function () {
+                activeLayer = layer;
+                Array.prototype.forEach.call(filtersEl.children, function (c) { c.classList.remove('active'); });
+                btn.classList.add('active');
+                render();
+            });
+            filtersEl.appendChild(btn);
+        });
+
+        // Build cards once; toggle visibility on filter.
+        PROJECTS.forEach(function (p, i) {
+            var a = document.createElement('a');
+            a.className = 'dai-xcard';
+            a.href = p.url + REF;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.setAttribute('data-i', i);
+            a.innerHTML =
+                '<div class="dai-xcard-top"><span class="dai-xcard-name">' + esc(p.name) + '</span><span class="dai-xcard-stage">' + esc(p.stage) + '</span></div>' +
+                '<div class="dai-xcard-layer">' + esc(p.layer) + '</div>' +
+                '<p class="dai-xcard-innov">' + esc(p.innovation) + '</p>' +
+                '<div class="dai-xcard-foot"><span class="dai-xcard-dna">' + esc(p.dna) + '</span><span class="dai-xcard-arrow">&rarr;</span></div>';
+            gridEl.appendChild(a);
+        });
+
+        var emptyEl = document.createElement('div');
+        emptyEl.className = 'dai-explorer-empty';
+        emptyEl.textContent = 'No projects match those filters.';
+        emptyEl.hidden = true;
+        gridEl.appendChild(emptyEl);
+
+        function render() {
+            var shown = 0;
+            PROJECTS.forEach(function (p, i) {
+                var card = gridEl.querySelector('.dai-xcard[data-i="' + i + '"]');
+                var matchLayer = activeLayer === 'All' || p.layer === activeLayer;
+                var hay = (p.name + ' ' + p.layer + ' ' + p.stage + ' ' + p.dna + ' ' + p.innovation).toLowerCase();
+                var matchQuery = !query || hay.indexOf(query) !== -1;
+                var visible = matchLayer && matchQuery;
+                card.hidden = !visible;
+                if (visible) shown++;
+            });
+            emptyEl.hidden = shown !== 0;
+            countEl.innerHTML = '<strong>' + shown + '</strong> / ' + PROJECTS.length + ' projects';
+        }
+
+        if (searchEl) {
+            searchEl.addEventListener('input', function () {
+                query = searchEl.value.trim().toLowerCase();
+                render();
+            });
+        }
+
+        render();
+    })();
+    </script>
+
+    <!-- ============ SUB-NAV SCROLLSPY ============ -->
+    <script>
+    (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.dai-subnav-list a'));
+        if (!links.length || !('IntersectionObserver' in window)) return;
+        var byId = {};
+        links.forEach(function (a) {
+            var id = a.getAttribute('href').slice(1);
+            var sec = document.getElementById(id);
+            if (sec) byId[id] = a;
+        });
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    links.forEach(function (l) { l.classList.remove('active'); });
+                    var a = byId[entry.target.id];
+                    if (a) {
+                        a.classList.add('active');
+                        a.scrollIntoView({ block: 'nearest', inline: 'center' });
+                    }
+                }
+            });
+        }, { rootMargin: '-140px 0px -65% 0px', threshold: 0 });
+        Object.keys(byId).forEach(function (id) {
+            var sec = document.getElementById(id);
+            if (sec) observer.observe(sec);
+        });
+    })();
+    </script>
+
+    <!-- ============ CUSTOM TOOLTIP OVERLAY ============ -->
+    <script>
+    (function () {
+        var tip = document.createElement('div');
+        tip.className = 'dai-tooltip';
+        tip.setAttribute('role', 'tooltip');
+        tip.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tip);
+
+        var current = null;
+        var hideTimer = null;
+
+        function show(el, evt) {
+            var text = el.getAttribute('data-tip');
+            if (!text) return;
+            var isLink = el.tagName === 'A' || (el.querySelector && el.querySelector('a'));
+            tip.textContent = text;
+            if (isLink) {
+                var hint = document.createElement('span');
+                hint.className = 'dai-tooltip-hint';
+                hint.textContent = 'click → opens site';
+                tip.appendChild(hint);
+            }
+            tip.classList.add('show');
+            tip.setAttribute('aria-hidden', 'false');
+            current = el;
+            position(evt);
+        }
+
+        function position(evt) {
+            if (!current) return;
+            var pad = 14;
+            var w = tip.offsetWidth;
+            var h = tip.offsetHeight;
+            var x = evt.clientX + pad;
+            var y = evt.clientY + pad;
+            if (x + w > window.innerWidth - 8) x = evt.clientX - w - pad;
+            if (y + h > window.innerHeight - 8) y = evt.clientY - h - pad;
+            if (x < 8) x = 8;
+            if (y < 8) y = 8;
+            tip.style.left = x + 'px';
+            tip.style.top = y + 'px';
+        }
+
+        function hide() {
+            tip.classList.remove('show');
+            tip.setAttribute('aria-hidden', 'true');
+            current = null;
+        }
+
+        document.addEventListener('mouseover', function (e) {
+            var el = e.target.closest ? e.target.closest('[data-tip]') : null;
+            if (!el || el === current) return;
+            if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+            show(el, e);
+        }, true);
+
+        document.addEventListener('mousemove', function (e) {
+            if (!current) return;
+            var el = e.target.closest ? e.target.closest('[data-tip]') : null;
+            if (el && el !== current) {
+                show(el, e);
+            } else if (!el) {
+                hide();
+            } else {
+                position(e);
+            }
+        }, true);
+
+        document.addEventListener('mouseout', function (e) {
+            if (!current) return;
+            var related = e.relatedTarget;
+            var stillIn = related && related.closest && related.closest('[data-tip]');
+            if (!stillIn) {
+                hideTimer = setTimeout(hide, 60);
+            }
+        }, true);
+
+        window.addEventListener('scroll', hide, { passive: true });
+        window.addEventListener('blur', hide);
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: Refresh public market quotes
+
+on:
+  schedule:
+    # 22:00 UTC weekdays — after US market close (16:00 ET / 21:00 GMT, with cushion).
+    # Picks up HKEX overnight too since those markets closed earlier.
+    - cron: '0 22 * * 1-5'
+  workflow_dispatch:  # Manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch quotes from Stooq and update data.json
+        run: node scripts/refresh-quotes.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet physical-ai-robotics/data.json; then
+            echo "No quote changes today."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add physical-ai-robotics/data.json
+          git commit -m "chore(physical-ai): refresh live quotes ($(date -u +%Y-%m-%d))"
+          git push

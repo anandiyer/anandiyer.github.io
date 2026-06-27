@@ -1,0 +1,20 @@
+# Personal Claude Code state — local-only, not for the repo
+.claude/settings.local.json
+.claude/worktrees/
+.claude/static-server.js
+# Shared skills live in their own repo (canonical-claude-skills), cloned in here
+.claude/skills/
+
+# OS junk
+.DS_Store
+
+# Jekyll local build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+.bundle/
+vendor/
+
+# TypeScript incremental build cache
+*.tsbuildinfo

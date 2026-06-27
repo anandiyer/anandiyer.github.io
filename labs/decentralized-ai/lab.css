@@ -1,0 +1,1331 @@
+/* Decentralized AI: The Landscape - lab-specific styles
+   Inherits /css/style.css (navy gradient body, fixed header, footer).
+   Shares the editorial composition of the Semiconductor Stack lab
+   (numbered sections, stack diagram, paper cards, POV blocks, custom
+   tooltip) and extends it with project cards, an interactive filterable
+   explorer, and a landscape map table. Navy gradient background, Aeonik
+   display type, white paper cards with slate ink, orange accents. */
+
+:root {
+    --dai-navy: #1e3a8a;
+    --dai-navy-deep: #162456;
+    --dai-accent: #f97316;        /* orange-500 */
+    --dai-accent-soft: #fdba74;
+    --dai-positive: #15803d;
+    --dai-on-navy-faint: rgba(255, 255, 255, 0.55);
+    --dai-on-navy-soft: rgba(255, 255, 255, 0.75);
+    --dai-on-navy-strong: rgba(255, 255, 255, 0.92);
+    --dai-card-bg: #ffffff;
+    --dai-card-bg-2: #fafafa;
+    --dai-ink: #0a0a0a;
+    --dai-ink-soft: #1f2937;
+    --dai-ink-muted: #475569;
+    --dai-ink-faint: #94a3b8;
+    --dai-rule: rgba(15, 23, 42, 0.08);
+    --dai-rule-strong: rgba(15, 23, 42, 0.16);
+    --dai-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ============ HERO ============ */
+.dai-hero {
+    padding: 8rem 0 3rem;
+    text-align: left;
+}
+
+.dai-hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dai-eyebrow {
+    display: inline-block;
+    font-family: var(--dai-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--dai-accent-soft);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.dai-title {
+    font-size: clamp(2.5rem, 6.5vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+    max-width: 22ch;
+    margin: 0 0 1.5rem;
+}
+.dai-title em {
+    font-style: normal;
+    color: var(--dai-accent-soft);
+    font-weight: 400;
+}
+
+.dai-subtitle {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--dai-on-navy-soft);
+    max-width: 64ch;
+    margin: 0 0 2.5rem;
+}
+.dai-subtitle a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-subtitle a:hover { color: #ffffff; }
+
+.dai-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem 2.5rem;
+    padding-top: 0.75rem;
+    max-width: 64rem;
+}
+.dai-meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+.dai-meta-key {
+    font-family: var(--dai-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--dai-on-navy-faint);
+    text-transform: uppercase;
+}
+.dai-meta-val {
+    font-family: var(--dai-mono);
+    font-size: 0.78rem;
+    color: var(--dai-on-navy-strong);
+    line-height: 1.4;
+}
+
+/* ============ TL;DR STRIP ============ */
+.dai-tldr {
+    padding: 3.5rem 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+}
+.dai-tldr-intro {
+    font-family: var(--dai-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dai-on-navy-faint);
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+.dai-tldr-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+.dai-tldr-item {
+    padding: 0.5rem 0.25rem;
+    border-radius: 0.4rem;
+    transition: transform 0.15s;
+}
+.dai-tldr-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.dai-stat {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.7rem;
+}
+.dai-stat em {
+    font-style: normal;
+    color: var(--dai-accent-soft);
+    font-weight: 400;
+}
+.dai-stat-unit {
+    font-size: 1.5rem;
+    color: var(--dai-on-navy-soft);
+    font-weight: 300;
+    margin-left: 0.1em;
+}
+
+.dai-tldr-label {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--dai-on-navy-soft);
+}
+.dai-tldr-label strong { color: #ffffff; font-weight: 500; }
+
+/* ============ SUB-NAV ============ */
+.dai-subnav {
+    position: sticky;
+    top: 72px;
+    z-index: 40;
+    background: rgba(30, 58, 138, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0;
+}
+.dai-subnav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.dai-subnav-list::-webkit-scrollbar { display: none; }
+.dai-subnav-list li { flex: 0 0 auto; }
+.dai-subnav-list a {
+    display: inline-block;
+    font-family: var(--dai-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dai-on-navy-soft);
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.dai-subnav-list a:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
+.dai-subnav-list a.active { background: rgba(255, 255, 255, 0.12); color: #ffffff; }
+
+/* ============ SCENE BASE ============ */
+.dai-scene {
+    padding: 5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    scroll-margin-top: 130px;
+}
+#stack, #culture, #training, #inference, #verification, #agents, #data, #compute, #commerce, #novel, #explorer, #map, #risks, #methodology { scroll-margin-top: 130px; }
+
+.dai-section-label {
+    font-family: var(--dai-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--dai-accent-soft);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+.dai-section-num { color: var(--dai-on-navy-faint); margin-right: 0.4rem; }
+
+.dai-scene-h2 {
+    font-size: clamp(1.85rem, 3.4vw, 2.85rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 0 1.4rem;
+    max-width: 30ch;
+}
+.dai-scene-h2 em {
+    font-style: normal;
+    color: var(--dai-accent-soft);
+    font-weight: 400;
+}
+
+.dai-lede {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--dai-on-navy-soft);
+    margin: 0 0 1.5rem;
+    max-width: 72ch;
+}
+.dai-lede a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-lede a:hover { color: #ffffff; }
+
+/* ============ DIAGRAM CARD ============ */
+.dai-diagram-wrap {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+.dai-diagram-wrap svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1080px;
+    height: auto;
+}
+.dai-diagram-legend {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+.dai-diagram-legend .swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+}
+
+/* ============ POV BLOCK (on navy) ============ */
+.dai-pov {
+    margin: 2rem 0 0;
+    padding: 1.5rem 1.6rem;
+    border-left: 3px solid var(--dai-accent);
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.06), transparent 80%);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.dai-pov-label {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.7rem;
+    display: block;
+    font-weight: 500;
+}
+.dai-pov p {
+    color: var(--dai-on-navy-strong);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0;
+}
+.dai-pov p + p { margin-top: 0.65rem; }
+.dai-pov p strong { color: #ffffff; font-weight: 600; }
+.dai-pov a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-pov a:hover { color: #ffffff; }
+
+/* ============ LAYER PANELS (incumbent vs challenger) ============ */
+.dai-layer {
+    margin-top: 2rem;
+    padding: 1.75rem;
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dai-ink);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.dai-layer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.dai-layer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--dai-rule);
+}
+.dai-layer-head h3 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--dai-ink);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+.dai-layer-tag {
+    font-family: var(--dai-mono);
+    font-size: 0.68rem;
+    color: var(--dai-ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.dai-layer-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.dai-layer-col h4 {
+    font-family: var(--dai-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--dai-ink-faint);
+    margin: 0 0 0.85rem;
+    font-weight: 500;
+}
+.dai-layer-col.challenger h4 { color: var(--dai-accent); }
+.dai-layer-col p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--dai-ink-muted);
+    margin: 0 0 0.7rem;
+}
+.dai-layer-col p:last-child { margin-bottom: 0; }
+.dai-layer-col p strong { color: var(--dai-ink); font-weight: 600; }
+.dai-layer-col p a {
+    color: var(--dai-navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(30, 58, 138, 0.35);
+    transition: color 0.15s, text-decoration-color 0.15s;
+}
+.dai-layer-col p a:hover { color: var(--dai-accent); text-decoration-color: var(--dai-accent); }
+
+.dai-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.9rem;
+}
+.dai-pill {
+    font-family: var(--dai-mono);
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--dai-rule-strong);
+    border-radius: 999px;
+    color: var(--dai-ink-soft);
+    background: rgba(15, 23, 42, 0.02);
+    letter-spacing: 0.02em;
+    transition: background 0.15s, border-color 0.15s;
+}
+.dai-pill[data-tip] { cursor: pointer; }
+.dai-pill[data-tip]:hover { background: rgba(15, 23, 42, 0.06); border-color: var(--dai-ink-faint); }
+.dai-layer-col.challenger .dai-pill[data-tip]:hover {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: var(--dai-accent);
+}
+strong[data-tip] {
+    cursor: pointer;
+    text-decoration: underline dotted rgba(30, 58, 138, 0.4);
+    text-underline-offset: 3px;
+}
+strong[data-tip]:hover { text-decoration-color: var(--dai-accent); }
+
+/* ============ SVG DIAGRAM LINKS ============ */
+.dai-svg-link { cursor: pointer; transition: filter 0.15s ease, transform 0.15s ease; transform-box: fill-box; transform-origin: center; }
+.dai-svg-link:hover { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6)); }
+.dai-svg-link:hover rect { stroke: var(--dai-accent); stroke-width: 2.5px; }
+.dai-svg-link:focus { outline: none; }
+.dai-svg-link:focus-visible rect { stroke: var(--dai-accent); stroke-width: 3px; }
+
+/* ============ CUSTOM TOOLTIP OVERLAY ============ */
+.dai-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(10, 14, 26, 0.97);
+    color: #ffffff;
+    border: 1px solid rgba(249, 115, 22, 0.45);
+    border-radius: 0.45rem;
+    padding: 0.65rem 0.85rem;
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    max-width: 320px;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.12s ease;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.005em;
+}
+.dai-tooltip.show { opacity: 1; visibility: visible; }
+.dai-tooltip-hint {
+    display: block;
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: var(--dai-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dai-accent-soft);
+}
+.dai-layer-col.challenger .dai-pill {
+    border-color: rgba(249, 115, 22, 0.4);
+    background: rgba(249, 115, 22, 0.06);
+    color: #b45309;
+}
+.dai-pill.star {
+    background: rgba(249, 115, 22, 0.18);
+    border-color: var(--dai-accent);
+    color: #9a3412;
+    font-weight: 600;
+}
+.dai-layer-col.incumbent .dai-pill.star {
+    background: rgba(30, 58, 138, 0.12);
+    border-color: var(--dai-navy);
+    color: var(--dai-navy);
+}
+
+.dai-layer-note {
+    margin-top: 0.9rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--dai-rule);
+    font-size: 0.82rem;
+    color: var(--dai-ink-faint);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* ============ ADJACENT BLOCK ============ */
+.dai-adjacent {
+    margin-top: 2rem;
+    padding: 1.75rem;
+    background: var(--dai-card-bg);
+    border: 1px dashed var(--dai-rule-strong);
+    border-radius: 0.75rem;
+    color: var(--dai-ink);
+    position: relative;
+}
+.dai-adjacent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.75rem;
+    width: 60px;
+    height: 2px;
+    background: var(--dai-ink-faint);
+    border-radius: 0 0 4px 4px;
+}
+.dai-adjacent-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--dai-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--dai-ink-faint);
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+}
+.dai-adjacent-marker .num { color: var(--dai-ink-muted); font-size: 0.9rem; }
+.dai-adjacent h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--dai-ink);
+    margin: 0 0 0.7rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+.dai-adjacent h3 em { font-style: italic; color: var(--dai-ink-muted); font-weight: 400; }
+.dai-adjacent > p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--dai-ink-muted);
+    margin-bottom: 1.25rem;
+    max-width: 76ch;
+}
+.dai-adjacent > p a { color: var(--dai-navy); text-decoration: underline; text-underline-offset: 2px; }
+.dai-adjacent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+}
+.dai-adjacent-cell {
+    padding: 1rem 1.1rem;
+    background: var(--dai-card-bg-2);
+    border-radius: 0.5rem;
+    border: 1px solid var(--dai-rule);
+}
+.dai-adjacent-cell .dai-pill {
+    border-color: var(--dai-rule-strong);
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--dai-ink-soft);
+}
+.dai-adjacent-cell p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--dai-ink-muted);
+    margin: 0.6rem 0 0;
+}
+.dai-adjacent-cell p strong { color: var(--dai-ink); font-weight: 600; }
+.dai-adjacent-cell p a { color: var(--dai-navy); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ============ TIER GRID ============ */
+.dai-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+}
+.dai-tier {
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    padding: 1.6rem 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dai-ink);
+    transition: transform 0.18s;
+}
+.dai-tier:hover { transform: translateY(-3px); }
+.dai-tier-num {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+.dai-tier h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dai-ink);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+}
+.dai-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dai-tier li {
+    font-size: 0.88rem;
+    color: var(--dai-ink-muted);
+    line-height: 1.5;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--dai-rule);
+}
+.dai-tier li:last-child { border-bottom: none; }
+.dai-tier li strong { color: var(--dai-ink); font-weight: 600; }
+.dai-tier li a {
+    color: var(--dai-navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(30, 58, 138, 0.35);
+}
+.dai-tier li a:hover { color: var(--dai-accent); text-decoration-color: var(--dai-accent); }
+
+/* ============ BENCHMARKS ============ */
+.dai-benchmarks {
+    margin-top: 2rem;
+    padding: 1.6rem 1.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 0.75rem;
+}
+.dai-benchmarks h4 {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+.dai-benchmarks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dai-benchmarks li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.92rem;
+    color: var(--dai-on-navy-soft);
+    line-height: 1.55;
+    position: relative;
+    padding-left: 1.4rem;
+}
+.dai-benchmarks li:last-child { border-bottom: none; }
+.dai-benchmarks li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--dai-accent);
+    font-family: var(--dai-mono);
+}
+.dai-benchmarks li strong { color: #ffffff; font-weight: 500; }
+.dai-benchmarks li a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-benchmarks li a:hover { color: #ffffff; }
+
+/* ============ METHODOLOGY ============ */
+.dai-method-section { padding: 5rem 0; }
+.dai-method-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.dai-method-col h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+}
+.dai-method-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.dai-method-list li {
+    padding: 0.85rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    gap: 1.2rem;
+}
+.dai-method-list li:first-child { border-top: none; }
+.dai-method-k {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-on-navy-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    min-width: 8rem;
+    padding-top: 0.2rem;
+    flex-shrink: 0;
+}
+.dai-method-v {
+    color: var(--dai-on-navy-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+.dai-method-v a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-method-v a:hover { color: #ffffff; }
+.dai-method-v strong { color: #ffffff; font-weight: 500; }
+
+/* ============ CTA ============ */
+.dai-cta {
+    padding: 4.5rem 0;
+    background: rgba(0, 0, 0, 0.18);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.dai-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.dai-section-label-light { color: rgba(255, 255, 255, 0.55) !important; }
+.dai-section-label-light .dai-section-num { color: rgba(255, 255, 255, 0.3); }
+.dai-cta-h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 0 1.25rem;
+}
+.dai-cta-h2 em { font-style: normal; color: var(--dai-accent-soft); font-weight: 400; }
+.dai-cta-p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dai-on-navy-soft);
+    margin: 0;
+}
+.dai-cta-p a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-cta-p a:hover { color: #ffffff; }
+.dai-cta-actions { display: flex; flex-direction: column; gap: 0.7rem; }
+.dai-btn {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.05rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-family: var(--dai-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.15s;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+}
+.dai-btn:hover {
+    background: #ffffff;
+    color: var(--dai-navy);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+.dai-btn-arrow {
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+    font-size: 1.15rem;
+    transition: transform 0.2s;
+}
+.dai-btn:hover .dai-btn-arrow { transform: translateX(4px); }
+
+/* ============ CROSS-LAB LINK STRIP ============ */
+.dai-crosslink {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    font-family: var(--dai-mono);
+    font-size: 0.78rem;
+    color: var(--dai-on-navy-soft);
+    line-height: 1.5;
+}
+.dai-crosslink strong {
+    color: var(--dai-accent-soft);
+    font-weight: 500;
+    margin-right: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.68rem;
+}
+.dai-crosslink a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+.dai-crosslink a:hover { color: var(--dai-accent-soft); text-decoration-color: var(--dai-accent-soft); }
+
+/* ============ DISCLAIMER ============ */
+.dai-disclaimer { padding: 1.5rem 0 0.5rem; }
+.dai-disclaimer p {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-on-navy-faint);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+.dai-disclaimer a {
+    color: var(--dai-accent-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.dai-disclaimer a:hover { color: #ffffff; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+    .dai-tldr-grid { grid-template-columns: repeat(2, 1fr); }
+    .dai-meta { grid-template-columns: repeat(2, 1fr); }
+    .dai-tiers { grid-template-columns: 1fr; }
+    .dai-method-grid, .dai-cta-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .dai-scene, .dai-method-section { padding: 3.5rem 0; }
+    .dai-hero { padding: 6rem 0 2rem; }
+    .dai-layer-body { grid-template-columns: 1fr; gap: 1.4rem; }
+    .dai-adjacent-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .dai-tldr-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .dai-meta { grid-template-columns: 1fr; gap: 1rem; }
+    .dai-stat { font-size: 2.4rem; }
+    .dai-subnav { top: 60px; }
+    .dai-layer { padding: 1.4rem; }
+    .dai-tier { padding: 1.25rem; }
+    .dai-diagram-wrap { padding: 1rem; }
+    .dai-layer-head { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+}
+
+#header.scrolled ~ main .dai-subnav { background: rgba(30, 58, 138, 0.95); }
+
+/* ============================================================
+   DECENTRALIZED-AI EXTENSIONS
+   Project cards, culture grid, interactive explorer, risk cards.
+   ============================================================ */
+
+/* ---- Section intro helpers ---- */
+.dai-layers-intro { /* tightens spacing when a layer table follows the lede */ }
+
+/* ---- Stack mapping table inside [01] ---- */
+.dai-map-strip {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.dai-map-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--dai-card-bg);
+    color: var(--dai-ink);
+    font-size: 0.9rem;
+    min-width: 720px;
+}
+.dai-map-table thead th {
+    font-family: var(--dai-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dai-ink-faint);
+    text-align: left;
+    padding: 0.95rem 1.1rem;
+    border-bottom: 1px solid var(--dai-rule-strong);
+    background: var(--dai-card-bg-2);
+    white-space: nowrap;
+}
+.dai-map-table tbody td {
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--dai-rule);
+    vertical-align: top;
+    line-height: 1.5;
+    color: var(--dai-ink-muted);
+}
+.dai-map-table tbody tr:last-child td { border-bottom: none; }
+.dai-map-table tbody tr:hover td { background: rgba(249, 115, 22, 0.04); }
+.dai-map-table td.dai-map-layer {
+    font-weight: 600;
+    color: var(--dai-ink);
+    white-space: nowrap;
+}
+.dai-map-table td.dai-map-layer span {
+    display: block;
+    font-family: var(--dai-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dai-ink-faint);
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+.dai-map-table .dai-map-cell-centralized { color: var(--dai-ink-faint); }
+.dai-map-table a {
+    color: var(--dai-navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(30, 58, 138, 0.35);
+}
+.dai-map-table a:hover { color: var(--dai-accent); text-decoration-color: var(--dai-accent); }
+
+/* ---- Culture / "why different" grid [02] ---- */
+.dai-culture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+}
+.dai-culture-card {
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    padding: 1.6rem 1.6rem 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dai-ink);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.dai-culture-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.dai-culture-card h3 {
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--dai-ink);
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+.dai-culture-card h3 em { font-style: normal; color: var(--dai-accent); }
+.dai-culture-card p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--dai-ink-muted);
+    margin: 0;
+}
+.dai-culture-card p strong { color: var(--dai-ink); font-weight: 600; }
+.dai-culture-card p a, .dai-project p a {
+    color: var(--dai-navy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(30, 58, 138, 0.35);
+    transition: color 0.15s, text-decoration-color 0.15s;
+}
+.dai-culture-card p a:hover, .dai-project p a:hover { color: var(--dai-accent); text-decoration-color: var(--dai-accent); }
+
+/* ---- Project cards (category sections) ---- */
+.dai-project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+.dai-project {
+    display: flex;
+    flex-direction: column;
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    padding: 1.6rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dai-ink);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.dai-project:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.dai-project.dai-marquee { grid-column: 1 / -1; }
+.dai-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+}
+.dai-tag {
+    font-family: var(--dai-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--dai-rule-strong);
+    color: var(--dai-ink-faint);
+    background: rgba(15, 23, 42, 0.02);
+}
+.dai-tag.layer { color: var(--dai-navy); border-color: rgba(30, 58, 138, 0.35); background: rgba(30, 58, 138, 0.06); }
+.dai-tag.stage { color: var(--dai-accent); border-color: rgba(249, 115, 22, 0.4); background: rgba(249, 115, 22, 0.06); }
+.dai-project-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.15rem;
+    line-height: 1.15;
+}
+.dai-project-name a {
+    color: var(--dai-ink);
+    text-decoration: none;
+    background-image: linear-gradient(var(--dai-accent), var(--dai-accent));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 0.2s, color 0.15s;
+}
+.dai-project-name a:hover { color: var(--dai-accent); background-size: 100% 2px; }
+.dai-project-role {
+    font-size: 0.8rem;
+    color: var(--dai-ink-faint);
+    font-style: italic;
+    margin: 0 0 0.9rem;
+    line-height: 1.4;
+}
+.dai-project p {
+    font-size: 0.9rem;
+    line-height: 1.58;
+    color: var(--dai-ink-muted);
+    margin: 0 0 0.85rem;
+}
+.dai-project p strong { color: var(--dai-ink); font-weight: 600; }
+.dai-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 0.95rem;
+}
+.dai-metric {
+    flex: 1 1 auto;
+    min-width: 90px;
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.45rem;
+    background: var(--dai-card-bg-2);
+    border: 1px solid var(--dai-rule);
+}
+.dai-metric .v {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dai-navy);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+.dai-metric .k {
+    display: block;
+    font-family: var(--dai-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dai-ink-faint);
+    margin-top: 0.2rem;
+    line-height: 1.3;
+}
+.dai-project-team {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--dai-ink-muted);
+    padding-top: 0.85rem;
+    margin-top: 0.2rem;
+    border-top: 1px dashed var(--dai-rule);
+}
+.dai-project-team a { color: var(--dai-navy); text-decoration: underline; text-underline-offset: 2px; }
+.dai-project-team strong { color: var(--dai-ink-soft); font-weight: 600; }
+.dai-project-pov {
+    margin-top: 0.85rem;
+    padding: 0.85rem 0.95rem;
+    border-left: 3px solid var(--dai-accent);
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.07), transparent 85%);
+    border-radius: 0 0.4rem 0.4rem 0;
+}
+.dai-project-pov .lab {
+    font-family: var(--dai-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dai-accent);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+.dai-project-pov p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--dai-ink-soft);
+    margin: 0;
+}
+.dai-project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.95rem;
+    font-family: var(--dai-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dai-navy);
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.15s, color 0.15s;
+}
+.dai-project-link:hover { color: var(--dai-accent); gap: 0.65rem; }
+.dai-project-link .arr { font-family: 'Aeonik Regular', system-ui, sans-serif; }
+
+/* ---- Supporting-projects sub-grid (smaller cards) ---- */
+.dai-support {
+    margin-top: 1.2rem;
+    padding: 1.5rem 1.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 0.75rem;
+}
+.dai-support-label {
+    font-family: var(--dai-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dai-on-navy-faint);
+    margin-bottom: 1rem;
+    display: block;
+}
+.dai-support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+}
+.dai-support-item {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    color: var(--dai-on-navy-soft);
+}
+.dai-support-item strong { color: #ffffff; font-weight: 600; }
+.dai-support-item a { color: var(--dai-accent-soft); text-decoration: underline; text-underline-offset: 3px; }
+.dai-support-item a:hover { color: #ffffff; }
+
+/* ---- Interactive Explorer ---- */
+.dai-explorer-wrap {
+    margin-top: 2.5rem;
+    padding: 1.75rem;
+    background: var(--dai-card-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: var(--dai-ink);
+}
+.dai-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin-bottom: 1.1rem;
+}
+.dai-chip {
+    font-family: var(--dai-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--dai-rule-strong);
+    background: rgba(15, 23, 42, 0.02);
+    color: var(--dai-ink-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+.dai-chip:hover { border-color: var(--dai-ink-faint); background: rgba(15, 23, 42, 0.05); }
+.dai-chip.active {
+    background: var(--dai-navy);
+    border-color: var(--dai-navy);
+    color: #ffffff;
+}
+.dai-chip .n { opacity: 0.55; margin-left: 0.3rem; font-size: 0.62rem; }
+.dai-search-row {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+.dai-search {
+    flex: 1 1 240px;
+    font-family: 'Aeonik Regular', system-ui, sans-serif;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--dai-rule-strong);
+    border-radius: 0.5rem;
+    color: var(--dai-ink);
+    background: var(--dai-card-bg-2);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.dai-search:focus {
+    outline: none;
+    border-color: var(--dai-navy);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+}
+.dai-search::placeholder { color: var(--dai-ink-faint); }
+.dai-explorer-count {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--dai-ink-faint);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.dai-explorer-count strong { color: var(--dai-accent); font-weight: 600; }
+.dai-explorer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+}
+.dai-xcard {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem 1.05rem;
+    background: var(--dai-card-bg-2);
+    border: 1px solid var(--dai-rule);
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: var(--dai-ink);
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.dai-xcard:hover {
+    transform: translateY(-2px);
+    border-color: var(--dai-accent);
+    box-shadow: 0 12px 26px -12px rgba(0, 0, 0, 0.3);
+}
+.dai-xcard[hidden] { display: none; }
+.dai-xcard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+}
+.dai-xcard-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dai-ink);
+    letter-spacing: -0.01em;
+}
+.dai-xcard-stage {
+    font-family: var(--dai-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dai-accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.dai-xcard-layer {
+    font-family: var(--dai-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dai-navy);
+    margin-bottom: 0.5rem;
+}
+.dai-xcard-innov {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--dai-ink-muted);
+    margin: 0 0 0.6rem;
+}
+.dai-xcard-foot {
+    margin-top: auto;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--dai-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+.dai-xcard-dna {
+    font-family: var(--dai-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    color: var(--dai-ink-faint);
+    text-transform: uppercase;
+}
+.dai-xcard-arrow {
+    font-size: 0.85rem;
+    color: var(--dai-ink-faint);
+    transition: transform 0.15s, color 0.15s;
+}
+.dai-xcard:hover .dai-xcard-arrow { color: var(--dai-accent); transform: translateX(3px); }
+.dai-explorer-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--dai-ink-faint);
+    font-size: 0.9rem;
+}
+
+/* ---- Risk cards [14] (on navy) ---- */
+.dai-risk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+.dai-risk {
+    padding: 1.3rem 1.4rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.6rem;
+    transition: background 0.15s, border-color 0.15s;
+}
+.dai-risk:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(249, 115, 22, 0.3); }
+.dai-risk-num {
+    font-family: var(--dai-mono);
+    font-size: 0.7rem;
+    color: var(--dai-accent);
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+.dai-risk h4 {
+    font-size: 1.02rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0.4rem 0 0.5rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+.dai-risk p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--dai-on-navy-soft);
+    margin: 0;
+}
+
+/* ---- Stack diagram link tweaks already inherited as .dai-svg-link ---- */
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+    .dai-project-grid,
+    .dai-culture-grid,
+    .dai-support-grid,
+    .dai-risk-grid { grid-template-columns: 1fr; }
+    .dai-explorer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .dai-explorer-grid { grid-template-columns: 1fr; }
+    .dai-explorer-wrap { padding: 1.25rem; }
+    .dai-project { padding: 1.3rem; }
+}

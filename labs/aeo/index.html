@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canonical AEO Readiness Check · Can AI find your company?</title>
+    <meta
+      name="description"
+      content="Paste your URL. Get an AEO readiness score, see what answer engines can actually read, and get the exact code to fix what's broken. A Canonical Labs tool."
+    />
+    <link rel="canonical" href="https://www.canonical.cc/labs/aeo/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.canonical.cc/labs/aeo/" />
+    <meta property="og:title" content="Canonical AEO Readiness Check · Can AI find your company?" />
+    <meta property="og:description" content="Paste your URL. Get an AEO readiness score, see what answer engines can actually read, and get the exact code to fix what's broken." />
+    <meta property="og:image" content="https://www.canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.canonical.cc/labs/aeo/" />
+    <meta property="twitter:title" content="Canonical AEO Readiness Check · Can AI find your company?" />
+    <meta property="twitter:description" content="Paste your URL. Get an AEO readiness score, see what answer engines can actually read, and get the exact code to fix what's broken." />
+    <meta property="twitter:image" content="https://www.canonical.cc/images/site-logo.png" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular"
+    />
+    <!-- Shared canonical.cc stylesheet: carries the global header, footer,
+         nav-dropdown and layout utilities so this lab matches the site exactly. -->
+    <link rel="stylesheet" href="/css/style.css?v=20260525a" />
+    <link rel="stylesheet" href="/css/lab-share.css?v=20260525a" />
+    <!-- Lab-specific styles load after, so they win on any overlap. -->
+    <link rel="stylesheet" href="style.css?v=20260808b" />
+  </head>
+  <body>
+    <!-- Shared canonical.cc header (verbatim markup + global stylesheet classes). -->
+    <header id="header" class="fixed top-0 w-full bg-transparent z-50 transition-all duration-200">
+      <div class="container mx-auto px-8 py-8">
+        <div class="flex items-center justify-between">
+          <a href="/" class="logo-link">
+            <img src="/images/logo-rectangle-trans-short.svg" alt="Canonical" class="h-8 w-auto" />
+          </a>
+          <nav class="hidden md:flex items-center space-x-10">
+            <a href="/#about" class="nav-link">ABOUT</a>
+            <a href="https://blog.canonical.cc" class="nav-link">BLOG</a>
+            <a href="/#thesis" class="nav-link">THESIS</a>
+            <a href="/portfolio" class="nav-link">PORTFOLIO</a>
+            <div class="nav-dropdown">
+              <a href="/labs/" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">LABS</a>
+              <div class="nav-dropdown-menu" role="menu">
+                <a href="/labs/dilutionlab/" class="nav-dropdown-item" role="menuitem">Dilution Lab</a>
+                <a href="/labs/fundmodeler/" class="nav-dropdown-item" role="menuitem">Fund Modeler</a>
+                <a href="/labs/power-law/" class="nav-dropdown-item" role="menuitem">Power Law Lab</a>
+                <a href="/physical-ai-robotics/" class="nav-dropdown-item" role="menuitem">Physical AI &amp; Robotics</a>
+                <a href="/labs/semiconductor-silicon-stack/" class="nav-dropdown-item" role="menuitem">Semiconductor Stack</a>
+                <a href="/labs/lookalike/" class="nav-dropdown-item" role="menuitem">Lookalike Finder</a>
+                <a href="/labs/capital-call-planner/" class="nav-dropdown-item" role="menuitem">Capital Call Planner</a>
+                <a href="/labs/aeo/" class="nav-dropdown-item" role="menuitem">AEO Readiness</a>
+              </div>
+            </div>
+            <a href="/#team" class="nav-link">TEAM</a>
+          </nav>
+          <button class="nav-menu-toggle md:hidden" type="button" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <nav class="nav-mobile" id="nav-mobile" hidden>
+          <a href="/#about" class="nav-link">ABOUT</a>
+          <a href="https://blog.canonical.cc" class="nav-link">BLOG</a>
+          <a href="/#thesis" class="nav-link">THESIS</a>
+          <a href="/portfolio" class="nav-link">PORTFOLIO</a>
+          <a href="/labs/" class="nav-link">LABS</a>
+          <a href="/#team" class="nav-link">TEAM</a>
+        </nav>
+      </div>
+    </header>
+
+    <header class="hero">
+      <span class="lab-eyebrow">CANONICAL LABS · AEO READINESS</span>
+      <h1>Can AI find you?</h1>
+      <p>
+        Paste your URL. We audit what answer engines can actually read and hand
+        you the exact code to fix what's broken.
+      </p>
+      <div data-lab-share data-github-path="labs/aeo"></div>
+    </header>
+
+    <section class="search">
+      <div class="search-row">
+        <input
+          id="input"
+          type="text"
+          placeholder="https://yourcompany.com"
+          autocomplete="off"
+          spellcheck="false"
+          autocapitalize="off"
+        />
+        <button class="btn" id="go"><span class="btn-spinner"></span><span id="go-label">Check my AEO →</span></button>
+      </div>
+      <div class="search-hint">
+        <span id="hint">Crawler access, structured data and agent-readiness — checked, not guessed.</span>
+        <span class="quota" id="quota"></span>
+      </div>
+    </section>
+
+    <!-- run stage -->
+    <section class="stage is-hidden" id="stage">
+      <div class="stepper" id="stepper"></div>
+      <div class="run-status" id="run-status">
+        <span class="spinner" id="spinner"></span>
+        <span class="status-text" id="status"></span>
+      </div>
+
+      <!-- Shown when the crawl succeeded but something about it needs flagging
+           (a JS-only shell, a redirect to a different host, a thin page). -->
+      <div class="anchor-warning is-hidden" id="audit-warning">
+        <div class="anchor-warning-body">
+          <b id="audit-warning-title">Heads up.</b>
+          <span id="audit-warning-msg"></span>
+        </div>
+      </div>
+
+      <!-- score card -->
+      <div class="card score-card is-hidden" id="score-card">
+        <div class="score-head">
+          <div class="score-id">
+            <h2 class="source-name" id="site-name"></h2>
+            <p class="source-sub" id="site-sub"></p>
+          </div>
+          <div class="score-big">
+            <div class="score-ring">
+              <svg viewBox="0 0 76 76">
+                <circle class="ring-bg" cx="38" cy="38" r="33" stroke-width="7" />
+                <circle class="ring-fg" id="ring-fg" cx="38" cy="38" r="33" stroke-width="7"
+                        stroke-dasharray="207.35" stroke-dashoffset="207.35" />
+              </svg>
+              <div class="score-num" id="score-num">–</div>
+            </div>
+            <span class="grade-band" id="grade-band"></span>
+          </div>
+        </div>
+
+        <p class="label">Where the points went</p>
+        <div class="pillars" id="pillars"></div>
+        <p class="not-measured is-hidden" id="not-measured"></p>
+
+        <div class="source-actions">
+          <div class="fb" id="fb"></div>
+          <button class="wrong-person is-hidden" type="button" id="rescan">Re-run this scan →</button>
+        </div>
+      </div>
+
+      <!-- engine grid -->
+      <p class="section-label is-hidden" id="engines-label">What each engine says about you</p>
+      <div class="engines" id="engines"></div>
+      <p class="disclosure is-hidden" id="disclosure"></p>
+
+      <!-- the questions we asked -->
+      <p class="section-label is-hidden" id="queries-label"></p>
+      <div class="card queries-card is-hidden" id="queries-card">
+        <div class="chips" id="query-chips"></div>
+        <p class="queries-note" id="queries-note"></p>
+      </div>
+
+      <!-- fix list -->
+      <h2 class="results-title is-hidden" id="fixes-title"></h2>
+      <div class="fixes" id="fixes"></div>
+
+      <!-- who got cited instead -->
+      <div class="card also-cited is-hidden" id="also-cited">
+        <p class="label">Who got cited instead</p>
+        <p class="also-body" id="also-body"></p>
+        <div class="chips" id="also-chips"></div>
+      </div>
+    </section>
+
+    <!-- notices (errors / rate limit) -->
+    <div class="notice is-hidden" id="notice"></div>
+
+    <!-- methodology -->
+    <section class="method">
+      <h2>How it works</h2>
+      <p class="method-sub">Most of this score is deterministic. We check, we don't guess.</p>
+      <div class="method-steps">
+        <div class="method-step"><span class="method-num">01</span><div>
+          <h3>Crawl</h3>
+          <p>Fetch up to 10 pages the way an answer-engine crawler does — no JavaScript — plus <code>robots.txt</code>, your sitemap and the well-known paths agents look for.</p></div></div>
+        <div class="method-step"><span class="method-num">02</span><div>
+          <h3>Technical audit</h3>
+          <p>Bot allowlists, schema.org coverage, heading structure, render-without-JS, <code>llms.txt</code>, Content Signals. Pure checks — no model involved, so the same site scores the same twice.</p></div></div>
+        <div class="method-step"><span class="method-num">03</span><div>
+          <h3>Score</h3>
+          <p>Five pillars, 100 points. Anything we couldn't measure is excluded from the total and named, rather than quietly counted as zero.</p></div></div>
+        <div class="method-step"><span class="method-num">04</span><div>
+          <h3>Write the fixes</h3>
+          <p>Generate the real artifact for each gap — the JSON-LD, the <code>llms.txt</code>, the <code>robots.txt</code> diff — built only from content we actually read on your site. Anything we can't source comes back as an obvious placeholder instead of a guess.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Shared canonical.cc footer (verbatim markup + global stylesheet classes). -->
+    <footer class="footer">
+      <div class="container mx-auto px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="footer-text">&copy; 2025 Canonical. All rights reserved.</p>
+          <div class="flex items-center space-x-6 mt-4 md:mt-0">
+            <a href="https://x.com/canonicalcc" target="_blank" rel="noopener noreferrer" class="footer-link">Canonical on X</a>
+            <a href="https://blog.canonical.cc" target="_blank" rel="noopener noreferrer" class="footer-link">Canonical on Substack</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Minimal mobile-nav toggle (the shared site script is home-page-specific).
+      (function () {
+        var t = document.getElementById("navToggle"),
+          m = document.getElementById("nav-mobile");
+        if (!t || !m) return;
+        t.addEventListener("click", function () {
+          var open = m.hasAttribute("hidden");
+          if (open) m.removeAttribute("hidden");
+          else m.setAttribute("hidden", "");
+          t.setAttribute("aria-expanded", String(open));
+        });
+      })();
+    </script>
+    <script src="/js/lab-share.js?v=20260525a"></script>
+    <script src="app.js?v=20260808b"></script>
+  </body>
+</html>

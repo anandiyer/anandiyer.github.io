@@ -44,12 +44,13 @@
       "@type": "Organization",
       "name": "Canonical",
       "description": "Canonical writes $500K–$1.5M first checks into deeply technical, pre-product founders building the infrastructure of a post-AGI world.",
-      "url": "",
-      "logo": "/images/site-logo.png",
+      "url": "https://canonical.cc",
+      "logo": "https://canonical.cc/images/site-logo.png",
       "sameAs": [
-        "https://x.com/canonicalcc"
+        "https://x.com/canonicalcc",
+        "https://blog.canonical.cc"
       ],
-      "@id": "",
+      "@id": "https://canonical.cc/#organization",
       "foundingDate": "2022",
       "industry": "Venture Capital",
       "location": {
@@ -68,7 +69,37 @@
       ]
     }
     </script>
+
+    <!-- What Canonical actually offers, in machine-readable form. Figures and
+         wording are taken from /faqs so the schema and the page agree. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://canonical.cc/#service",
+      "serviceType": "Early-stage venture capital investment",
+      "name": "Seed and pre-seed investment in frontier infrastructure",
+      "description": "Canonical writes $500K\u2013$1.5M first checks into deeply technical, often pre-product founding teams building the infrastructure of a post-AGI world \u2014 compute, data, agents, cryptographic coordination, robotics, silicon, and the rails for how value moves.",
+      "provider": { "@id": "https://canonical.cc/#organization" },
+      "areaServed": "Worldwide",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Technical, often pre-product founding teams raising a first round"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": 500000,
+          "maxPrice": 1500000,
+          "description": "Typical first-check size"
+        }
+      }
+    }
+    </script>
     
+    <link rel="alternate" type="text/markdown" href="/index.md" title="Machine-readable Markdown" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

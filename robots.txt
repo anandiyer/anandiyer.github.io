@@ -1,0 +1,13 @@
+# canonical.cc — crawler policy
+#
+# Content Signals state how this content may be used. See
+# https://contentsignals.org for the full specification.
+#   search   = building a search index and returning links/short excerpts
+#   ai-input = using the content to ground a generated answer (RAG)
+#   ai-train = training or fine-tuning a model
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://canonical.cc/sitemap.xml

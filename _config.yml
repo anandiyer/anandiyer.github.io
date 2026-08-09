@@ -2,6 +2,15 @@
 # Bump asset_version to cache-bust css/js across the whole site in one place.
 asset_version: 20260525a
 
+# Absolute base for generated URLs (sitemap entries, feeds).
+url: https://canonical.cc
+
+# jekyll-sitemap is part of the github-pages gem set the deploy workflow
+# installs, so it needs no Gemfile change. Generates /sitemap.xml, which answer
+# engines and AI crawlers use for discovery.
+plugins:
+  - jekyll-sitemap
+
 exclude:
   - Website.zip
   - labs/fundmodeler

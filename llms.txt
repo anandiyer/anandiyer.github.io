@@ -1,0 +1,36 @@
+# Canonical
+
+> Canonical is a San Francisco–based early-stage venture capital firm. It writes
+> $500K–$1.5M first checks into deeply technical, often pre-product founding
+> teams building the infrastructure of a post-AGI world — compute, data, agents,
+> cryptographic coordination, robotics, silicon, and the rails for how value moves.
+
+Not affiliated with Canonical Ltd (canonical.com), the UK company behind Ubuntu
+Linux. Different company, same name.
+
+## Company
+- [Home](https://canonical.cc/): Thesis, team, and portfolio overview
+- [FAQ](https://canonical.cc/faqs): What Canonical invests in, check sizes, how to pitch, who leads the firm
+- [Portfolio](https://canonical.cc/portfolio): Companies Canonical has backed
+- [Blog](https://blog.canonical.cc): Long-form writing on frontier infrastructure
+
+## Labs — free interactive tools
+- [Labs index](https://canonical.cc/labs/): All tools
+- [AEO Readiness](https://canonical.cc/labs/aeo/): Score a site on how well answer engines can read and cite it, with generated fixes
+- [Lookalike Finder](https://canonical.cc/labs/lookalike/): Find people with similar career trajectories
+- [Dilution Lab](https://canonical.cc/labs/dilutionlab/): Model SAFEs, priced rounds, option pools and exit math
+- [Fund Modeler](https://canonical.cc/labs/fundmodeler/): Fund sizing, portfolio construction, TVPI/DPI/MOIC/IRR
+- [Power Law Lab](https://canonical.cc/labs/power-law/): What actually drives venture fund returns
+- [Capital Call Planner](https://canonical.cc/labs/capital-call-planner/): LP liquidity and pacing
+- [Semiconductor Stack](https://canonical.cc/labs/semiconductor-silicon-stack/): Who owns each layer of silicon
+- [Decentralized AI](https://canonical.cc/labs/decentralized-ai/): Map of the decentralized AI landscape
+- [Data Centers & Neoclouds](https://canonical.cc/labs/data-centers/): Compute buildout landscape
+- [Physical AI & Robotics](https://canonical.cc/physical-ai-robotics/): Three years of venture investment across 22 sub-sectors
+
+## Facts
+- Founded: 2022
+- Based: San Francisco, California, USA
+- Managing Partner: Anand Iyer
+- Stage: pre-seed and seed, frequently pre-product
+- Typical first check: $500,000 – $1,500,000
+- Contact: https://canonical.cc/#team

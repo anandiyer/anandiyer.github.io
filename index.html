@@ -99,7 +99,11 @@
     }
     </script>
     
-    <link rel="alternate" type="text/markdown" href="/index.md" title="Machine-readable Markdown" />
+    <!-- Machine-readable Markdown twin. Served as .txt on purpose: Jekyll
+         converts any .md file it finds, and an index.md at the root silently
+         replaced this page's rendered output. llms-full.txt is also the
+         llms.txt spec's own name for the full-content Markdown file. -->
+    <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Machine-readable Markdown" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

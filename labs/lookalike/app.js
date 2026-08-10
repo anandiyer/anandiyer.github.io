@@ -351,6 +351,17 @@ function handleEvent(ev) {
       applyEntityCopy(ev.entity);
       renderEntityNote(ev);
       break;
+    case "cached":
+      /* Same input, same answer. The pipeline can't be made reproducible —
+         model-written queries into neural search give a different candidate
+         pool each time — so the result is rolled once and kept. Say so, and
+         make refreshing an explicit choice rather than a silent re-roll. */
+      $("cached-note").innerHTML =
+        `Showing a saved report from ${esc(String(ev.cachedAt || "").slice(0, 10))} — repeat searches are free and don't use your quota. ` +
+        `<button type="button" class="link-button" id="refresh-run">Run it again</button>`;
+      $("cached-note").classList.remove("is-hidden");
+      $("refresh-run").addEventListener("click", () => run(lastInput, null, { refresh: true }));
+      break;
     case "page":
       // This search now has a permanent, shareable, indexable home.
       $("permalink").innerHTML =
@@ -603,7 +614,7 @@ function renderFeed(ev) {
   wrap.classList.remove("is-hidden");
 }
 
-async function run(input, hints) {
+async function run(input, hints, opts) {
   if (running || !input.trim()) return;
 
   // Validate before spending a lookup or a round-trip. Refines reuse the
@@ -644,6 +655,7 @@ async function run(input, hints) {
   $("papers-wrap").classList.add("is-hidden");
   $("feed-wrap").classList.add("is-hidden");
   $("permalink").classList.add("is-hidden");
+  $("cached-note").classList.add("is-hidden");
   $("entity-note").classList.add("is-hidden");
   if (!hints) applyEntityCopy("person");
   $("stage").classList.remove("is-hidden");
@@ -659,7 +671,7 @@ async function run(input, hints) {
     const res = await fetch(ENDPOINT + "/lookalike", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ input: lastInput, ...(hints ? { hints } : {}) }),
+      body: JSON.stringify({ input: lastInput, ...(hints ? { hints } : {}), ...(opts?.refresh ? { refresh: true } : {}) }),
       signal: inflight.signal,
     });
 

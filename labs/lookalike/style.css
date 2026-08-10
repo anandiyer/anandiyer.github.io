@@ -75,11 +75,11 @@ a:hover { color: #ffffff; }
 .tabular, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 
 /* Header, footer and mobile menu all come from the global canonical.cc
-   stylesheet plus the shared header include. Do not re-add a local .nav-mobile
-   rule: the shared menu is toggled by an .open class, so a bare
-   `.nav-mobile { display: flex }` here would load after the global sheet and
-   pin the mobile menu permanently open. (This exact rule came back in f141cd4
-   via an upstream sync and broke the mobile nav — see canonical-lookalike.) */
+   stylesheet, which this page already loads. Do NOT add a local
+   .nav-mobile rule here: the shared menu is toggled by an .open class, so
+   a bare `.nav-mobile { display: flex }` loads after the global sheet and
+   pins the mobile menu permanently open — including on canonical.cc if
+   this file is copied there. */
 
 /* ── hero ────────────────────────────────────────────────────────────── */
 .hero {
@@ -669,6 +669,23 @@ a:hover { color: #ffffff; }
   overflow: hidden;
 }
 .paper .links { margin-top: auto; }
+
+/* "This is a saved report" + its refresh control. */
+.cached-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent-soft);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.link-button:hover { color: var(--ink); }
 
 /* Permanent URL for a completed search — the entity's own page. */
 .permalink {

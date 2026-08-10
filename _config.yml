@@ -15,3 +15,6 @@ exclude:
   - Website.zip
   - labs/fundmodeler
   - README.md
+  # Build/authoring tooling — never served. (Also keeps check-built-site.sh,
+  # which names retired assets by design, out of its own scan.)
+  - scripts

@@ -33,7 +33,7 @@ export function Header() {
             <div style="max-width:1280px;margin:0 auto;padding:1rem 2rem;">
               <div style="display:flex;align-items:center;justify-content:space-between;">
                 <a href="https://canonical.cc/" style="display:inline-block;">
-                  <img src="https://canonical.cc/images/logo-rectangle-trans-short.svg" alt="Canonical" style="height:2rem;width:auto;" />
+                  <img src="https://canonical.cc/images/canonical-wordmark-mono.svg" alt="Canonical" style="height:2rem;width:auto;" />
                 </a>
                 <nav style="display:flex;align-items:center;gap:2.5rem;">
                   <a href="https://canonical.cc/#about" style="color:rgba(255,255,255,0.8);font-size:0.875rem;font-weight:500;letter-spacing:0.1em;text-decoration:none;">ABOUT</a>

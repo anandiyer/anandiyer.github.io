@@ -52,6 +52,12 @@ jobs:
           mkdir -p _site/labs/fundmodeler
           cp -R labs/fundmodeler/dist/. _site/labs/fundmodeler/
 
+      # Runs last, on the merged output, so it also covers the built SPA bundles
+      # that never pass through Jekyll. Fails the deploy on retired-asset
+      # references or un-rendered {% raw %}{% include %}{% endraw %} tags.
+      - name: Check built site
+        run: bash scripts/check-built-site.sh _site
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

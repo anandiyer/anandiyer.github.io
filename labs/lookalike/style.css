@@ -828,3 +828,37 @@ a:hover { color: #ffffff; }
   .match-name { font-size: 1.1rem; }
   .score, .score svg { width: 50px; height: 50px; }
 }
+
+/* ── entity pages (server-rendered by the Worker) ────────────────────────
+   Scoped to .entity-page so none of this can reach the lab itself.
+
+   On the lab, each block carries its own wrapper margin (#papers-wrap,
+   #feed-wrap). Entity pages emit sections uniformly instead, so the space
+   above every heading comes from ONE rule rather than from whatever happens to
+   precede it — which is why the gap above "Related research" used to be a grid
+   gap while the gap above the first heading was a card's bottom margin. */
+.entity-page .entity-block { margin-top: 3rem; }
+.entity-page .entity-block > .results-title { margin-top: 0; }
+/* The source card's own bottom margin would stack with the rule above and make
+   the first gap larger than the rest. */
+.entity-page .source-card { margin-bottom: 0; }
+
+/* Page metadata: provenance and the removal route. Deliberately NOT a card —
+   it's the least important thing here and shouldn't compete with the report,
+   but the links still have to be findable. */
+.entity-page .entity-meta {
+  margin: 3.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--faint);
+}
+.entity-page .entity-meta p { margin: 0 0 0.35rem; }
+.entity-page .entity-meta p:last-child { margin-bottom: 0; }
+.entity-page .entity-meta a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.entity-page .entity-meta a:hover { color: var(--ink); }

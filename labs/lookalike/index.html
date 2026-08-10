@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="/css/lab-share.css?v={{ site.asset_version }}" />
     <!-- Lab-specific styles load after, so they win on any overlap.
          ?v= busts Cloudflare's edge cache on each release — bump on changes. -->
-    <link rel="stylesheet" href="style.css?v=20260810a" />
+    <link rel="stylesheet" href="style.css?v={{ site.time | date: '%Y%m%d%H%M%S' }}" />
   </head>
   <body>
     {% include header.html %}
@@ -212,6 +212,6 @@
     {% include footer.html %}
 
     <script src="/js/lab-share.js?v={{ site.asset_version }}"></script>
-    <script src="app.js?v=20260810a"></script>
+    <script src="app.js?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
   </body>
 </html>

@@ -185,6 +185,20 @@ a:hover { color: #ffffff; }
 }
 .search-hint .quota { color: var(--active); }
 
+/* Field-level validation error — the first one this lab has had. Sits under
+   the search row, above the hint line, so it never shifts the layout of the
+   results below it. */
+.field-error {
+  margin: 0.7rem 0.2rem 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #fecaca;
+}
+#input.is-invalid {
+  border-color: #f87171;
+  box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.16);
+}
+
 /* ── stage / stepper ─────────────────────────────────────────────────── */
 .stage { max-width: 980px; margin: 3rem auto 0; padding: 0 2rem; scroll-margin-top: 6.5rem; }
 
@@ -584,6 +598,82 @@ a:hover { color: #ffffff; }
 /* namespaced so it never collides with the global Tailwind `.hidden` the
    inherited canonical header relies on (class="hidden md:flex"). */
 .is-hidden { display: none !important; }
+
+/* ── classification note + arXiv papers ──────────────────────────────── */
+
+/* Sits above the results grid, on the blue page rather than inside a card. */
+.entity-note {
+  max-width: 980px;
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--subtle);
+}
+.entity-note b { color: var(--ink); font-weight: 600; }
+
+#papers-wrap { margin-top: 2.5rem; }
+.papers-sub {
+  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+/* Narrower minimum than .results: a paper card is mostly text, and three
+   cramped columns of abstract are unreadable. */
+.papers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.paper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--card-line);
+  animation: rise 0.4s ease both;
+}
+.paper-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--card-faint);
+}
+.paper-cat {
+  font-family: var(--mono);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--card-accent-deep);
+  background: var(--card-accent-tint);
+  border-radius: 0.35rem;
+  padding: 0.12rem 0.4rem;
+}
+.paper-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--card-ink);
+  overflow-wrap: anywhere;
+}
+.paper-authors {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--card-muted);
+  overflow-wrap: anywhere;
+}
+.paper-summary {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--card-soft-ink);
+  /* Abstracts vary wildly in length; clamp so the grid rows stay even. */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.paper .links { margin-top: auto; }
 
 /* ── mobile ──────────────────────────────────────────────────────────── */
 /* Two stops:

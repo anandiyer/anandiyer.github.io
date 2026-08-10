@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Canonical Lookalike Finder · Find people with similar career DNA</title>
+    <title>Canonical Lookalike Finder · Find people and companies with similar DNA</title>
     <meta
       name="description"
-      content="Paste a LinkedIn URL or X handle and find 3–4 people with similar career DNA — same trajectory, same archetype, not just the same job title. A Canonical Labs tool."
+      content="Paste a LinkedIn URL, an X handle or a company website. Get people with the same career DNA, or companies with the same shape — plus the research being published on what they do. A Canonical Labs tool."
     />
     <link rel="canonical" href="https://www.canonical.cc/labs/lookalike/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.canonical.cc/labs/lookalike/" />
-    <meta property="og:title" content="Canonical Lookalike Finder · Find people with similar career DNA" />
+    <meta property="og:title" content="Canonical Lookalike Finder · Find people and companies with similar DNA" />
     <meta property="og:description" content="Paste a LinkedIn URL or X handle and find 3–4 people with similar career DNA — same trajectory, same archetype, not just the same job title. A Canonical Labs tool." />
     <meta property="og:image" content="https://www.canonical.cc/images/site-logo.png" />
     <meta property="og:site_name" content="Canonical" />
@@ -21,7 +21,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.canonical.cc/labs/lookalike/" />
-    <meta property="twitter:title" content="Canonical Lookalike Finder · Find people with similar career DNA" />
+    <meta property="twitter:title" content="Canonical Lookalike Finder · Find people and companies with similar DNA" />
     <meta property="twitter:description" content="Paste a LinkedIn URL or X handle and find 3–4 people with similar career DNA — same trajectory, same archetype, not just the same job title." />
     <meta property="twitter:image" content="https://www.canonical.cc/images/site-logo.png" />
     <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="/css/lab-share.css?v=20260525a" />
     <!-- Lab-specific styles load after, so they win on any overlap.
          ?v= busts Cloudflare's edge cache on each release — bump on changes. -->
-    <link rel="stylesheet" href="style.css?v=20260528b" />
+    <link rel="stylesheet" href="style.css?v=20260810a" />
   </head>
   <body>
     <!-- Shared canonical.cc header (verbatim markup + global stylesheet classes). -->
@@ -84,8 +84,11 @@
       <span class="lab-eyebrow">CANONICAL LABS · LOOKALIKE FINDER</span>
       <h1>Lookalike Finder</h1>
       <p>
-        Paste a LinkedIn URL or X handle. Get back 3–4 people with the same career
-        DNA — trajectory, archetype, rare skill combinations — not just the same job title.
+        Paste a person or a company — a LinkedIn URL, an X handle, or a website.
+        We work out which it is, then find 3–4 with the same DNA: for people, the
+        trajectory and rare skill combinations rather than the job title; for
+        companies, the wedge, the buyer and the technical bet rather than the
+        industry label. Plus the research being published on what they do.
       </p>
       <div data-lab-share data-github-path="labs/lookalike"></div>
     </header>
@@ -95,14 +98,15 @@
         <input
           id="input"
           type="text"
-          placeholder="https://www.linkedin.com/in/…  or  @handle"
+          placeholder="linkedin.com/in/…   ·   @handle   ·   company.com"
           autocomplete="off"
           spellcheck="false"
         />
         <button class="btn" id="go"><span class="btn-spinner"></span><span id="go-label">Find Lookalikes →</span></button>
       </div>
+      <p class="field-error is-hidden" id="input-error" role="alert"></p>
       <div class="search-hint">
-        <span>Career-arc matching across the open web — powered by OpenRouter (many models) + Claude + Exa.</span>
+        <span>Shape-matching across the open web — OpenRouter (many models) + Exa, with related work from arXiv.</span>
         <span class="quota" id="quota"></span>
       </div>
     </section>
@@ -144,9 +148,20 @@
         </div>
       </div>
 
+      <!-- What the classifier decided, stated plainly. A wrong call should be
+           visible rather than silent — the same principle as the anchor
+           warning above. -->
+      <p class="entity-note is-hidden" id="entity-note"></p>
+
       <div class="is-hidden" id="results-wrap">
-        <h2 class="results-title">Closest career-DNA matches</h2>
+        <h2 class="results-title" id="results-title">Closest career-DNA matches</h2>
         <div class="results" id="results"></div>
+      </div>
+
+      <div class="is-hidden" id="papers-wrap">
+        <h2 class="results-title">Related research on arXiv</h2>
+        <p class="papers-sub" id="papers-sub"></p>
+        <div class="papers" id="papers"></div>
       </div>
     </section>
 
@@ -239,6 +254,6 @@
       })();
     </script>
     <script src="/js/lab-share.js?v=20260525a"></script>
-    <script src="app.js?v=20260528b"></script>
+    <script src="app.js?v=20260810a"></script>
   </body>
 </html>

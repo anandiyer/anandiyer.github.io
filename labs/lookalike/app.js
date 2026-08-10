@@ -19,6 +19,7 @@ const STEPS = [
   ["queries", "Generating queries"],
   ["retrieve", "Searching the web"],
   ["score", "Scoring candidates"],
+  ["papers", "Finding research"],
 ];
 
 const ICONS = {
@@ -109,9 +110,21 @@ function withRef(href) {
   return s + (s.includes("?") ? "&" : "?") + "ref=canonicalcc";
 }
 
+/* Last line of defence before a model-supplied string becomes a clickable
+   link. The Worker already drops anything that isn't http(s) and wasn't in the
+   retrieved corpus, but rendering is where a bad URL actually causes harm, so
+   the check is repeated here rather than assumed. esc() stops attribute
+   breakout; it does NOT stop `javascript:` from running on click. */
+function safeHref(href) {
+  const s = String(href || "").trim();
+  return /^https?:\/\//i.test(s) ? s : null;
+}
+
 // LinkedIn / X / source link buttons for any profile object.
 function linkBtn(href, kind, label) {
-  return `<a class="link-btn" href="${esc(withRef(href))}" target="_blank" rel="noopener">${ICONS[kind]}<span>${label}</span></a>`;
+  const safe = safeHref(href);
+  if (!safe) return "";
+  return `<a class="link-btn" href="${esc(withRef(safe))}" target="_blank" rel="noopener">${ICONS[kind]}<span>${label}</span></a>`;
 }
 function renderLinks(container, obj) {
   const parts = [];
@@ -330,7 +343,14 @@ function handleEvent(ev) {
     case "stage": setStep(ev.step, ev.state || "active"); break;
     case "status": $("status").textContent = ev.text || ""; break;
     case "profile": renderProfile(ev.profile); break;
+    case "classified":
+      renderEntityNote(ev);
+      break;
+    case "papers":
+      renderPapers(ev);
+      break;
     case "results":
+      setResultsTitle(ev.title);
       renderMatches(ev.matches || []);
       // After the first successful result-set lands, prompt the user to share.
       // The widget guards on sessionStorage so it only fires once per session.
@@ -373,8 +393,123 @@ function hideAnchorWarning() {
   $("anchor-warning").classList.add("is-hidden");
 }
 
+/* Client-side mirror of worker/src/safety.js validateInput().
+   Deliberately a SUBSET: this exists to give an instant, specific error
+   instead of a wasted round-trip, and it is never the security boundary —
+   the Worker re-runs every one of these rules and more. Anything this misses
+   is caught there; anything this rejects would have been rejected there. */
+function validateEntry(raw) {
+  const s = String(raw || "").trim();
+  if (!s) return { ok: false, reason: "Paste a LinkedIn URL, a company website, or an @handle." };
+  if (s.length > 2048) return { ok: false, reason: "That's too long to be a profile or company URL." };
+  if (/[\u0000-\u001F\u007F-\u009F\u200B-\u200F\u2028\u2029\u202A-\u202E\u2066-\u2069\uFEFF]/.test(s)) {
+    return { ok: false, reason: "That contains invisible characters — paste the plain URL." };
+  }
+  if (/^@\w{1,15}$/.test(s)) return { ok: true };
+
+  const withScheme = /^[a-z][a-z0-9+.-]*:/i.test(s) ? s : "https://" + s;
+  let u;
+  try { u = new URL(withScheme); } catch { return { ok: false, reason: "That isn't a valid URL or @handle." }; }
+  if (u.protocol !== "http:" && u.protocol !== "https:") {
+    return { ok: false, reason: "Only http and https links are accepted." };
+  }
+  if (u.username || u.password) return { ok: false, reason: "URLs with embedded credentials aren't accepted." };
+  if (!u.hostname.includes(".")) return { ok: false, reason: "That isn't a valid public domain." };
+  return { ok: true };
+}
+
+function showFieldError(reason) {
+  const box = $("input");
+  box.classList.add("is-invalid");
+  box.setAttribute("aria-invalid", "true");
+  const msg = $("input-error");
+  msg.textContent = reason;
+  msg.classList.remove("is-hidden");
+}
+
+function clearFieldError() {
+  const box = $("input");
+  box.classList.remove("is-invalid");
+  box.removeAttribute("aria-invalid");
+  $("input-error").classList.add("is-hidden");
+}
+
+/* What the classifier decided. Shown only when it wasn't already obvious from
+   the URL, so a LinkedIn lookup doesn't get a redundant line, but an X handle
+   read as a company does. A wrong call should be visible, not silent — the
+   same principle as the anchor warning. */
+function renderEntityNote(ev) {
+  const note = $("entity-note");
+  if (ev.confidence >= 1) { note.classList.add("is-hidden"); return; }
+  const label = ev.entity === "company" ? "a company" : "a person";
+  note.innerHTML = ev.uncertain
+    ? `Read as <b>${label}</b>, though we weren't certain. ${esc(ev.why || "")}`
+    : `Read as <b>${label}</b>. ${esc(ev.why || "")}`;
+  note.classList.remove("is-hidden");
+}
+
+function setResultsTitle(title) {
+  if (title) $("results-title").textContent = title;
+}
+
+/* arXiv papers.
+
+   The empty state is a real state, not a hidden block. arXiv is rich for an AI
+   infrastructure company and genuinely empty for a payments company; saying so
+   is more useful than omitting the section silently or padding it with
+   loosely-related work that implies a research connection there isn't. */
+function renderPapers(ev) {
+  const wrap = $("papers-wrap");
+  const list = $("papers");
+  const sub = $("papers-sub");
+  list.innerHTML = "";
+
+  if (!ev.papers || !ev.papers.length) {
+    sub.textContent = ev.reason
+      ? `No related research found — ${ev.reason}.`
+      : "No related research found.";
+    wrap.classList.remove("is-hidden");
+    return;
+  }
+
+  sub.textContent = ev.topics && ev.topics.length
+    ? `Papers on ${ev.topics.join(", ")} — who else is working on this.`
+    : "Who else is working on this.";
+
+  for (const p of ev.papers) {
+    const href = safeHref(p.url);
+    const shown = (p.authors || []).slice(0, 3).join(", ");
+    const more = p.authorCount > 3 ? ` +${p.authorCount - 3}` : "";
+    const card = document.createElement("div");
+    card.className = "card paper";
+    card.innerHTML =
+      `<div class="paper-meta">` +
+        (p.category ? `<span class="paper-cat">${esc(p.category)}</span>` : "") +
+        (p.year ? `<span>${esc(p.year)}</span>` : "") +
+      `</div>` +
+      `<h3 class="paper-title">${esc(p.title)}</h3>` +
+      (shown ? `<p class="paper-authors">${esc(shown + more)}</p>` : "") +
+      (p.summary ? `<p class="paper-summary">${esc(p.summary)}</p>` : "") +
+      (href ? `<div class="links">${linkBtn(href, "link", "Read on arXiv")}</div>` : "");
+    list.appendChild(card);
+  }
+  wrap.classList.remove("is-hidden");
+}
+
 async function run(input, hints) {
   if (running || !input.trim()) return;
+
+  // Validate before spending a lookup or a round-trip. Refines reuse the
+  // already-accepted input, so they skip straight through.
+  if (!hints) {
+    const check = validateEntry(input);
+    if (!check.ok) {
+      showFieldError(check.reason);
+      $("input").focus();
+      return;
+    }
+    clearFieldError();
+  }
   // If a refine fires mid-stream, cancel the in-flight reader cleanly.
   if (inflight) inflight.abort();
   running = true;
@@ -399,6 +534,8 @@ async function run(input, hints) {
   hideAnchorWarning();
   $("source").classList.add("is-hidden");
   $("results-wrap").classList.add("is-hidden");
+  $("papers-wrap").classList.add("is-hidden");
+  $("entity-note").classList.add("is-hidden");
   $("stage").classList.remove("is-hidden");
   $("spinner").style.display = "";
   buildStepper();
@@ -426,6 +563,21 @@ async function run(input, hints) {
             : "You've used your lookups for today"
         }${body.resetHint ? " — " + esc(body.resetHint) : ""}. This keeps the lab free for everyone. Come back tomorrow.`
       );
+      return;
+    }
+    // The Worker re-validates everything the client checked, and rejects more
+    // besides (private hosts, reserved paths, injection patterns). Surface its
+    // reason on the field rather than as a generic failure — a caller who
+    // bypassed the client validator should still get a precise answer.
+    if (res.status === 400) {
+      const body = await res.json().catch(() => ({}));
+      $("stage").classList.add("is-hidden");
+      if (body.reason) {
+        showFieldError(body.reason);
+        $("input").focus();
+      } else {
+        showNotice(`<b>Couldn't start:</b> ${esc(body.error || "that input wasn't accepted")}.`, true);
+      }
       return;
     }
     if (!res.ok || !res.body) throw new Error(`Server returned ${res.status}`);
@@ -530,4 +682,5 @@ $("wrong-person").addEventListener("click", () => openRefineModal({ auto: false 
 $("anchor-warning-refine").addEventListener("click", () => openRefineModal({ auto: false }));
 
 $("go").addEventListener("click", () => run($("input").value));
+$("input").addEventListener("input", clearFieldError);
 $("input").addEventListener("keydown", (e) => { if (e.key === "Enter") run($("input").value); });

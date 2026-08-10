@@ -20,6 +20,7 @@ const STEPS = [
   ["retrieve", "Searching the web"],
   ["score", "Scoring candidates"],
   ["papers", "Finding research"],
+  ["feed", "Gathering activity"],
 ];
 
 const ICONS = {
@@ -350,8 +351,17 @@ function handleEvent(ev) {
       applyEntityCopy(ev.entity);
       renderEntityNote(ev);
       break;
+    case "page":
+      // This search now has a permanent, shareable, indexable home.
+      $("permalink").innerHTML =
+        `Permanent link: <a href="${esc(ev.url)}">${esc(ev.url.replace(/^https?:\/\//, ""))}</a>`;
+      $("permalink").classList.remove("is-hidden");
+      break;
     case "papers":
       renderPapers(ev);
+      break;
+    case "feed":
+      renderFeed(ev);
       break;
     case "results":
       setResultsTitle(ev.title);
@@ -512,6 +522,87 @@ function renderPapers(ev) {
   wrap.classList.remove("is-hidden");
 }
 
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+/** "2026-08" → "August 2026". Input is already validated as YYYY-MM by the worker. */
+function monthLabel(key) {
+  const [y, m] = String(key).split("-");
+  return `${MONTHS[Number(m) - 1] || ""} ${y}`.trim();
+}
+
+function feedRow(item) {
+  const href = safeHref(item.url);
+  const title = href
+    ? `<a href="${esc(withRef(href))}" target="_blank" rel="noopener">${esc(item.title)}</a>`
+    : esc(item.title);
+  const meta = [item.source, item.about, item.author].filter(Boolean).map(esc).join(" · ");
+  return `<div class="feed-item">` +
+    `<div class="feed-item-head"><h3 class="feed-title">${title}</h3>` +
+    (item.date ? `<span class="feed-date">${esc(item.date)}</span>` : "") +
+    `</div>` +
+    (meta ? `<p class="feed-meta">${meta}</p>` : "") +
+    (item.snippet ? `<p class="feed-snippet">${esc(item.snippet)}</p>` : "") +
+    `</div>`;
+}
+
+/* Reverse-chronological activity, grouped by month.
+
+   Undated items render in their own block BELOW the timeline rather than being
+   slotted into it. The worker deliberately refuses to guess a date, and putting
+   them anywhere in the ordering would re-introduce exactly the claim it avoided. */
+function renderFeed(ev) {
+  const wrap = $("feed-wrap");
+  const list = $("feed");
+  const sub = $("feed-sub");
+  const undatedWrap = $("feed-undated");
+  list.innerHTML = "";
+  $("feed-undated-list").innerHTML = "";
+  undatedWrap.classList.add("is-hidden");
+
+  const items = ev.items || [];
+  const undated = ev.undated || [];
+
+  if (!items.length && !undated.length) {
+    sub.textContent = ev.reason ? `No recent activity found — ${ev.reason}.` : "No recent activity found.";
+    wrap.classList.remove("is-hidden");
+    return;
+  }
+
+  const sources = (ev.sources || []).slice(0, 6).join(", ");
+  sub.innerHTML =
+    `Newest first, across this ${currentEntity} and its matches` +
+    (sources ? ` — ${esc(sources)}` : "") +
+    `. <span class="feed-caveat">Dates are publisher estimates and may be approximate.</span>`;
+
+  let currentMonth = null;
+  for (const item of items) {
+    const key = String(item.date || "").slice(0, 7);
+    if (key && key !== currentMonth) {
+      currentMonth = key;
+      const h = document.createElement("p");
+      h.className = "feed-month";
+      h.textContent = monthLabel(key);
+      list.appendChild(h);
+    }
+    const row = document.createElement("div");
+    row.className = "card feed-card";
+    row.innerHTML = feedRow(item);
+    list.appendChild(row);
+  }
+
+  if (undated.length) {
+    for (const item of undated) {
+      const row = document.createElement("div");
+      row.className = "card feed-card";
+      row.innerHTML = feedRow(item);
+      $("feed-undated-list").appendChild(row);
+    }
+    undatedWrap.classList.remove("is-hidden");
+  }
+
+  wrap.classList.remove("is-hidden");
+}
+
 async function run(input, hints) {
   if (running || !input.trim()) return;
 
@@ -551,6 +642,8 @@ async function run(input, hints) {
   $("source").classList.add("is-hidden");
   $("results-wrap").classList.add("is-hidden");
   $("papers-wrap").classList.add("is-hidden");
+  $("feed-wrap").classList.add("is-hidden");
+  $("permalink").classList.add("is-hidden");
   $("entity-note").classList.add("is-hidden");
   if (!hints) applyEntityCopy("person");
   $("stage").classList.remove("is-hidden");

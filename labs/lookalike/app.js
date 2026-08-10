@@ -55,6 +55,9 @@ let lastHints = null;
 // it so the backend can tie the vote to the exact queries + source that
 // produced the result. Reset at the start of each run; set on the `runid` event.
 let currentRunId = null;
+// Drives the person/company wording on the refine affordances. Defaults to
+// person because that is what a run is until the classifier says otherwise.
+let currentEntity = "person";
 // AbortController for the in-flight SSE — lets the refine flow cancel the
 // current bad run cleanly when the user submits hints mid-pipeline.
 let inflight = null;
@@ -344,6 +347,7 @@ function handleEvent(ev) {
     case "status": $("status").textContent = ev.text || ""; break;
     case "profile": renderProfile(ev.profile); break;
     case "classified":
+      applyEntityCopy(ev.entity);
       renderEntityNote(ev);
       break;
     case "papers":
@@ -438,6 +442,18 @@ function clearFieldError() {
    the URL, so a LinkedIn lookup doesn't get a redundant line, but an X handle
    read as a company does. A wrong call should be visible, not silent — the
    same principle as the anchor warning. */
+/* Swap the person/company wording on the refine affordances.
+
+   The button and the modal title are one click apart in the same flow, so they
+   have to agree — fixing only the button would just move the wrong noun one
+   step later. */
+function applyEntityCopy(entity) {
+  currentEntity = entity === "company" ? "company" : "person";
+  const noun = currentEntity;
+  $("wrong-person").textContent = `Wrong ${noun}? Refine →`;
+  $("refine-title").textContent = `Help us find the right ${noun}`;
+}
+
 function renderEntityNote(ev) {
   const note = $("entity-note");
   if (ev.confidence >= 1) { note.classList.add("is-hidden"); return; }
@@ -536,6 +552,7 @@ async function run(input, hints) {
   $("results-wrap").classList.add("is-hidden");
   $("papers-wrap").classList.add("is-hidden");
   $("entity-note").classList.add("is-hidden");
+  if (!hints) applyEntityCopy("person");
   $("stage").classList.remove("is-hidden");
   $("spinner").style.display = "";
   buildStepper();

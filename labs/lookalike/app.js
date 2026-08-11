@@ -367,6 +367,12 @@ function handleEvent(ev) {
       $("permalink").innerHTML =
         `Permanent link: <a href="${esc(ev.url)}">${esc(ev.url.replace(/^https?:\/\//, ""))}</a>`;
       $("permalink").classList.remove("is-hidden");
+      {
+        const path = entityPath(ev.url);
+        if (path && path !== location.pathname) {
+          history.pushState({ lookalikeEntity: path }, "", path);
+        }
+      }
       break;
     case "papers":
       renderPapers(ev);
@@ -614,6 +620,41 @@ function renderFeed(ev) {
   wrap.classList.remove("is-hidden");
 }
 
+/* The results ARE this entity's page, so the address bar should say so.
+
+   pushState rather than a redirect: the report has just finished streaming and
+   navigating would throw it away to re-fetch the same content. Reloading or
+   sharing the URL then hits the server-rendered page, which carries the same
+   report — so the two never disagree.
+
+   Returns null for a cross-origin URL, which is what makes this safe in local
+   dev: the worker always emits a www.canonical.cc URL, so on localhost there is
+   simply no navigation rather than a pushState to a path that 404s on reload. */
+function entityPath(url) {
+  try {
+    const u = new URL(url, location.href);
+    return u.origin === location.origin ? u.pathname : null;
+  } catch {
+    return null;
+  }
+}
+
+const LAB_ROOT_RE = /\/(people|companies)\//;
+// Strips an entity segment back to the lab root: /labs/lookalike/companies/x → /labs/lookalike/
+const ENTITY_PATH_RE = /\/(people|companies)\/.*$/;
+
+/* Back button. Without this the URL returns to the lab root while the results
+   stay on screen, which reads as a page that ignored you. */
+window.addEventListener("popstate", () => {
+  if (LAB_ROOT_RE.test(location.pathname)) return;
+  if (running && inflight) inflight.abort();
+  $("stage").classList.add("is-hidden");
+  for (const id of ["permalink", "cached-note", "entity-note", "notice"]) {
+    $(id).classList.add("is-hidden");
+  }
+  $("input").focus();
+});
+
 async function run(input, hints, opts) {
   if (running || !input.trim()) return;
 
@@ -642,6 +683,13 @@ async function run(input, hints, opts) {
   if (!hints) {
     modalAutoOpened = false;
     anchorWarningSuppressed = false;
+  }
+
+  /* A new search starts from the lab's own URL, so the address bar never shows
+     the previous entity while different results render. replaceState, not push:
+     an in-flight search isn't a place worth going back to. */
+  if (LAB_ROOT_RE.test(location.pathname)) {
+    history.replaceState({}, "", location.pathname.replace(ENTITY_PATH_RE, "/"));
   }
 
   const go = $("go");

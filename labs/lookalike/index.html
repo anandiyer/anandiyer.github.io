@@ -23,7 +23,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.canonical.cc/labs/lookalike/" />
     <meta property="og:title" content="Canonical Lookalike Finder · Find people and companies with similar DNA" />
-    <meta property="og:description" content="Paste a LinkedIn URL or X handle and find 3–4 people with similar career DNA — same trajectory, same archetype, not just the same job title. A Canonical Labs tool." />
+    <meta property="og:description" content="Paste a person or a company — a LinkedIn URL, an X handle, or a website. Find 3–4 with the same DNA: same trajectory and archetype for a person, same wedge and technical bet for a company. A Canonical Labs tool." />
     <meta property="og:image" content="https://www.canonical.cc/images/site-logo.png" />
     <meta property="og:site_name" content="Canonical" />
 
@@ -31,7 +31,7 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.canonical.cc/labs/lookalike/" />
     <meta property="twitter:title" content="Canonical Lookalike Finder · Find people and companies with similar DNA" />
-    <meta property="twitter:description" content="Paste a LinkedIn URL or X handle and find 3–4 people with similar career DNA — same trajectory, same archetype, not just the same job title." />
+    <meta property="twitter:description" content="Paste a person or a company — a LinkedIn URL, an X handle, or a website. Find 3–4 with the same DNA: same trajectory and archetype for a person, same wedge and technical bet for a company." />
     <meta property="twitter:image" content="https://www.canonical.cc/images/site-logo.png" />
     <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
     <link
@@ -94,7 +94,7 @@
            meant. Acts as a hard interrupt with a CTA into the refine modal. -->
       <div class="anchor-warning is-hidden" id="anchor-warning">
         <div class="anchor-warning-body">
-          <b>We couldn't confirm this is the right person.</b>
+          <b id="anchor-warning-lead">We couldn't confirm this is the right person.</b>
           <span id="anchor-warning-msg">The handle you gave us is ambiguous — tell us a bit more so we can find the right one.</span>
         </div>
         <button class="anchor-warning-btn" type="button" id="anchor-warning-refine">Refine →</button>
@@ -108,7 +108,7 @@
           </div>
           <div class="links" id="src-links"></div>
         </div>
-        <p class="label">Career arc</p>
+        <p class="label" id="src-arc-label">Career arc</p>
         <p class="arc" id="src-arc"></p>
         <p class="label">Defining traits</p>
         <div class="chips" id="src-traits"></div>
@@ -127,7 +127,10 @@
       <p class="permalink is-hidden" id="permalink"></p>
 
       <div class="is-hidden" id="results-wrap">
-        <h2 class="results-title" id="results-title">Closest career-DNA matches</h2>
+        <!-- Placeholder only: the worker always sends a per-entity title with
+             the results event, so this is never what the user reads. Kept
+             entity-neutral so a future run without a title can't be wrong. -->
+        <h2 class="results-title" id="results-title">Closest matches</h2>
         <div class="results" id="results"></div>
       </div>
 
@@ -162,16 +165,22 @@
           The handle alone is ambiguous. Give us anything you know — even one field usually fixes it.
         </p>
         <form id="refine-form" novalidate>
+          <!-- Labels and placeholders are swapped per entity by
+               applyEntityCopy(). The `name` attributes are the Worker's hint
+               contract and must not change with them. -->
           <label>
-            <span>Full name</span>
+            <span id="refine-name-label">Full name</span>
             <input name="full_name" type="text" autocomplete="off" spellcheck="false" />
           </label>
-          <label>
+          <!-- Person-only: a company has no employer, and the hint travels
+               under the key `employer`, so relabelling it would send the model
+               a value that contradicts its own key. Hidden instead. -->
+          <label id="refine-employer-field">
             <span>Current employer</span>
             <input name="employer" type="text" autocomplete="off" spellcheck="false" />
           </label>
           <label>
-            <span>Known for / role</span>
+            <span id="refine-knownfor-label">Known for / role</span>
             <input name="known_for" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. founder of Tubi, AI researcher at OpenAI" />
           </label>
           <label>
@@ -196,16 +205,16 @@
           <p>Reconstruct the full profile from the open web — education, every role, the company's actual product.</p></div></div>
         <div class="method-step"><span class="method-num">02</span><div>
           <h3>Trait extraction</h3>
-          <p>Distil 5–8 <em>defining</em> dimensions — career arc, domain pivots, rare skill combos — each weighted by how distinctive it is.</p></div></div>
+          <p>Distil 5–8 <em>defining</em> dimensions — career arc and rare skill combos for a person, the wedge and the technical bet for a company — each weighted by how distinctive it is.</p></div></div>
         <div class="method-step"><span class="method-num">03</span><div>
           <h3>Query generation</h3>
           <p>Turn the trait vector into multiple neural search queries. You can't find a lookalike with one search — you search across trait combinations.</p></div></div>
         <div class="method-step"><span class="method-num">04</span><div>
-          <h3>Candidate retrieval</h3>
-          <p>Exa neural search surfaces people by career <em>meaning</em>, not keywords, then results are merged and de-duplicated.</p></div></div>
+          <h3>Retrieval</h3>
+          <p>Exa neural search surfaces people and companies by what they actually <em>are</em>, not keywords, then results are merged and de-duplicated.</p></div></div>
         <div class="method-step"><span class="method-num">05</span><div>
           <h3>Scoring &amp; ranking</h3>
-          <p>Each candidate is scored on every trait axis (0–1), weighted, and ranked. The top 3–4 come back with a note on what matches — and what doesn't.</p></div></div>
+          <p>Each result is scored on every trait axis (0–1), weighted, and ranked. The top 3–4 come back with a note on what matches — and what doesn't.</p></div></div>
       </div>
     </section>
 

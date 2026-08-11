@@ -18,10 +18,49 @@ const STEPS = [
   ["traits", "Extracting traits"],
   ["queries", "Generating queries"],
   ["retrieve", "Searching the web"],
-  ["score", "Scoring candidates"],
+  // Label comes from COPY[currentEntity].scoreStep — see buildStepper().
+  ["score", null],
   ["papers", "Finding research"],
   ["feed", "Gathering activity"],
 ];
+
+/* Every string in the UI that reads wrong for the other kind of entity.
+   The Worker keeps the same split in entity.js (PERSON / COMPANY) and owns the
+   strings it sends — the results title, the profile prose. This is the half
+   that lives in the page, and it exists so a company search never gets told
+   about its career arc or its employer.
+
+   Anything that reads fine both ways deliberately stays in the markup: the
+   test for belonging here is "is this actively wrong for a company", not
+   "does this mention a person". */
+const COPY = {
+  person: {
+    scoreStep: "Scoring people",
+    arcLabel: "Career arc",
+    anchorLead: "We couldn't confirm this is the right person.",
+    refineTitle: "Help us find the right person",
+    wrongEntity: "Wrong person? Refine →",
+    nameLabel: "Full name",
+    knownForLabel: "Known for / role",
+    knownForPlaceholder: "e.g. founder of Tubi, AI researcher at OpenAI",
+    urlPlaceholder: "LinkedIn, personal site, podcast guest page…",
+    feedbackPlaceholder:
+      "What was off — or right — about this? (e.g. wrong person, missed a key role, great match)",
+  },
+  company: {
+    scoreStep: "Scoring companies",
+    arcLabel: "Background",
+    anchorLead: "We couldn't confirm this is the right company.",
+    refineTitle: "Help us find the right company",
+    wrongEntity: "Wrong company? Refine →",
+    nameLabel: "Company name",
+    knownForLabel: "Known for / what they do",
+    knownForPlaceholder: "e.g. developer-first payments API, open-source vector database",
+    urlPlaceholder: "Homepage, LinkedIn company page, Crunchbase…",
+    feedbackPlaceholder:
+      "What was off — or right — about this? (e.g. wrong company, missed what they actually do, great match)",
+  },
+};
 
 const ICONS = {
   linkedin:
@@ -77,7 +116,8 @@ function buildStepper() {
   const wrap = $("stepper");
   wrap.innerHTML = "";
   STEPS.forEach(([id, label], i) => {
-    const s = el("div", "step", `<span class="dot">${i + 1}</span><span>${label}</span>`);
+    const text = label ?? COPY[currentEntity].scoreStep;
+    const s = el("div", "step", `<span class="dot">${i + 1}</span><span class="step-label">${text}</span>`);
     s.id = "step-" + id;
     wrap.appendChild(s);
   });
@@ -176,7 +216,7 @@ function renderFeedback(container, target) {
   container.innerHTML =
     `<button class="fb-toggle" type="button">✎ Feedback on this result</button>
      <div class="fb-form is-hidden">
-       <textarea placeholder="What was off — or right — about this? (e.g. wrong company, missed a key role, great match)"></textarea>
+       <textarea placeholder="${esc(COPY[currentEntity].feedbackPlaceholder)}"></textarea>
        <div class="fb-actions">
          <button class="fb-send" type="button">Send feedback</button>
          <button class="fb-cancel" type="button">Cancel</button>
@@ -469,16 +509,47 @@ function clearFieldError() {
    the URL, so a LinkedIn lookup doesn't get a redundant line, but an X handle
    read as a company does. A wrong call should be visible, not silent — the
    same principle as the anchor warning. */
-/* Swap the person/company wording on the refine affordances.
+/* Swap every person/company string at once.
 
-   The button and the modal title are one click apart in the same flow, so they
-   have to agree — fixing only the button would just move the wrong noun one
-   step later. */
+   One function rather than a fix at each call site: these strings sit across
+   the stepper, the source card, the warning banner and the refine modal, and a
+   user meets them within seconds of each other. Correcting them piecemeal
+   doesn't make the copy right, it just moves the wrong noun one step later.
+
+   Safe to call before buildStepper() — the step label falls back to
+   COPY[currentEntity] at build time, and this only touches it if it exists. */
 function applyEntityCopy(entity) {
   currentEntity = entity === "company" ? "company" : "person";
-  const noun = currentEntity;
-  $("wrong-person").textContent = `Wrong ${noun}? Refine →`;
-  $("refine-title").textContent = `Help us find the right ${noun}`;
+  const c = COPY[currentEntity];
+
+  $("wrong-person").textContent = c.wrongEntity;
+  $("refine-title").textContent = c.refineTitle;
+  $("anchor-warning-lead").textContent = c.anchorLead;
+  $("src-arc-label").textContent = c.arcLabel;
+  $("refine-name-label").textContent = c.nameLabel;
+  $("refine-knownfor-label").textContent = c.knownForLabel;
+
+  const form = $("refine-form");
+  form.querySelector('input[name="known_for"]').placeholder = c.knownForPlaceholder;
+  form.querySelector('input[name="url"]').placeholder = c.urlPlaceholder;
+
+  /* The employer field is person-only. Clearing it on the way out matters:
+     hiding alone would leave a stale value from an earlier person search still
+     in the FormData, and it would be sent as a hint for a company. */
+  const employerField = $("refine-employer-field");
+  const isCompany = currentEntity === "company";
+  employerField.classList.toggle("is-hidden", isCompany);
+  if (isCompany) form.querySelector('input[name="employer"]').value = "";
+
+  const stepLabel = $("step-score")?.querySelector(".step-label");
+  if (stepLabel) stepLabel.textContent = c.scoreStep;
+
+  /* The source card's feedback box is built when `profile` renders. Today the
+     worker sends `classified` first, so it would already read the right copy —
+     but that's an ordering guarantee from another repo, and the cost of not
+     depending on it is one line. */
+  const srcFb = $("src-fb").querySelector("textarea");
+  if (srcFb) srcFb.placeholder = c.feedbackPlaceholder;
 }
 
 function renderEntityNote(ev) {

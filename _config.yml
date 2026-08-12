@@ -1,6 +1,6 @@
 # Jekyll config for canonical.cc — enables _includes processing on GitHub Pages.
 # Bump asset_version to cache-bust css/js across the whole site in one place.
-asset_version: 20260525a
+asset_version: 20260812a
 
 # Absolute base for generated URLs (sitemap entries, feeds).
 url: https://canonical.cc

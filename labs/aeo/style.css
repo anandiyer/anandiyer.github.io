@@ -959,6 +959,19 @@ a:hover { color: #ffffff; }
 }
 .plan-btn:hover { background: var(--accent); }
 .plan-btn.loading { opacity: 0.7; cursor: progress; transform: none; }
+/* On the card, not 2,000px down the page in #notice — a download error the
+   user can't see is indistinguishable from a button that does nothing. */
+.plan-error {
+  margin: 0.7rem 0 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(190, 30, 45, 0.35);
+  background: rgba(190, 30, 45, 0.07);
+  color: #a3121f;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  max-width: 44ch;
+}
 
 @media (max-width: 640px) {
   .plan-card { gap: 1.1rem; }

@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}" />
     <link rel="stylesheet" href="/css/lab-share.css?v={{ site.asset_version }}" />
     <!-- Lab-specific styles load after, so they win on any overlap. -->
-    <link rel="stylesheet" href="style.css?v=20260810a" />
+    <link rel="stylesheet" href="style.css?v=20260812a" />
   </head>
   <body>
     {% include header.html %}
@@ -135,6 +135,9 @@
             the instructions. Drop it into Claude Code, Cursor or ChatGPT and let
             it make the changes.
           </p>
+          <!-- Download failures surface here, next to the button that was
+               clicked — the page-level #notice is far below the fold. -->
+          <p class="plan-error is-hidden" id="plan-error"></p>
         </div>
         <a class="btn plan-btn" id="plan-dl" href="#" download>Download .md</a>
       </div>
@@ -189,6 +192,6 @@
     {% include footer.html %}
 
     <script src="/js/lab-share.js?v={{ site.asset_version }}"></script>
-    <script src="app.js?v=20260810a"></script>
+    <script src="app.js?v=20260812a"></script>
   </body>
 </html>

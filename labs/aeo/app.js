@@ -39,11 +39,14 @@ const el = (tag, cls, html) => {
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+
 let running = false;
 let inflight = null;
 let lastInput = "";
 let lastQueries = null;
 let planUrl = null;
+// Every host the finished report might be filed under. See buildPlanUrls.
+let planUrls = [];
 
 /* ── stepper ──────────────────────────────────────────────────────────── */
 
@@ -372,6 +375,44 @@ function explain(f) {
 
 /* ── the downloadable fix plan ────────────────────────────────────────── */
 
+/** The hostname part of whatever the user typed, with no scheme, path or port. */
+function hostFromInput(raw) {
+  return String(raw || "")
+    .trim()
+    .toLowerCase()
+    .replace(/^[a-z][a-z0-9+.-]*:\/\//, "")
+    .split(/[/?#]/)[0]
+    .replace(/:\d+$/, "")
+    .replace(/\.$/, "");
+}
+
+/**
+ * The report and the plan are filed under the host the scan was *requested*
+ * for, but the `site` event reports the host we ended up on after redirects.
+ * For any apex→www site (most of the web) those differ, and building the URL
+ * from only one of them 404s. So we collect every host this run could plausibly
+ * be filed under and let the download try them in order.
+ */
+function buildPlanUrls(site) {
+  const hosts = [];
+  const add = (h) => {
+    const host = hostFromInput(h);
+    // A bare "com" or an IP-with-no-dot is never a report key; skip the noise.
+    if (host && host.includes(".") && !hosts.includes(host)) hosts.push(host);
+  };
+
+  // What the user asked for comes first: that's the key the worker writes under.
+  add(lastInput);
+  add(site && site.hostname);
+  add(site && site.redirectedTo);
+  // Cover the apex/www flip even when neither event nor input spelled it out.
+  for (const h of hosts.slice()) {
+    add(h.startsWith("www.") ? h.slice(4) : "www." + h);
+  }
+
+  return hosts.map((h) => `${ENDPOINT}/aeo/${encodeURIComponent(h)}/plan.md`);
+}
+
 /**
  * Fetched and saved as a blob rather than followed as a plain link.
  *
@@ -381,17 +422,37 @@ function explain(f) {
  * the click is handled here so a failure is a notice, not a lost page.
  */
 async function downloadPlan(ev) {
-  if (!planUrl) return;
+  // preventDefault unconditionally: with nothing to fetch, following href="#"
+  // would scroll the report away and look exactly like a dead button.
   ev.preventDefault();
+  if (!planUrls.length) {
+    showPlanError("The fix plan isn't ready yet — re-run the scan and try again.");
+    return;
+  }
 
   const btn = $("plan-dl");
-  const label = btn.textContent;
+  const label = "Download .md";
   btn.classList.add("loading");
   btn.textContent = "Preparing…";
+  hidePlanError();
 
   try {
-    const res = await fetch(planUrl);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    // First host that answers wins, and is remembered so a second click and
+    // "copy link address" both go straight to it.
+    let res = null;
+    let lastStatus = 0;
+    for (const url of planUrls) {
+      const attempt = await fetch(url);
+      if (attempt.ok) {
+        res = attempt;
+        planUrl = url;
+        btn.href = url;
+        planUrls = [url];
+        break;
+      }
+      lastStatus = attempt.status;
+    }
+    if (!res) throw new Error(`HTTP ${lastStatus || 404}`);
 
     // Filename comes from the server's Content-Disposition so the two don't
     // drift; the fallback only matters if the header is ever dropped.
@@ -406,19 +467,63 @@ async function downloadPlan(ev) {
     document.body.appendChild(a);
     a.click();
     a.remove();
-    URL.revokeObjectURL(href);
+    // Revoked on a later turn of the loop: revoking in the same tick can cancel
+    // the download before the browser has read the blob.
+    setTimeout(() => URL.revokeObjectURL(href), 60000);
 
     btn.textContent = "Downloaded ✓";
     setTimeout(() => (btn.textContent = label), 2000);
+    promptShare();
   } catch (err) {
     btn.textContent = label;
-    showNotice(
-      `<b>Couldn't build the fix plan:</b> ${esc(err.message)}. Re-run the scan and try again.`,
-      true
+    showPlanError(
+      `Couldn't build the fix plan (${esc(err.message)}). Re-run the scan and try again.`
     );
   } finally {
     btn.classList.remove("loading");
   }
+}
+
+/**
+ * Errors go on the plan card itself. The shared #notice sits below the report
+ * *and* the methodology section — roughly 2,000px below a click on this button
+ * — so a failure reported there is a failure the user never sees.
+ */
+function showPlanError(html) {
+  const box = $("plan-error");
+  // Null-guarded: a cached copy of the old HTML can pair with this newer JS, and
+  // a failed download is not worth taking the whole run down over. Falls back to
+  // the page-level notice so the message still lands somewhere.
+  if (!box) return showNotice(`<b>${html}</b>`, true);
+  box.innerHTML = html;
+  box.classList.remove("is-hidden");
+}
+
+function hidePlanError() {
+  const box = $("plan-error");
+  if (!box) return;
+  box.classList.add("is-hidden");
+  box.innerHTML = "";
+}
+
+/**
+ * The download is the moment the tool has visibly paid off, so it's the moment
+ * worth asking. Once per session — the widget enforces that on its own key.
+ */
+function promptShare() {
+  const share = window.canonicalShare;
+  if (!share || typeof share.showShareModal !== "function") return;
+  const host = $("site-name").textContent || "your site";
+  setTimeout(() => {
+    share.showShareModal({
+      key: "aeo",
+      title: "Your fix plan is downloading.",
+      body:
+        `That's every AEO gap on ${host} written up as code you can hand to an ` +
+        `agent. If it saved you an afternoon, pass it to someone whose site ` +
+        `answer engines still can't read.`,
+    });
+  }, 900);
 }
 
 /* ── warnings + notices ───────────────────────────────────────────────── */
@@ -471,8 +576,9 @@ function handleEvent(ev) {
     case "site":
       // Built here, revealed on `done` — the worker only writes the cache the
       // plan is served from once the run has finished.
-      planUrl = `${ENDPOINT}/aeo/${encodeURIComponent(ev.site.hostname)}/plan.md`;
-      $("plan-dl").href = planUrl;
+      planUrls = buildPlanUrls(ev.site);
+      planUrl = planUrls[0] || null;
+      if (planUrl) $("plan-dl").href = planUrl;
       $("site-name").textContent = ev.site.hostname;
       $("site-sub").textContent =
         `${ev.site.pagesCrawled} page${ev.site.pagesCrawled === 1 ? "" : "s"} crawled · ` +
@@ -517,7 +623,7 @@ function handleEvent(ev) {
     case "done":
       $("spinner").style.display = "none";
       $("status").textContent = "";
-      if (planUrl) $("plan-card").classList.remove("is-hidden");
+      if (planUrls.length) $("plan-card").classList.remove("is-hidden");
       break;
     case "error":
       $("spinner").style.display = "none";
@@ -549,6 +655,8 @@ async function run(input, opts = {}) {
   $("audit-warning-msg").innerHTML = "";
   lastQueries = null;
   planUrl = null;
+  planUrls = [];
+  hidePlanError();
   for (const id of ["engines-label", "disclosure", "queries-label", "queries-card", "also-cited", "plan-card"]) {
     $(id).classList.add("is-hidden");
   }

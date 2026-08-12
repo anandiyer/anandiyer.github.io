@@ -25,6 +25,14 @@
   var REPO_TREE = 'https://github.com/anandiyer/anandiyer.github.io/tree/master/';
   var TWITTER_HANDLE = 'canonicalcc';
 
+  // Modal copy is caller-supplied and interpolated into innerHTML, so it gets
+  // escaped on the way in rather than trusted.
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
   function metaContent(name) {
     var el = document.querySelector(
       'meta[property="' + name + '"], meta[name="' + name + '"]'
@@ -222,10 +230,16 @@
     });
   }
 
-  // ─── Lookalike "share this" modal ─────────────────────────────────────
-  // Fires once per session, after the first successful results render.
-  function showLookalikeModal() {
-    var KEY = 'canonical:lookalikeShareModalShown';
+  // ─── "share this" modal ───────────────────────────────────────────────
+  // Fires once per session per key, after the user has had a win worth
+  // sharing — results landing, a file downloading. Options:
+  //   key   — sessionStorage bucket, so two labs (or two moments in one lab)
+  //           each get their own once-per-session budget
+  //   title — headline
+  //   body  — the sentence under it; defaults to the page's own og:description
+  function showShareModal(opts) {
+    opts = opts || {};
+    var KEY = opts.storageKey || 'canonical:shareModalShown:' + (opts.key || 'default');
     try {
       if (sessionStorage.getItem(KEY) === '1') return;
       sessionStorage.setItem(KEY, '1');
@@ -233,6 +247,8 @@
       /* sessionStorage blocked → still show, fine */
     }
 
+    var title = opts.title || 'If you’ve found this useful, share it.';
+    var body = opts.body || pageDescription();
     var u = shareUrls();
     var overlay = document.createElement('div');
     overlay.className = 'lab-share-modal';
@@ -242,8 +258,12 @@
     overlay.innerHTML =
       '<div class="lab-share-modal-card">' +
       '<button class="lab-share-modal-close" type="button" aria-label="Close">✕</button>' +
-      '<h2 id="lab-share-modal-title">If you\u2019ve found this useful, share it.</h2>' +
-      '<p class="modal-sub">Lookalike Finder uses career-arc matching across the open web. Pass it on to a recruiter, founder, or VC who\u2019d find it useful.</p>' +
+      '<h2 id="lab-share-modal-title">' +
+      escapeHtml(title) +
+      '</h2>' +
+      '<p class="modal-sub">' +
+      escapeHtml(body) +
+      '</p>' +
       '<div class="lab-share-modal-actions">' +
       '<a class="lab-share-modal-btn lab-share-modal-x" href="' +
       u.x +
@@ -288,6 +308,17 @@
       if (e.target === overlay) close();
     });
     document.addEventListener('keydown', onKey);
+  }
+
+  // Kept on its original storage key so a session that already dismissed the
+  // lookalike modal doesn't get asked again.
+  function showLookalikeModal() {
+    showShareModal({
+      storageKey: 'canonical:lookalikeShareModalShown',
+      body:
+        'Lookalike Finder uses career-arc matching across the open web. Pass it ' +
+        'on to a recruiter, founder, or VC who’d find it useful.',
+    });
   }
 
   // ─── Auto-mount: locate a hero and append the strip if no explicit mount ──
@@ -361,6 +392,7 @@
   }
 
   window.canonicalShare = {
+    showShareModal: showShareModal,
     showLookalikeModal: showLookalikeModal,
     refresh: init,
   };

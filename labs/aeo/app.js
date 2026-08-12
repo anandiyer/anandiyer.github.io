@@ -39,6 +39,30 @@ const el = (tag, cls, html) => {
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+/**
+ * Last line of defence on anything the server hands us to display.
+ *
+ * The worker is the right place to keep operational detail off the screen and
+ * now does. This is the belt to that pair of braces: a rollback, a cached
+ * report written by older code, or a message class nobody anticipated must not
+ * be able to put a provider's quota notice — or the key-management URL that
+ * came with it — in front of a user. Anything that trips the filter is replaced
+ * wholesale rather than patched up, because a half-redacted internal message is
+ * still an internal message.
+ */
+const INTERNAL = /\bhttps?:\/\/|\b(openrouter|anthropic|generativelanguage|api[_-]?key|bearer|sk-[a-z0-9-]{8})\b|\b[0-9a-f]{32,}\b/i;
+const GENERIC_SERVER_MESSAGE =
+  "Something went wrong on our end. We've been notified — please try again shortly.";
+
+function safeServerText(s) {
+  const text = String(s ?? "").trim();
+  if (!text) return "";
+  if (INTERNAL.test(text)) {
+    console.error("[aeo] suppressed an internal server message");
+    return GENERIC_SERVER_MESSAGE;
+  }
+  return text;
+}
 
 let running = false;
 let inflight = null;
@@ -157,7 +181,7 @@ function renderEngines(ev) {
     card.appendChild(el("div", "engine-name", esc(u.label)));
     card.appendChild(el("span", "engine-band band-out", "—"));
     card.appendChild(el("div", "engine-stat out", "<span>Not measured</span>"));
-    card.title = u.error || "";
+    card.title = safeServerText(u.error);
     wrap.appendChild(card);
   }
 
@@ -530,13 +554,13 @@ function promptShare() {
 
 /** Non-fatal notes from the pipeline (budget caps, partial stages). */
 function addWarning(msg) {
-  if (!msg) return;
+  if (!safeServerText(msg)) return;
   const box = $("audit-warning");
   const list = $("audit-warning-msg");
   $("audit-warning-title").textContent = "Heads up.";
   // Appended, not replaced: a run can hit more than one of these and the second
   // one silently overwriting the first is how a caveat goes missing.
-  const line = el("span", "warn-line", esc(msg));
+  const line = el("span", "warn-line", esc(safeServerText(msg)));
   list.appendChild(line);
   box.classList.remove("is-hidden");
 }
@@ -628,7 +652,7 @@ function handleEvent(ev) {
     case "error":
       $("spinner").style.display = "none";
       $("status").textContent = "";
-      showNotice(`<b>Couldn't finish:</b> ${esc(ev.message)}`, true);
+      showNotice(`<b>Couldn't finish:</b> ${esc(safeServerText(ev.message))}`, true);
       break;
   }
 }

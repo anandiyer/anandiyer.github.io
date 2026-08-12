@@ -658,7 +658,7 @@ function renderFeed(ev) {
 
   const sources = (ev.sources || []).slice(0, 6).join(", ");
   sub.innerHTML =
-    `Newest first, across this ${currentEntity} and its matches` +
+    `Newest first, across this ${currentEntity} and its top matches` +
     (sources ? ` — ${esc(sources)}` : "") +
     `. <span class="feed-caveat">Dates are publisher estimates and may be approximate.</span>`;
 

@@ -47,11 +47,14 @@ contract** — discoverable, not directly billable.
 - [x] `index.html` — load `js/webmcp.js`
 - [x] `scripts/check-built-site.sh` — fail the build when a digest drifts
 
-### Cloudflare (dashboard — no credentials on this machine)
+### Cloudflare
 
-- [ ] Enable **Markdown for Agents** (AI Crawl Control). Requires Pro
-- [ ] Response Header Transform Rule — `Link` header on `/`
-- [ ] `Content-Type: application/linkset+json` on `/.well-known/api-catalog`
+- [x] Enable **Markdown for Agents** (AI Crawl Control). Pro purchased for this
+- [x] Response Header Transform Rule — `Link` header on `/`
+- [x] `Content-Type: application/linkset+json` on `/.well-known/api-catalog`
+
+Both transform rules live in the zone's `http_response_headers_transform` ruleset
+(`9532212070684a4394d34b854e45cb60`).
 
 ## Two things worth knowing
 
@@ -73,9 +76,42 @@ a winner. Worth reconciling at source sometime.
 
 ## Review
 
-Repo side is done and verified. Cloudflare side is not — it needs dashboard access this
-machine does not have, and it is the half that carries `markdownNegotiation`, the only check
-that moves the site to Level 3.
+**Done. Level 2 "Bot-Aware" → Level 4 "Agent-Integrated"**, clearing Level 3 outright.
+
+| Check | Before | After |
+| --- | --- | --- |
+| `markdownNegotiation` | fail | **pass** |
+| `linkHeaders` | fail | **pass** |
+| `apiCatalog` | fail | **pass** |
+| `agentSkills` | fail | **pass** |
+| `webMcp` | fail | **pass** |
+
+The homepage now serves 2,145 tokens of Markdown to agents against 8,893 tokens of HTML — a
+4× reduction, which is the whole point of the exercise.
+
+### The transform rules were saved wrong, twice
+
+Both rules deployed "successfully" from the dashboard and did nothing. Reading them back over
+the API showed why:
+
+```
+(http.request.full_uri wildcard r#"(http.host in {"canonical.cc" ...} and ...)"#)
+```
+
+The form was in **wildcard-pattern mode**, not the raw expression editor, so the expression was
+stored as a literal URL pattern to string-match against. Nothing matches the characters
+`(http.host in {`. This also explains the "your DNS may not be proxying traffic for
+`(http.request.uri.path eq "`" warning the dashboard threw on both rules — it was reading the
+expression as a hostname and truncating it at the first `/`. The warning was a symptom, not a
+DNS problem; canonical.cc was proxied the whole time.
+
+Fixed by `PUT`ing the ruleset with real expressions. If these ever need editing again, edit
+them over the API, or in the dashboard make sure the match section is switched to **Custom
+filter expression → Edit expression** before pasting anything.
+
+One aside worth remembering: after the fix, `Content-Type` took effect within seconds while
+`Link` took a minute or so. Same ruleset, same deploy. Don't conclude a rule failed from one
+early curl — that nearly sent this down a wrong path.
 
 ### What was verified, and how
 
@@ -95,10 +131,10 @@ All three tools registered with an `AbortSignal`, returned serializable objects,
 10 labs and 17 portfolio companies. The `query` filter narrows correctly ("robot" → Robo,
 Nirvana AI).
 
-Jekyll itself could not be run locally (system Ruby 2.6, no jekyll gem), so the one thing still
-unproven is whether Jekyll copies the `SKILL.md` files verbatim or converts them. That is
-precisely what the new build guard fails on, so CI will answer it on the first deploy rather
-than shipping it broken.
+Jekyll could not be run locally (system Ruby 2.6, no jekyll gem), so whether it copies the
+`SKILL.md` files verbatim or converts them was left to CI. **Answered on deploy: it copies
+them.** The build printed `✓ check-built-site: … skill digests match`, and both digests were
+then re-verified against the bytes the live site serves through Cloudflare.
 
 ### Worth knowing
 
@@ -112,8 +148,14 @@ computed from the shipped bytes and re-checked on every deploy.
 
 `oauthDiscovery`, `oauthProtectedResource`, `authMd`, `a2aAgentCard`, `mcpServerCard`, `dnsAid`
 — all remain failing, all on purpose. Each wants a discovery document for a server canonical.cc
-does not run. Publishing them would raise the scan score by lying to agents. If an MCP server
-over the portfolio and labs data is ever worth building, the cards follow from it — not before.
+does not run. Publishing them would raise the scan score by lying to agents.
+
+The scanner now names `authMd`, `mcpServerCard` and `a2aAgentCard` as the requirements for
+Level 5 "Agent-Native". That is a real project, not a config change: an MCP server over the
+portfolio, labs and thesis data — which we already have clean structured sources for in
+`js/script.js` and `/faqs` — with the A2A and auth documents following from it. Worth doing
+only if we want agents *calling* Canonical rather than just reading it. The cards come after
+the server, never before.
 
 ### Unrelated things noticed, not touched
 

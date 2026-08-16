@@ -1,90 +1,124 @@
-# AEO lab — stop leaking internal errors; alert #hack-central instead
+# Agent readiness — reach Level 3 without fabricating infrastructure
 
-## What the user saw
+## What prompted this
 
-> Key limit exceeded (monthly limit). Manage it using
-> https://openrouter.ai/workspaces/default/keys/9e14984f…
+A scan from [isitagentready.com](https://isitagentready.com) rates www.canonical.cc at
+**Level 2 "Bot-Aware"**. Passing already: `robots.txt`, `sitemap.xml`, AI bot rules, Content
+Signals. Eleven checks fail, and exactly one of them — `markdownNegotiation` — is what stands
+between us and **Level 3 "Agent-Readable"**.
 
-That is OpenRouter's reply to a model call, rendered verbatim in the browser.
-It names our provider and links the key's management page.
+Baseline captured 2026-08-16T17:03:52Z.
 
-## Why it happened
+## The judgement call
 
-The worker piped upstream error text straight to the client in **five** places:
+Most of the failing checks describe discovery documents for infrastructure canonical.cc does
+not have. An OAuth discovery document for a site with no authorization server, or an MCP server
+card for a server that does not exist, does not make the site more agent-ready — it makes it
+*lie* to the first agent that trusts it and tries to connect. Those are skipped on purpose.
 
-| # | file | channel |
-|---|---|---|
-| 1 | `worker.js` SSE catch | `{type:"error"}` → "Couldn't finish: …" |
-| 2 | `worker.js` queries stage | `{type:"warn"}` → "Heads up" box |
-| 3 | `worker.js` content stage | same |
-| 4 | `worker.js` engines stage | same ← **the one the user hit** |
-| 5 | `engines.js` → `visibility.js` | `unavailable[].error` → engine tooltip, **and the 7-day cache** |
+| Check | Doing | Why |
+| --- | --- | --- |
+| `markdownNegotiation` | yes | The Level 3 blocker. Cloudflare edge conversion, zero code |
+| `linkHeaders` | yes | Cheap, real, nothing to maintain |
+| `apiCatalog` | yes, documentation-only | Passes without advertising the metered lab endpoints |
+| `agentSkills` | yes | Two skills grounded entirely in `/faqs` and `llms.txt` |
+| `webMcp` | yes | Client-side only, no server required |
+| `oauthDiscovery`, `oauthProtectedResource`, `authMd` | **no** | There is no authorization server to describe |
+| `a2aAgentCard`, `mcpServerCard` | **no** | There is no A2A agent and no MCP server |
+| `dnsAid` | **no** | SVCB records need an agent endpoint to point at |
+| `webBotAuth` | **no** | Scanner marks it informational, not a failure |
 
-## Fix
+The `apiCatalog` restraint is deliberate. `canonical-aeo/worker/wrangler.toml` records ~$1.35
+per AEO run against a ~$75/day ceiling, and both lab APIs are CORS-bound to canonical.cc
+because they exist to serve our own front-end. The catalog therefore lists `service-doc` links
+to the human lab pages and carries **no `service-desc`, no endpoint hostnames, no invocation
+contract** — discoverable, not directly billable.
 
-**Allowlist, not blocklist.** `worker/src/errors.js` is a new boundary: a message
-is shown verbatim only if it is a `UserError` — an error deliberately written
-for a user. Everything else gets fixed copy from a static table. A blocklist
-would have meant every new provider message was a leak waiting to happen; this
-way an unrecognised one is merely generic.
+## Tasks
 
-- [x] `worker/src/errors.js` — `UserError`, `classify`, `userMessage`,
-      `engineFailureReason`, `reportIncident`
-- [x] `crawl.js` — the six deliberately user-facing errors become `UserError`
-      so containment doesn't swallow "Couldn't reach yoursite.com"
-- [x] `worker.js` — all four error channels routed through the boundary
-- [x] `visibility.js` — the cached engine tooltip becomes a safe label
-- [x] `CACHE_VERSION` v2 → v3 — entries written during the outage have the
-      provider notice sitting in `unavailable[].error`, and a cache is a
-      seven-day tail on a leak
-- [x] `wrangler.toml` — document the secrets, including the new optional
-      `ALERT_WEBHOOK`
+### Repo
 
-**Alerting.** `reportIncident()` posts the *real* message to #hack-central with
-the failure class, stage and domain. Deduped per (class, stage) for 15 minutes:
-a provider-quota failure trips on every scan until the account is topped up, and
-un-deduped that is a firehose — a channel that cries wolf stops being read at
-exactly the moment it matters. Uses `ALERT_WEBHOOK`, falling back to the
-existing `SEARCH_WEBHOOK` → `FEEDBACK_WEBHOOK`, so **alerting works today with
-no new configuration**.
+- [x] `_config.yml` — `include: ['.well-known']` so Jekyll stops skipping the dot-directory
+- [x] `.well-known/api-catalog` — RFC 9727 linkset, documentation-only
+- [x] `.well-known/agent-skills/canonical-thesis/SKILL.md`
+- [x] `.well-known/agent-skills/canonical-portfolio/SKILL.md`
+- [x] `.well-known/agent-skills/index.json` — discovery index with SHA-256 digests
+- [x] `js/webmcp.js` — register tools on `navigator.modelContext`
+- [x] `index.html` — load `js/webmcp.js`
+- [x] `scripts/check-built-site.sh` — fail the build when a digest drifts
 
-**Frontend, defence in depth** (`labs/aeo/app.js`): `safeServerText()` replaces
-any server message matching a URL / provider name / long hex string with a
-generic sentence. This matters because it protects users *before* the worker
-ships, and against a rollback or a stale cached report.
+### Cloudflare (dashboard — no credentials on this machine)
 
-## Verification
+- [ ] Enable **Markdown for Agents** (AI Crawl Control). Requires Pro
+- [ ] Response Header Transform Rule — `Link` header on `/`
+- [ ] `Content-Type: application/linkset+json` on `/.well-known/api-catalog`
 
-Worker suite: **109 pass, 0 fail** (13 new in `test/errors.test.js`, 4 new
-end-to-end in `test/worker.test.js`).
+## Two things worth knowing
 
-Controls run — the new tests fail against the pre-fix code:
+**Digests are the fragile part.** `index.json` pins a SHA-256 of each `SKILL.md`. Edit a skill
+without regenerating the digest and the document is silently wrong — an agent that verifies
+will reject it, and nothing else in the site would notice. That is why the build guard
+recomputes them; drift becomes a failed deploy rather than a quiet lie.
 
-```
-✖ a provider quota failure never reaches the browser
-  AssertionError: key hash reached the browser
-✖ the report still lands when the model half is dead
-✖ the failure the user was spared is the one #hack-central is told
-```
+**Jekyll and `.md` files.** The comment at `index.html:106` records that an `index.md` at the
+repo root once silently replaced the rendered homepage. The skills are `.md` files, so the same
+converter is in play. They carry no YAML front matter, which should make Jekyll treat them as
+static files and copy them verbatim — and the build guard verifies that by checking the files
+still exist at their published paths in `_site` before it checks their digests.
 
-Browser test (Playwright, real `app.js`, fake worker emitting the exact
-production string on all three channels):
+**Check-size wording.** `/faqs` says "typically writes $1M first checks at pre-seed"; `llms.txt`
+and the homepage `Service` schema say "$500K–$1.5M". Both are on the site. The skills say
+"$500K–$1.5M, most often around $1M at pre-seed", which is faithful to both rather than picking
+a winner. Worth reconciling at source sometime.
 
-| | guard on | guard disabled (control) |
-|---|---|---|
-| key hash | contained | **LEAKED** |
-| provider name | contained | **LEAKED** |
-| quota notice | contained | **LEAKED** |
-| manage-key URL | contained | **LEAKED** |
+## Review
 
-Shown instead: *"Something went wrong on our end. We've been notified — please
-try again shortly."* And critically, the report still renders: a dead model half
-degrades to the deterministic audit rather than failing the run.
+Repo side is done and verified. Cloudflare side is not — it needs dashboard access this
+machine does not have, and it is the half that carries `markdownNegotiation`, the only check
+that moves the site to Level 3.
 
-Also confirmed still working: a bad URL still says what is wrong with it
-(`"That doesn't look like a real domain."`), which is what the allowlist buys.
+### What was verified, and how
 
-## Not done — needs the user
+The build guard was exercised against a simulated `_site` in five states, all behaving:
 
-- Nothing is committed, pushed or deployed in either repo.
-- The underlying account limit is a separate, operational fix.
+| Case | Result |
+| --- | --- |
+| Everything correct | passes |
+| A `SKILL.md` edited, digest left stale | fails, prints both hashes and the fix command |
+| A `SKILL.md` rendered to HTML by Jekyll | fails, names the front-matter cause |
+| `.well-known` missing entirely | fails — this one was a hole in the first draft, which reported "digests match" while publishing nothing |
+| `index.json` malformed | fails |
+
+`js/webmcp.js` was run in a `vm` sandbox against the real page data — the JSON-LD parsed out of
+`index.html`, the nav links out of `_includes/header.html`, the array out of `js/script.js`.
+All three tools registered with an `AbortSignal`, returned serializable objects, and reported
+10 labs and 17 portfolio companies. The `query` filter narrows correctly ("robot" → Robo,
+Nirvana AI).
+
+Jekyll itself could not be run locally (system Ruby 2.6, no jekyll gem), so the one thing still
+unproven is whether Jekyll copies the `SKILL.md` files verbatim or converts them. That is
+precisely what the new build guard fails on, so CI will answer it on the first deploy rather
+than shipping it broken.
+
+### Worth knowing
+
+The reference implementation this standard ships from — isitagentready.com's own
+`/.well-known/agent-skills/index.json` — has **six of six digests that do not match the bytes
+it serves**. Verified by fetching each `SKILL.md` and hashing it. Their index has drifted from
+their artifacts, which is exactly the failure the build guard here exists to prevent. Ours are
+computed from the shipped bytes and re-checked on every deploy.
+
+### Deliberately not done
+
+`oauthDiscovery`, `oauthProtectedResource`, `authMd`, `a2aAgentCard`, `mcpServerCard`, `dnsAid`
+— all remain failing, all on purpose. Each wants a discovery document for a server canonical.cc
+does not run. Publishing them would raise the scan score by lying to agents. If an MCP server
+over the portfolio and labs data is ever worth building, the cards follow from it — not before.
+
+### Unrelated things noticed, not touched
+
+- `sitemap.xml` publishes five URLs that should not be indexed: `partials/header.html`,
+  `partials/footer.html`, `tasks/aeo-lab-prd.html`, `labs/dilutionlab/tests.html`, and the
+  Google verification file. A short `exclude:` addition in `_config.yml` would fix it.
+- Check size is stated two ways on the site: `/faqs` says "typically $1M first checks at
+  pre-seed", `llms.txt` and the homepage `Service` schema say "$500K–$1.5M".

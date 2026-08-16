@@ -11,6 +11,12 @@ url: https://canonical.cc
 plugins:
   - jekyll-sitemap
 
+# Jekyll skips dot-directories by default, which would silently drop the whole
+# agent-discovery surface (/.well-known/api-catalog, the agent-skills index and
+# its SKILL.md files). Naming it here is the only way it ships.
+include:
+  - .well-known
+
 exclude:
   - Website.zip
   - labs/fundmodeler

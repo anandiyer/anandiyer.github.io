@@ -453,5 +453,8 @@
     </div>
 
     <script src="js/script.js"></script>
+    <!-- WebMCP tools for agents. Deferred so it runs after script.js has defined
+         portfolioCompanies, and still before DOMContentLoaded. -->
+    <script src="/js/webmcp.js?v={{ site.asset_version }}" defer></script>
 </body>
 </html>

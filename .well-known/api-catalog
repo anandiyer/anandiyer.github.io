@@ -1,0 +1,46 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://canonical.cc/labs/aeo/",
+      "service-doc": [
+        {
+          "href": "https://canonical.cc/labs/aeo/",
+          "type": "text/html",
+          "title": "AEO Readiness Check — score a site on how well answer engines can read and cite it"
+        }
+      ]
+    },
+    {
+      "anchor": "https://canonical.cc/labs/lookalike/",
+      "service-doc": [
+        {
+          "href": "https://canonical.cc/labs/lookalike/",
+          "type": "text/html",
+          "title": "Lookalike Finder — find people with similar career trajectories"
+        }
+      ]
+    },
+    {
+      "anchor": "https://canonical.cc/",
+      "service-doc": [
+        {
+          "href": "https://canonical.cc/labs/",
+          "type": "text/html",
+          "title": "Canonical Labs — free browser-based tools, no signup"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://canonical.cc/llms.txt",
+          "type": "text/plain",
+          "title": "Site summary for language models"
+        },
+        {
+          "href": "https://canonical.cc/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Agent skills published by Canonical"
+        }
+      ]
+    }
+  ]
+}

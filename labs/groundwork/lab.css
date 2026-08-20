@@ -1520,6 +1520,12 @@ strong[data-tip]:hover { text-decoration-color: var(--gw-accent); }
 /* ---- rollup table ---- */
 .gw-table { width: 100%; border-collapse: collapse; background: var(--gw-card-bg); border-radius: 4px; overflow: hidden; }
 .gw-table th, .gw-table td { padding: 0.7rem 0.9rem; text-align: left; border-bottom: 1px solid var(--gw-rule); font-size: 0.88rem; }
+/* The tables sit on the navy page, which sets a white inherited colour — a
+   cell without an explicit colour renders white-on-white and reads as empty.
+   Only the linked cells were visible before this rule. */
+.gw-table td { color: var(--gw-ink-soft); }
+.gw-table tbody tr:nth-child(even) { background: var(--gw-card-bg-2); }
+.gw-table tbody tr:hover { background: #eef2ff; }
 .gw-table th { font-family: var(--gw-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gw-ink-muted); background: var(--gw-card-bg-2); }
 .gw-table td.num, .gw-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .gw-table tr:last-child td { border-bottom: none; }

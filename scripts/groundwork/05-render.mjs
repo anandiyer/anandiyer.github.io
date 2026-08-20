@@ -1,0 +1,398 @@
+/* Generate the static Groundwork pages.
+
+   Everything is emitted as real HTML committed to the repo, one file per site,
+   county and operator. That is a deliberate choice over a client-side app:
+   the product promise is a *permanently indexed* page per site (PRD §3), and
+   only real HTML at a stable URL delivers that. canonical.cc is Jekyll on
+   GitHub Pages, so generation happens here at build time rather than in a
+   server at request time. */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { DATA, readJSON, writeJSON, slugify, log } from './lib/util.mjs';
+import { esc, badge, fmtDate, evidenceCard, pipelineLadder, timeline, head, foot, CORRECTION_BLOCK } from './lib/render-parts.mjs';
+import { renderIndex } from './lib/render-index.mjs';
+
+const OUT = path.resolve('labs/groundwork');
+const BASE = 'https://canonical.cc/labs/groundwork';
+
+const countyName = (loc) => String(loc).replace(/\s*Co\.$/, ' County');
+const countySlug = (loc) => slugify(countyName(loc));
+
+function write(rel, html) {
+  const file = path.join(OUT, rel, 'index.html');
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, html);
+}
+
+/* ---------------------------------------------------------------- site ---- */
+
+function renderSite(site, db) {
+  const opName = site.operator.name || 'Operator unresolved';
+  const title = `${site.name} — ${countyName(site.locality)}, VA | Groundwork`;
+  const desc = `Disclosure record for ${site.name} in ${countyName(site.locality)}, Virginia: ${site.permit.count} issued air permit${site.permit.count === 1 ? '' : 's'}, flood zone, water stress and grid status, each sourced and confidence-labelled.`;
+
+  /* --- evidence cards --- */
+  const cards = [];
+
+  cards.push(evidenceCard({
+    key: 'Air permit',
+    value: `${site.permit.count} issued permit${site.permit.count === 1 ? '' : 's'}`,
+    tier: site.permit.confidence,
+    basis: `Latest issued ${esc(fmtDate(site.permit.latest_issued) || 'n/a')}. ${esc(site.permit.programs.join('; '))}. Issued by the ${esc(site.permit.regional_office)} regional office.`,
+    cite: `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">VA DEQ &mdash; Issued Air Permits for Data Centers</a>, published as of ${esc(site.permit.publisher_as_of)}`,
+  }));
+
+  const flood = site.flood || {};
+  cards.push(evidenceCard({
+    key: 'Flood zone',
+    value: esc(flood.label || 'Pending'),
+    tier: flood.confidence || 'pending',
+    muted: flood.status !== 'mapped',
+    basis: flood.status === 'mapped'
+      ? `${flood.in_sfha ? 'Inside' : 'Outside'} a Special Flood Hazard Area${flood.static_bfe ? `. Base flood elevation ${flood.static_bfe} ft.` : '.'} Point-in-polygon lookup against the effective FEMA map.`
+      : esc(flood.note || ''),
+    cite: flood.status === 'pending'
+      ? 'No citation &mdash; this layer is unresolved for this site.'
+      : `<a href="https://msc.fema.gov/portal/search?AddressQuery=${encodeURIComponent(site.address.street || countyName(site.locality) + ', VA')}" target="_blank" rel="noopener">FEMA National Flood Hazard Layer</a>${flood.dfirm_id ? ` &middot; DFIRM ${esc(flood.dfirm_id)}` : ''}`,
+  }));
+
+  const water = site.water || {};
+  cards.push(evidenceCard({
+    key: 'Water stress',
+    value: esc(water.label || 'Pending'),
+    tier: water.confidence || 'pending',
+    muted: water.status !== 'mapped',
+    basis: water.status === 'mapped'
+      ? `Baseline water stress &mdash; the share of available surface water withdrawn each year in this basin${water.overall_water_risk ? `. Overall water risk: ${esc(water.overall_water_risk)}.` : '.'}`
+      : esc(water.note || ''),
+    cite: water.status === 'mapped'
+      ? `<a href="https://www.wri.org/aqueduct?ref=canonicalcc" target="_blank" rel="noopener">WRI Aqueduct 4.0</a> baseline annual water risk`
+      : 'No citation &mdash; this layer is unresolved for this site.',
+  }));
+
+  const grid = site.grid || {};
+  cards.push(evidenceCard({
+    key: 'Grid interconnection',
+    value: esc(grid.status === 'matched' ? `${grid.count} queue request${grid.count === 1 ? '' : 's'} in this county` : 'Not yet matched'),
+    tier: grid.confidence || 'pending',
+    muted: grid.status !== 'matched',
+    basis: esc(grid.caveat || grid.note || ''),
+    cite: grid.source_url
+      ? `<a href="${esc(grid.source_url)}" target="_blank" rel="noopener">${esc(grid.source)}</a>`
+      : 'No citation &mdash; PJM retired its public bulk queue download; this layer awaits a Data Miner feed.',
+  }));
+
+  /* --- address + operator --- */
+  const addrTier = site.address.confidence;
+  const addrVal = site.address.street
+    ? esc(site.address.street) + `, ${esc(countyName(site.locality))}, VA`
+    : `${esc(countyName(site.locality))}, VA <span style="color:var(--gw-ink-faint)">(locality only)</span>`;
+
+  const geoLine = site.geo && site.geo.lat
+    ? `<p class="gw-note-navy">Geocoded to ${site.geo.lat.toFixed(5)}, ${site.geo.lon.toFixed(5)} via ${esc(site.geo.provider)}${site.geo.county_verified ? ', county cross-checked against the permit' : ''}.</p>`
+    : site.geo && site.geo.confidence === 'rejected'
+      ? `<p class="gw-note-navy"><strong>Rejected candidate:</strong> ${esc(site.geo.rejected_candidate || '')} &mdash; ${esc(site.geo.basis)}</p>`
+      : '';
+
+  const filings = site.filings;
+  const filingRows = filings && filings.hits && filings.hits.length
+    ? `<ul class="gw-method-list">${filings.hits.slice(0, 4).map((h) => `<li><a href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.company || 'filing')}</a> &middot; ${esc(h.form || '')} &middot; ${esc(h.filed || '')}</li>`).join('')}</ul>`
+    : '<p class="gw-ev-basis">No filings matched.</p>';
+
+  const equip = site.equipment;
+  const equipLine = equip.generators_permitted
+    ? `${equip.generators_permitted} generator${equip.generators_permitted === 1 ? '' : 's'}${equip.turbines_permitted ? ` &middot; ${equip.turbines_permitted} turbine${equip.turbines_permitted === 1 ? '' : 's'}` : ''}`
+    : 'Not stated in readable permit text';
+
+  const next = {
+    title: site.address.street ? 'Next permit action' : 'Awaiting a street address',
+    detail: site.address.street
+      ? 'This page updates automatically when VA DEQ publishes another permit or amendment for this facility.'
+      : 'This permit PDF has no readable text layer, so no street address could be extracted. The flood and water layers unlock once an address is resolved.',
+  };
+
+  const body = `
+            <section class="gw-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="gw-sitehead">
+                        <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; <a href="/labs/groundwork/county/${countySlug(site.locality)}/">${esc(countyName(site.locality))}</a>${site.operator.name ? ` &rsaquo; <a href="/labs/groundwork/operator/${slugify(site.operator.name)}/">${esc(site.operator.name)}</a>` : ''}</div>
+                        <h1 class="gw-site-title">${esc(site.name)}</h1>
+                        <p class="gw-site-where">${esc(countyName(site.locality))}, Virginia${site.locality_conflict ? ` &middot; <strong>permit states ${esc(site.permit_locality)}</strong>` : ''}</p>
+                        <div class="gw-meta">
+                            <div class="gw-meta-item"><span class="gw-meta-key">Operator</span><span class="gw-meta-val">${esc(opName)}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Permits</span><span class="gw-meta-val">${site.permit.count}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">${equip.generators_permitted || '&mdash;'}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Latest permit</span><span class="gw-meta-val">${esc(fmtDate(site.permit.latest_issued) || '&mdash;')}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gw-scene" id="evidence">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> The evidence</div>
+                    <h2 class="gw-scene-h2">What the <em>disclosures</em> say.</h2>
+                    <p class="gw-lede">Each layer below carries its own confidence tier and its own citation. There is deliberately no blended risk score: a single number would hide which parts are read from a filing and which are inferred.</p>
+
+                    <div class="gw-evidence-grid">
+                        ${cards.join('\n                        ')}
+                    </div>
+
+                    <div class="gw-evidence-grid">
+                        ${evidenceCard({
+                          key: 'Location',
+                          value: addrVal,
+                          tier: addrTier,
+                          basis: esc(site.address.basis),
+                          cite: site.address.from_permit
+                            ? `Permit ${esc(site.address.from_permit)} &middot; <a href="${esc((site.permit.records.find((r) => r.registration_no === site.address.from_permit) || {}).pdf || site.permit.source_url)}" target="_blank" rel="noopener">permit PDF</a>`
+                            : `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">VA DEQ listing</a> (locality column)`,
+                        })}
+                        ${evidenceCard({
+                          key: 'Operator',
+                          value: esc(opName),
+                          tier: site.operator.confidence,
+                          basis: esc(site.operator.basis),
+                          cite: `Permittee of record: <strong>${esc(site.operator.permittee_name)}</strong>`,
+                        })}
+                        ${evidenceCard({
+                          key: 'Permitted equipment',
+                          value: equipLine,
+                          tier: equip.confidence,
+                          muted: !equip.generators_permitted,
+                          basis: esc(equip.basis),
+                          cite: `Read from the text of ${site.permit.count} permit document${site.permit.count === 1 ? '' : 's'} listed below`,
+                        })}
+                        ${evidenceCard({
+                          key: 'Capex / filings',
+                          value: filings && filings.total ? `${filings.total} matching filing${filings.total === 1 ? '' : 's'}` : 'No match',
+                          tier: (filings && filings.confidence) || 'pending',
+                          muted: !(filings && filings.total),
+                          basis: esc((filings && filings.caveat) || 'No operator resolved, so no filing search was run.'),
+                          cite: filingRows,
+                        })}
+                    </div>
+
+                    ${geoLine}
+                </div>
+            </section>
+
+            <section class="gw-scene" id="status">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[02]</span> Pipeline stage</div>
+                    <h2 class="gw-scene-h2">Where this site sits in the <em>build</em>.</h2>
+                    ${pipelineLadder(site.pipeline)}
+
+                    <div class="gw-claims">
+                        <span class="gw-claims-label">What the operator says</span>
+                        ${site.claims && site.claims.length
+                          ? site.claims.map((c) => `<p>${esc(c.text)} <a href="${esc(c.url)}" target="_blank" rel="noopener">source</a> ${badge('reported')}</p>`).join('\n                        ')
+                          : '<p class="gw-empty">No public operator statements have been recorded for this site. Company claims about capacity, cooling technology and water use are kept in this block, separate from the verified record above, and are never merged into it.</p>'}
+                    </div>
+                </div>
+            </section>
+
+            <section class="gw-scene" id="timeline">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[03]</span> Activity</div>
+                    <h2 class="gw-scene-h2">Every dated <em>event</em> on the record.</h2>
+                    ${timeline([...(site.timeline || []), ...(site.reported || []).map((r) => ({ date: r.date, kind: 'news', title: r.title, detail: r.publication, url: r.url, confidence: 'reported' }))].sort((a, b) => String(a.date).localeCompare(String(b.date))), next)}
+                </div>
+            </section>
+
+            <section class="gw-scene" id="sources">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[04]</span> Sources</div>
+                    <h2 class="gw-scene-h2">Every permit behind this <em>record</em>.</h2>
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Registration</th><th>Issued</th><th>Program</th><th>Document</th></tr></thead>
+                        <tbody>
+                        ${site.permit.records.map((r) => `<tr><td>${esc(r.registration_no)}</td><td>${esc(fmtDate(r.issued) || '&mdash;')}</td><td>${esc(r.program)}</td><td><a href="${esc(r.pdf)}" target="_blank" rel="noopener">Permit PDF</a></td></tr>`).join('\n                        ')}
+                        </tbody>
+                    </table>
+                    </div>
+                    ${CORRECTION_BLOCK}
+                </div>
+            </section>`;
+
+  return head({ title, description: desc, canonical: `${BASE}/site/${site.slug}/` }) + body + foot;
+}
+
+/* -------------------------------------------------------------- county ---- */
+
+function renderCounty(name, sites) {
+  const slug = slugify(name);
+  const gens = sites.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0);
+  const permits = sites.reduce((a, s) => a + s.permit.count, 0);
+  const sfha = sites.filter((s) => s.flood?.in_sfha).length;
+  const operators = [...new Set(sites.map((s) => s.operator.name).filter(Boolean))];
+
+  const title = `${name}, Virginia — data center permits | Groundwork`;
+  const desc = `${sites.length} permitted data center sites in ${name}, Virginia: ${permits} issued air permits and ${gens.toLocaleString()} permitted generators, aggregated from VA DEQ disclosures.`;
+
+  const body = `
+            <section class="gw-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="gw-sitehead">
+                        <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; Counties</div>
+                        <h1 class="gw-site-title">${esc(name)}, Virginia</h1>
+                        <p class="gw-site-where">Cumulative disclosure across every permitted data center site in this county.</p>
+                        <div class="gw-meta">
+                            <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">${sites.length}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">${permits}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">${gens.toLocaleString()}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Operators</span><span class="gw-meta-val">${operators.length}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gw-scene">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> The rollup</div>
+                    <h2 class="gw-scene-h2">The number nobody else <em>publishes</em>.</h2>
+                    <p class="gw-lede">Each permit below is individually unremarkable and separately published. Added up, they describe a county-scale build-out. The generator total is counted from permit text and is labelled ${badge('probable')} accordingly &mdash; permits describe equipment in prose, and a permitted maximum is not an installed count.</p>
+                    ${sfha ? `<p class="gw-lede"><strong>${sfha} of these sites sit inside a FEMA Special Flood Hazard Area.</strong></p>` : ''}
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Site</th><th>Operator</th><th class="num">Permits</th><th class="num">Generators</th><th>Flood zone</th></tr></thead>
+                        <tbody>
+                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.permit.count}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${esc(s.flood?.zone ? 'Zone ' + s.flood.zone : 'Pending')}</td></tr>`).join('\n                        ')}
+                        </tbody>
+                    </table>
+                    </div>
+                    ${CORRECTION_BLOCK}
+                </div>
+            </section>`;
+
+  return { slug, html: head({ title, description: desc, canonical: `${BASE}/county/${slug}/` }) + body + foot };
+}
+
+/* ------------------------------------------------------------ operator ---- */
+
+function renderOperator(name, sites) {
+  const slug = slugify(name);
+  const gens = sites.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0);
+  const permits = sites.reduce((a, s) => a + s.permit.count, 0);
+  const counties = [...new Set(sites.map((s) => countyName(s.locality)))];
+  const probable = sites.filter((s) => s.operator.confidence === 'probable');
+
+  const title = `${name} — permitted data center sites | Groundwork`;
+  const desc = `Every ${name} data center site tracked by Groundwork: ${sites.length} sites across ${counties.length} Virginia localities, ${permits} issued air permits.`;
+
+  const body = `
+            <section class="gw-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="gw-sitehead">
+                        <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; Operators</div>
+                        <h1 class="gw-site-title">${esc(name)}</h1>
+                        <p class="gw-site-where">Every tracked site held by this operator, one click away.</p>
+                        <div class="gw-meta">
+                            <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">${sites.length}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">${permits}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">${gens.toLocaleString()}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Localities</span><span class="gw-meta-val">${counties.length}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gw-scene">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Portfolio</div>
+                    <h2 class="gw-scene-h2">Sites attributed to this <em>operator</em>.</h2>
+                    ${probable.length ? `<p class="gw-lede">${probable.length} of these ${probable.length === 1 ? 'attributions is' : 'attributions are'} ${badge('probable')} rather than confirmed &mdash; the permit is held by a single-purpose entity linked to this operator by documentary evidence rather than by name. The basis is stated on each site page.</p>` : ''}
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Site</th><th>County</th><th class="num">Permits</th><th class="num">Generators</th><th>Attribution</th></tr></thead>
+                        <tbody>
+                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td><a href="/labs/groundwork/county/${countySlug(s.locality)}/">${esc(countyName(s.locality))}</a></td><td class="num">${s.permit.count}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${badge(s.operator.confidence)}</td></tr>`).join('\n                        ')}
+                        </tbody>
+                    </table>
+                    </div>
+                    ${CORRECTION_BLOCK}
+                </div>
+            </section>`;
+
+  return { slug, html: head({ title, description: desc, canonical: `${BASE}/operator/${slug}/` }) + body + foot };
+}
+
+/* ----------------------------------------------------------------- run ---- */
+
+export function render() {
+  const db = readJSON(path.join(DATA, 'sites.json'));
+  if (!db) throw new Error('run 03-build-sites.mjs first');
+
+  fs.writeFileSync(path.join(OUT, 'index.html'), renderIndex(db));
+
+  for (const s of db.sites) write(`site/${s.slug}`, renderSite(s, db));
+
+  const byCounty = new Map();
+  for (const s of db.sites) {
+    const n = countyName(s.locality);
+    if (!byCounty.has(n)) byCounty.set(n, []);
+    byCounty.get(n).push(s);
+  }
+  for (const [n, list] of byCounty) {
+    list.sort((a, b) => (b.equipment.generators_permitted || 0) - (a.equipment.generators_permitted || 0));
+    const { slug, html } = renderCounty(n, list);
+    write(`county/${slug}`, html);
+  }
+
+  const byOp = new Map();
+  for (const s of db.sites) {
+    if (!s.operator.name) continue;
+    if (!byOp.has(s.operator.name)) byOp.set(s.operator.name, []);
+    byOp.get(s.operator.name).push(s);
+  }
+  for (const [n, list] of byOp) {
+    list.sort((a, b) => String(b.permit.latest_issued || '').localeCompare(String(a.permit.latest_issued || '')));
+    const { slug, html } = renderOperator(n, list);
+    write(`operator/${slug}`, html);
+  }
+
+  /* County aggregates power the zoomed-out map view, where individual pins
+     would be an unreadable pile over Northern Virginia. */
+  const countyMeta = readJSON(path.join(DATA, 'counties.json'), { counties: {} }).counties;
+  const countyAgg = new Map();
+  for (const s of db.sites) {
+    const key = `${s.locality}|${s.state}`;
+    const meta = countyMeta[key];
+    const name = countyName(s.locality);
+    const cur = countyAgg.get(key) || {
+      name, state: s.state, slug: slugify(name),
+      lat: meta ? meta.lat : null, lon: meta ? meta.lon : null,
+      sites: 0, permits: 0, generators: 0, located: 0,
+    };
+    cur.sites++; cur.permits += s.permit.count; cur.generators += s.equipment.generators_permitted || 0;
+    if (s.geo?.lat) cur.located++;
+    countyAgg.set(key, cur);
+  }
+
+  /* Public, citable dataset — trimmed for the client-side directory. */
+  writeJSON(path.join(OUT, 'data', 'sites.json'), {
+    counties: [...countyAgg.values()].filter((c) => c.lat != null),
+    generated_at: db.generated_at,
+    license: 'Compiled from US public disclosures. Reuse freely with attribution to Canonical Labs Groundwork.',
+    coverage: db.coverage,
+    counts: db.counts,
+    sites: db.sites.map((s) => ({
+      slug: s.slug, name: s.name, operator: s.operator.name, operator_confidence: s.operator.confidence,
+      locality: countyName(s.locality), state: s.state,
+      address: s.address.street, address_confidence: s.address.confidence,
+      lat: s.geo?.lat ?? null, lon: s.geo?.lon ?? null,
+      permits: s.permit.count, latest_permit: s.permit.latest_issued,
+      generators: s.equipment.generators_permitted,
+      flood_zone: s.flood?.zone ?? null, in_sfha: s.flood?.in_sfha ?? null,
+      water_stress: s.water?.label ?? null,
+      grid: s.grid?.status ?? 'pending',
+    })),
+  }, { pretty: false });
+
+  log(`rendered ${db.sites.length} site pages, ${byCounty.size} county pages, ${byOp.size} operator pages`);
+  return { sites: db.sites.length, counties: byCounty.size, operators: byOp.size };
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) render();

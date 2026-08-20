@@ -18,3 +18,7 @@ vendor/
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+
+# Groundwork pipeline caches — regenerable, and the PDF cache is ~100MB.
+scripts/groundwork/data/raw/permit-pdfs/
+scripts/groundwork/data/raw/*.log

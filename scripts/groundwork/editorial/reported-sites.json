@@ -1,0 +1,78 @@
+{
+  "_comment": [
+    "The REPORTED tier (PRD §9.2). Hand-curated, deliberately small, and the only",
+    "part of Groundwork that is not machine-derived.",
+    "",
+    "Two kinds of entry live here:",
+    "  1. `sites`  — a real facility that journalism has established but that has",
+    "                no disclosure record yet. It gets a page, with every",
+    "                disclosure layer shown as pending. The page upgrades itself",
+    "                automatically once a permit appears in a state feed.",
+    "  2. `claims` — operator statements and press coverage attached to a site",
+    "                that DOES have a disclosure record. These render only inside",
+    "                the 'What the operator says' block, never as verified fact.",
+    "",
+    "Rules for editors:",
+    "  - `url` must be a real, checked link. Leave it null rather than guess; a",
+    "    null renders as 'citation pending' and is listed by `npm run audit`.",
+    "  - `site_slug` links a claim to an existing generated site page.",
+    "  - Never restate a company claim as a Groundwork finding."
+  ],
+  "sites": [
+    {
+      "slug": "stargate-abilene-taylor-tx",
+      "name": "Stargate Abilene",
+      "state": "TX",
+      "locality": "Taylor County",
+      "address": null,
+      "operator": "OpenAI / SoftBank / Oracle / MGX consortium",
+      "status": "Under construction",
+      "reported": [
+        {
+          "date": "2026-01-01",
+          "title": "Campus permitted for 62 diesel generators and 10 gas turbines",
+          "publication": "Floodlight",
+          "url": null,
+          "note": "Cited in the Groundwork spec (Appendix C). URL must be verified before launch."
+        }
+      ]
+    },
+    {
+      "slug": "behring-innovation-campus-oakland-ca",
+      "name": "Innovation Campus (proposed) — 415 20th St",
+      "state": "CA",
+      "locality": "Alameda County",
+      "address": "415 20th St, Oakland, CA",
+      "operator": "Behring Companies",
+      "status": "Proposed — pending council, no permit filed",
+      "reported": [
+        {
+          "date": "2026-01-01",
+          "title": "Proposal would reuse roughly 20MW of former LBNL infrastructure",
+          "publication": "KQED / The Oaklandside / SFist",
+          "url": null,
+          "note": "Cited in the Groundwork spec (Appendix C). URL must be verified before launch."
+        }
+      ]
+    },
+    {
+      "slug": "vantage-san-antonio-bexar-tx",
+      "name": "Vantage — San Antonio area",
+      "state": "TX",
+      "locality": "Bexar County",
+      "address": null,
+      "operator": "Vantage Data Centers",
+      "status": "Permitted",
+      "reported": [
+        {
+          "date": "2026-01-01",
+          "title": "Permitted at 99.8 tons/year NOx — just under the 100-ton public-review threshold",
+          "publication": "Floodlight",
+          "url": null,
+          "note": "Cited in the Groundwork spec (Appendix C). URL must be verified before launch."
+        }
+      ]
+    }
+  ],
+  "claims": []
+}

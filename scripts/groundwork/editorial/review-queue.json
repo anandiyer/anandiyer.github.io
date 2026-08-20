@@ -1,0 +1,237 @@
+{
+  "generated_at": "2026-08-20T04:48:34.886Z",
+  "instructions": "Triage each item: attach it as a `claim` to a site_slug in reported-sites.json, promote it to a new reported `site`, or drop it. Then add its URL to seen-urls.json so it stops reappearing.",
+  "count": 5,
+  "items": [
+    {
+      "source": "Virginia Mercury",
+      "title": "Loudoun County, other Virginia localities consider hitting the brakes on data center development",
+      "url": "https://virginiamercury.com/2026/07/30/loudoun-county-other-virginia-localities-consider-hitting-the-brakes-on-data-center-development/",
+      "date": "Thu, 30 Jul 2026 09:19:51 +0000",
+      "summary": "Loudoun County, ground zero of Data Center Alley and home to over 250 of the power-hungry digital warehouse facilities, is considering a pause on all new data center project applications, officials said this week. “The community has basically been begging us to do something about the unchecked growth of data centers,” County Supervisor Juli Briskman [&#8230;]",
+      "matched_localities": [
+        "Loudoun"
+      ],
+      "matched_operators": [
+        "Digital Realty",
+        "DP Facilities"
+      ],
+      "score": 4,
+      "candidate_sites": [
+        {
+          "slug": "yondr-data-center-loudoun",
+          "name": "Yondr Data Center",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-114-iad-115-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-114 IAD-115",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-243-244-290-291-292-loudoun",
+          "name": "Amazon Data Services Inc - IAD-243/244/290/291/292",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-51-iad-56-iad-88-iad-89-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "digital-third-second-manassas-llc-and-digital-carver-brickyard-llc-prince-willia",
+          "name": "Digital Third Second Manassas, LLC & Digital Carver Brickyard, LLC",
+          "locality": "Prince William Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-120-121-122-loudoun",
+          "name": "Amazon Data Services Inc IAD-120/121/122",
+          "locality": "Loudoun Co."
+        }
+      ],
+      "editor_action": "unreviewed"
+    },
+    {
+      "source": "Virginia Mercury",
+      "title": "Brown water, dust and loud noises: Louisa homeowner sues Amazon over data center construction",
+      "url": "https://virginiamercury.com/2026/07/28/brown-water-dust-and-loud-noises-louisa-homeowner-sues-amazon-over-data-center-construction/",
+      "date": "Tue, 28 Jul 2026 09:29:43 +0000",
+      "summary": "From the driveway of his Louisa home and business, Austin Newsome sees dozens of dump trucks barrel down Route 33 most days, hauling dirt and other debris. The road is stained rusty red from the soil displaced by the construction of Amazon’s latest data center campus in the county.  One day, Newsom said, his neighbor [&#8230;]",
+      "matched_localities": [
+        "Louisa"
+      ],
+      "matched_operators": [
+        "Amazon"
+      ],
+      "score": 3,
+      "candidate_sites": [
+        {
+          "slug": "amazon-data-services-inc-iad-114-iad-115-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-114 IAD-115",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-134-135-136-fairfax",
+          "name": "Amazon Data Services Inc - IAD-134/135/136",
+          "locality": "Fairfax Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-264-prince-william",
+          "name": "Amazon Data Services Inc IAD-264",
+          "locality": "Prince William Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-243-244-290-291-292-loudoun",
+          "name": "Amazon Data Services Inc - IAD-243/244/290/291/292",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-51-iad-56-iad-88-iad-89-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-120-121-122-loudoun",
+          "name": "Amazon Data Services Inc IAD-120/121/122",
+          "locality": "Loudoun Co."
+        }
+      ],
+      "editor_action": "unreviewed"
+    },
+    {
+      "source": "Virginia Mercury",
+      "title": "As Va. officials weigh data center pushback, report details industry’s public service funding",
+      "url": "https://virginiamercury.com/2026/08/17/as-va-officials-weigh-data-center-pushback-report-details-industrys-public-service-funding/",
+      "date": "Mon, 17 Aug 2026 09:27:52 +0000",
+      "summary": "As a single mother balancing work against earning a nursing degree, Yvettrise Hoskie thought homeownership was out of her reach. Now, she’s settling into a Henrico County townhome development.  The county’s Affordable Housing Trust Fund helped with her downpayment, but the financial assistance was made possible by one of the state’s more controversial neighbors — [&#8230;]",
+      "matched_localities": [
+        "Henrico"
+      ],
+      "matched_operators": [],
+      "score": 2,
+      "candidate_sites": [
+        {
+          "slug": "iron-mountain-information-management-llc-henrico",
+          "name": "Iron Mountain Information Management LLC",
+          "locality": "Henrico Co."
+        },
+        {
+          "slug": "qts-richmond-v-llc-henrico",
+          "name": "QTS Richmond V LLC",
+          "locality": "Henrico Co."
+        },
+        {
+          "slug": "capital-one-services-incorporated-henrico",
+          "name": "Capital One Services Incorporated",
+          "locality": "Henrico Co."
+        },
+        {
+          "slug": "bank-of-america-villa-park-drive-henrico",
+          "name": "Bank of America - Villa Park Drive",
+          "locality": "Henrico Co."
+        },
+        {
+          "slug": "qts-richmond-data-center-henrico",
+          "name": "QTS Richmond Data Center",
+          "locality": "Henrico Co."
+        },
+        {
+          "slug": "bank-of-america-sandston-henrico",
+          "name": "Bank of America-Sandston",
+          "locality": "Henrico Co."
+        }
+      ],
+      "editor_action": "unreviewed"
+    },
+    {
+      "source": "Virginia Mercury",
+      "title": "Lowdown from Loudoun: Virginia official shares data center tips with Maryland audience",
+      "url": "https://virginiamercury.com/2026/08/14/repub/lowdown-from-loudoun-virginia-official-shares-data-center-tips-with-maryland-audience/",
+      "date": "Fri, 14 Aug 2026 09:25:01 +0000",
+      "summary": "Michael Turner, a county supervisor in Loudoun County, Virginia, estimates that the public perception of hyperscale data centers has shifted considerably in the last six to nine months — and he isn’t sure why. Turner, a government official in the county with one of the world’s highest concentrations of data centers with over 250, said [&#8230;]",
+      "matched_localities": [
+        "Loudoun"
+      ],
+      "matched_operators": [],
+      "score": 2,
+      "candidate_sites": [
+        {
+          "slug": "yondr-data-center-loudoun",
+          "name": "Yondr Data Center",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-114-iad-115-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-114 IAD-115",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-243-244-290-291-292-loudoun",
+          "name": "Amazon Data Services Inc - IAD-243/244/290/291/292",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-51-iad-56-iad-88-iad-89-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-120-121-122-loudoun",
+          "name": "Amazon Data Services Inc IAD-120/121/122",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-iad-215-loudoun",
+          "name": "Amazon Data Services IAD-215",
+          "locality": "Loudoun Co."
+        }
+      ],
+      "editor_action": "unreviewed"
+    },
+    {
+      "source": "Virginia Mercury",
+      "title": "Loudoun supervisors mull data center moratorium and more Virginia headlines",
+      "url": "https://virginiamercury.com/briefs/loudoun-supervisors-mull-data-center-moratorium-and-more-virginia-headlines/",
+      "date": "Tue, 28 Jul 2026 09:05:25 +0000",
+      "summary": "• &#8220;Have thoughts about data centers and power bills? Share your input for the Virginia Energy Plan.&#8221; — WHRO • &#8220;(Department of Environmental Quality) study finds growing pressure on Eastern Virginia groundwater.&#8221; — Shore Daily News • &#8220;Lawmakers move forward with plans for childcare center for state employees.&#8221; — VPM News • &#8220;Loudoun supervisors mull data [&#",
+      "matched_localities": [
+        "Loudoun"
+      ],
+      "matched_operators": [],
+      "score": 2,
+      "candidate_sites": [
+        {
+          "slug": "yondr-data-center-loudoun",
+          "name": "Yondr Data Center",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-114-iad-115-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-114 IAD-115",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-243-244-290-291-292-loudoun",
+          "name": "Amazon Data Services Inc - IAD-243/244/290/291/292",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-51-iad-56-iad-88-iad-89-loudoun",
+          "name": "Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-inc-iad-120-121-122-loudoun",
+          "name": "Amazon Data Services Inc IAD-120/121/122",
+          "locality": "Loudoun Co."
+        },
+        {
+          "slug": "amazon-data-services-iad-215-loudoun",
+          "name": "Amazon Data Services IAD-215",
+          "locality": "Loudoun Co."
+        }
+      ],
+      "editor_action": "unreviewed"
+    }
+  ]
+}

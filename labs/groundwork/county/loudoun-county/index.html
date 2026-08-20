@@ -1,0 +1,169 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loudoun County, Virginia — data center permits | Groundwork</title>
+    <meta name="description" content="85 permitted data center sites in Loudoun County, Virginia: 92 issued air permits and 5,882 permitted generators, aggregated from VA DEQ disclosures." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/groundwork/county/loudoun-county/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/groundwork/county/loudoun-county/" />
+    <meta property="og:title" content="Loudoun County, Virginia — data center permits | Groundwork" />
+    <meta property="og:description" content="85 permitted data center sites in Loudoun County, Virginia: 92 issued air permits and 5,882 permitted generators, aggregated from VA DEQ disclosures." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/groundwork/county/loudoun-county/" />
+    <meta property="twitter:title" content="Loudoun County, Virginia — data center permits | Groundwork" />
+    <meta property="twitter:description" content="85 permitted data center sites in Loudoun County, Virginia: 92 issued air permits and 5,882 permitted generators, aggregated from VA DEQ disclosures." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="twitter:creator" content="@canonicalcc" />
+    <meta property="twitter:site" content="@canonicalcc" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com?ref=canonicalcc">
+    <link rel="preconnect" href="https://fonts.gstatic.com?ref=canonicalcc" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular&ref=canonicalcc" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap&ref=canonicalcc" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+    <link rel="stylesheet" href="/labs/groundwork/lab.css?v={{ site.asset_version }}">
+
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+        <main>
+            <section class="gw-hero" id="top">
+                <div class="container mx-auto px-8">
+                    <div class="gw-sitehead">
+                        <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; Counties</div>
+                        <h1 class="gw-site-title">Loudoun County, Virginia</h1>
+                        <p class="gw-site-where">Cumulative disclosure across every permitted data center site in this county.</p>
+                        <div class="gw-meta">
+                            <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">85</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">92</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">5,882</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Operators</span><span class="gw-meta-val">24</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gw-scene">
+                <div class="container mx-auto px-8">
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> The rollup</div>
+                    <h2 class="gw-scene-h2">The number nobody else <em>publishes</em>.</h2>
+                    <p class="gw-lede">Each permit below is individually unremarkable and separately published. Added up, they describe a county-scale build-out. The generator total is counted from permit text and is labelled <span class="gw-conf probable" title="Matched on a non-unique key; very likely correct but not certain.">probable</span> accordingly &mdash; permits describe equipment in prose, and a permitted maximum is not an installed count.</p>
+                    
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Site</th><th>Operator</th><th class="num">Permits</th><th class="num">Generators</th><th>Flood zone</th></tr></thead>
+                        <tbody>
+                        <tr><td><a href="/labs/groundwork/site/intergate-ashburn-llc-loudoun/">Intergate Ashburn, LLC</a></td><td>Sabey Data Centers</td><td class="num">1</td><td class="num">900</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-51-iad-56-iad-88-iad-89-loudoun/">Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89</a></td><td>Amazon</td><td class="num">1</td><td class="num">750</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-western-lands-llc-loudoun/">Digital Western Lands LLC</a></td><td>Digital Realty</td><td class="num">1</td><td class="num">750</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-loudoun-pkwy-center-n-llc-loudoun/">Digital Loudoun Pkwy Center N LLC</a></td><td>Digital Realty</td><td class="num">2</td><td class="num">500</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/equinix-llc-ashburn-loudoun/">Equinix, LLC - Ashburn</a></td><td>Equinix</td><td class="num">1</td><td class="num">500</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/aligned-energy-data-centers-ashburn-llc-loudoun/">Aligned Energy Data Centers (Ashburn), LLC</a></td><td>Aligned Data Centers</td><td class="num">1</td><td class="num">500</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/iskander-lc-1a-jamshid-lc-1b-kaveh-lc2-lohrasp-ventures-lc3-loudoun/">Iskander (LC-1A) Jamshid (LC-1B) Kaveh (LC2) Lohrasp Ventures (LC3)</a></td><td>CloudHQ</td><td class="num">1</td><td class="num">142</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/darab-ventures-one-two-six-llc-loudoun/">Darab Ventures One, Two, Six LLC</a></td><td>CloudHQ</td><td class="num">1</td><td class="num">131</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/vantage-data-centers-va11-va12-va13-va14-and-va15-loudoun/">Vantage Data Centers VA11, VA12, VA13, VA14, &amp; VA15</a></td><td>Vantage Data Centers</td><td class="num">1</td><td class="num">121</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-realty-digital-loudoun-3-and-4-llc-loudoun/">Digital Realty (Digital Loudoun 3 &amp; 4, LLC)</a></td><td>Digital Realty</td><td class="num">1</td><td class="num">119</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-140-141-143-loudoun/">Amazon Data Services, Inc. IAD-140/141/143</a></td><td>Amazon</td><td class="num">1</td><td class="num">108</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-kincora-loudoun/">CyrusOne Kincora</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">102</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-124-125-126-127-loudoun/">Amazon Data Services Inc IAD-124/125/126/127</a></td><td>Amazon</td><td class="num">1</td><td class="num">96</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/compass-iad-datacenter-loudoun/">Compass IAD Datacenter</a></td><td>Compass Datacenters</td><td class="num">1</td><td class="num">75</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cologix-ash1-loudoun/">Cologix ASH1</a></td><td>Cologix</td><td class="num">1</td><td class="num">75</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/qts-llc-ashburn-shellhorn-data-center-loudoun/">QTS LLC - Ashburn-Shellhorn Data Center</a></td><td>QTS</td><td class="num">1</td><td class="num">65</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/21571-beaumeade-circle-llc-loudoun/">21571 Beaumeade Circle LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">60</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-161-iad-162-iad-606-iad-285-iad-286-iad-299-iad-611/">Amazon Data Services Inc IAD-161, IAD-162, IAD-606, IAD-285, IAD-286, IAD-299, IAD-611</a></td><td>Amazon</td><td class="num">1</td><td class="num">52</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/aligned-data-centers-iad03-loudoun/">Aligned Data Centers IAD03</a></td><td>Aligned Data Centers</td><td class="num">1</td><td class="num">50</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/vantage-data-centers-va2-llc-loudoun/">Vantage Data Centers VA2 LLC</a></td><td>Vantage Data Centers</td><td class="num">1</td><td class="num">49</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-sterling-ix-x-xi-loudoun/">CyrusOne Sterling IX/X/XI</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">48</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/stack-infrastructure-data-center-si-nva06a-llc-loudoun/">STACK Infrastructure Data Center - SI NVA06A LLC</a></td><td>STACK Infrastructure</td><td class="num">1</td><td class="num">42</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-filigree-llc-loudoun/">Digital Filigree LLC</a></td><td>Digital Realty</td><td class="num">1</td><td class="num">29</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-realty-ashburn-campus-loudoun/">Digital Realty - Ashburn Campus</a></td><td>Digital Realty</td><td class="num">3</td><td class="num">28</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/zayo-group-llc-loudoun/">Zayo Group, LLC</a></td><td>Zayo</td><td class="num">1</td><td class="num">26</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/h5-data-centers-ashburn-loudoun/">H5 Data Centers - Ashburn</a></td><td>H5 Data Centers</td><td class="num">1</td><td class="num">26</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/ntt-global-data-centers-americas-inc-loudoun/">NTT Global Data Centers Americas, Inc.</a></td><td>NTT Global Data Centers</td><td class="num">1</td><td class="num">25</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-114-iad-115-loudoun/">Amazon Data Services, Inc. IAD-114 IAD-115</a></td><td>Amazon</td><td class="num">1</td><td class="num">20</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/belmont-innovation-campus-loudoun/">Belmont Innovation Campus</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">20</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-116-iad-117-loudoun/">Amazon Data Services, Inc. IAD-116 IAD-117</a></td><td>Amazon</td><td class="num">1</td><td class="num">20</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-144-iad-145-loudoun/">Amazon Data Services, Inc. IAD-144 IAD-145</a></td><td>Amazon</td><td class="num">1</td><td class="num">20</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/va1-data-center-loudoun/">VA1 Data Center</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">19</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-61-iad-63-iad-65-iad-86-iad-155-iad-600-iad-018-lou/">Amazon Data Services, Inc. IAD-61 IAD-63 IAD-65 IAD-86 IAD-155 IAD-600 IAD-018</a></td><td>Amazon</td><td class="num">1</td><td class="num">18</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-10-iad-32-iad-98-iad-99-iad-118-iad-119-iad-129-lou/">Amazon Data Services, Inc. IAD-10 IAD-32 IAD-98 IAD-99 IAD-118 IAD-119 IAD-129</a></td><td>Amazon</td><td class="num">1</td><td class="num">18</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/mecp1-ashburn-2-llc-loudoun/">MECP1 Ashburn 2, LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">16</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/1501-moran-road-development-owner-llc-loudoun/">1501 Moran Road Development Owner, LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">16</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/microsoft-corp-leesburg-data-center-iad01-02-03-04-05-loudoun/">Microsoft Corp - Leesburg Data Center (IAD01-02-03-04-05)</a></td><td>Microsoft</td><td class="num">1</td><td class="num">16</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-12-iad-15-iad-16-iad-76-iad-230-loudoun/">Amazon Data Services, Inc. IAD-12 IAD-15 IAD-16 IAD-76 IAD-230</a></td><td>Amazon</td><td class="num">1</td><td class="num">16</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-169-179-loudoun/">Amazon Data Services Inc IAD-169/179</a></td><td>Amazon</td><td class="num">1</td><td class="num">16</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-50-iad-60-iad-71-iad-78-iad-79-iad-80-loudoun/">Amazon Data Services, Inc. IAD 50 IAD 60 IAD-71 IAD-78 IAD-79 IAD-80</a></td><td>Amazon</td><td class="num">1</td><td class="num">16</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-iad-215-loudoun/">Amazon Data Services IAD-215</a></td><td>Amazon</td><td class="num">1</td><td class="num">15</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/sdc-ashburn-i-se-parcel-campus-loudoun/">SDC Ashburn I - SE Parcel Campus</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-170-loudoun/">Amazon Data Services Inc IAD-170</a></td><td>Amazon</td><td class="num">1</td><td class="num">15</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-180-iad-181-iad-182-and-iad-183-loudoun/">Amazon Data Services Inc IAD-180, IAD-181, IAD-182, &amp; IAD-183</a></td><td>Amazon</td><td class="num">1</td><td class="num">15</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/kincora-data-center-loudoun/">Kincora Data Center</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/vantage-data-center-va3-llc-loudoun/">Vantage Data Center VA3 LLC</a></td><td>Vantage Data Centers</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/equinix-llc-dc-21-dc-22-loudoun/">Equinix LLC (DC-21/DC-22)</a></td><td>Equinix</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-156-iad-157-iad-158-iad-159-iad-327-loudoun/">Amazon Data Services Inc IAD-156 IAD-157 IAD-158 IAD-159 IAD-327</a></td><td>Amazon</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-90-iad-91-iad-92-loudoun/">Amazon Data Services, Inc. IAD-90 IAD-91 IAD-92</a></td><td>Amazon</td><td class="num">1</td><td class="num">15</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-nva14-loudoun/">CyrusOne – NVA14</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/vantage-data-centers-va16-llc-loudoun/">Vantage Data Centers VA16 LLC</a></td><td>Vantage Data Centers</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/digital-realty-sterling-premiere-llc-loudoun/">Digital Realty - Sterling Premiere LLC</a></td><td>Digital Realty</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/qts-dulles-llc-loudoun/">QTS Dulles, LLC</a></td><td>QTS</td><td class="num">1</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/equinix-llc-loudoun/">Equinix LLC</a></td><td>Equinix</td><td class="num">2</td><td class="num">15</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/wheeler-data-center-loudoun/">Wheeler Data Center</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">14</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-667-iad-668-iad-669-iad-670-and-iad-671-loudoun/">Amazon Data Services Inc - IAD-667, IAD-668, IAD-669, IAD-670, and IAD-671</a></td><td>Amazon</td><td class="num">1</td><td class="num">9</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/qts-investment-properties-ashburn-llc-loudoun/">QTS Investment Properties Ashburn LLC</a></td><td>QTS</td><td class="num">1</td><td class="num">6</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-120-121-122-loudoun/">Amazon Data Services Inc IAD-120/121/122</a></td><td>Amazon</td><td class="num">1</td><td class="num">5</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/si-nva01-abs-llc-loudoun/">SI NVA01 ABS, LLC</a></td><td>STACK Infrastructure</td><td class="num">1</td><td class="num">5</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-6-iad-13-iad-54-loudoun/">Amazon Data Services, Inc. IAD-6 IAD-13 IAD-54</a></td><td>Amazon</td><td class="num">1</td><td class="num">5</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/ash2-lockridge-data-center-qts-investment-properties-ashburn-ii-llc-loudoun/">ASH2 Lockridge Data Center - QTS Investment Properties Ashburn II LLC</a></td><td>QTS</td><td class="num">1</td><td class="num">5</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-163-164-174-loudoun/">Amazon Data Services Inc - IAD-163/164/174</a></td><td>Amazon</td><td class="num">1</td><td class="num">5</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-northern-virginia-data-center-maries-road-loudoun/">CyrusOne Northern Virginia Data Center - Maries Road</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">5</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/verisign-incorporated-broad-run-facility2-loudoun/">VeriSign Incorporated Broad Run Facility2</a></td><td>VeriSign</td><td class="num">1</td><td class="num">4</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/hayden-technologies-llc-loudoun/">Hayden Technologies, LLC</a></td><td>Hayden Technologies</td><td class="num">1</td><td class="num">3</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-243-244-290-291-292-loudoun/">Amazon Data Services Inc - IAD-243/244/290/291/292</a></td><td>Amazon</td><td class="num">1</td><td class="num">2</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/inova-health-care-systems-it-operations-loudoun/">Inova Health Care Systems - IT Operations</a></td><td>Inova Health</td><td class="num">1</td><td class="num">2</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/george-washington-university-va-campus-bldg-ii-loudoun/">George Washington University - VA Campus Bldg II</a></td><td>George Washington University</td><td class="num">1</td><td class="num">2</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/yondr-data-center-loudoun/">Yondr Data Center</a></td><td>Yondr</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/microsoft-corp-blue-ridge-iad11-12-13-data-center-loudoun/">Microsoft Corp Blue Ridge (IAD11-12-13) Data Center</a></td><td>Microsoft</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-62-68-81-83-93-609-614-loudoun/">Amazon Data Services, Inc. IAD-62/68/81/83/93/609/614</a></td><td>Amazon</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-loudoun/">Amazon Data Services, Inc.</a></td><td>Amazon</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/verizon-business-network-services-inc-loudoun/">Verizon Business Network Services, Inc.</a></td><td>Verizon</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/equinix-llc-dc-13-loudoun/">Equinix LLC - DC 13</a></td><td>Equinix</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/21110-ridgetop-circle-llc-loudoun/">21110 Ridgetop Circle LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-150-iad-151-iad-152-loudoun/">Amazon Data Services, Inc. IAD-150 IAD-151 IAD-152</a></td><td>Amazon</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/sentinel-ashburn-nexus-loudoun/">Sentinel Ashburn Nexus</a></td><td>Sentinel Data Centers</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-loudoun-tech-center-loudoun/">CyrusOne Loudoun Tech Center</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/cyrusone-northern-virginia-data-center-shaw-road-loudoun/">CyrusOne Northern Virginia Data Center - Shaw Road</a></td><td>CyrusOne</td><td class="num">1</td><td class="num">&mdash;</td><td>Pending</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/ntt-global-data-centers-va2-llc-loudoun/">NTT Global Data Centers VA2, LLC</a></td><td>NTT Global Data Centers</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/amazon-data-services-inc-iad-57-iad-58-loudoun/">Amazon Data Services, Inc. IAD-57 IAD-58</a></td><td>Amazon</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/visa-usa-incorporated-loudoun/">Visa USA Incorporated</a></td><td>Visa</td><td class="num">4</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/vadata-inc-meg-four-loudoun/">VADATA Inc MEG Four</a></td><td>Amazon</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/22995-wilder-court-llc-loudoun/">22995 Wilder Court LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        <tr><td><a href="/labs/groundwork/site/22810-22860-international-drive-llc-loudoun/">22810-22860 International Drive LLC</a></td><td>&amp;mdash;</td><td class="num">1</td><td class="num">&mdash;</td><td>Zone X</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="gw-correct">
+  <h3>Something wrong on this page?</h3>
+  <p>Groundwork publishes fuzzy matches as well as confirmed ones, and labels which is which. If a field here is wrong &mdash; a misattributed operator, an address that belongs to a corporate office rather than a facility, a queue position matched to the wrong project &mdash; tell us and we will correct it and note the correction. Email <a href="mailto:ai@canonical.cc?subject=Groundwork%20correction">ai@canonical.cc</a>.</p>
+</div>
+                </div>
+            </section>        </main>
+        {% include footer.html %}
+    </div>
+</body>
+</html>

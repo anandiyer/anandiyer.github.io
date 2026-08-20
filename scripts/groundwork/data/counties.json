@@ -1,0 +1,181 @@
+{
+  "counties": {
+    "Loudoun Co.|VA": {
+      "name": "Loudoun County",
+      "geoid": "51107",
+      "state": "VA",
+      "lat": 39.0905835,
+      "lon": -77.6356463,
+      "source": "US Census TIGERweb"
+    },
+    "Culpeper Co.|VA": {
+      "name": "Culpeper County",
+      "geoid": "51047",
+      "state": "VA",
+      "lat": 38.486003,
+      "lon": -77.9557783,
+      "source": "US Census TIGERweb"
+    },
+    "Fairfax Co.|VA": {
+      "name": "Fairfax County",
+      "geoid": "51059",
+      "state": "VA",
+      "lat": 38.8344921,
+      "lon": -77.2761113,
+      "source": "US Census TIGERweb"
+    },
+    "Prince William Co.|VA": {
+      "name": "Prince William County",
+      "geoid": "51153",
+      "state": "VA",
+      "lat": 38.7015226,
+      "lon": -77.4774161,
+      "source": "US Census TIGERweb"
+    },
+    "Hanover Co.|VA": {
+      "name": "Hanover County",
+      "geoid": "51085",
+      "state": "VA",
+      "lat": 37.7600813,
+      "lon": -77.4906446,
+      "source": "US Census TIGERweb"
+    },
+    "Caroline Co.|VA": {
+      "name": "Caroline County",
+      "geoid": "51033",
+      "state": "VA",
+      "lat": 38.0266199,
+      "lon": -77.3471862,
+      "source": "US Census TIGERweb"
+    },
+    "Spotsylvania Co.|VA": {
+      "name": "Spotsylvania County",
+      "geoid": "51177",
+      "state": "VA",
+      "lat": 38.1850763,
+      "lon": -77.6561374,
+      "source": "US Census TIGERweb"
+    },
+    "Stafford Co.|VA": {
+      "name": "Stafford County",
+      "geoid": "51179",
+      "state": "VA",
+      "lat": 38.4206679,
+      "lon": -77.4573654,
+      "source": "US Census TIGERweb"
+    },
+    "Henrico Co.|VA": {
+      "name": "Henrico County",
+      "geoid": "51087",
+      "state": "VA",
+      "lat": 37.537962,
+      "lon": -77.4055845,
+      "source": "US Census TIGERweb"
+    },
+    "Manassas City|VA": {
+      "name": "Manassas city",
+      "geoid": "51683",
+      "state": "VA",
+      "lat": 38.7478604,
+      "lon": -77.4838217,
+      "source": "US Census TIGERweb"
+    },
+    "Chesterfield Co.|VA": {
+      "name": "Chesterfield County",
+      "geoid": "51041",
+      "state": "VA",
+      "lat": 37.3785218,
+      "lon": -77.5868467,
+      "source": "US Census TIGERweb"
+    },
+    "Louisa Co.|VA": {
+      "name": "Louisa County",
+      "geoid": "51109",
+      "state": "VA",
+      "lat": 37.9785631,
+      "lon": -77.9628042,
+      "source": "US Census TIGERweb"
+    },
+    "Fauquier Co.|VA": {
+      "name": "Fauquier County",
+      "geoid": "51061",
+      "state": "VA",
+      "lat": 38.738401,
+      "lon": -77.8089234,
+      "source": "US Census TIGERweb"
+    },
+    "Frederick Co.|VA": {
+      "name": "Frederick County",
+      "geoid": "51069",
+      "state": "VA",
+      "lat": 39.2045022,
+      "lon": -78.2625961,
+      "source": "US Census TIGERweb"
+    },
+    "Mecklenburg Co.|VA": {
+      "name": "Mecklenburg County",
+      "geoid": "51117",
+      "state": "VA",
+      "lat": 36.6804049,
+      "lon": -78.3627162,
+      "source": "US Census TIGERweb"
+    },
+    "Wise Co.|VA": {
+      "name": "Wise County",
+      "geoid": "51195",
+      "state": "VA",
+      "lat": 36.9752082,
+      "lon": -82.6212399,
+      "source": "US Census TIGERweb"
+    },
+    "Virginia Beach City|VA": {
+      "name": "Virginia Beach city",
+      "geoid": "51810",
+      "state": "VA",
+      "lat": 36.7775675,
+      "lon": -76.0162043,
+      "source": "US Census TIGERweb"
+    },
+    "Harrisonburg City|VA": {
+      "name": "Harrisonburg city",
+      "geoid": "51660",
+      "state": "VA",
+      "lat": 38.4361925,
+      "lon": -78.8734748,
+      "source": "US Census TIGERweb"
+    },
+    "Russell Co.|VA": {
+      "name": "Russell County",
+      "geoid": "51167",
+      "state": "VA",
+      "lat": 36.9338709,
+      "lon": -82.0955885,
+      "source": "US Census TIGERweb"
+    },
+    "Taylor County|TX": {
+      "name": "Taylor County",
+      "geoid": "48441",
+      "state": "TX",
+      "lat": 32.301388,
+      "lon": -99.8901231,
+      "source": "US Census TIGERweb"
+    },
+    "Alameda County|CA": {
+      "name": "Alameda County",
+      "geoid": "06001",
+      "state": "CA",
+      "lat": 37.650588,
+      "lon": -121.9178012,
+      "source": "US Census TIGERweb"
+    },
+    "Bexar County|TX": {
+      "name": "Bexar County",
+      "geoid": "48029",
+      "state": "TX",
+      "lat": 29.4488309,
+      "lon": -98.5199598,
+      "source": "US Census TIGERweb"
+    }
+  },
+  "generated_at": "2026-08-20T04:54:21.712Z"
+}

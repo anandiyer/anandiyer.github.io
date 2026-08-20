@@ -1,0 +1,4206 @@
+{
+  "layer": "spine-detail",
+  "source": "VA DEQ issued permit PDFs",
+  "fetched_at": "2026-08-20T04:44:02.329Z",
+  "stats": {
+    "total": 201,
+    "with_text": 185,
+    "no_text_layer": 16,
+    "failed": 0
+  },
+  "permits": [
+    {
+      "registration_no": "11541-3",
+      "facility_name": "Northrop Grumman Systems Corporation",
+      "listing_locality": "Russell Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25638/638627839057970000",
+      "permit_locality": "Russell County",
+      "address_candidates": [],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "11790-1",
+      "facility_name": "DP Facilities Inc South LLC",
+      "listing_locality": "Wise Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25640/638627840699300000",
+      "permit_locality": "Wise County",
+      "address_candidates": [
+        {
+          "address": "5978 Windswept Blvd",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "21527-7",
+      "facility_name": "Microsoft Corporation - East Coast Data Center",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25642/638627842668970000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "21527-15",
+      "facility_name": "Microsoft Corporation - East Coast Data Center",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25644/638627844150500000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 3,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "30142-3",
+      "facility_name": "TECfusions Clarksville LLC",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25646/638754663915730000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "41064-8",
+      "facility_name": "Equinix, LLC - CU 1-4",
+      "listing_locality": "Culpeper Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25648/638627869907800000",
+      "permit_locality": "Culpeper County",
+      "address_candidates": [
+        {
+          "address": "18155 Technology Drive",
+          "count": 3,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 4,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "51232-16",
+      "facility_name": "QTS Richmond Data Center",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25650/638627871515730000",
+      "permit_locality": "Henrico County",
+      "address_candidates": [
+        {
+          "address": "6000 Technology Boulevard",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "6000 Technology Blvd",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 1,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52173-1",
+      "facility_name": "11751 Meadowville Owner LLC c/o GFH Capital Ltd",
+      "listing_locality": "Chesterfield Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25652/638627883270030000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "52221-9",
+      "facility_name": "Bank of America - Villa Park Drive",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35475/639105417626400000",
+      "permit_locality": "Henrico County",
+      "address_candidates": [
+        {
+          "address": "8011 Villa Park Drive",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52281-10",
+      "facility_name": "Capital One Services Incorporated",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25654/639080659420930000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "52299-3",
+      "facility_name": "Peak 10 Incorporated",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25656/638627887859570000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "8801 Park Central Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52403-9",
+      "facility_name": "Bank of America-Sandston",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/33144/639052996294330000",
+      "permit_locality": "Henrico County",
+      "address_candidates": [
+        {
+          "address": "6050 Technology Creek Drive",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52432-6",
+      "facility_name": "Chirisa Richmond LLC",
+      "listing_locality": "Chesterfield Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25658/639123668249470000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "1401 Meadowville Rd",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "1401 Meadowville Technology Pkwy",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 36,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52629-4",
+      "facility_name": "Scout Development LLC",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25660/638627890513100000",
+      "permit_locality": null,
+      "address_candidates": [],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52820-3",
+      "facility_name": "Microsoft Corp - LVL Data Center",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25662/638627893416770000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "960 Prison Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52903-4",
+      "facility_name": "Microsoft Corporation - Timber Data Center",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25664/638627894486630000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "608 Ridge Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "52949-2",
+      "facility_name": "Microsoft Corporation - AVC Data Center",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25666/638627906559800000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "52973-2",
+      "facility_name": "Microsoft Corp DCS - AVC09 Datacenter",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25668/638990809945670000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "53071-1",
+      "facility_name": "Microsoft Corporation - AVC43 Datacenter",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25670/638627918390000000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53072-1",
+      "facility_name": "Microsoft Corp - LYH10 Datacenter",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25672/638627920046200000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53086-2",
+      "facility_name": "Microsoft Corp - AVC17 Datacenter",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25674/638810119570570000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53197-2",
+      "facility_name": "CLOP Ashland VA LLC",
+      "listing_locality": "Hanover Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37601/639207454970370000",
+      "permit_locality": "Hanover County",
+      "address_candidates": [
+        {
+          "address": "12174 Washington Highway",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 1,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53198-1",
+      "facility_name": "Microsoft Corporation - LYH03 Datacenter",
+      "listing_locality": "Mecklenburg Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28826/638816888168930000",
+      "permit_locality": "Mecklenburg County",
+      "address_candidates": [
+        {
+          "address": "101 Herbert Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53259-1",
+      "facility_name": "QTS Richmond V LLC",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35705/639128999105270000",
+      "permit_locality": "Henrico County",
+      "address_candidates": [
+        {
+          "address": "3250 East Williamsburg Road",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 247,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "53266-1",
+      "facility_name": "Iron Mountain Information Management LLC",
+      "listing_locality": "Henrico Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36251/639149773966430000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "60353-5",
+      "facility_name": "Sentara Healthcare",
+      "listing_locality": "Virginia Beach City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25680/638628502816630000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "800 Independence Boulevard",
+          "count": 3,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "5636 Southern Boulevard",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "71804-3",
+      "facility_name": "Vienna Cloud",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25684/638628506835400000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7990 Science Applications Court",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "71804-4",
+      "facility_name": "Vienna Cloud",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25686/638628507317470000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "72296-5",
+      "facility_name": "Coresite Real Estate 12100 Sunrise Valley Drive",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25688/638628511407530000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "12100 Sunrise Valley Drive",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "12100 Sunrise Valley Dr",
+          "count": 6,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 410,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "72367-4",
+      "facility_name": "Verizon Business Network Services, Inc.",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26107/638639799345030000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "72368-4",
+      "facility_name": "Oath, Inc.",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26109/638639800441670000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7777 Infantry Ridge Road",
+          "count": 4,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "72374-4",
+      "facility_name": "Comcast Cablevision of Virginia Incorporated",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26111/638639801563130000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "11101 University Boulevard",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "72375-9",
+      "facility_name": "Chantilly Technology Partners, LLC/H5 VA",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35474/639105417624930000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "4030 Lafayette Center Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 275,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73105-2",
+      "facility_name": "Freddie Mac Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26113/638639802622270000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "544 Herndon Parkway",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "8200 Jones Branch Drive",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73158-3",
+      "facility_name": "22810-22860 International Drive LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25694/638628516862330000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22810 International Drive",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73160-6",
+      "facility_name": "21110 Ridgetop Circle LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25696/638628517902900000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "73162-3",
+      "facility_name": "Digital Realty - Lemur Properties, LLC (VA3)",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26115/638639803959100000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "1780 Business Center Drive",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73170-1",
+      "facility_name": "RREEF America REIT II Corp. VVV",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25698/638628519198400000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "45901 Nokes Boulevard",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73180-4",
+      "facility_name": "Digital Realty - Porpoise Ventures LLC (VA4)",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26117/638639805143900000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "8217 Linton Hall Road",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73199-3",
+      "facility_name": "Equinix LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25700/638628520305900000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "44470 Chilum Place",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "21711 Filigree Court",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73200-2",
+      "facility_name": "Equinix, LLC - DC 14",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25702/638628522004500000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7400 Infantry Ridge Road",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73200-3",
+      "facility_name": "Equinix, LLC - DC 14",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25704/638628522430330000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7400 Infantry Ridge Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73230-2",
+      "facility_name": "Valo Park",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25706/638628524505270000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7950 Jones Branch Drive",
+          "count": 4,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73233-8",
+      "facility_name": "Equinix LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25708/638628525678670000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21721 Filigree Court",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "21711 Filigree Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73240-4",
+      "facility_name": "21571 Beaumeade Circle LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25626/638627826472770000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "21571 Beaumeade Circle",
+          "count": 24,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "3901 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 60,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73293-2",
+      "facility_name": "22995 Wilder Court LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25710/638628529262630000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "22995 Wilder Court",
+          "count": 2,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73294-16",
+      "facility_name": "Amazon Data Services, Inc. IAD-1 IAD-9",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25712/638651993618500000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 50,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73326-1",
+      "facility_name": "Plaza Office Realty II, LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25714/638628531918470000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "11720 Plaza America Drive",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73341-2",
+      "facility_name": "VeriSign Incorporated Broad Run Facility2",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25716/638628533707970000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "22340 Dresden Street",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 4,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73355-21",
+      "facility_name": "Amazon Data Services, Inc. IAD-6 IAD-13 IAD-54",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25718/638833284719930000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "43791 Devin Shafron Drive",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "43831 Devin Shafron Drive",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73363-2",
+      "facility_name": "Inova Health Care Systems - IT Operations",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25720/638628535905830000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45745 Nokes Boulevard",
+          "count": 4,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 2,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73369-3",
+      "facility_name": "New Dominion Technology Park LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35473/639105417623670000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "499 Grove Street",
+          "count": 6,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73370-12",
+      "facility_name": "Digital Realty - Ashburn Campus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25724/638628554884570000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "44393 Hastings Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 28,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73370-15",
+      "facility_name": "Digital Realty - Ashburn Campus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25726/638628555336170000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21745 Sir Timothy Drive",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73370-16",
+      "facility_name": "Digital Realty - Ashburn Campus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25728/638628555765770000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21744 Sir Timothy Drive",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73567-1",
+      "facility_name": "StratCap",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25731/638628562585630000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "1807 Michael Faraday Court",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73643-1",
+      "facility_name": "Visa USA Incorporated",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25736/638628566270800000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "45005 Russell Branch Parkway",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "1764 Old Meadow Lane",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73643-3",
+      "facility_name": "Visa USA Incorporated",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25738/638628566681670000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "45005 Russell Branch Parkway",
+          "count": 4,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73643-4",
+      "facility_name": "Visa USA Incorporated",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25740/638628567068870000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "45005 Russell Branch Parkway",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73643-5",
+      "facility_name": "Visa USA Incorporated",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25742/638628567408370000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "45005 Russell Branch Parkway",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73670-12",
+      "facility_name": "Digital Loudoun Pkwy Center N LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25744/638628569542570000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "43791 Devin Shafron Dr",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "43791 Devin Shafron Drive",
+          "count": 2,
+          "score": 135,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 500,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73670-14",
+      "facility_name": "Digital Loudoun Pkwy Center N LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25746/638778906125130000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [],
+      "generator_count_max": 2,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73683-12",
+      "facility_name": "Corporate Office Properties Trust (COPT - DC6)",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25752/638628571437070000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "9651 Hornbaker Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 21,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73717-1",
+      "facility_name": "Zayo Group, LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25754/638628573243030000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "1764 Old Meadow Lane",
+          "count": 4,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 850,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73717-3",
+      "facility_name": "Zayo Group, LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25756/638628573682400000",
+      "permit_locality": null,
+      "address_candidates": [],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73741-23",
+      "facility_name": "Amazon Data Services, Inc. IAD-7 IAD-11 IAD-24",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35472/639105417622300000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "7510 Mason King Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "7610 Mason King Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "7505 Mason King Court",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73743-7",
+      "facility_name": "Zayo Group, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25760/638900633355070000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [],
+      "generator_count_max": 26,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73757-6",
+      "facility_name": "QTS Dulles, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25762/638628579005200000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "44874 Moran Road",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "22271 Broderick Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73798-1",
+      "facility_name": "Northrop Grumman Systems Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25766/638628579967470000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7575 Coleshire Drive",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "7575 Colshire Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73809-1",
+      "facility_name": "Equinix, LLC - DC 97",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26119/638639806328030000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "460 Spring Park Place",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73813-1",
+      "facility_name": "Northrop Grumman Services Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25770/638628584702270000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "12900 Federal Systems Park Drive",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 1,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73823-2",
+      "facility_name": "Level 3 Communications Herndon Gateway",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25772/638628585470870000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "524 Van Buren Street",
+          "count": 2,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "520 Van Buren Street",
+          "count": 2,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 4,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73853-13",
+      "facility_name": "Amazon Data Services, Inc. IAD-10 IAD-32 IAD-98 IAD-99 IAD-118 IAD-119 IAD-129",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25624/638627824035800000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21645 Charles View Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "21710 Charles View Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "45630 W. Severn Way",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 18,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73860-16",
+      "facility_name": "Amazon Data Services, Inc. IAD-12 IAD-15 IAD-16 IAD-76 IAD-230",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25774/638741931683300000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73868-1",
+      "facility_name": "VADATA Inc MEG Four",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25776/638628598977470000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "43831 Devin Shafron Drive",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73872-1",
+      "facility_name": "Northrop Grumman Systems Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25778/638628599618070000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "2980 Fairview Park Drive",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73935-7",
+      "facility_name": "Intergate Ashburn, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25781/638693434893870000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21741 Red Rum Drive",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 900,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73946-6",
+      "facility_name": "Equinix, LLC - Ashburn",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26024/638634505784000000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21715 Filigree Court",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "44710 Performance Circle",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "44690 Performance Circle",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "21551 Beaumeade Circle",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "13091 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 500,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73950-1",
+      "facility_name": "George Washington University - VA Campus Bldg II",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25787/638628694774900000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "44983 Knoll Square Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 2,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73954-1",
+      "facility_name": "VA1 Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25789/638628695431430000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "44664 Guilford Dr",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 19,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73977-1",
+      "facility_name": "The Aerospace Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25791/638628696383770000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "14725 Lee Road",
+          "count": 2,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73977-2",
+      "facility_name": "The Aerospace Corporation",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25793/638628697085200000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "14725 Lee Road",
+          "count": 3,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "73995-5",
+      "facility_name": "Amazon Data Services, Inc. IAD-14 IAD-52 IAD-59",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25795/638628698040000000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "7600 Doane Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "11801 Brewers Spring Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "11800 Brewers Spring Road",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        },
+        {
+          "address": "14424 Albemarle Point Place",
+          "count": 2,
+          "score": 15,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74020-1",
+      "facility_name": "Freddie Mac Building - 8250 Jones Branch Drive",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26121/638639807493100000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "8250 Jones Branch Drive",
+          "count": 4,
+          "score": 25,
+          "near_facility": false
+        },
+        {
+          "address": "1551 Park Run Drive",
+          "count": 2,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74049-9",
+      "facility_name": "Amazon Data Services, Inc. IAD 50 IAD 60 IAD-71 IAD-78 IAD-79 IAD-80",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25797/638990809948170000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74051-2",
+      "facility_name": "Captone Mission Ridge, LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25799/638628712589800000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74052-9",
+      "facility_name": "Amazon Data Services, Inc. IAD-55 IAD-64 IAD-84",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25801/638628713136870000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "15454 John Marshall Hwy",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "15455 John Marshall Hwy",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "15395 John Marshall Hwy",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 44,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74060-2",
+      "facility_name": "U.S. Customs and Border Protection",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25803/638628717903300000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "7681 Boston Blvd",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "8444 Terminal Road",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 4,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74063- 5",
+      "facility_name": "Amazon Data Services, Inc. IAD-51 IAD-56 IAD-88 IAD-89",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37289/639195462842100000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "22574 Pacific Boulevard",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "22750 Pacific Boulevard",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "45110 Loudoun Downs Lane",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 750,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74064-1",
+      "facility_name": "Amazon Data Services, Inc. IAD-57 IAD-58",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25807/638628718881430000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22745 Relocation Dr",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "14428 Albemarle Point Place",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74074-6",
+      "facility_name": "Corporate Office Properties, L.P. - Park Center",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25809/638628719619470000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "14901 Conference Center Drive",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 2,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74079-5",
+      "facility_name": "SI NVA01 ABS, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25811/638628720226470000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22080 Pacific Boulevard",
+          "count": 3,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74080-8",
+      "facility_name": "Amazon Data Services, Inc. IAD-61 IAD-63 IAD-65 IAD-86 IAD-155 IAD-600 IAD-018",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25813/638731342312730000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "43764 Clubber Lane",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "43571 John Mosby Hwy",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "43736 Clubber Lane",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        },
+        {
+          "address": "43701 Clubber Lane",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 18,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74081-4",
+      "facility_name": "Amazon Data Services, Inc. IAD-73 IAD-74 IAD-602 IAD-193 IAD-194",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25815/638628727334530000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "8400 Buckeye Timber Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "7080 Wellington Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74085-5",
+      "facility_name": "Amazon Data Services, Inc. IAD-62/68/81/83/93/609/614",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25817/638628727920470000",
+      "permit_locality": "Lou doun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "42948 Fadeley Lane",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "24185 Upper Woodside Lane",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74086-3",
+      "facility_name": "CyrusOne Loudoun Tech Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25819/638628728324170000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21111 Ridgetop Circle",
+          "count": 2,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74094-1",
+      "facility_name": "NTT Global Data Centers VA2, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25821/638628728843130000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "44610 Guilford Drive",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "44664 Guilford Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74107-6",
+      "facility_name": "Cloud HQ",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25823/638628737610070000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "10100 Harry J. Parrish Boulevard",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "10901 Airman Avenue",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "10880 Airman Avenue",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        },
+        {
+          "address": "21955 Loudoun County Parkway",
+          "count": 1,
+          "score": 15,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 65,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74109-2",
+      "facility_name": "CyrusOne Northern Virginia Data Center - Shaw Road",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25825/638628738275030000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74112-5",
+      "facility_name": "Iron Mountain Information Management LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25827/639123668253970000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "11680 Hayden Road",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "11660 Hayden Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "7745 Wellington Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "8330 Bethlehem Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "11451 Hayden Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 29,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74114-3",
+      "facility_name": "CyrusOne Kincora",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25829/638628740274670000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21350 Pacific Boulevard",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 102,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74115-4",
+      "facility_name": "Amazon Data Services, Inc. IAD-75 IAD-85 IAD-95 IAD-96",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25831/638652055141070000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "8210 Bethlehem Road",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 516,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74118-3",
+      "facility_name": "Cashvad Ventures LLC",
+      "listing_locality": "Manassas City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36250/639149773963870000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "10400 Harry J Parrish Blvd",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74120-7",
+      "facility_name": "NTT Global Data Centers Americas, Inc.",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25835/638880859260730000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [],
+      "generator_count_max": 25,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74121-2",
+      "facility_name": "Amazon Data Services, Inc. IAD-90 IAD-91 IAD-92",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25837/638669942387830000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45950 Pathfinder Way",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74126-4",
+      "facility_name": "Digital Realty (Digital Loudoun 3 & 4, LLC)",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25839/638628759087230000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22125 Broderick Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "44820 Prentice Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 119,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74127-3",
+      "facility_name": "Data Center Vint Hill LLC",
+      "listing_locality": "Fauquier Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35471/639105417621030000",
+      "permit_locality": "Fauquier County",
+      "address_candidates": [
+        {
+          "address": "6872 Watson Court",
+          "count": 5,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74129-3",
+      "facility_name": "Amazon Data Services, Inc. IAD-100 IAD-101 IAD-102 IAD-103",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25843/638628762496730000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "10261 Tanner Way",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 18,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74130-2",
+      "facility_name": "CoreSite Real Estate Sunrise Technology Park, LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25845/638628763112700000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "12369 Sunrise Valley Drive",
+          "count": 2,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 28,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74141-3",
+      "facility_name": "QTS Investment Properties Ashburn LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25847/638852257938270000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22271 Broderick Drive",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "22280 Randolph Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 6,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74147-1",
+      "facility_name": "Equinix LLC - DC 13",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25849/638628764147670000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74150-3",
+      "facility_name": "Amazon Data Services, Inc. IAD-114 IAD-115",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25628/639213635757530000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "20935 Loudoun County Parkway",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74152-5",
+      "facility_name": "Wheeler Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25851/638628778348300000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "24400 Howling Rooster Ln",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 14,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74153-3",
+      "facility_name": "Amazon Data Services, Inc. IAD-144 IAD-145",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25853/638628778970430000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "23005 International Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74154-5",
+      "facility_name": "Aerospace Data Facility - East",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35470/639105417619770000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "7900 Telegraph Road",
+          "count": 4,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "7900 Block Telegraph Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74155-4",
+      "facility_name": "Iskander (LC-1A) Jamshid (LC-1B) Kaveh (LC2) Lohrasp Ventures (LC3)",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25855/638754663567370000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "44621 Waxpool Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "44631 Waxpool Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "21955 Loudoun County Parkway",
+          "count": 2,
+          "score": 60,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 142,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74156-1",
+      "facility_name": "Sentinel Ashburn Nexus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25857/638628779891900000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74160-3",
+      "facility_name": "Compass IAD Datacenter",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35469/639105417618500000",
+      "permit_locality": "Loud o un County",
+      "address_candidates": [
+        {
+          "address": "42254 Thunderball Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 75,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74161-5",
+      "facility_name": "QTS Investment Properties Manassas LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35468/639105417617070000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "10680 University Blvd",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "9400 Godwin Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "9540 Godwin Drive",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 103,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74162-5",
+      "facility_name": "Vantage Data Centers VA11, VA12, VA13, VA14, & VA15",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25863/638628785479200000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [],
+      "generator_count_max": 121,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74163-9",
+      "facility_name": "Hayden Technologies, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25865/638816888857770000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "20491 Goose Landing Lane",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 3,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74164-3",
+      "facility_name": "CyrusOne Northern Virginia Data Center - Maries Road",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25867/638628786473030000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45905 Maries Road",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74167-5",
+      "facility_name": "Amazon Data Services, Inc. IAD-132 IAD-133",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25869/638628786895530000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "12250 Thomasson Barn Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "9750 Hornbaker Rd",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 83,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74169-2",
+      "facility_name": "Aligned Energy Data Centers (Ashburn), LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25926/638633793013470000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21890 UUNET Drive",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "21821 UUNET Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13091 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 500,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74170-3",
+      "facility_name": "Amazon Data Services, Inc. IAD-116 IAD-117",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25928/638905045800170000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45781 Maries Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74171-4",
+      "facility_name": "Amazon Data Services (IAD-130, IAD-131, IAD-313 and DCA-072)",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36912/639177380199170000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "901 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "9020 Freedom Center Blvd",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        },
+        {
+          "address": "8924 Wellington Rd",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74172-3",
+      "facility_name": "Remington Technology Park Limited Partnership",
+      "listing_locality": "Fauquier Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25932/638633798982670000",
+      "permit_locality": "Fauquier County",
+      "address_candidates": [
+        {
+          "address": "12270 Lucky Hill Rd",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13091 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "12270 Lucky Hill Road",
+          "count": 1,
+          "score": 15,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74173-6",
+      "facility_name": "CyrusOne Sterling IX/X/XI",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32405/638989963116500000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "43290 Old Ox Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13091 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 48,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74174-1",
+      "facility_name": "Amazon Data Services, Inc. IAD-150 IAD-151 IAD-152",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25936/638633803342700000",
+      "permit_locality": null,
+      "address_candidates": [],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74181-1",
+      "facility_name": "Amazon Data Services, Inc.",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25938/638633845487370000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74184-4",
+      "facility_name": "Amazon Data Services, Inc. IAD-140/141/143",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25940/638633845946570000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 108,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74189-5",
+      "facility_name": "Equinix LLC (DC-21/DC-22)",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32404/638989963114970000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21551 Beaumeade Circle",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "22175 Beaumeade Circle",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "22165 Beaumeade Circle",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "13091 Crown Court",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74190-2",
+      "facility_name": "Amazon DCA-50",
+      "listing_locality": "Culpeper Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25944/638633847472900000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "22129 Confederate Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74197-3",
+      "facility_name": "QTS LLC - Ashburn-Shellhorn Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25948/638633853120600000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22271 Shellhorn Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "22271 Broderick Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "22291 Shellhorn Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 65,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74198-3",
+      "facility_name": "Amazon Data Services - DCA-51",
+      "listing_locality": "Fauquier Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25950/638633853758100000",
+      "permit_locality": "Fauquier County",
+      "address_candidates": [
+        {
+          "address": "7471 Bear Wallow Road",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74201-4",
+      "facility_name": "Microsoft",
+      "listing_locality": "Fauquier Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25952/638633854222530000",
+      "permit_locality": "Fauquier County",
+      "address_candidates": [
+        {
+          "address": "7471 Bear Wallow Road",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "10880 Airman Avenue",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 500,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74205-4",
+      "facility_name": "Amazon Data Services Inc IAD-120/121/122",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36911/639177380197900000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "23845 Erins Run Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74207-3",
+      "facility_name": "Amazon DCA-54",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25956/638633855631770000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "7900 Telegraph Road",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74212-3",
+      "facility_name": "Digital Western Lands LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32403/638989963113270000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "43715 Efficiency Dr",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 750,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74214-3",
+      "facility_name": "Amazon Data Services Inc IAD-161, IAD-162, IAD-606, IAD-285, IAD-286, IAD-299, IAD-611",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25960/638633856694070000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22295 Lockridge Rd",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 52,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74216-4",
+      "facility_name": "Nova Mango Farms LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25962/638633857089300000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13001 Rollins Ford Road",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 132,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74220-4",
+      "facility_name": "Microsoft Corp - Leesburg Data Center (IAD01-02-03-04-05)",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25630/638771964788470000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "19515 Compass Creek Parkway",
+          "count": 3,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74221-4",
+      "facility_name": "Microsoft Corp Blue Ridge (IAD11-12-13) Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25964/638892954826130000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74224-3",
+      "facility_name": "SI NVA02D, LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25966/638633868679100000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "9590 Hornbaker Road",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 21,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74227-2",
+      "facility_name": "Amazon Data Services Inc - IAD-163/164/174",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25968/638633869100830000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "21205 Atlantic Boulevard",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "21215 Atlantic Boulevard",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74232-2",
+      "facility_name": "ASH2 Lockridge Data Center - QTS Investment Properties Ashburn II LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25970/638633869849270000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "44655 Quality Tech Lane",
+          "count": 1,
+          "score": 60,
+          "near_facility": false
+        },
+        {
+          "address": "44675 Quality Tech Lane",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74234-2",
+      "facility_name": "Darab Ventures One, Two, Six LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32402/638989963111870000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22190 Loudoun County Parkway",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "22235 Loudoun County Parkway",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "22210 Loudoun County Parkway",
+          "count": 1,
+          "score": 60,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 131,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74235-2",
+      "facility_name": "Cologix ASH1",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25974/638889504246870000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21745 Beaumeade Cir",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 75,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74236-1",
+      "facility_name": "Microsoft - Gainesville Data Center - MNZ03",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25976/638633871882970000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13050 Hansen Farm Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "19540 Compass Creek Parkway",
+          "count": 2,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74237-1",
+      "facility_name": "Microsoft - Manassas Data Center - MNZ01",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25978/638633872515870000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "11316 Balls Ford Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "19540 Compass Creek Parkway",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 27,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74239-2",
+      "facility_name": "Amazon Data Services Inc - IAD-134/135/136",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25980/639213635756000000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "3940 Virginia Mallory Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74240-3",
+      "facility_name": "Amazon Data Services Inc - IAD-104/105/106",
+      "listing_locality": "Manassas City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25982/638633874160100000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "9740 Innovation Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74241-4",
+      "facility_name": "Gainesville Crossing Data Campus - GCDC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35467/639213635754630000",
+      "permit_locality": "Prince Wil liam County",
+      "address_candidates": [
+        {
+          "address": "13760 University Blvd",
+          "count": 2,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "13710 University Blvd",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        },
+        {
+          "address": "13750 University Blvd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74242-2",
+      "facility_name": "Vantage Data Centers VA2 LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25986/638633875365530000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22318 Glenn Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 49,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74244-2",
+      "facility_name": "Amazon Data Services Inc IAD-169/179",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25632/638627832777030000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21310 Beaumeade Circle",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74246-2",
+      "facility_name": "SI NVA05A, LLC and SI NVA05D, LLC",
+      "listing_locality": "Manassas City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25990/638990809950170000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "9101 Freedom Center Boulevard",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "8765 Wellington Road",
+          "count": 1,
+          "score": 135,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 21,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74247-1",
+      "facility_name": "Aligned Data Centers IAD03",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25992/638633943624630000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22715 Relocation Drive",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 50,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74250-2",
+      "facility_name": "Amazon Data Services Inc IAD-156 IAD-157 IAD-158 IAD-159 IAD-327",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25994/638864455362300000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "25410 Meadowdale Drive",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        },
+        {
+          "address": "43920 Lone Cedar Lane",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74252-2",
+      "facility_name": "Amazon Data Services IAD-215",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25996/639123668256400000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74260-2",
+      "facility_name": "NTT Global Data Centers VA10 LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25998/639123668251800000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "7251 Grove Hill Road",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "7253 Grove Hill Road",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 61,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74262-4",
+      "facility_name": "Digital Third Second Manassas, LLC & Digital Carver Brickyard, LLC",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37093/639185072674230000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "9905 Godwin Dr",
+          "count": 1,
+          "score": 140,
+          "near_facility": true
+        },
+        {
+          "address": "10051 Brickyard Way",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 750,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74264-2",
+      "facility_name": "Digital Realty - Sterling Premiere LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25636/638627836175800000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22588 Relocation Drive",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74265-3",
+      "facility_name": "Yondr Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26000/639225685704470000",
+      "text_layer": false,
+      "image_only": true
+    },
+    {
+      "registration_no": "74269-2",
+      "facility_name": "STACK Infrastructure Data Center - SI NVA06A LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35466/639105417614630000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "19275 Compass Creek Parkway",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "19265 Compass Creek Parkway",
+          "count": 1,
+          "score": 15,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 42,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74270-1",
+      "facility_name": "Amazon Data Services Inc - DCA-060",
+      "listing_locality": "Culpeper Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26004/638633955502300000",
+      "permit_locality": "Culpeper County",
+      "address_candidates": [
+        {
+          "address": "20420 Germanna Hwy",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74272-1",
+      "facility_name": "Amazon Data Services Inc - DCA-64",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26006/638633955909770000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "7961 Loisdale Rd",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74273-1",
+      "facility_name": "Amazon Data Services Inc - IAD-165/166/167/168/613",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26008/638633956319870000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "13650 EDS Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74274-1",
+      "facility_name": "Amazon Data Services Inc IAD-124/125/126/127",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26010/638633959051770000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "24244 Quail Ridge Lane",
+          "count": 1,
+          "score": 60,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 96,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74276-1",
+      "facility_name": "H5 Data Centers - Ashburn",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26012/638633959746100000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21800 Beaumeade Circle",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 26,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74277-2",
+      "facility_name": "Amazon Data Services Inc IAD-195/196/197/198",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/31172/638936293176970000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "14435 John Marshall Highway",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74278-1",
+      "facility_name": "Amazon Data Services Inc IAD-210/211",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26016/638633960792770000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "11600 Hayden Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13200 Woodland Park Rd",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "3200 Woodland Park Rd",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74284-2",
+      "facility_name": "Vantage Data Center VA3 LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35465/639105417613130000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "19590 Belmont Ridge Road",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74287-1",
+      "facility_name": "Vantage Data Centers VA16 LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26261/638651998243870000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22321 Pacific Blvd",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "2820 Northwestern Pkwy",
+          "count": 2,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74288-2",
+      "facility_name": "Amazon Data Services Inc. IAD450 Cosner Tech Campus",
+      "listing_locality": "Spotsylvania Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36613/639168592121270000",
+      "permit_locality": "Spotsylvania County",
+      "address_candidates": [
+        {
+          "address": "3901 Massaponax Church Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 600,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74290-1",
+      "facility_name": "CyrusOne – NVA14",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26720/638669941696770000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21529 Beaumeade Circle",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74296-1",
+      "facility_name": "Kincora Data Center",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/33143/639052996292800000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45695 Russell Branch Parkway",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        },
+        {
+          "address": "695 Russell Branch Parkway",
+          "count": 2,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74299-2",
+      "facility_name": "Amazon Data Services Inc - IAD - 550 Louisa REB",
+      "listing_locality": "Louisa Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35464/639105417611870000",
+      "permit_locality": "Louisa County",
+      "address_candidates": [
+        {
+          "address": "230 Haley Dr",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74300-1",
+      "facility_name": "Amazon Data Services Inc - IAD - 500/501",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28092/638778025658170000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13876 Redskin Drive",
+          "count": 1,
+          "score": 60,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 9,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74301-1",
+      "facility_name": "Amazon Data Services Inc - IAD-667, IAD-668, IAD-669, IAD-670, and IAD-671",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28094/638778027138400000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13200 Woodland Park Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "42630 Patriot Park Drive",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 9,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74302-1",
+      "facility_name": "Amazon Data Services Inc - IAD-243/244/290/291/292",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37399/639201548771970000",
+      "permit_locality": "Lou doun County",
+      "address_candidates": [
+        {
+          "address": "22279 Power Player Lane",
+          "count": 1,
+          "score": 65,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 2,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74306-2",
+      "facility_name": "MECP1 Ashburn 2, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32401/638989963110000000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "45831 Maries Road",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74308-1",
+      "facility_name": "Digital Filigree LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35463/639105417610630000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "21780 Filigree Court",
+          "count": 2,
+          "score": 135,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 29,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74309-1",
+      "facility_name": "Amazon Data Services Inc IAD-350",
+      "listing_locality": "Stafford Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28344/638790873414030000",
+      "permit_locality": "Stafford County",
+      "address_candidates": [
+        {
+          "address": "123 Old Potomac Church Road",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74315-1",
+      "facility_name": "1501 Moran Road Development Owner, LLC",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28686/638803848078830000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "22425 Sous Vide Lane",
+          "count": 1,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 16,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74317-1",
+      "facility_name": "Amazon Data Services Inc IAD-205/307/317/612/612x",
+      "listing_locality": "Manassas City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/31174/638936293181930000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "9501 Technology Drive",
+          "count": 1,
+          "score": 35,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74321-1",
+      "facility_name": "Belmont Innovation Campus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35462/639105417609370000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "19560 Hyperspace Lane",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 20,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74323-2",
+      "facility_name": "Amazon Data Services Inc IAD-180, IAD-181, IAD-182, & IAD-183",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35461/639105417608200000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74329-2",
+      "facility_name": "Amazon Data Services IAD-870",
+      "listing_locality": "Spotsylvania Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35666/639123810437200000",
+      "permit_locality": "Spotsylvania County",
+      "address_candidates": [
+        {
+          "address": "4195 Turner Ct",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        },
+        {
+          "address": "4197 Turner Ct",
+          "count": 1,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 5,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74331-1",
+      "facility_name": "Westfax Property Owner A LP/Westfax 4-5A",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35458/639105417604630000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "8870 Hornbaker Rd",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 3,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 22,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74332-2",
+      "facility_name": "Herndon Technology Partners LLC",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35459/639213635752900000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "13775 McLearen Road",
+          "count": 3,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74333-1",
+      "facility_name": "Amazon Data Services Inc IAD-45",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35458/639105417604630000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "8870 Hornbaker Rd",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 3,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 22,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74335-1",
+      "facility_name": "SDC Ashburn I - SE Parcel Campus",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35457/639105417603370000",
+      "permit_locality": "Loudoun County",
+      "address_candidates": [
+        {
+          "address": "44595 Low Latency Lane",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74336-1",
+      "facility_name": "Word of Grace Data Center",
+      "listing_locality": "Fairfax Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36294/639150607463270000",
+      "permit_locality": "Fairfax County",
+      "address_candidates": [
+        {
+          "address": "2850 Towerview Road",
+          "count": 2,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "14555 Avion Parkway",
+          "count": 3,
+          "score": 40,
+          "near_facility": false
+        },
+        {
+          "address": "2860 Towerview Road",
+          "count": 2,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74337-1",
+      "facility_name": "Amazon Data Services Inc IAD-170",
+      "listing_locality": "Loudoun Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35456/639105417601700000",
+      "permit_locality": "L oudoun County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "42090 Reeds Farm Ln",
+          "count": 2,
+          "score": 25,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74338-1",
+      "facility_name": "Vantage Data Centers VA41 LLC",
+      "listing_locality": "Stafford Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36249/639149773962100000",
+      "permit_locality": "Stafford County",
+      "address_candidates": [
+        {
+          "address": "255 Centreport Parkway",
+          "count": 2,
+          "score": 175,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74341-1",
+      "facility_name": "Clean Arc Data Centers - VA-1 Campus",
+      "listing_locality": "Caroline Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37147/639189502405330000",
+      "permit_locality": "Caroline County",
+      "address_candidates": [],
+      "generator_count_max": 266,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74342-1",
+      "facility_name": "Amazon Data Services Inc IAD-110/111/112/113",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36910/639177380195570000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "13820 Sunrise Valley Dr",
+          "count": 5,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "7741 Deacon Falls Drive",
+          "count": 3,
+          "score": 75,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 15,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74348-1",
+      "facility_name": "DataBank Data Center Culpeper LLC",
+      "listing_locality": "Culpeper Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/38108/639219503123070000",
+      "permit_locality": "Culpeper County",
+      "address_candidates": [
+        {
+          "address": "14625 Germana Hwy",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        }
+      ],
+      "generator_count_max": 112,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "74349-1",
+      "facility_name": "Amazon Data Services Inc IAD-264",
+      "listing_locality": "Prince William Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37970/639213635751370000",
+      "permit_locality": "Prince William County",
+      "address_candidates": [
+        {
+          "address": "820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 75,
+          "near_facility": false
+        },
+        {
+          "address": "13720 University Blvd",
+          "count": 1,
+          "score": 60,
+          "near_facility": false
+        },
+        {
+          "address": "13820 Sunrise Valley Drive",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": 49,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "80941-6",
+      "facility_name": "Cardinal Energy Corporation",
+      "listing_locality": "Frederick Co.",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32400/638989963108100000",
+      "permit_locality": "Frederick County",
+      "address_candidates": [
+        {
+          "address": "8209 Valley Pike",
+          "count": 3,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "4411 Early Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    },
+    {
+      "registration_no": "81609-5",
+      "facility_name": "Anthem CDC 3",
+      "listing_locality": "Harrisonburg City",
+      "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26022/638633962837530000",
+      "permit_locality": null,
+      "address_candidates": [
+        {
+          "address": "1175 North Main Street",
+          "count": 2,
+          "score": 100,
+          "near_facility": true
+        },
+        {
+          "address": "4411 Early Road",
+          "count": 1,
+          "score": 40,
+          "near_facility": false
+        }
+      ],
+      "generator_count_max": null,
+      "turbine_count_max": null,
+      "text_layer": true
+    }
+  ]
+}

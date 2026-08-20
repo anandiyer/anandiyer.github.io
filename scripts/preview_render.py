@@ -25,6 +25,7 @@ RENDERED = [
     "labs/physical-ai/index.html",
     "labs/power-law/index.html",
     "labs/semiconductor-silicon-stack/index.html",
+    "labs/groundwork/index.html",
     "labs/data-centers/index.html",
     "labs/decentralized-ai/index.html",
     "labs/physical-ai-robotics/index.html",
@@ -34,6 +35,17 @@ RENDERED = [
     "partials/header.html",
     "partials/footer.html",
 ]
+
+# Groundwork generates one page per site / county / operator. They are ordinary
+# front-matter pages, so glob them in rather than listing ~260 paths by hand.
+import glob as _glob
+RENDERED += sorted(
+    os.path.relpath(p, ROOT)
+    for pattern in ("labs/groundwork/site/*/index.html",
+                    "labs/groundwork/county/*/index.html",
+                    "labs/groundwork/operator/*/index.html")
+    for p in _glob.glob(os.path.join(ROOT, pattern))
+)
 
 # Top-level asset dirs/files to symlink wholesale (no rendered children).
 LINKED_ROOT = [
@@ -52,6 +64,7 @@ SHALLOW_LINK_LAB_DIRS = [
     "labs/dilutionlab",
     "labs/power-law",
     "labs/semiconductor-silicon-stack",
+    "labs/groundwork",
     "labs/data-centers",
     "labs/decentralized-ai",
     "labs/physical-ai-robotics",
@@ -134,6 +147,9 @@ def render_file(rel):
     src = os.path.join(ROOT, rel)
     dst = os.path.join(BUILD, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
+    if not os.path.isfile(src):
+        print(f"  ! skipping {rel} — not found in the working tree")
+        return
     with open(src, encoding="utf-8") as f:
         out = render(f.read())
     with open(dst, "w", encoding="utf-8") as f:

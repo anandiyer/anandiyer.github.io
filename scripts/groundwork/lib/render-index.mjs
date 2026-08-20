@@ -15,7 +15,10 @@ export function renderIndex(db) {
     if (s.flood?.in_sfha) cur.sfha++;
     counties.set(n, cur);
   }
-  const countyRows = [...counties.entries()].sort((a, b) => b[1].gens - a[1].gens);
+  const countyRows = [...counties.entries()].sort((a, b) => (b[1].sites - a[1].sites) || (b[1].gens - a[1].gens));
+  const COUNTY_LIMIT = 20;
+  const countyShown = countyRows.slice(0, COUNTY_LIMIT);
+  const countyRest = countyRows.length - countyShown.length;
   const operators = new Map();
   for (const s of sites) {
     if (!s.operator.name) continue;
@@ -26,6 +29,11 @@ export function renderIndex(db) {
   const opRows = [...operators.entries()].sort((a, b) => b[1].sites - a[1].sites).slice(0, 12);
 
   const located = sites.filter((s) => s.geo && s.geo.lat);
+  const stateCount = (db.coverage?.states || []).length;
+  const vaSites = c.from_va_permits || 0;
+  const natSites = c.from_epa_registry || 0;
+  const sfhaSites = located.filter((s) => s.flood?.in_sfha);
+  const txCount = sites.filter((s) => s.state === 'TX').length;
   const inSfha = located.filter((s) => s.flood?.in_sfha).length;
   const highWater = located.filter((s) => /^High|^Extremely High/.test(s.water?.label || '')).length;
 
@@ -44,13 +52,13 @@ export function renderIndex(db) {
                         <span class="gw-eyebrow">[00] &nbsp; Canonical Labs &middot; Groundwork</span>
                         <h1 class="gw-title">The AI buildout, minus the <em>press release</em>.</h1>
                         <p class="gw-subtitle">
-                            Over $690B has been committed to US AI data center construction, and flood, water and grid exposure are still priced as secondary to power and land. Groundwork is a permanently-indexed record of where these sites actually are and what they are built on &mdash; assembled from state air permits, FEMA flood maps, WRI Aqueduct and SEC filings. Every fact carries its own confidence tier and its own citation. Nothing here comes from a company announcement.
+                            Over $690B has been committed to US AI data center construction, and flood, water and grid exposure are still priced as secondary to power and land. Groundwork is a permanently-indexed record of where these sites actually are and what they are built on &mdash; assembled from EPA's national air-permit registry, Virginia's permit-level disclosures, FEMA flood maps, WRI Aqueduct and SEC filings. Every fact carries its own confidence tier and its own citation. Nothing here comes from a company announcement.
                         </p>
                         {% include lab-share.html github_path="labs/groundwork" %}
                         <div class="gw-meta">
                             <div class="gw-meta-item"><span class="gw-meta-key">Sites tracked</span><span class="gw-meta-val">${c.sites}</span></div>
                             <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">${c.permits}</span></div>
-                            <div class="gw-meta-item"><span class="gw-meta-key">Coverage</span><span class="gw-meta-val">Virginia &middot; ${counties.size} localities</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">Coverage</span><span class="gw-meta-val">${stateCount} states &middot; ${counties.size} counties</span></div>
                             <div class="gw-meta-item"><span class="gw-meta-key">Updated</span><span class="gw-meta-val">${esc(updated || '')}</span></div>
                         </div>
                     </div>
@@ -70,8 +78,8 @@ export function renderIndex(db) {
                             <div class="gw-tldr-label"><strong>Issued air permits.</strong> Across ${c.sites} distinct facilities &mdash; campuses are permitted in phases, so permits outnumber sites.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat">${countyRows[0] ? countyRows[0][1].gens.toLocaleString() : '0'}</div>
-                            <div class="gw-tldr-label"><strong>In ${esc(countyRows[0] ? countyRows[0][0] : '—')} alone.</strong> The single densest locality in the dataset.</div>
+                            <div class="gw-stat"><em>${sfhaSites.length}</em></div>
+                            <div class="gw-tldr-label"><strong>Sit in a FEMA flood zone.</strong> Including Equinix in Hudson County NJ and two Microsoft campuses in Cheyenne. None of them are in Virginia.</div>
                         </div>
                         <div class="gw-tldr-item">
                             <div class="gw-stat">${highWater}<span class="gw-stat-unit">/${located.length}</span></div>
@@ -97,7 +105,8 @@ export function renderIndex(db) {
                 <div class="container mx-auto px-8">
                     <div class="gw-section-label"><span class="gw-section-num">[01]</span> Find a site</div>
                     <h2 class="gw-scene-h2">Start with a <em>place</em>.</h2>
-                    <p class="gw-lede"><strong>What the Virginia data actually shows:</strong> all ${located.length} sites we could locate precisely fall in FEMA Zone X &mdash; minimal mapped flood hazard. Not one sits in a Special Flood Hazard Area. The exposure here is water, not flood: ${highWater} of those sites draw from basins WRI rates high or extremely high for baseline water stress. We publish that because it is what the disclosures say, not because it is the thesis we started with.</p>
+                    <p class="gw-lede"><strong>Read the map as a floor, not a census.</strong> Coverage is uneven by design of the source, not by design of ours: air permitting is a state function, so there is no national permit list. The national layer is EPA's registry, where the industry code is self-reported &mdash; which is why Texas shows only ${txCount} facilities here despite being one of the largest data center markets in the country. An empty county means nobody has filed under a code we can see, never that nothing is there.</p>
+                    <p class="gw-lede">Of the ${located.length} sites located precisely enough to check, ${sfhaSites.length} sit inside a FEMA Special Flood Hazard Area and ${highWater} draw from basins WRI rates high or extremely high for water stress. Virginia &mdash; the densest cluster on the map &mdash; has zero in a flood zone; its exposure is water.</p>
 
                     <div class="gw-finder">
                         <div class="gw-search-wrap">
@@ -131,15 +140,16 @@ export function renderIndex(db) {
                 <div class="container mx-auto px-8">
                     <div class="gw-section-label"><span class="gw-section-num">[03]</span> Regional rollup</div>
                     <h2 class="gw-scene-h2">The aggregate nobody else <em>discloses</em>.</h2>
-                    <p class="gw-lede">Permit-by-permit, a data center build-out looks routine. County-by-county, it looks like this. These totals exist only because someone added up hundreds of separately-published filings.</p>
+                    <p class="gw-lede">Permit-by-permit, a data center build-out looks routine. County-by-county, it looks like this. These totals exist only because someone added up hundreds of separately-published filings. Generator counts appear only for Virginia, where Groundwork reads the permit documents themselves.</p>
                     <div class="gw-table-wrap">
                     <table class="gw-table">
                         <thead><tr><th>Locality</th><th class="num">Sites</th><th class="num">Permits</th><th class="num">Generators permitted</th><th class="num">In flood zone</th></tr></thead>
                         <tbody>
-                        ${countyRows.map(([n, v]) => `<tr><td><a href="/labs/groundwork/county/${slugify(n)}/">${esc(n)}</a></td><td class="num">${v.sites}</td><td class="num">${v.permits}</td><td class="num">${v.gens ? v.gens.toLocaleString() : '&mdash;'}</td><td class="num">${v.sfha || '&mdash;'}</td></tr>`).join('\n                        ')}
+                        ${countyShown.map(([n, v]) => `<tr><td><a href="/labs/groundwork/county/${slugify(n)}/">${esc(n)}</a></td><td class="num">${v.sites}</td><td class="num">${v.permits || '&mdash;'}</td><td class="num">${v.gens ? v.gens.toLocaleString() : '&mdash;'}</td><td class="num">${v.sfha || '&mdash;'}</td></tr>`).join('\n                        ')}
                         </tbody>
                     </table>
                     </div>
+                    <p class="gw-note-navy">The ${COUNTY_LIMIT} densest of ${countyRows.length} counties. A dash in the permits or generators column means Groundwork has the facility from EPA's registry but has not yet read that state's permit documents &mdash; not that the facility is unpermitted. The remaining counties are reachable from the map above, or from any site page.</p>
                 </div>
             </section>
 
@@ -182,7 +192,8 @@ export function renderIndex(db) {
                         <div class="gw-method-col">
                             <h3 class="gw-method-k">Sources</h3>
                             <ul class="gw-method-list">
-                                <li><a href="https://www.deq.virginia.gov/news-info/shortcuts/permits/air/issued-air-permits-for-data-centers" target="_blank" rel="noopener">VA DEQ &mdash; Issued Air Permits for Data Centers</a>, as published ${esc(asOf)}. ${c.permits} permits, each with its issuance document.</li>
+                                <li><a href="https://echo.epa.gov/tools/web-services" target="_blank" rel="noopener">EPA ECHO</a> &mdash; the national air-permit facility registry. ${natSites} facilities outside Virginia, identified as data centers by name or by a recognised operator, each with an EPA-published address and coordinate.</li>
+                                <li><a href="https://www.deq.virginia.gov/news-info/shortcuts/permits/air/issued-air-permits-for-data-centers" target="_blank" rel="noopener">VA DEQ &mdash; Issued Air Permits for Data Centers</a>, as published ${esc(asOf)}. ${c.permits} permits, each with its issuance document &mdash; the only state publishing a data-center-specific list.</li>
                                 <li><a href="https://hazards.fema.gov/femaportal/NFHL/" target="_blank" rel="noopener">FEMA National Flood Hazard Layer</a> &mdash; point-in-polygon against the effective map.</li>
                                 <li><a href="https://www.wri.org/aqueduct?ref=canonicalcc" target="_blank" rel="noopener">WRI Aqueduct 4.0</a> &mdash; baseline annual water stress by basin.</li>
                                 <li><a href="https://efts.sec.gov/LATEST/search-index?q=%22data%20center%22" target="_blank" rel="noopener">SEC EDGAR full-text search</a> &mdash; operator and locality mentions in 10-K, 10-Q and 8-K filings.</li>
@@ -192,7 +203,9 @@ export function renderIndex(db) {
                         <div class="gw-method-col">
                             <h3 class="gw-method-k">Known limitations</h3>
                             <ul class="gw-method-list">
-                                <li><strong>Virginia only, so far.</strong> VA DEQ is the only state publishing a data-center-specific permit list. Texas, Georgia, Ohio and Arizona are next, and each needs its own collector.</li>
+                                <li><strong>Coverage is a floor, not a census.</strong> Air permitting is a state function; no national permit list exists. The national layer comes from EPA's registry, where the NAICS industry code is self-reported, so whole markets are under-represented &mdash; Texas most obviously. Counting sites per state here measures disclosure practice as much as build-out.</li>
+                                <li><strong>Two spines, different depth.</strong> Virginia is built permit-by-permit from VA DEQ, so those pages carry issuance dates, programs, generator counts and a PDF per permit. Everywhere else is facility-level from EPA, so permit detail and equipment counts show as pending. Each page states which spine it came from.</li>
+                                <li><strong>${db.coverage?.national_excluded_unidentified ?? 0} facilities were deliberately excluded.</strong> They carry the data-processing NAICS code but nothing in the record &mdash; not the name, not a recognisable operator &mdash; identifies them as data centers. Publishing them as data centers on a self-reported code alone would be a guess.</li>
                                 <li><strong>DEQ publishes locality, not addresses.</strong> Street addresses are recovered from the text of permit PDFs and are ${badge('probable')} at best. ${sites.filter((s) => !s.address.street).length} sites have no address &mdash; usually because the permit is a scanned image with no text layer.</li>
                                 <li><strong>Geocodes are validated, and some are rejected.</strong> An address in a permit is frequently the operator's corporate mailing address, not the facility. Any geocode landing in a different county from the one the permit names is discarded rather than published.</li>
                                 <li><strong>Generator counts are read from prose.</strong> Permits describe equipment in sentences and tables. Treat the count as the permitted maximum described, not an installed count.</li>

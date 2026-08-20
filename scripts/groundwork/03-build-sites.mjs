@@ -14,6 +14,85 @@ import path from 'node:path';
 import { RAW, DATA, readJSON, writeJSON, slugify, log } from './lib/util.mjs';
 import { resolveOperator } from './lib/operators.mjs';
 
+const ECHO_DETAIL = 'https://echo.epa.gov/air-pollutant-report?fid=';
+
+/* Virginia is built from VA DEQ, which is permit-level and far richer than the
+   national registry (issuance dates, programs, generator counts, a PDF per
+   permit). Everywhere else is built from EPA ECHO, which is facility-level.
+   Splitting on state avoids reconciling two different keying schemes, and the
+   provenance is stated on every page. */
+function echoSites(echo) {
+  if (!echo) return [];
+  return echo.facilities.filter((f) => f.state !== 'VA').map((f) => {
+    const op = resolveOperator(f.name);
+    const county = f.county ? `${f.county} County` : null;
+    const slug = slugify(`${f.name}-${f.county || f.city || ''}-${f.state}`);
+    return {
+      slug,
+      name: f.name,
+      state: f.state,
+      locality: county || f.city || f.state,
+      permit_locality: county,
+      locality_conflict: false,
+      source_tier: 'echo',
+      operator: {
+        name: op.operator,
+        confidence: op.confidence,
+        basis: op.basis,
+        permittee_name: f.name,
+      },
+      permit: {
+        confidence: 'confirmed',
+        count: 0,
+        latest_issued: null,
+        first_issued: null,
+        programs: [],
+        regional_office: f.state,
+        records: [],
+        registry_id: f.registry_id,
+        naics: f.naics,
+        source: 'EPA ECHO — air-permitted facility registry',
+        source_url: ECHO_DETAIL + encodeURIComponent(f.registry_id),
+        publisher_as_of: (echo.fetched_at || '').slice(0, 10),
+      },
+      address: {
+        street: f.street ? `${f.street}${f.city ? ', ' + f.city : ''}` : null,
+        confidence: f.street ? 'confirmed' : 'pending',
+        basis: f.street
+          ? 'Street address as published in EPA’s air-permit facility registry — a structured field, not text mined from a document.'
+          : 'EPA’s registry carries no street address for this facility.',
+      },
+      equipment: {
+        generators_permitted: null,
+        turbines_permitted: null,
+        confidence: 'pending',
+        basis: 'Equipment counts come from reading a state permit document. Outside Virginia, Groundwork has the facility registry but not yet the permit text.',
+      },
+      pipeline: {
+        stages: ['Proposed', 'Filed', 'Approved', 'Under construction', 'Operational'],
+        reached: 'Approved',
+        reached_index: 2,
+        basis: 'Facility holds an active air permit in EPA’s registry. Construction and operational status are not established by registry data alone.',
+        confidence: 'confirmed',
+      },
+      /* EPA supplies the coordinate, so no geocoding is needed — but its
+         positional accuracy varies by how the state submitted it. */
+      geo: f.lat && f.lon ? {
+        lat: f.lat, lon: f.lon,
+        matched_address: f.street || null,
+        county: f.county || null,
+        provider: 'epa-echo',
+        county_verified: true,
+        confidence: 'probable',
+        basis: 'Coordinate published by EPA for this permitted facility. Positional accuracy varies with how the permitting authority submitted it.',
+      } : null,
+      flood: null, water: null, grid: null, filings: null,
+      reported: [], claims: [],
+      timeline: [],
+    };
+  });
+}
+
 /* Strip the phase/building enumeration so "Amazon Data Services Inc IAD-110/111"
    and "Amazon Data Services, Inc. IAD-114 IAD-115" don't collapse into one
    another, but "Equinix, LLC - DC 14" and "Equinix LLC - DC 14" do. */
@@ -174,16 +253,32 @@ export function build() {
     });
   }
 
+  const echo = readJSON(path.join(RAW, 'echo-national.json'));
+  const national = echoSites(echo);
+  const taken = new Set(sites.map((s) => s.slug));
+  for (const site of national) {
+    let slug = site.slug, n = 2;
+    while (taken.has(slug)) slug = `${site.slug}-${n++}`;
+    site.slug = slug; taken.add(slug);
+    sites.push(site);
+  }
+
   sites.sort((a, b) => String(b.permit.latest_issued || '').localeCompare(String(a.permit.latest_issued || '')));
 
   const out = {
     generated_at: new Date().toISOString(),
-    coverage: { states: ['VA'], source_as_of: { VA: spine.publisher_as_of } },
+    coverage: {
+      states: [...new Set(sites.map((s) => s.state))].sort(),
+      source_as_of: { VA: spine.publisher_as_of, national: (echo?.fetched_at || '').slice(0, 10) },
+      national_excluded_unidentified: echo?.excluded_unidentified ?? 0,
+    },
     counts: {
       sites: sites.length,
       permits: spine.permits.length,
       with_address: sites.filter((s) => s.address.street).length,
       operators_resolved: sites.filter((s) => s.operator.name).length,
+      from_va_permits: sites.filter((s) => s.source_tier !== 'echo').length,
+      from_epa_registry: sites.filter((s) => s.source_tier === 'echo').length,
     },
     sites,
   };

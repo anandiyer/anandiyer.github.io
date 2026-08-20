@@ -29,8 +29,8 @@ function write(rel, html) {
 
 function renderSite(site, db) {
   const opName = site.operator.name || 'Operator unresolved';
-  const title = `${site.name} — ${countyName(site.locality)}, VA | Groundwork`;
-  const desc = `Disclosure record for ${site.name} in ${countyName(site.locality)}, Virginia: ${site.permit.count} issued air permit${site.permit.count === 1 ? '' : 's'}, flood zone, water stress and grid status, each sourced and confidence-labelled.`;
+  const title = `${site.name} — ${countyName(site.locality)}, ${site.state} | Groundwork`;
+  const desc = `Disclosure record for ${site.name} in ${countyName(site.locality)}, ${site.state}: air permit, flood zone, water stress and grid status, each sourced and confidence-labelled.`;
 
   /* --- evidence cards --- */
   const cards = [];
@@ -118,7 +118,7 @@ function renderSite(site, db) {
                     <div class="gw-sitehead">
                         <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; <a href="/labs/groundwork/county/${countySlug(site.locality)}/">${esc(countyName(site.locality))}</a>${site.operator.name ? ` &rsaquo; <a href="/labs/groundwork/operator/${slugify(site.operator.name)}/">${esc(site.operator.name)}</a>` : ''}</div>
                         <h1 class="gw-site-title">${esc(site.name)}</h1>
-                        <p class="gw-site-where">${esc(countyName(site.locality))}, Virginia${site.locality_conflict ? ` &middot; <strong>permit states ${esc(site.permit_locality)}</strong>` : ''}</p>
+                        <p class="gw-site-where">${esc(countyName(site.locality))}, ${esc(site.state)}${site.locality_conflict ? ` &middot; <strong>permit states ${esc(site.permit_locality)}</strong>` : ''}</p>
                         <div class="gw-meta">
                             <div class="gw-meta-item"><span class="gw-meta-key">Operator</span><span class="gw-meta-val">${esc(opName)}</span></div>
                             <div class="gw-meta-item"><span class="gw-meta-key">Permits</span><span class="gw-meta-val">${site.permit.count}</span></div>
@@ -224,20 +224,23 @@ function renderSite(site, db) {
 
 function renderCounty(name, sites) {
   const slug = slugify(name);
+  const state = sites[0]?.state || '';
   const gens = sites.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0);
   const permits = sites.reduce((a, s) => a + s.permit.count, 0);
   const sfha = sites.filter((s) => s.flood?.in_sfha).length;
   const operators = [...new Set(sites.map((s) => s.operator.name).filter(Boolean))];
 
-  const title = `${name}, Virginia — data center permits | Groundwork`;
-  const desc = `${sites.length} permitted data center sites in ${name}, Virginia: ${permits} issued air permits and ${gens.toLocaleString()} permitted generators, aggregated from VA DEQ disclosures.`;
+  const title = `${name}, ${state} — data center sites | Groundwork`;
+  const desc = permits
+    ? `${sites.length} permitted data center sites in ${name}: ${permits} issued air permits and ${gens.toLocaleString()} permitted generators, aggregated from public disclosures.`
+    : `${sites.length} air-permitted data center facilities in ${name}, from EPA's national permit registry, with flood and water exposure for each.`;
 
   const body = `
             <section class="gw-hero" id="top">
                 <div class="container mx-auto px-8">
                     <div class="gw-sitehead">
                         <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; Counties</div>
-                        <h1 class="gw-site-title">${esc(name)}, Virginia</h1>
+                        <h1 class="gw-site-title">${esc(name)}, ${esc(state)}</h1>
                         <p class="gw-site-where">Cumulative disclosure across every permitted data center site in this county.</p>
                         <div class="gw-meta">
                             <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">${sites.length}</span></div>
@@ -259,7 +262,7 @@ function renderCounty(name, sites) {
                     <table class="gw-table">
                         <thead><tr><th>Site</th><th>Operator</th><th class="num">Permits</th><th class="num">Generators</th><th>Flood zone</th></tr></thead>
                         <tbody>
-                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.permit.count}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${esc(s.flood?.zone ? 'Zone ' + s.flood.zone : 'Pending')}</td></tr>`).join('\n                        ')}
+                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.permit.count || '&mdash;'}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${esc(s.flood?.zone ? 'Zone ' + s.flood.zone : 'Pending')}</td></tr>`).join('\n                        ')}
                         </tbody>
                     </table>
                     </div>
@@ -277,10 +280,11 @@ function renderOperator(name, sites) {
   const gens = sites.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0);
   const permits = sites.reduce((a, s) => a + s.permit.count, 0);
   const counties = [...new Set(sites.map((s) => countyName(s.locality)))];
+  const opStates = [...new Set(sites.map((s) => s.state))].sort();
   const probable = sites.filter((s) => s.operator.confidence === 'probable');
 
   const title = `${name} — permitted data center sites | Groundwork`;
-  const desc = `Every ${name} data center site tracked by Groundwork: ${sites.length} sites across ${counties.length} Virginia localities, ${permits} issued air permits.`;
+  const desc = `Every ${name} data center site tracked by Groundwork: ${sites.length} sites across ${counties.length} localities in ${new Set(sites.map((s) => s.state)).size} states.`;
 
   const body = `
             <section class="gw-hero" id="top">
@@ -293,7 +297,7 @@ function renderOperator(name, sites) {
                             <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">${sites.length}</span></div>
                             <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">${permits}</span></div>
                             <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">${gens.toLocaleString()}</span></div>
-                            <div class="gw-meta-item"><span class="gw-meta-key">Localities</span><span class="gw-meta-val">${counties.length}</span></div>
+                            <div class="gw-meta-item"><span class="gw-meta-key">States</span><span class="gw-meta-val">${opStates.length} &mdash; ${esc(opStates.join(', '))}</span></div>
                         </div>
                     </div>
                 </div>
@@ -306,9 +310,9 @@ function renderOperator(name, sites) {
                     ${probable.length ? `<p class="gw-lede">${probable.length} of these ${probable.length === 1 ? 'attributions is' : 'attributions are'} ${badge('probable')} rather than confirmed &mdash; the permit is held by a single-purpose entity linked to this operator by documentary evidence rather than by name. The basis is stated on each site page.</p>` : ''}
                     <div class="gw-table-wrap">
                     <table class="gw-table">
-                        <thead><tr><th>Site</th><th>County</th><th class="num">Permits</th><th class="num">Generators</th><th>Attribution</th></tr></thead>
+                        <thead><tr><th>Site</th><th>County</th><th>State</th><th class="num">Permits</th><th class="num">Generators</th><th>Attribution</th></tr></thead>
                         <tbody>
-                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td><a href="/labs/groundwork/county/${countySlug(s.locality)}/">${esc(countyName(s.locality))}</a></td><td class="num">${s.permit.count}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${badge(s.operator.confidence)}</td></tr>`).join('\n                        ')}
+                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td><a href="/labs/groundwork/county/${countySlug(s.locality)}/">${esc(countyName(s.locality))}</a></td><td>${esc(s.state)}</td><td class="num">${s.permit.count || '&mdash;'}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${badge(s.operator.confidence)}</td></tr>`).join('\n                        ')}
                         </tbody>
                     </table>
                     </div>

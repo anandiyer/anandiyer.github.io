@@ -84,7 +84,7 @@
     states.forEach(function (st) {
       bubble(stateLayer, st.lat, st.lon, st.sites, max,
         '<strong>' + esc(st.name) + '</strong><br>' + st.sites + ' site' + (st.sites === 1 ? '' : 's') +
-        ' · ' + st.permits + ' permit' + (st.permits === 1 ? '' : 's') +
+        (st.permits ? ' · ' + st.permits + ' permit' + (st.permits === 1 ? '' : 's') : '') +
         (st.generators ? '<br>' + st.generators.toLocaleString() + ' permitted generators' : '') +
         '<br><em>Click to open the state</em>',
         function () { map.flyTo([st.lat, st.lon], COUNTY_ZOOM + 1, { duration: 0.8 }); });
@@ -101,7 +101,7 @@
     counties.forEach(function (c) {
       bubble(countyLayer, c.lat, c.lon, c.sites, max,
         '<strong>' + esc(c.name) + '</strong><br>' + c.sites + ' site' + (c.sites === 1 ? '' : 's') +
-        ' · ' + c.permits + ' permit' + (c.permits === 1 ? '' : 's') +
+        (c.permits ? ' · ' + c.permits + ' permit' + (c.permits === 1 ? '' : 's') : '') +
         (c.generators ? '<br>' + c.generators.toLocaleString() + ' permitted generators' : '') +
         '<br><em>Click to see individual sites</em>',
         function () { focusCounty(c); });
@@ -191,7 +191,10 @@
   function buildIndex() {
     index = [];
     counties.forEach(function (c) {
-      index.push({ kind: 'county', label: c.name + ', ' + c.state, sub: c.sites + ' sites · ' + c.permits + ' permits', key: (c.name + ' ' + c.state).toLowerCase(), county: c });
+      /* permits === 0 means "registry-level, no permit documents collected",
+         not "no permits" — saying "0 permits" would be plainly wrong. */
+      var detail = c.permits ? c.permits + ' permit' + (c.permits === 1 ? '' : 's') : 'permit detail pending';
+      index.push({ kind: 'county', label: c.name + ', ' + c.state, sub: c.sites + ' site' + (c.sites === 1 ? '' : 's') + ' · ' + detail, key: (c.name + ' ' + c.state).toLowerCase(), county: c });
     });
     var ops = {};
     sites.forEach(function (s) { if (s.operator) ops[s.operator] = (ops[s.operator] || 0) + 1; });

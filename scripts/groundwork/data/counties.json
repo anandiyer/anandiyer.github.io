@@ -175,7 +175,687 @@
       "lat": 29.4488309,
       "lon": -98.5199598,
       "source": "US Census TIGERweb"
+    },
+    "Douglas County|GA": {
+      "name": "Douglas County",
+      "geoid": "13097",
+      "state": "GA",
+      "lat": 33.7018868,
+      "lon": -84.7680049,
+      "source": "US Census TIGERweb"
+    },
+    "Anne Arundel County|MD": {
+      "name": "Anne Arundel County",
+      "geoid": "24003",
+      "state": "MD",
+      "lat": 38.9939586,
+      "lon": -76.5675565,
+      "source": "US Census TIGERweb"
+    },
+    "Forsyth County|GA": {
+      "name": "Forsyth County",
+      "geoid": "13117",
+      "state": "GA",
+      "lat": 34.2255043,
+      "lon": -84.1250842,
+      "source": "US Census TIGERweb"
+    },
+    "Newton County|GA": {
+      "name": "Newton County",
+      "geoid": "13217",
+      "state": "GA",
+      "lat": 33.5550149,
+      "lon": -83.8501906,
+      "source": "US Census TIGERweb"
+    },
+    "Maricopa County|AZ": {
+      "name": "Maricopa County",
+      "geoid": "04013",
+      "state": "AZ",
+      "lat": 33.3483268,
+      "lon": -112.4932091,
+      "source": "US Census TIGERweb"
+    },
+    "Summit County|OH": {
+      "name": "Summit County",
+      "geoid": "39153",
+      "state": "OH",
+      "lat": 41.125773,
+      "lon": -81.5322332,
+      "source": "US Census TIGERweb"
+    },
+    "Franklin County|OH": {
+      "name": "Franklin County",
+      "geoid": "39049",
+      "state": "OH",
+      "lat": 39.9694926,
+      "lon": -83.0093204,
+      "source": "US Census TIGERweb"
+    },
+    "Warren County|OH": {
+      "name": "Warren County",
+      "geoid": "39165",
+      "state": "OH",
+      "lat": 39.4276294,
+      "lon": -84.166737,
+      "source": "US Census TIGERweb"
+    },
+    "Fulton County|GA": {
+      "name": "Fulton County",
+      "geoid": "13121",
+      "state": "GA",
+      "lat": 33.7899615,
+      "lon": -84.4676827,
+      "source": "US Census TIGERweb"
+    },
+    "Montgomery County|OH": {
+      "name": "Montgomery County",
+      "geoid": "39113",
+      "state": "OH",
+      "lat": 39.7545966,
+      "lon": -84.2906673,
+      "source": "US Census TIGERweb"
+    },
+    "Henry County|GA": {
+      "name": "Henry County",
+      "geoid": "13151",
+      "state": "GA",
+      "lat": 33.4529608,
+      "lon": -84.1541716,
+      "source": "US Census TIGERweb"
+    },
+    "Dallas County|TX": {
+      "name": "Dallas County",
+      "geoid": "48113",
+      "state": "TX",
+      "lat": 32.7664847,
+      "lon": -96.7777649,
+      "source": "US Census TIGERweb"
+    },
+    "Frederick County|MD": {
+      "name": "Frederick County",
+      "geoid": "24021",
+      "state": "MD",
+      "lat": 39.4720806,
+      "lon": -77.398037,
+      "source": "US Census TIGERweb"
+    },
+    "Montgomery County|MD": {
+      "name": "Montgomery County",
+      "geoid": "24031",
+      "state": "MD",
+      "lat": 39.1363528,
+      "lon": -77.2041544,
+      "source": "US Census TIGERweb"
+    },
+    "Fayette County|GA": {
+      "name": "Fayette County",
+      "geoid": "13113",
+      "state": "GA",
+      "lat": 33.4139444,
+      "lon": -84.4943004,
+      "source": "US Census TIGERweb"
+    },
+    "Columbiana County|OH": {
+      "name": "Columbiana County",
+      "geoid": "39029",
+      "state": "OH",
+      "lat": 40.7684248,
+      "lon": -80.7771081,
+      "source": "US Census TIGERweb"
+    },
+    "Grant County|WA": {
+      "name": "Grant County",
+      "geoid": "53025",
+      "state": "WA",
+      "lat": 47.2043621,
+      "lon": -119.453467,
+      "source": "US Census TIGERweb"
+    },
+    "Santa Clara County|CA": {
+      "name": "Santa Clara County",
+      "geoid": "06085",
+      "state": "CA",
+      "lat": 37.2324363,
+      "lon": -121.6958367,
+      "source": "US Census TIGERweb"
+    },
+    "Delaware County|OH": {
+      "name": "Delaware County",
+      "geoid": "39041",
+      "state": "OH",
+      "lat": 40.2783774,
+      "lon": -83.004769,
+      "source": "US Census TIGERweb"
+    },
+    "Sacramento County|CA": {
+      "name": "Sacramento County",
+      "geoid": "06067",
+      "state": "CA",
+      "lat": 38.4490616,
+      "lon": -121.3445182,
+      "source": "US Census TIGERweb"
+    },
+    "Gwinnett County|GA": {
+      "name": "Gwinnett County",
+      "geoid": "13135",
+      "state": "GA",
+      "lat": 33.9618569,
+      "lon": -84.0235718,
+      "source": "US Census TIGERweb"
+    },
+    "Philadelphia County|PA": {
+      "name": "Philadelphia County",
+      "geoid": "42101",
+      "state": "PA",
+      "lat": 40.0075363,
+      "lon": -75.1342838,
+      "source": "US Census TIGERweb"
+    },
+    "Ogle County|IL": {
+      "name": "Ogle County",
+      "geoid": "17141",
+      "state": "IL",
+      "lat": 42.0426465,
+      "lon": -89.3206432,
+      "source": "US Census TIGERweb"
+    },
+    "Essex County|MA": {
+      "name": "Essex County",
+      "geoid": "25009",
+      "state": "MA",
+      "lat": 42.6388128,
+      "lon": -70.8677682,
+      "source": "US Census TIGERweb"
+    },
+    "Arapahoe County|CO": {
+      "name": "Arapahoe County",
+      "geoid": "08005",
+      "state": "CO",
+      "lat": 39.6503198,
+      "lon": -104.3393295,
+      "source": "US Census TIGERweb"
+    },
+    "Madison County|MS": {
+      "name": "Madison County",
+      "geoid": "28089",
+      "state": "MS",
+      "lat": 32.634687,
+      "lon": -90.0340163,
+      "source": "US Census TIGERweb"
+    },
+    "St. Joseph County|IN": {
+      "name": "St. Joseph County",
+      "geoid": "18141",
+      "state": "IN",
+      "lat": 41.6166848,
+      "lon": -86.289873,
+      "source": "US Census TIGERweb"
+    },
+    "Umatilla County|OR": {
+      "name": "Umatilla County",
+      "geoid": "41059",
+      "state": "OR",
+      "lat": 45.5912088,
+      "lon": -118.7374268,
+      "source": "US Census TIGERweb"
+    },
+    "Bucks County|PA": {
+      "name": "Bucks County",
+      "geoid": "42017",
+      "state": "PA",
+      "lat": 40.3368196,
+      "lon": -75.1064316,
+      "source": "US Census TIGERweb"
+    },
+    "Middlesex County|MA": {
+      "name": "Middlesex County",
+      "geoid": "25017",
+      "state": "MA",
+      "lat": 42.4853699,
+      "lon": -71.3915833,
+      "source": "US Census TIGERweb"
+    },
+    "Passaic County|NJ": {
+      "name": "Passaic County",
+      "geoid": "34031",
+      "state": "NJ",
+      "lat": 41.0342533,
+      "lon": -74.3006803,
+      "source": "US Census TIGERweb"
+    },
+    "Johnson County|KS": {
+      "name": "Johnson County",
+      "geoid": "20091",
+      "state": "KS",
+      "lat": 38.883737,
+      "lon": -94.8222972,
+      "source": "US Census TIGERweb"
+    },
+    "Shelby County|TN": {
+      "name": "Shelby County",
+      "geoid": "47157",
+      "state": "TN",
+      "lat": 35.1841831,
+      "lon": -89.8940796,
+      "source": "US Census TIGERweb"
+    },
+    "Douglas County|NE": {
+      "name": "Douglas County",
+      "geoid": "31055",
+      "state": "NE",
+      "lat": 41.2953852,
+      "lon": -96.1544421,
+      "source": "US Census TIGERweb"
+    },
+    "Denver County|CO": {
+      "name": "Denver County",
+      "geoid": "08031",
+      "state": "CO",
+      "lat": 39.7619818,
+      "lon": -104.8760036,
+      "source": "US Census TIGERweb"
+    },
+    "Orange County|FL": {
+      "name": "Orange County",
+      "geoid": "12095",
+      "state": "FL",
+      "lat": 28.514521,
+      "lon": -81.3233663,
+      "source": "US Census TIGERweb"
+    },
+    "Kane County|IL": {
+      "name": "Kane County",
+      "geoid": "17089",
+      "state": "IL",
+      "lat": 41.9386581,
+      "lon": -88.4286611,
+      "source": "US Census TIGERweb"
+    },
+    "DuPage County|IL": {
+      "name": "DuPage County",
+      "geoid": "17043",
+      "state": "IL",
+      "lat": 41.8519002,
+      "lon": -88.0855774,
+      "source": "US Census TIGERweb"
+    },
+    "Pottawattamie County|IA": {
+      "name": "Pottawattamie County",
+      "geoid": "19155",
+      "state": "IA",
+      "lat": 41.3366813,
+      "lon": -95.5423487,
+      "source": "US Census TIGERweb"
+    },
+    "Boone County|KY": {
+      "name": "Boone County",
+      "geoid": "21015",
+      "state": "KY",
+      "lat": 38.9697839,
+      "lon": -84.7277871,
+      "source": "US Census TIGERweb"
+    },
+    "Dakota County|MN": {
+      "name": "Dakota County",
+      "geoid": "27037",
+      "state": "MN",
+      "lat": 44.6718022,
+      "lon": -93.0654087,
+      "source": "US Census TIGERweb"
+    },
+    "Hennepin County|MN": {
+      "name": "Hennepin County",
+      "geoid": "27053",
+      "state": "MN",
+      "lat": 45.0044645,
+      "lon": -93.4768271,
+      "source": "US Census TIGERweb"
+    },
+    "Tulsa County|OK": {
+      "name": "Tulsa County",
+      "geoid": "40143",
+      "state": "OK",
+      "lat": 36.1208852,
+      "lon": -95.9414768,
+      "source": "US Census TIGERweb"
+    },
+    "Marshall County|IA": {
+      "name": "Marshall County",
+      "geoid": "19127",
+      "state": "IA",
+      "lat": 42.0357734,
+      "lon": -92.9987714,
+      "source": "US Census TIGERweb"
+    },
+    "Hudson County|NJ": {
+      "name": "Hudson County",
+      "geoid": "34017",
+      "state": "NJ",
+      "lat": 40.7307309,
+      "lon": -74.0761989,
+      "source": "US Census TIGERweb"
+    },
+    "Cook County|IL": {
+      "name": "Cook County",
+      "geoid": "17031",
+      "state": "IL",
+      "lat": 41.8952148,
+      "lon": -87.6461541,
+      "source": "US Census TIGERweb"
+    },
+    "Kendall County|IL": {
+      "name": "Kendall County",
+      "geoid": "17093",
+      "state": "IL",
+      "lat": 41.5905334,
+      "lon": -88.4287873,
+      "source": "US Census TIGERweb"
+    },
+    "Sarpy County|NE": {
+      "name": "Sarpy County",
+      "geoid": "31153",
+      "state": "NE",
+      "lat": 41.1129699,
+      "lon": -96.1120332,
+      "source": "US Census TIGERweb"
+    },
+    "Douglas County|CO": {
+      "name": "Douglas County",
+      "geoid": "08035",
+      "state": "CO",
+      "lat": 39.3296019,
+      "lon": -104.9296726,
+      "source": "US Census TIGERweb"
+    },
+    "Dallas County|IA": {
+      "name": "Dallas County",
+      "geoid": "19049",
+      "state": "IA",
+      "lat": 41.6847734,
+      "lon": -94.0397292,
+      "source": "US Census TIGERweb"
+    },
+    "Davidson County|TN": {
+      "name": "Davidson County",
+      "geoid": "47037",
+      "state": "TN",
+      "lat": 36.1694688,
+      "lon": -86.7848205,
+      "source": "US Census TIGERweb"
+    },
+    "Ramsey County|MN": {
+      "name": "Ramsey County",
+      "geoid": "27123",
+      "state": "MN",
+      "lat": 45.0170609,
+      "lon": -93.099555,
+      "source": "US Census TIGERweb"
+    },
+    "Hillsborough County|NH": {
+      "name": "Hillsborough County",
+      "geoid": "33011",
+      "state": "NH",
+      "lat": 42.9151896,
+      "lon": -71.7157606,
+      "source": "US Census TIGERweb"
+    },
+    "Rockingham County|NH": {
+      "name": "Rockingham County",
+      "geoid": "33015",
+      "state": "NH",
+      "lat": 42.9846035,
+      "lon": -71.0890889,
+      "source": "US Census TIGERweb"
+    },
+    "Adams County|CO": {
+      "name": "Adams County",
+      "geoid": "08001",
+      "state": "CO",
+      "lat": 39.8741784,
+      "lon": -104.337846,
+      "source": "US Census TIGERweb"
+    },
+    "Laramie County|WY": {
+      "name": "Laramie County",
+      "geoid": "56021",
+      "state": "WY",
+      "lat": 41.3071287,
+      "lon": -104.689418,
+      "source": "US Census TIGERweb"
+    },
+    "Richland County|WI": {
+      "name": "Richland County",
+      "geoid": "55103",
+      "state": "WI",
+      "lat": 43.3755529,
+      "lon": -90.4294812,
+      "source": "US Census TIGERweb"
+    },
+    "Catawba County|NC": {
+      "name": "Catawba County",
+      "geoid": "37035",
+      "state": "NC",
+      "lat": 35.662063,
+      "lon": -81.215062,
+      "source": "US Census TIGERweb"
+    },
+    "Middlesex County|NJ": {
+      "name": "Middlesex County",
+      "geoid": "34023",
+      "state": "NJ",
+      "lat": 40.4399826,
+      "lon": -74.4089718,
+      "source": "US Census TIGERweb"
+    },
+    "Boulder County|CO": {
+      "name": "Boulder County",
+      "geoid": "08013",
+      "state": "CO",
+      "lat": 40.0924575,
+      "lon": -105.3577117,
+      "source": "US Census TIGERweb"
+    },
+    "El Paso County|CO": {
+      "name": "El Paso County",
+      "geoid": "08041",
+      "state": "CO",
+      "lat": 38.8319998,
+      "lon": -104.5254069,
+      "source": "US Census TIGERweb"
+    },
+    "Cass County|MO": {
+      "name": "Cass County",
+      "geoid": "29037",
+      "state": "MO",
+      "lat": 38.646909,
+      "lon": -94.3547566,
+      "source": "US Census TIGERweb"
+    },
+    "Warren County|IA": {
+      "name": "Warren County",
+      "geoid": "19181",
+      "state": "IA",
+      "lat": 41.334197,
+      "lon": -93.5614417,
+      "source": "US Census TIGERweb"
+    },
+    "York County|SC": {
+      "name": "York County",
+      "geoid": "45091",
+      "state": "SC",
+      "lat": 34.9748956,
+      "lon": -81.1843805,
+      "source": "US Census TIGERweb"
+    },
+    "Pepin County|WI": {
+      "name": "Pepin County",
+      "geoid": "55091",
+      "state": "WI",
+      "lat": 44.5829503,
+      "lon": -92.001852,
+      "source": "US Census TIGERweb"
+    },
+    "McDonald County|MO": {
+      "name": "McDonald County",
+      "geoid": "29119",
+      "state": "MO",
+      "lat": 36.6287162,
+      "lon": -94.3483391,
+      "source": "US Census TIGERweb"
+    },
+    "Benton County|AR": {
+      "name": "Benton County",
+      "geoid": "05007",
+      "state": "AR",
+      "lat": 36.3388007,
+      "lon": -94.2562098,
+      "source": "US Census TIGERweb"
+    },
+    "Allegheny County|PA": {
+      "name": "Allegheny County",
+      "geoid": "42003",
+      "state": "PA",
+      "lat": 40.4686962,
+      "lon": -79.9812035,
+      "source": "US Census TIGERweb"
+    },
+    "Bernalillo County|NM": {
+      "name": "Bernalillo County",
+      "geoid": "35001",
+      "state": "NM",
+      "lat": 35.0515267,
+      "lon": -106.6701091,
+      "source": "US Census TIGERweb"
+    },
+    "Union County|NJ": {
+      "name": "Union County",
+      "geoid": "34039",
+      "state": "NJ",
+      "lat": 40.6599405,
+      "lon": -74.3082215,
+      "source": "US Census TIGERweb"
+    },
+    "Grafton County|NH": {
+      "name": "Grafton County",
+      "geoid": "33009",
+      "state": "NH",
+      "lat": 43.9400812,
+      "lon": -71.8212934,
+      "source": "US Census TIGERweb"
+    },
+    "Essex County|NJ": {
+      "name": "Essex County",
+      "geoid": "34013",
+      "state": "NJ",
+      "lat": 40.7871858,
+      "lon": -74.2470351,
+      "source": "US Census TIGERweb"
+    },
+    "Oklahoma County|OK": {
+      "name": "Oklahoma County",
+      "geoid": "40109",
+      "state": "OK",
+      "lat": 35.5514847,
+      "lon": -97.4072315,
+      "source": "US Census TIGERweb"
+    },
+    "Jefferson County|CO": {
+      "name": "Jefferson County",
+      "geoid": "08059",
+      "state": "CO",
+      "lat": 39.5858605,
+      "lon": -105.2506237,
+      "source": "US Census TIGERweb"
+    },
+    "Wake County|NC": {
+      "name": "Wake County",
+      "geoid": "37183",
+      "state": "NC",
+      "lat": 35.7902352,
+      "lon": -78.6504761,
+      "source": "US Census TIGERweb"
+    },
+    "Worcester County|MA": {
+      "name": "Worcester County",
+      "geoid": "25027",
+      "state": "MA",
+      "lat": 42.3510193,
+      "lon": -71.9073662,
+      "source": "US Census TIGERweb"
+    },
+    "Polk County|IA": {
+      "name": "Polk County",
+      "geoid": "19153",
+      "state": "IA",
+      "lat": 41.6853128,
+      "lon": -93.5733953,
+      "source": "US Census TIGERweb"
+    },
+    "Somerset County|NJ": {
+      "name": "Somerset County",
+      "geoid": "34035",
+      "state": "NJ",
+      "lat": 40.563399,
+      "lon": -74.6163919,
+      "source": "US Census TIGERweb"
+    },
+    "Clark County|NV": {
+      "name": "Clark County",
+      "geoid": "32003",
+      "state": "NV",
+      "lat": 36.2138076,
+      "lon": -115.013655,
+      "source": "US Census TIGERweb"
+    },
+    "Jackson County|MO": {
+      "name": "Jackson County",
+      "geoid": "29095",
+      "state": "MO",
+      "lat": 39.0084201,
+      "lon": -94.3461502,
+      "source": "US Census TIGERweb"
+    },
+    "Rockland County|NY": {
+      "name": "Rockland County",
+      "geoid": "36087",
+      "state": "NY",
+      "lat": 41.1525029,
+      "lon": -74.0241848,
+      "source": "US Census TIGERweb"
+    },
+    "Kingfisher County|OK": {
+      "name": "Kingfisher County",
+      "geoid": "40073",
+      "state": "OK",
+      "lat": 35.9452887,
+      "lon": -97.9421063,
+      "source": "US Census TIGERweb"
+    },
+    "Kootenai County|ID": {
+      "name": "Kootenai County",
+      "geoid": "16055",
+      "state": "ID",
+      "lat": 47.6740043,
+      "lon": -116.7017392,
+      "source": "US Census TIGERweb"
+    },
+    "Minnehaha County|SD": {
+      "name": "Minnehaha County",
+      "geoid": "46099",
+      "state": "SD",
+      "lat": 43.6741799,
+      "lon": -96.7914376,
+      "source": "US Census TIGERweb"
+    },
+    "New York County|NY": {
+      "name": "New York County",
+      "geoid": "36061",
+      "state": "NY",
+      "lat": 40.7739865,
+      "lon": -73.9700438,
+      "source": "US Census TIGERweb"
     }
   },
-  "generated_at": "2026-08-20T04:54:21.712Z"
+  "generated_at": "2026-08-20T05:25:43.549Z"
 }

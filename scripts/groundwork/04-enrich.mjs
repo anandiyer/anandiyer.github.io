@@ -24,7 +24,10 @@ export async function enrich({ skipEdgar = false } = {}) {
 
   for (const [i, site] of db.sites.entries()) {
     /* ---- geocode ---- */
-    if (site.address.street) {
+    /* ECHO sites arrive with an EPA-published coordinate; nothing to resolve. */
+    if (site.geo && site.geo.lat) {
+      geoOk++;
+    } else if (site.address.street) {
       const key = `${site.address.street}|${site.locality}`;
       if (!(key in cache.geo)) {
         const expect = site.permit_locality || site.locality;

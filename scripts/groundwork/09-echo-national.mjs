@@ -35,6 +35,21 @@ const QCOLUMNS = '1,2,3,4,5,7,9,21,22,23,24';
 
 const DC_NAME = /data\s*-?\s*cent(er|re)|datacenter|\bdata\s+hall\b|colocation|\bcolo\b/i;
 
+/* NAICS is self-reported and the "data center" name search only catches
+   facilities that say so. A campus filed as "VANTAGE TX 11" or "META FORT
+   WORTH" is invisible to both — which is why Texas first appeared here with
+   five facilities. Querying ECHO for each known operator name closes that gap
+   everywhere at once. Hits still have to pass the same identification test
+   below, so an unrelated "Amazon" facility is not published as a data center
+   on the name alone. */
+const OPERATOR_QUERIES = [
+  'amazon data services', 'vadata', 'microsoft', 'meta platforms', 'google',
+  'equinix', 'digital realty', 'cyrusone', 'vantage', 'aligned', 'stack infrastructure',
+  'qts', 'cloudhq', 'compass datacenters', 'coresite', 'cologix', 'databank',
+  'edgeconnex', 'switch inc', 'iron mountain data', 'ntt global data', 'sabey',
+  'tract', 'prime data', 'novva', 'flexential', 'tierpoint', 'cyxtera', 'yondr',
+];
+
 async function query(params, label) {
   const qs = new URLSearchParams({ ...params, output: 'JSON', qcolumns: QCOLUMNS });
   const head = JSON.parse(await get(`${ECHO}.get_facilities?${qs}`, { headers: UA, timeout: 90000 }));
@@ -47,12 +62,21 @@ async function query(params, label) {
 }
 
 export async function collect() {
-  const batches = await Promise.all([
+  const base = await Promise.all([
     query({ p_ncs: '518210' }, 'NAICS 518210'),
     query({ p_fn: 'data center' }, 'name "data center"'),
     query({ p_fn: 'datacenter' }, 'name "datacenter"'),
     query({ p_fn: 'data centre' }, 'name "data centre"'),
   ]);
+
+  /* Sequential and small: ECHO is a public service and these are cheap
+     queries, but forty of them at once is rude. */
+  const opBatches = [];
+  for (const op of OPERATOR_QUERIES) {
+    try { opBatches.push(await query({ p_fn: op }, `name "${op}"`)); }
+    catch (err) { log(`ECHO operator query "${op}" failed: ${err.message}`); }
+  }
+  const batches = [...base, ...opBatches];
 
   const byId = new Map();
   batches.flat().forEach((r) => {

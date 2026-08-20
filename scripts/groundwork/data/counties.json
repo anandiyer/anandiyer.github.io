@@ -855,7 +855,191 @@
       "lat": 40.7739865,
       "lon": -73.9700438,
       "source": "US Census TIGERweb"
+    },
+    "Mayes County|OK": {
+      "name": "Mayes County",
+      "geoid": "40097",
+      "state": "OK",
+      "lat": 36.3018096,
+      "lon": -95.2307841,
+      "source": "US Census TIGERweb"
+    },
+    "Hardin County|IA": {
+      "name": "Hardin County",
+      "geoid": "19083",
+      "state": "IA",
+      "lat": 42.3838008,
+      "lon": -93.2403697,
+      "source": "US Census TIGERweb"
+    },
+    "Butler County|IA": {
+      "name": "Butler County",
+      "geoid": "19023",
+      "state": "IA",
+      "lat": 42.7314846,
+      "lon": -92.7901935,
+      "source": "US Census TIGERweb"
+    },
+    "Jones County|IA": {
+      "name": "Jones County",
+      "geoid": "19105",
+      "state": "IA",
+      "lat": 42.1211591,
+      "lon": -91.1314653,
+      "source": "US Census TIGERweb"
+    },
+    "Winneshiek County|IA": {
+      "name": "Winneshiek County",
+      "geoid": "19191",
+      "state": "IA",
+      "lat": 43.2905377,
+      "lon": -91.8436966,
+      "source": "US Census TIGERweb"
+    },
+    "Franklin County|IA": {
+      "name": "Franklin County",
+      "geoid": "19069",
+      "state": "IA",
+      "lat": 42.7324649,
+      "lon": -93.2624744,
+      "source": "US Census TIGERweb"
+    },
+    "Floyd County|IA": {
+      "name": "Floyd County",
+      "geoid": "19067",
+      "state": "IA",
+      "lat": 43.0598676,
+      "lon": -92.7890021,
+      "source": "US Census TIGERweb"
+    },
+    "Buchanan County|IA": {
+      "name": "Buchanan County",
+      "geoid": "19019",
+      "state": "IA",
+      "lat": 42.4707088,
+      "lon": -91.8378234,
+      "source": "US Census TIGERweb"
+    },
+    "Winnebago County|IA": {
+      "name": "Winnebago County",
+      "geoid": "19189",
+      "state": "IA",
+      "lat": 43.3775689,
+      "lon": -93.7341956,
+      "source": "US Census TIGERweb"
+    },
+    "Worth County|IA": {
+      "name": "Worth County",
+      "geoid": "19195",
+      "state": "IA",
+      "lat": 43.3773997,
+      "lon": -93.2608474,
+      "source": "US Census TIGERweb"
+    },
+    "Mitchell County|IA": {
+      "name": "Mitchell County",
+      "geoid": "19131",
+      "state": "IA",
+      "lat": 43.356401,
+      "lon": -92.7890541,
+      "source": "US Census TIGERweb"
+    },
+    "Cedar County|IA": {
+      "name": "Cedar County",
+      "geoid": "19031",
+      "state": "IA",
+      "lat": 41.7722508,
+      "lon": -91.1324225,
+      "source": "US Census TIGERweb"
+    },
+    "Bremer County|IA": {
+      "name": "Bremer County",
+      "geoid": "19017",
+      "state": "IA",
+      "lat": 42.7745762,
+      "lon": -92.3180546,
+      "source": "US Census TIGERweb"
+    },
+    "Allamakee County|IA": {
+      "name": "Allamakee County",
+      "geoid": "19005",
+      "state": "IA",
+      "lat": 43.2841216,
+      "lon": -91.3780284,
+      "source": "US Census TIGERweb"
+    },
+    "Kalamazoo County|MI": {
+      "name": "Kalamazoo County",
+      "geoid": "26077",
+      "state": "MI",
+      "lat": 42.2453757,
+      "lon": -85.5311806,
+      "source": "US Census TIGERweb"
+    },
+    "Bay County|FL": {
+      "name": "Bay County",
+      "geoid": "12005",
+      "state": "FL",
+      "lat": 30.1320715,
+      "lon": -85.6329759,
+      "source": "US Census TIGERweb"
+    },
+    "Nassau County|NY": {
+      "name": "Nassau County",
+      "geoid": "36059",
+      "state": "NY",
+      "lat": 40.7319615,
+      "lon": -73.5855936,
+      "source": "US Census TIGERweb"
+    },
+    "Linn County|IA": {
+      "name": "Linn County",
+      "geoid": "19113",
+      "state": "IA",
+      "lat": 42.0787895,
+      "lon": -91.5990218,
+      "source": "US Census TIGERweb"
+    },
+    "Gordon County|GA": {
+      "name": "Gordon County",
+      "geoid": "13129",
+      "state": "GA",
+      "lat": 34.5031891,
+      "lon": -84.8759111,
+      "source": "US Census TIGERweb"
+    },
+    "Bristol County|MA": {
+      "name": "Bristol County",
+      "geoid": "25005",
+      "state": "MA",
+      "lat": 41.7567466,
+      "lon": -71.0880857,
+      "source": "US Census TIGERweb"
+    },
+    "Rockdale County|GA": {
+      "name": "Rockdale County",
+      "geoid": "13247",
+      "state": "GA",
+      "lat": 33.6542099,
+      "lon": -84.0266529,
+      "source": "US Census TIGERweb"
+    },
+    "Lake County|IL": {
+      "name": "Lake County",
+      "geoid": "17097",
+      "state": "IL",
+      "lat": 42.3256447,
+      "lon": -87.6312172,
+      "source": "US Census TIGERweb"
+    },
+    "Mercer County|NJ": {
+      "name": "Mercer County",
+      "geoid": "34021",
+      "state": "NJ",
+      "lat": 40.2834212,
+      "lon": -74.701681,
+      "source": "US Census TIGERweb"
     }
   },
-  "generated_at": "2026-08-20T05:25:43.549Z"
+  "generated_at": "2026-08-20T18:39:06.736Z"
 }

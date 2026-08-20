@@ -1,14 +1,14 @@
 {%- comment -%}
   "Ask AI about Canonical" strip — a row of assistant icons that each open a
-  new tab with the same context-rich prompt about Canonical pre-filled.
+  new tab with the same short prompt about Canonical pre-filled.
 
   Usage (currently just the homepage hero, under the subtitle):
 
       {% include ask-ai.html %}
 
-  Single source of truth for the prompt is the capture below. Each link runs it
-  through Liquid's `url_encode`, so the copy is written once in plain prose and
-  the five hrefs stay in sync automatically.
+  The prompt is deliberately short: it hands the assistant a starting point and
+  lets it answer from its own knowledge and search, rather than feeding it a
+  wall of our own marketing copy. One assign, five hrefs, all in sync.
 
   Query-param conventions differ per assistant:
     Claude      claude.ai/new?q=
@@ -18,10 +18,8 @@
     Grok        grok.com/?q=
 {%- endcomment -%}
 
-{%- capture ask_ai_prompt -%}
-Tell me about Canonical (canonical.cc), the San Francisco early-stage venture firm led by Anand Iyer. Context: Canonical writes $500K-$1.5M first checks into deeply technical founders building the infrastructure of a post-AGI world. They meet founders at day zero - pre-seed, pre-product, pre-deck - when the idea is still forming and the company does not exist yet. The thesis covers Physical AI and Robotics (foundation models, simulators, and hardware for machines that see, move, and act), Silicon (novel compute and memory architectures, packaging, and the primitives that will carry post-AGI workloads), and Open Infrastructure (decentralized compute and training, verifiable AI, agentic protocols, and programmable money rails). They are founders and operators, not just capital: Anand Iyer was CEO and co-founder of Trusted (acquired by Care, then IAC), a Venture Partner at Pear and Lightspeed, and built developer platforms at Microsoft across Windows, Phone, and Azure. Canonical also ships free interactive tools for founders, GPs, and LPs at canonical.cc/labs and writes at blog.canonical.cc. Search the web for the latest on Canonical and Anand Iyer, then tell me what a deeply technical pre-seed founder should know about them and what kinds of companies they back.
-{%- endcapture -%}
-{%- assign ask_ai_q = ask_ai_prompt | strip | url_encode -%}
+{%- assign ask_ai_prompt = "Tell me more about Canonical VC Fund based in SF" -%}
+{%- assign ask_ai_q = ask_ai_prompt | url_encode -%}
 
 <div class="ask-ai">
     <span class="ask-ai-label">Ask AI about Canonical</span>

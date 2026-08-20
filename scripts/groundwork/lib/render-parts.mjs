@@ -117,7 +117,12 @@ export const foot = `        </main>
 </html>
 `;
 
+/* Corrections go to a public issue tracker, not to a person's inbox: it is a
+   real queue, it is visible to whoever else noticed the same thing, and the
+   fix is auditable. */
+const ISSUE_URL = 'https://github.com/anandiyer/anandiyer.github.io/issues/new?labels=groundwork&title=Correction%3A%20';
+
 export const CORRECTION_BLOCK = `<div class="gw-correct">
-  <h3>Something wrong on this page?</h3>
-  <p>Groundwork publishes fuzzy matches as well as confirmed ones, and labels which is which. If a field here is wrong &mdash; a misattributed operator, an address that belongs to a corporate office rather than a facility, a queue position matched to the wrong project &mdash; tell us and we will correct it and note the correction. Email <a href="mailto:ai@canonical.cc?subject=Groundwork%20correction">ai@canonical.cc</a>.</p>
+  <h3>Spotted an error?</h3>
+  <p>Fuzzy-matched fields are labelled as such and some will be wrong. <a href="${ISSUE_URL}" target="_blank" rel="noopener">Open an issue</a> &mdash; corrections are tracked in public and noted on the page.</p>
 </div>`;

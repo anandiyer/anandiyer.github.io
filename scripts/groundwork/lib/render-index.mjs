@@ -206,46 +206,44 @@ export function renderIndex(db) {
 
             <section class="gw-scene" id="confidence">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[05]</span> Confidence</div>
+                    <div class="gw-section-label"><span class="gw-section-num">[04]</span> Confidence</div>
                     <h2 class="gw-scene-h2">Which facts you can <em>lean on</em>.</h2>
-                    <p class="gw-lede">There is no blended Groundwork risk score, and there will not be one. A single number would hide which inputs came from a filing and which came from a fuzzy match &mdash; and that difference is the whole product.</p>
-                    <div class="gw-evidence-grid">
-                        <div class="gw-ev confirmed"><div class="gw-ev-head"><span class="gw-ev-key">Tier</span>${badge('confirmed')}</div><div class="gw-ev-val">Read from a filing</div><p class="gw-ev-basis">The permit record, and any exact point-in-polygon lookup against it (FEMA zone, Aqueduct basin). Directly checkable against the linked source.</p><div class="gw-ev-cite">State air permits &middot; FEMA NFHL &middot; WRI Aqueduct</div></div>
-                        <div class="gw-ev probable"><div class="gw-ev-head"><span class="gw-ev-key">Tier</span>${badge('probable')}</div><div class="gw-ev-val">Matched on a non-unique key</div><p class="gw-ev-basis">Street addresses mined from permit prose, generator counts, grid queue positions matched by county. Very likely right; not certain.</p><div class="gw-ev-cite">Permit PDFs &middot; ISO/RTO queues</div></div>
-                        <div class="gw-ev directional"><div class="gw-ev-head"><span class="gw-ev-key">Tier</span>${badge('directional')}</div><div class="gw-ev-val">A pointer, not a fact</div><p class="gw-ev-basis">SEC full-text hits on an operator and locality. Confirms a public filer discusses the area; not that the filing concerns this site.</p><div class="gw-ev-cite">SEC EDGAR full-text search</div></div>
-                        <div class="gw-ev reported"><div class="gw-ev-head"><span class="gw-ev-key">Tier</span>${badge('reported')}</div><div class="gw-ev-val">Established by journalism</div><p class="gw-ev-basis">A site that news coverage has established but that no filing yet documents. Published with the disclosure layers pending, and upgraded automatically when a permit appears.</p><div class="gw-ev-cite">Named publication, per entry</div></div>
+                    <p class="gw-lede">There is no blended score. A single number would hide which inputs came from a filing and which came from a fuzzy match, and that difference is the product.</p>
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Tier</th><th>Means</th><th>Source</th></tr></thead>
+                        <tbody>
+                          <tr><td>${badge('confirmed')}</td><td>Read straight from a filing, or an exact point-in-polygon lookup</td><td>State air permits &middot; EPA registry &middot; FEMA NFHL &middot; WRI Aqueduct</td></tr>
+                          <tr><td>${badge('probable')}</td><td>Matched on a non-unique key. Very likely right, not certain</td><td>Addresses and emissions read from permit PDFs</td></tr>
+                          <tr><td>${badge('reported')}</td><td>Established by journalism, no filing yet. Upgrades automatically</td><td>Named publication, per entry</td></tr>
+                          <tr><td>${badge('pending')}</td><td>Not collected yet. Never a claim that nothing is there</td><td>&mdash;</td></tr>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </section>
 
             <section class="gw-scene" id="methodology">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[06]</span> Methodology</div>
+                    <div class="gw-section-label"><span class="gw-section-num">[05]</span> Methodology</div>
                     <h2 class="gw-scene-h2">How this is built, and where it is <em>weak</em>.</h2>
                     <div class="gw-method-grid">
                         <div class="gw-method-col">
                             <h3 class="gw-method-k">Sources</h3>
                             <ul class="gw-method-list">
-                                <li><a href="https://echo.epa.gov/tools/web-services" target="_blank" rel="noopener">EPA ECHO</a> &mdash; the national air-permit facility registry. ${natSites} facilities outside Virginia, identified as data centers by name or by a recognised operator, each with an EPA-published address and coordinate.</li>
-                                <li><a href="https://www.deq.virginia.gov/news-info/shortcuts/permits/air/issued-air-permits-for-data-centers" target="_blank" rel="noopener">VA DEQ &mdash; Issued Air Permits for Data Centers</a>, as published ${esc(asOf)}. ${c.permits} permits, each with its issuance document &mdash; the only state publishing a data-center-specific list.</li>
-                                <li><a href="https://hazards.fema.gov/femaportal/NFHL/" target="_blank" rel="noopener">FEMA National Flood Hazard Layer</a> &mdash; point-in-polygon against the effective map.</li>
-                                <li><a href="https://www.wri.org/aqueduct?ref=canonicalcc" target="_blank" rel="noopener">WRI Aqueduct 4.0</a> &mdash; baseline annual water stress by basin.</li>
-                                <li><a href="https://efts.sec.gov/LATEST/search-index?q=%22data%20center%22" target="_blank" rel="noopener">SEC EDGAR full-text search</a> &mdash; operator and locality mentions in 10-K, 10-Q and 8-K filings.</li>
-                                <li>ISO/RTO interconnection queues &mdash; PJM for Virginia.</li>
+                                <li><a href="https://www.deq.virginia.gov/news-info/shortcuts/permits/air/issued-air-permits-for-data-centers" target="_blank" rel="noopener">VA DEQ data center permits</a> &mdash; ${c.permits} permits, each PDF read for address, equipment and permitted NOx.</li>
+                                <li><a href="https://echo.epa.gov/tools/web-services" target="_blank" rel="noopener">EPA ECHO</a> &mdash; ${natSites} facilities in other states, by industry code and operator name.</li>
+                                <li><a href="https://hazards.fema.gov/femaportal/NFHL/" target="_blank" rel="noopener">FEMA NFHL</a> and <a href="https://www.wri.org/aqueduct?ref=canonicalcc" target="_blank" rel="noopener">WRI Aqueduct 4.0</a> &mdash; flood zone and water stress, by exact location.</li>
                             </ul>
                         </div>
                         <div class="gw-method-col">
-                            <h3 class="gw-method-k">Known limitations</h3>
+                            <h3 class="gw-method-k">Limits</h3>
                             <ul class="gw-method-list">
-                                <li><strong>Coverage is a floor, not a census.</strong> Air permitting is a state function; no national permit list exists. The national layer comes from EPA's registry, which is queried both by industry code and by operator name &mdash; but the code is self-reported and a facility permitted under a standard permit may generate no federal record at all. Counting sites per state here measures disclosure practice as much as build-out.</li>
-                                <li><strong>Texas is the clearest gap.</strong> It shows ${txCount} facilities, which is plainly not the real number for one of the largest markets in the country. Two routes were tested and neither closes it: ERCOT's large-load interconnection queue &mdash; the one holding the ~1,800 projects the governor paused in August 2026 &mdash; is published only as a statewide aggregate with no county breakdown, and TCEQ's permit records sit behind an interactive query application rather than an open dataset. Texas needs its own collector, and until it has one these counts understate it badly.</li>
-                                <li><strong>Two spines, different depth.</strong> Virginia is built permit-by-permit from VA DEQ, so those pages carry issuance dates, programs, generator counts and a PDF per permit. Everywhere else is facility-level from EPA, so permit detail and equipment counts show as pending. Each page states which spine it came from.</li>
-                                <li><strong>${db.coverage?.national_excluded_unidentified ?? 0} facilities were deliberately excluded.</strong> They carry the data-processing NAICS code but nothing in the record &mdash; not the name, not a recognisable operator &mdash; identifies them as data centers. Publishing them as data centers on a self-reported code alone would be a guess.</li>
-                                <li><strong>DEQ publishes locality, not addresses.</strong> Street addresses are recovered from the text of permit PDFs and are ${badge('probable')} at best. ${sites.filter((s) => !s.address.street).length} sites have no address &mdash; usually because the permit is a scanned image with no text layer.</li>
-                                <li><strong>Geocodes are validated, and some are rejected.</strong> An address in a permit is frequently the operator's corporate mailing address, not the facility. Any geocode landing in a different county from the one the permit names is discarded rather than published.</li>
-                                <li><strong>Generator counts are read from prose.</strong> Permits describe equipment in sentences and tables. Treat the count as the permitted maximum described, not an installed count.</li>
-                                <li><strong>The grid layer is mostly pending.</strong> PJM retired its public bulk queue download; the layer is wired for Data Miner 2 and stays silent until a feed is configured. A wrong queue match is the fastest way to discredit the layers that are right.</li>
-                                <li><strong>Permits are not operations.</strong> An issued permit establishes approval, not that anything is built or running. The pipeline ladder on each page stops at Approved for that reason.</li>
+                                <li><strong>A floor, not a census.</strong> Permitting is a state function. Depth varies by what each state publishes &mdash; every county page says which.</li>
+                                <li><strong>Virginia is deepest by accident of disclosure</strong>, not importance. It is the only state with a data-center-specific permit list.</li>
+                                <li><strong>Permits are ceilings, not measurements</strong>, and approval is not construction.</li>
+                                <li><strong>${sites.length - located.length} sites have no verified coordinate</strong> and are off the map by choice. A county centroid would imply precision the filing does not support.</li>
+                                <li><strong>${db.coverage?.national_excluded_unidentified ?? 0} facilities were excluded</strong> &mdash; they carry the data-processing industry code but nothing identifies them as data centers.</li>
                             </ul>
                         </div>
                     </div>
@@ -253,22 +251,7 @@ export function renderIndex(db) {
                 </div>
             </section>
 
-            <section class="gw-cta">
-                <div class="container mx-auto px-8">
-                    <div class="gw-cta-grid">
-                        <div>
-                            <h2 class="gw-cta-h2">Built by <em>Canonical</em>.</h2>
-                            <p class="gw-cta-p">Groundwork is written for the people pricing this build-out &mdash; project-debt lenders, insurers and LPs with AI-infrastructure exposure &mdash; and is deliberately public so the communities living next to these sites can use the same record. If you are underwriting a site and want the structured data behind a page, or you think a field here is wrong, get in touch.</p>
-                            <div class="gw-cta-actions">
-                                <a class="gw-btn" href="mailto:ai@canonical.cc?subject=Groundwork">Email us <span class="gw-btn-arrow">&rarr;</span></a>
-                                <a class="gw-btn" href="/labs/groundwork/data/sites.json">Download the dataset <span class="gw-btn-arrow">&darr;</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <p class="gw-disclaimer">Groundwork compiles US public disclosures. It is not investment advice, not a flood model, and not a substitute for a site-specific engineering or insurance assessment. Confidence tiers describe how a fact was established, not how severe a risk is.</p>
+            <p class="gw-disclaimer">Groundwork compiles US public disclosures. Not investment advice, not a flood model, and not a substitute for a site-specific engineering or insurance assessment. Confidence tiers describe how a fact was established, not how severe a risk is. <a href="/labs/groundwork/data/sites.json">Download the dataset</a>.</p>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="/labs/groundwork/app.js?v={{ site.asset_version }}" defer></script>`;

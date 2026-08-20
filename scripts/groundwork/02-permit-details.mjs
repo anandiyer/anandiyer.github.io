@@ -131,8 +131,20 @@ function extractDetails(text) {
   const turbines = countBefore(String.raw`(?:combustion\s+|gas\s+)?turbines?\b`)
     .filter((n) => n > 0 && n <= 200);
 
+  /* Permitted emissions. VA permits tabulate each pollutant as
+     "<name> <lb/hr> <tons/yr>", per emission unit and then facility-wide.
+     We take the largest NOx figure in the document as the facility-wide
+     permitted rate. This is `probable`, not confirmed: it is read from a
+     table in a PDF, and a permitted ceiling is not measured emissions. */
+  /* (?<![\d.]) matters: without it "0.998 tpy" matches as "998", which turned a
+     0.998 t/yr unit into a 998 t/yr facility. */
+  const noxFigures = [...flat.matchAll(/(nitrogen\s*oxides?|\bNO\s*x\b)[^%]{0,90}?(?<![\d.])(\d{1,4}(?:,\d{3})*(?:\.\d+)?)\s*(?:tons?\s*\/\s*(?:yr|year)|tons?\s+per\s+year|TPY)\b/gi)]
+    .map((m) => Number(String(m[2]).replace(/,/g, '')))
+    .filter((n) => Number.isFinite(n) && n > 0 && n < 10000);
+
   return {
     permit_locality: locality,
+    nox_tons_per_year: noxFigures.length ? Math.max(...noxFigures) : null,
     address_candidates: addresses.slice(0, 5),
     generator_count_max: genMatches.length ? Math.max(...genMatches) : null,
     turbine_count_max: turbines.length ? Math.max(...turbines) : null,

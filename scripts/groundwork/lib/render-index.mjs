@@ -34,14 +34,19 @@ export function renderIndex(db) {
   const natSites = c.from_epa_registry || 0;
   const sfhaSites = located.filter((s) => s.flood?.in_sfha);
   const txCount = sites.filter((s) => s.state === 'TX').length;
+  const withNox = sites.filter((s) => s.emissions?.nox_tons_per_year);
+  const justUnder = withNox.filter((s) => s.emissions.just_under_threshold);
+  const atOrOver = withNox.filter((s) => s.emissions.nox_tons_per_year >= 100);
   const inSfha = located.filter((s) => s.flood?.in_sfha).length;
   const highWater = located.filter((s) => /^High|^Extremely High/.test(s.water?.label || '')).length;
 
   const asOf = db.coverage?.source_as_of?.VA || '';
   const updated = fmtDate((db.generated_at || '').slice(0, 10));
 
-  const title = 'Groundwork — the AI buildout, minus the press release | Canonical Labs';
-  const desc = `A public directory of ${c.sites} US AI data center sites, scored on flood exposure, water stress and grid status — built from mandatory public disclosures, not company announcements.`;
+  /* Titled for the query this is actually built to answer: someone looking up
+     what is permitted where they live. */
+  const title = 'Data center permits by county — what operators actually filed | Groundwork';
+  const desc = `What data center operators have filed with air regulators, county by county: ${c.sites} sites across ${stateCount} states, ${totalGens.toLocaleString()} permitted backup generators, every figure sourced to the permit it came from.`;
 
   const extraCss = `    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />`;
 
@@ -50,9 +55,9 @@ export function renderIndex(db) {
                 <div class="container mx-auto px-8">
                     <div class="gw-hero-content">
                         <span class="gw-eyebrow">[00] &nbsp; Canonical Labs &middot; Groundwork</span>
-                        <h1 class="gw-title">The AI buildout, minus the <em>press release</em>.</h1>
+                        <h1 class="gw-title">What is actually permitted in <em>your county</em>.</h1>
                         <p class="gw-subtitle">
-                            Over $690B has been committed to US AI data center construction, and flood, water and grid exposure are still priced as secondary to power and land. Groundwork is a permanently-indexed record of where these sites actually are and what they are built on &mdash; assembled from EPA's national air-permit registry, Virginia's permit-level disclosures, FEMA flood maps, WRI Aqueduct and SEC filings. Every fact carries its own confidence tier and its own citation. Nothing here comes from a company announcement.
+                            There is a great deal of noise about data centers right now and very little that anyone can check. Groundwork reads the permits. For every county it tracks, it publishes what operators have actually filed with the regulator &mdash; how many sites, how many backup generators, how much they are permitted to emit &mdash; each figure sourced to the filing it came from. No press releases, and no panic.
                         </p>
                         {% include lab-share.html github_path="labs/groundwork" %}
                         <div class="gw-meta">
@@ -67,23 +72,23 @@ export function renderIndex(db) {
 
             <section class="gw-tldr">
                 <div class="container mx-auto px-8">
-                    <div class="gw-tldr-intro">What the disclosures add up to.</div>
+                    <div class="gw-tldr-intro">What the filings add up to, once somebody adds them up.</div>
                     <div class="gw-tldr-grid">
                         <div class="gw-tldr-item">
-                            <div class="gw-stat"><em>${totalGens.toLocaleString()}</em></div>
-                            <div class="gw-tldr-label"><strong>Permitted generators.</strong> Counted from the text of individually unremarkable permits. No single filing discloses this total.</div>
+                            <div class="gw-stat"><em>${justUnder.length}</em><span class="gw-stat-unit">vs ${atOrOver.length}</span></div>
+                            <div class="gw-tldr-label"><strong>Permits just under the line.</strong> ${justUnder.length} Virginia data center permits are written for 90&ndash;99.99 tons of NOx a year. Only ${atOrOver.length} reach 100 &mdash; the threshold that triggers major-source review.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat">${c.permits}</div>
-                            <div class="gw-tldr-label"><strong>Issued air permits.</strong> Across ${c.sites} distinct facilities &mdash; campuses are permitted in phases, so permits outnumber sites.</div>
+                            <div class="gw-stat">${totalGens.toLocaleString()}</div>
+                            <div class="gw-tldr-label"><strong>Permitted backup generators.</strong> Counted from the text of individually unremarkable permits. No single filing discloses this total.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat"><em>${sfhaSites.length}</em></div>
-                            <div class="gw-tldr-label"><strong>Sit in a FEMA flood zone.</strong> Including Equinix in Hudson County NJ and two Microsoft campuses in Cheyenne. None of them are in Virginia.</div>
+                            <div class="gw-stat">${countyRows[0] ? countyRows[0][1].gens.toLocaleString() : '0'}</div>
+                            <div class="gw-tldr-label"><strong>In ${esc(countyRows[0] ? countyRows[0][0] : '—')} alone.</strong> The densest county on record, and the reason the aggregate matters more than any one permit.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat">${highWater}<span class="gw-stat-unit">/${located.length}</span></div>
-                            <div class="gw-tldr-label"><strong>In high water-stress basins.</strong> Of the sites located precisely enough to check. Flood is not Virginia's exposure &mdash; water is.</div>
+                            <div class="gw-stat">${c.sites}</div>
+                            <div class="gw-tldr-label"><strong>Sites tracked, in ${stateCount} states.</strong> ${vaSites} read permit-by-permit in Virginia; ${natSites} from EPA's national registry.</div>
                         </div>
                     </div>
                 </div>
@@ -92,9 +97,9 @@ export function renderIndex(db) {
             <div class="gw-subnav" id="gw-subnav">
                 <div class="container mx-auto px-8">
                     <ul class="gw-subnav-list">
-                        <li><a href="#find">Find a site</a></li>
-                        <li><a href="#counties">Counties</a></li>
-                        <li><a href="#operators">Operators</a></li>
+                        <li><a href="#find">Your county</a></li>
+                        <li><a href="#threshold">The threshold</a></li>
+                        <li><a href="#counties">All counties</a></li>
                         <li><a href="#confidence">Confidence</a></li>
                         <li><a href="#methodology">Methodology</a></li>
                     </ul>
@@ -103,8 +108,8 @@ export function renderIndex(db) {
 
             <section class="gw-scene" id="find">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Find a site</div>
-                    <h2 class="gw-scene-h2">Start with a <em>place</em>.</h2>
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Your county</div>
+                    <h2 class="gw-scene-h2">Start with where you <em>live</em>.</h2>
                     <p class="gw-lede"><strong>Read the map as a floor, not a census.</strong> Coverage is uneven by design of the source, not by design of ours: air permitting is a state function, so there is no national permit list. The national layer is EPA's registry, where the industry code is self-reported &mdash; which is why Texas shows only ${txCount} facilities here despite being one of the largest data center markets in the country. An empty county means nobody has filed under a code we can see, never that nothing is there.</p>
                     <p class="gw-lede">Of the ${located.length} sites located precisely enough to check, ${sfhaSites.length} sit inside a FEMA Special Flood Hazard Area and ${highWater} draw from basins WRI rates high or extremely high for water stress. Virginia &mdash; the densest cluster on the map &mdash; has zero in a flood zone; its exposure is water.</p>
 
@@ -149,24 +154,53 @@ export function renderIndex(db) {
                         </tbody>
                     </table>
                     </div>
-                    <p class="gw-note-navy">The ${COUNTY_LIMIT} densest of ${countyRows.length} counties. A dash in the permits or generators column means Groundwork has the facility from EPA's registry but has not yet read that state's permit documents &mdash; not that the facility is unpermitted. The remaining counties are reachable from the map above, or from any site page.</p>
+                    <p class="gw-note-navy">The ${COUNTY_LIMIT} densest of ${countyRows.length} counties. A dash in the permits or generators column means Groundwork has the facility from EPA's registry but has not yet read that state's permit documents &mdash; not that the facility is unpermitted.</p>
+
+                    <h3 class="gw-method-k" style="margin-top:2.25rem">Every county tracked</h3>
+                    <div class="gw-county-index">
+                      ${countyRows.map(([n, v]) => `<a href="/labs/groundwork/county/${slugify(n)}/">${esc(n)} <span>${v.sites}</span></a>`).join('\n                      ')}
+                    </div>
                 </div>
             </section>
 
-            <section class="gw-scene" id="operators">
+            <section class="gw-scene" id="threshold">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[04]</span> Operators</div>
-                    <h2 class="gw-scene-h2">Who is actually <em>behind</em> them.</h2>
-                    <p class="gw-lede">Data center permits are routinely held by single-purpose LLCs named after the parcel. Resolving those to an operator is the most useful join here and the easiest place to be confidently wrong, so each attribution carries its own tier and its documentary basis.</p>
-                    <div class="gw-table-wrap">
-                    <table class="gw-table">
-                        <thead><tr><th>Operator</th><th class="num">Sites</th><th class="num">Generators permitted</th></tr></thead>
-                        <tbody>
-                        ${opRows.map(([n, v]) => `<tr><td><a href="/labs/groundwork/operator/${slugify(n)}/">${esc(n)}</a></td><td class="num">${v.sites}</td><td class="num">${v.gens ? v.gens.toLocaleString() : '&mdash;'}</td></tr>`).join('\n                        ')}
-                        </tbody>
-                    </table>
+                    <div class="gw-section-label"><span class="gw-section-num">[03]</span> The threshold</div>
+                    <h2 class="gw-scene-h2">Permits stop just short of the <em>line</em>.</h2>
+                    <p class="gw-lede">Virginia air permits tabulate how much nitrogen oxide a facility may emit each year. At 100 tons a year a new source becomes a major source, which brings a stricter review and a public participation process. Of the ${withNox.length} data center permits where that figure is readable, here is where they land.</p>
+
+                    <div class="gw-hist">
+                      ${(() => {
+                        const bands = [
+                          { label: 'Under 25', lo: 0, hi: 25 },
+                          { label: '25 – 50', lo: 25, hi: 50 },
+                          { label: '50 – 75', lo: 50, hi: 75 },
+                          { label: '75 – 90', lo: 75, hi: 90 },
+                          { label: '90 – 99.99', lo: 90, hi: 100, hot: true },
+                          { label: '100 and over', lo: 100, hi: Infinity },
+                        ].map((b) => ({ ...b, n: withNox.filter((s) => s.emissions.nox_tons_per_year >= b.lo && s.emissions.nox_tons_per_year < b.hi).length }));
+                        const max = Math.max(...bands.map((b) => b.n), 1);
+                        return bands.map((b) => `<div class="gw-hist-row${b.hot ? ' hot' : ''}">
+                          <span class="gw-hist-label">${b.label}</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:${Math.max(1, Math.round((b.n / max) * 100))}%"></span></span>
+                          <span class="gw-bar-val">${b.n}</span>
+                        </div>`).join('\n                      ');
+                      })()}
                     </div>
-                    <p class="gw-note-navy" style="margin-top:0.9rem">${sites.filter((s) => !s.operator.name).length} sites are held by entities Groundwork could not resolve to a parent. They are published as unresolved rather than guessed.</p>
+                    <p class="gw-note-navy">Tons of NOx per year permitted, per facility. Read from the emissions table of each permit and labelled ${badge('probable')} &mdash; a figure parsed from a PDF, and a permitted ceiling rather than measured emissions.</p>
+
+                    <div class="gw-twoup">
+                      <div class="gw-plainly">
+                        <span class="gw-plainly-label">What this is not</span>
+                        <p>It is not evidence of wrongdoing. Designing a facility to stay under a regulatory threshold is lawful, ordinary engineering, and every industry does it. These are also <strong>backup</strong> generators &mdash; permitted to run during outages and for testing, typically tens of hours a year.</p>
+                        <p>Groundwork takes no view on any individual application, and does not claim any single permit was sized to avoid scrutiny.</p>
+                      </div>
+                      <div class="gw-plainly alt">
+                        <span class="gw-plainly-label">What it does show</span>
+                        <p>The distribution is not what engineering need alone would produce. <strong>${justUnder.length} permits land in the last ten tons below the line; ${atOrOver.length} cross it.</strong> A threshold that was incidental would not bend the curve this hard.</p>
+                        <p>Whatever else is true, the review process that 100 tons is meant to trigger is being triggered ${atOrOver.length} times, in the densest data center market on earth.</p>
+                      </div>
+                    </div>
                 </div>
             </section>
 

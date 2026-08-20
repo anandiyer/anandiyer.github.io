@@ -1,7 +1,7 @@
 {
   "layer": "spine-detail",
   "source": "VA DEQ issued permit PDFs",
-  "fetched_at": "2026-08-20T04:44:02.329Z",
+  "fetched_at": "2026-08-20T17:48:14.102Z",
   "stats": {
     "total": 201,
     "with_text": 185,
@@ -15,6 +15,7 @@
       "listing_locality": "Russell Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25638/638627839057970000",
       "permit_locality": "Russell County",
+      "nox_tons_per_year": null,
       "address_candidates": [],
       "generator_count_max": null,
       "turbine_count_max": null,
@@ -26,6 +27,7 @@
       "listing_locality": "Wise Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25640/638627840699300000",
       "permit_locality": "Wise County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "5978 Windswept Blvd",
@@ -44,6 +46,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25642/638627842668970000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 171,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -62,6 +65,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25644/638627844150500000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 171,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -88,6 +92,7 @@
       "listing_locality": "Culpeper Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25648/638627869907800000",
       "permit_locality": "Culpeper County",
+      "nox_tons_per_year": 53.7,
       "address_candidates": [
         {
           "address": "18155 Technology Drive",
@@ -106,6 +111,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25650/638627871515730000",
       "permit_locality": "Henrico County",
+      "nox_tons_per_year": 94,
       "address_candidates": [
         {
           "address": "6000 Technology Boulevard",
@@ -138,6 +144,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35475/639105417626400000",
       "permit_locality": "Henrico County",
+      "nox_tons_per_year": 21.4,
       "address_candidates": [
         {
           "address": "8011 Villa Park Drive",
@@ -164,6 +171,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25656/638627887859570000",
       "permit_locality": null,
+      "nox_tons_per_year": 17.2,
       "address_candidates": [
         {
           "address": "8801 Park Central Drive",
@@ -182,6 +190,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/33144/639052996294330000",
       "permit_locality": "Henrico County",
+      "nox_tons_per_year": 33.7,
       "address_candidates": [
         {
           "address": "6050 Technology Creek Drive",
@@ -200,6 +209,7 @@
       "listing_locality": "Chesterfield Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25658/639123668249470000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "1401 Meadowville Rd",
@@ -224,6 +234,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25660/638627890513100000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [],
       "generator_count_max": null,
       "turbine_count_max": null,
@@ -235,6 +246,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25662/638627893416770000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 8,
       "address_candidates": [
         {
           "address": "960 Prison Road",
@@ -259,6 +271,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25664/638627894486630000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 96.3,
       "address_candidates": [
         {
           "address": "608 Ridge Road",
@@ -299,6 +312,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25670/638627918390000000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 98,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -317,6 +331,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25672/638627920046200000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 9,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -335,6 +350,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25674/638810119570570000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 96.3,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -353,6 +369,7 @@
       "listing_locality": "Hanover Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37601/639207454970370000",
       "permit_locality": "Hanover County",
+      "nox_tons_per_year": 14.3,
       "address_candidates": [
         {
           "address": "12174 Washington Highway",
@@ -371,6 +388,7 @@
       "listing_locality": "Mecklenburg Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28826/638816888168930000",
       "permit_locality": "Mecklenburg County",
+      "nox_tons_per_year": 3,
       "address_candidates": [
         {
           "address": "101 Herbert Drive",
@@ -389,6 +407,7 @@
       "listing_locality": "Henrico Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35705/639128999105270000",
       "permit_locality": "Henrico County",
+      "nox_tons_per_year": 34.3,
       "address_candidates": [
         {
           "address": "3250 East Williamsburg Road",
@@ -415,6 +434,7 @@
       "listing_locality": "Virginia Beach City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25680/638628502816630000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "800 Independence Boulevard",
@@ -439,6 +459,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25684/638628506835400000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "7990 Science Applications Court",
@@ -465,6 +486,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25688/638628511407530000",
       "permit_locality": null,
+      "nox_tons_per_year": 49.4,
       "address_candidates": [
         {
           "address": "12100 Sunrise Valley Drive",
@@ -497,6 +519,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26109/638639800441670000",
       "permit_locality": null,
+      "nox_tons_per_year": 24.4,
       "address_candidates": [
         {
           "address": "7777 Infantry Ridge Road",
@@ -515,6 +538,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26111/638639801563130000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 7.3,
       "address_candidates": [
         {
           "address": "11101 University Boulevard",
@@ -533,6 +557,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35474/639105417624930000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 82.3,
       "address_candidates": [
         {
           "address": "4030 Lafayette Center Drive",
@@ -551,6 +576,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26113/638639802622270000",
       "permit_locality": null,
+      "nox_tons_per_year": 24.4,
       "address_candidates": [
         {
           "address": "544 Herndon Parkway",
@@ -575,6 +601,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25694/638628516862330000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "22810 International Drive",
@@ -601,6 +628,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26115/638639803959100000",
       "permit_locality": null,
+      "nox_tons_per_year": 47.75,
       "address_candidates": [
         {
           "address": "1780 Business Center Drive",
@@ -619,6 +647,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25698/638628519198400000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "45901 Nokes Boulevard",
@@ -637,6 +666,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26117/638639805143900000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "8217 Linton Hall Road",
@@ -655,6 +685,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25700/638628520305900000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "44470 Chilum Place",
@@ -679,6 +710,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25702/638628522004500000",
       "permit_locality": null,
+      "nox_tons_per_year": 46.9,
       "address_candidates": [
         {
           "address": "7400 Infantry Ridge Road",
@@ -697,6 +729,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25704/638628522430330000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "7400 Infantry Ridge Road",
@@ -715,6 +748,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25706/638628524505270000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "7950 Jones Branch Drive",
@@ -733,6 +767,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25708/638628525678670000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 66.15,
       "address_candidates": [
         {
           "address": "21721 Filigree Court",
@@ -757,6 +792,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25626/638627826472770000",
       "permit_locality": null,
+      "nox_tons_per_year": 24.7,
       "address_candidates": [
         {
           "address": "21571 Beaumeade Circle",
@@ -781,6 +817,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25710/638628529262630000",
       "permit_locality": null,
+      "nox_tons_per_year": 24.6,
       "address_candidates": [
         {
           "address": "22995 Wilder Court",
@@ -799,6 +836,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25712/638651993618500000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 23,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -817,6 +855,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25714/638628531918470000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "11720 Plaza America Drive",
@@ -835,6 +874,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25716/638628533707970000",
       "permit_locality": null,
+      "nox_tons_per_year": 23.6,
       "address_candidates": [
         {
           "address": "22340 Dresden Street",
@@ -853,6 +893,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25718/638833284719930000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 4,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Dr",
@@ -883,6 +924,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25720/638628535905830000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "45745 Nokes Boulevard",
@@ -901,6 +943,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35473/639105417623670000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 12.8,
       "address_candidates": [
         {
           "address": "499 Grove Street",
@@ -919,6 +962,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25724/638628554884570000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "44393 Hastings Drive",
@@ -937,6 +981,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25726/638628555336170000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 15,
       "address_candidates": [
         {
           "address": "21745 Sir Timothy Drive",
@@ -955,6 +1000,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25728/638628555765770000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 12.4,
       "address_candidates": [
         {
           "address": "21744 Sir Timothy Drive",
@@ -973,6 +1019,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25731/638628562585630000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "1807 Michael Faraday Court",
@@ -991,6 +1038,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25736/638628566270800000",
       "permit_locality": null,
+      "nox_tons_per_year": 71,
       "address_candidates": [
         {
           "address": "45005 Russell Branch Parkway",
@@ -1015,6 +1063,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25738/638628566681670000",
       "permit_locality": null,
+      "nox_tons_per_year": 63,
       "address_candidates": [
         {
           "address": "45005 Russell Branch Parkway",
@@ -1033,6 +1082,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25740/638628567068870000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "45005 Russell Branch Parkway",
@@ -1051,6 +1101,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25742/638628567408370000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "45005 Russell Branch Parkway",
@@ -1069,6 +1120,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25744/638628569542570000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 86.7,
       "address_candidates": [
         {
           "address": "43791 Devin Shafron Dr",
@@ -1093,6 +1145,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25746/638778906125130000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": null,
       "address_candidates": [],
       "generator_count_max": 2,
       "turbine_count_max": null,
@@ -1104,6 +1157,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25752/638628571437070000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 49.4,
       "address_candidates": [
         {
           "address": "9651 Hornbaker Road",
@@ -1122,6 +1176,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25754/638628573243030000",
       "permit_locality": null,
+      "nox_tons_per_year": 10,
       "address_candidates": [
         {
           "address": "1764 Old Meadow Lane",
@@ -1140,6 +1195,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25756/638628573682400000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [],
       "generator_count_max": null,
       "turbine_count_max": null,
@@ -1151,6 +1207,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35472/639105417622300000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 70.6,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Dr",
@@ -1187,6 +1244,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25760/638900633355070000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95.87,
       "address_candidates": [],
       "generator_count_max": 26,
       "turbine_count_max": null,
@@ -1198,6 +1256,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25762/638628579005200000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 6.38,
       "address_candidates": [
         {
           "address": "44874 Moran Road",
@@ -1222,6 +1281,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25766/638628579967470000",
       "permit_locality": null,
+      "nox_tons_per_year": 24.4,
       "address_candidates": [
         {
           "address": "7575 Coleshire Drive",
@@ -1246,6 +1306,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26119/638639806328030000",
       "permit_locality": null,
+      "nox_tons_per_year": 7.75,
       "address_candidates": [
         {
           "address": "460 Spring Park Place",
@@ -1264,6 +1325,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25770/638628584702270000",
       "permit_locality": null,
+      "nox_tons_per_year": 20.5,
       "address_candidates": [
         {
           "address": "12900 Federal Systems Park Drive",
@@ -1282,6 +1344,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25772/638628585470870000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 131,
       "address_candidates": [
         {
           "address": "524 Van Buren Street",
@@ -1306,6 +1369,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25624/638627824035800000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 14.4,
       "address_candidates": [
         {
           "address": "21645 Charles View Drive",
@@ -1342,6 +1406,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25774/638741931683300000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 2.6,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -1360,6 +1425,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25776/638628598977470000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 1.7,
       "address_candidates": [
         {
           "address": "43831 Devin Shafron Drive",
@@ -1378,6 +1444,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25778/638628599618070000",
       "permit_locality": null,
+      "nox_tons_per_year": 18.52,
       "address_candidates": [
         {
           "address": "2980 Fairview Park Drive",
@@ -1396,6 +1463,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25781/638693434893870000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 54.37,
       "address_candidates": [
         {
           "address": "21741 Red Rum Drive",
@@ -1414,6 +1482,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26024/638634505784000000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95.96,
       "address_candidates": [
         {
           "address": "21715 Filigree Court",
@@ -1456,6 +1525,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25787/638628694774900000",
       "permit_locality": null,
+      "nox_tons_per_year": 10.95,
       "address_candidates": [
         {
           "address": "44983 Knoll Square Drive",
@@ -1474,6 +1544,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25789/638628695431430000",
       "permit_locality": null,
+      "nox_tons_per_year": 26,
       "address_candidates": [
         {
           "address": "44664 Guilford Dr",
@@ -1492,6 +1563,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25791/638628696383770000",
       "permit_locality": null,
+      "nox_tons_per_year": 11.7,
       "address_candidates": [
         {
           "address": "14725 Lee Road",
@@ -1510,6 +1582,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25793/638628697085200000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 7,
       "address_candidates": [
         {
           "address": "14725 Lee Road",
@@ -1528,6 +1601,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25795/638628698040000000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 99,
       "address_candidates": [
         {
           "address": "7600 Doane Drive",
@@ -1564,6 +1638,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26121/638639807493100000",
       "permit_locality": null,
+      "nox_tons_per_year": 49.4,
       "address_candidates": [
         {
           "address": "8250 Jones Branch Drive",
@@ -1588,6 +1663,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25797/638990809948170000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -1620,6 +1696,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25801/638628713136870000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 52.48,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -1656,6 +1733,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25803/638628717903300000",
       "permit_locality": null,
+      "nox_tons_per_year": 14.5,
       "address_candidates": [
         {
           "address": "7681 Boston Blvd",
@@ -1680,6 +1758,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37289/639195462842100000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 2.21,
       "address_candidates": [
         {
           "address": "820 Sunrise Valley Drive",
@@ -1722,6 +1801,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25807/638628718881430000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 63.76,
       "address_candidates": [
         {
           "address": "22745 Relocation Dr",
@@ -1746,6 +1826,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25809/638628719619470000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 48.07,
       "address_candidates": [
         {
           "address": "14901 Conference Center Drive",
@@ -1764,6 +1845,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25811/638628720226470000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95.62,
       "address_candidates": [
         {
           "address": "22080 Pacific Boulevard",
@@ -1782,6 +1864,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25813/638731342312730000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.12,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Drive",
@@ -1824,6 +1907,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25815/638628727334530000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -1854,6 +1938,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25817/638628727920470000",
       "permit_locality": "Lou doun County",
+      "nox_tons_per_year": 99.18,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -1884,6 +1969,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25819/638628728324170000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 71.36,
       "address_candidates": [
         {
           "address": "21111 Ridgetop Circle",
@@ -1902,6 +1988,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25821/638628728843130000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "44610 Guilford Drive",
@@ -1926,6 +2013,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25823/638628737610070000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 37.08,
       "address_candidates": [
         {
           "address": "10100 Harry J. Parrish Boulevard",
@@ -1970,6 +2058,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25827/639123668253970000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 10.39,
       "address_candidates": [
         {
           "address": "11680 Hayden Road",
@@ -2012,6 +2101,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25829/638628740274670000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.61,
       "address_candidates": [
         {
           "address": "21350 Pacific Boulevard",
@@ -2030,6 +2120,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25831/638652055141070000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -2054,6 +2145,7 @@
       "listing_locality": "Manassas City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36250/639149773963870000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 51.04,
       "address_candidates": [
         {
           "address": "10400 Harry J Parrish Blvd",
@@ -2072,6 +2164,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25835/638880859260730000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 25,
       "address_candidates": [],
       "generator_count_max": 25,
       "turbine_count_max": null,
@@ -2083,6 +2176,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25837/638669942387830000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "45950 Pathfinder Way",
@@ -2107,6 +2201,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25839/638628759087230000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 60.4,
       "address_candidates": [
         {
           "address": "22125 Broderick Drive",
@@ -2131,6 +2226,7 @@
       "listing_locality": "Fauquier Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35471/639105417621030000",
       "permit_locality": "Fauquier County",
+      "nox_tons_per_year": 87.88,
       "address_candidates": [
         {
           "address": "6872 Watson Court",
@@ -2149,6 +2245,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25843/638628762496730000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.3,
       "address_candidates": [
         {
           "address": "10261 Tanner Way",
@@ -2173,6 +2270,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25845/638628763112700000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 3,
       "address_candidates": [
         {
           "address": "12369 Sunrise Valley Drive",
@@ -2191,6 +2289,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25847/638852257938270000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 0.55,
       "address_candidates": [
         {
           "address": "22271 Broderick Drive",
@@ -2223,6 +2322,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25628/639213635757530000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "20935 Loudoun County Parkway",
@@ -2247,6 +2347,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25851/638628778348300000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95,
       "address_candidates": [
         {
           "address": "24400 Howling Rooster Ln",
@@ -2265,6 +2366,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25853/638628778970430000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -2289,6 +2391,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35470/639105417619770000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 64,
       "address_candidates": [
         {
           "address": "7900 Telegraph Road",
@@ -2313,6 +2416,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25855/638754663567370000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 80.97,
       "address_candidates": [
         {
           "address": "44621 Waxpool Road",
@@ -2351,6 +2455,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35469/639105417618500000",
       "permit_locality": "Loud o un County",
+      "nox_tons_per_year": 94.05,
       "address_candidates": [
         {
           "address": "42254 Thunderball Drive",
@@ -2369,6 +2474,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35468/639105417617070000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 97.73,
       "address_candidates": [
         {
           "address": "10680 University Blvd",
@@ -2399,6 +2505,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25863/638628785479200000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 93.5,
       "address_candidates": [],
       "generator_count_max": 121,
       "turbine_count_max": null,
@@ -2410,6 +2517,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25865/638816888857770000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95,
       "address_candidates": [
         {
           "address": "20491 Goose Landing Lane",
@@ -2428,6 +2536,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25867/638628786473030000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 21.82,
       "address_candidates": [
         {
           "address": "45905 Maries Road",
@@ -2446,6 +2555,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25869/638628786895530000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 99,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -2476,6 +2586,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25926/638633793013470000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.05,
       "address_candidates": [
         {
           "address": "21890 UUNET Drive",
@@ -2506,6 +2617,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25928/638905045800170000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "45781 Maries Road",
@@ -2530,6 +2642,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36912/639177380199170000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Drive",
@@ -2566,6 +2679,7 @@
       "listing_locality": "Fauquier Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25932/638633798982670000",
       "permit_locality": "Fauquier County",
+      "nox_tons_per_year": 18.24,
       "address_candidates": [
         {
           "address": "12270 Lucky Hill Rd",
@@ -2596,6 +2710,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32405/638989963116500000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.43,
       "address_candidates": [
         {
           "address": "43290 Old Ox Road",
@@ -2620,6 +2735,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25936/638633803342700000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [],
       "generator_count_max": null,
       "turbine_count_max": null,
@@ -2639,6 +2755,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25940/638633845946570000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -2657,6 +2774,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32404/638989963114970000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 77.3,
       "address_candidates": [
         {
           "address": "21551 Beaumeade Circle",
@@ -2693,6 +2811,7 @@
       "listing_locality": "Culpeper Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25944/638633847472900000",
       "permit_locality": null,
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -2717,6 +2836,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25948/638633853120600000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 98.32,
       "address_candidates": [
         {
           "address": "22271 Shellhorn Road",
@@ -2747,6 +2867,7 @@
       "listing_locality": "Fauquier Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25950/638633853758100000",
       "permit_locality": "Fauquier County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "7471 Bear Wallow Road",
@@ -2777,6 +2898,7 @@
       "listing_locality": "Fauquier Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25952/638633854222530000",
       "permit_locality": "Fauquier County",
+      "nox_tons_per_year": null,
       "address_candidates": [
         {
           "address": "7471 Bear Wallow Road",
@@ -2801,6 +2923,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36911/639177380197900000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 2.88,
       "address_candidates": [
         {
           "address": "23845 Erins Run Drive",
@@ -2825,6 +2948,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25956/638633855631770000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 42.49,
       "address_candidates": [
         {
           "address": "7900 Telegraph Road",
@@ -2849,6 +2973,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32403/638989963113270000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94,
       "address_candidates": [
         {
           "address": "43715 Efficiency Dr",
@@ -2867,6 +2992,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25960/638633856694070000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 86.38,
       "address_candidates": [
         {
           "address": "22295 Lockridge Rd",
@@ -2885,6 +3011,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25962/638633857089300000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 94.01,
       "address_candidates": [
         {
           "address": "13001 Rollins Ford Road",
@@ -2903,6 +3030,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25630/638771964788470000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.67,
       "address_candidates": [
         {
           "address": "19515 Compass Creek Parkway",
@@ -2929,6 +3057,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25966/638633868679100000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 99.17,
       "address_candidates": [
         {
           "address": "9590 Hornbaker Road",
@@ -2947,6 +3076,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25968/638633869100830000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 2.88,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -2977,6 +3107,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25970/638633869849270000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.73,
       "address_candidates": [
         {
           "address": "44655 Quality Tech Lane",
@@ -3001,6 +3132,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32402/638989963111870000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.57,
       "address_candidates": [
         {
           "address": "22190 Loudoun County Parkway",
@@ -3031,6 +3163,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25974/638889504246870000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.82,
       "address_candidates": [
         {
           "address": "21745 Beaumeade Cir",
@@ -3049,6 +3182,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25976/638633871882970000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 90.51,
       "address_candidates": [
         {
           "address": "13050 Hansen Farm Road",
@@ -3073,6 +3207,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25978/638633872515870000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 90.09,
       "address_candidates": [
         {
           "address": "11316 Balls Ford Road",
@@ -3097,6 +3232,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25980/639213635756000000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 91.26,
       "address_candidates": [
         {
           "address": "820 Sunrise Valley Drive",
@@ -3127,6 +3263,7 @@
       "listing_locality": "Manassas City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25982/638633874160100000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 93.16,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -3151,6 +3288,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35467/639213635754630000",
       "permit_locality": "Prince Wil liam County",
+      "nox_tons_per_year": 22.19,
       "address_candidates": [
         {
           "address": "13760 University Blvd",
@@ -3181,6 +3319,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25986/638633875365530000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95,
       "address_candidates": [
         {
           "address": "22318 Glenn Drive",
@@ -3199,6 +3338,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25632/638627832777030000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 2.88,
       "address_candidates": [
         {
           "address": "21310 Beaumeade Circle",
@@ -3223,6 +3363,7 @@
       "listing_locality": "Manassas City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25990/638990809950170000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 48.45,
       "address_candidates": [
         {
           "address": "9101 Freedom Center Boulevard",
@@ -3247,6 +3388,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25992/638633943624630000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96,
       "address_candidates": [
         {
           "address": "22715 Relocation Drive",
@@ -3265,6 +3407,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25994/638864455362300000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "25410 Meadowdale Drive",
@@ -3289,6 +3432,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25996/639123668256400000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.04,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Dr",
@@ -3307,6 +3451,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25998/639123668251800000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 66.89,
       "address_candidates": [
         {
           "address": "7251 Grove Hill Road",
@@ -3331,6 +3476,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37093/639185072674230000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.07,
       "address_candidates": [
         {
           "address": "9905 Godwin Dr",
@@ -3355,6 +3501,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/25636/638627836175800000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.32,
       "address_candidates": [
         {
           "address": "22588 Relocation Drive",
@@ -3381,6 +3528,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35466/639105417614630000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 99.17,
       "address_candidates": [
         {
           "address": "19275 Compass Creek Parkway",
@@ -3405,6 +3553,7 @@
       "listing_locality": "Culpeper Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26004/638633955502300000",
       "permit_locality": "Culpeper County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "20420 Germanna Hwy",
@@ -3429,6 +3578,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26006/638633955909770000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "7961 Loisdale Rd",
@@ -3453,6 +3603,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26008/638633956319870000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 8,
       "address_candidates": [
         {
           "address": "13650 EDS Drive",
@@ -3477,6 +3628,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26010/638633959051770000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 3,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Rd",
@@ -3501,6 +3653,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26012/638633959746100000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 75.54,
       "address_candidates": [
         {
           "address": "21800 Beaumeade Circle",
@@ -3519,6 +3672,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/31172/638936293176970000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Dr",
@@ -3543,6 +3697,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26016/638633960792770000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "11600 Hayden Road",
@@ -3573,6 +3728,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35465/639105417613130000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 17.71,
       "address_candidates": [
         {
           "address": "19590 Belmont Ridge Road",
@@ -3591,6 +3747,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26261/638651998243870000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 95,
       "address_candidates": [
         {
           "address": "22321 Pacific Blvd",
@@ -3615,6 +3772,7 @@
       "listing_locality": "Spotsylvania Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36613/639168592121270000",
       "permit_locality": "Spotsylvania County",
+      "nox_tons_per_year": 6.78,
       "address_candidates": [
         {
           "address": "3901 Massaponax Church Road",
@@ -3633,6 +3791,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26720/638669941696770000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.98,
       "address_candidates": [
         {
           "address": "21529 Beaumeade Circle",
@@ -3651,6 +3810,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/33143/639052996292800000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 76.87,
       "address_candidates": [
         {
           "address": "45695 Russell Branch Parkway",
@@ -3675,6 +3835,7 @@
       "listing_locality": "Louisa Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35464/639105417611870000",
       "permit_locality": "Louisa County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "230 Haley Dr",
@@ -3699,6 +3860,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28092/638778025658170000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 94.45,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -3723,6 +3885,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28094/638778027138400000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13200 Woodland Park Road",
@@ -3747,6 +3910,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37399/639201548771970000",
       "permit_locality": "Lou doun County",
+      "nox_tons_per_year": 94.45,
       "address_candidates": [
         {
           "address": "22279 Power Player Lane",
@@ -3765,6 +3929,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32401/638989963110000000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.5,
       "address_candidates": [
         {
           "address": "45831 Maries Road",
@@ -3783,6 +3948,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35463/639105417610630000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 4.37,
       "address_candidates": [
         {
           "address": "21780 Filigree Court",
@@ -3801,6 +3967,7 @@
       "listing_locality": "Stafford Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28344/638790873414030000",
       "permit_locality": "Stafford County",
+      "nox_tons_per_year": 94.68,
       "address_candidates": [
         {
           "address": "123 Old Potomac Church Road",
@@ -3825,6 +3992,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/28686/638803848078830000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.5,
       "address_candidates": [
         {
           "address": "22425 Sous Vide Lane",
@@ -3843,6 +4011,7 @@
       "listing_locality": "Manassas City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/31174/638936293181930000",
       "permit_locality": null,
+      "nox_tons_per_year": 94.77,
       "address_candidates": [
         {
           "address": "9501 Technology Drive",
@@ -3861,6 +4030,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35462/639105417609370000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 94.49,
       "address_candidates": [
         {
           "address": "19560 Hyperspace Lane",
@@ -3879,6 +4049,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35461/639105417608200000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Drive",
@@ -3897,6 +4068,7 @@
       "listing_locality": "Spotsylvania Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35666/639123810437200000",
       "permit_locality": "Spotsylvania County",
+      "nox_tons_per_year": 94.05,
       "address_candidates": [
         {
           "address": "4195 Turner Ct",
@@ -3921,6 +4093,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35458/639105417604630000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "8870 Hornbaker Rd",
@@ -3945,6 +4118,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35459/639213635752900000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 8.85,
       "address_candidates": [
         {
           "address": "13775 McLearen Road",
@@ -3963,6 +4137,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35458/639105417604630000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "8870 Hornbaker Rd",
@@ -3987,6 +4162,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35457/639105417603370000",
       "permit_locality": "Loudoun County",
+      "nox_tons_per_year": 19.28,
       "address_candidates": [
         {
           "address": "44595 Low Latency Lane",
@@ -4005,6 +4181,7 @@
       "listing_locality": "Fairfax Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36294/639150607463270000",
       "permit_locality": "Fairfax County",
+      "nox_tons_per_year": 81.22,
       "address_candidates": [
         {
           "address": "2850 Towerview Road",
@@ -4035,6 +4212,7 @@
       "listing_locality": "Loudoun Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/35456/639105417601700000",
       "permit_locality": "L oudoun County",
+      "nox_tons_per_year": 94.45,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Drive",
@@ -4059,6 +4237,7 @@
       "listing_locality": "Stafford Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36249/639149773962100000",
       "permit_locality": "Stafford County",
+      "nox_tons_per_year": 94.5,
       "address_candidates": [
         {
           "address": "255 Centreport Parkway",
@@ -4077,6 +4256,7 @@
       "listing_locality": "Caroline Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37147/639189502405330000",
       "permit_locality": "Caroline County",
+      "nox_tons_per_year": 13.01,
       "address_candidates": [],
       "generator_count_max": 266,
       "turbine_count_max": null,
@@ -4088,6 +4268,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/36910/639177380195570000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 96.03,
       "address_candidates": [
         {
           "address": "13820 Sunrise Valley Dr",
@@ -4112,6 +4293,7 @@
       "listing_locality": "Culpeper Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/38108/639219503123070000",
       "permit_locality": "Culpeper County",
+      "nox_tons_per_year": 2.59,
       "address_candidates": [
         {
           "address": "14625 Germana Hwy",
@@ -4130,6 +4312,7 @@
       "listing_locality": "Prince William Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/37970/639213635751370000",
       "permit_locality": "Prince William County",
+      "nox_tons_per_year": 16.69,
       "address_candidates": [
         {
           "address": "820 Sunrise Valley Drive",
@@ -4160,6 +4343,7 @@
       "listing_locality": "Frederick Co.",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/32400/638989963108100000",
       "permit_locality": "Frederick County",
+      "nox_tons_per_year": 5,
       "address_candidates": [
         {
           "address": "8209 Valley Pike",
@@ -4184,6 +4368,7 @@
       "listing_locality": "Harrisonburg City",
       "permit_pdf": "https://www.deq.virginia.gov/home/showpublisheddocument/26022/638633962837530000",
       "permit_locality": null,
+      "nox_tons_per_year": 64.47,
       "address_candidates": [
         {
           "address": "1175 North Main Street",

@@ -6,8 +6,8 @@
     {% include google-analytics.html %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groundwork — the AI buildout, minus the press release | Canonical Labs</title>
-    <meta name="description" content="A public directory of 379 US AI data center sites, scored on flood exposure, water stress and grid status — built from mandatory public disclosures, not company announcements." />
+    <title>Data center permits by county — what operators actually filed | Groundwork</title>
+    <meta name="description" content="What data center operators have filed with air regulators, county by county: 379 sites across 37 states, 11,633 permitted backup generators, every figure sourced to the permit it came from." />
     <meta name="author" content="Canonical" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://canonical.cc/labs/groundwork/" />
@@ -15,16 +15,16 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://canonical.cc/labs/groundwork/" />
-    <meta property="og:title" content="Groundwork — the AI buildout, minus the press release | Canonical Labs" />
-    <meta property="og:description" content="A public directory of 379 US AI data center sites, scored on flood exposure, water stress and grid status — built from mandatory public disclosures, not company announcements." />
+    <meta property="og:title" content="Data center permits by county — what operators actually filed | Groundwork" />
+    <meta property="og:description" content="What data center operators have filed with air regulators, county by county: 379 sites across 37 states, 11,633 permitted backup generators, every figure sourced to the permit it came from." />
     <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
     <meta property="og:site_name" content="Canonical" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://canonical.cc/labs/groundwork/" />
-    <meta property="twitter:title" content="Groundwork — the AI buildout, minus the press release | Canonical Labs" />
-    <meta property="twitter:description" content="A public directory of 379 US AI data center sites, scored on flood exposure, water stress and grid status — built from mandatory public disclosures, not company announcements." />
+    <meta property="twitter:title" content="Data center permits by county — what operators actually filed | Groundwork" />
+    <meta property="twitter:description" content="What data center operators have filed with air regulators, county by county: 379 sites across 37 states, 11,633 permitted backup generators, every figure sourced to the permit it came from." />
     <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
     <meta property="twitter:creator" content="@canonicalcc" />
     <meta property="twitter:site" content="@canonicalcc" />
@@ -47,9 +47,9 @@
                 <div class="container mx-auto px-8">
                     <div class="gw-hero-content">
                         <span class="gw-eyebrow">[00] &nbsp; Canonical Labs &middot; Groundwork</span>
-                        <h1 class="gw-title">The AI buildout, minus the <em>press release</em>.</h1>
+                        <h1 class="gw-title">What is actually permitted in <em>your county</em>.</h1>
                         <p class="gw-subtitle">
-                            Over $690B has been committed to US AI data center construction, and flood, water and grid exposure are still priced as secondary to power and land. Groundwork is a permanently-indexed record of where these sites actually are and what they are built on &mdash; assembled from EPA's national air-permit registry, Virginia's permit-level disclosures, FEMA flood maps, WRI Aqueduct and SEC filings. Every fact carries its own confidence tier and its own citation. Nothing here comes from a company announcement.
+                            There is a great deal of noise about data centers right now and very little that anyone can check. Groundwork reads the permits. For every county it tracks, it publishes what operators have actually filed with the regulator &mdash; how many sites, how many backup generators, how much they are permitted to emit &mdash; each figure sourced to the filing it came from. No press releases, and no panic.
                         </p>
                         {% include lab-share.html github_path="labs/groundwork" %}
                         <div class="gw-meta">
@@ -64,23 +64,23 @@
 
             <section class="gw-tldr">
                 <div class="container mx-auto px-8">
-                    <div class="gw-tldr-intro">What the disclosures add up to.</div>
+                    <div class="gw-tldr-intro">What the filings add up to, once somebody adds them up.</div>
                     <div class="gw-tldr-grid">
                         <div class="gw-tldr-item">
-                            <div class="gw-stat"><em>11,633</em></div>
-                            <div class="gw-tldr-label"><strong>Permitted generators.</strong> Counted from the text of individually unremarkable permits. No single filing discloses this total.</div>
+                            <div class="gw-stat"><em>70</em><span class="gw-stat-unit">vs 2</span></div>
+                            <div class="gw-tldr-label"><strong>Permits just under the line.</strong> 70 Virginia data center permits are written for 90&ndash;99.99 tons of NOx a year. Only 2 reach 100 &mdash; the threshold that triggers major-source review.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat">201</div>
-                            <div class="gw-tldr-label"><strong>Issued air permits.</strong> Across 379 distinct facilities &mdash; campuses are permitted in phases, so permits outnumber sites.</div>
+                            <div class="gw-stat">11,633</div>
+                            <div class="gw-tldr-label"><strong>Permitted backup generators.</strong> Counted from the text of individually unremarkable permits. No single filing discloses this total.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat"><em>12</em></div>
-                            <div class="gw-tldr-label"><strong>Sit in a FEMA flood zone.</strong> Including Equinix in Hudson County NJ and two Microsoft campuses in Cheyenne. None of them are in Virginia.</div>
+                            <div class="gw-stat">5,882</div>
+                            <div class="gw-tldr-label"><strong>In Loudoun County alone.</strong> The densest county on record, and the reason the aggregate matters more than any one permit.</div>
                         </div>
                         <div class="gw-tldr-item">
-                            <div class="gw-stat">123<span class="gw-stat-unit">/313</span></div>
-                            <div class="gw-tldr-label"><strong>In high water-stress basins.</strong> Of the sites located precisely enough to check. Flood is not Virginia's exposure &mdash; water is.</div>
+                            <div class="gw-stat">379</div>
+                            <div class="gw-tldr-label"><strong>Sites tracked, in 37 states.</strong> 188 read permit-by-permit in Virginia; 188 from EPA's national registry.</div>
                         </div>
                     </div>
                 </div>
@@ -89,9 +89,9 @@
             <div class="gw-subnav" id="gw-subnav">
                 <div class="container mx-auto px-8">
                     <ul class="gw-subnav-list">
-                        <li><a href="#find">Find a site</a></li>
-                        <li><a href="#counties">Counties</a></li>
-                        <li><a href="#operators">Operators</a></li>
+                        <li><a href="#find">Your county</a></li>
+                        <li><a href="#threshold">The threshold</a></li>
+                        <li><a href="#counties">All counties</a></li>
                         <li><a href="#confidence">Confidence</a></li>
                         <li><a href="#methodology">Methodology</a></li>
                     </ul>
@@ -100,8 +100,8 @@
 
             <section class="gw-scene" id="find">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Find a site</div>
-                    <h2 class="gw-scene-h2">Start with a <em>place</em>.</h2>
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Your county</div>
+                    <h2 class="gw-scene-h2">Start with where you <em>live</em>.</h2>
                     <p class="gw-lede"><strong>Read the map as a floor, not a census.</strong> Coverage is uneven by design of the source, not by design of ours: air permitting is a state function, so there is no national permit list. The national layer is EPA's registry, where the industry code is self-reported &mdash; which is why Texas shows only 7 facilities here despite being one of the largest data center markets in the country. An empty county means nobody has filed under a code we can see, never that nothing is there.</p>
                     <p class="gw-lede">Of the 313 sites located precisely enough to check, 12 sit inside a FEMA Special Flood Hazard Area and 123 draw from basins WRI rates high or extremely high for water stress. Virginia &mdash; the densest cluster on the map &mdash; has zero in a flood zone; its exposure is water.</p>
 
@@ -165,35 +165,167 @@
                         </tbody>
                     </table>
                     </div>
-                    <p class="gw-note-navy">The 20 densest of 101 counties. A dash in the permits or generators column means Groundwork has the facility from EPA's registry but has not yet read that state's permit documents &mdash; not that the facility is unpermitted. The remaining counties are reachable from the map above, or from any site page.</p>
+                    <p class="gw-note-navy">The 20 densest of 101 counties. A dash in the permits or generators column means Groundwork has the facility from EPA's registry but has not yet read that state's permit documents &mdash; not that the facility is unpermitted.</p>
+
+                    <h3 class="gw-method-k" style="margin-top:2.25rem">Every county tracked</h3>
+                    <div class="gw-county-index">
+                      <a href="/labs/groundwork/county/loudoun-county/">Loudoun County <span>85</span></a>
+                      <a href="/labs/groundwork/county/fairfax-county/">Fairfax County <span>31</span></a>
+                      <a href="/labs/groundwork/county/prince-william-county/">Prince William County <span>28</span></a>
+                      <a href="/labs/groundwork/county/cook-county/">Cook County <span>15</span></a>
+                      <a href="/labs/groundwork/county/douglas-county/">Douglas County <span>12</span></a>
+                      <a href="/labs/groundwork/county/mecklenburg-county/">Mecklenburg County <span>10</span></a>
+                      <a href="/labs/groundwork/county/maricopa-county/">Maricopa County <span>10</span></a>
+                      <a href="/labs/groundwork/county/fulton-county/">Fulton County <span>10</span></a>
+                      <a href="/labs/groundwork/county/henrico-county/">Henrico County <span>8</span></a>
+                      <a href="/labs/groundwork/county/dupage-county/">DuPage County <span>6</span></a>
+                      <a href="/labs/groundwork/county/sarpy-county/">Sarpy County <span>6</span></a>
+                      <a href="/labs/groundwork/county/johnson-county/">Johnson County <span>5</span></a>
+                      <a href="/labs/groundwork/county/montgomery-county/">Montgomery County <span>5</span></a>
+                      <a href="/labs/groundwork/county/fauquier-county/">Fauquier County <span>4</span></a>
+                      <a href="/labs/groundwork/county/culpeper-county/">Culpeper County <span>4</span></a>
+                      <a href="/labs/groundwork/county/manassas-city/">Manassas City <span>4</span></a>
+                      <a href="/labs/groundwork/county/anne-arundel-county/">Anne Arundel County <span>4</span></a>
+                      <a href="/labs/groundwork/county/middlesex-county/">Middlesex County <span>4</span></a>
+                      <a href="/labs/groundwork/county/denver-county/">Denver County <span>4</span></a>
+                      <a href="/labs/groundwork/county/dakota-county/">Dakota County <span>4</span></a>
+                      <a href="/labs/groundwork/county/bexar-county/">Bexar County <span>4</span></a>
+                      <a href="/labs/groundwork/county/el-paso-county/">El Paso County <span>4</span></a>
+                      <a href="/labs/groundwork/county/philadelphia-county/">Philadelphia County <span>3</span></a>
+                      <a href="/labs/groundwork/county/arapahoe-county/">Arapahoe County <span>3</span></a>
+                      <a href="/labs/groundwork/county/dallas-county/">Dallas County <span>3</span></a>
+                      <a href="/labs/groundwork/county/laramie-county/">Laramie County <span>3</span></a>
+                      <a href="/labs/groundwork/county/catawba-county/">Catawba County <span>3</span></a>
+                      <a href="/labs/groundwork/county/undetermined-county/">Undetermined County <span>3</span></a>
+                      <a href="/labs/groundwork/county/allegheny-county/">Allegheny County <span>3</span></a>
+                      <a href="/labs/groundwork/county/spotsylvania-county/">Spotsylvania County <span>2</span></a>
+                      <a href="/labs/groundwork/county/chesterfield-county/">Chesterfield County <span>2</span></a>
+                      <a href="/labs/groundwork/county/stafford-county/">Stafford County <span>2</span></a>
+                      <a href="/labs/groundwork/county/frederick-county/">Frederick County <span>2</span></a>
+                      <a href="/labs/groundwork/county/essex-county/">Essex County <span>2</span></a>
+                      <a href="/labs/groundwork/county/st-joseph-county/">St. Joseph County <span>2</span></a>
+                      <a href="/labs/groundwork/county/newton-county/">Newton County <span>2</span></a>
+                      <a href="/labs/groundwork/county/bucks-county/">Bucks County <span>2</span></a>
+                      <a href="/labs/groundwork/county/franklin-county/">Franklin County <span>2</span></a>
+                      <a href="/labs/groundwork/county/warren-county/">Warren County <span>2</span></a>
+                      <a href="/labs/groundwork/county/hennepin-county/">Hennepin County <span>2</span></a>
+                      <a href="/labs/groundwork/county/hudson-county/">Hudson County <span>2</span></a>
+                      <a href="/labs/groundwork/county/hillsborough-county/">Hillsborough County <span>2</span></a>
+                      <a href="/labs/groundwork/county/taylor-county/">Taylor County <span>2</span></a>
+                      <a href="/labs/groundwork/county/boulder-county/">Boulder County <span>2</span></a>
+                      <a href="/labs/groundwork/county/cass-county/">Cass County <span>2</span></a>
+                      <a href="/labs/groundwork/county/grant-county/">Grant County <span>2</span></a>
+                      <a href="/labs/groundwork/county/bernalillo-county/">Bernalillo County <span>2</span></a>
+                      <a href="/labs/groundwork/county/worcester-county/">Worcester County <span>2</span></a>
+                      <a href="/labs/groundwork/county/caroline-county/">Caroline County <span>1</span></a>
+                      <a href="/labs/groundwork/county/louisa-county/">Louisa County <span>1</span></a>
+                      <a href="/labs/groundwork/county/hanover-county/">Hanover County <span>1</span></a>
+                      <a href="/labs/groundwork/county/wise-county/">Wise County <span>1</span></a>
+                      <a href="/labs/groundwork/county/virginia-beach-city/">Virginia Beach City <span>1</span></a>
+                      <a href="/labs/groundwork/county/harrisonburg-city/">Harrisonburg City <span>1</span></a>
+                      <a href="/labs/groundwork/county/russell-county/">Russell County <span>1</span></a>
+                      <a href="/labs/groundwork/county/ogle-county/">Ogle County <span>1</span></a>
+                      <a href="/labs/groundwork/county/madison-county/">Madison County <span>1</span></a>
+                      <a href="/labs/groundwork/county/umatilla-county/">Umatilla County <span>1</span></a>
+                      <a href="/labs/groundwork/county/forsyth-county/">Forsyth County <span>1</span></a>
+                      <a href="/labs/groundwork/county/summit-county/">Summit County <span>1</span></a>
+                      <a href="/labs/groundwork/county/passaic-county/">Passaic County <span>1</span></a>
+                      <a href="/labs/groundwork/county/shelby-county/">Shelby County <span>1</span></a>
+                      <a href="/labs/groundwork/county/orange-county/">Orange County <span>1</span></a>
+                      <a href="/labs/groundwork/county/kane-county/">Kane County <span>1</span></a>
+                      <a href="/labs/groundwork/county/pottawattamie-county/">Pottawattamie County <span>1</span></a>
+                      <a href="/labs/groundwork/county/boone-county/">Boone County <span>1</span></a>
+                      <a href="/labs/groundwork/county/tulsa-county/">Tulsa County <span>1</span></a>
+                      <a href="/labs/groundwork/county/marshall-county/">Marshall County <span>1</span></a>
+                      <a href="/labs/groundwork/county/henry-county/">Henry County <span>1</span></a>
+                      <a href="/labs/groundwork/county/kendall-county/">Kendall County <span>1</span></a>
+                      <a href="/labs/groundwork/county/davidson-county/">Davidson County <span>1</span></a>
+                      <a href="/labs/groundwork/county/ramsey-county/">Ramsey County <span>1</span></a>
+                      <a href="/labs/groundwork/county/rockingham-county/">Rockingham County <span>1</span></a>
+                      <a href="/labs/groundwork/county/adams-county/">Adams County <span>1</span></a>
+                      <a href="/labs/groundwork/county/richland-county/">Richland County <span>1</span></a>
+                      <a href="/labs/groundwork/county/york-county/">York County <span>1</span></a>
+                      <a href="/labs/groundwork/county/fayette-county/">Fayette County <span>1</span></a>
+                      <a href="/labs/groundwork/county/columbiana-county/">Columbiana County <span>1</span></a>
+                      <a href="/labs/groundwork/county/santa-clara-county/">Santa Clara County <span>1</span></a>
+                      <a href="/labs/groundwork/county/pepin-county/">Pepin County <span>1</span></a>
+                      <a href="/labs/groundwork/county/mcdonald-county/">McDonald County <span>1</span></a>
+                      <a href="/labs/groundwork/county/benton-county/">Benton County <span>1</span></a>
+                      <a href="/labs/groundwork/county/union-county/">Union County <span>1</span></a>
+                      <a href="/labs/groundwork/county/delaware-county/">Delaware County <span>1</span></a>
+                      <a href="/labs/groundwork/county/grafton-county/">Grafton County <span>1</span></a>
+                      <a href="/labs/groundwork/county/oklahoma-county/">Oklahoma County <span>1</span></a>
+                      <a href="/labs/groundwork/county/jefferson-county/">Jefferson County <span>1</span></a>
+                      <a href="/labs/groundwork/county/wake-county/">Wake County <span>1</span></a>
+                      <a href="/labs/groundwork/county/polk-county/">Polk County <span>1</span></a>
+                      <a href="/labs/groundwork/county/somerset-county/">Somerset County <span>1</span></a>
+                      <a href="/labs/groundwork/county/clark-county/">Clark County <span>1</span></a>
+                      <a href="/labs/groundwork/county/sacramento-county/">Sacramento County <span>1</span></a>
+                      <a href="/labs/groundwork/county/hartford-county/">Hartford County <span>1</span></a>
+                      <a href="/labs/groundwork/county/jackson-county/">Jackson County <span>1</span></a>
+                      <a href="/labs/groundwork/county/rockland-county/">Rockland County <span>1</span></a>
+                      <a href="/labs/groundwork/county/kingfisher-county/">Kingfisher County <span>1</span></a>
+                      <a href="/labs/groundwork/county/gwinnett-county/">Gwinnett County <span>1</span></a>
+                      <a href="/labs/groundwork/county/kootenai-county/">Kootenai County <span>1</span></a>
+                      <a href="/labs/groundwork/county/minnehaha-county/">Minnehaha County <span>1</span></a>
+                      <a href="/labs/groundwork/county/new-york-county/">New York County <span>1</span></a>
+                      <a href="/labs/groundwork/county/alameda-county/">Alameda County <span>1</span></a>
+                    </div>
                 </div>
             </section>
 
-            <section class="gw-scene" id="operators">
+            <section class="gw-scene" id="threshold">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[04]</span> Operators</div>
-                    <h2 class="gw-scene-h2">Who is actually <em>behind</em> them.</h2>
-                    <p class="gw-lede">Data center permits are routinely held by single-purpose LLCs named after the parcel. Resolving those to an operator is the most useful join here and the easiest place to be confidently wrong, so each attribution carries its own tier and its documentary basis.</p>
-                    <div class="gw-table-wrap">
-                    <table class="gw-table">
-                        <thead><tr><th>Operator</th><th class="num">Sites</th><th class="num">Generators permitted</th></tr></thead>
-                        <tbody>
-                        <tr><td><a href="/labs/groundwork/operator/amazon/">Amazon</a></td><td class="num">68</td><td class="num">2,871</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/microsoft/">Microsoft</a></td><td class="num">31</td><td class="num">575</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/cyrusone/">CyrusOne</a></td><td class="num">15</td><td class="num">170</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/equinix/">Equinix</a></td><td class="num">15</td><td class="num">534</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/qts/">QTS</a></td><td class="num">14</td><td class="num">442</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/vantage-data-centers/">Vantage Data Centers</a></td><td class="num">12</td><td class="num">215</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/digital-realty/">Digital Realty</a></td><td class="num">10</td><td class="num">2,191</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/databank/">DataBank</a></td><td class="num">5</td><td class="num">112</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/ntt-global-data-centers/">NTT Global Data Centers</a></td><td class="num">5</td><td class="num">86</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/aligned-data-centers/">Aligned Data Centers</a></td><td class="num">5</td><td class="num">550</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/coresite/">CoreSite</a></td><td class="num">5</td><td class="num">438</td></tr>
-                        <tr><td><a href="/labs/groundwork/operator/h5-data-centers/">H5 Data Centers</a></td><td class="num">4</td><td class="num">301</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="gw-section-label"><span class="gw-section-num">[03]</span> The threshold</div>
+                    <h2 class="gw-scene-h2">Permits stop just short of the <em>line</em>.</h2>
+                    <p class="gw-lede">Virginia air permits tabulate how much nitrogen oxide a facility may emit each year. At 100 tons a year a new source becomes a major source, which brings a stricter review and a public participation process. Of the 155 data center permits where that figure is readable, here is where they land.</p>
+
+                    <div class="gw-hist">
+                      <div class="gw-hist-row">
+                          <span class="gw-hist-label">Under 25</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:69%"></span></span>
+                          <span class="gw-bar-val">48</span>
+                        </div>
+                      <div class="gw-hist-row">
+                          <span class="gw-hist-label">25 – 50</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:19%"></span></span>
+                          <span class="gw-bar-val">13</span>
+                        </div>
+                      <div class="gw-hist-row">
+                          <span class="gw-hist-label">50 – 75</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:19%"></span></span>
+                          <span class="gw-bar-val">13</span>
+                        </div>
+                      <div class="gw-hist-row">
+                          <span class="gw-hist-label">75 – 90</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:13%"></span></span>
+                          <span class="gw-bar-val">9</span>
+                        </div>
+                      <div class="gw-hist-row hot">
+                          <span class="gw-hist-label">90 – 99.99</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:100%"></span></span>
+                          <span class="gw-bar-val">70</span>
+                        </div>
+                      <div class="gw-hist-row">
+                          <span class="gw-hist-label">100 and over</span>
+                          <span class="gw-bar-track"><span class="gw-bar-fill" style="width:3%"></span></span>
+                          <span class="gw-bar-val">2</span>
+                        </div>
                     </div>
-                    <p class="gw-note-navy" style="margin-top:0.9rem">126 sites are held by entities Groundwork could not resolve to a parent. They are published as unresolved rather than guessed.</p>
+                    <p class="gw-note-navy">Tons of NOx per year permitted, per facility. Read from the emissions table of each permit and labelled <span class="gw-conf probable" title="Matched on a non-unique key; very likely correct but not certain.">probable</span> &mdash; a figure parsed from a PDF, and a permitted ceiling rather than measured emissions.</p>
+
+                    <div class="gw-twoup">
+                      <div class="gw-plainly">
+                        <span class="gw-plainly-label">What this is not</span>
+                        <p>It is not evidence of wrongdoing. Designing a facility to stay under a regulatory threshold is lawful, ordinary engineering, and every industry does it. These are also <strong>backup</strong> generators &mdash; permitted to run during outages and for testing, typically tens of hours a year.</p>
+                        <p>Groundwork takes no view on any individual application, and does not claim any single permit was sized to avoid scrutiny.</p>
+                      </div>
+                      <div class="gw-plainly alt">
+                        <span class="gw-plainly-label">What it does show</span>
+                        <p>The distribution is not what engineering need alone would produce. <strong>70 permits land in the last ten tons below the line; 2 cross it.</strong> A threshold that was incidental would not bend the curve this hard.</p>
+                        <p>Whatever else is true, the review process that 100 tons is meant to trigger is being triggered 2 times, in the densest data center market on earth.</p>
+                      </div>
+                    </div>
                 </div>
             </section>
 

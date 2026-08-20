@@ -1665,3 +1665,121 @@ strong[data-tip]:hover { text-decoration-color: var(--gw-accent); }
     #gw-map { height: clamp(340px, 56vh, 460px); }
     .gw-ac-item { grid-template-columns: 60px minmax(0, 1fr); }
 }
+
+/* ============================================================
+   COUNTY PAGE — the answer, the benchmark, the plain reading
+   ============================================================ */
+
+.gw-answer { margin-top: 1.75rem; }
+.gw-answer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem 2.5rem;
+}
+.gw-answer-fig { display: flex; flex-direction: column; gap: 0.25rem; }
+.gw-answer-fig .v {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--gw-accent);
+    font-variant-numeric: tabular-nums;
+}
+.gw-answer-fig .k {
+    font-family: var(--gw-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gw-on-navy-soft);
+}
+
+/* benchmark bars */
+.gw-bars { margin: 1.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.gw-bar-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 210px) 1fr 78px;
+    gap: 0.9rem;
+    align-items: center;
+    font-size: 0.85rem;
+}
+.gw-bar-label { color: var(--gw-on-navy-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gw-bar-label a { color: var(--gw-on-navy-soft); text-decoration: none; }
+.gw-bar-label a:hover { color: #fff; text-decoration: underline; }
+.gw-bar-row.me .gw-bar-label { color: #fff; font-weight: 500; }
+.gw-bar-track { background: rgba(255, 255, 255, 0.12); border-radius: 2px; height: 14px; overflow: hidden; }
+.gw-bar-fill { display: block; height: 100%; background: rgba(255, 255, 255, 0.4); border-radius: 2px; }
+.gw-bar-row.me .gw-bar-fill { background: var(--gw-accent); }
+.gw-bar-val {
+    text-align: right;
+    font-family: var(--gw-mono);
+    font-size: 0.78rem;
+    color: var(--gw-on-navy-soft);
+    font-variant-numeric: tabular-nums;
+}
+.gw-bar-row.me .gw-bar-val { color: #fff; }
+
+/* the two-sided plain reading */
+.gw-twoup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+.gw-plainly {
+    background: var(--gw-card-bg);
+    border: 1px solid var(--gw-rule);
+    border-top: 3px solid var(--gw-confirmed);
+    border-radius: 4px;
+    padding: 1.25rem 1.4rem;
+}
+.gw-plainly.alt { border-top-color: var(--gw-accent); }
+.gw-plainly-label {
+    display: block;
+    font-family: var(--gw-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gw-ink-muted);
+    margin-bottom: 0.7rem;
+}
+.gw-plainly p { color: var(--gw-ink-soft); font-size: 0.92rem; line-height: 1.65; margin: 0 0 0.7rem; }
+.gw-plainly p:last-child { margin-bottom: 0; }
+.gw-plainly strong { color: var(--gw-ink); }
+
+@media (max-width: 720px) {
+    .gw-bar-row { grid-template-columns: minmax(90px, 1fr) 1fr 60px; font-size: 0.78rem; }
+}
+
+/* threshold histogram */
+.gw-hist { margin: 1.5rem 0 0.75rem; display: flex; flex-direction: column; gap: 0.45rem; }
+.gw-hist-row {
+    display: grid;
+    grid-template-columns: minmax(90px, 140px) 1fr 46px;
+    gap: 0.9rem;
+    align-items: center;
+    font-size: 0.85rem;
+}
+.gw-hist-label { font-family: var(--gw-mono); font-size: 0.72rem; color: var(--gw-on-navy-soft); letter-spacing: 0.04em; }
+.gw-hist-row.hot .gw-hist-label { color: #fff; font-weight: 600; }
+.gw-hist-row.hot .gw-bar-fill { background: var(--gw-accent); }
+
+/* full county index — every county page reachable in one hop, for readers
+   and for crawlers */
+.gw-county-index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 0.3rem 1rem;
+    margin-top: 0.9rem;
+}
+.gw-county-index a {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.32rem 0.1rem;
+    font-size: 0.83rem;
+    color: var(--gw-on-navy-soft);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.gw-county-index a:hover { color: #fff; border-bottom-color: var(--gw-accent); }
+.gw-county-index a span { font-family: var(--gw-mono); font-size: 0.72rem; color: var(--gw-on-navy-faint); }

@@ -164,14 +164,6 @@ function renderSite(site, db) {
                           basis: esc(equip.basis),
                           cite: `Read from the text of ${site.permit.count} permit document${site.permit.count === 1 ? '' : 's'} listed below`,
                         })}
-                        ${evidenceCard({
-                          key: 'Capex / filings',
-                          value: filings && filings.total ? `${filings.total} matching filing${filings.total === 1 ? '' : 's'}` : 'No match',
-                          tier: (filings && filings.confidence) || 'pending',
-                          muted: !(filings && filings.total),
-                          basis: esc((filings && filings.caveat) || 'No operator resolved, so no filing search was run.'),
-                          cite: filingRows,
-                        })}
                     </div>
 
                     ${geoLine}
@@ -222,50 +214,127 @@ function renderSite(site, db) {
 
 /* -------------------------------------------------------------- county ---- */
 
-function renderCounty(name, sites) {
+function renderCounty(name, sites, ctx) {
   const slug = slugify(name);
   const state = sites[0]?.state || '';
   const gens = sites.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0);
   const permits = sites.reduce((a, s) => a + s.permit.count, 0);
-  const sfha = sites.filter((s) => s.flood?.in_sfha).length;
   const operators = [...new Set(sites.map((s) => s.operator.name).filter(Boolean))];
+  const withNox = sites.filter((s) => s.emissions?.nox_tons_per_year);
+  const justUnder = withNox.filter((s) => s.emissions.just_under_threshold);
+  const noxTotal = withNox.reduce((a, s) => a + s.emissions.nox_tons_per_year, 0);
+  const located = sites.filter((s) => s.geo?.lat);
+  const inSfha = located.filter((s) => s.flood?.in_sfha);
+  const highWater = located.filter((s) => /^High|^Extremely High/.test(s.water?.label || ''));
 
-  const title = `${name}, ${state} — data center sites | Groundwork`;
-  const desc = permits
-    ? `${sites.length} permitted data center sites in ${name}: ${permits} issued air permits and ${gens.toLocaleString()} permitted generators, aggregated from public disclosures.`
-    : `${sites.length} air-permitted data center facilities in ${name}, from EPA's national permit registry, with flood and water exposure for each.`;
+  /* "Is that a lot?" is the question a resident cannot answer alone, so the
+     ranking against every other tracked county is the top of the page. */
+  const rank = ctx.rankByGenerators.indexOf(name) + 1;
+  const rankSites = ctx.rankBySites.indexOf(name) + 1;
+  const median = ctx.medianGenerators;
+
+  /* The headline answer belongs in the title, so the search snippet answers
+     the query without a click. */
+  const headlineBits = [`${sites.length} site${sites.length === 1 ? '' : 's'}`];
+  if (permits) headlineBits.push(`${permits} air permit${permits === 1 ? '' : 's'}`);
+  if (gens) headlineBits.push(`${gens.toLocaleString()} permitted generators`);
+  const title = `Data centers in ${name}, ${state} — ${headlineBits.join(', ')} | Groundwork`;
+  const desc = gens
+    ? `${sites.length} data center sites in ${name}, ${state}, holding ${permits} issued air permits and ${gens.toLocaleString()} permitted backup generators. Every figure sourced to the permit it came from.`
+    : `${sites.length} air-permitted data center facilities in ${name}, ${state}, from EPA's national permit registry, with flood and water exposure for each.`;
+
+  const answer = `<div class="gw-answer">
+      <div class="gw-answer-grid">
+        <div class="gw-answer-fig"><span class="v">${sites.length}</span><span class="k">data center site${sites.length === 1 ? '' : 's'}</span></div>
+        ${permits ? `<div class="gw-answer-fig"><span class="v">${permits}</span><span class="k">issued air permits</span></div>` : ''}
+        ${gens ? `<div class="gw-answer-fig"><span class="v">${gens.toLocaleString()}</span><span class="k">permitted backup generators</span></div>` : ''}
+        ${noxTotal ? `<div class="gw-answer-fig"><span class="v">${Math.round(noxTotal).toLocaleString()}</span><span class="k">tons/year NOx permitted</span></div>` : ''}
+      </div>
+    </div>`;
+
+  /* Benchmark. Without it the raw count is unreadable to the person who needs
+     it most — 5,882 generators means nothing without knowing the median is a
+     handful. */
+  const benchmark = gens ? `
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> Is that a lot?</div>
+                    <h2 class="gw-scene-h2">${rank === 1 ? 'The densest county Groundwork <em>tracks</em>.' : `Ranked <em>${rank}</em> of ${ctx.rankByGenerators.length} counties.`}</h2>
+                    <p class="gw-lede">${name} holds <strong>${gens.toLocaleString()} permitted backup generators</strong> across ${sites.length} sites. The median tracked county with any generator data has <strong>${median.toLocaleString()}</strong>. ${rank <= 3 ? 'This is one of the densest concentrations of permitted data center generation in the country.' : ''}</p>
+                    <div class="gw-bars">
+                      ${ctx.topCounties.map((c) => `<div class="gw-bar-row${c.name === name ? ' me' : ''}">
+                        <span class="gw-bar-label">${c.name === name ? esc(c.name) : `<a href="/labs/groundwork/county/${slugify(c.name)}/">${esc(c.name)}</a>`}</span>
+                        <span class="gw-bar-track"><span class="gw-bar-fill" style="width:${Math.max(1, Math.round((c.gens / ctx.topCounties[0].gens) * 100))}%"></span></span>
+                        <span class="gw-bar-val">${c.gens.toLocaleString()}</span>
+                      </div>`).join('\n                      ')}
+                    </div>
+                    <p class="gw-note-navy">Counties with permitted generator counts Groundwork has read from permit documents. Only Virginia publishes permits in a form that makes this countable today, so this ranking is Virginia-only &mdash; not a claim that no county elsewhere is denser.</p>` : `
+                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> What is on file</div>
+                    <h2 class="gw-scene-h2">${sites.length} permitted <em>facilities</em>.</h2>
+                    <p class="gw-lede">These facilities hold active air permits in EPA's national registry. Groundwork has not yet read ${state}'s permit documents, so generator counts and permitted emissions show as pending here &mdash; unlike Virginia, where every figure is read from the permit itself.</p>`;
+
+  /* The FUD-cutting explainer. Cuts both ways deliberately. */
+  const explainer = `
+                    <div class="gw-section-label"><span class="gw-section-num">[02]</span> What the permits actually authorise</div>
+                    <h2 class="gw-scene-h2">What this does &mdash; and doesn't &mdash; <em>mean</em>.</h2>
+                    <div class="gw-twoup">
+                      <div class="gw-plainly">
+                        <span class="gw-plainly-label">It is smaller than it sounds</span>
+                        <p>These are <strong>emergency backup</strong> generators. They are permitted to run during grid outages and for routine testing &mdash; typically tens of hours a year, not continuously. A permit is a ceiling on what a site may emit, not a measurement of what it does emit.</p>
+                        <p>A permit also is not a building. An issued permit establishes approval; it does not establish that anything is built, energised or running.</p>
+                        ${inSfha.length === 0 && located.length ? `<p>None of the ${located.length} sites here that Groundwork could locate sits in a FEMA Special Flood Hazard Area.</p>` : ''}
+                      </div>
+                      <div class="gw-plainly alt">
+                        <span class="gw-plainly-label">It is bigger than any one filing shows</span>
+                        <p>No single permit discloses ${gens ? `the ${gens.toLocaleString()} generators` : 'the total'} permitted in this county. That number exists only because ${permits || sites.length} separately-published filings were added together. Each one, read alone, looks routine.</p>
+                        ${justUnder.length ? `<p><strong>${justUnder.length} of the ${withNox.length} permits here with a readable NOx figure are permitted at 90&ndash;99.99 tons per year</strong> &mdash; just beneath the 100 ton/year threshold that triggers major-source review and public participation. Statewide the pattern is sharper still: ${ctx.justUnderStatewide} permits sit in that band and ${ctx.atOrOver} reach 100.</p>` : ''}
+                      </div>
+                    </div>`;
+
+  const thresholdTable = justUnder.length ? `
+                    <div class="gw-table-wrap">
+                    <table class="gw-table">
+                        <thead><tr><th>Site</th><th>Operator</th><th class="num">Permitted NOx (t/yr)</th><th class="num">Under 100 by</th></tr></thead>
+                        <tbody>
+                        ${justUnder.sort((a, b) => b.emissions.nox_tons_per_year - a.emissions.nox_tons_per_year).map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.emissions.nox_tons_per_year}</td><td class="num">${s.emissions.under_threshold_margin}</td></tr>`).join('\n                        ')}
+                        </tbody>
+                    </table>
+                    </div>
+                    <p class="gw-note-navy">Read from the emissions table of each permit and labelled ${badge('probable')} accordingly. A permit sized below a review threshold is lawful and common; Groundwork reports the pattern, and takes no view on any individual application.</p>` : '';
 
   const body = `
             <section class="gw-hero" id="top">
                 <div class="container mx-auto px-8">
                     <div class="gw-sitehead">
                         <div class="gw-crumb"><a href="/labs/groundwork/">Groundwork</a> &rsaquo; Counties</div>
-                        <h1 class="gw-site-title">${esc(name)}, ${esc(state)}</h1>
-                        <p class="gw-site-where">Cumulative disclosure across every permitted data center site in this county.</p>
-                        <div class="gw-meta">
-                            <div class="gw-meta-item"><span class="gw-meta-key">Sites</span><span class="gw-meta-val">${sites.length}</span></div>
-                            <div class="gw-meta-item"><span class="gw-meta-key">Issued permits</span><span class="gw-meta-val">${permits}</span></div>
-                            <div class="gw-meta-item"><span class="gw-meta-key">Generators permitted</span><span class="gw-meta-val">${gens.toLocaleString()}</span></div>
-                            <div class="gw-meta-item"><span class="gw-meta-key">Operators</span><span class="gw-meta-val">${operators.length}</span></div>
-                        </div>
+                        <h1 class="gw-site-title">Data centers in ${esc(name)}, ${esc(state)}</h1>
+                        <p class="gw-site-where">Everything on file with the regulator, added up. Every figure links to the filing it came from.</p>
+                        ${answer}
                     </div>
                 </div>
             </section>
 
             <section class="gw-scene">
+                <div class="container mx-auto px-8">${benchmark}</div>
+            </section>
+
+            <section class="gw-scene">
+                <div class="container mx-auto px-8">${explainer}
+                    ${thresholdTable}
+                </div>
+            </section>
+
+            <section class="gw-scene">
                 <div class="container mx-auto px-8">
-                    <div class="gw-section-label"><span class="gw-section-num">[01]</span> The rollup</div>
-                    <h2 class="gw-scene-h2">The number nobody else <em>publishes</em>.</h2>
-                    <p class="gw-lede">Each permit below is individually unremarkable and separately published. Added up, they describe a county-scale build-out. The generator total is counted from permit text and is labelled ${badge('probable')} accordingly &mdash; permits describe equipment in prose, and a permitted maximum is not an installed count.</p>
-                    ${sfha ? `<p class="gw-lede"><strong>${sfha} of these sites sit inside a FEMA Special Flood Hazard Area.</strong></p>` : ''}
+                    <div class="gw-section-label"><span class="gw-section-num">[03]</span> The sites</div>
+                    <h2 class="gw-scene-h2">Every tracked site in <em>${esc(name)}</em>.</h2>
                     <div class="gw-table-wrap">
                     <table class="gw-table">
-                        <thead><tr><th>Site</th><th>Operator</th><th class="num">Permits</th><th class="num">Generators</th><th>Flood zone</th></tr></thead>
+                        <thead><tr><th>Site</th><th>Operator</th><th class="num">Permits</th><th class="num">Generators</th><th class="num">NOx t/yr</th><th>Flood zone</th></tr></thead>
                         <tbody>
-                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.permit.count || '&mdash;'}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td>${esc(s.flood?.zone ? 'Zone ' + s.flood.zone : 'Pending')}</td></tr>`).join('\n                        ')}
+                        ${sites.map((s) => `<tr><td><a href="/labs/groundwork/site/${s.slug}/">${esc(s.name)}</a></td><td>${esc(s.operator.name || '&mdash;')}</td><td class="num">${s.permit.count || '&mdash;'}</td><td class="num">${s.equipment.generators_permitted || '&mdash;'}</td><td class="num">${s.emissions?.nox_tons_per_year || '&mdash;'}</td><td>${esc(s.flood?.zone ? 'Zone ' + s.flood.zone : 'Pending')}</td></tr>`).join('\n                        ')}
                         </tbody>
                     </table>
                     </div>
+                    <p class="gw-note-navy">${operators.length} operator${operators.length === 1 ? '' : 's'} of record${highWater.length ? ` &middot; ${highWater.length} of ${located.length} located sites draw from a basin WRI rates high or extremely high for water stress` : ''}${inSfha.length ? ` &middot; ${inSfha.length} in a FEMA Special Flood Hazard Area` : ''}.</p>
                     ${CORRECTION_BLOCK}
                 </div>
             </section>`;
@@ -339,9 +408,26 @@ export function render() {
     if (!byCounty.has(n)) byCounty.set(n, []);
     byCounty.get(n).push(s);
   }
+  const countyGens = [...byCounty.entries()].map(([n, list]) => ({
+    name: n,
+    gens: list.reduce((a, s) => a + (s.equipment.generators_permitted || 0), 0),
+    sites: list.length,
+  }));
+  const withGens = countyGens.filter((c) => c.gens > 0).sort((a, b) => b.gens - a.gens);
+  const sortedGensVals = withGens.map((c) => c.gens).sort((a, b) => a - b);
+  const allNox = db.sites.filter((s) => s.emissions?.nox_tons_per_year);
+  const ctx = {
+    rankByGenerators: withGens.map((c) => c.name),
+    rankBySites: [...countyGens].sort((a, b) => b.sites - a.sites).map((c) => c.name),
+    medianGenerators: sortedGensVals.length ? sortedGensVals[Math.floor(sortedGensVals.length / 2)] : 0,
+    topCounties: withGens.slice(0, 8),
+    justUnderStatewide: allNox.filter((s) => s.emissions.just_under_threshold).length,
+    atOrOver: allNox.filter((s) => s.emissions.nox_tons_per_year >= 100).length,
+  };
+
   for (const [n, list] of byCounty) {
     list.sort((a, b) => (b.equipment.generators_permitted || 0) - (a.equipment.generators_permitted || 0));
-    const { slug, html } = renderCounty(n, list);
+    const { slug, html } = renderCounty(n, list, ctx);
     write(`county/${slug}`, html);
   }
 

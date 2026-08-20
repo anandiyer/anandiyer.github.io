@@ -150,6 +150,7 @@ export function build() {
     let address = null;
     let generators = null;
     let turbines = null;
+    let nox = null;
     let permitLocality = null;
     for (const p of permits) {
       const d = detailBy.get(p.registration_no);
@@ -157,6 +158,7 @@ export function build() {
       permitLocality = permitLocality || d.permit_locality || null;
       if (d.generator_count_max) generators = Math.max(generators || 0, d.generator_count_max);
       if (d.turbine_count_max) turbines = Math.max(turbines || 0, d.turbine_count_max);
+      if (d.nox_tons_per_year) nox = Math.max(nox || 0, d.nox_tons_per_year);
       const cand = (d.address_candidates || [])[0];
       if (cand && (!address || (cand.near_facility && !address.near_facility))) {
         address = { ...cand, from_permit: p.registration_no };
@@ -219,6 +221,20 @@ export function build() {
             confidence: 'pending',
             basis: 'The DEQ listing publishes locality only, and no street address could be read from the permit PDF (often because the permit is a scanned image).',
           },
+
+      emissions: {
+        nox_tons_per_year: nox,
+        confidence: nox ? 'probable' : 'pending',
+        /* Virginia's public-participation threshold for a new major source is
+           100 tons/year. Permits landing just under it are the single most
+           consequential pattern in this dataset, so the margin is recorded
+           per site rather than only in aggregate. */
+        under_threshold_margin: nox && nox < 100 ? Number((100 - nox).toFixed(2)) : null,
+        just_under_threshold: !!(nox && nox >= 90 && nox < 100),
+        basis: nox
+          ? 'Largest permitted NOx figure tabulated in the permit document. A permitted ceiling, not measured emissions.'
+          : 'No NOx figure could be read from the permit text.',
+      },
 
       equipment: {
         generators_permitted: generators,

@@ -12,6 +12,7 @@ import path from 'node:path';
 import { DATA, readJSON, writeJSON, slugify, log } from './lib/util.mjs';
 import { esc, badge, fmtDate, evidenceCard, pipelineLadder, timeline, head, foot, CORRECTION_BLOCK } from './lib/render-parts.mjs';
 import { renderIndex } from './lib/render-index.mjs';
+import { regimeFor } from './lib/disclosure.mjs';
 
 const OUT = path.resolve('labs/groundwork');
 const BASE = 'https://canonical.cc/labs/groundwork';
@@ -335,6 +336,15 @@ function renderCounty(name, sites, ctx) {
                     </table>
                     </div>
                     <p class="gw-note-navy">${operators.length} operator${operators.length === 1 ? '' : 's'} of record${highWater.length ? ` &middot; ${highWater.length} of ${located.length} located sites draw from a basin WRI rates high or extremely high for water stress` : ''}${inSfha.length ? ` &middot; ${inSfha.length} in a FEMA Special Flood Hazard Area` : ''}.</p>
+
+                    ${(() => {
+                      const r = regimeFor(state);
+                      return `<div class="gw-regime">
+                        <span class="gw-regime-label">What ${esc(state)} publishes</span>
+                        <p>${esc(r.summary)}</p>
+                        ${r.tested.length ? `<ul class="gw-regime-list">${r.tested.map((t) => `<li><strong>${esc(t.source)}</strong> &mdash; <em>${esc(t.result)}</em>. ${esc(t.detail)}</li>`).join('')}</ul>` : ''}
+                      </div>`;
+                    })()}
                     ${CORRECTION_BLOCK}
                 </div>
             </section>`;

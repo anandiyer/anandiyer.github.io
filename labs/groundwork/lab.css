@@ -1783,3 +1783,27 @@ strong[data-tip]:hover { text-decoration-color: var(--gw-accent); }
 }
 .gw-county-index a:hover { color: #fff; border-bottom-color: var(--gw-accent); }
 .gw-county-index a span { font-family: var(--gw-mono); font-size: 0.72rem; color: var(--gw-on-navy-faint); }
+
+/* what a state publishes — turns a thin page into an explanation */
+.gw-regime {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-left: 3px solid var(--gw-accent-soft);
+    border-radius: 4px;
+    padding: 1.15rem 1.35rem;
+    margin: 2rem 0 0;
+}
+.gw-regime-label {
+    display: block;
+    font-family: var(--gw-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gw-accent-soft);
+    margin-bottom: 0.6rem;
+}
+.gw-regime p { color: var(--gw-on-navy-soft); font-size: 0.9rem; line-height: 1.65; margin: 0; max-width: 90ch; }
+.gw-regime-list { margin: 0.85rem 0 0; padding-left: 1.1rem; }
+.gw-regime-list li { color: var(--gw-on-navy-soft); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.55rem; max-width: 90ch; }
+.gw-regime-list strong { color: #fff; }
+.gw-regime-list em { color: var(--gw-accent-soft); font-style: normal; }

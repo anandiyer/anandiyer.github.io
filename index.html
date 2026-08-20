@@ -108,7 +108,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260520a">
+    <link rel="stylesheet" href="css/style.css?v={{ site.asset_version }}">
 </head>
 <body>
     <div class="min-h-screen home">
@@ -127,6 +127,8 @@
                             Canonical writes <span class="accent">$500K&ndash;$1.5M</span> first checks into deeply technical founders building the infrastructure of a post-AGI world.
                             We meet you at <span class="accent">day zero</span> &mdash; when the idea is still forming and the company doesn't exist yet.
                         </p>
+
+                        {% include ask-ai.html %}
                     </div>
                 </div>
             </section>

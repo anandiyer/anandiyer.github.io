@@ -1039,7 +1039,119 @@
       "lat": 40.2834212,
       "lon": -74.701681,
       "source": "US Census TIGERweb"
+    },
+    "Medina County|TX": {
+      "name": "Medina County",
+      "geoid": "48325",
+      "state": "TX",
+      "lat": 29.355588,
+      "lon": -99.1101257,
+      "source": "US Census TIGERweb"
+    },
+    "Caldwell County|TX": {
+      "name": "Caldwell County",
+      "geoid": "48055",
+      "state": "TX",
+      "lat": 29.8368146,
+      "lon": -97.6198717,
+      "source": "US Census TIGERweb"
+    },
+    "Freestone County|TX": {
+      "name": "Freestone County",
+      "geoid": "48161",
+      "state": "TX",
+      "lat": 31.7048148,
+      "lon": -96.1490536,
+      "source": "US Census TIGERweb"
+    },
+    "Floyd County|TX": {
+      "name": "Floyd County",
+      "geoid": "48153",
+      "state": "TX",
+      "lat": 34.0722966,
+      "lon": -101.3032353,
+      "source": "US Census TIGERweb"
+    },
+    "Collin County|TX": {
+      "name": "Collin County",
+      "geoid": "48085",
+      "state": "TX",
+      "lat": 33.1879302,
+      "lon": -96.5724074,
+      "source": "US Census TIGERweb"
+    },
+    "Travis County|TX": {
+      "name": "Travis County",
+      "geoid": "48453",
+      "state": "TX",
+      "lat": 30.3343599,
+      "lon": -97.7818171,
+      "source": "US Census TIGERweb"
+    },
+    "Shackelford County|TX": {
+      "name": "Shackelford County",
+      "geoid": "48417",
+      "state": "TX",
+      "lat": 32.7358835,
+      "lon": -99.354067,
+      "source": "US Census TIGERweb"
+    },
+    "Tarrant County|TX": {
+      "name": "Tarrant County",
+      "geoid": "48439",
+      "state": "TX",
+      "lat": 32.7718353,
+      "lon": -97.2911316,
+      "source": "US Census TIGERweb"
+    },
+    "Bosque County|TX": {
+      "name": "Bosque County",
+      "geoid": "48035",
+      "state": "TX",
+      "lat": 31.9003042,
+      "lon": -97.6342103,
+      "source": "US Census TIGERweb"
+    },
+    "Ellis County|TX": {
+      "name": "Ellis County",
+      "geoid": "48139",
+      "state": "TX",
+      "lat": 32.3484009,
+      "lon": -96.7946905,
+      "source": "US Census TIGERweb"
+    },
+    "Williamson County|TX": {
+      "name": "Williamson County",
+      "geoid": "48491",
+      "state": "TX",
+      "lat": 30.647567,
+      "lon": -97.6002229,
+      "source": "US Census TIGERweb"
+    },
+    "Denton County|TX": {
+      "name": "Denton County",
+      "geoid": "48121",
+      "state": "TX",
+      "lat": 33.2054606,
+      "lon": -97.1168139,
+      "source": "US Census TIGERweb"
+    },
+    "Harris County|TX": {
+      "name": "Harris County",
+      "geoid": "48201",
+      "state": "TX",
+      "lat": 29.8573332,
+      "lon": -95.3920016,
+      "source": "US Census TIGERweb"
+    },
+    "Wise County|TX": {
+      "name": "Wise County",
+      "geoid": "48497",
+      "state": "TX",
+      "lat": 33.2158153,
+      "lon": -97.6544649,
+      "source": "US Census TIGERweb"
     }
   },
-  "generated_at": "2026-08-20T18:39:06.736Z"
+  "generated_at": "2026-08-20T19:53:14.261Z"
 }

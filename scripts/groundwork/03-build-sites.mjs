@@ -16,6 +16,81 @@ import { resolveOperator } from './lib/operators.mjs';
 
 const ECHO_DETAIL = 'https://echo.epa.gov/air-pollutant-report?fid=';
 
+/* Texas, from TCEQ's permit search. Permit-level like Virginia, but the
+   search results carry no emissions or equipment detail — those live inside
+   the registration documents — so equipment and NOx stay pending here. */
+function tceqSites(tx) {
+  if (!tx) return [];
+  return tx.facilities.map((f) => {
+    const county = f.county || (f.city ? `${f.city} area` : 'Texas');
+    return {
+      slug: slugify(`${f.name}-${f.county || f.city || ''}-tx`),
+      name: f.name,
+      state: 'TX',
+      locality: county,
+      permit_locality: county,
+      locality_conflict: false,
+      source_tier: 'tceq',
+      operator: {
+        name: f.operator.operator,
+        confidence: f.operator.confidence,
+        basis: f.operator.basis,
+        permittee_name: f.name,
+      },
+      permit: {
+        confidence: 'confirmed',
+        count: f.permit_count,
+        latest_issued: f.latest,
+        first_issued: f.earliest,
+        programs: f.permit_types.map((t) => ({ PBR: 'Permit by rule', STDPMT: 'Standard permit', CONSTRUCT: 'Construction permit' }[t] || t)),
+        regional_office: 'TCEQ',
+        records: [],
+        registry_id: f.rn,
+        source: tx.source,
+        source_url: tx.source_url,
+        publisher_as_of: (tx.fetched_at || '').slice(0, 10),
+      },
+      address: f.address
+        ? {
+            street: `${f.address}${f.city ? ', ' + f.city : ''}`,
+            confidence: 'confirmed',
+            basis: 'Physical location as recorded on the TCEQ permit record.',
+          }
+        : {
+            street: null,
+            confidence: 'pending',
+            basis: f.location_note
+              ? 'TCEQ records this site by driving directions rather than a street address.'
+              : 'No physical location recorded.',
+          },
+      emissions: {
+        nox_tons_per_year: null,
+        confidence: 'pending',
+        under_threshold_margin: null,
+        just_under_threshold: false,
+        basis: 'TCEQ’s permit search does not publish emission rates. They are inside the registration documents, which Groundwork has not yet read.',
+      },
+      equipment: {
+        generators_permitted: null,
+        turbines_permitted: null,
+        confidence: 'pending',
+        basis: 'Equipment counts are inside the TCEQ registration documents, not the searchable record.',
+      },
+      pipeline: {
+        stages: ['Proposed', 'Filed', 'Approved', 'Under construction', 'Operational'],
+        reached: 'Approved',
+        reached_index: 2,
+        basis: `${f.permit_count} TCEQ air authorisation${f.permit_count === 1 ? '' : 's'} on record. Construction and operational status are not established by permit data alone.`,
+        confidence: 'confirmed',
+      },
+      geo: null,
+      flood: null, water: null, grid: null, filings: null,
+      reported: [], claims: [],
+      timeline: [],
+    };
+  });
+}
+
 /* Virginia is built from VA DEQ, which is permit-level and far richer than the
    national registry (issuance dates, programs, generator counts, a PDF per
    permit). Everywhere else is built from EPA ECHO, which is facility-level.
@@ -23,7 +98,7 @@ const ECHO_DETAIL = 'https://echo.epa.gov/air-pollutant-report?fid=';
    provenance is stated on every page. */
 function echoSites(echo) {
   if (!echo) return [];
-  return echo.facilities.filter((f) => f.state !== 'VA').map((f) => {
+  return echo.facilities.filter((f) => f.state !== 'VA' && f.state !== 'TX').map((f) => {
     const op = resolveOperator(f.name);
     const county = f.county ? `${f.county} County` : null;
     const slug = slugify(`${f.name}-${f.county || f.city || ''}-${f.state}`);
@@ -270,7 +345,8 @@ export function build() {
   }
 
   const echo = readJSON(path.join(RAW, 'echo-national.json'));
-  const national = echoSites(echo);
+  const tx = readJSON(path.join(RAW, 'tceq-sites.json'));
+  const national = [...echoSites(echo), ...tceqSites(tx)];
   const taken = new Set(sites.map((s) => s.slug));
   for (const site of national) {
     let slug = site.slug, n = 2;
@@ -295,6 +371,7 @@ export function build() {
       operators_resolved: sites.filter((s) => s.operator.name).length,
       from_va_permits: sites.filter((s) => s.source_tier !== 'echo').length,
       from_epa_registry: sites.filter((s) => s.source_tier === 'echo').length,
+      from_tx_permits: sites.filter((s) => s.source_tier === 'tceq').length,
     },
     sites,
   };

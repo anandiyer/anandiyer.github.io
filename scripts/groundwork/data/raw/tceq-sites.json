@@ -1,0 +1,1252 @@
+{
+  "layer": "spine-tx",
+  "source": "TCEQ — New Source Review air permit search",
+  "source_url": "https://www2.tceq.texas.gov/airperm/index.cfm?fuseaction=airpermits.start",
+  "fetched_at": "2026-08-20T19:50:49.480Z",
+  "raw_rows": 411,
+  "kept_rows": 138,
+  "rejected_other_industry": 245,
+  "rejected_unidentified": 28,
+  "facilities": [
+    {
+      "rn": "RN111192365",
+      "name": "AMAZON DATA SERVICES INC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "7400 Potranco Road",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-03-11",
+      "earliest": "2021-02-10",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Amazon",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Amazon."
+      }
+    },
+    {
+      "rn": "RN111194957",
+      "name": "AMAZON DATA SERVICES INC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": null,
+      "location_note": "THE PROPERTY ENTRANCE IS LOCATED ON STATE HIGHWAY 211 APPROXIMATELY 800 FEET SOUTH OF THE INTERSECTION WITH LAMBDA DRIVE.",
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-03-05",
+      "earliest": "2021-02-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Amazon",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Amazon."
+      }
+    },
+    {
+      "rn": "RN111194965",
+      "name": "AMAZON DATA SERVICES INC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "11625 Old Corpus Christi Hwy",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-03-10",
+      "earliest": "2021-02-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Amazon",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Amazon."
+      }
+    },
+    {
+      "rn": "RN111652004",
+      "name": "AMAZON DATA SERVICES INC",
+      "county": "Dallas County",
+      "city": "Desoto",
+      "state": "TX",
+      "address": null,
+      "location_note": "EZELL DRIVE",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-02-02",
+      "earliest": "2023-02-02",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Amazon",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Amazon."
+      }
+    },
+    {
+      "rn": "RN112469994",
+      "name": "AMAZON DATA SERVICES INC",
+      "county": "Floyd County",
+      "city": "Floydada",
+      "state": "TX",
+      "address": null,
+      "location_note": "FROM FLOYDADA, DRIVE N. ON TX-207. AT INTERSECTION OF TX-207 AND FM 786, TURN RIGHT ONTO FM 786. AFTER 6 MI., TURN RIGHT ONTO COUNTRY R. 200. AFTER 1 MI., TURN LEFT ONTO COUNTRY R. 231. AFTER 0.2 MI., FACILITY ON RIGHT.",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-06-10",
+      "earliest": "2026-06-10",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Amazon",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Amazon."
+      }
+    },
+    {
+      "rn": "RN105295687",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "5150 Rogers Rd",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-08-01",
+      "earliest": "2007-07-26",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN109260893",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "15434 Lambda Dr",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-01-26",
+      "earliest": "2019-03-06",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN110636149",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "1050 Democracy",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-06-23",
+      "earliest": "2019-04-14",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN111356929",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "3545 Wiseman Blvd",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-07-14",
+      "earliest": "2022-04-21",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN111414942",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Medina County",
+      "city": "Castroville",
+      "state": "TX",
+      "address": "3580 FM 471 N",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-06-08",
+      "earliest": "2022-10-12",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN112131248",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "3555 Westover Link San Antonio TX 78251",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-07-29",
+      "earliest": "2023-08-03",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN111896825",
+      "name": "MICROSOFT CORPORATION",
+      "county": "Medina County",
+      "city": "Castroville",
+      "state": "TX",
+      "address": null,
+      "location_note": "NORTH OF HWY 90, AND SOUTH OF COUNTY RD 4516",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-02-09",
+      "earliest": "2026-01-13",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Microsoft",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Microsoft."
+      }
+    },
+    {
+      "rn": "RN111544664",
+      "name": "META PLATFORMS INC",
+      "county": "Travis County",
+      "city": "Pflugerville",
+      "state": "TX",
+      "address": "19025 N Heatherwilde Blvd Bldg 2",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-03-23",
+      "earliest": "2026-02-13",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Meta",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Meta."
+      }
+    },
+    {
+      "rn": "RN110495884",
+      "name": "GOOGLE LLC",
+      "county": "Ellis County",
+      "city": "Midlothian",
+      "state": "TX",
+      "address": "3441 Railport Pkwy",
+      "location_note": null,
+      "permit_count": 6,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2022-06-06",
+      "earliest": "2018-09-18",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Google",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Google."
+      }
+    },
+    {
+      "rn": "RN108987058",
+      "name": "EQUINIX LLC",
+      "county": "Dallas County",
+      "city": "Dallas",
+      "state": "TX",
+      "address": "1950 N Stemmons Fwy Ste 1034",
+      "location_note": null,
+      "permit_count": 7,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-03-11",
+      "earliest": "2016-01-25",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Equinix",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Equinix."
+      }
+    },
+    {
+      "rn": "RN108987066",
+      "name": "EQUINIX LLC",
+      "county": "Dallas County",
+      "city": "Dallas",
+      "state": "TX",
+      "address": "2323 Bryan St Ste 1400",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2021-05-24",
+      "earliest": "2016-01-25",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Equinix",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Equinix."
+      }
+    },
+    {
+      "rn": "RN103028452",
+      "name": "EQUINIX LLC",
+      "county": "Harris County",
+      "city": "Houston",
+      "state": "TX",
+      "address": "1515 Aldine Meadows Rd",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2021-05-24",
+      "earliest": "2017-06-26",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Equinix",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Equinix."
+      }
+    },
+    {
+      "rn": "RN102147873",
+      "name": "EQUINIX LLC",
+      "county": "Dallas County",
+      "city": "Irving",
+      "state": "TX",
+      "address": "2222 E Grauwyler Rd",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2017-12-22",
+      "earliest": "2017-11-07",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Equinix",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Equinix."
+      }
+    },
+    {
+      "rn": "RN109737932",
+      "name": "DIGITAL REALTY TRUST LP",
+      "county": "Harris County",
+      "city": null,
+      "state": "TX",
+      "address": null,
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-05-03",
+      "earliest": "2023-05-03",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Digital Realty",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Digital Realty."
+      }
+    },
+    {
+      "rn": "RN105112635",
+      "name": "DATABANK HOLDINGS LTD",
+      "county": "Harris County",
+      "city": "Houston",
+      "state": "TX",
+      "address": "4201 Southwest Fwy",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-10-04",
+      "earliest": "2017-01-23",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "DataBank",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of DataBank."
+      }
+    },
+    {
+      "rn": "RN109985176",
+      "name": "DATABANK HOLDINGS LTD",
+      "county": "Harris County",
+      "city": "Houston",
+      "state": "TX",
+      "address": "5170 Westway Park Blvd",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-10-04",
+      "earliest": "2017-09-29",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "DataBank",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of DataBank."
+      }
+    },
+    {
+      "rn": "RN110656352",
+      "name": "CYRUSONE LLC",
+      "county": "Travis County",
+      "city": "Austin",
+      "state": "TX",
+      "address": "7301 Metropolis Dr",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-03-31",
+      "earliest": "2019-01-30",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN110660743",
+      "name": "CYRUSONE LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "9554 Westover Hills Blvd",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2019-11-22",
+      "earliest": "2019-02-05",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN102414737",
+      "name": "CYRUSONE LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "9999 Westover Hills Blvd",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2019-03-08",
+      "earliest": "2019-02-19",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN106357098",
+      "name": "CYRUSONE LLC",
+      "county": "Denton County",
+      "city": "Carrollton",
+      "state": "TX",
+      "address": "1649 W Frankford Rd",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-05-03",
+      "earliest": "2019-05-23",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN110787116",
+      "name": "CYRUSONE LLC",
+      "county": "Collin County",
+      "city": "Allen",
+      "state": "TX",
+      "address": "2300 Chelsea Blvd",
+      "location_note": null,
+      "permit_count": 6,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-07-30",
+      "earliest": "2019-06-05",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN110806841",
+      "name": "CYRUSONE LLC",
+      "county": "Denton County",
+      "city": "Lewisville",
+      "state": "TX",
+      "address": "2501 South State Highway 121 Suite 500 Bldg 5",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-05-18",
+      "earliest": "2019-07-03",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN110927639",
+      "name": "CYRUSONE LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "14719 Omicron Dr",
+      "location_note": null,
+      "permit_count": 7,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-08-29",
+      "earliest": "2020-01-07",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN107127342",
+      "name": "CYRUSONE LLC",
+      "county": "Harris County",
+      "city": "Houston",
+      "state": "TX",
+      "address": "11003 Corporate Centre Dr",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-02-23",
+      "earliest": "2023-02-23",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN111991683",
+      "name": "CYRUSONE LLC",
+      "county": "Dallas County",
+      "city": "Richardson",
+      "state": "TX",
+      "address": "1510 E Lookout Dr",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-06-12",
+      "earliest": "2024-06-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN112064472",
+      "name": "CYRUSONE LLC",
+      "county": "Tarrant County",
+      "city": "Fort Worth",
+      "state": "TX",
+      "address": null,
+      "location_note": "ON E SIDE OF N SAGINAW BLVD, S OF ASPHALT DR",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-10-15",
+      "earliest": "2024-10-15",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN112240379",
+      "name": "CYRUSONE LLC",
+      "county": "Bosque County",
+      "city": "Whitney",
+      "state": "TX",
+      "address": null,
+      "location_note": "THE FACILITY DFW10 DFW11 DFW17A DFW17B DFW17C IS LOCATED 0.5 MI SOUTHWEST OF HWY 22 AND ADJACENT TO THE NORTHEAST SIDE OF FM 56",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-07-01",
+      "earliest": "2025-07-01",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN112493135",
+      "name": "CYRUSONE LLC",
+      "county": "Freestone County",
+      "city": "Fairfield",
+      "state": "TX",
+      "address": null,
+      "location_note": "ON FM 488, APPROXIMATELY 2.5 MILES SOUTH OF FM 416.",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-07-21",
+      "earliest": "2026-07-21",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN112507629",
+      "name": "CYRUSONE LLC",
+      "county": "Medina County",
+      "city": "Castroville",
+      "state": "TX",
+      "address": null,
+      "location_note": "TRAVELING WEST ON INTERSTATE 10, EXIT ONTO US HIGHWAY 90, THE SITE IS ON THE RIGHT AFTER 0.75 MILES",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-08-12",
+      "earliest": "2026-08-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "CyrusOne",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of CyrusOne."
+      }
+    },
+    {
+      "rn": "RN107482325",
+      "name": "VANTAGE FORT WORTH ENERGY LLC",
+      "county": "Tarrant County",
+      "city": "Arlington",
+      "state": "TX",
+      "address": null,
+      "location_note": "DRIVING I-20 WEST TOWARDS FT. WORTH, EXIT GREEN OAKS BLVD TOWARD LITTLE RD. TURN RIGHT ON W GREEN OAKS BLVD. TAKE THE THIRD LEFT ONTO LITTLE RD. AND THE DESTINATION WILL BE ON THE LEFT IN 1.4 MILES.",
+      "permit_count": 1,
+      "permit_types": [
+        "STDPMT"
+      ],
+      "latest": "2016-04-08",
+      "earliest": "2016-03-08",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN108953811",
+      "name": "VANTAGE FORT WORTH ENERGY LLC",
+      "county": "Denton County",
+      "city": "Denton",
+      "state": "TX",
+      "address": null,
+      "location_note": "FROM I 35 N TAKE EXIT 469 TOWARDS US 380 DECATUR MCKINNEY TEXAS WOMENS UNVIERSITY TURN L ONTO US 380W W UNIVERSITY DR CONT ON US 380 FOR 3.4 MI THE SITE WILL BE ON YOUR L",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2016-08-31",
+      "earliest": "2016-08-31",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN107496663",
+      "name": "VANTAGE FORT WORTH ENERGY LLC",
+      "county": "Denton County",
+      "city": "Denton",
+      "state": "TX",
+      "address": null,
+      "location_note": "0.2 MI NE OF 1629 NAIL RD",
+      "permit_count": 1,
+      "permit_types": [
+        "STDPMT"
+      ],
+      "latest": "2016-09-26",
+      "earliest": "2016-09-26",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN109148817",
+      "name": "VANTAGE FORT WORTH ENERGY LLC",
+      "county": "Wise County",
+      "city": "Decatur",
+      "state": "TX",
+      "address": null,
+      "location_note": "GO NW ON 455 TURN L ONTO 51 TURN R ON 2625 GO APPROX 1 MI SITE IS ON R",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2016-11-02",
+      "earliest": "2016-11-02",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN108746017",
+      "name": "VANTAGE FORT WORTH ENERGY LLC",
+      "county": "Tarrant County",
+      "city": "Fort Worth",
+      "state": "TX",
+      "address": "6108 Willard Rd, Fort Worth, Tarrant County, TX",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2017-10-03",
+      "earliest": "2017-10-03",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN111852240",
+      "name": "VANTAGE DATA CENTERS TX11 LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "14720 Omicron Dr",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-05-09",
+      "earliest": "2024-02-29",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN111926465",
+      "name": "VANTAGE DATA CENTERS TX21 LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "5207 Rogers Rd",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-07-22",
+      "earliest": "2024-02-29",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN112347265",
+      "name": "VANTAGE DATA CENTERS TX301 LLC",
+      "county": "Shackelford County",
+      "city": "Abilene",
+      "state": "TX",
+      "address": "175 Private Road 1604",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-01-06",
+      "earliest": "2026-01-06",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Vantage Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Vantage Data Centers."
+      }
+    },
+    {
+      "rn": "RN102319506",
+      "name": "ALIGNED DATA CENTERS (DFW), LLC",
+      "county": "Collin County",
+      "city": "Plano",
+      "state": "TX",
+      "address": "2800 Summit Ave",
+      "location_note": null,
+      "permit_count": 10,
+      "permit_types": [
+        "CONSTRUCT",
+        "PBR"
+      ],
+      "latest": "2026-03-30",
+      "earliest": "2015-04-02",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Aligned Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Aligned Data Centers."
+      }
+    },
+    {
+      "rn": "RN112048624",
+      "name": "ALIGNED DATA CENTERS PLANO PROPCO LLC",
+      "county": "Collin County",
+      "city": "Plano",
+      "state": "TX",
+      "address": null,
+      "location_note": "PLANO PID 2795217 LOCATED ON THE WEST SIDE OF NORTH STAR ROAD, ONE LOT SOUTH OF E PLANO PKWY",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-09-29",
+      "earliest": "2025-09-29",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Aligned Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Aligned Data Centers."
+      }
+    },
+    {
+      "rn": "RN112264718",
+      "name": "ALIGNED DATA CENTERS MANSFIELD PROPCO LLC",
+      "county": "Tarrant County",
+      "city": "Mansfield",
+      "state": "TX",
+      "address": "3801 Britton Rd",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-12-01",
+      "earliest": "2025-12-01",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Aligned Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Aligned Data Centers."
+      }
+    },
+    {
+      "rn": "RN106444821",
+      "name": "QTS INVESTMENT PROPERTIES FORT WORTH LLC",
+      "county": "Tarrant County",
+      "city": "Fort Worth",
+      "state": "TX",
+      "address": "14100 Park Vista Blvd",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-01-28",
+      "earliest": "2019-11-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "QTS",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of QTS."
+      }
+    },
+    {
+      "rn": "RN111241394",
+      "name": "QTS SAN ANTONIO II LLC",
+      "county": "Bexar County",
+      "city": "San Antonio",
+      "state": "TX",
+      "address": "8535 Potranco Rd",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-10-02",
+      "earliest": "2021-11-19",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "QTS",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of QTS."
+      }
+    },
+    {
+      "rn": "RN111028916",
+      "name": "COMPASS DATACENTERS DFW III LLC",
+      "county": "Ellis County",
+      "city": "Red Oak",
+      "state": "TX",
+      "address": "300 Houston School Rd",
+      "location_note": null,
+      "permit_count": 4,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2022-09-07",
+      "earliest": "2020-04-20",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "Compass Datacenters",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Compass Datacenters."
+      }
+    },
+    {
+      "rn": "RN112104559",
+      "name": "DATABANK HOLDINGS LTD",
+      "county": "Ellis County",
+      "city": "Red Oak",
+      "state": "TX",
+      "address": null,
+      "location_note": "ON THE N SIDE OF THE INTERSECTION OF STAINBACK RD AND BATCHLER RD",
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-12-19",
+      "earliest": "2024-12-19",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "DataBank",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of DataBank."
+      }
+    },
+    {
+      "rn": "RN111206744",
+      "name": "DATABANK HOLDINGS LTD",
+      "county": "Collin County",
+      "city": "Plano",
+      "state": "TX",
+      "address": "8375 Dominion Pkwy",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-12-19",
+      "earliest": "2024-12-19",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "DataBank",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of DataBank."
+      }
+    },
+    {
+      "rn": "RN111390985",
+      "name": "SWITCH LTD",
+      "county": "Williamson County",
+      "city": "Round Rock",
+      "state": "TX",
+      "address": "150 Dell Way",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-06-21",
+      "earliest": "2024-06-21",
+      "identified_by": "operator + record signal",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN108792292",
+      "name": "NTT GLOBAL DATA CENTERS AMERICAS INC",
+      "county": "Dallas County",
+      "city": "Garland",
+      "state": "TX",
+      "address": "2008 Lookout Dr",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-10-29",
+      "earliest": "2023-10-13",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": "NTT Global Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of NTT Global Data Centers."
+      }
+    },
+    {
+      "rn": "RN109160937",
+      "name": "FLEXENTIAL COLORADO LLC",
+      "county": "Collin County",
+      "city": "Plano",
+      "state": "TX",
+      "address": "3500 E Plano Pkwy",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-01-24",
+      "earliest": "2023-01-24",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN112407408",
+      "name": "FLEXENTIAL COLORADO LLC",
+      "county": "Dallas County",
+      "city": "Dallas",
+      "state": "TX",
+      "address": "1950 N Stemmons Fwy, Suite 1070",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2026-03-10",
+      "earliest": "2026-03-10",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN104341193",
+      "name": "TIERPOINT LLC",
+      "county": "Tarrant County",
+      "city": "Fort Worth",
+      "state": "TX",
+      "address": "13701 Independence Pkwy",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-05-12",
+      "earliest": "2025-05-12",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN111389706",
+      "name": "STREAM DATA CENTERS LP",
+      "county": "Dallas County",
+      "city": "Garland",
+      "state": "TX",
+      "address": "1717 Lookout Drive",
+      "location_note": null,
+      "permit_count": 2,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2025-12-18",
+      "earliest": "2022-05-23",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN111813523",
+      "name": "STREAM DATA CENTERS LP",
+      "county": "Dallas County",
+      "city": "Wilmer",
+      "state": "TX",
+      "address": "300 S Sunrise Rd",
+      "location_note": null,
+      "permit_count": 1,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2023-09-21",
+      "earliest": "2023-09-21",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN112504253",
+      "name": "PRIME DATA CENTERS LLC",
+      "county": "Caldwell County",
+      "city": "Martindale",
+      "state": "TX",
+      "address": null,
+      "location_note": "FROM THE INTERSECTION OF TX-80 AND TX-142 IN MARTINDALE, TX, HEAD NORTHWEST ON TX-80 FOR 2 MILES, THEN EXIT RIGHT ONTO FARM-TO-MARKET 1984. FOLLOW FM 1984 FOR 1.3 MILES, FACILITY ENTRANCE WILL BE ON THE LEFT.",
+      "permit_count": 1,
+      "permit_types": [
+        "STDPMT"
+      ],
+      "latest": "2026-08-06",
+      "earliest": "2026-08-06",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    },
+    {
+      "rn": "RN111498556",
+      "name": "SKYBOX CRITICAL OPERATIONS LLC",
+      "county": "Travis County",
+      "city": "Pflugerville",
+      "state": "TX",
+      "address": "600 New Meister Ln",
+      "location_note": null,
+      "permit_count": 3,
+      "permit_types": [
+        "PBR"
+      ],
+      "latest": "2024-07-22",
+      "earliest": "2024-01-24",
+      "identified_by": "holder name",
+      "operator": {
+        "operator": null,
+        "confidence": "unresolved",
+        "basis": "No operator could be resolved from the permittee name."
+      }
+    }
+  ]
+}

@@ -24,18 +24,18 @@ export const REGIMES = {
     ],
   },
   TX: {
-    depth: 'registry',
-    summary: 'Texas is the largest gap in this dataset, and the reason is what Texas publishes rather than what Groundwork collects. No Texas source found so far identifies data centers at facility level in a machine-readable form. The counts here are a floor and understate the state substantially.',
+    depth: 'permit',
+    summary: 'Texas publishes no data-center-specific permit list, so Groundwork drives TCEQ’s New Source Review permit search directly, one operator at a time. That gives facility-level coverage with permit counts and addresses — but TCEQ’s searchable record carries no emission rates or equipment counts, so those stay pending here in a way they are not in Virginia.',
     tested: [
+      {
+        source: 'TCEQ New Source Review permit search',
+        result: 'in use',
+        detail: 'An interactive application rather than a dataset: it serves a 404 to automated clients, its submit control cannot be posted directly, and its HTML results grid is malformed. Groundwork drives it in a real browser and reads its pipe-delimited text output. Querying by permit holder is noisy in Texas — a search for one data center operator returns hundreds of that name’s oil and gas sites — so a record is published only when the holder is a known operator and nothing in it signals another industry.',
+      },
       {
         source: 'ERCOT large-load interconnection queue',
         result: 'unusable for local data',
         detail: 'The queue holding the roughly 1,800 projects paused by the governor in August 2026 is published only as a statewide aggregate, largely as chart images in a monthly PDF. It carries no county breakdown, so it cannot answer a question about a specific place.',
-      },
-      {
-        source: 'TCEQ air permit search (New Source Review)',
-        result: 'not machine-readable',
-        detail: 'An interactive ColdFusion application rather than a dataset. It is session-bound, serves different content to automated clients, and returns a server error for programmatic queries.',
       },
       {
         source: 'TCEQ Point Source Emissions Inventory, RY2024',

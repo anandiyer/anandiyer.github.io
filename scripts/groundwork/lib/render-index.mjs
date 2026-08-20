@@ -55,7 +55,7 @@ export function renderIndex(db) {
                 <div class="container mx-auto px-8">
                     <div class="gw-hero-content">
                         <span class="gw-eyebrow">[00] &nbsp; Canonical Labs &middot; Groundwork</span>
-                        <h1 class="gw-title">What is actually permitted in <em>your county</em>.</h1>
+                        <h1 class="gw-title">What data centers are actually permitted in <em>your county</em>.</h1>
                         <p class="gw-subtitle">
                             There is a great deal of noise about data centers right now and very little that anyone can check. Groundwork reads the permits. For every county it tracks, it publishes what operators have actually filed with the regulator &mdash; how many sites, how many backup generators, how much they are permitted to emit &mdash; each figure sourced to the filing it came from. No press releases, and no panic.
                         </p>

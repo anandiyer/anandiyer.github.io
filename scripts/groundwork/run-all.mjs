@@ -59,6 +59,13 @@ await step('turn the TCEQ scrape into Texas facilities', async () => {
   const m = await import('./11-tceq-sites.mjs'); m.build();
 });
 
+/* California issues no state air permits — its thirty-five local districts do —
+   so the statewide surface is CARB's emissions inventory rather than a permit
+   listing. One paced pass over CARB, no browser required. */
+await step('collect California air district facilities (CARB)', async () => {
+  const m = await import('./12-carb-ca.mjs'); await m.collect();
+});
+
 await step('assemble site records (the join)', async () => {
   const m = await import('./03-build-sites.mjs'); m.build();
 });

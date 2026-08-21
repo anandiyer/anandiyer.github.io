@@ -2,16 +2,16 @@
   "layer": "spine-national",
   "source": "EPA ECHO — air-permitted facilities (NAICS 518210 and data-center-named facilities)",
   "source_url": "https://echo.epa.gov/tools/web-services",
-  "fetched_at": "2026-08-21T16:44:08.606Z",
+  "fetched_at": "2026-08-21T16:58:43.860Z",
   "complete": true,
   "failed_queries": [],
   "candidates_returned": 1354,
-  "published": 395,
+  "published": 364,
   "excluded_unidentified": 610,
-  "excluded_brand_without_dc_signal": 349,
+  "excluded_brand_without_dc_signal": 380,
   "identified_by": {
     "name_only": 91,
-    "operator_only": 234
+    "operator_only": 144
   },
   "states": [
     "AR",
@@ -112,20 +112,6 @@
       "identified_by": "name"
     },
     {
-      "registry_id": "MA0000002512100854",
-      "name": "AMAZON COM SERVICES LLC DTB9",
-      "street": "25 COMPUTER DR",
-      "city": "HAVERHILL",
-      "state": "MA",
-      "zip": "01831",
-      "county": "Essex",
-      "naics": "518210",
-      "sic": "4225",
-      "lat": 42.78574,
-      "lon": -71.11934,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "VA0000005115374171",
       "name": "AMAZON DATA SERVICES (IAD-130, IAD-131, IAD-313, AND DCA-072)",
       "street": "9000 FREEDOM CENTER BLVD",
@@ -137,7 +123,7 @@
       "sic": null,
       "lat": 38.76004,
       "lon": -77.51704,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005106174198",
@@ -151,7 +137,7 @@
       "sic": null,
       "lat": 38.73956,
       "lon": -77.82534,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "CO0000000800501722",
@@ -165,7 +151,7 @@
       "sic": "7379",
       "lat": 39.72448,
       "lon": -104.78029,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774250",
@@ -179,7 +165,7 @@
       "sic": null,
       "lat": 38.899353,
       "lon": -77.5187056,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774252",
@@ -193,7 +179,7 @@
       "sic": null,
       "lat": 39.0419474,
       "lon": -77.4781301,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005104774270",
@@ -207,7 +193,7 @@
       "sic": null,
       "lat": 38.443462,
       "lon": -77.877368,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105974272",
@@ -221,7 +207,7 @@
       "sic": null,
       "lat": 38.740884,
       "lon": -77.187546,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005168374240",
@@ -235,7 +221,7 @@
       "sic": null,
       "lat": 38.750474,
       "lon": -77.522771,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105974239",
@@ -249,7 +235,7 @@
       "sic": null,
       "lat": 38.906396,
       "lon": -77.454373,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774227",
@@ -263,7 +249,7 @@
       "sic": null,
       "lat": 39.03445,
       "lon": -77.42896,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105974273",
@@ -277,7 +263,7 @@
       "sic": null,
       "lat": 38.923195,
       "lon": -77.421171,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105974300",
@@ -291,7 +277,7 @@
       "sic": null,
       "lat": 38.93496,
       "lon": -77.42572,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774205",
@@ -305,7 +291,7 @@
       "sic": null,
       "lat": 38.9700316,
       "lon": -77.464002,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774214",
@@ -319,7 +305,7 @@
       "sic": null,
       "lat": 39.0419474,
       "lon": -77.4781301,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774244",
@@ -333,7 +319,7 @@
       "sic": null,
       "lat": 39.015004,
       "lon": -77.452282,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374277",
@@ -347,7 +333,7 @@
       "sic": null,
       "lat": 38.805586,
       "lon": -77.622845,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374278",
@@ -361,7 +347,7 @@
       "sic": null,
       "lat": 38.772549,
       "lon": -77.542741,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374349",
@@ -375,7 +361,7 @@
       "sic": null,
       "lat": 38.8066624,
       "lon": -77.6213569,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774301",
@@ -389,7 +375,7 @@
       "sic": null,
       "lat": 39.0643984,
       "lon": -77.603768,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "MD0000002400301686",
@@ -403,7 +389,7 @@
       "sic": null,
       "lat": 39.136691,
       "lon": -76.760054,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "MD0000002400301687",
@@ -417,7 +403,7 @@
       "sic": null,
       "lat": 39.14661,
       "lon": -76.68538,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "MS0000002808900098",
@@ -431,7 +417,7 @@
       "sic": null,
       "lat": 32.58749,
       "lon": -90.09539,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005117774288",
@@ -445,7 +431,7 @@
       "sic": null,
       "lat": 38.20335,
       "lon": -77.46941,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110974299",
@@ -459,7 +445,7 @@
       "sic": null,
       "lat": 38.049914,
       "lon": -77.813401,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "IN0000001814100650",
@@ -473,7 +459,7 @@
       "sic": "7374",
       "lat": 41.7062947,
       "lon": -86.4819019,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "IN0000001814100642",
@@ -487,7 +473,7 @@
       "sic": "7374",
       "lat": 41.69387,
       "lon": -86.46959,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774181",
@@ -501,7 +487,7 @@
       "sic": null,
       "lat": 38.9700316,
       "lon": -77.464002,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "OR0000004105900135",
@@ -515,7 +501,7 @@
       "sic": null,
       "lat": 45.81322,
       "lon": -119.26713,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115300914",
@@ -529,7 +515,7 @@
       "sic": null,
       "lat": 38.7938977,
       "lon": -77.530962,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774121",
@@ -543,7 +529,7 @@
       "sic": null,
       "lat": 38.9700316,
       "lon": -77.464002,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "GA0000001311700093",
@@ -557,7 +543,7 @@
       "sic": "7374",
       "lat": 34.0634855,
       "lon": -84.0910996,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "GA0000001309700101",
@@ -571,7 +557,7 @@
       "sic": "7374",
       "lat": 33.763333,
       "lon": -84.604999,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "GA0000001321700078",
@@ -585,7 +571,7 @@
       "sic": "7374",
       "lat": 33.639166,
       "lon": -83.821388,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701047",
@@ -599,7 +585,7 @@
       "sic": null,
       "lat": 39.02697,
       "lon": -77.4591,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105900846",
@@ -613,7 +599,7 @@
       "sic": null,
       "lat": 38.897187,
       "lon": -77.4438744,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701023",
@@ -627,7 +613,7 @@
       "sic": null,
       "lat": 39.02072,
       "lon": -77.42902,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005168374129",
@@ -641,7 +627,7 @@
       "sic": null,
       "lat": 38.73892,
       "lon": -77.50251,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774150",
@@ -655,7 +641,7 @@
       "sic": null,
       "lat": 39.037742,
       "lon": -77.449324,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774170",
@@ -669,7 +655,7 @@
       "sic": null,
       "lat": 39.02363,
       "lon": -77.41664,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701026",
@@ -683,7 +669,7 @@
       "sic": null,
       "lat": 38.98896,
       "lon": -77.44832,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374167",
@@ -697,7 +683,7 @@
       "sic": null,
       "lat": 38.7938977,
       "lon": -77.530962,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774184",
@@ -711,7 +697,7 @@
       "sic": null,
       "lat": 38.9700316,
       "lon": -77.464002,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774153",
@@ -725,7 +711,7 @@
       "sic": null,
       "lat": 38.984279,
       "lon": -77.425107,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774174",
@@ -739,7 +725,7 @@
       "sic": null,
       "lat": 38.899353,
       "lon": -77.5187056,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701053",
@@ -753,7 +739,7 @@
       "sic": null,
       "lat": 38.98837,
       "lon": -77.43831,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115300922",
@@ -767,7 +753,7 @@
       "sic": null,
       "lat": 38.81733,
       "lon": -77.64686,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701054",
@@ -781,7 +767,7 @@
       "sic": null,
       "lat": 38.9700316,
       "lon": -77.464002,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110700846",
@@ -795,7 +781,7 @@
       "sic": null,
       "lat": 39.0035,
       "lon": -77.48506,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774080",
@@ -809,7 +795,7 @@
       "sic": null,
       "lat": 38.91865,
       "lon": -77.49211,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110774085",
@@ -823,7 +809,7 @@
       "sic": null,
       "lat": 38.95152,
       "lon": -77.5181,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115300890",
@@ -837,7 +823,7 @@
       "sic": null,
       "lat": 38.79058,
       "lon": -77.53953,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374081",
@@ -851,7 +837,7 @@
       "sic": null,
       "lat": 38.7803,
       "lon": -77.55732,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115374115",
@@ -865,7 +851,7 @@
       "sic": null,
       "lat": 38.776822,
       "lon": -77.536673,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "PA000883491",
@@ -879,77 +865,7 @@
       "sic": "7374",
       "lat": 40.1639,
       "lon": -74.75106,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "VA0000005104774190",
-      "name": "AMAZON DCA-50",
-      "street": "22129 CONFEDERATE ROAD",
-      "city": "ELKWOOD",
-      "state": "VA",
-      "zip": "22718",
-      "county": "Culpeper",
-      "naics": "518210",
-      "sic": null,
-      "lat": 38.4593,
-      "lon": -77.85042,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "VA0000005105974207",
-      "name": "AMAZON DCA-54",
-      "street": "DCA-54 7900 TELEGRAPH ROAD",
-      "city": "FORT BELVOIR",
-      "state": "VA",
-      "zip": "22060",
-      "county": "Fairfax",
-      "naics": "518210",
-      "sic": null,
-      "lat": 38.6993531,
-      "lon": -77.1574972,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "MA0000002512100856",
-      "name": "AMAZON.COM LLC - DK01",
-      "street": "151 TAYLOR ST",
-      "city": "LITTLETON",
-      "state": "MA",
-      "zip": "01460",
-      "county": "Middlesex",
-      "naics": "518210",
-      "sic": "4225",
-      "lat": 42.519624,
-      "lon": -71.518014,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "NVWCDRENO",
-      "name": "APPLE INC",
-      "street": "21575 E INTERSTATE 80",
-      "city": "UNINCORPERATED WASHOE COUNTY",
-      "state": "NV",
-      "zip": "89442",
-      "county": "Washoe",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 39.6930352,
-      "lon": -119.3447677,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "NC0000003701800557",
-      "name": "APPLE INC.",
-      "street": "5977 STARTOWN ROAD",
-      "city": "MAIDEN",
-      "state": "NC",
-      "zip": "28650",
-      "county": "Catawba",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 35.58973,
-      "lon": -81.25638,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "AZMCA004013X135352",
@@ -2030,20 +1946,6 @@
       "identified_by": "name"
     },
     {
-      "registry_id": "GA0000001309700061",
-      "name": "GOOGLE, INC.",
-      "street": "300 RIVERSIDE PARKWAY SW",
-      "city": "LITHIA SPRINGS",
-      "state": "GA",
-      "zip": "30122",
-      "county": "Douglas",
-      "naics": "518210 999999",
-      "sic": "7375 7389",
-      "lat": 33.745138,
-      "lon": -84.582211,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "PAPAM0004210110499",
       "name": "H5 DATA CENTERS",
       "street": "1500 SPRING GARDEN STREET",
@@ -2254,34 +2156,6 @@
       "identified_by": "name"
     },
     {
-      "registry_id": "VA0000005106174201",
-      "name": "MICROSOFT",
-      "street": "7471 BEAR WALLOW RD",
-      "city": "WARRENTON",
-      "state": "VA",
-      "zip": "20186",
-      "county": "Fauquier",
-      "naics": "518210",
-      "sic": null,
-      "lat": 38.73956,
-      "lon": -77.82534,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "TX0000004802900724",
-      "name": "MICROSOFT",
-      "street": "5120 ROGERS RD SAN ANTONIO TX 78251",
-      "city": "SAN ANTONIO",
-      "state": "TX",
-      "zip": "78251",
-      "county": "Bexar",
-      "naics": "518210",
-      "sic": null,
-      "lat": 29.477979,
-      "lon": -98.694108,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "VA0000005115374236",
       "name": "MICROSOFT - GAINESVILLE DATA CENTER - MNZ03",
       "street": "13050 HANSEN FARM ROAD",
@@ -2352,20 +2226,6 @@
       "identified_by": "name+operator"
     },
     {
-      "registry_id": "AZMCA000000F006434",
-      "name": "MICROSOFT CORP - CITRUS RD",
-      "street": "3785 N CITRUS RD",
-      "city": "MARICOPA COUNTY",
-      "state": "AZ",
-      "zip": "85395",
-      "county": "Maricopa",
-      "naics": "518210",
-      "sic": null,
-      "lat": 33.490145,
-      "lon": -112.444146,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "VA0000005111752820",
       "name": "MICROSOFT CORP - LVL DATA CENTER",
       "street": "959 HERBERT DR",
@@ -2392,20 +2252,6 @@
       "lat": 36.6255541,
       "lon": -78.3448556,
       "identified_by": "name+operator"
-    },
-    {
-      "registry_id": "AZMCA000000F006370",
-      "name": "MICROSOFT CORP - OLIVE AVE",
-      "street": "12901 W OLIVE AVE",
-      "city": "MARICOPA COUNTY",
-      "state": "AZ",
-      "zip": "85335",
-      "county": "Maricopa",
-      "naics": "518210",
-      "sic": null,
-      "lat": 33.565587,
-      "lon": -112.33744,
-      "identified_by": "operator"
     },
     {
       "registry_id": "VA0000005111752973",
@@ -2520,20 +2366,6 @@
       "identified_by": "name+operator"
     },
     {
-      "registry_id": "MD0000002400301678",
-      "name": "MICROSOFT CORPORATION - YELLOW FACILITY",
-      "street": "8201,8211,8221, & 8321 DORSEY RUN ROAD",
-      "city": "ANNAPOLIS JUNCTION",
-      "state": "MD",
-      "zip": "20701",
-      "county": "Anne Arundel",
-      "naics": "518210",
-      "sic": null,
-      "lat": 39.1325223,
-      "lon": -76.7882637,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "VA0000005110774220",
       "name": "MICROSOFT CORPORATION – LEESBURG DATA CENTER (IAD01-02-03-04-05)",
       "street": "19935 SYCOLIN ROAD",
@@ -2546,48 +2378,6 @@
       "lat": 39.066909,
       "lon": -77.551873,
       "identified_by": "name+operator"
-    },
-    {
-      "registry_id": "NC0000003701800599",
-      "name": "MICROSOFT CORPORATION, CLT04 AND CLT05",
-      "street": "1723 N. NC HWY 16",
-      "city": "CONOVER",
-      "state": "NC",
-      "zip": "28613",
-      "county": "Catawba",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 35.7376482,
-      "lon": -81.207675,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "NC0000003701800601",
-      "name": "MICROSOFT CORPORATION, CLT10",
-      "street": "1400 ZEB HAYNES ROAD",
-      "city": "MAIDEN",
-      "state": "NC",
-      "zip": "28650",
-      "county": "Catawba",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 35.58751,
-      "lon": -81.2306,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "NC0000003701800602",
-      "name": "MICROSOFT CORPORATION, CLT17",
-      "street": "3820 HICKORY-LINCOLNTON HWY",
-      "city": "NEWTON",
-      "state": "NC",
-      "zip": "28658",
-      "county": "Catawba",
-      "naics": "518210",
-      "sic": "7374 1541",
-      "lat": 35.619392,
-      "lon": -81.320751,
-      "identified_by": "operator"
     },
     {
       "registry_id": "IL000031449ADS",
@@ -2868,34 +2658,6 @@
       "lat": 39.15311,
       "lon": -94.53903,
       "identified_by": "name+operator"
-    },
-    {
-      "registry_id": "CO0000000801401333",
-      "name": "ORACLE AMERICA - BROOMFIELD CAMPUS",
-      "street": "500 ELDORADO BLVD",
-      "city": "BROOMFIELD",
-      "state": "CO",
-      "zip": "80021",
-      "county": "Broomfield",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 39.9219,
-      "lon": -105.12362,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CO0000000805901991",
-      "name": "ORACLE AMERICA, INC - 10075 WESTMOOR",
-      "street": "10075 WESTMOOR DR",
-      "city": "WESTMINSTER",
-      "state": "CO",
-      "zip": "800212569",
-      "county": "Jefferson",
-      "naics": "518210",
-      "sic": "7374",
-      "lat": 39.89629,
-      "lon": -105.11114,
-      "identified_by": "operator"
     },
     {
       "registry_id": "MO0000002904702456",
@@ -3469,7 +3231,7 @@
       "sic": null,
       "lat": 39.0035,
       "lon": -77.48506,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005105973790",
@@ -3483,7 +3245,7 @@
       "sic": null,
       "lat": 38.897187,
       "lon": -77.4438744,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005115373789",
@@ -3497,7 +3259,7 @@
       "sic": null,
       "lat": 38.7911,
       "lon": -77.53959,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "VA0000005110701038",
@@ -3511,7 +3273,7 @@
       "sic": null,
       "lat": 39.0035,
       "lon": -77.48506,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "TX0000004802900727",
@@ -4256,48 +4018,6 @@
       "identified_by": "name+operator"
     },
     {
-      "registry_id": "GA0000001312100969",
-      "name": "MICROSOFT CORPORATION - ATL06 FACILITY",
-      "street": "4165 BEN HILL ROAD",
-      "city": "EAST POINT",
-      "state": "GA",
-      "zip": "30349",
-      "county": "Fulton",
-      "naics": "541513",
-      "sic": "1541 7376",
-      "lat": 33.642298,
-      "lon": -84.514805,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "IAPLK0001915302086",
-      "name": "MICROSOFT CORPORATION - WILLOW CREEK/GINGER EAST DATA",
-      "street": "550 WHITE CRANE RD",
-      "city": "DES MOINES",
-      "state": "IA",
-      "zip": "50265",
-      "county": "Polk",
-      "naics": "511210",
-      "sic": "7372",
-      "lat": 41.515833,
-      "lon": -93.708611,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "GA0000001312100968",
-      "name": "MICROSOFT CORPORATION- CCO06 FACILITY",
-      "street": "0 WILLIAMS ROAD",
-      "city": "PALMETTO",
-      "state": "GA",
-      "zip": "30268",
-      "county": "Fulton",
-      "naics": "541513",
-      "sic": "1623 7376",
-      "lat": 33.528151,
-      "lon": -84.62564,
-      "identified_by": "operator"
-    },
-    {
       "registry_id": "NJ0000003403536207",
       "name": "MORGAN STANLEY DATA CENTER",
       "street": "665 HOWARD AVE",
@@ -4645,119 +4365,7 @@
       "sic": "3571",
       "lat": 39.017553,
       "lon": -84.673097,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "AZMCA000000F006261",
-      "name": "MICROSOFT CORP - BROADWAY RD",
-      "street": "14250 W BROADWAY RD",
-      "city": "MARICOPA COUNTY",
-      "state": "AZ",
-      "zip": "85338",
-      "county": "Maricopa",
-      "naics": "532490",
-      "sic": null,
-      "lat": 33.406482,
-      "lon": -112.365041,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "GA0000001309700097",
-      "name": "MICROSOFT CORPORATION - FTY01 FACILITY",
-      "street": "1601 NORTH RIVER ROAD",
-      "city": "DOUGLASVILLE",
-      "state": "GA",
-      "zip": "30122",
-      "county": "Douglas",
-      "naics": "541513",
-      "sic": "7376",
-      "lat": 33.728825,
-      "lon": -84.619733,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "TX0000004832500481",
-      "name": "MICROSOFT SAT CAMPUS SAT09 13 40 46",
-      "street": "15434 LAMBDA DR",
-      "city": "SAN ANTONIO",
-      "state": "TX",
-      "zip": "78245",
-      "county": "Bexar",
-      "naics": "541513",
-      "sic": null,
-      "lat": 29.3931694,
-      "lon": -98.7414401,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "TX0000004802900723",
-      "name": "MICROSOFT SAT15",
-      "street": "3555 WESTOVER LINK",
-      "city": "SAN ANTONIO",
-      "state": "TX",
-      "zip": "78251",
-      "county": "Bexar",
-      "naics": "541513",
-      "sic": null,
-      "lat": 29.46896,
-      "lon": -98.69862,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "GA0000001309700073",
-      "name": "GOOGLE INC. - IDI",
-      "street": "300 RIVERSIDE PARKWAY",
-      "city": "LITHIA SPRINGS",
-      "state": "GA",
-      "zip": "30124",
-      "county": "Douglas",
-      "naics": "518210 999999",
-      "sic": "7375 7389",
-      "lat": 33.745138,
-      "lon": -84.582211,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CABAAB3667",
-      "name": "GOOGLE LLC",
-      "street": "1600 AMPHITHEATER PARKWAY",
-      "city": "MOUNTAIN VIEW",
-      "state": "CA",
-      "zip": "94043",
-      "county": "Santa Clara",
-      "naics": "334111",
-      "sic": "3571",
-      "lat": 37.42307,
-      "lon": -122.08421,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CO0000000800101861",
-      "name": "GOOGLE, INC",
-      "street": "12396 GRANT ST",
-      "city": "THORNTON",
-      "state": "CO",
-      "zip": "802413120",
-      "county": "Adams",
-      "naics": "511210",
-      "sic": "7372",
-      "lat": 39.92291,
-      "lon": -104.9845,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "OK0000004009700080",
-      "name": "TMOBILE CENTRAL LLC / GOOGLE",
-      "street": "221 STEVE BERRY BLVD",
-      "city": "PRYOR",
-      "state": "OK",
-      "zip": "74361",
-      "county": "Mayes",
-      "naics": "517112",
-      "sic": "4812",
-      "lat": 36.26385,
-      "lon": -95.32791,
-      "identified_by": "operator"
+      "identified_by": "name+operator"
     },
     {
       "registry_id": "CO0000000800501629",
@@ -5541,48 +5149,6 @@
       "sic": "4812",
       "lat": 35.5011,
       "lon": -85.01972,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CO0000000801300052",
-      "name": "ORACLE AMERICA INC",
-      "street": "1450 INFINITE DRIVE",
-      "city": "LOUISVILLE",
-      "state": "CO",
-      "zip": "80027",
-      "county": "Boulder",
-      "naics": "334419",
-      "sic": "3679 3674",
-      "lat": 39.9675,
-      "lon": -105.17421,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CO0000000803102091",
-      "name": "ORACLE AMERICA, INC.",
-      "street": "7604 & 7700 TECHNOLOGY WAY",
-      "city": "DENVER",
-      "state": "CO",
-      "zip": "802373012",
-      "county": "Denver",
-      "naics": "334111",
-      "sic": "3571",
-      "lat": 39.631587,
-      "lon": -104.899176,
-      "identified_by": "operator"
-    },
-    {
-      "registry_id": "CO0000000804102056",
-      "name": "ORACLE AMERICA, INC.",
-      "street": "12320 ORACLE BLVD",
-      "city": "COLORADO SPRINGS",
-      "state": "CO",
-      "zip": "809213660",
-      "county": "El Paso",
-      "naics": "541519",
-      "sic": "7379",
-      "lat": 39.01131,
-      "lon": -104.81643,
       "identified_by": "operator"
     }
   ]

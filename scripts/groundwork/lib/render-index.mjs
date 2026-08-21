@@ -32,6 +32,8 @@ export function renderIndex(db) {
   const stateCount = (db.coverage?.states || []).length;
   const vaSites = c.from_va_permits || 0;
   const natSites = c.from_epa_registry || 0;
+  const txSites = c.from_tx_permits || 0;
+  const caSites = c.from_ca_districts || 0;
   const sfhaSites = located.filter((s) => s.flood?.in_sfha);
   const txCount = sites.filter((s) => s.state === 'TX').length;
   const withNox = sites.filter((s) => s.emissions?.nox_tons_per_year);
@@ -88,7 +90,7 @@ export function renderIndex(db) {
                         </div>
                         <div class="gw-tldr-item">
                             <div class="gw-stat">${c.sites}</div>
-                            <div class="gw-tldr-label"><strong>Sites tracked, in ${stateCount} states.</strong> ${vaSites} read permit-by-permit in Virginia; ${natSites} from EPA's national registry.</div>
+                            <div class="gw-tldr-label"><strong>Sites tracked, in ${stateCount} states.</strong> ${vaSites} read permit-by-permit in Virginia, ${txSites} out of Texas's permit search and ${caSites} from the California air districts; ${natSites} from EPA's national registry.</div>
                         </div>
                     </div>
                 </div>

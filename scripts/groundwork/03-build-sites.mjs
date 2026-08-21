@@ -96,9 +96,83 @@ function tceqSites(tx) {
    permit). Everywhere else is built from EPA ECHO, which is facility-level.
    Splitting on state avoids reconciling two different keying schemes, and the
    provenance is stated on every page. */
+/* States that have a permit-level or district-level collector of their own,
+   and so are not described by the national EPA registry layer. */
+const STATE_COLLECTORS = new Set(['VA', 'TX', 'CA']);
+
+function carbSites(carb) {
+  if (!carb) return [];
+  return carb.facilities.map((f) => {
+    const op = resolveOperator(f.name);
+    const county = f.county ? `${f.county} County` : null;
+    const slug = slugify(`${f.name}-${f.county || f.city || ''}-CA`);
+    return {
+      slug,
+      name: f.name,
+      state: 'CA',
+      locality: county || f.city || 'CA',
+      permit_locality: county,
+      locality_conflict: false,
+      source_tier: 'carb',
+      operator: {
+        name: op.operator,
+        confidence: op.confidence,
+        basis: op.basis,
+        permittee_name: f.name,
+      },
+      permit: {
+        confidence: 'confirmed',
+        count: 0,
+        latest_issued: null,
+        first_issued: null,
+        programs: [],
+        /* The district is the permitting authority in California; the state
+           issues no air permits of its own. Naming it is the whole provenance. */
+        regional_office: f.district || 'California air district',
+        records: [],
+        registry_id: f.registry_id,
+        naics: null,
+        sic: f.sic,
+        source: carb.source,
+        source_url: carb.source_url,
+        publisher_as_of: String(carb.inventory_year || ''),
+      },
+      address: {
+        street: f.street ? `${f.street}${f.city ? ', ' + f.city : ''}` : null,
+        confidence: f.street ? 'confirmed' : 'pending',
+        basis: f.street
+          ? `Street address as published in CARB's emissions inventory — a structured field, reported by the facility to the ${f.district || 'air district'} that permits it.`
+          : 'CARB carries no street address for this facility.',
+      },
+      equipment: {
+        generators_permitted: null,
+        turbines_permitted: null,
+        confidence: 'pending',
+        basis: 'California air districts issue the permits, and each publishes its permit documents on its own terms. CARB establishes that the facility is permitted and reporting; the equipment counts come from a permit document Groundwork has not yet read.',
+      },
+      pipeline: {
+        stages: ['Proposed', 'Filed', 'Approved', 'Under construction', 'Operational'],
+        reached: 'Operational',
+        reached_index: 4,
+        basis: `Facility reports to CARB's ${carb.inventory_year} emissions inventory, which means it holds a district air permit and was operating in that year.`,
+        confidence: 'confirmed',
+      },
+      /* CARB publishes no coordinate, so 04 geocodes the street address and
+         validates the result against the county named here. */
+      geo: null,
+      filings: null,
+      reported: [],
+      timeline: [],
+    };
+  });
+}
+
 function echoSites(echo) {
   if (!echo) return [];
-  return echo.facilities.filter((f) => f.state !== 'VA' && f.state !== 'TX').map((f) => {
+  /* States with a permit-level collector of their own are excluded here, so a
+     facility is never described by the thin registry layer when a richer
+     source covers it. VA (01/02), TX (10/11), CA (12). */
+  return echo.facilities.filter((f) => !STATE_COLLECTORS.has(f.state)).map((f) => {
     const op = resolveOperator(f.name);
     const county = f.county ? `${f.county} County` : null;
     const slug = slugify(`${f.name}-${f.county || f.city || ''}-${f.state}`);
@@ -360,7 +434,13 @@ export function build() {
   }
 
   const tx = readJSON(path.join(RAW, 'tceq-sites.json'));
-  const national = [...echoSites(echo), ...tceqSites(tx)];
+
+  const carb = readJSON(path.join(RAW, 'carb-ca.json'), null);
+  if (carb && carb.complete === false) {
+    throw new Error('carb-ca.json is marked incomplete. Re-run node scripts/groundwork/12-carb-ca.mjs before building sites.');
+  }
+
+  const national = [...echoSites(echo), ...tceqSites(tx), ...carbSites(carb)];
   const taken = new Set(sites.map((s) => s.slug));
   for (const site of national) {
     let slug = site.slug, n = 2;
@@ -383,9 +463,13 @@ export function build() {
       permits: spine.permits.length,
       with_address: sites.filter((s) => s.address.street).length,
       operators_resolved: sites.filter((s) => s.operator.name).length,
-      from_va_permits: sites.filter((s) => s.source_tier !== 'echo').length,
+      /* This was `source_tier !== 'echo'`, which quietly counted Texas as
+         Virginia — the index has been reporting 247 sites "read permit-by-permit
+         in Virginia" when 59 of them were TCEQ's. Each source counts itself. */
+      from_va_permits: sites.filter((s) => !s.source_tier).length,
       from_epa_registry: sites.filter((s) => s.source_tier === 'echo').length,
       from_tx_permits: sites.filter((s) => s.source_tier === 'tceq').length,
+      from_ca_districts: sites.filter((s) => s.source_tier === 'carb').length,
     },
     sites,
   };

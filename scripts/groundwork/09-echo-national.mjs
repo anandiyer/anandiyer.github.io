@@ -24,7 +24,7 @@ import path from 'node:path';
 import { get, sleep } from './lib/http.mjs';
 import { parseCSV } from './lib/csv.mjs';
 import { RAW, readJSON, writeJSON, log } from './lib/util.mjs';
-import { resolveOperator, NEEDS_DC_SIGNAL } from './lib/operators.mjs';
+import { identify } from './lib/operators.mjs';
 
 const ECHO = 'https://echodata.epa.gov/echo/air_rest_services';
 const UA = { 'User-Agent': 'Canonical Labs Groundwork ai@canonical.cc', Accept: 'text/csv,application/json' };
@@ -33,7 +33,6 @@ const UA = { 'User-Agent': 'Canonical Labs Groundwork ai@canonical.cc', Accept: 
    21 SIC · 22 NAICS · 23 lat · 24 long */
 const QCOLUMNS = '1,2,3,4,5,7,9,21,22,23,24';
 
-const DC_NAME = /data\s*-?\s*cent(er|re)|datacenter|\bdata\s+hall\b|colocation|\bcolo\b/i;
 
 /* NAICS is self-reported and the "data center" name search only catches
    facilities that say so. A campus filed as "VANTAGE TX 11" or "META FORT
@@ -154,18 +153,14 @@ export async function collect({ reclassify = false } = {}) {
 
   for (const [id, r] of byId) {
     const name = (r.AIRName || '').replace(/\s+/g, ' ').trim();
-    const op = resolveOperator(name);
-    const byName = DC_NAME.test(name);
-    const byBrand = op.confidence === 'confirmed' || op.confidence === 'probable';
-
-    /* Telcos and tower companies hold thousands of generator permits on
-       buildings that are not data centers, so for them the brand is a lead,
-       not an identification — the record has to say so too. */
-    if (byBrand && !byName && NEEDS_DC_SIGNAL.has(op.operator)) { needsSignal++; continue; }
-
-    if (!byName && !byBrand) { unidentified++; continue; }
-    if (byName && !byBrand) namedOnly++;
-    if (!byName && byBrand) brandOnly++;
+    const verdict = identify(name);
+    const op = verdict.operator;
+    if (!verdict.publish) {
+      if (verdict.reason === 'brand_without_dc_signal') needsSignal++; else unidentified++;
+      continue;
+    }
+    if (verdict.identified_by === 'name') namedOnly++;
+    if (verdict.identified_by === 'operator') brandOnly++;
 
     const lat = Number(r.FacLat), lon = Number(r.FacLong);
     facilities.push({
@@ -180,7 +175,7 @@ export async function collect({ reclassify = false } = {}) {
       sic: r.FacSICCodes || null,
       lat: Number.isFinite(lat) && lat !== 0 ? lat : null,
       lon: Number.isFinite(lon) && lon !== 0 ? lon : null,
-      identified_by: byName && byBrand ? 'name+operator' : byName ? 'name' : 'operator',
+      identified_by: verdict.identified_by,
     });
   }
 

@@ -129,13 +129,11 @@ const BRANDS = [
    `11-tceq-sites.mjs` already draws this distinction for Texas
    (`DC_CUSTOMER` vs `DC_BRAND`); this is the same idea for the national spine. */
 export const NEEDS_DC_SIGNAL = new Set([
-  'Lumen (Level 3)',
-  'Verizon',
-  'Comcast',
-  'Zayo',
-  'Cogent Communications',
-  'American Tower',
-  'Crusoe Energy',
+  /* telecoms and towers */
+  'Lumen (Level 3)', 'Verizon', 'Comcast', 'Zayo', 'Cogent Communications',
+  'American Tower', 'Crusoe Energy',
+  /* mixed-estate operators: offices, labs, warehouses */
+  'Amazon', 'Google', 'Apple', 'Meta', 'Microsoft', 'Oracle',
 ]);
 
 /* Aliases: entity names that do not carry the brand but are documented as
@@ -189,5 +187,59 @@ export function resolveOperator(facilityName) {
     basis: SPV_HINT.test(name)
       ? 'Permit is held by a single-purpose entity with no publicly disclosed parent. Groundwork does not guess at ownership.'
       : 'No operator could be resolved from the permittee name.',
+  };
+}
+
+/* A facility name identifies a data center outright. Kept here, next to the
+   brands, because two collectors now apply this same test (`09` national,
+   `12` California) and a copy in each is a copy that drifts. */
+export const DC_NAME = /data\s*-?\s*cent(er|re)|datacenter|\bdata\s+hall\b|colocation|\bcolo\b/i;
+
+/* The naming conventions that mark a *data-center subsidiary* rather than the
+   parent. Amazon's data centers are permitted to Amazon Data Services or
+   VADATA; its fulfilment centres and delivery stations are permitted to
+   Amazon.com Services. Both are "Amazon" to a brand matcher, and only one of
+   them is a data center. */
+export const DC_ENTITY = /\bdata\s+(?:services|svcs)\b|\bvadata\b|\bdata\s+centers?\b|\bdata\s+cent(?:er|re)s?\b/i;
+
+/* Operators with a large estate that is NOT data centers.
+
+   Two kinds end up here. Telcos and tower companies, whose permits are
+   overwhelmingly central offices and cell sites. And the hyperscalers, whose
+   offices, laboratories, fulfilment centres and delivery stations all hold
+   generator permits under the same brand as their data centers — invisible in
+   Virginia, where the only reason Amazon holds an air permit is a data center,
+   and overwhelming in California, where Google, Apple and Meta between them
+   run dozens of permitted office buildings and Amazon runs the warehouses.
+
+   For these the brand is a lead, not an identification: the record must also
+   carry a data-center signal, either in the facility name or in the subsidiary
+   it is permitted to. Every other brand still qualifies on the name alone,
+   because Equinix and CyrusOne build nothing else. */
+
+/* The single identification decision, shared by every registry collector.
+
+   A registry row becomes a published site when something in it actually says
+   data center: the facility's own name, or an operator that builds nothing
+   else. Self-reported industry codes are not enough on their own — SIC 7374
+   and NAICS 518210 are full of office buildings with a backup generator — so a
+   row that carries only the code is counted and reported, never published. */
+export function identify(facilityName) {
+  const op = resolveOperator(facilityName);
+  const n = String(facilityName || '');
+  const byName = DC_NAME.test(n) || DC_ENTITY.test(n);
+  const byBrand = op.confidence === 'confirmed' || op.confidence === 'probable';
+
+  if (byBrand && !byName && NEEDS_DC_SIGNAL.has(op.operator)) {
+    return { publish: false, reason: 'brand_without_dc_signal', operator: op };
+  }
+  if (!byName && !byBrand) {
+    return { publish: false, reason: 'unidentified', operator: op };
+  }
+  return {
+    publish: true,
+    reason: null,
+    identified_by: byName && byBrand ? 'name+operator' : byName ? 'name' : 'operator',
+    operator: op,
   };
 }

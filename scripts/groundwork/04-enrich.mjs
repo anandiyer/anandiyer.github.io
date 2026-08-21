@@ -11,6 +11,22 @@ import { geocode } from './lib/geo.mjs';
 import { floodZone, waterStress } from './lib/hazards.mjs';
 import { searchFilings } from './lib/edgar.mjs';
 import { pjmQueue, pendingLayer } from './lib/grid.mjs';
+
+/* Which sites PJM can actually answer for. Asking PJM about a Californian
+   facility returns nothing today only because no API key is set; with a key it
+   would return somebody else's queue position, which is the single worst
+   failure mode this project has. */
+const PJM_STATES = new Set(['VA', 'MD', 'DE', 'NJ', 'PA', 'OH', 'WV', 'DC']);
+
+const ISO_BY_STATE = {
+  CA: 'CAISO', TX: 'ERCOT', NY: 'NYISO', IL: 'MISO and PJM', IA: 'MISO',
+  MN: 'MISO', MO: 'MISO and SPP', NE: 'SPP', KS: 'SPP', OK: 'SPP',
+  AZ: 'The Western Interconnection', NV: 'The Western Interconnection',
+  OR: 'The Western Interconnection', WA: 'The Western Interconnection',
+  UT: 'The Western Interconnection', CO: 'The Western Interconnection',
+  GA: 'The Southeast (non-ISO) utilities', NC: 'The Southeast (non-ISO) utilities',
+  TN: 'TVA', MA: 'ISO-NE', NH: 'ISO-NE', CT: 'ISO-NE',
+};
 import { sleep } from './lib/http.mjs';
 
 const CACHE_FILE = path.join(RAW, 'enrich-cache.json');
@@ -28,10 +44,25 @@ export async function enrich({ skipEdgar = false } = {}) {
     if (site.geo && site.geo.lat) {
       geoOk++;
     } else if (site.address.street) {
-      const key = `${site.address.street}|${site.locality}`;
+      /* This appended a literal "VA" until August 2026, and the cache key
+         omitted the state entirely. Neither mattered while every site with a
+         street address was Virginian and everything else arrived from EPA with
+         a coordinate. California arrives with an address and no coordinate, so
+         both would now put California pins in Virginia — or serve one state's
+         cached coordinate for another state's identically-named street. */
+      const key = `${site.address.street}|${site.locality}|${site.state}`;
+      /* Entries cached before the state joined the key are still valid — they
+         were all resolved from the same street string and validated against the
+         same county. Adopt them under the new key rather than making public
+         geocoders re-answer four hundred questions they already answered. */
+      const legacy = `${site.address.street}|${site.locality}`;
+      if (!(key in cache.geo) && legacy in cache.geo) {
+        cache.geo[key] = cache.geo[legacy];
+        delete cache.geo[legacy];
+      }
       if (!(key in cache.geo)) {
         const expect = site.permit_locality || site.locality;
-        cache.geo[key] = await geocode(`${site.address.street}, ${site.locality.replace(/\s*Co\.$/, ' County')}, VA`, { expectCounty: expect });
+        cache.geo[key] = await geocode(`${site.address.street}, ${site.locality.replace(/\s*Co\.$/, ' County')}, ${site.state}`, { expectCounty: expect });
         await sleep(150);
       }
       const g = cache.geo[key];
@@ -69,7 +100,9 @@ export async function enrich({ skipEdgar = false } = {}) {
     }
 
     /* ---- grid interconnection ---- */
-    site.grid = await pjmQueue({ county: site.locality, state: 'VA' });
+    site.grid = PJM_STATES.has(site.state)
+      ? await pjmQueue({ county: site.locality, state: site.state })
+      : pendingLayer(`${ISO_BY_STATE[site.state] || 'The interconnection queue for this region'} covers this site; Groundwork has only wired up PJM so far, so no queue position is asserted here.`);
 
     if ((i + 1) % 40 === 0) log(`enriched ${i + 1}/${db.sites.length}`);
   }

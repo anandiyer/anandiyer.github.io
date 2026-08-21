@@ -1,35 +1,5 @@
 {
   "geo": {
-    "14625 Germana Hwy|Culpeper Co.": {
-      "lat": 38.449079141406,
-      "lon": -77.981991875318,
-      "matched_address": "14625 GERMANNA HWY, CULPEPER, VA, 22701",
-      "county": "Culpeper",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13775 McLearen Road|Fairfax Co.": {
-      "lat": 38.9271828,
-      "lon": -77.4241709,
-      "matched_address": "Menlo Digital MD-DC1, 13775, McLearen Road, Sully Square, Fairfax County, Virginia, 20171, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "20935 Loudoun County Parkway|Loudoun Co.": {
-      "lat": 39.036294,
-      "lon": -77.4497948,
-      "matched_address": "Amazon IAD115, 20935, Loudoun County Parkway, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "13820 Sunrise Valley Drive|Fairfax Co.": {
       "lat": 38.9577713,
       "lon": -77.4229935,
@@ -40,17 +10,6 @@
       "rejected": false,
       "county_verified": true
     },
-    "13760 University Blvd|Prince William Co.": {
-      "lat": 38.8023738,
-      "lon": -77.5823032,
-      "matched_address": "Microsoft Data Center 1, 13760, University Boulevard, Gainesville, Prince William County, Virginia, 20155, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13820 Sunrise Valley Drive|Prince William Co.": null,
     "400 Water Street|Hanover Co.": {
       "lat": 42.096696074221,
       "lon": -70.83957621282,
@@ -61,7 +20,6 @@
       "rejected": true,
       "reject_reason": "geocoded county \"Plymouth\" does not match permit locality \"Hanover County\" — likely a corporate mailing address, not the facility"
     },
-    "22279 Power Player Lane|Loudoun Co.": null,
     "45110 Loudoun Downs Lane|Loudoun Co.": {
       "lat": 38.9900124,
       "lon": -77.4394959,
@@ -73,28 +31,6 @@
       "county_verified": true
     },
     "6623 S. Las Vegas Blvd|Caroline Co.": null,
-    "9905 Godwin Dr|Prince William Co.": {
-      "lat": 38.7468164,
-      "lon": -77.5129723,
-      "matched_address": "Godwin Drive, Innovation, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13820 Sunrise Valley Drive|Loudoun Co.": null,
-    "13820 Sunrise Valley Dr|Prince William Co.": null,
-    "3901 Massaponax Church Road|Spotsylvania Co.": {
-      "lat": 38.20338,
-      "lon": -77.469523,
-      "matched_address": "3901, Massaponax Church Road, Lee's Hill, Spotsylvania County, Virginia, 22408, United States",
-      "county": "Spotsylvania County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "14555 Avion Parkway|Fairfax Co.": {
       "lat": 38.905330234457,
       "lon": -77.449249812545,
@@ -106,18 +42,7 @@
       "county_verified": true
     },
     "200 Clayton Street|Stafford Co.": null,
-    "10400 Harry J Parrish Blvd|Manassas City": null,
     "6601 College Blvd|Henrico Co.": null,
-    "11680 Hayden Road|Prince William Co.": {
-      "lat": 38.7728096,
-      "lon": -77.5429652,
-      "matched_address": "11680, Hayden Road, Arcadia Run Apartments, Linton Hall, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "1401 Meadowville Technology Pkwy|Chesterfield Co.": {
       "lat": 37.3598991,
       "lon": -77.327038,
@@ -128,43 +53,12 @@
       "rejected": false,
       "county_verified": true
     },
-    "13820 Sunrise Valley Dr|Loudoun Co.": null,
     "1625 West National Dr|Prince William Co.": null,
     "9400 Godwin Drive|Prince William Co.": {
       "lat": 38.7468164,
       "lon": -77.5129723,
       "matched_address": "Godwin Drive, Innovation, Prince William County, Virginia, 20109, United States",
       "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "4195 Turner Ct|Spotsylvania Co.": {
-      "lat": 38.220926,
-      "lon": -77.481659,
-      "matched_address": "Turner Court, Lee's Hill, Spotsylvania County, Virginia, 22408, United States",
-      "county": "Spotsylvania County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21780 Filigree Court|Loudoun Co.": {
-      "lat": 39.0136208,
-      "lon": -77.4574257,
-      "matched_address": "21780, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "44595 Low Latency Lane|Loudoun Co.": {
-      "lat": 38.9967978,
-      "lon": -77.460111,
-      "matched_address": "Low Latency Lane, Loudoun County, Virginia, 20101, United States",
-      "county": "Loudoun County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
@@ -180,39 +74,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "4030 Lafayette Center Drive|Fairfax Co.": {
-      "lat": 38.909497,
-      "lon": -77.4741596,
-      "matched_address": "4030, Lafayette Center Drive, Chantilly, Fairfax County, Virginia, 20151, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7900 Telegraph Road|Fairfax Co.": {
-      "lat": 38.7455456,
-      "lon": -77.1574072,
-      "matched_address": "7900, Telegraph Road, Springfield, Fairfax County, Virginia, 22315, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "13820 Sunrise Valley Dr|Louisa Co.": null,
-    "19275 Compass Creek Parkway|Loudoun Co.": null,
-    "19560 Hyperspace Lane|Loudoun Co.": null,
-    "6872 Watson Court|Fauquier Co.": {
-      "lat": 38.7474139,
-      "lon": -77.6744842,
-      "matched_address": "OVH US East Vint Hill, 6872, Watson Court, Vint Hill Farms, Fauquier County, Virginia, 20187, United States",
-      "county": "Fauquier County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "695 Russell Branch Parkway|Loudoun Co.": {
       "lat": 39.0585965,
       "lon": -77.4698969,
@@ -223,97 +85,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "8011 Villa Park Drive|Henrico Co.": {
-      "lat": 37.628403250036,
-      "lon": -77.463741908393,
-      "matched_address": "8011 VILLA PARK DR, HENRICO, VA, 23228",
-      "county": "Henrico",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "19590 Belmont Ridge Road|Loudoun Co.": {
-      "lat": 39.0701141,
-      "lon": -77.5070555,
-      "matched_address": "19590, Belmont Ridge Road, Belmont, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "14555 North Dallas Parkway|Loudoun Co.": null,
-    "43290 Old Ox Road|Loudoun Co.": {
-      "lat": 38.9559151,
-      "lon": -77.5067395,
-      "matched_address": "43290, Old Ox Road, Brambleton, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22190 Loudoun County Parkway|Loudoun Co.": {
-      "lat": 38.9535945,
-      "lon": -77.5155505,
-      "matched_address": "Loudoun County Parkway, Arcola, Loudoun County, Virginia, 20161, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21551 Beaumeade Circle|Loudoun Co.": {
-      "lat": 39.0210198,
-      "lon": -77.4515166,
-      "matched_address": "Equinix Ashburn DC10, 21551, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "43715 Efficiency Dr|Loudoun Co.": {
-      "lat": 38.9607976,
-      "lon": -77.4929529,
-      "matched_address": "Efficiency Drive, Carters, Brambleton, Loudoun County, Virginia, 20161, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "8209 Valley Pike|Frederick Co.": {
-      "lat": 39.0202984,
-      "lon": -78.2907443,
-      "matched_address": "8209, Valley Pike, Meadow Mills, Frederick County, Virginia, 22645, United States",
-      "county": "Frederick County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45831 Maries Road|Loudoun Co.": {
-      "lat": 39.0224564,
-      "lon": -77.4130115,
-      "matched_address": "45831, Maries Road, Dulles Town Center, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "499 Grove Street|Fairfax Co.": {
-      "lat": 38.964302,
-      "lon": -77.3764039,
-      "matched_address": "499, Grove Street, Herndon, Fairfax County, Virginia, 20170, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "9709 Dean Drive|Manassas City": {
       "lat": 38.749164844044,
       "lon": -77.490949462731,
@@ -324,63 +96,13 @@
       "rejected": false,
       "county_verified": true
     },
-    "22080 Pacific Boulevard|Loudoun Co.": {
-      "lat": 39.0051467,
-      "lon": -77.4435738,
-      "matched_address": "22080, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45781 Maries Road|Loudoun Co.": {
-      "lat": 39.0237018,
-      "lon": -77.4190946,
-      "matched_address": "Amazon Web Services IAD117, 45781, Maries Road, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "400 S Akard Street|Loudoun Co.": null,
-    "21745 Beaumeade Cir|Loudoun Co.": {
-      "lat": 39.017956,
-      "lon": -77.4595222,
-      "matched_address": "Cologix ASH1, 21745, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "625 West National Drive|Loudoun Co.": null,
     "43920 Lone Cedar Lane|Loudoun Co.": {
       "lat": 38.9206128,
       "lon": -77.479991,
       "matched_address": "Lone Cedar Lane, Eastgate, South Riding, Loudoun County, Virginia, 24965, United States",
       "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22271 Broderick Drive|Loudoun Co.": {
-      "lat": 38.9996134,
-      "lon": -77.4501392,
-      "matched_address": "QTS Ashburn 1, 22271, Broderick Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "101 Herbert Drive|Mecklenburg Co.": {
-      "lat": 36.6723953,
-      "lon": -78.3698755,
-      "matched_address": "Herbert Drive, Mecklenburg County, Virginia, United States",
-      "county": "Mecklenburg County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
@@ -399,28 +121,6 @@
     },
     "13820 Sunrise Valley Drive|Stafford Co.": null,
     "2017 Digital Loudoun Pkwy|Loudoun Co.": null,
-    "13200 Woodland Park Road|Fairfax Co.": {
-      "lat": 38.9548242,
-      "lon": -77.4043755,
-      "matched_address": "Amazon Web Services, 13200, Woodland Park Road, Herndon, Fairfax County, Virginia, 20171, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13200 Woodland Park Road|Loudoun Co.": null,
-    "19515 Compass Creek Parkway|Loudoun Co.": null,
-    "9101 Freedom Center Boulevard|Manassas City": {
-      "lat": 38.758810729784,
-      "lon": -77.517709865309,
-      "matched_address": "9101 FREEDOM CENTER BLVD, MANASSAS, VA, 20110",
-      "county": "Prince William",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
     "1212 New York Avenue|Loudoun Co.": null,
     "43736 Clubber Lane|Loudoun Co.": {
       "lat": 38.9165646,
@@ -432,50 +132,8 @@
       "rejected": false,
       "county_verified": true
     },
-    "21741 Red Rum Drive|Loudoun Co.": {
-      "lat": 39.015423,
-      "lon": -77.478271,
-      "matched_address": "Sabey Data Centers Ashburn - Building C, 21741, Red Rum Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13200 Woodland Park Rd|Loudoun Co.": null,
     "2850 N Harwood St|Loudoun Co.": null,
-    "13200 Woodland Park Rd|Prince William Co.": null,
     "2820 Northwestern Pkwy|Loudoun Co.": null,
-    "13200 Woodland Park Rd|Fairfax Co.": {
-      "lat": 38.9548242,
-      "lon": -77.4043755,
-      "matched_address": "Amazon Web Services, 13200, Woodland Park Road, Herndon, Fairfax County, Virginia, 20171, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21571 Beaumeade Circle|Loudoun Co.": {
-      "lat": 39.0221022,
-      "lon": -77.453663,
-      "matched_address": "Centersquare IAD4-B, 21571, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22588 Relocation Drive|Loudoun Co.": {
-      "lat": 38.9933814,
-      "lon": -77.4356007,
-      "matched_address": "22588, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "45630 W. Severn Way|Loudoun Co.": {
       "lat": 39.0208385,
       "lon": -77.4346257,
@@ -487,27 +145,7 @@
       "county_verified": true
     },
     "19540 Compass Creek Parkway|Prince William Co.": null,
-    "44874 Moran Road|Loudoun Co.": {
-      "lat": 38.9960861,
-      "lon": -77.4455539,
-      "matched_address": "Moran Road, Sterling, Loudoun County, Virginia, 20103, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "13200 Woodland Park Road|Fauquier Co.": null,
-    "22295 Lockridge Rd|Loudoun Co.": {
-      "lat": 38.9922095,
-      "lon": -77.4566719,
-      "matched_address": "22295, Lockridge Road, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "6000 Technology Blvd|Henrico Co.": {
       "lat": 37.4888273,
       "lon": -77.24749,
@@ -528,52 +166,8 @@
       "rejected": false,
       "county_verified": true
     },
-    "13200 Woodland Park Rd|Manassas City": null,
     "2801 Centerville Road|Prince William Co.": null,
-    "24400 Howling Rooster Ln|Loudoun Co.": null,
-    "13650 EDS Drive|Fairfax Co.": {
-      "lat": 38.9240709,
-      "lon": -77.4259731,
-      "matched_address": "13650, EDS Drive, Herndon, Fairfax County, Virginia, 20171, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21800 Beaumeade Circle|Loudoun Co.": {
-      "lat": 39.0136777,
-      "lon": -77.4517194,
-      "matched_address": "H5 Data Centers Ashburn, 21800, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "3200 Woodland Park Rd|Prince William Co.": null,
-    "13200 Woodland Park Rd|Culpeper Co.": null,
-    "9590 Hornbaker Road|Prince William Co.": {
-      "lat": 38.7458055,
-      "lon": -77.5377246,
-      "matched_address": "9590, Hornbaker Road, Manassas, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "608 Ridge Road|Mecklenburg Co.": {
-      "lat": 36.6929304,
-      "lon": -78.3695817,
-      "matched_address": "608, Ridge Road, The Ridge, Mecklenburg County, Virginia, 23917, United States",
-      "county": "Mecklenburg County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "960 Prison Road|Mecklenburg Co.": null,
     "15395 John Marshall Hwy|Prince William Co.": {
       "lat": 38.8148784,
       "lon": -77.64888,
@@ -586,47 +180,7 @@
     },
     "10880 Airman Avenue|Fauquier Co.": null,
     "2800 Summit Avenue|Loudoun Co.": null,
-    "12270 Lucky Hill Rd|Fauquier Co.": {
-      "lat": 38.5366869,
-      "lon": -77.7827943,
-      "matched_address": "12270, Lucky Hill Road, Bealeton, Fauquier County, Virginia, 22734, United States",
-      "county": "Fauquier County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "42948 Fadeley Lane|Loudoun Co.": null,
-    "22125 Broderick Drive|Loudoun Co.": {
-      "lat": 39.0056772,
-      "lon": -77.4495236,
-      "matched_address": "Digital Realty IAD42 (Building R), 22125, Broderick Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45905 Maries Road|Loudoun Co.": {
-      "lat": 39.0211761,
-      "lon": -77.4132118,
-      "matched_address": "CyrusOne NVA8, 45905, Maries Road, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21350 Pacific Boulevard|Loudoun Co.": {
-      "lat": 39.0262997,
-      "lon": -77.4340415,
-      "matched_address": "CyrusOne NVA7, 21350, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "9750 Hornbaker Rd|Prince William Co.": {
       "lat": 38.7429683,
       "lon": -77.5333914,
@@ -638,36 +192,6 @@
       "county_verified": true
     },
     "2800 Summit Ave|Loudoun Co.": null,
-    "14901 Conference Center Drive|Fairfax Co.": {
-      "lat": 38.8748439,
-      "lon": -77.4605765,
-      "matched_address": "14901, Conference Center Drive, Chantilly, Fairfax County, Virginia, 20151, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "12369 Sunrise Valley Drive|Fairfax Co.": {
-      "lat": 38.9483459,
-      "lon": -77.372492,
-      "matched_address": "CoreSite Reston VA3, 12369, Sunrise Valley Drive, Reston, Fairfax County, Virginia, 20191, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "9651 Hornbaker Road|Prince William Co.": {
-      "lat": 38.7472831,
-      "lon": -77.5318264,
-      "matched_address": "COPT Data Center, 9651, Hornbaker Road, Manassas, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "10880 Airman Avenue|Prince William Co.": {
       "lat": 38.7196091,
       "lon": -77.4972382,
@@ -678,86 +202,6 @@
       "rejected": false,
       "county_verified": true
     },
-    "10261 Tanner Way|Prince William Co.": {
-      "lat": 38.7383856,
-      "lon": -77.5029031,
-      "matched_address": "Tanner Way, Bristow, Prince William County, Virginia, 20110, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "6050 Technology Creek Drive|Henrico Co.": {
-      "lat": 37.4944185,
-      "lon": -77.237498,
-      "matched_address": "6050, Technology Creek Drive, Henrico County, Virginia, 23150, United States",
-      "county": "Henrico County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "1764 Old Meadow Lane|Fairfax Co.": {
-      "lat": 38.9199052,
-      "lon": -77.213585,
-      "matched_address": "DataBank McLean IAD2, 1764, Old Meadow Lane, McLean, Fairfax County, Virginia, 22102, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "18155 Technology Drive|Culpeper Co.": {
-      "lat": 38.4551359,
-      "lon": -77.9780171,
-      "matched_address": "Root Zone Key Management Facility East, 18155, Technology Drive, Germanna Community College, Culpeper, Culpeper County, Virginia, 22701, United States",
-      "county": "Culpeper County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21744 Sir Timothy Drive|Loudoun Co.": {
-      "lat": 39.0126818,
-      "lon": -77.4654004,
-      "matched_address": "Digital Realty ACC10, 21744, Sir Timothy Drive, Ashburn, Loudoun County, Virginia, 20174, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7990 Science Applications Court|Fairfax Co.": {
-      "lat": 38.9079697,
-      "lon": -77.2213209,
-      "matched_address": "7990, Science Applications Court, Tysons, Fairfax County, Virginia, 22182, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21111 Ridgetop Circle|Loudoun Co.": {
-      "lat": 39.0259287,
-      "lon": -77.4145789,
-      "matched_address": "CyrusOne NVA1, NVA2 & NVA3, 21111, Ridgetop Circle, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "5978 Windswept Blvd|Wise Co.": {
-      "lat": 36.976248100142,
-      "lon": -82.526258670654,
-      "matched_address": "5978 WINDSWEPT BLVD, WISE, VA, 24293",
-      "county": "Wise",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
     "44664 Guilford Drive|Loudoun Co.": {
       "lat": 39.0227549,
       "lon": -77.4548256,
@@ -765,16 +209,6 @@
       "county": "Loudoun County",
       "state": "Virginia",
       "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "800 Independence Boulevard|Virginia Beach City": {
-      "lat": 36.867391078249,
-      "lon": -76.132545951719,
-      "matched_address": "800 INDEPENDENCE BLVD, VIRGINIA BEACH, VA, 23455",
-      "county": "Virginia Beach",
-      "state": "VA",
-      "provider": "us-census-geocoder",
       "rejected": false,
       "county_verified": true
     },
@@ -789,111 +223,11 @@
       "rejected": false,
       "county_verified": true
     },
-    "45745 Nokes Boulevard|Loudoun Co.": {
-      "lat": 39.0260791,
-      "lon": -77.4187964,
-      "matched_address": "45745, Nokes Boulevard, Dulles Town Center, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7600 Doane Drive|Prince William Co.": {
-      "lat": 38.7922315,
-      "lon": -77.5484695,
-      "matched_address": "Amazon IAD59, 7600, Doane Drive, Manassas, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "11101 University Boulevard|Prince William Co.": {
-      "lat": 38.754928,
-      "lon": -77.523916,
-      "matched_address": "11101, University Boulevard, Innovation, Prince William County, Virginia, 20110, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22745 Relocation Dr|Loudoun Co.": {
-      "lat": 38.9878045,
-      "lon": -77.4400127,
-      "matched_address": "22745, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "1175 North Main Street|Harrisonburg City": {
-      "lat": 38.460743495687,
-      "lon": -78.854970679385,
-      "matched_address": "1175 N MAIN ST, HARRISONBURG, VA, 22802",
-      "county": "Harrisonburg",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "8801 Park Central Drive|Henrico Co.": {
-      "lat": 37.6458585,
-      "lon": -77.4392082,
-      "matched_address": "8801, Park Central Drive, Chamberlayne, Henrico County, Virginia, 23227, United States",
-      "county": "Henrico County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "14725 Lee Road|Fairfax Co.": {
-      "lat": 38.878037237281,
-      "lon": -77.452563779564,
-      "matched_address": "14725 LEE RD, FAIRFAX, VA, 20151",
-      "county": "Fairfax",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
     "12100 Sunrise Valley Dr|Fairfax Co.": {
       "lat": 38.9506069,
       "lon": -77.3645346,
       "matched_address": "CoreSite Reston Campus VA1, 12100, Sunrise Valley Drive, Reston, Fairfax County, Virginia, 20191, United States",
       "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "8250 Jones Branch Drive|Fairfax Co.": {
-      "lat": 38.9327337,
-      "lon": -77.2293636,
-      "matched_address": "Freddie Mac - HQ 2, 8250, Jones Branch Drive, Tysons, Fairfax County, Virginia, 22102, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "44664 Guilford Dr|Loudoun Co.": {
-      "lat": 39.0227549,
-      "lon": -77.4548256,
-      "matched_address": "NTT Ashburn VA1 Data Center, 44664, Guilford Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45005 Russell Branch Parkway|Loudoun Co.": {
-      "lat": 39.0488058,
-      "lon": -77.4454214,
-      "matched_address": "VISA Data Center, 45005, Russell Branch Parkway, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
@@ -909,47 +243,6 @@
       "rejected": false,
       "county_verified": true
     },
-    "2980 Fairview Park Drive|Fairfax Co.": {
-      "lat": 38.8671148,
-      "lon": -77.2150414,
-      "matched_address": "Northrop Grumman Corporation Global Headquarters, 2980, Fairview Park Drive, Falls Church, Fairfax County, Virginia, 22042, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "43831 Devin Shafron Drive|Loudoun Co.": {
-      "lat": 39.0027517,
-      "lon": -77.4854487,
-      "matched_address": "Amazon Web Services Building C, 43831, Devin Shafron Drive, Loudoun Station, Moorefield, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "12900 Federal Systems Park Drive|Fairfax Co.": {
-      "lat": 38.861104146468,
-      "lon": -77.390564337293,
-      "matched_address": "12900 FEDERAL SYSTEMS PARK DR, FAIRFAX, VA, 22033",
-      "county": "Fairfax",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22995 Wilder Court|Loudoun Co.": {
-      "lat": 38.9809622,
-      "lon": -77.444793,
-      "matched_address": "Centersquare IAD3, 22995, Wilder Court, Dulles, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "460 Spring Park Place|Fairfax Co.": null,
     "1707 H. St|Fairfax Co.": {
       "lat": 38.7782648,
       "lon": -77.0602744,
@@ -960,58 +253,8 @@
       "rejected": false,
       "county_verified": true
     },
-    "7777 Infantry Ridge Road|Prince William Co.": {
-      "lat": 38.8039574,
-      "lon": -77.5109671,
-      "matched_address": "7777, Infantry Ridge Road, Sudley, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7950 Jones Branch Drive|Fairfax Co.": {
-      "lat": 38.9325446,
-      "lon": -77.2178005,
-      "matched_address": "7950, Jones Branch Drive, Tysons, Fairfax County, Virginia, 22102, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "1212 New York Avenue|Prince William Co.": null,
-    "22340 Dresden Street|Loudoun Co.": {
-      "lat": 38.9977801,
-      "lon": -77.4444919,
-      "matched_address": "22340, Dresden Street, Sterling, Loudoun County, Virginia, 20103, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "6711 Columbia Gateway Drive|Russell Co.": null,
-    "1807 Michael Faraday Court|Fairfax Co.": {
-      "lat": 38.9488166,
-      "lon": -77.3294053,
-      "matched_address": "IAD1, 1807, Michael Faraday Court, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7400 Infantry Ridge Road|Prince William Co.": {
-      "lat": 38.803673,
-      "lon": -77.514328,
-      "matched_address": "7400, Infantry Ridge Road, Sudley, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "8200 Jones Branch Drive|Fairfax Co.": {
       "lat": 38.9328055,
       "lon": -77.2270558,
@@ -1022,370 +265,10 @@
       "rejected": false,
       "county_verified": true
     },
-    "11720 Plaza America Drive|Fairfax Co.": {
-      "lat": 38.9526125,
-      "lon": -77.3506782,
-      "matched_address": "11720, Plaza America Drive, Plaza America, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22810 International Drive|Loudoun Co.": {
-      "lat": 38.9843956,
-      "lon": -77.4238278,
-      "matched_address": "Centersquare IAD2-A, 22810, International Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45901 Nokes Boulevard|Fairfax Co.": null,
-    "820 Sunrise Valley Drive|Fairfax Co.": {
-      "lat": 38.9422927,
-      "lon": -77.3340297,
-      "matched_address": "Sunrise Valley Drive, Reston Station, Reston, Fairfax County, Virginia, 20191, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "820 Sunrise Valley Drive|Prince William Co.": null,
-    "12174 Washington Highway|Hanover Co.": {
-      "lat": 37.736924,
-      "lon": -77.4699678,
-      "matched_address": "12174, Washington Highway, Ashland, Hanover County, Virginia, 23005, United States",
-      "county": "Hanover County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "820 Sunrise Valley Drive|Loudoun Co.": null,
-    "23845 Erins Run Drive|Loudoun Co.": null,
-    "2850 Towerview Road|Fairfax Co.": {
-      "lat": 38.9320995,
-      "lon": -77.4233621,
-      "matched_address": "2850, Towerview Road, Floris, Fairfax County, Virginia, 20171, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "255 Centreport Parkway|Stafford Co.": {
-      "lat": 38.3916071,
-      "lon": -77.4678343,
-      "matched_address": "255, Centreport Parkway, Stafford, Stafford County, Virginia, 22406, United States",
-      "county": "Stafford County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "3250 East Williamsburg Road|Henrico Co.": {
-      "lat": 37.518575588826,
-      "lon": -77.369784552335,
-      "matched_address": "3250 WILLIAMSBURG RD, HENRICO, VA, 23231",
-      "county": "Henrico",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "1401 Meadowville Rd|Chesterfield Co.": {
-      "lat": 37.3677128,
-      "lon": -77.3283962,
-      "matched_address": "1401, Meadowville Road, Meadowville, Chesterfield County, Virginia, 23836, United States",
-      "county": "Chesterfield County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7251 Grove Hill Road|Prince William Co.": null,
-    "10680 University Blvd|Prince William Co.": {
-      "lat": 38.75224,
-      "lon": -77.5172849,
-      "matched_address": "10680, University Boulevard, Innovation, Prince William County, Virginia, 20110, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "8870 Hornbaker Rd|Fairfax Co.": null,
-    "230 Haley Dr|Louisa Co.": {
-      "lat": 38.0501232,
-      "lon": -77.8132558,
-      "matched_address": "230, Haley Drive, North Anna Nuclear Generating Station, Centreville, Louisa County, Virginia, 23117, United States",
-      "county": "Louisa County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45695 Russell Branch Parkway|Loudoun Co.": {
-      "lat": 39.0585965,
-      "lon": -77.4698969,
-      "matched_address": "Russell Branch Parkway, Ashburn, Loudoun County, Virginia, 20417, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "42254 Thunderball Drive|Loudoun Co.": {
-      "lat": 39.0434426,
-      "lon": -77.5408631,
-      "matched_address": "42254 THUNDERBALL DR, 42254, Thunderball Drive, True North Data Centers, Leesburg, Loudoun County, Virginia, 20175, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "9501 Technology Drive|Manassas City": {
-      "lat": 38.749005289951,
-      "lon": -77.495033722628,
-      "matched_address": "9501 TECHNOLOGY DR, MANASSAS, VA, 20110",
-      "county": "Manassas",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "25410 Meadowdale Drive|Loudoun Co.": {
-      "lat": 38.9233373,
-      "lon": -77.4835143,
-      "matched_address": "Meadowdale Drive, Eastgate, South Riding, Loudoun County, Virginia, 20152, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "20491 Goose Landing Lane|Loudoun Co.": null,
-    "22425 Sous Vide Lane|Loudoun Co.": null,
-    "123 Old Potomac Church Road|Stafford Co.": {
-      "lat": 38.409620874854,
-      "lon": -77.407262462528,
-      "matched_address": "123 OLD POTOMAC CHURCH RD, STAFFORD, VA, 22554",
-      "county": "Stafford",
-      "state": "VA",
-      "provider": "us-census-geocoder",
-      "rejected": false,
-      "county_verified": true
-    },
-    "43791 Devin Shafron Dr|Loudoun Co.": {
-      "lat": 39.0033364,
-      "lon": -77.4870935,
-      "matched_address": "Digital Realty Northern Virginia IAD14, 43791, Devin Shafron Drive, Loudoun Station, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "44621 Waxpool Road|Loudoun Co.": {
-      "lat": 39.0117646,
-      "lon": -77.46246,
-      "matched_address": "CloudHQ LC2, 44621, Waxpool Road, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "45950 Pathfinder Way|Loudoun Co.": null,
-    "21529 Beaumeade Circle|Loudoun Co.": {
-      "lat": 39.0195705,
-      "lon": -77.4504864,
-      "matched_address": "CyrusOne NVA14, 21529, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22321 Pacific Blvd|Loudoun Co.": {
-      "lat": 38.999301,
-      "lon": -77.441838,
-      "matched_address": "Vantage VA15, 22321, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21715 Filigree Court|Loudoun Co.": {
-      "lat": 39.0163313,
-      "lon": -77.4587623,
-      "matched_address": "Equinix Ashburn DC2, 21715, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
     "21710 Charles View Drive|Loudoun Co.": {
       "lat": 39.0160859,
       "lon": -77.4383819,
       "matched_address": "Amazon IAD129, 21710, Charles View Drive, Sterling, Loudoun County, Virginia, 29166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21310 Beaumeade Circle|Loudoun Co.": {
-      "lat": 39.015882,
-      "lon": -77.4531406,
-      "matched_address": "Amazon IAD-179, 21310, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "44655 Quality Tech Lane|Loudoun Co.": {
-      "lat": 38.9950908,
-      "lon": -77.4569032,
-      "matched_address": "QTS Ashburn Lockridge, 44655, Quality Tech Lane, QTS Ashburn Lockridge, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13050 Hansen Farm Road|Prince William Co.": {
-      "lat": 38.7868852,
-      "lon": -77.5633299,
-      "matched_address": "Hansen Farm Road, Linton Hall, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7471 Bear Wallow Road|Fauquier Co.": {
-      "lat": 38.7326573,
-      "lon": -77.8310527,
-      "matched_address": "7471, Bear Wallow Road, Warrenton, Fauquier County, Virginia, 20186, United States",
-      "county": "Fauquier County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "6000 Technology Boulevard|Henrico Co.": {
-      "lat": 37.4888273,
-      "lon": -77.24749,
-      "matched_address": "6000, Technology Boulevard, Sandston, Henrico County, Virginia, 23150, United States",
-      "county": "Henrico County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21721 Filigree Court|Loudoun Co.": {
-      "lat": 39.0149639,
-      "lon": -77.4587896,
-      "matched_address": "Equinix Ashburn DC11, 21721, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13001 Rollins Ford Road|Prince William Co.": {
-      "lat": 38.7819117,
-      "lon": -77.580388,
-      "matched_address": "Rollins Ford Road, Linton Hall, Prince William County, Virginia, 20156, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "11316 Balls Ford Road|Prince William Co.": {
-      "lat": 38.7963796,
-      "lon": -77.5327272,
-      "matched_address": "11316, Balls Ford Road, Bull Run, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "11600 Hayden Road|Prince William Co.": {
-      "lat": 38.7708862,
-      "lon": -77.5402877,
-      "matched_address": "11600, Hayden Road, Arcadia Run Apartments, Linton Hall, Prince William County, Virginia, 20109, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "20420 Germanna Hwy|Culpeper Co.": {
-      "lat": 38.443348,
-      "lon": -77.8784268,
-      "matched_address": "20420, Germanna Highway, Culpeper County, Virginia, 22741, United States",
-      "county": "Culpeper County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "7961 Loisdale Rd|Fairfax Co.": {
-      "lat": 38.7421469,
-      "lon": -77.1875863,
-      "matched_address": "7961, Loisdale Road, Newington, Fairfax County, Virginia, 22150, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22318 Glenn Drive|Loudoun Co.": {
-      "lat": 38.9971326,
-      "lon": -77.428996,
-      "matched_address": "22318, Glenn Drive, Sterling, Loudoun County, Virginia, 20164, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "13200 Woodland Park Road|Prince William Co.": null,
-    "22715 Relocation Drive|Loudoun Co.": {
-      "lat": 38.989021,
-      "lon": -77.4394016,
-      "matched_address": "22715, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "21890 UUNET Drive|Loudoun Co.": {
-      "lat": 39.0133382,
-      "lon": -77.4710974,
-      "matched_address": "Aligned Ashburn IAD-01, 21890, Uunet Drive, Verizon Business, Ashburn, Loudoun County, Virginia, 20147, United States",
-      "county": "Loudoun County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "22271 Shellhorn Road|Loudoun Co.": {
-      "lat": 39.0031413,
-      "lon": -77.4805329,
-      "matched_address": "22271, Shellhorn Road, Loudoun Station, Moorefield, Loudoun County, Virginia, 20147, United States",
       "county": "Loudoun County",
       "state": "Virginia",
       "provider": "osm-nominatim",
@@ -1402,109 +285,147 @@
       "rejected": false,
       "county_verified": true
     },
-    "44610 Guilford Drive|Loudoun Co.": {
-      "lat": 39.0250051,
-      "lon": -77.4576423,
-      "matched_address": "NTT Ashburn VA2 Data Center, 44610, Guilford Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
+    "14625 Germana Hwy|Culpeper Co.|VA": {
+      "lat": 38.449079141406,
+      "lon": -77.981991875318,
+      "matched_address": "14625 GERMANNA HWY, CULPEPER, VA, 22701",
+      "county": "Culpeper",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13775 McLearen Road|Fairfax Co.|VA": {
+      "lat": 38.9271828,
+      "lon": -77.4241709,
+      "matched_address": "Menlo Digital MD-DC1, 13775, McLearen Road, Sully Square, Fairfax County, Virginia, 20171, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "20935 Loudoun County Parkway|Loudoun Co.|VA": {
+      "lat": 39.036294,
+      "lon": -77.4497948,
+      "matched_address": "Amazon IAD115, 20935, Loudoun County Parkway, Ashburn, Loudoun County, Virginia, 20147, United States",
       "county": "Loudoun County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "524 Van Buren Street|Fairfax Co.": {
-      "lat": 38.9650059,
-      "lon": -77.3828394,
-      "matched_address": "524, Van Buren Street, Herndon, Fairfax County, Virginia, 20170, United States",
+    "820 Sunrise Valley Drive|Fairfax Co.|VA": {
+      "lat": 38.9422927,
+      "lon": -77.3340297,
+      "matched_address": "Sunrise Valley Drive, Reston Station, Reston, Fairfax County, Virginia, 20191, United States",
       "county": "Fairfax County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "7681 Boston Blvd|Fairfax Co.": {
-      "lat": 38.7384549,
-      "lon": -77.2082626,
-      "matched_address": "7681, Boston Boulevard, Rollingwood, Saratoga, Newington, Fairfax County, Virginia, 22153, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "12100 Sunrise Valley Drive|Fairfax Co.": {
-      "lat": 38.9506069,
-      "lon": -77.3645346,
-      "matched_address": "CoreSite Reston Campus VA1, 12100, Sunrise Valley Drive, Reston, Fairfax County, Virginia, 20191, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "44983 Knoll Square Drive|Loudoun Co.": null,
-    "1780 Business Center Drive|Fairfax Co.": {
-      "lat": 38.9484219,
-      "lon": -77.3273255,
-      "matched_address": "VA3, 1780, Business Center Drive, Pinecrest, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
-      "county": "Fairfax County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "8217 Linton Hall Road|Prince William Co.": {
-      "lat": 38.7780751,
-      "lon": -77.5949551,
-      "matched_address": "VA 4, 8217, Linton Hall Road, Bristow, Prince William County, Virginia, 20136, United States",
+    "13760 University Blvd|Prince William Co.|VA": {
+      "lat": 38.8023738,
+      "lon": -77.5823032,
+      "matched_address": "Microsoft Data Center 1, 13760, University Boulevard, Gainesville, Prince William County, Virginia, 20155, United States",
       "county": "Prince William County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "544 Herndon Parkway|Fairfax Co.": {
-      "lat": 38.9551317,
-      "lon": -77.3813861,
-      "matched_address": "544, Herndon Parkway, Herndon, Fairfax County, Virginia, 20170, United States",
+    "820 Sunrise Valley Drive|Prince William Co.|VA": null,
+    "12174 Washington Highway|Hanover Co.|VA": {
+      "lat": 37.736924,
+      "lon": -77.4699678,
+      "matched_address": "12174, Washington Highway, Ashland, Hanover County, Virginia, 23005, United States",
+      "county": "Hanover County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22279 Power Player Lane|Loudoun Co.|VA": null,
+    "820 Sunrise Valley Drive|Loudoun Co.|VA": null,
+    "9905 Godwin Dr|Prince William Co.|VA": {
+      "lat": 38.7468164,
+      "lon": -77.5129723,
+      "matched_address": "Godwin Drive, Innovation, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "23845 Erins Run Drive|Loudoun Co.|VA": null,
+    "13820 Sunrise Valley Dr|Prince William Co.|VA": null,
+    "3580 FM 471 N, Castroville|Medina County|TX": null,
+    "3901 Massaponax Church Road|Spotsylvania Co.|VA": {
+      "lat": 38.20338,
+      "lon": -77.469523,
+      "matched_address": "3901, Massaponax Church Road, Lee's Hill, Spotsylvania County, Virginia, 22408, United States",
+      "county": "Spotsylvania County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2850 Towerview Road|Fairfax Co.|VA": {
+      "lat": 38.9320995,
+      "lon": -77.4233621,
+      "matched_address": "2850, Towerview Road, Floris, Fairfax County, Virginia, 20171, United States",
       "county": "Fairfax County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "8870 Hornbaker Rd|Prince William Co.": {
-      "lat": 38.7621107,
-      "lon": -77.5348282,
-      "matched_address": "8870, Hornbaker Road, Innovation, Prince William County, Virginia, 20109, United States",
+    "255 Centreport Parkway|Stafford Co.|VA": {
+      "lat": 38.3916071,
+      "lon": -77.4678343,
+      "matched_address": "255, Centreport Parkway, Stafford, Stafford County, Virginia, 22406, United States",
+      "county": "Stafford County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "10400 Harry J Parrish Blvd|Manassas City|VA": null,
+    "3250 East Williamsburg Road|Henrico Co.|VA": {
+      "lat": 37.518575588826,
+      "lon": -77.369784552335,
+      "matched_address": "3250 WILLIAMSBURG RD, HENRICO, VA, 23231",
+      "county": "Henrico",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "11680 Hayden Road|Prince William Co.|VA": {
+      "lat": 38.7728096,
+      "lon": -77.5429652,
+      "matched_address": "11680, Hayden Road, Arcadia Run Apartments, Linton Hall, Prince William County, Virginia, 20109, United States",
       "county": "Prince William County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "21645 Charles View Drive|Loudoun Co.": {
-      "lat": 39.016927,
-      "lon": -77.4393889,
-      "matched_address": "Amazon IAD119, 21645, Charles View Drive, Sterling, Loudoun County, Virginia, 29166, United States",
-      "county": "Loudoun County",
+    "1401 Meadowville Rd|Chesterfield Co.|VA": {
+      "lat": 37.3677128,
+      "lon": -77.3283962,
+      "matched_address": "1401, Meadowville Road, Meadowville, Chesterfield County, Virginia, 23836, United States",
+      "county": "Chesterfield County",
       "state": "Virginia",
       "provider": "osm-nominatim",
       "rejected": false,
       "county_verified": true
     },
-    "10100 Harry J. Parrish Boulevard|Prince William Co.": {
-      "lat": 38.724167,
-      "lon": -77.501907,
-      "matched_address": "10100, Harry J Parrish Boulevard, Great Oak, Bristow, Prince William County, Virginia, 20110, United States",
-      "county": "Prince William County",
-      "state": "Virginia",
-      "provider": "osm-nominatim",
-      "rejected": false,
-      "county_verified": true
-    },
-    "3580 FM 471 N, Castroville|Medina County": null,
-    "2800 Summit Ave, Plano|Collin County": {
+    "13820 Sunrise Valley Dr|Loudoun Co.|VA": null,
+    "7251 Grove Hill Road|Prince William Co.|VA": null,
+    "13820 Sunrise Valley Drive|Prince William Co.|VA": null,
+    "2800 Summit Ave, Plano|Collin County|TX": {
       "lat": 33.009776426561,
       "lon": -96.678415144762,
       "matched_address": "2800 SUMMIT AVE, PLANO, TX, 75074",
@@ -1514,7 +435,37 @@
       "rejected": false,
       "county_verified": true
     },
-    "19025 N Heatherwilde Blvd Bldg 2, Pflugerville|Travis County": {
+    "10680 University Blvd|Prince William Co.|VA": {
+      "lat": 38.75224,
+      "lon": -77.5172849,
+      "matched_address": "10680, University Boulevard, Innovation, Prince William County, Virginia, 20110, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "4195 Turner Ct|Spotsylvania Co.|VA": {
+      "lat": 38.220926,
+      "lon": -77.481659,
+      "matched_address": "Turner Court, Lee's Hill, Spotsylvania County, Virginia, 22408, United States",
+      "county": "Spotsylvania County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21780 Filigree Court|Loudoun Co.|VA": {
+      "lat": 39.0136208,
+      "lon": -77.4574257,
+      "matched_address": "21780, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "19025 N Heatherwilde Blvd Bldg 2, Pflugerville|Travis County|TX": {
       "lat": 30.481340695988,
       "lon": -97.615111982765,
       "matched_address": "19025 HEATHERWILDE BLVD, PFLUGERVILLE, TX, 78660",
@@ -1524,7 +475,18 @@
       "rejected": false,
       "county_verified": true
     },
-    "1950 N Stemmons Fwy Ste 1034, Dallas|Dallas County": {
+    "44595 Low Latency Lane|Loudoun Co.|VA": {
+      "lat": 38.9967978,
+      "lon": -77.460111,
+      "matched_address": "Low Latency Lane, Loudoun County, Virginia, 20101, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13820 Sunrise Valley Drive|Loudoun Co.|VA": null,
+    "1950 N Stemmons Fwy Ste 1034, Dallas|Dallas County|TX": {
       "lat": 32.801543581919,
       "lon": -96.823828523262,
       "matched_address": "1950 N STEMMONS FWY, DALLAS, TX, 75207",
@@ -1534,7 +496,17 @@
       "rejected": false,
       "county_verified": true
     },
-    "1950 N Stemmons Fwy, Suite 1070, Dallas|Dallas County": {
+    "4030 Lafayette Center Drive|Fairfax Co.|VA": {
+      "lat": 38.909497,
+      "lon": -77.4741596,
+      "matched_address": "4030, Lafayette Center Drive, Chantilly, Fairfax County, Virginia, 20151, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1950 N Stemmons Fwy, Suite 1070, Dallas|Dallas County|TX": {
       "lat": 32.801543581919,
       "lon": -96.823828523262,
       "matched_address": "1950 N STEMMONS FWY, DALLAS, TX, 75207",
@@ -1544,8 +516,71 @@
       "rejected": false,
       "county_verified": true
     },
-    "175 Private Road 1604, Abilene|Shackelford County": null,
-    "1717 Lookout Drive, Garland|Dallas County": {
+    "8870 Hornbaker Rd|Fairfax Co.|VA": null,
+    "7900 Telegraph Road|Fairfax Co.|VA": {
+      "lat": 38.7455456,
+      "lon": -77.1574072,
+      "matched_address": "7900, Telegraph Road, Springfield, Fairfax County, Virginia, 22315, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "230 Haley Dr|Louisa Co.|VA": {
+      "lat": 38.0501232,
+      "lon": -77.8132558,
+      "matched_address": "230, Haley Drive, North Anna Nuclear Generating Station, Centreville, Louisa County, Virginia, 23117, United States",
+      "county": "Louisa County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "19275 Compass Creek Parkway|Loudoun Co.|VA": null,
+    "19560 Hyperspace Lane|Loudoun Co.|VA": null,
+    "6872 Watson Court|Fauquier Co.|VA": {
+      "lat": 38.7474139,
+      "lon": -77.6744842,
+      "matched_address": "OVH US East Vint Hill, 6872, Watson Court, Vint Hill Farms, Fauquier County, Virginia, 20187, United States",
+      "county": "Fauquier County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45695 Russell Branch Parkway|Loudoun Co.|VA": {
+      "lat": 39.0585965,
+      "lon": -77.4698969,
+      "matched_address": "Russell Branch Parkway, Ashburn, Loudoun County, Virginia, 20417, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8011 Villa Park Drive|Henrico Co.|VA": {
+      "lat": 37.628403250036,
+      "lon": -77.463741908393,
+      "matched_address": "8011 VILLA PARK DR, HENRICO, VA, 23228",
+      "county": "Henrico",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "175 Private Road 1604, Abilene|Shackelford County|TX": null,
+    "19590 Belmont Ridge Road|Loudoun Co.|VA": {
+      "lat": 39.0701141,
+      "lon": -77.5070555,
+      "matched_address": "19590, Belmont Ridge Road, Belmont, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1717 Lookout Drive, Garland|Dallas County|TX": {
       "lat": 32.982604424163,
       "lon": -96.656474476313,
       "matched_address": "1717 LOOKOUT DR, GARLAND, TX, 75044",
@@ -1555,8 +590,38 @@
       "rejected": false,
       "county_verified": true
     },
-    "3801 Britton Rd, Mansfield|Tarrant County": null,
-    "2008 Lookout Dr, Garland|Dallas County": {
+    "3801 Britton Rd, Mansfield|Tarrant County|TX": null,
+    "42254 Thunderball Drive|Loudoun Co.|VA": {
+      "lat": 39.0434426,
+      "lon": -77.5408631,
+      "matched_address": "42254 THUNDERBALL DR, 42254, Thunderball Drive, True North Data Centers, Leesburg, Loudoun County, Virginia, 20175, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "43290 Old Ox Road|Loudoun Co.|VA": {
+      "lat": 38.9559151,
+      "lon": -77.5067395,
+      "matched_address": "43290, Old Ox Road, Brambleton, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22190 Loudoun County Parkway|Loudoun Co.|VA": {
+      "lat": 38.9535945,
+      "lon": -77.5155505,
+      "matched_address": "Loudoun County Parkway, Arcola, Loudoun County, Virginia, 20161, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2008 Lookout Dr, Garland|Dallas County|TX": {
       "lat": 32.982469265755,
       "lon": -96.659647517443,
       "matched_address": "2008 LOOKOUT DR, GARLAND, TX, 75044",
@@ -1566,8 +631,88 @@
       "rejected": false,
       "county_verified": true
     },
-    "8535 Potranco Rd, San Antonio|Bexar County": null,
-    "5150 Rogers Rd, San Antonio|Bexar County": {
+    "21551 Beaumeade Circle|Loudoun Co.|VA": {
+      "lat": 39.0210198,
+      "lon": -77.4515166,
+      "matched_address": "Equinix Ashburn DC10, 21551, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "43715 Efficiency Dr|Loudoun Co.|VA": {
+      "lat": 38.9607976,
+      "lon": -77.4929529,
+      "matched_address": "Efficiency Drive, Carters, Brambleton, Loudoun County, Virginia, 20161, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8209 Valley Pike|Frederick Co.|VA": {
+      "lat": 39.0202984,
+      "lon": -78.2907443,
+      "matched_address": "8209, Valley Pike, Meadow Mills, Frederick County, Virginia, 22645, United States",
+      "county": "Frederick County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8535 Potranco Rd, San Antonio|Bexar County|TX": null,
+    "45831 Maries Road|Loudoun Co.|VA": {
+      "lat": 39.0224564,
+      "lon": -77.4130115,
+      "matched_address": "45831, Maries Road, Dulles Town Center, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "499 Grove Street|Fairfax Co.|VA": {
+      "lat": 38.964302,
+      "lon": -77.3764039,
+      "matched_address": "499, Grove Street, Herndon, Fairfax County, Virginia, 20170, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "9501 Technology Drive|Manassas City|VA": {
+      "lat": 38.749005289951,
+      "lon": -77.495033722628,
+      "matched_address": "9501 TECHNOLOGY DR, MANASSAS, VA, 20110",
+      "county": "Manassas",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22080 Pacific Boulevard|Loudoun Co.|VA": {
+      "lat": 39.0051467,
+      "lon": -77.4435738,
+      "matched_address": "22080, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45781 Maries Road|Loudoun Co.|VA": {
+      "lat": 39.0237018,
+      "lon": -77.4190946,
+      "matched_address": "Amazon Web Services IAD117, 45781, Maries Road, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "5150 Rogers Rd, San Antonio|Bexar County|TX": {
       "lat": 29.478778261529,
       "lon": -98.695056289901,
       "matched_address": "5150 ROGERS RD, SAN ANTONIO, TX, 78251",
@@ -1577,7 +722,17 @@
       "rejected": false,
       "county_verified": true
     },
-    "5207 Rogers Rd, San Antonio|Bexar County": {
+    "21745 Beaumeade Cir|Loudoun Co.|VA": {
+      "lat": 39.017956,
+      "lon": -77.4595222,
+      "matched_address": "Cologix ASH1, 21745, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "5207 Rogers Rd, San Antonio|Bexar County|TX": {
       "lat": 29.483015602645,
       "lon": -98.700439228449,
       "matched_address": "5207 ROGERS RD, SAN ANTONIO, TX, 78251",
@@ -1587,7 +742,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "3545 Wiseman Blvd, San Antonio|Bexar County": {
+    "3545 Wiseman Blvd, San Antonio|Bexar County|TX": {
       "lat": 29.473179430857,
       "lon": -98.681507780288,
       "matched_address": "3545 WISEMAN BLVD, SAN ANTONIO, TX, 78251",
@@ -1597,8 +752,28 @@
       "rejected": false,
       "county_verified": true
     },
-    "1050 Democracy, San Antonio|Bexar County": null,
-    "13701 Independence Pkwy, Fort Worth|Tarrant County": {
+    "25410 Meadowdale Drive|Loudoun Co.|VA": {
+      "lat": 38.9233373,
+      "lon": -77.4835143,
+      "matched_address": "Meadowdale Drive, Eastgate, South Riding, Loudoun County, Virginia, 20152, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1050 Democracy, San Antonio|Bexar County|TX": null,
+    "22271 Broderick Drive|Loudoun Co.|VA": {
+      "lat": 38.9996134,
+      "lon": -77.4501392,
+      "matched_address": "QTS Ashburn 1, 22271, Broderick Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13701 Independence Pkwy, Fort Worth|Tarrant County|TX": {
       "lat": 32.979147008117,
       "lon": -97.251014876016,
       "matched_address": "13701 INDEPENDENCE PKWY, FORT WORTH, TX, 76177",
@@ -1608,7 +783,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "14720 Omicron Dr, San Antonio|Bexar County": {
+    "14720 Omicron Dr, San Antonio|Bexar County|TX": {
       "lat": 29.416681505461,
       "lon": -98.788564452515,
       "matched_address": "14720 OMICRON DR, SAN ANTONIO, TX, 78245",
@@ -1618,7 +793,50 @@
       "rejected": false,
       "county_verified": true
     },
-    "7400 Potranco Road, San Antonio|Bexar County": {
+    "101 Herbert Drive|Mecklenburg Co.|VA": {
+      "lat": 36.6723953,
+      "lon": -78.3698755,
+      "matched_address": "Herbert Drive, Mecklenburg County, Virginia, United States",
+      "county": "Mecklenburg County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "20491 Goose Landing Lane|Loudoun Co.|VA": null,
+    "22425 Sous Vide Lane|Loudoun Co.|VA": null,
+    "123 Old Potomac Church Road|Stafford Co.|VA": {
+      "lat": 38.409620874854,
+      "lon": -77.407262462528,
+      "matched_address": "123 OLD POTOMAC CHURCH RD, STAFFORD, VA, 22554",
+      "county": "Stafford",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "43791 Devin Shafron Dr|Loudoun Co.|VA": {
+      "lat": 39.0033364,
+      "lon": -77.4870935,
+      "matched_address": "Digital Realty Northern Virginia IAD14, 43791, Devin Shafron Drive, Loudoun Station, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Road|Fairfax Co.|VA": {
+      "lat": 38.9548242,
+      "lon": -77.4043755,
+      "matched_address": "Amazon Web Services, 13200, Woodland Park Road, Herndon, Fairfax County, Virginia, 20171, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Road|Loudoun Co.|VA": null,
+    "7400 Potranco Road, San Antonio|Bexar County|TX": {
       "lat": 29.453247504985,
       "lon": -98.637065262659,
       "matched_address": "7400 POTRANCO RD, SAN ANTONIO, TX, 78251",
@@ -1628,7 +846,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "11625 Old Corpus Christi Hwy, San Antonio|Bexar County": {
+    "11625 Old Corpus Christi Hwy, San Antonio|Bexar County|TX": {
       "lat": 29.30137834902,
       "lon": -98.388123637274,
       "matched_address": "11625 OLD CORPUS CHRISTI HWY, SAN ANTONIO, TX, 78223",
@@ -1638,7 +856,28 @@
       "rejected": false,
       "county_verified": true
     },
-    "14100 Park Vista Blvd, Fort Worth|Tarrant County": {
+    "19515 Compass Creek Parkway|Loudoun Co.|VA": null,
+    "9101 Freedom Center Boulevard|Manassas City|VA": {
+      "lat": 38.758810729784,
+      "lon": -77.517709865309,
+      "matched_address": "9101 FREEDOM CENTER BLVD, MANASSAS, VA, 20110",
+      "county": "Prince William",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44621 Waxpool Road|Loudoun Co.|VA": {
+      "lat": 39.0117646,
+      "lon": -77.46246,
+      "matched_address": "CloudHQ LC2, 44621, Waxpool Road, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "14100 Park Vista Blvd, Fort Worth|Tarrant County|TX": {
       "lat": 32.981369968074,
       "lon": -97.262720866769,
       "matched_address": "14100 PARK VISTA BLVD, FORT WORTH, TX, 76177",
@@ -1648,7 +887,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "8375 Dominion Pkwy, Plano|Collin County": {
+    "8375 Dominion Pkwy, Plano|Collin County|TX": {
       "lat": 33.085201812599,
       "lon": -96.812384868177,
       "matched_address": "8375 DOMINION PKWY, PLANO, TX, 75024",
@@ -1658,7 +897,79 @@
       "rejected": false,
       "county_verified": true
     },
-    "14719 Omicron Dr, San Antonio|Bexar County": {
+    "21741 Red Rum Drive|Loudoun Co.|VA": {
+      "lat": 39.015423,
+      "lon": -77.478271,
+      "matched_address": "Sabey Data Centers Ashburn - Building C, 21741, Red Rum Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45950 Pathfinder Way|Loudoun Co.|VA": null,
+    "21529 Beaumeade Circle|Loudoun Co.|VA": {
+      "lat": 39.0195705,
+      "lon": -77.4504864,
+      "matched_address": "CyrusOne NVA14, 21529, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Rd|Prince William Co.|VA": null,
+    "22321 Pacific Blvd|Loudoun Co.|VA": {
+      "lat": 38.999301,
+      "lon": -77.441838,
+      "matched_address": "Vantage VA15, 22321, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Rd|Fairfax Co.|VA": {
+      "lat": 38.9548242,
+      "lon": -77.4043755,
+      "matched_address": "Amazon Web Services, 13200, Woodland Park Road, Herndon, Fairfax County, Virginia, 20171, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21715 Filigree Court|Loudoun Co.|VA": {
+      "lat": 39.0163313,
+      "lon": -77.4587623,
+      "matched_address": "Equinix Ashburn DC2, 21715, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21571 Beaumeade Circle|Loudoun Co.|VA": {
+      "lat": 39.0221022,
+      "lon": -77.453663,
+      "matched_address": "Centersquare IAD4-B, 21571, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22588 Relocation Drive|Loudoun Co.|VA": {
+      "lat": 38.9933814,
+      "lon": -77.4356007,
+      "matched_address": "22588, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "14719 Omicron Dr, San Antonio|Bexar County|TX": {
       "lat": 29.417060198092,
       "lon": -98.78874625249,
       "matched_address": "14719 OMICRON DR, SAN ANTONIO, TX, 78245",
@@ -1668,7 +979,57 @@
       "rejected": false,
       "county_verified": true
     },
-    "2300 Chelsea Blvd, Allen|Collin County": {
+    "21645 Charles View Drive|Loudoun Co.|VA": {
+      "lat": 39.016927,
+      "lon": -77.4393889,
+      "matched_address": "Amazon IAD119, 21645, Charles View Drive, Sterling, Loudoun County, Virginia, 29166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21310 Beaumeade Circle|Loudoun Co.|VA": {
+      "lat": 39.015882,
+      "lon": -77.4531406,
+      "matched_address": "Amazon IAD-179, 21310, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44655 Quality Tech Lane|Loudoun Co.|VA": {
+      "lat": 38.9950908,
+      "lon": -77.4569032,
+      "matched_address": "QTS Ashburn Lockridge, 44655, Quality Tech Lane, QTS Ashburn Lockridge, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13050 Hansen Farm Road|Prince William Co.|VA": {
+      "lat": 38.7868852,
+      "lon": -77.5633299,
+      "matched_address": "Hansen Farm Road, Linton Hall, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44874 Moran Road|Loudoun Co.|VA": {
+      "lat": 38.9960861,
+      "lon": -77.4455539,
+      "matched_address": "Moran Road, Sterling, Loudoun County, Virginia, 20103, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2300 Chelsea Blvd, Allen|Collin County|TX": {
       "lat": 33.137232556725,
       "lon": -96.663332409777,
       "matched_address": "2300 CHELSEA BLVD, ALLEN, TX, 75013",
@@ -1678,9 +1039,39 @@
       "rejected": false,
       "county_verified": true
     },
-    "3555 Westover Link San Antonio TX 78251, San Antonio|Bexar County": null,
-    "600 New Meister Ln, Pflugerville|Travis County": null,
-    "150 Dell Way, Round Rock|Williamson County": {
+    "3555 Westover Link San Antonio TX 78251, San Antonio|Bexar County|TX": null,
+    "600 New Meister Ln, Pflugerville|Travis County|TX": null,
+    "7471 Bear Wallow Road|Fauquier Co.|VA": {
+      "lat": 38.7326573,
+      "lon": -77.8310527,
+      "matched_address": "7471, Bear Wallow Road, Warrenton, Fauquier County, Virginia, 20186, United States",
+      "county": "Fauquier County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22295 Lockridge Rd|Loudoun Co.|VA": {
+      "lat": 38.9922095,
+      "lon": -77.4566719,
+      "matched_address": "22295, Lockridge Road, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "6000 Technology Boulevard|Henrico Co.|VA": {
+      "lat": 37.4888273,
+      "lon": -77.24749,
+      "matched_address": "6000, Technology Boulevard, Sandston, Henrico County, Virginia, 23150, United States",
+      "county": "Henrico County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "150 Dell Way, Round Rock|Williamson County|TX": {
       "lat": 30.486781736706,
       "lon": -97.673632662507,
       "matched_address": "150 DELL WAY, ROUND ROCK, TX, 78664",
@@ -1690,7 +1081,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "1510 E Lookout Dr, Richardson|Dallas County": {
+    "1510 E Lookout Dr, Richardson|Dallas County|TX": {
       "lat": 32.98536488783,
       "lon": -96.695234569529,
       "matched_address": "1510 E LOOKOUT DR, RICHARDSON, TX, 75082",
@@ -1700,7 +1091,8 @@
       "rejected": false,
       "county_verified": true
     },
-    "1649 W Frankford Rd, Carrollton|Denton County": {
+    "13200 Woodland Park Rd|Loudoun Co.|VA": null,
+    "1649 W Frankford Rd, Carrollton|Denton County|TX": {
       "lat": 32.994965147236,
       "lon": -96.930483914641,
       "matched_address": "1649 FRANKFORD RD W, CARROLLTON, TX, 75007",
@@ -1710,7 +1102,29 @@
       "rejected": false,
       "county_verified": true
     },
-    "15434 Lambda Dr, San Antonio|Bexar County": {
+    "21721 Filigree Court|Loudoun Co.|VA": {
+      "lat": 39.0149639,
+      "lon": -77.4587896,
+      "matched_address": "Equinix Ashburn DC11, 21721, Filigree Court, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Rd|Manassas City|VA": null,
+    "13001 Rollins Ford Road|Prince William Co.|VA": {
+      "lat": 38.7819117,
+      "lon": -77.580388,
+      "matched_address": "Rollins Ford Road, Linton Hall, Prince William County, Virginia, 20156, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "24400 Howling Rooster Ln|Loudoun Co.|VA": null,
+    "15434 Lambda Dr, San Antonio|Bexar County|TX": {
       "lat": 29.416868390185,
       "lon": -98.801570084669,
       "matched_address": "15434 LAMBDA DR, SAN ANTONIO, TX, 78245",
@@ -1720,7 +1134,77 @@
       "rejected": false,
       "county_verified": true
     },
-    "4201 Southwest Fwy, Houston|Harris County": {
+    "11316 Balls Ford Road|Prince William Co.|VA": {
+      "lat": 38.7963796,
+      "lon": -77.5327272,
+      "matched_address": "11316, Balls Ford Road, Bull Run, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13650 EDS Drive|Fairfax Co.|VA": {
+      "lat": 38.9240709,
+      "lon": -77.4259731,
+      "matched_address": "13650, EDS Drive, Herndon, Fairfax County, Virginia, 20171, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21800 Beaumeade Circle|Loudoun Co.|VA": {
+      "lat": 39.0136777,
+      "lon": -77.4517194,
+      "matched_address": "H5 Data Centers Ashburn, 21800, Beaumeade Circle, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "11600 Hayden Road|Prince William Co.|VA": {
+      "lat": 38.7708862,
+      "lon": -77.5402877,
+      "matched_address": "11600, Hayden Road, Arcadia Run Apartments, Linton Hall, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "20420 Germanna Hwy|Culpeper Co.|VA": {
+      "lat": 38.443348,
+      "lon": -77.8784268,
+      "matched_address": "20420, Germanna Highway, Culpeper County, Virginia, 22741, United States",
+      "county": "Culpeper County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7961 Loisdale Rd|Fairfax Co.|VA": {
+      "lat": 38.7421469,
+      "lon": -77.1875863,
+      "matched_address": "7961, Loisdale Road, Newington, Fairfax County, Virginia, 22150, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "9590 Hornbaker Road|Prince William Co.|VA": {
+      "lat": 38.7458055,
+      "lon": -77.5377246,
+      "matched_address": "9590, Hornbaker Road, Manassas, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "4201 Southwest Fwy, Houston|Harris County|TX": {
       "lat": 29.728650926659,
       "lon": -95.444337164216,
       "matched_address": "4201 SOUTHWEST FWY, HOUSTON, TX, 77027",
@@ -1730,7 +1214,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "5170 Westway Park Blvd, Houston|Harris County": {
+    "5170 Westway Park Blvd, Houston|Harris County|TX": {
       "lat": 29.844463563406,
       "lon": -95.557301726138,
       "matched_address": "5170 WESTWAY PARK BLVD, HOUSTON, TX, 77041",
@@ -1740,8 +1224,29 @@
       "rejected": false,
       "county_verified": true
     },
-    "300 S Sunrise Rd, Wilmer|Dallas County": null,
-    "2501 South State Highway 121 Suite 500 Bldg 5, Lewisville|Denton County": {
+    "300 S Sunrise Rd, Wilmer|Dallas County|TX": null,
+    "608 Ridge Road|Mecklenburg Co.|VA": {
+      "lat": 36.6929304,
+      "lon": -78.3695817,
+      "matched_address": "608, Ridge Road, The Ridge, Mecklenburg County, Virginia, 23917, United States",
+      "county": "Mecklenburg County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22318 Glenn Drive|Loudoun Co.|VA": {
+      "lat": 38.9971326,
+      "lon": -77.428996,
+      "matched_address": "22318, Glenn Drive, Sterling, Loudoun County, Virginia, 20164, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "960 Prison Road|Mecklenburg Co.|VA": null,
+    "2501 South State Highway 121 Suite 500 Bldg 5, Lewisville|Denton County|TX": {
       "lat": 33.054389459074,
       "lon": -96.915198725532,
       "matched_address": "2501 E HWY 121, LEWISVILLE, TX, 75056",
@@ -1751,7 +1256,8 @@
       "rejected": false,
       "county_verified": true
     },
-    "7301 Metropolis Dr, Austin|Travis County": {
+    "13200 Woodland Park Road|Prince William Co.|VA": null,
+    "7301 Metropolis Dr, Austin|Travis County|TX": {
       "lat": 30.203936675028,
       "lon": -97.706157799188,
       "matched_address": "7301 METROPOLIS DR, AUSTIN, TX, 78744",
@@ -1761,7 +1267,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "11003 Corporate Centre Dr, Houston|Harris County": {
+    "11003 Corporate Centre Dr, Houston|Harris County|TX": {
       "lat": 29.841088314555,
       "lon": -95.5632430718,
       "matched_address": "11003 CORPORATE CENTRE DR, HOUSTON, TX, 77041",
@@ -1771,7 +1277,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "3500 E Plano Pkwy, Plano|Collin County": {
+    "3500 E Plano Pkwy, Plano|Collin County|TX": {
       "lat": 33.006959918675,
       "lon": -96.669644171351,
       "matched_address": "3500 E PLANO PKWY, PLANO, TX, 75074",
@@ -1781,7 +1287,47 @@
       "rejected": false,
       "county_verified": true
     },
-    "300 Houston School Rd, Red Oak|Ellis County": {
+    "22715 Relocation Drive|Loudoun Co.|VA": {
+      "lat": 38.989021,
+      "lon": -77.4394016,
+      "matched_address": "22715, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "12270 Lucky Hill Rd|Fauquier Co.|VA": {
+      "lat": 38.5366869,
+      "lon": -77.7827943,
+      "matched_address": "12270, Lucky Hill Road, Bealeton, Fauquier County, Virginia, 22734, United States",
+      "county": "Fauquier County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22125 Broderick Drive|Loudoun Co.|VA": {
+      "lat": 39.0056772,
+      "lon": -77.4495236,
+      "matched_address": "Digital Realty IAD42 (Building R), 22125, Broderick Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45905 Maries Road|Loudoun Co.|VA": {
+      "lat": 39.0211761,
+      "lon": -77.4132118,
+      "matched_address": "CyrusOne NVA8, 45905, Maries Road, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "300 Houston School Rd, Red Oak|Ellis County|TX": {
       "lat": 32.53821200729,
       "lon": -96.805262729567,
       "matched_address": "300 HOUSTON SCHOOL RD, RED OAK, TX, 75154",
@@ -1791,7 +1337,27 @@
       "rejected": false,
       "county_verified": true
     },
-    "3441 Railport Pkwy, Midlothian|Ellis County": {
+    "21350 Pacific Boulevard|Loudoun Co.|VA": {
+      "lat": 39.0262997,
+      "lon": -77.4340415,
+      "matched_address": "CyrusOne NVA7, 21350, Pacific Boulevard, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21890 UUNET Drive|Loudoun Co.|VA": {
+      "lat": 39.0133382,
+      "lon": -77.4710974,
+      "matched_address": "Aligned Ashburn IAD-01, 21890, Uunet Drive, Verizon Business, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3441 Railport Pkwy, Midlothian|Ellis County|TX": {
       "lat": 32.448927895772,
       "lon": -97.056815922356,
       "matched_address": "3441 RAILPORT PKWY, MIDLOTHIAN, TX, 76065",
@@ -1801,7 +1367,67 @@
       "rejected": false,
       "county_verified": true
     },
-    "2323 Bryan St Ste 1400, Dallas|Dallas County": {
+    "14901 Conference Center Drive|Fairfax Co.|VA": {
+      "lat": 38.8748439,
+      "lon": -77.4605765,
+      "matched_address": "14901, Conference Center Drive, Chantilly, Fairfax County, Virginia, 20151, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "12369 Sunrise Valley Drive|Fairfax Co.|VA": {
+      "lat": 38.9483459,
+      "lon": -77.372492,
+      "matched_address": "CoreSite Reston VA3, 12369, Sunrise Valley Drive, Reston, Fairfax County, Virginia, 20191, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22271 Shellhorn Road|Loudoun Co.|VA": {
+      "lat": 39.0031413,
+      "lon": -77.4805329,
+      "matched_address": "22271, Shellhorn Road, Loudoun Station, Moorefield, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "9651 Hornbaker Road|Prince William Co.|VA": {
+      "lat": 38.7472831,
+      "lon": -77.5318264,
+      "matched_address": "COPT Data Center, 9651, Hornbaker Road, Manassas, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "10100 Harry J. Parrish Boulevard|Prince William Co.|VA": {
+      "lat": 38.724167,
+      "lon": -77.501907,
+      "matched_address": "10100, Harry J Parrish Boulevard, Great Oak, Bristow, Prince William County, Virginia, 20110, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "10261 Tanner Way|Prince William Co.|VA": {
+      "lat": 38.7383856,
+      "lon": -77.5029031,
+      "matched_address": "Tanner Way, Bristow, Prince William County, Virginia, 20110, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2323 Bryan St Ste 1400, Dallas|Dallas County|TX": {
       "lat": 32.786929610022,
       "lon": -96.79401789536,
       "matched_address": "2323 BRYAN ST, DALLAS, TX, 75201",
@@ -1811,7 +1437,7 @@
       "rejected": false,
       "county_verified": true
     },
-    "1515 Aldine Meadows Rd, Houston|Harris County": {
+    "1515 Aldine Meadows Rd, Houston|Harris County|TX": {
       "lat": 29.935192452786,
       "lon": -95.35642787891,
       "matched_address": "1515 ALDINE MEADOWS RD, HOUSTON, TX, 77032",
@@ -1821,7 +1447,18 @@
       "rejected": false,
       "county_verified": true
     },
-    "9554 Westover Hills Blvd, San Antonio|Bexar County": {
+    "6050 Technology Creek Drive|Henrico Co.|VA": {
+      "lat": 37.4944185,
+      "lon": -77.237498,
+      "matched_address": "6050, Technology Creek Drive, Henrico County, Virginia, 23150, United States",
+      "county": "Henrico County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "13200 Woodland Park Rd|Culpeper Co.|VA": null,
+    "9554 Westover Hills Blvd, San Antonio|Bexar County|TX": {
       "lat": 29.472581015746,
       "lon": -98.672342362064,
       "matched_address": "9554 WESTOVER HILLS BLVD, SAN ANTONIO, TX, 78251",
@@ -1831,7 +1468,17 @@
       "rejected": false,
       "county_verified": true
     },
-    "9999 Westover Hills Blvd, San Antonio|Bexar County": {
+    "1764 Old Meadow Lane|Fairfax Co.|VA": {
+      "lat": 38.9199052,
+      "lon": -77.213585,
+      "matched_address": "DataBank McLean IAD2, 1764, Old Meadow Lane, McLean, Fairfax County, Virginia, 22102, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "9999 Westover Hills Blvd, San Antonio|Bexar County|TX": {
       "lat": 29.46568205401,
       "lon": -98.687977501223,
       "matched_address": "9999 WESTOVER HILL, SAN ANTONIO, TX, 78251",
@@ -1841,7 +1488,17 @@
       "rejected": false,
       "county_verified": true
     },
-    "2222 E Grauwyler Rd, Irving|Dallas County": {
+    "18155 Technology Drive|Culpeper Co.|VA": {
+      "lat": 38.4551359,
+      "lon": -77.9780171,
+      "matched_address": "Root Zone Key Management Facility East, 18155, Technology Drive, Germanna Community College, Culpeper, Culpeper County, Virginia, 22701, United States",
+      "county": "Culpeper County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2222 E Grauwyler Rd, Irving|Dallas County|TX": {
       "lat": 32.830660052664,
       "lon": -96.912475087068,
       "matched_address": "2222 E GRAUWYLER RD, IRVING, TX, 75061",
@@ -1851,7 +1508,894 @@
       "rejected": false,
       "county_verified": true
     },
-    "6108 Willard Rd, Fort Worth, Tarrant County, TX, Fort Worth|Tarrant County": null
+    "6108 Willard Rd, Fort Worth, Tarrant County, TX, Fort Worth|Tarrant County|TX": null,
+    "21744 Sir Timothy Drive|Loudoun Co.|VA": {
+      "lat": 39.0126818,
+      "lon": -77.4654004,
+      "matched_address": "Digital Realty ACC10, 21744, Sir Timothy Drive, Ashburn, Loudoun County, Virginia, 20174, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7990 Science Applications Court|Fairfax Co.|VA": {
+      "lat": 38.9079697,
+      "lon": -77.2213209,
+      "matched_address": "7990, Science Applications Court, Tysons, Fairfax County, Virginia, 22182, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "21111 Ridgetop Circle|Loudoun Co.|VA": {
+      "lat": 39.0259287,
+      "lon": -77.4145789,
+      "matched_address": "CyrusOne NVA1, NVA2 & NVA3, 21111, Ridgetop Circle, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "5978 Windswept Blvd|Wise Co.|VA": {
+      "lat": 36.976248100142,
+      "lon": -82.526258670654,
+      "matched_address": "5978 WINDSWEPT BLVD, WISE, VA, 24293",
+      "county": "Wise",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44610 Guilford Drive|Loudoun Co.|VA": {
+      "lat": 39.0250051,
+      "lon": -77.4576423,
+      "matched_address": "NTT Ashburn VA2 Data Center, 44610, Guilford Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "800 Independence Boulevard|Virginia Beach City|VA": {
+      "lat": 36.867391078249,
+      "lon": -76.132545951719,
+      "matched_address": "800 INDEPENDENCE BLVD, VIRGINIA BEACH, VA, 23455",
+      "county": "Virginia Beach",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "524 Van Buren Street|Fairfax Co.|VA": {
+      "lat": 38.9650059,
+      "lon": -77.3828394,
+      "matched_address": "524, Van Buren Street, Herndon, Fairfax County, Virginia, 20170, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7681 Boston Blvd|Fairfax Co.|VA": {
+      "lat": 38.7384549,
+      "lon": -77.2082626,
+      "matched_address": "7681, Boston Boulevard, Rollingwood, Saratoga, Newington, Fairfax County, Virginia, 22153, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45745 Nokes Boulevard|Loudoun Co.|VA": {
+      "lat": 39.0260791,
+      "lon": -77.4187964,
+      "matched_address": "45745, Nokes Boulevard, Dulles Town Center, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7600 Doane Drive|Prince William Co.|VA": {
+      "lat": 38.7922315,
+      "lon": -77.5484695,
+      "matched_address": "Amazon IAD59, 7600, Doane Drive, Manassas, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "11101 University Boulevard|Prince William Co.|VA": {
+      "lat": 38.754928,
+      "lon": -77.523916,
+      "matched_address": "11101, University Boulevard, Innovation, Prince William County, Virginia, 20110, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22745 Relocation Dr|Loudoun Co.|VA": {
+      "lat": 38.9878045,
+      "lon": -77.4400127,
+      "matched_address": "22745, Relocation Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1175 North Main Street|Harrisonburg City|VA": {
+      "lat": 38.460743495687,
+      "lon": -78.854970679385,
+      "matched_address": "1175 N MAIN ST, HARRISONBURG, VA, 22802",
+      "county": "Harrisonburg",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8801 Park Central Drive|Henrico Co.|VA": {
+      "lat": 37.6458585,
+      "lon": -77.4392082,
+      "matched_address": "8801, Park Central Drive, Chamberlayne, Henrico County, Virginia, 23227, United States",
+      "county": "Henrico County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "14725 Lee Road|Fairfax Co.|VA": {
+      "lat": 38.878037237281,
+      "lon": -77.452563779564,
+      "matched_address": "14725 LEE RD, FAIRFAX, VA, 20151",
+      "county": "Fairfax",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "12100 Sunrise Valley Drive|Fairfax Co.|VA": {
+      "lat": 38.9506069,
+      "lon": -77.3645346,
+      "matched_address": "CoreSite Reston Campus VA1, 12100, Sunrise Valley Drive, Reston, Fairfax County, Virginia, 20191, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8250 Jones Branch Drive|Fairfax Co.|VA": {
+      "lat": 38.9327337,
+      "lon": -77.2293636,
+      "matched_address": "Freddie Mac - HQ 2, 8250, Jones Branch Drive, Tysons, Fairfax County, Virginia, 22102, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44664 Guilford Dr|Loudoun Co.|VA": {
+      "lat": 39.0227549,
+      "lon": -77.4548256,
+      "matched_address": "NTT Ashburn VA1 Data Center, 44664, Guilford Drive, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45005 Russell Branch Parkway|Loudoun Co.|VA": {
+      "lat": 39.0488058,
+      "lon": -77.4454214,
+      "matched_address": "VISA Data Center, 45005, Russell Branch Parkway, Ashburn, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "44983 Knoll Square Drive|Loudoun Co.|VA": null,
+    "2980 Fairview Park Drive|Fairfax Co.|VA": {
+      "lat": 38.8671148,
+      "lon": -77.2150414,
+      "matched_address": "Northrop Grumman Corporation Global Headquarters, 2980, Fairview Park Drive, Falls Church, Fairfax County, Virginia, 22042, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "43831 Devin Shafron Drive|Loudoun Co.|VA": {
+      "lat": 39.0027517,
+      "lon": -77.4854487,
+      "matched_address": "Amazon Web Services Building C, 43831, Devin Shafron Drive, Loudoun Station, Moorefield, Loudoun County, Virginia, 20147, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "12900 Federal Systems Park Drive|Fairfax Co.|VA": {
+      "lat": 38.861104146468,
+      "lon": -77.390564337293,
+      "matched_address": "12900 FEDERAL SYSTEMS PARK DR, FAIRFAX, VA, 22033",
+      "county": "Fairfax",
+      "state": "VA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22995 Wilder Court|Loudoun Co.|VA": {
+      "lat": 38.9809622,
+      "lon": -77.444793,
+      "matched_address": "Centersquare IAD3, 22995, Wilder Court, Dulles, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "460 Spring Park Place|Fairfax Co.|VA": null,
+    "1780 Business Center Drive|Fairfax Co.|VA": {
+      "lat": 38.9484219,
+      "lon": -77.3273255,
+      "matched_address": "VA3, 1780, Business Center Drive, Pinecrest, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7777 Infantry Ridge Road|Prince William Co.|VA": {
+      "lat": 38.8039574,
+      "lon": -77.5109671,
+      "matched_address": "7777, Infantry Ridge Road, Sudley, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7950 Jones Branch Drive|Fairfax Co.|VA": {
+      "lat": 38.9325446,
+      "lon": -77.2178005,
+      "matched_address": "7950, Jones Branch Drive, Tysons, Fairfax County, Virginia, 22102, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "8217 Linton Hall Road|Prince William Co.|VA": {
+      "lat": 38.7780751,
+      "lon": -77.5949551,
+      "matched_address": "VA 4, 8217, Linton Hall Road, Bristow, Prince William County, Virginia, 20136, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22340 Dresden Street|Loudoun Co.|VA": {
+      "lat": 38.9977801,
+      "lon": -77.4444919,
+      "matched_address": "22340, Dresden Street, Sterling, Loudoun County, Virginia, 20103, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1807 Michael Faraday Court|Fairfax Co.|VA": {
+      "lat": 38.9488166,
+      "lon": -77.3294053,
+      "matched_address": "IAD1, 1807, Michael Faraday Court, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "7400 Infantry Ridge Road|Prince William Co.|VA": {
+      "lat": 38.803673,
+      "lon": -77.514328,
+      "matched_address": "7400, Infantry Ridge Road, Sudley, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "544 Herndon Parkway|Fairfax Co.|VA": {
+      "lat": 38.9551317,
+      "lon": -77.3813861,
+      "matched_address": "544, Herndon Parkway, Herndon, Fairfax County, Virginia, 20170, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "11720 Plaza America Drive|Fairfax Co.|VA": {
+      "lat": 38.9526125,
+      "lon": -77.3506782,
+      "matched_address": "11720, Plaza America Drive, Plaza America, Reston Station, Reston, Fairfax County, Virginia, 20190, United States",
+      "county": "Fairfax County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "22810 International Drive|Loudoun Co.|VA": {
+      "lat": 38.9843956,
+      "lon": -77.4238278,
+      "matched_address": "Centersquare IAD2-A, 22810, International Drive, Sterling, Loudoun County, Virginia, 20166, United States",
+      "county": "Loudoun County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "45901 Nokes Boulevard|Fairfax Co.|VA": null,
+    "8870 Hornbaker Rd|Prince William Co.|VA": {
+      "lat": 38.7621107,
+      "lon": -77.5348282,
+      "matched_address": "8870, Hornbaker Road, Innovation, Prince William County, Virginia, 20109, United States",
+      "county": "Prince William County",
+      "state": "Virginia",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "26464 Corporate Ave, Hayward|Alameda County|CA": {
+      "lat": 37.626373405886,
+      "lon": -122.112927568656,
+      "matched_address": "26464 CORPORATE AVE, HAYWARD, CA, 94545",
+      "county": "Alameda",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2950 Stender Way, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.375932925929,
+      "lon": -121.97024149781,
+      "matched_address": "2950 STENDER WAY, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1656 Mccarthy Blvd, Milpitas|Santa Clara County|CA": {
+      "lat": 37.405621466661,
+      "lon": -121.917778551412,
+      "matched_address": "1656 MCCARTHY BLVD, MILPITAS, CA, 95035",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1725 Comstock Drive, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.374631351749,
+      "lon": -121.957602090449,
+      "matched_address": "1725 COMSTOCK ST, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2805 Lafayette Street, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.3723471,
+      "lon": -121.9482597,
+      "matched_address": "Silicon Valley SJC31, 2805, Lafayette Street, Santa Clara, Santa Clara County, California, 95050, United States",
+      "county": "Santa Clara County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1525 Comstock Drive, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.374645577985,
+      "lon": -121.955939020413,
+      "matched_address": "1525 COMSTOCK ST, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3105 Alfred Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.37765088967,
+      "lon": -121.958501229552,
+      "matched_address": "3105 ALFRED ST, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1700 Richard Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.365374035442,
+      "lon": -121.958174309005,
+      "matched_address": "1700 RICHARD AVE, SANTA CLARA, CA, 95050",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1360 Kifer Road, Sunnyvale|Santa Clara County|CA": {
+      "lat": 37.3759952,
+      "lon": -122.0170958,
+      "matched_address": "Kifer Road, Sunnyvale, Santa Clara County, California, 94088, United States",
+      "county": "Santa Clara County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3000 Corvin Drive, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.375832222628,
+      "lon": -121.987928101221,
+      "matched_address": "3000 CORVIN DR, SANTA CLARA, CA, 95051",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "695 Menlo Dr, Rocklin|Placer County|CA": {
+      "lat": 38.811637463457,
+      "lon": -121.298064088852,
+      "matched_address": "695 MENLO DR, ROCKLIN, CA, 95765",
+      "county": "Placer",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "25 N Via Monte, Walnut Creek|Contra Costa County|CA": {
+      "lat": 37.927919273943,
+      "lon": -122.019842791661,
+      "matched_address": "25 N VIA MONTE, WALNUT CREEK, CA, 94598",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1150 Walsh Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.369699687054,
+      "lon": -121.952424055105,
+      "matched_address": "1150 WALSH AVE, SANTA CLARA, CA, 95050",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1400 S Grand Ave, Santa Ana|Orange County|CA": {
+      "lat": 33.730191862323,
+      "lon": -117.850520798065,
+      "matched_address": "1400 S GRAND AVE, SANTA ANA, CA, 92705",
+      "county": "Orange",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "725 Mathew Street, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.363235471483,
+      "lon": -121.947246830342,
+      "matched_address": "725 MATHEW ST, SANTA CLARA, CA, 95050",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2625 Walsh Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.372003866948,
+      "lon": -121.974567982797,
+      "matched_address": "2625 WALSH AVE, SANTA CLARA, CA, 95051",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1201 Comstock Drive, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.374663938535,
+      "lon": -121.952797976116,
+      "matched_address": "1201 COMSTOCK ST, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "445 N Douglas St, El Segundo|Los Angeles County|CA": {
+      "lat": 33.918851594913,
+      "lon": -118.383276140953,
+      "matched_address": "445 N DOUGLAS ST, EL SEGUNDO, CA, 90245",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1200 Striker Avenue, Sacramento|Sacramento County|CA": {
+      "lat": 38.650977096385,
+      "lon": -121.487765512704,
+      "matched_address": "1200 STRIKER AVE, SACRAMENTO, CA, 95834",
+      "county": "Sacramento",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "139 Kifer Court, Sunnyvale|Santa Clara County|CA": {
+      "lat": 37.374860257496,
+      "lon": -122.015075099536,
+      "matched_address": "139 KIFER CT, SUNNYVALE, CA, 94086",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "5761 Copley Drive, San Diego|San Diego County|CA": {
+      "lat": 32.840907235491,
+      "lon": -117.169468957507,
+      "matched_address": "5761 COPLEY DR, SAN DIEGO, CA, 92111",
+      "county": "San Diego",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "534 Stockton Avenue, San Jose|Santa Clara County|CA": {
+      "lat": 37.338295246355,
+      "lon": -121.910745007402,
+      "matched_address": "534 STOCKTON AVE, SAN JOSE, CA, 95126",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2001 Fortune Drive, San Jose|Santa Clara County|CA": {
+      "lat": 37.401091344879,
+      "lon": -121.892949466517,
+      "matched_address": "2001 FORTUNE DR, SAN JOSE, CA, 95131",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "400 Holger Way, San Jose|Santa Clara County|CA": {
+      "lat": 37.419147883707,
+      "lon": -121.942562614967,
+      "matched_address": "400 HOLGER WAY, SAN JOSE, CA, 95134",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1600 Esplanace, Chico|Butte County|CA": null,
+    "3610 Sacramento Dr, San Luis Obispo|San Luis Obispo County|CA": {
+      "lat": 35.254954288456,
+      "lon": -120.64153550865,
+      "matched_address": "3610 SACRAMENTO DR, SAN LUIS OBISPO, CA, 93401",
+      "county": "San Luis Obispo",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3833  Ebony St, Ontario|San Bernardino County|CA": {
+      "lat": 34.066483399947,
+      "lon": -117.568432418572,
+      "matched_address": "3833 EBONY ST, ONTARIO, CA, 91761",
+      "county": "San Bernardino",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1400 Kifer Road, Sunnyvale|Santa Clara County|CA": {
+      "lat": 37.3720608,
+      "lon": -121.9861314,
+      "matched_address": "Csquare SFO3, 1400, Kifer Road, Lawrence, Sunnyvale, Santa Clara County, California, 94086, United States",
+      "county": "Santa Clara County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2575 Sand Hill Road, Menlo Park|San Mateo County|CA": {
+      "lat": 37.4197103,
+      "lon": -122.2039987,
+      "matched_address": "Communications Office, 2575, Sand Hill Road, Menlo Park, San Mateo County, California, 94025, United States",
+      "county": "San Mateo County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3750 Atherton Rd, Rocklin|Placer County|CA": {
+      "lat": 38.816271923652,
+      "lon": -121.293032383681,
+      "matched_address": "3750 ATHERTON RD, ROCKLIN, CA, 95765",
+      "county": "Placer",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "Great Oaks Boulevard, San Jose|Santa Clara County|CA": {
+      "lat": 37.2447177,
+      "lon": -121.7855157,
+      "matched_address": "Great Oaks Boulevard, San Jose, Santa Clara County, California, 95119, United States",
+      "county": "Santa Clara County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "255 Caspian Drive, Sunnyvale|Santa Clara County|CA": {
+      "lat": 37.413491820407,
+      "lon": -122.015030909719,
+      "matched_address": "255 CASPIAN DR, SUNNYVALE, CA, 94089",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1735 Lundy Avenue, San Jose|Santa Clara County|CA": {
+      "lat": 37.388812092108,
+      "lon": -121.887379321836,
+      "matched_address": "1735 LUNDY AVE, SAN JOSE, CA, 95131",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1350 Duane Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.379037866533,
+      "lon": -121.954777399699,
+      "matched_address": "1350 DUANE AVE, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "712 S Figueroa St, Los Angeles|Los Angeles County|CA": {
+      "lat": 34.04914467115,
+      "lon": -118.259988543329,
+      "matched_address": "712 S FIGUEROA ST, LOS ANGELES, CA, 90017",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1920 E Maple Ave, El Segundo|Los Angeles County|CA": {
+      "lat": 33.926857388076,
+      "lon": -118.394156437342,
+      "matched_address": "1920 E MAPLE AVE, EL SEGUNDO, CA, 90245",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "600 W 7th St, Los Angeles|Los Angeles County|CA": {
+      "lat": 34.04728210583,
+      "lon": -118.256691850093,
+      "matched_address": "600 W 7TH ST, LOS ANGELES, CA, 90017",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1501  Francisco St, Los Angeles|Los Angeles County|CA": {
+      "lat": 33.8507525,
+      "lon": -118.3040815,
+      "matched_address": "Equinix, 1501, Francisco Street, Dolanco Junction, Harbor Gateway, Torrance, Los Angeles County, California, 90501, United States",
+      "county": "Los Angeles County",
+      "state": "California",
+      "provider": "osm-nominatim",
+      "rejected": false,
+      "county_verified": true
+    },
+    "200 Paul Ave  Bldg F  5th Floor, San Francisco|San Francisco County|CA": {
+      "lat": 37.722945451379,
+      "lon": -122.397717744322,
+      "matched_address": "200 PAUL AVE, SAN FRANCISCO, CA, 94124",
+      "county": "San Francisco",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2334 Lundy Place, San Jose|Santa Clara County|CA": {
+      "lat": 37.404908565655,
+      "lon": -121.889822635698,
+      "matched_address": "2334 LUNDY PL, SAN JOSE, CA, 95131",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3011 Lafayette Street, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.376625173713,
+      "lon": -121.949142541317,
+      "matched_address": "3011 LAFAYETTE ST, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1100 Space Park Drive, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.376171270864,
+      "lon": -121.953292060707,
+      "matched_address": "1100 SPACE PARK DR, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "55 So Market Street, San Jose|Santa Clara County|CA": {
+      "lat": 37.334508362922,
+      "lon": -121.891430210365,
+      "matched_address": "55 S MARKET ST, SAN JOSE, CA, 95113",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "624 S Grand Ave, Los Angeles|Los Angeles County|CA": {
+      "lat": 34.048148932625,
+      "lon": -118.255721176593,
+      "matched_address": "624 S GRAND AVE, LOS ANGELES, CA, 90017",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "Coronado Dr & Stender Way, Santa Clara|Santa Clara County|CA": null,
+    "3045 Stender Way, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.377063732131,
+      "lon": -121.971181131101,
+      "matched_address": "3045 STENDER WAY, SANTA CLARA, CA, 95054",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "900 N Alameda St, Los Angeles|Los Angeles County|CA": {
+      "lat": 34.058138493271,
+      "lon": -118.236993590441,
+      "matched_address": "900 N ALAMEDA ST, LOS ANGELES, CA, 90012",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "2050 Martin Avenue, Santa Clara|Santa Clara County|CA": {
+      "lat": 37.366182761308,
+      "lon": -121.960896746656,
+      "matched_address": "2050 MARTIN AVE, SANTA CLARA, CA, 95050",
+      "county": "Santa Clara",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "1296 11th Street, Arcata|Humboldt County|CA": {
+      "lat": 40.87169581157,
+      "lon": -124.090922694001,
+      "matched_address": "1296 11TH ST, ARCATA, CA, 95521",
+      "county": "Humboldt",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "50 Crisp Road, San Francisco|San Francisco County|CA": {
+      "lat": 37.72777636017,
+      "lon": -122.379517606168,
+      "matched_address": "50 CRISP RD, SAN FRANCISCO, CA, 94124",
+      "county": "San Francisco",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "6001 Iron Mountain Pump Plant Road, Earp|San Bernardino County|CA": null,
+    "Highway 62/Mwd Pumping Plant, Sb County|San Bernardino County|CA": null,
+    "6345 Coliseum Way, Oakland|Alameda County|CA": {
+      "lat": 37.75583345894,
+      "lon": -122.206231856493,
+      "matched_address": "6345 COLISEUM WAY, OAKLAND, CA, 94621",
+      "county": "Alameda",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "4688 Pacific Heights Road, Oroville|Butte County|CA": {
+      "lat": 39.467752523664,
+      "lon": -121.577077905319,
+      "matched_address": "4688 PACIFIC HEIGHTS RD, OROVILLE, CA, 95965",
+      "county": "Butte",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "39800 Eureka Drive, Newark|Alameda County|CA": {
+      "lat": 37.509474768963,
+      "lon": -122.000281410471,
+      "matched_address": "39800 EUREKA DR, NEWARK, CA, 94560",
+      "county": "Alameda",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "3015  Winona Ave, Burbank|Los Angeles County|CA": {
+      "lat": 34.199320804136,
+      "lon": -118.343533908367,
+      "matched_address": "3015 WINONA AVE, BURBANK, CA, 91504",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "200 N Nash St, El Segundo|Los Angeles County|CA": {
+      "lat": 33.918073621393,
+      "lon": -118.387349800575,
+      "matched_address": "200 N NASH ST, EL SEGUNDO, CA, 90245",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    },
+    "17836  Gillette Ave, Irvine|Orange County|CA": {
+      "lat": 33.686600700748,
+      "lon": -117.850502181822,
+      "matched_address": "17836 GILLETTE AVE, IRVINE, CA, 92614",
+      "county": "Orange",
+      "state": "CA",
+      "provider": "us-census-geocoder",
+      "rejected": false,
+      "county_verified": true
+    }
   },
   "flood": {
     "38.44908,-77.98199": {
@@ -7113,6 +7657,654 @@
       "in_sfha": false,
       "static_bfe": null,
       "dfirm_id": "08041C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.62637,-122.11293": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06001C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37593,-121.97024": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.40562,-121.91778": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37463,-121.95760": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37235,-121.94826": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37465,-121.95594": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37765,-121.95850": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.36537,-121.95817": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37600,-122.01710": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37583,-121.98793": {
+      "status": "mapped",
+      "zone": "AH",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": 43,
+      "dfirm_id": "06085C",
+      "label": "Zone AH — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "38.81164,-121.29806": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06061C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.92792,-122.01984": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06013C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.36970,-121.95242": {
+      "status": "mapped",
+      "zone": "AO",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone AO — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.73019,-117.85052": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06059C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.36324,-121.94725": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37200,-121.97457": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37466,-121.95280": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.91885,-118.38328": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "38.65098,-121.48777": {
+      "status": "mapped",
+      "zone": "A99",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": null,
+      "dfirm_id": "06067C",
+      "label": "Zone A99 — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37486,-122.01508": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "32.84091,-117.16947": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06073C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.33830,-121.91075": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.40109,-121.89295": {
+      "status": "mapped",
+      "zone": "D",
+      "subtype": null,
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone D",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.41915,-121.94256": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.25495,-120.64154": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06079C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.06648,-117.56843": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06071C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37206,-121.98613": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.41971,-122.20400": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06081C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "38.81627,-121.29303": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06061C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.24472,-121.78552": {
+      "status": "mapped",
+      "zone": "D",
+      "subtype": null,
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone D",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.41349,-122.01503": {
+      "status": "mapped",
+      "zone": "AE",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": 11,
+      "dfirm_id": "06085C",
+      "label": "Zone AE — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.38881,-121.88738": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "1 PCT DEPTH LESS THAN 1 FOOT",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 1 pct depth less than 1 foot",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37904,-121.95478": {
+      "status": "mapped",
+      "zone": "AH",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": 32,
+      "dfirm_id": "06085C",
+      "label": "Zone AH — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.04914,-118.25999": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.92686,-118.39416": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.04728,-118.25669": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "1 PCT DEPTH LESS THAN 1 FOOT",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — 1 pct depth less than 1 foot",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.85075,-118.30408": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.72295,-122.39772": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "060298",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.40491,-121.88982": {
+      "status": "mapped",
+      "zone": "AO",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone AO — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37663,-121.94914": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37617,-121.95329": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA WITH REDUCED FLOOD RISK DUE TO LEVEE",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — area with reduced flood risk due to levee",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.33451,-121.89143": {
+      "status": "mapped",
+      "zone": "D",
+      "subtype": null,
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone D",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.04815,-118.25572": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "1 PCT DEPTH LESS THAN 1 FOOT",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — 1 pct depth less than 1 foot",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.37706,-121.97118": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.05814,-118.23699": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.36618,-121.96090": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06085C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.87170,-124.09092": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06023C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.72778,-122.37952": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "060298",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.75583,-122.20623": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06001C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.46775,-121.57708": {
+      "status": "mapped",
+      "zone": "A",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": null,
+      "dfirm_id": "06007C",
+      "label": "Zone A — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "37.50947,-122.00028": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06001C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "34.19932,-118.34353": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.91807,-118.38735": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.68660,-117.85050": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "06059C",
       "label": "Zone X — area of minimal flood hazard",
       "source": "FEMA National Flood Hazard Layer",
       "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
@@ -12387,6 +13579,654 @@
       "source": "WRI Aqueduct 4.0 — baseline water stress",
       "source_url": "https://www.wri.org/aqueduct",
       "confidence": "confirmed"
+    },
+    "37.62637,-122.11293": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37593,-121.97024": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.40562,-121.91778": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37463,-121.95760": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37235,-121.94826": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37465,-121.95594": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37765,-121.95850": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.36537,-121.95817": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37600,-122.01710": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37583,-121.98793": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "38.81164,-121.29806": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.5438221903359906,
+      "category": 2,
+      "withdrawal_ratio": 0.2915659385520361,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.92792,-122.01984": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.36970,-121.95242": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.73019,-117.85052": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 5.307029489603469,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.36324,-121.94725": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37200,-121.97457": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37466,-121.95280": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.91885,-118.38328": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "38.65098,-121.48777": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.5438221903359906,
+      "category": 2,
+      "withdrawal_ratio": 0.2915659385520361,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37486,-122.01508": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "32.84091,-117.16947": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 9999,
+      "overall_water_risk": "Extremely High (4-5)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.33830,-121.91075": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.40109,-121.89295": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.41915,-121.94256": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.25495,-120.64154": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.309715807954714,
+      "category": 3,
+      "withdrawal_ratio": 0.4957854071179588,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.06648,-117.56843": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 5.307029489603469,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37206,-121.98613": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.41971,-122.20400": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "38.81627,-121.29303": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.5438221903359906,
+      "category": 2,
+      "withdrawal_ratio": 0.2915659385520361,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.24472,-121.78552": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.41349,-122.01503": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.38881,-121.88738": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37904,-121.95478": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.04914,-118.25999": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.92686,-118.39416": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.04728,-118.25669": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.85075,-118.30408": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.72295,-122.39772": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.40491,-121.88982": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37663,-121.94914": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37617,-121.95329": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.33451,-121.89143": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.04815,-118.25572": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.37706,-121.97118": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.05814,-118.23699": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.36618,-121.96090": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.87170,-124.09092": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0,
+      "category": 0,
+      "withdrawal_ratio": 0.0157133030918288,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.72778,-122.37952": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.75583,-122.20623": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.46775,-121.57708": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.6571583695131635,
+      "category": 1,
+      "withdrawal_ratio": 0.15769734483195,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "37.50947,-122.00028": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.756712453544042,
+      "category": 1,
+      "withdrawal_ratio": 0.1689635970511883,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "34.19932,-118.34353": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.91807,-118.38735": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 3.498304470635781,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.68660,-117.85050": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 5.307029489603469,
+      "overall_water_risk": "High (3-4)",
+      "basin": "California",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
     }
   },
   "edgar": {
@@ -13709,6 +15549,38 @@
       ],
       "source": "SEC EDGAR full-text search",
       "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Cyxtera%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Element Critical": {
+      "query": "Element Critical data center",
+      "available": true,
+      "total": 3,
+      "hits": [
+        {
+          "company": "Vericity, Inc.  (CIK 0001575434)",
+          "form": "10-K",
+          "filed": "2021-03-31",
+          "cik": "0001575434",
+          "url": "https://www.sec.gov/Archives/edgar/data/1575434/000156459021017062/very-10k_20201231.htm"
+        },
+        {
+          "company": "Vericity, Inc.  (CIK 0001575434)",
+          "form": "10-K",
+          "filed": "2020-03-30",
+          "cik": "0001575434",
+          "url": "https://www.sec.gov/Archives/edgar/data/1575434/000156459020014221/very-10k_20191231.htm"
+        },
+        {
+          "company": "Vericity, Inc.  (CIK 0001575434)",
+          "form": "10-K",
+          "filed": "2022-03-31",
+          "cik": "0001575434",
+          "url": "https://www.sec.gov/Archives/edgar/data/1575434/000095017022005190/very-20211231.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Element%20Critical%20data%20center%22",
       "confidence": "directional",
       "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
     }

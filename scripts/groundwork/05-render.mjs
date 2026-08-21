@@ -69,10 +69,19 @@ function renderSite(site, db) {
 
   cards.push(evidenceCard({
     key: 'Air permit',
-    value: `${site.permit.count} issued permit${site.permit.count === 1 ? '' : 's'}`,
+    /* A count of 0 means the source establishes the permit without publishing
+       how many documents sit behind it — the EPA registry, TCEQ and CARB all
+       do this. Printing "0 issued permits" on a page asserting the facility is
+       permitted said the opposite of what the data means. */
+    value: site.permit.count
+      ? `${site.permit.count} issued permit${site.permit.count === 1 ? '' : 's'}`
+      : 'Permit held; count not published by this source',
     tier: site.permit.confidence,
-    basis: `Latest issued ${esc(fmtDate(site.permit.latest_issued) || 'n/a')}. ${esc(site.permit.programs.join('; '))}. Issued by the ${esc(site.permit.regional_office)} regional office.`,
-    cite: `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">VA DEQ &mdash; Issued Air Permits for Data Centers</a>, published as of ${esc(site.permit.publisher_as_of)}`,
+    basis: `Latest issued ${esc(fmtDate(site.permit.latest_issued) || 'n/a')}. ${esc(site.permit.programs.join('; '))}. Issued by ${esc(site.permit.regional_office)}.`,
+    /* This named VA DEQ on every page in the country while linking to whatever
+       the site's actual source was — TCEQ, EPA ECHO, a California air district.
+       Each tier already records its own source; use it. */
+    cite: `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">${esc(site.permit.source)}</a>, published as of ${esc(site.permit.publisher_as_of)}`,
   }));
 
   const flood = site.flood || {};
@@ -140,7 +149,7 @@ function renderSite(site, db) {
   const next = {
     title: site.address.street ? 'Next permit action' : 'Awaiting a street address',
     detail: site.address.street
-      ? 'This page updates automatically when VA DEQ publishes another permit or amendment for this facility.'
+      ? `This page updates automatically when ${esc(site.permit.source)} publishes another permit or amendment for this facility.`
       : 'This permit PDF has no readable text layer, so no street address could be extracted. The flood and water layers unlock once an address is resolved.',
   };
 
@@ -179,7 +188,7 @@ function renderSite(site, db) {
                           basis: esc(site.address.basis),
                           cite: site.address.from_permit
                             ? `Permit ${esc(site.address.from_permit)} &middot; <a href="${esc((site.permit.records.find((r) => r.registration_no === site.address.from_permit) || {}).pdf || site.permit.source_url)}" target="_blank" rel="noopener">permit PDF</a>`
-                            : `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">VA DEQ listing</a> (locality column)`,
+                            : `<a href="${esc(site.permit.source_url)}" target="_blank" rel="noopener">${esc(site.permit.source)}</a>${site.source_tier ? '' : ' (locality column)'}`,
                         })}
                         ${evidenceCard({
                           key: 'Operator',

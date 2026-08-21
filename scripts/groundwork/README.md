@@ -37,6 +37,7 @@ there is no server component and no database.
 | `09-echo-national.mjs` | EPA ECHO — air-permitted facilities in the other 49 states | confirmed |
 | `10-tceq.mjs` | TCEQ New Source Review search, driven in a real browser | — |
 | `11-tceq-sites.mjs` | Rolls the TCEQ scrape into Texas facilities | confirmed |
+| `12-carb-ca.mjs` | CARB emissions inventory — California's 35 air districts | confirmed |
 
 ## Things that will bite you
 
@@ -54,6 +55,32 @@ there is no server component and no database.
   discarded on mismatch. Loosening this will put pins in the wrong state.
 - **The grid layer needs `PJM_API_KEY`** (free, from PJM Data Miner 2). Without
   it the layer stays `pending` rather than guessing.
+
+## Identification, and why the count going up is not the win
+
+Every collector routes its rows through `identify()` in `lib/operators.mjs`, and
+that function exists because widening coverage naively makes the site worse.
+
+A self-reported industry code is a net, never an identification: NAICS 518210
+and SIC 7374 are full of office buildings whose tenant does data processing. A
+brand is an identification only when the operator builds nothing else — Equinix
+qualifies, Lumen does not, and neither does Amazon. Operators in
+`NEEDS_DC_SIGNAL` are leads whose records must also say data center, either in
+the facility name (`DC_NAME`) or in the subsidiary they are permitted to
+(`DC_ENTITY`, which is how Amazon Data Services is kept while
+Amazon.com Services is dropped).
+
+Things this has caught, all of which had shipped or nearly shipped:
+
+- 183 bare `AMERICAN TOWER` cell sites and 157 Lumen telephone exchanges
+- 16 `AG VANTAGE FS INC` grain elevators in Iowa, live for weeks as Vantage
+- Amazon fulfilment centres and delivery stations, and roughly 70 Google, Apple
+  and Meta office buildings in California
+- `ORACLE 21 FEDERAL 3H`, a New Mexico oil well; `MARATHON - COLOSSUS 18 19`,
+  another one
+
+When you change any of this, use `--reclassify`. Both `09` and `12` cache their
+raw rows, so re-deciding costs no requests to EPA or CARB.
 
 ## Adding a state
 

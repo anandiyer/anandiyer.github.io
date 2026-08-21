@@ -46,7 +46,7 @@ export function renderIndex(db) {
   /* Titled for the query this is actually built to answer: someone looking up
      what is permitted where they live. */
   const title = 'Data center permits by county — what operators actually filed | Groundwork';
-  const desc = `What data center operators have filed with air regulators, county by county: ${c.sites} sites across ${stateCount} states, ${totalGens.toLocaleString()} permitted backup generators, every figure sourced to the permit it came from.`;
+  const desc = `What data center operators filed with air regulators, county by county: ${c.sites} sites in ${stateCount} states, ${totalGens.toLocaleString()} permitted backup generators. Every figure sourced.`;
 
   const extraCss = `    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />`;
 
@@ -256,5 +256,5 @@ export function renderIndex(db) {
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="/labs/groundwork/app.js?v={{ site.asset_version }}" defer></script>`;
 
-  return head({ title, description: desc, canonical: 'https://canonical.cc/labs/groundwork/', extraCss }) + body + foot;
+  return head({ title, description: desc, canonical: 'https://www.canonical.cc/labs/groundwork/', extraCss }) + body + foot;
 }

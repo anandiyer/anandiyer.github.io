@@ -25,6 +25,7 @@ Linux. Different company, same name.
 - [Semiconductor Stack](https://canonical.cc/labs/semiconductor-silicon-stack/): Who owns each layer of silicon
 - [Decentralized AI](https://canonical.cc/labs/decentralized-ai/): Map of the decentralized AI landscape
 - [Data Centers & Neoclouds](https://canonical.cc/labs/data-centers/): Compute buildout landscape
+- [Groundwork](https://canonical.cc/labs/groundwork/): What data center operators have actually filed with air regulators, county by county — permits, backup generators, permitted emissions, flood zone and water stress, each sourced to the filing
 - [Physical AI & Robotics](https://canonical.cc/physical-ai-robotics/): Three years of venture investment across 22 sub-sectors
 
 ## Facts

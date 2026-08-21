@@ -15,7 +15,9 @@ import { renderIndex } from './lib/render-index.mjs';
 import { regimeFor } from './lib/disclosure.mjs';
 
 const OUT = path.resolve('labs/groundwork');
-const BASE = 'https://canonical.cc/labs/groundwork';
+/* The apex 301s to www, so canonicals must name the host that actually
+   serves the page — a canonical pointing at a redirect wastes the signal. */
+const BASE = 'https://www.canonical.cc/labs/groundwork';
 
 const countyName = (loc) => String(loc).replace(/\s*Co\.$/, ' County');
 const countySlug = (loc) => slugify(countyName(loc));
@@ -210,7 +212,18 @@ function renderSite(site, db) {
                 </div>
             </section>`;
 
-  return head({ title, description: desc, canonical: `${BASE}/site/${site.slug}/` }) + body + foot;
+  /* A registry-only page with no address, no coordinate and no permit detail
+     has nothing on it but its own name. Keep it reachable and linked, but do
+     not ask Google to index several dozen near-identical stubs — that is how
+     a section gets treated as thin and drags the useful pages down with it. */
+  const contentless = !site.permit.count && !site.address.street && !site.geo?.lat;
+
+  return head({
+    title,
+    description: desc,
+    canonical: `${BASE}/site/${site.slug}/`,
+    noindex: contentless,
+  }) + body + foot;
 }
 
 /* -------------------------------------------------------------- county ---- */
@@ -236,10 +249,15 @@ function renderCounty(name, sites, ctx) {
 
   /* The headline answer belongs in the title, so the search snippet answers
      the query without a click. */
-  const headlineBits = [`${sites.length} site${sites.length === 1 ? '' : 's'}`];
-  if (permits) headlineBits.push(`${permits} air permit${permits === 1 ? '' : 's'}`);
-  if (gens) headlineBits.push(`${gens.toLocaleString()} permitted generators`);
-  const title = `Data centers in ${name}, ${state} — ${headlineBits.join(', ')} | Groundwork`;
+  /* Front-load the place, then add as many figures as fit. Search results cut
+     titles around 60 characters, so a third clause is usually wasted. */
+  const stem = `Data centers in ${name}, ${state}`;
+  const bits = [`${sites.length} site${sites.length === 1 ? '' : 's'}`];
+  if (gens) bits.push(`${gens.toLocaleString()} generators`);
+  else if (permits) bits.push(`${permits} air permit${permits === 1 ? '' : 's'}`);
+  let title = `${stem} — ${bits.join(', ')}`;
+  if (title.length > 66) title = `${stem} — ${bits[0]}`;
+  title += ' | Groundwork';
   const desc = gens
     ? `${sites.length} data center sites in ${name}, ${state}, holding ${permits} issued air permits and ${gens.toLocaleString()} permitted backup generators. Every figure sourced to the permit it came from.`
     : `${sites.length} air-permitted data center facilities in ${name}, ${state}, from EPA's national permit registry, with flood and water exposure for each.`;
@@ -349,7 +367,30 @@ function renderCounty(name, sites, ctx) {
                 </div>
             </section>`;
 
-  return { slug, html: head({ title, description: desc, canonical: `${BASE}/county/${slug}/` }) + body + foot };
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Dataset',
+        name: `Data center air permits in ${name}, ${state}`,
+        description: desc,
+        url: `${BASE}/county/${slug}/`,
+        creator: { '@type': 'Organization', name: 'Canonical', url: 'https://www.canonical.cc/' },
+        isAccessibleForFree: true,
+        distribution: { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: `${BASE}/data/sites.json` },
+        spatialCoverage: { '@type': 'Place', name: `${name}, ${state}` },
+        variableMeasured: ['permitted data center sites', 'issued air permits', 'permitted backup generators', 'permitted NOx tons per year', 'FEMA flood zone', 'baseline water stress'],
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Groundwork', item: `${BASE}/` },
+          { '@type': 'ListItem', position: 2, name: `${name}, ${state}` },
+        ],
+      },
+    ],
+  };
+  return { slug, html: head({ title, description: desc, canonical: `${BASE}/county/${slug}/`, jsonLd }) + body + foot };
 }
 
 /* ------------------------------------------------------------ operator ---- */

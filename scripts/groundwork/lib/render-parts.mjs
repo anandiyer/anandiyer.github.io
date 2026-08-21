@@ -62,9 +62,13 @@ export function timeline(entries, nextEntry) {
 }
 
 /* Head block matching the house convention across canonical.cc labs. */
-export function head({ title, description, canonical, extraCss = '' }) {
+export function head({ title, description, canonical, extraCss = '', noindex = false, jsonLd = null }) {
+  /* jekyll-sitemap honours `sitemap: false` in front matter, so a page we do
+     not want indexed is kept out of the sitemap as well as robots-tagged.
+     Both are needed: one stops it being submitted, the other stops it being
+     indexed if it is found by a link. */
   return `---
----
+${noindex ? 'sitemap: false\n' : ''}---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +78,7 @@ export function head({ title, description, canonical, extraCss = '' }) {
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(description)}" />
     <meta name="author" content="Canonical" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow'}" />
     <link rel="canonical" href="${esc(canonical)}" />
 
     <!-- Open Graph -->
@@ -103,6 +107,7 @@ export function head({ title, description, canonical, extraCss = '' }) {
     <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
     <link rel="stylesheet" href="/labs/groundwork/lab.css?v={{ site.asset_version }}">
 ${extraCss}
+${jsonLd ? `    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 </head>
 <body>
     <div class="min-h-screen">

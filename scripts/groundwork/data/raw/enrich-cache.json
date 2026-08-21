@@ -6697,6 +6697,426 @@
       "source": "FEMA National Flood Hazard Layer",
       "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
       "confidence": "confirmed"
+    },
+    "39.69304,-119.34477": {
+      "status": "mapped",
+      "zone": "D",
+      "subtype": null,
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "32031C",
+      "label": "Zone D",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.58973,-81.25638": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "37035C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.62326,-84.56102": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "13121C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "36.14495,-86.70358": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "47037C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.55979,-104.82666": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08035C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.95085,-86.83220": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "47187C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.73056,-84.61667": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "13097C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.60276,-112.03825": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "49035C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.92190,-105.12362": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "085073",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.89629,-105.11114": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08059C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.51640,-119.47800": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "32029C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "36.05989,-115.20783": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "32003C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "33.71834,-84.52366": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "13121C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "42.02305,-87.97551": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "17031C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "41.87156,-87.64310": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "17031C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.51421,-97.59661": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "40109C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.67035,-75.37712": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "42095C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.67614,-75.37758": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "42095C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.07576,-75.28587": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "42091C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.54337,-75.66256": {
+      "status": "mapped",
+      "zone": "A",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": null,
+      "dfirm_id": "42077C",
+      "label": "Zone A — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "42.00083,-87.94932": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "17031C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "42.01323,-87.95970": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "17031C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.55081,-105.03388": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08035C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "36.06386,-115.21859": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "32003C",
+      "label": "Zone X — 0.2 pct annual chance flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "36.14433,-115.07738": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "32003C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.97042,-86.80984": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "47187C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.15182,-75.48001": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "42091C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.89356,-75.16699": {
+      "status": "mapped",
+      "zone": "AE",
+      "subtype": null,
+      "in_sfha": true,
+      "static_bfe": 10,
+      "dfirm_id": "420757",
+      "label": "Zone AE — Special Flood Hazard Area",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "40.76080,-74.02661": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "34017C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "42.39291,-71.26475": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "25017C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.56080,-104.83264": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08035C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "35.50110,-85.01972": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "47143C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.96750,-105.17421": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08013C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.63159,-104.89918": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "080046",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
+    },
+    "39.01131,-104.81643": {
+      "status": "mapped",
+      "zone": "X",
+      "subtype": "AREA OF MINIMAL FLOOD HAZARD",
+      "in_sfha": false,
+      "static_bfe": null,
+      "dfirm_id": "08041C",
+      "label": "Zone X — area of minimal flood hazard",
+      "source": "FEMA National Flood Hazard Layer",
+      "source_url": "https://hazards.fema.gov/femaportal/NFHL/",
+      "confidence": "confirmed"
     }
   },
   "water": {
@@ -11547,6 +11967,426 @@
       "source": "WRI Aqueduct 4.0 — baseline water stress",
       "source_url": "https://www.wri.org/aqueduct",
       "confidence": "confirmed"
+    },
+    "39.69304,-119.34477": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.082519184213296,
+      "category": 3,
+      "withdrawal_ratio": 0.4235461525358548,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Nevada",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.58973,-81.25638": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.638327144220889,
+      "category": 3,
+      "withdrawal_ratio": 0.6226093075610709,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "North Carolina",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.62326,-84.56102": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.4115917257827646,
+      "category": 2,
+      "withdrawal_ratio": 0.2660305124910562,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Georgia",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "36.14495,-86.70358": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.1240926164413865,
+      "category": 1,
+      "withdrawal_ratio": 0.1089822073084819,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Tennessee",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.55979,-104.82666": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.95085,-86.83220": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.1240926164413865,
+      "category": 1,
+      "withdrawal_ratio": 0.1089822073084819,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Tennessee",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.73056,-84.61667": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.4115917257827646,
+      "category": 2,
+      "withdrawal_ratio": 0.2660305124910562,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Georgia",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.60276,-112.03825": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.2322580514530403,
+      "category": 3,
+      "withdrawal_ratio": 0.469868825296039,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Utah",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.92190,-105.12362": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.89629,-105.11114": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.51640,-119.47800": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.082519184213296,
+      "category": 3,
+      "withdrawal_ratio": 0.4235461525358548,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Nevada",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "36.05989,-115.20783": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0.6701146863701557,
+      "category": 0,
+      "withdrawal_ratio": 0.0795599727070787,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Nevada",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "33.71834,-84.52366": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.4115917257827646,
+      "category": 2,
+      "withdrawal_ratio": 0.2660305124910562,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Georgia",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "42.02305,-87.97551": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.500974462273387,
+      "category": 3,
+      "withdrawal_ratio": 0.5660676438503741,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "Illinois",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "41.87156,-87.64310": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.4329938042424906,
+      "category": 3,
+      "withdrawal_ratio": 0.5400128749200278,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "Illinois",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.51421,-97.59661": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.1079575440192464,
+      "category": 2,
+      "withdrawal_ratio": 0.2155402859434139,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Oklahoma",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.67035,-75.37712": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.67614,-75.37758": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.07576,-75.28587": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.54337,-75.66256": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "42.00083,-87.94932": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.500974462273387,
+      "category": 3,
+      "withdrawal_ratio": 0.5660676438503741,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "Illinois",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "42.01323,-87.95970": {
+      "status": "mapped",
+      "label": "High (40-80%)",
+      "score": 3.500974462273387,
+      "category": 3,
+      "withdrawal_ratio": 0.5660676438503741,
+      "overall_water_risk": "Medium - High (2-3)",
+      "basin": "Illinois",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.55081,-105.03388": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "36.06386,-115.21859": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0.6701146863701557,
+      "category": 0,
+      "withdrawal_ratio": 0.0795599727070787,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Nevada",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "36.14433,-115.07738": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0.6701146863701557,
+      "category": 0,
+      "withdrawal_ratio": 0.0795599727070787,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Nevada",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.97042,-86.80984": {
+      "status": "mapped",
+      "label": "Low - Medium (10-20%)",
+      "score": 1.1240926164413865,
+      "category": 1,
+      "withdrawal_ratio": 0.1089822073084819,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Tennessee",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.15182,-75.48001": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.89356,-75.16699": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.830392351967968,
+      "category": 2,
+      "withdrawal_ratio": 0.3556337766461611,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Pennsylvania",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "40.76080,-74.02661": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0,
+      "category": 0,
+      "withdrawal_ratio": 0.0309236161688102,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "New Jersey",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "42.39291,-71.26475": {
+      "status": "mapped",
+      "label": "Medium - High (20-40%)",
+      "score": 2.188356913706249,
+      "category": 2,
+      "withdrawal_ratio": 0.2278930477820012,
+      "overall_water_risk": "Low - Medium (1-2)",
+      "basin": "Massachusetts",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.56080,-104.83264": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "35.50110,-85.01972": {
+      "status": "mapped",
+      "label": "Low (<10%)",
+      "score": 0,
+      "category": 0,
+      "withdrawal_ratio": 0.0025261581631663,
+      "overall_water_risk": "Low (0-1)",
+      "basin": "Tennessee",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.96750,-105.17421": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.63159,-104.89918": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 5,
+      "category": 4,
+      "withdrawal_ratio": 2.242617507885955,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
+    },
+    "39.01131,-104.81643": {
+      "status": "mapped",
+      "label": "Extremely High (>80%)",
+      "score": 4.654043608221356,
+      "category": 4,
+      "withdrawal_ratio": 1.2588579633841386,
+      "overall_water_risk": "High (3-4)",
+      "basin": "Colorado",
+      "source": "WRI Aqueduct 4.0 — baseline water stress",
+      "source_url": "https://www.wri.org/aqueduct",
+      "confidence": "confirmed"
     }
   },
   "edgar": {
@@ -12492,6 +13332,383 @@
       ],
       "source": "SEC EDGAR full-text search",
       "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Google%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Prime Data Centers": {
+      "query": "Prime Data Centers data center",
+      "available": true,
+      "total": 0,
+      "hits": [],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Prime%20Data%20Centers%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Meta": {
+      "query": "Meta data center",
+      "available": true,
+      "total": 19,
+      "hits": [
+        {
+          "company": "Crown Electrokinetics Corp.  (CRKN)  (CIK 0001761696)",
+          "form": "EX-99.2",
+          "filed": "2023-01-04",
+          "cik": "0001761696",
+          "url": "https://www.sec.gov/Archives/edgar/data/1761696/000121390023000677/ea171181ex99-2_crownelectro.htm"
+        },
+        {
+          "company": "Amrize Ltd  (AMRZ)  (CIK 0002035989)",
+          "form": "EX-99.2",
+          "filed": "2025-08-06",
+          "cik": "0002035989",
+          "url": "https://www.sec.gov/Archives/edgar/data/2035989/000203598925000003/exhibit992amrizeq22025ea.htm"
+        },
+        {
+          "company": "RED RIVER BANCSHARES INC  (RRBI)  (CIK 0001071236)",
+          "form": "EX-99.1",
+          "filed": "2025-08-29",
+          "cik": "0001071236",
+          "url": "https://www.sec.gov/Archives/edgar/data/1071236/000107123625000082/rrbi2q25investorpresenta.htm"
+        },
+        {
+          "company": "PNM RESOURCES INC  (TXNM)  (CIK 0001108426)",
+          "form": "10-Q",
+          "filed": "2023-08-04",
+          "cik": "0001108426",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108426/000110842623000048/pnm-20230630.htm"
+        },
+        {
+          "company": "RED RIVER BANCSHARES INC  (RRBI)  (CIK 0001071236)",
+          "form": "EX-99.1",
+          "filed": "2026-05-14",
+          "cik": "0001071236",
+          "url": "https://www.sec.gov/Archives/edgar/data/1071236/000107123626000045/rrbi1q26investorpresenta.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Meta%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Flexential": {
+      "query": "Flexential data center",
+      "available": true,
+      "total": 4,
+      "hits": [
+        {
+          "company": "ENDOLOGIX INC /DE/  (CIK 0001013606)",
+          "form": "EX-10.3",
+          "filed": "2019-04-01",
+          "cik": "0001013606",
+          "url": "https://www.sec.gov/Archives/edgar/data/1013606/000119312519093647/d730850dex103.htm"
+        },
+        {
+          "company": "ENDOLOGIX INC /DE/  (CIK 0001013606)",
+          "form": "EX-10.2",
+          "filed": "2020-02-24",
+          "cik": "0001013606",
+          "url": "https://www.sec.gov/Archives/edgar/data/1013606/000119312520045566/d891412dex102.htm"
+        },
+        {
+          "company": "ENDOLOGIX INC /DE/  (CIK 0001013606)",
+          "form": "EX-10.3",
+          "filed": "2020-02-24",
+          "cik": "0001013606",
+          "url": "https://www.sec.gov/Archives/edgar/data/1013606/000119312520045566/d891412dex103.htm"
+        },
+        {
+          "company": "ENDOLOGIX INC /DE/  (CIK 0001013606)",
+          "form": "EX-10.4",
+          "filed": "2019-04-01",
+          "cik": "0001013606",
+          "url": "https://www.sec.gov/Archives/edgar/data/1013606/000119312519093647/d730850dex104.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Flexential%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Stream Data Centers": {
+      "query": "Stream Data Centers data center",
+      "available": true,
+      "total": 2,
+      "hits": [
+        {
+          "company": "PINNACLE WEST CAPITAL CORP  (PNW)  (CIK 0000764622)",
+          "form": "EX-99.1",
+          "filed": "2019-06-24",
+          "cik": "0000764622",
+          "url": "https://www.sec.gov/Archives/edgar/data/764622/000076462219000067/wolfeaustraliandrsfinal.htm"
+        },
+        {
+          "company": "PINNACLE WEST CAPITAL CORP  (PNW)  (CIK 0000764622)",
+          "form": "EX-99.1",
+          "filed": "2019-05-28",
+          "cik": "0000764622",
+          "url": "https://www.sec.gov/Archives/edgar/data/764622/000076462219000060/goldmansachsndrsfinal.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Stream%20Data%20Centers%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "TierPoint": {
+      "query": "TierPoint data center",
+      "available": true,
+      "total": 2,
+      "hits": [
+        {
+          "company": "WINDSTREAM HOLDINGS, INC.  (CIK 0001282266)",
+          "form": "10-Q",
+          "filed": "2015-11-05",
+          "cik": "0001282266",
+          "url": "https://www.sec.gov/Archives/edgar/data/1282266/000128226615000050/a2015093010q.htm"
+        },
+        {
+          "company": "WINDSTREAM HOLDINGS, INC.  (CIK 0001282266)",
+          "form": "10-K",
+          "filed": "2016-02-25",
+          "cik": "0001282266",
+          "url": "https://www.sec.gov/Archives/edgar/data/1282266/000128226616000059/a201510k.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22TierPoint%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Switch": {
+      "query": "Switch data center",
+      "available": true,
+      "total": 31,
+      "hits": [
+        {
+          "company": "Comstock Inc.  (LODE)  (CIK 0001120970)",
+          "form": "EX-10.1",
+          "filed": "2024-11-13",
+          "cik": "0001120970",
+          "url": "https://www.sec.gov/Archives/edgar/data/1120970/000143774924034946/ex_747506.htm"
+        },
+        {
+          "company": "CMS ENERGY CORP  (CMS, CMSA, CMSC, CMSD, CMS-PC)  (CIK 0000811156)",
+          "form": "EX-99.2",
+          "filed": "2025-10-30",
+          "cik": "0000811156",
+          "url": "https://www.sec.gov/Archives/edgar/data/811156/000110465925103975/tm2529773d1_ex99-2.htm"
+        },
+        {
+          "company": "CENTURY CASINOS INC /CO/  (CNTY)  (CIK 0000911147)",
+          "form": "EX-99.2",
+          "filed": "2022-02-23",
+          "cik": "0000911147",
+          "url": "https://www.sec.gov/Archives/edgar/data/911147/000091114722000004/cnty-20220222xex99_2.htm"
+        },
+        {
+          "company": "Anterix Inc.  (ATEX)  (CIK 0001304492)",
+          "form": "EX-10.1",
+          "filed": "2020-08-06",
+          "cik": "0001304492",
+          "url": "https://www.sec.gov/Archives/edgar/data/1304492/000130449220000042/atex-20200630xex10_1.htm"
+        },
+        {
+          "company": "CMS ENERGY CORP  (CMS, CMSA, CMSC, CMSD, CMS-PC)  (CIK 0000811156)",
+          "form": "EX-99.2",
+          "filed": "2026-04-28",
+          "cik": "0000811156",
+          "url": "https://www.sec.gov/Archives/edgar/data/811156/000110465926049718/tm2612873d1_ex99-2.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Switch%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Apple": {
+      "query": "Apple data center",
+      "available": true,
+      "total": 11,
+      "hits": [
+        {
+          "company": "Carolina Trust BancShares, Inc.  (CIK 0001676667)",
+          "form": "EX-99.1",
+          "filed": "2018-05-02",
+          "cik": "0001676667",
+          "url": "https://www.sec.gov/Archives/edgar/data/1676667/000114036118020962/ex99_1.htm"
+        },
+        {
+          "company": "Carolina Trust BancShares, Inc.  (CIK 0001676667)",
+          "form": "EX-99.1",
+          "filed": "2017-09-07",
+          "cik": "0001676667",
+          "url": "https://www.sec.gov/Archives/edgar/data/1676667/000162612917000519/ex99-1.htm"
+        },
+        {
+          "company": "QCR HOLDINGS INC  (QCRH)  (CIK 0000906465)",
+          "form": "EX-99.1",
+          "filed": "2019-05-07",
+          "cik": "0000906465",
+          "url": "https://www.sec.gov/Archives/edgar/data/906465/000110465919027506/a19-9391_1ex99d1.htm"
+        },
+        {
+          "company": "QCR HOLDINGS INC  (QCRH)  (CIK 0000906465)",
+          "form": "EX-99.1",
+          "filed": "2019-07-29",
+          "cik": "0000906465",
+          "url": "https://www.sec.gov/Archives/edgar/data/906465/000110465919042303/a19-15263_1ex99d1.htm"
+        },
+        {
+          "company": "QCR HOLDINGS INC  (QCRH)  (CIK 0000906465)",
+          "form": "EX-99.1",
+          "filed": "2019-12-12",
+          "cik": "0000906465",
+          "url": "https://www.sec.gov/Archives/edgar/data/906465/000110465919072206/tm1925025d1_ex99-1.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Apple%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "xAI": {
+      "query": "xAI data center",
+      "available": true,
+      "total": 0,
+      "hits": [],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22xAI%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "EdgeConneX": {
+      "query": "EdgeConneX data center",
+      "available": true,
+      "total": 1,
+      "hits": [
+        {
+          "company": "SVF Investment Corp. 3  (SYM)  (CIK 0001837240)",
+          "form": "10-K",
+          "filed": "2022-03-23",
+          "cik": "0001837240",
+          "url": "https://www.sec.gov/Archives/edgar/data/1837240/000119312522082751/d315600d10k.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22EdgeConneX%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Novva Data Centers": {
+      "query": "Novva Data Centers data center",
+      "available": true,
+      "total": 0,
+      "hits": [],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Novva%20Data%20Centers%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Oracle": {
+      "query": "Oracle data center",
+      "available": true,
+      "total": 31,
+      "hits": [
+        {
+          "company": "DTE ENERGY CO  (DTB, DTE, DTG, DTK, DTW)  (CIK 0000936340)",
+          "form": "EX-99.2",
+          "filed": "2026-02-17",
+          "cik": "0000936340",
+          "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000051/ex992q425presentationfin.htm"
+        },
+        {
+          "company": "DTE ENERGY CO  (DTB, DTE, DTG, DTK, DTW)  (CIK 0000936340)",
+          "form": "EX-99.1",
+          "filed": "2026-05-15",
+          "cik": "0000936340",
+          "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000119/a2026agapresentationfina.htm"
+        },
+        {
+          "company": "DTE ENERGY CO  (DTB, DTE, DTG, DTK, DTW)  (CIK 0000936340)",
+          "form": "EX-99.2",
+          "filed": "2026-07-28",
+          "cik": "0000936340",
+          "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000144/q226presentationfinal8k.htm"
+        },
+        {
+          "company": "DTE ENERGY CO  (DTB, DTE, DTG, DTK, DTW)  (CIK 0000936340)",
+          "form": "EX-99.2",
+          "filed": "2026-04-30",
+          "cik": "0000936340",
+          "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000079/q126presentationfinal8k.htm"
+        },
+        {
+          "company": "DTE ENERGY CO  (DTB, DTE, DTG, DTK, DTW)  (CIK 0000936340)",
+          "form": "EX-99.1",
+          "filed": "2026-03-23",
+          "cik": "0000936340",
+          "url": "https://www.sec.gov/Archives/edgar/data/936340/000093634026000071/presentationfinal8k32326.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Oracle%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "T5 Data Centers": {
+      "query": "T5 Data Centers data center",
+      "available": true,
+      "total": 0,
+      "hits": [],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22T5%20Data%20Centers%20data%20center%22",
+      "confidence": "directional",
+      "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
+    },
+    "Cyxtera": {
+      "query": "Cyxtera data center",
+      "available": true,
+      "total": 5,
+      "hits": [
+        {
+          "company": "Cyxtera Technologies, Inc.  (CIK 0001794905)",
+          "form": "EX-99.1",
+          "filed": "2023-06-05",
+          "cik": "0001794905",
+          "url": "https://www.sec.gov/Archives/edgar/data/1794905/000119312523160378/d497336dex991.htm"
+        },
+        {
+          "company": "STARBOARD VALUE ACQUISITION CORP.  (CIK 0001794905)",
+          "form": "EX-99.3",
+          "filed": "2021-02-22",
+          "cik": "0001794905",
+          "url": "https://www.sec.gov/Archives/edgar/data/1794905/000110465921025980/tm217463d1_ex99-3.htm"
+        },
+        {
+          "company": "STARBOARD VALUE ACQUISITION CORP.  (CIK 0001794905)",
+          "form": "EX-99.1",
+          "filed": "2021-06-15",
+          "cik": "0001794905",
+          "url": "https://www.sec.gov/Archives/edgar/data/1794905/000110465921081499/tm2119756d1_ex99-1.htm"
+        },
+        {
+          "company": "Cyxtera Technologies, Inc.  (CIK 0001794905)",
+          "form": "10-K",
+          "filed": "2023-03-16",
+          "cik": "0001794905",
+          "url": "https://www.sec.gov/Archives/edgar/data/1794905/000179490523000010/cyxt-20221231.htm"
+        },
+        {
+          "company": "Cyxtera Technologies, Inc.  (CIK 0001794905)",
+          "form": "10-K",
+          "filed": "2022-03-25",
+          "cik": "0001794905",
+          "url": "https://www.sec.gov/Archives/edgar/data/1794905/000179490522000022/cyxt-20211231.htm"
+        }
+      ],
+      "source": "SEC EDGAR full-text search",
+      "source_url": "https://efts.sec.gov/LATEST/search-index?q=%22Cyxtera%20data%20center%22",
       "confidence": "directional",
       "caveat": "Full-text match on a place or facility name. Confirms that a public filer discusses this locality; it does not confirm the filing refers to this specific site."
     }

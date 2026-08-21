@@ -6,10 +6,15 @@ generates the static pages under `labs/groundwork/`.
 ## Run it
 
 ```bash
-node scripts/groundwork/run-all.mjs          # full refresh
+node scripts/groundwork/run-all.mjs               # full refresh
 node scripts/groundwork/run-all.mjs --skip-pdfs   # skip the PDF pass (cached)
-node scripts/groundwork/07-monitor.mjs       # build the editorial review queue
+node scripts/groundwork/run-all.mjs --skip-tx     # skip the TCEQ browser scrape
+node scripts/groundwork/07-monitor.mjs            # build the editorial review queue
 ```
+
+`--skip-tx` skips only the browser scrape (`10`), not the Texas rebuild (`11`).
+Change `lib/operators.mjs` and you must re-run the refresh even with `--skip-tx`,
+because the brand list is applied to the cached Texas rows in `11`.
 
 Then commit `labs/groundwork/`. GitHub Pages serves the generated HTML directly;
 there is no server component and no database.
@@ -29,6 +34,9 @@ there is no server component and no database.
 | `06-reported.mjs` | Merges hand-curated reported-tier entries | reported |
 | `05-render.mjs` | Generates every static page + the public dataset | — |
 | `07-monitor.mjs` | RSS → editorial review queue (never publishes) | — |
+| `09-echo-national.mjs` | EPA ECHO — air-permitted facilities in the other 49 states | confirmed |
+| `10-tceq.mjs` | TCEQ New Source Review search, driven in a real browser | — |
+| `11-tceq-sites.mjs` | Rolls the TCEQ scrape into Texas facilities | confirmed |
 
 ## Things that will bite you
 

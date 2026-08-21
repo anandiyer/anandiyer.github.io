@@ -22,10 +22,39 @@ const BASE = 'https://www.canonical.cc/labs/groundwork';
 const countyName = (loc) => String(loc).replace(/\s*Co\.$/, ' County');
 const countySlug = (loc) => slugify(countyName(loc));
 
+const written = new Set();
+
 function write(rel, html) {
   const file = path.join(OUT, rel, 'index.html');
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, html);
+  written.add(rel);
+}
+
+/* Remove pages for entries that no longer exist.
+
+   This renderer only ever wrote files, so a site that was withdrawn stayed
+   published — orphaned from every index and link, but still served, still in
+   the sitemap, still indexed. Sixteen Iowa grain elevators mistakenly
+   identified as data centers were corrected in the dataset in August 2026 and
+   would have remained live indefinitely without this.
+
+   A directory that cannot retract an entry can only accumulate its mistakes,
+   and a wrong page nobody links to is worse than one that is linked: it is
+   still findable by search and by anyone holding the URL, with nothing left
+   pointing at the correction. */
+function prune(kind) {
+  const dir = path.join(OUT, kind);
+  if (!fs.existsSync(dir)) return [];
+  const removed = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const rel = `${kind}/${entry.name}`;
+    if (written.has(rel)) continue;
+    fs.rmSync(path.join(dir, entry.name), { recursive: true, force: true });
+    removed.push(rel);
+  }
+  return removed;
 }
 
 /* ---------------------------------------------------------------- site ---- */
@@ -532,8 +561,14 @@ export function render() {
     })),
   }, { pretty: false });
 
+  const removed = [...prune('site'), ...prune('county'), ...prune('operator')];
+  if (removed.length) {
+    log(`pruned ${removed.length} page(s) for entries no longer in the dataset:`);
+    for (const r of removed) log(`  - ${r}`);
+  }
+
   log(`rendered ${db.sites.length} site pages, ${byCounty.size} county pages, ${byOp.size} operator pages`);
-  return { sites: db.sites.length, counties: byCounty.size, operators: byOp.size };
+  return { sites: db.sites.length, counties: byCounty.size, operators: byOp.size, pruned: removed.length };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) render();

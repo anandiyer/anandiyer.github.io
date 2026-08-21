@@ -27,16 +27,31 @@ const SEC_HEADERS = {
 
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/* Backoff is linear for transient 5xx but exponential for 429, because the two
+   mean different things. A 502 is usually gone on the next try; a 429 means a
+   window has been tripped and the server wants real time, not another request
+   in 1.2 seconds. EPA ECHO throttled 13 consecutive queries in August 2026 and
+   the old 1.2s/2.4s/3.6s ladder exhausted itself inside eight seconds against a
+   window measured in minutes. `Retry-After` wins whenever the server sends it. */
+const backoffMs = (status, attempt, retryAfter) => {
+  if (retryAfter) return Math.min(retryAfter * 1000, 120000);
+  if (status === 429) return Math.min(5000 * 2 ** (attempt - 1), 60000);
+  return 1200 * attempt;
+};
+
 export async function get(url, { headers = CHROME_HEADERS, retries = 3, timeout = 45000, json = false } = {}) {
-  let lastErr;
+  let lastErr, lastStatus = 0, lastRetryAfter = 0;
   for (let attempt = 0; attempt <= retries; attempt++) {
-    if (attempt) await sleep(1200 * attempt);
+    if (attempt) await sleep(backoffMs(lastStatus, attempt, lastRetryAfter));
     const ac = new AbortController();
     const timer = setTimeout(() => ac.abort(), timeout);
     try {
       const res = await fetch(url, { headers, signal: ac.signal });
       if (!res.ok) {
         lastErr = new Error(`HTTP ${res.status} ${url}`);
+        lastStatus = res.status;
+        const ra = Number(res.headers.get('retry-after'));
+        lastRetryAfter = Number.isFinite(ra) && ra > 0 ? ra : 0;
         /* 4xx other than 429 won't fix itself on retry. */
         if (res.status !== 429 && res.status < 500) throw lastErr;
         continue;
@@ -44,6 +59,8 @@ export async function get(url, { headers = CHROME_HEADERS, retries = 3, timeout 
       return json ? await res.json() : await res.text();
     } catch (err) {
       lastErr = err;
+      lastStatus = 0;
+      lastRetryAfter = 0;
     } finally {
       clearTimeout(timer);
     }

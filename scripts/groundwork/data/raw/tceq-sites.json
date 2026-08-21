@@ -1075,9 +1075,9 @@
       "earliest": "2024-06-21",
       "identified_by": "operator + record signal",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Switch",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Switch."
       }
     },
     {
@@ -1117,9 +1117,9 @@
       "earliest": "2023-01-24",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Flexential",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Flexential."
       }
     },
     {
@@ -1138,9 +1138,9 @@
       "earliest": "2026-03-10",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Flexential",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Flexential."
       }
     },
     {
@@ -1159,9 +1159,9 @@
       "earliest": "2025-05-12",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "TierPoint",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of TierPoint."
       }
     },
     {
@@ -1180,9 +1180,9 @@
       "earliest": "2022-05-23",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Stream Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Stream Data Centers."
       }
     },
     {
@@ -1201,9 +1201,9 @@
       "earliest": "2023-09-21",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Stream Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Stream Data Centers."
       }
     },
     {
@@ -1222,9 +1222,9 @@
       "earliest": "2026-08-06",
       "identified_by": "holder name",
       "operator": {
-        "operator": null,
-        "confidence": "unresolved",
-        "basis": "No operator could be resolved from the permittee name."
+        "operator": "Prime Data Centers",
+        "confidence": "confirmed",
+        "basis": "Permit is held in the name of Prime Data Centers."
       }
     },
     {

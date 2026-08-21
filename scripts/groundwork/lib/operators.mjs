@@ -25,7 +25,11 @@ const BRANDS = [
   ['Digital Realty', /\bdigital realty\b/i],
   ['QTS', /\bqts\b/i],
   ['CyrusOne', /\bcyrusone\b/i],
-  ['Vantage Data Centers', /\bvantage\b/i],
+  /* "AG VANTAGE FS INC - ALDEN" is an Iowa farm co-operative, and sixteen of its
+     grain and fertiliser sites were published here as Vantage data centers —
+     which is where most of Iowa's count came from. The bare token is too
+     generic; anything prefixed "Ag " is not this company. */
+  ['Vantage Data Centers', /(?<!\bag[\s-])\bvantage\b/i],
   ['NTT Global Data Centers', /\bntt\b/i],
   ['STACK Infrastructure', /\bstack infrastructure\b/i],
   ['Aligned Data Centers', /\baligned\b/i],
@@ -35,7 +39,7 @@ const BRANDS = [
   ['Cologix', /\bcologix\b/i],
   ['DataBank', /\bdatabank\b/i],
   ['Iron Mountain', /\biron mountain\b/i],
-  ['H5 Data Centers', /\bh5\b/i],
+  ['H5 Data Centers', /\bh5 data\b/i],
   ['Chirisa', /\bchirisa\b/i],
   ['TECfusions', /\btecfusions\b/i],
   ['Yondr', /\byondr\b/i],
@@ -44,7 +48,7 @@ const BRANDS = [
   ['DP Facilities', /\bdp facilities\b/i],
   ['Peak 10', /\bpeak 10\b/i],
   ['Zayo', /\bzayo\b/i],
-  ['Lumen (Level 3)', /\blevel 3\b/i],
+  ['Lumen (Level 3)', /\blevel 3\b|\blumen\b|\bcenturylink\b|\bqwest\b/i],
   ['Verizon', /\bverizon\b/i],
   ['VeriSign', /\bverisign\b/i],
   ['Comcast', /\bcomcast\b/i],
@@ -60,13 +64,79 @@ const BRANDS = [
   ['George Washington University', /\bgeorge washington university\b/i],
   ['U.S. Customs and Border Protection', /\bcustoms and border protection\b/i],
   ['COPT Defense Properties', /\bcorporate office properties\b/i],
-  ['Sabey Data Centers', /\bintergate\b/i],
+  ['Sabey Data Centers', /\bintergate\b|\bsabey\b/i],
   ['Hayden Technologies', /\bhayden\b/i],
   ['Scout Development', /\bscout development\b/i],
   ['StratCap', /\bstratcap\b/i],
   ['RREEF (DWS)', /\brreef\b/i],
   ['Cardinal Energy', /\bcardinal energy\b/i],
+  /* Colocation and wholesale operators. Until August 2026 these were queried
+     in `09-echo-national.mjs` but not listed here, so an ECHO hit survived
+     only if the facility name happened to contain the words "data center" —
+     EdgeConneX and Cyxtera published zero sites for exactly that reason.
+     Querying for a name and then discarding the answer is the worst of both. */
+  ['Flexential', /\bflexential\b/i],
+  ['TierPoint', /\btierpoint\b/i],
+  ['EdgeConneX', /\bedgeconnex\b/i],
+  ['Cyxtera', /\bcyxtera\b/i],
+  ['Stream Data Centers', /\bstream data\b/i],
+  ['Prime Data Centers', /\bprime data\b/i],
+  ['Novva Data Centers', /\bnovva\b/i],
+  ['T5 Data Centers', /\bt5\s*@|\bt5 data\b/i],
+  ['Cogent Communications', /\bcogent communications\b/i],
+  ['American Tower', /\bamerican tower\b/i],
+  ['Csquare', /\bcsquare\b/i],
+  ['Edgecore Digital Infrastructure', /\bedgecore\b/i],
+  ['Corscale Data Centers', /\bcorscale\b/i],
+  ['PowerHouse Data Centers', /\bpowerhouse data\b/i],
+  ['Skybox Datacenters', /\bskybox data\b/i],
+  ['Element Critical', /\belement critical\b/i],
+
+  /* AI-era operators. Newer estates, so thinner in ECHO, but the ones whose
+     sites Groundwork most exists to document. */
+  ['Crusoe Energy', /\bcrusoe\b/i],
+  ['Applied Digital', /\bapplied digital\b/i],
+  ['CoreWeave', /\bcoreweave\b/i],
+  /* "Oracle" is a town in Arizona and a common oil-well name — the bare token
+     matched a Marathon well ("ORACLE 21 FEDERAL 3H") and an El Paso Natural Gas
+     compressor station. Same for "Colossus". Both keep the corporate form, and
+     otherwise require the record to say data center. */
+  ['Oracle', /\boracle america\b|\boracle\b(?=.*\bdata\s*cent)/i],
+  ['Apple', /\bapple inc\b/i],
+  ['xAI', /\bx\.?ai\b|\bcolossus\b(?=.*\bdata\s*cent)/i],
+
+  /* `switch` is a word that appears in half the telephone-exchange permits in
+     the country ("MOBILE SWITCHING CENTER"), so Switch Inc. is matched on its
+     corporate suffix and its campus brand only, never on the bare word. */
+  ['Switch', /\bswitch,? (inc|ltd)\b|\bsupernap\b/i],
+
+  /* Tract is a land developer, and "tract" is also ordinary parcel language —
+     "EAST TRACT PARK OK" is a Verizon site. Matched on the full brand only. */
+  ['Tract', /\btract data\b/i],
 ];
+
+/* Brands whose estate is mostly NOT data centers.
+
+   A telco's air permits are overwhelmingly central offices, mobile switching
+   centres and cell sites, all of which have a backup generator and none of
+   which is a data center. Matching the brand alone published 157 Lumen
+   telephone exchanges in Iowa and 183 bare "AMERICAN TOWER" cell sites — and a
+   directory of permitted data centers that is half cell towers is worse than
+   one that is smaller. For these operators the brand is not identification on
+   its own; the record must also say data center. Every other brand still
+   qualifies on the name alone, because Equinix does not own anything else.
+
+   `11-tceq-sites.mjs` already draws this distinction for Texas
+   (`DC_CUSTOMER` vs `DC_BRAND`); this is the same idea for the national spine. */
+export const NEEDS_DC_SIGNAL = new Set([
+  'Lumen (Level 3)',
+  'Verizon',
+  'Comcast',
+  'Zayo',
+  'Cogent Communications',
+  'American Tower',
+  'Crusoe Energy',
+]);
 
 /* Aliases: entity names that do not carry the brand but are documented as
    belonging to it. `basis` is published alongside the attribution. */

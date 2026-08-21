@@ -11,7 +11,7 @@
      SEC EDGAR                      weekly
      News monitor                   daily, output reviewed by a human
 
-   Usage:  node scripts/groundwork/run-all.mjs [--no-edgar] [--skip-pdfs]
+   Usage:  node scripts/groundwork/run-all.mjs [--no-edgar] [--skip-pdfs] [--skip-tx]
 */
 
 import { log } from './lib/util.mjs';
@@ -34,6 +34,30 @@ if (!args.has('--skip-pdfs')) {
     const m = await import('./02-permit-details.mjs'); await m.collect();
   });
 }
+
+/* 09/10/11 were added after this orchestrator and were never wired into it,
+   so until August 2026 a "full refresh" quietly rebuilt the national spine and
+   Texas from whatever raw JSON happened to be on disk. Refreshing Virginia
+   while leaving 38 other states frozen is the kind of staleness that shows up
+   as a wrong number on a live page, not as an error. */
+await step('collect EPA ECHO national spine', async () => {
+  const m = await import('./09-echo-national.mjs'); await m.collect();
+});
+
+/* The TCEQ scrape drives an interactive application in a real browser at one
+   query per six seconds, so it is opt-out rather than automatic. `11` is pure
+   reprocessing of the cached scrape and always runs — it is also where the
+   operator brand list is applied to Texas, so it must run after any change to
+   `lib/operators.mjs`, scrape or no scrape. */
+if (!args.has('--skip-tx')) {
+  await step('scrape TCEQ air permit search (browser)', async () => {
+    const m = await import('./10-tceq.mjs'); await m.collect();
+  });
+}
+
+await step('turn the TCEQ scrape into Texas facilities', async () => {
+  const m = await import('./11-tceq-sites.mjs'); m.build();
+});
 
 await step('assemble site records (the join)', async () => {
   const m = await import('./03-build-sites.mjs'); m.build();

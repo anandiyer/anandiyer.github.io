@@ -345,6 +345,20 @@ export function build() {
   }
 
   const echo = readJSON(path.join(RAW, 'echo-national.json'));
+
+  /* `09` marks its output incomplete when an ECHO query fails. Building on top
+     of that would publish "no permitted sites" for whichever operators got
+     throttled — indistinguishable, on the page, from an operator that genuinely
+     has none. `complete` is absent on files written before August 2026, so only
+     an explicit `false` blocks the build. */
+  if (echo.complete === false) {
+    const q = (echo.failed_queries || []).map((f) => f.query).join(', ');
+    throw new Error(
+      `echo-national.json is marked incomplete (${(echo.failed_queries || []).length} failed queries: ${q}). `
+      + 'Re-run node scripts/groundwork/09-echo-national.mjs before building sites.',
+    );
+  }
+
   const tx = readJSON(path.join(RAW, 'tceq-sites.json'));
   const national = [...echoSites(echo), ...tceqSites(tx)];
   const taken = new Set(sites.map((s) => s.slug));

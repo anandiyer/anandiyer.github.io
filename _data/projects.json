@@ -20,6 +20,16 @@
   ],
   "projects": [
     {
+      "name": "The toolchain for designed biology",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Designing a protein or a cell is getting cheap. Making it, clearing it and finding out whether it works is not. California's gene synthesis law puts a dated, penalised gate between a designed sequence and physical DNA from Jan 1, 2027, and the tighter screening rules bite there from Oct 13, 2027. We'd back the software that sits at that gate: the step that takes a designed construct, clears it, gets it made and records what happened.",
+      "wedge": "Pre-synthesis clearance and ordering software sold to teams that design sequences with models, with a signed record of what was designed, cleared and made",
+      "trigger": "California AB 1864 (Chapter 852, Statutes of 2026) makes adherence to the federal nucleic acid synthesis screening framework a legal condition of producing or selling synthetic DNA in California. The chapter takes effect Jan 1, 2027, and the tighter framework provisions apply in the state from Oct 13, 2027 (Health and Safety Code 24201(d)).",
+      "trigger_date": "2027-10-13",
+      "updated": "2026-10-28"
+    },
+    {
       "name": "Seafloor monitoring for deep-sea mining and undersea infrastructure",
       "thesis": "Frontier Systems",
       "thesis_slug": "frontier-systems",
@@ -130,6 +140,16 @@
       "updated": "2026-10-28"
     },
     {
+      "name": "Proof checking for AI-written code",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Agents now write code faster than people can review it, and passing tests doesn't mean the code is right. The EU's Cyber Resilience Act fully applies in December 2027. We'd back an independent checker that verifies machine-made proofs and produces evidence a regulator or insurer accepts.",
+      "wedge": "Proof-checking CI service for one vertical, with CRA evidence",
+      "trigger": "EU Cyber Resilience Act fully applies.",
+      "trigger_date": "2027-12-11",
+      "updated": "2026-10-28"
+    },
+    {
       "name": "Identity and permissions for AI agents",
       "thesis": "Frontier Systems",
       "thesis_slug": "frontier-systems",
@@ -157,16 +177,6 @@
       "wedge": "Fast snapshot-and-fork sandbox runtime with an open density benchmark",
       "trigger": "NVIDIA Vera systems from partners \"starting this fall\" and Arm AGI CPU first production shipments by end of 2026.",
       "trigger_date": "2026-12-31",
-      "updated": "2026-10-26"
-    },
-    {
-      "name": "Proof checking for AI-written code",
-      "thesis": "Frontier Systems",
-      "thesis_slug": "frontier-systems",
-      "one_liner": "Agents now write code faster than people can review it, and passing tests doesn't mean the code is right. The EU's Cyber Resilience Act fully applies in December 2027. We'd back an independent checker that verifies machine-made proofs and produces evidence a regulator or insurer accepts.",
-      "wedge": "Proof-checking CI service for one vertical, with CRA evidence",
-      "trigger": "EU Cyber Resilience Act fully applies.",
-      "trigger_date": "2027-12-11",
       "updated": "2026-10-26"
     },
     {

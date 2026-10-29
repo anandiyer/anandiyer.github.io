@@ -1,0 +1,458 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Field Guide | Canonical Labs</title>
+    <meta name="description" content="Quantum is four businesses, mapped. The physics in four interactive experiments, the gap between the machines we have and the ones we need, and where the first venture outcomes come from. Built by Canonical." />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/labs/quantum/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/labs/quantum/" />
+    <meta property="og:title" content="Quantum Field Guide | Canonical Labs" />
+    <meta property="og:description" content="Quantum is four businesses, mapped. Fire electrons at two slits, watch errors compound, and see where the first venture outcomes come from." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/labs/quantum/" />
+    <meta property="twitter:title" content="Quantum Field Guide | Canonical Labs" />
+    <meta property="twitter:description" content="Quantum is four businesses, mapped. Fire electrons at two slits, watch errors compound, and see where the first venture outcomes come from." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="twitter:creator" content="@canonicalcc" />
+    <meta property="twitter:site" content="@canonicalcc" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+    <link rel="stylesheet" href="lab.css?v=1">
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+
+        <main>
+            <!-- [00] HERO -->
+            <section class="qtm-hero">
+                <div class="container mx-auto px-8">
+                    <div class="qtm-wrap">
+                        <span class="qtm-eyebrow">[00] &nbsp; Canonical Labs &middot; Quantum Field Guide</span>
+                        <h1 class="qtm-title">Quantum is four businesses. <em>Mapped.</em></h1>
+                        <p class="qtm-subtitle">
+                            The physics in four experiments you can run yourself, the gap between the machines we have and the ones we need, and <strong>where we think the first venture outcomes come from</strong>. The one everyone talks about, the quantum computer, is last in line.
+                        </p>
+                        {% include lab-share.html github_path="labs/quantum" %}
+
+                        <div class="qtm-meta">
+                            <div><span class="qtm-meta-k">Coverage</span><span class="qtm-meta-v">Computing, sensing, communications, security</span></div>
+                            <div><span class="qtm-meta-k">Companies mapped</span><span class="qtm-meta-v" id="qtm-co-count">40+</span></div>
+                            <div><span class="qtm-meta-k">Experiments</span><span class="qtm-meta-v">5 interactive</span></div>
+                            <div><span class="qtm-meta-k">Updated</span><span class="qtm-meta-v">Oct 30, 2026</span></div>
+                        </div>
+
+                        <div class="qtm-stats">
+                            <div><div class="qtm-stat"><em>$1.9</em>B</div><div class="qtm-stat-label">What the whole quantum industry sold in 2025, against $4.9B of venture capital raised.</div></div>
+                            <div><div class="qtm-stat">~<em>100</em></div><div class="qtm-stat-label">High-quality physical qubits in today's best machines.</div></div>
+                            <div><div class="qtm-stat">&lt;<em>1</em>M</div><div class="qtm-stat-label">Qubits estimated to break RSA-2048, down from ~1 billion in 2012.</div></div>
+                            <div><div class="qtm-stat"><em>2029</em></div><div class="qtm-stat-label">Google's deadline to finish its own post-quantum migration.</div></div>
+                        </div>
+
+                        <ol class="qtm-toc" aria-label="Sections">
+                            <li><a href="#businesses"><span>[01]</span>Four businesses</a></li>
+                            <li><a href="#physics"><span>[02]</span>The physics, by hand</a></li>
+                            <li><a href="#gap"><span>[03]</span>The gap is closing</a></li>
+                            <li><a href="#security"><span>[04]</span>Security</a></li>
+                            <li><a href="#sensing"><span>[05]</span>Sensing</a></li>
+                            <li><a href="#stack"><span>[06]</span>The enabling stack</a></li>
+                            <li><a href="#watching"><span>[07]</span>What we're watching</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [01] FOUR BUSINESSES -->
+            <section class="qtm-section" id="businesses">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[01]</span> Four businesses</div>
+                    <h2 class="qtm-h2">"Quantum" is not one market. It is <em>four</em>, on four different clocks.</h2>
+                    <p class="qtm-lede">They share the physics and almost nothing else: different buyers, different capital needs, different timelines to revenue. Two of them sell products today.</p>
+                    <div class="qtm-grid-4">
+                        <div class="qtm-card qtm-biz">
+                            <span class="qtm-tag qtm-tag-later">Early systems</span>
+                            <h3>Computing</h3>
+                            <p>Processors, cloud access, control systems and software for machines that are not yet useful at scale.</p>
+                            <dl><dt>Buyers today</dt><dd>Labs, governments, enterprises funding experiments</dd><dt>Capital</dt><dd>Very high</dd></dl>
+                        </div>
+                        <div class="qtm-card qtm-biz">
+                            <span class="qtm-tag qtm-tag-now">Products today</span>
+                            <h3>Sensing</h3>
+                            <p>Clocks, magnetometers, gravity and inertial instruments that use atoms as the measuring element.</p>
+                            <dl><dt>Buyers today</dt><dd>Defense, aerospace, geophysics</dd><dt>Capital</dt><dd>Hardware, moderate</dd></dl>
+                        </div>
+                        <div class="qtm-card qtm-biz">
+                            <span class="qtm-tag qtm-tag-later">Pilots</span>
+                            <h3>Communications</h3>
+                            <p>Quantum key distribution and networks that move fragile quantum states between sites.</p>
+                            <dl><dt>Buyers today</dt><dd>Governments, telecoms, research networks</dd><dt>Capital</dt><dd>Infrastructure-heavy</dd></dl>
+                        </div>
+                        <div class="qtm-card qtm-biz">
+                            <span class="qtm-tag qtm-tag-now">Deployable now</span>
+                            <h3>Security (PQC)</h3>
+                            <p>New encryption that runs on today's computers and survives a future quantum attack.</p>
+                            <dl><dt>Buyers today</dt><dd>CISOs, regulated industries, government</dd><dt>Capital</dt><dd>Software-like</dd></dl>
+                        </div>
+                    </div>
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>Computing gets the headlines and most of the capital. <strong>Security and sensing get paying customers first.</strong> In 2025 the industry raised more than twice what it sold, so the question for any quantum company is which buyer has a budget today.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [02] PHYSICS -->
+            <section class="qtm-section" id="physics">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[02]</span> The physics, by hand</div>
+                    <h2 class="qtm-h2">One idea explains the opportunity and the difficulty: <em>interference</em>.</h2>
+                    <p class="qtm-lede">Not "a qubit is 0 and 1 at the same time." Four experiments, about two minutes, and you will understand what founders mean by coherence, fidelity and error correction.</p>
+
+                    <div class="qtm-card" id="two-slit">
+                        <div class="qtm-card-head"><span class="qtm-card-num">2.1</span><h3 class="qtm-card-title">Fire electrons at two slits</h3></div>
+                        <p class="qtm-card-body">Each electron lands as a single dot. Fire enough and stripes appear, with bands where almost nothing lands. That only happens with waves. Now switch on the detector, which records which slit each electron used. <strong>The stripes vanish.</strong> Measuring the path destroys the interference, and anything that bumps a qubit, such as heat or vibration, does the same thing by accident.</p>
+                        <canvas class="qtm-canvas" id="slit" height="300" aria-label="Simulated double-slit experiment"></canvas>
+                        <div class="qtm-controls">
+                            <button class="qtm-btn-sm primary" id="f1" type="button">Fire 1</button>
+                            <button class="qtm-btn-sm" id="f100" type="button">Fire 100</button>
+                            <button class="qtm-btn-sm" id="f2000" type="button">Fire 2,000</button>
+                            <button class="qtm-btn-sm" id="frst" type="button">Clear</button>
+                            <label class="qtm-toggle"><input type="checkbox" id="watch"> Detector at the slits</label>
+                            <span class="qtm-readout" id="count">0 electrons</span>
+                        </div>
+                        <p class="qtm-note">Simulated with a simplified two-slit model.</p>
+                    </div>
+
+                    <div class="qtm-card" id="phase">
+                        <div class="qtm-card-head"><span class="qtm-card-num">2.2</span><h3 class="qtm-card-title">Add the arrows, then square</h3></div>
+                        <p class="qtm-card-body">Two routes lead to the same spot, and each alone gives a 25% chance. Ordinary odds would add to 50%. Quantum mechanics adds <strong>amplitudes</strong>, arrows with a direction called phase, then squares the result. Turn the phase and the same two routes give anything from 100% to 0%. A quantum algorithm is a way of setting the phases so wrong answers cancel.</p>
+                        <div class="qtm-grid-2">
+                            <canvas class="qtm-canvas" id="waves" height="220" aria-label="Two waves and their sum"></canvas>
+                            <div>
+                                <label class="qtm-slider">Phase difference between the two routes <b id="phv">0°</b>
+                                    <input type="range" id="ph" min="0" max="360" value="0" step="1"></label>
+                                <div class="qtm-readout" style="margin-top:1.1rem">Chance an electron lands here</div>
+                                <div class="qtm-big" id="php">100%</div>
+                                <div class="qtm-readout">Ordinary odds would always say 50%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qtm-card" id="scale">
+                        <div class="qtm-card-head"><span class="qtm-card-num">2.3</span><h3 class="qtm-card-title">Add a qubit, double the possibilities</h3></div>
+                        <p class="qtm-card-body">A machine with n qubits works with 2<sup>n</sup> amplitudes at once. That is where the potential power comes from, and why ordinary computers cannot simulate one past a few dozen qubits.</p>
+                        <div class="qtm-grid-2">
+                            <label class="qtm-slider">Number of qubits <b id="nqv">30</b>
+                                <input type="range" id="nq" min="1" max="300" value="30"></label>
+                            <div>
+                                <div class="qtm-big" id="nqo">1.1 × 10<sup>9</sup></div>
+                                <div class="qtm-readout" id="nqc">possibilities in play</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qtm-card" id="errors">
+                        <div class="qtm-card-head"><span class="qtm-card-num">2.4</span><h3 class="qtm-card-title">Why 99.9% isn't good enough</h3></div>
+                        <p class="qtm-card-body">Errors compound. Pick how accurate each operation is and how many the calculation needs. Useful algorithms need millions to billions, which is why <strong>error correction</strong>, combining many physical qubits into one reliable logical qubit, matters more than qubit count.</p>
+                        <div class="qtm-grid-2">
+                            <div style="display:grid;gap:1.1rem">
+                                <label class="qtm-slider">Accuracy per operation
+                                    <select class="qtm-select" id="acc">
+                                        <option value="1e-2">99%</option>
+                                        <option value="1e-3" selected>99.9% (good physical qubits today)</option>
+                                        <option value="1e-4">99.99%</option>
+                                        <option value="1e-6">99.9999%</option>
+                                        <option value="1e-9">99.9999999% (error-corrected target)</option>
+                                    </select></label>
+                                <label class="qtm-slider">Operations in the calculation <b id="opv">1,000</b>
+                                    <input type="range" id="ops" min="1" max="10" step="0.05" value="3"></label>
+                            </div>
+                            <div>
+                                <div class="qtm-readout">Chance the whole calculation comes out clean</div>
+                                <div class="qtm-big" id="succ">37%</div>
+                                <div class="qtm-meter" aria-hidden="true"><i id="succbar" style="width:37%"></i></div>
+                            </div>
+                        </div>
+                        <p class="qtm-note">Simplified: assumes independent errors and no correction.</p>
+                    </div>
+
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>Interference is the product, and the environment is constantly trying to destroy it. <strong>When a founder quotes a qubit count, ask for fidelity, coherence time and logical error rate.</strong> Qubit count alone tells you very little.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [03] GAP -->
+            <section class="qtm-section" id="gap">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[03]</span> The gap is closing</div>
+                    <h2 class="qtm-h2">The machines are getting bigger. The requirement is <em>falling faster</em>.</h2>
+                    <p class="qtm-lede">In 2012 the best estimate for breaking RSA-2048, the encryption behind much of the internet, was about a billion physical qubits. By 2025 it was under a million. The largest machines grew from a handful of qubits to about a thousand over the same period.</p>
+
+                    <div class="qtm-card">
+                        <div class="qtm-card-head"><span class="qtm-card-num">3.1</span><h3 class="qtm-card-title">Estimated qubits to break RSA-2048 vs largest machines built</h3></div>
+                        <canvas class="qtm-canvas" id="trend" height="380" aria-label="Log-scale chart: estimated physical qubits needed to break RSA-2048 falling from about 1 billion in 2012 to under 1 million in 2025, while the largest machines grew from 5 qubits in 2016 to 1,121 in 2023"></canvas>
+                        <div class="qtm-legend">
+                            <span><i style="background:#d06a14"></i>Needed: published estimates for RSA-2048</span>
+                            <span><i style="background:#8b6fe8"></i>Built: largest gate-based processor</span>
+                            <span><i style="background:#fff;border:2px solid #475569;box-sizing:border-box"></i>Hollow: unreviewed or not yet a computer</span>
+                        </div>
+                        <p class="qtm-note">Needed: Fowler et al. (2012), Gidney &amp; Ekerå (2019), Gidney (2025), a 2026 preprint claiming under 100,000. Built: IBM (2016, 2021, 2022, 2023), Google Sycamore (2019), Caltech 6,100-atom array (2025, trapped atoms, not yet a computer). Counts ignore quality, which matters as much as size.</p>
+                    </div>
+
+                    <div class="qtm-card">
+                        <div class="qtm-card-head"><span class="qtm-card-num">3.2</span><h3 class="qtm-card-title">Built today vs what useful jobs need</h3></div>
+                        <canvas class="qtm-canvas" id="gapc" height="360" aria-label="Physical qubits built versus needed, log scale"></canvas>
+                        <p class="qtm-note">Built: Quantinuum Helios, Google Willow, IBM Nighthawk, IBM Condor, Caltech atom array. Needed: Google Quantum AI (Mar 2026) for 256-bit elliptic-curve keys, Gidney (May 2025) for RSA-2048, Google / PRX Quantum (2021) for the FeMoco catalyst. Estimates assume about 0.1% physical error rates.</p>
+                    </div>
+
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>The estimate has dropped by roughly an order of magnitude every few years, from better algorithms and error-correcting codes, not just bigger chips. <strong>Plan for the curve, not today's number.</strong> That is the urgency behind everything in the next section.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [04] SECURITY -->
+            <section class="qtm-section" id="security">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[04]</span> Security</div>
+                    <h2 class="qtm-h2">The threat doesn't need a quantum computer to <em>exist yet</em>.</h2>
+                    <p class="qtm-lede">An attacker can record encrypted traffic today and decrypt it later. Michele Mosca's rule: if the years your data must stay secret plus the years it takes to migrate exceed the years until a code-breaking machine arrives, you are already late. NIST finalized the replacement standards in 2024.</p>
+
+                    <div class="qtm-card" id="mosca">
+                        <div class="qtm-card-head"><span class="qtm-card-num">4.1</span><h3 class="qtm-card-title">Is your data already at risk?</h3></div>
+                        <div class="qtm-grid-2" style="align-items:start">
+                            <div style="display:grid;gap:1rem">
+                                <label class="qtm-slider">Years your data must stay secret <b id="xv">10</b><input type="range" id="x" min="0" max="30" value="10"></label>
+                                <label class="qtm-slider">Years to migrate your systems <b id="yv">5</b><input type="range" id="y" min="0" max="15" value="5"></label>
+                                <label class="qtm-slider">Your guess: years until a code-breaking machine <b id="zv">10</b><input type="range" id="z" min="1" max="30" value="10"></label>
+                            </div>
+                            <div>
+                                <canvas class="qtm-canvas" id="moscac" height="150" aria-label="Mosca timeline"></canvas>
+                                <p class="qtm-verdict" id="mv"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qtm-card">
+                        <div class="qtm-card-head"><span class="qtm-card-num">4.2</span><h3 class="qtm-card-title">You can't replace cryptography you can't find</h3></div>
+                        <p class="qtm-card-body">The algorithms are free and standardized. The hard part is that most organizations have no inventory of where cryptography lives.</p>
+                        <div class="qtm-sub" style="margin-top:0.25rem">What teams think about</div>
+                        <ul class="qtm-chips"><li class="surface">Websites (HTTPS)</li><li class="surface">VPNs</li></ul>
+                        <div class="qtm-sub">What migration actually has to find</div>
+                        <ul class="qtm-chips">
+                            <li>Certificates and keys</li><li>Internal services and APIs</li><li>Embedded and IoT devices</li><li>Mobile apps</li><li>Software libraries</li><li>Backups and archives</li><li>Vendor systems</li><li>Hardware security modules</li><li>Crypto wallets and signatures</li>
+                        </ul>
+                        <p class="qtm-card-body" style="margin-top:1.1rem;margin-bottom:0"><strong>Crypto is a special case.</strong> Google's March 2026 estimate covers the signatures that secure Bitcoin and Ethereum. Bitcoin merged BIP-360, its first quantum-resistant address type, this year. The harder problem is governance: who decides what happens to coins whose keys are already exposed.</p>
+                        <div class="qtm-sub">Companies</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://pqshield.com/?ref=canonicalcc" target="_blank" rel="noopener">PQShield</a></b><span>Post-quantum libraries and hardware IP</span></div>
+                            <div class="qtm-co"><b><a href="https://www.sandboxaq.com/?ref=canonicalcc" target="_blank" rel="noopener">SandboxAQ</a></b><span>Cryptographic inventory and migration for enterprises</span></div>
+                            <div class="qtm-co"><b><a href="https://www.qusecure.com/?ref=canonicalcc" target="_blank" rel="noopener">QuSecure</a></b><span>Post-quantum security for enterprise and government</span></div>
+                        </div>
+                    </div>
+
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>Selling the algorithm is not a business. <strong>Owning discovery and migration is</strong>: the system of record for an organization's cryptography. The risk is that the big security platforms bundle it.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [05] SENSING -->
+            <section class="qtm-section" id="sensing">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[05]</span> Sensing</div>
+                    <h2 class="qtm-h2">The bug is <em>the feature</em>.</h2>
+                    <p class="qtm-lede">The sensitivity that ruins quantum computers is exactly what makes quantum sensors precise. A computer tries to block out the world. A sensor tries to feel it.</p>
+                    <div class="qtm-grid-2" style="align-items:stretch">
+                        <div class="qtm-card" style="margin-top:0">
+                            <div class="qtm-sub" style="margin-top:0">In a quantum computer</div>
+                            <p class="qtm-card-body" style="margin:0.5rem 0 0">Heat, vibration and stray fields are noise to be shielded against. <strong>Goal: block the outside world.</strong></p>
+                        </div>
+                        <div class="qtm-card" style="margin-top:0">
+                            <div class="qtm-sub" style="margin-top:0">In a quantum sensor</div>
+                            <p class="qtm-card-body" style="margin:0.5rem 0 0">A tiny magnetic field or a change in gravity is the signal to be measured. <strong>Goal: feel the outside world.</strong></p>
+                        </div>
+                    </div>
+                    <div class="qtm-card">
+                        <p class="qtm-card-body">Atomic clocks have been products for decades. The new wave is navigation that works when GPS is jammed, plus magnetometers and gravity sensors. Defense and aerospace account for an estimated 60–70% of quantum sensor revenue today.</p>
+                        <div class="qtm-sub" style="margin-top:0">Companies</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://q-ctrl.com/?ref=canonicalcc" target="_blank" rel="noopener">Q-CTRL</a></b><span>Quantum navigation for GPS-denied environments, plus control software</span></div>
+                            <div class="qtm-co"><b><a href="https://www.sandboxaq.com/?ref=canonicalcc" target="_blank" rel="noopener">SandboxAQ (AQNav)</a></b><span>AI plus magnetic-anomaly navigation for flight</span></div>
+                            <div class="qtm-co"><b>SBQuantum</b><span>Diamond magnetometers; flew one to orbit for the NGA MagQuest challenge</span></div>
+                            <div class="qtm-co"><b>Deteqt</b><span>Chip-scale magnetic sensors aimed at GPS-denied navigation</span></div>
+                            <div class="qtm-co"><b><a href="https://infleqtion.com/?ref=canonicalcc" target="_blank" rel="noopener">Infleqtion</a></b><span>Atomic clocks and sensors, plus neutral-atom computing</span></div>
+                            <div class="qtm-co"><b><a href="https://aosense.com/?ref=canonicalcc" target="_blank" rel="noopener">AOSense</a></b><span>Atom-interferometer inertial and gravity sensors</span></div>
+                            <div class="qtm-co"><b><a href="https://quspin.com/?ref=canonicalcc" target="_blank" rel="noopener">QuSpin</a></b><span>Optically pumped magnetometers</span></div>
+                            <div class="qtm-co"><b><a href="https://www.exail.com/?ref=canonicalcc" target="_blank" rel="noopener">Exail</a></b><span>Quantum gravimeters and inertial navigation</span></div>
+                            <div class="qtm-co"><b>Nomad Atomics</b><span>Portable cold-atom sensors</span></div>
+                            <div class="qtm-co"><b>Atomionics</b><span>Atom-interferometry gravity sensing for exploration</span></div>
+                        </div>
+                    </div>
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>The first quantum products with real buyers are instruments. <strong>The test is field data at the right size, weight, power and cost</strong>, against the best classical sensor rather than an old one. Lab precision that disappears in a moving vehicle is not a product.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [06] ENABLING STACK -->
+            <section class="qtm-section" id="stack">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[06]</span> The enabling stack</div>
+                    <h2 class="qtm-h2">Nobody knows which qubit wins. <em>Sell to all of them.</em></h2>
+                    <p class="qtm-lede">There are five serious ways to build a qubit, and none has won. Every one of them needs control electronics, cryogenics or lasers, photonics, calibration software and fast classical processors to decode errors.</p>
+
+                    <div class="qtm-card">
+                        <div class="qtm-card-head"><span class="qtm-card-num">6.1</span><h3 class="qtm-card-title">Five ways to build a qubit</h3></div>
+                        <div class="qtm-table-wrap">
+                            <table class="qtm-table">
+                                <thead><tr><th>Approach</th><th>What the qubit is</th><th>Strength</th><th>Challenge</th><th>Examples</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Superconducting</td><td>A tiny circuit cooled near absolute zero</td><td class="qtm-plus">Fast operations</td><td class="qtm-minus">Wiring and cooling at scale</td><td><a href="https://www.ibm.com/quantum?ref=canonicalcc" target="_blank" rel="noopener">IBM</a>, <a href="https://quantumai.google/?ref=canonicalcc" target="_blank" rel="noopener">Google</a>, <a href="https://www.rigetti.com/?ref=canonicalcc" target="_blank" rel="noopener">Rigetti</a></td></tr>
+                                    <tr><td>Trapped ions</td><td>A charged atom held by electric fields</td><td class="qtm-plus">Very accurate</td><td class="qtm-minus">Slower operations</td><td><a href="https://www.quantinuum.com/?ref=canonicalcc" target="_blank" rel="noopener">Quantinuum</a>, <a href="https://ionq.com/?ref=canonicalcc" target="_blank" rel="noopener">IonQ</a></td></tr>
+                                    <tr><td>Neutral atoms</td><td>Atoms held in place by focused lasers</td><td class="qtm-plus">Scales to thousands</td><td class="qtm-minus">Moving atoms reliably</td><td><a href="https://www.quera.com/?ref=canonicalcc" target="_blank" rel="noopener">QuEra</a>, <a href="https://atom-computing.com/?ref=canonicalcc" target="_blank" rel="noopener">Atom Computing</a>, <a href="https://www.pasqal.com/?ref=canonicalcc" target="_blank" rel="noopener">Pasqal</a></td></tr>
+                                    <tr><td>Photonic</td><td>A single particle of light</td><td class="qtm-plus">Telecom-style parts, room temperature</td><td class="qtm-minus">Light gets lost</td><td><a href="https://www.psiquantum.com/?ref=canonicalcc" target="_blank" rel="noopener">PsiQuantum</a>, <a href="https://www.xanadu.ai/?ref=canonicalcc" target="_blank" rel="noopener">Xanadu</a>, <a href="https://www.quandela.com/?ref=canonicalcc" target="_blank" rel="noopener">Quandela</a></td></tr>
+                                    <tr><td>Silicon spin</td><td>An electron's spin in a silicon chip</td><td class="qtm-plus">Could use existing chip fabs</td><td class="qtm-minus">Making devices identical</td><td>Intel, <a href="https://diraq.com/?ref=canonicalcc" target="_blank" rel="noopener">Diraq</a>, <a href="https://quantummotion.tech/?ref=canonicalcc" target="_blank" rel="noopener">Quantum Motion</a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="qtm-card">
+                        <div class="qtm-card-head"><span class="qtm-card-num">6.2</span><h3 class="qtm-card-title">The picks and shovels</h3></div>
+                        <div class="qtm-sub" style="margin-top:0">Control electronics</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://www.quantum-machines.co/?ref=canonicalcc" target="_blank" rel="noopener">Quantum Machines</a></b><span>Control hardware and software across qubit types</span></div>
+                            <div class="qtm-co"><b><a href="https://qblox.com/?ref=canonicalcc" target="_blank" rel="noopener">Qblox</a></b><span>Scalable control stacks</span></div>
+                            <div class="qtm-co"><b><a href="https://seeqc.com/?ref=canonicalcc" target="_blank" rel="noopener">SEEQC</a></b><span>Digital control on chip, inside the fridge</span></div>
+                            <div class="qtm-co"><b>Bifrost Electronics</b><span>Control electronics</span></div>
+                        </div>
+                        <div class="qtm-sub">Cryogenics</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://maybellquantum.com/?ref=canonicalcc" target="_blank" rel="noopener">Maybell</a></b><span>Compact dilution refrigerators</span></div>
+                            <div class="qtm-co"><b><a href="https://kiutra.com/?ref=canonicalcc" target="_blank" rel="noopener">Kiutra</a></b><span>Helium-free cooling</span></div>
+                        </div>
+                        <div class="qtm-sub">Networking and communications</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://www.idquantique.com/?ref=canonicalcc" target="_blank" rel="noopener">ID Quantique</a></b><span>Quantum key distribution and random-number hardware; part of IonQ</span></div>
+                            <div class="qtm-co"><b><a href="https://www.aliroquantum.com/?ref=canonicalcc" target="_blank" rel="noopener">Aliro</a></b><span>Software to design and run quantum networks</span></div>
+                            <div class="qtm-co"><b><a href="https://photonic.com/?ref=canonicalcc" target="_blank" rel="noopener">Photonic</a></b><span>Networked spin-photon qubits in silicon</span></div>
+                            <div class="qtm-co"><b>CavilinQ</b><span>Interconnects to link neutral-atom processors</span></div>
+                            <div class="qtm-co"><b>Arq Quantum</b><span>Quantum repeaters</span></div>
+                        </div>
+                        <div class="qtm-sub">Error correction and software</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b><a href="https://www.riverlane.com/?ref=canonicalcc" target="_blank" rel="noopener">Riverlane</a></b><span>Real-time error-correction decoders</span></div>
+                            <div class="qtm-co"><b><a href="https://q-ctrl.com/?ref=canonicalcc" target="_blank" rel="noopener">Q-CTRL</a></b><span>Error suppression and calibration software</span></div>
+                            <div class="qtm-co"><b><a href="https://www.classiq.io/?ref=canonicalcc" target="_blank" rel="noopener">Classiq</a></b><span>Quantum software platform</span></div>
+                            <div class="qtm-co"><b>Haiqu</b><span>Software to run more on today's noisy hardware</span></div>
+                            <div class="qtm-co"><b><a href="https://developer.nvidia.com/cuda-q?ref=canonicalcc" target="_blank" rel="noopener">NVIDIA CUDA-Q</a></b><span>The default classical–quantum integration layer</span></div>
+                        </div>
+                        <div class="qtm-sub">AI for quantum</div>
+                        <div class="qtm-cos">
+                            <div class="qtm-co"><b>MagiQware</b><span>AI software for calibrating and running quantum computers</span></div>
+                        </div>
+                    </div>
+
+                    <div class="qtm-pov">
+                        <span class="qtm-pov-label">Canonical POV</span>
+                        <p>A company that sells to every hardware approach does not have to pick a winner. The risks are a small customer base and the chance that the big hardware makers bring it in-house. <strong>The part closest to our AI work is AI for quantum</strong>, which can be tested today by how much calibration time it saves.</p>
+                    </div>
+                </div></div>
+            </section>
+
+            <!-- [07] WATCHING -->
+            <section class="qtm-section" id="watching">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-section-label"><span class="qtm-section-num">[07]</span> What we're watching</div>
+                    <h2 class="qtm-h2">What would <em>change our view</em>.</h2>
+                    <ol class="qtm-watch">
+                        <li><span><strong>Logical qubits doing real work.</strong> 100+ error-corrected qubits running a useful algorithm, independently verified, would pull computing forward.</span></li>
+                        <li><span><strong>A peer-reviewed RSA estimate under 100,000 qubits.</strong> That would compress every post-quantum migration deadline.</span></li>
+                        <li><span><strong>A post-quantum vendor with recurring revenue independent of the big platforms.</strong> The test of whether migration is a company or a feature.</span></li>
+                        <li><span><strong>Quantum navigation fielded on a drone.</strong> At drone-sized weight, power and cost, against the best classical inertial sensor.</span></li>
+                        <li><span><strong>The National Quantum Initiative reauthorization signed into law.</strong> Both versions passed committee in 2026; the Senate bill directs a federal post-quantum migration strategy.</span></li>
+                    </ol>
+
+                    <details class="qtm-method">
+                        <summary>Methodology, caveats and sources</summary>
+                        <div class="qtm-method-body">
+                            <h4>Simulations</h4>
+                            <p>The two-slit simulator samples from a simplified model: two overlapping single-slit patterns with interference when unwatched, and two separate piles when watched. The error calculator uses success ≈ (1 − error rate)<sup>operations</sup>, assuming independent errors and no correction. The Mosca calculator uses example inputs; nobody knows when a code-breaking machine arrives.</p>
+                            <h4>Estimates</h4>
+                            <p>Qubit requirements depend on assumed physical error rates (about 0.1% here), code choice and runtime. Estimates keep falling as algorithms and codes improve. Counts of machines built ignore quality.</p>
+                            <h4>Companies</h4>
+                            <p>Examples, not a census and not endorsements. Inclusion reflects public information as of October 2026. Spot one missing? <a href="mailto:hello@canonical.cc?subject=Quantum%20Field%20Guide%20-%20coverage%20gap">Tell us.</a></p>
+                            <h4>Sources</h4>
+                            <ol>
+                                <li><a href="https://quantumconsortium.org/publication/2026-state-of-the-global-quantum-industry-report/?ref=canonicalcc" target="_blank" rel="noopener">QED-C, State of the Global Quantum Industry 2026</a></li>
+                                <li><a href="https://research.google/blog/safeguarding-cryptocurrency-by-disclosing-quantum-vulnerabilities-responsibly/?ref=canonicalcc" target="_blank" rel="noopener">Google Research, quantum resource estimate for elliptic-curve cryptography (Mar 2026)</a></li>
+                                <li><a href="https://arxiv.org/abs/2505.15917" target="_blank" rel="noopener">Gidney, How to factor 2048-bit RSA integers with less than a million noisy qubits (2025)</a></li>
+                                <li><a href="https://arxiv.org/abs/1905.09749" target="_blank" rel="noopener">Gidney &amp; Ekerå, How to factor 2048-bit RSA integers in 8 hours using 20 million noisy qubits (2019)</a></li>
+                                <li><a href="https://arxiv.org/abs/1208.0928" target="_blank" rel="noopener">Fowler et al., Surface codes: towards practical large-scale quantum computation (2012)</a></li>
+                                <li><a href="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.2.030305" target="_blank" rel="noopener">Lee et al., Even more efficient quantum computations of chemistry, PRX Quantum (2021)</a></li>
+                                <li><a href="https://eprint.iacr.org/2015/1075" target="_blank" rel="noopener">Mosca, Cybersecurity in an era with quantum computers: will we be ready? (2015)</a></li>
+                                <li><a href="https://www.nist.gov/pqc?ref=canonicalcc" target="_blank" rel="noopener">NIST, Post-Quantum Cryptography</a></li>
+                                <li><a href="https://www.patsnap.com/resources/blog/articles/quantum-sensing-technology-landscape-2026/?ref=canonicalcc" target="_blank" rel="noopener">PatSnap, Quantum sensing technology landscape 2026</a></li>
+                                <li><a href="https://www.pma.caltech.edu/news/caltech-team-sets-record-with-6100-qubit-array?ref=canonicalcc" target="_blank" rel="noopener">Caltech, 6,100-qubit atom array (Sep 2025)</a></li>
+                            </ol>
+                        </div>
+                    </details>
+                </div></div>
+            </section>
+
+            <!-- CTA -->
+            <section class="qtm-cta">
+                <div class="container mx-auto px-8"><div class="qtm-wrap">
+                    <div class="qtm-cta-grid">
+                        <div>
+                            <div class="qtm-section-label" style="color:rgba(255,255,255,0.55)"><span class="qtm-section-num">[08]</span> Talk to Canonical</div>
+                            <h2 class="qtm-cta-h2">If you're building in post-quantum migration, quantum sensing or the <em>enabling stack</em>, we want to meet you.</h2>
+                            <p class="qtm-cta-p"><a href="/#about">Canonical</a> leads early-stage investments in technical teams building at the frontier. SF-based, founder-obsessed, pre-product friendly. See our <a href="/portfolio">portfolio</a> and <a href="/#thesis">thesis</a>.</p>
+                        </div>
+                        <div class="qtm-cta-actions">
+                            <a href="mailto:hello@canonical.cc?subject=Building%20in%20quantum" class="qtm-btn"><span>I'm building &rarr; pitch us</span><span class="qtm-btn-arrow">&rarr;</span></a>
+                            <a href="https://blog.canonical.cc" target="_blank" rel="noopener noreferrer" class="qtm-btn" id="qtm-essay-link"><span>Read the essay: Quantum is four businesses</span><span class="qtm-btn-arrow">&rarr;</span></a>
+                            <a href="/labs/semiconductor-silicon-stack/" class="qtm-btn"><span>See the Semiconductor Stack map</span><span class="qtm-btn-arrow">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+
+            <div class="qtm-disclaimer">
+                <div class="container mx-auto px-8">
+                    <p>Built by <a href="https://www.anthonyavedissian.com/" target="_blank" rel="noopener noreferrer">Anthony Avedissian</a> at <a href="/">Canonical</a> &middot; v0.1 &middot; Educational tool. Not investment advice. Simulations are simplified models; data is point-in-time and not exhaustive.</p>
+                </div>
+            </div>
+        </main>
+
+        {% include footer.html %}
+    </div>
+
+    <script src="lab.js?v=1"></script>
+</body>
+</html>

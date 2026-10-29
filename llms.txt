@@ -23,6 +23,7 @@ Linux. Different company, same name.
 - [Power Law Lab](https://canonical.cc/labs/power-law/): What actually drives venture fund returns
 - [Capital Call Planner](https://canonical.cc/labs/capital-call-planner/): LP liquidity and pacing
 - [Semiconductor Stack](https://canonical.cc/labs/semiconductor-silicon-stack/): Who owns each layer of silicon
+- [Quantum Field Guide](https://canonical.cc/labs/quantum/): Quantum as four businesses (computing, sensing, communications, security), with interactive physics experiments, qubit estimates vs machines built, and 40+ companies mapped
 - [Decentralized AI](https://canonical.cc/labs/decentralized-ai/): Map of the decentralized AI landscape
 - [Data Centers & Neoclouds](https://canonical.cc/labs/data-centers/): Compute buildout landscape
 - [Groundwork](https://canonical.cc/labs/groundwork/): What data center operators have actually filed with air regulators, county by county — permits, backup generators, permitted emissions, flood zone and water stress, each sourced to the filing

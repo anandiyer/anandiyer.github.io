@@ -14,7 +14,8 @@
     var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function setup(c) {
-        var r = window.devicePixelRatio || 1, w = c.clientWidth, h = +c.getAttribute('height');
+        if (!c.dataset.h) c.dataset.h = c.getAttribute('height'); // c.height is overwritten below, so keep the CSS height
+        var r = window.devicePixelRatio || 1, w = c.clientWidth, h = +c.dataset.h;
         c.style.height = h + 'px'; c.width = Math.round(w * r); c.height = Math.round(h * r);
         var g = c.getContext('2d'); g.setTransform(r, 0, 0, r, 0, 0);
         return { g: g, w: w, h: h };

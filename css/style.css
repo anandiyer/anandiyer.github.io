@@ -200,11 +200,28 @@ html {
     font-family: 'Aeonik Regular', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.thesis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+.thesis-carousel {
     margin-top: 4rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.thesis-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* All four in one row; below ~4 × 280px they stop shrinking and the row
+   scrolls sideways. Vertical padding keeps the hover lift and shadow from
+   being clipped by the scroll container. */
+.thesis-grid {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0 1.5rem;
+}
+
+.thesis-grid .thesis-item {
+    flex: 1 0 280px;
 }
 
 .thesis-item {
@@ -695,10 +712,6 @@ html {
 }
 
 @media (max-width: 767px) {
-    .thesis-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .about-content {
         flex-direction: column;
         gap: 2.5rem;

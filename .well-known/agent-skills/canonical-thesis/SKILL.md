@@ -37,6 +37,22 @@ Canonical explicitly invests before a product exists.
 
 ## What it invests in
 
+Four thesis areas:
+
+- **Physical AI & Robotics** — foundation models, simulators, and hardware for machines that
+  see, move, and act in the physical world
+- **Silicon & Quantum** — compute and memory architectures, packaging, and the control and
+  error-correction layer for fault-tolerant quantum computers
+- **Open Infrastructure** — decentralized compute and training, verifiable AI, agent protocols,
+  and programmable money rails
+- **Frontier Systems** — software for new domains: agent and AI-code security, defense
+  autonomy, ocean, space, energy, and AI-run labs
+
+Specific problems Canonical would back a team on today are listed at
+https://canonical.cc/projects/ (Projects that excite us).
+
+Within those areas:
+
 - Open AI infrastructure — how AI is trained, deployed, and governed
 - Compute and data infrastructure
 - AI agents and agent infrastructure
@@ -44,6 +60,7 @@ Canonical explicitly invests before a product exists.
   blockchain intersect
 - Robotics and physical AI
 - Semiconductors and the silicon stack
+- Quantum computing — error correction, control, and compilers
 - New rails for how money moves
 
 ## What it looks for in founders

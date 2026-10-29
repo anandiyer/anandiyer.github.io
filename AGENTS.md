@@ -78,9 +78,13 @@ infrastructure of a post-AGI world.
 | Partner | Anthony Avedissian |
 | Contact | hello@canonical.cc — warm intros preferred |
 
-**Focus areas:** open AI infrastructure, compute and data infrastructure, AI agents and agent
-infrastructure, blockchain and cryptographic coordination, robotics and physical AI,
-semiconductors and the silicon stack, and new rails for how money moves.
+**Thesis areas:** Physical AI & Robotics, Silicon & Quantum, Open Infrastructure, and Frontier
+Systems (agent security, defense, ocean, space, energy, and AI-run labs). Across them: compute
+and data infrastructure, AI agents, cryptographic coordination, quantum computing, and new rails
+for how money moves.
+
+**Projects that excite us:** `/projects/` lists specific problems the firm would back a team on
+today, grouped by thesis area and newest first.
 
 **Labs:** free browser-based tools for founders, GPs and LPs at `/labs/`. No signup, no account.
 

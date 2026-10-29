@@ -1,3 +1,158 @@
+# Thesis refresh + "Projects that excite us" — built 2026-10-28, not yet committed
+
+## Open questions (blocking)
+
+1. **Fourth thesis name.** Answered: **Frontier Systems** — Notion Areas Cybersecurity,
+   Defense, Ocean, Space, and the remaining Other rows (see mapping rule).
+2. **"Silicon Quantum"** — built as one area, "Silicon & Quantum".
+3. **Sort key for "reverse chronological".** Built with `Last updated` (newest first, tie-break
+   `createdTime`) is the proposal. `Trigger date` would put 2028 at the top, which is forward-
+   looking, not reverse-chronological.
+
+## 1. About — add quantum computing
+
+`index.html:142`, second about paragraph. Rewrite the tail list:
+
+> …across compute, data, agents, cryptographic coordination, robotics, **quantum computing**, and
+> other primitives that will become steady-state in a post-AGI world.
+
+Also fixes the "othe" typo. Add "quantum computing" to the JSON-LD `knowsAbout` list and the
+`Service.description` at `index.html:82`.
+
+## 2. Thesis — 6 → 4
+
+Today the grid mixes three *areas* (Physical AI & Robotics, Silicon, Open Infrastructure) with
+three *how-we-work* cards (Technical Depth, Long-term Alignment, Network Effects). Cutting to 4
+means dropping the how-we-work cards — not lost, they belong in About or /faqs.
+
+| # | Title | Body (draft) |
+| --- | --- | --- |
+| [00] | Physical AI & Robotics | keep current copy |
+| [01] | Silicon & Quantum | Every layer of the AI stack runs on silicon, and the next one may run on qubits. We back founders rethinking compute and memory — novel architectures, packaging, and the classical control and error-correction layer fault-tolerant quantum machines need. |
+| [02] | Open Infrastructure | keep current copy |
+| [03] | **TBD** | per question 1 |
+
+4 cards in a `minmax(350px,1fr)` auto-fit grid lands as 2×2 on desktop — cleaner than today's 3×2.
+
+Below the grid, right-aligned like `View full portfolio →`, reuse `.portfolio-footer` /
+`.portfolio-view-all-link`:
+
+    Projects that excite us →        (href="/projects/")
+
+## 3. New page — /projects/
+
+### Data flow: build-time sync, not a live fetch
+
+    Notion DB ──(GitHub Action, daily cron + manual dispatch)──▶ scripts/sync-projects.mjs
+       ──▶ _data/projects.json (committed) ──▶ Jekyll renders cards server-side ──▶ deploy
+
+Why this over fetching Notion from the browser or a Worker:
+- No Notion token anywhere near the client; the token is a repo secret (`NOTION_TOKEN`).
+- Static HTML means the page gets the Markdown twin, a sitemap entry and llms-full.txt for free.
+- Mirrors the existing `refresh-quotes.yml` → `data.json` pattern.
+- Gotcha: a push made with `GITHUB_TOKEN` does **not** trigger `deploy.yml`. The sync job must
+  end with `gh workflow run deploy.yml` (dispatch is allowed) — check whether refresh-quotes has
+  the same silent gap.
+
+### What gets published — allowlist, not denylist
+
+Row page bodies contain **Our pipeline** (named confidential teams, Granola citations) and
+**Comparables**. The script reads **properties only** and never fetches page bodies, so neither
+section can leak, now or when someone adds a new private heading later.
+
+| Notion property | On card | Note |
+| --- | --- | --- |
+| Name | title | |
+| One-liner | body | |
+| Wedge | "First product" line | |
+| Trigger + Trigger date | "Why now" footer | strip `[press]`-style bracket notes |
+| Status | **not shown** | read only to drop `Cut` rows; never rendered (user, 2026-10-28) |
+| Last updated | sort key + "Updated Oct 28" | |
+| Area + Category | thesis tag + filter | via the mapping rule below |
+| *new:* Site thesis (select, optional) | override | wins over the rule when set |
+| *new:* Publish (checkbox) | gate | only checked rows ship |
+| Link to doc, Number, page body | **never read** | Link to doc is an internal Notion URL |
+
+### Thesis mapping rule (user: 4th thesis = Cybersecurity, Defense, Ocean, Space, Other*)
+
+Applied in order; `Other*` = Area "Other" rows that don't fit the first three theses.
+
+1. Area ∈ {Chips, Quantum} → **Silicon & Quantum**
+2. Area ∈ {Cybersecurity, Defense, Ocean, Space} → **4th thesis (name TBD)**
+3. Area = Other → by Category: Physical AI → **Physical AI & Robotics**; DeAI or Post-AGI
+   infrastructure → **Open Infrastructure**; Energy or Bio → **4th thesis**
+
+Result on today's 16 non-Cut rows:
+
+| Thesis | Rows |
+| --- | --- |
+| Silicon & Quantum (5) | Yield for new fabs · Memory and optical interconnect · Agent CPUs · Chip design tools · Quantum error correction |
+| 4th thesis (8) | Orbital data centers · Proof checking for AI code · Agent identity · Seafloor monitoring · Drone autonomy · Neuron-on-chip assays · AI lab instruments · Flexible data-center power |
+| Open Infrastructure (2) | Verifying and paying for agent work · Ops for mixed AI clusters |
+| Physical AI & Robotics (1) | Safety evidence for learning robots |
+
+Drone autonomy and seafloor monitoring are Category "Physical AI" but land in the 4th thesis
+because Area wins — matches the user's list. Agent identity and proof checking are agent
+infrastructure but Area = Cybersecurity, so also 4th. Override with `Site thesis` if wrong.
+
+Two new Notion properties are the one schema change. Proposed default mapping for Site thesis:
+Physical AI → Physical AI & Robotics; Silicon, Area=Quantum → Silicon & Quantum; DeAI,
+Post-AGI infrastructure → Open Infrastructure; Energy, Bio → TBD / unpublished.
+
+Script also: fails the job (leaving the old JSON) if the API errors or returns 0 publishable
+rows, and HTML-escapes every field (Liquid `| escape`).
+
+### Page layout
+
+- Hero, same as /portfolio: "Projects that excite us" + subtitle "Problems we'd back a team
+  on today. If you're building one, we'd like to hear from you."
+- Filter chips: All · Physical AI & Robotics · Silicon & Quantum · Open Infrastructure · [4th].
+  Progressive enhancement — all cards render without JS; chips just toggle `hidden`.
+- Grid: `.portfolio-grid` (3-col → 2 → 1), new `.project-card` modifier.
+- Card: thesis tag / title / one-liner / "First product: <wedge>" / divider /
+  "Why now: <trigger> · <date>" / "Updated <date>". Not clickable in v1 (no detail pages).
+- Footer CTA: "Building one of these? hello@canonical.cc — warm intros preferred."
+- Header nav: no new item (it's reached from Thesis); `active` stays unset.
+
+## Review (2026-10-28)
+
+- `_data/projects.json` was seeded from the same Notion rows via `--rows`, so the page works
+  before the token exists. 16 projects: Frontier Systems 8, Silicon & Quantum 5, Open
+  Infrastructure 2, Physical AI & Robotics 1.
+- Full `github-pages build` (needs `LANG=en_US.UTF-8` locally) + `check-built-site.sh` pass,
+  including skill digests. `/projects/` is in the sitemap.
+- Leak grep on the built page for pipeline/comparables/granola/notion.com/status words: the only
+  hit is "pipeline" inside one wedge ("Log-to-conformity-file pipeline"). No status labels.
+- Browser: 16 cards, filter shows 5 for Silicon & Quantum, no horizontal scroll at 375px;
+  homepage thesis is a 2×2 grid with the link beneath.
+- Not verified: a live Notion API call (no token locally) and the workflow run itself.
+- Found in passing: `scripts/refresh-quotes.mjs` reads `labs/physical-ai/data.json`, which no
+  longer exists (moved to `physical-ai-robotics/`), and its push can't trigger a deploy either.
+
+## Knock-on files (thesis wording must agree everywhere)
+
+- `index.html` — about, thesis grid, link, JSON-LD, meta keywords
+- `AGENTS.md`, `llms.txt`, `llms-full.txt` — focus areas list; add `/projects/` row
+- `faqs.html` + its FAQPage JSON-LD
+- `.well-known/agent-skills/canonical-thesis/SKILL.md` — digest recomputes on deploy
+- `js/webmcp.js` — `get_canonical_thesis` payload
+- `css/style.css` — `.project-card`, chips; bump `asset_version`
+
+## Build steps (after the questions are answered)
+
+- [ ] (user) Share the Notion DB with a read-only integration; add `NOTION_TOKEN` repo
+      secret. Optional: `Site thesis` (select) and `Publish` (checkbox) properties — the script
+      honours them when present. Adding Publish hides every unticked row.
+- [x] About copy + JSON-LD
+- [x] Thesis grid → 4 cards + "Projects that excite us →" link
+- [x] `scripts/sync-projects.mjs` + `.github/workflows/sync-projects.yml`
+- [x] `projects/index.html` + CSS (`asset_version` → 20261028a)
+- [x] Knock-on files (AGENTS.md, llms.txt, llms-full.txt, faqs.html, canonical-thesis SKILL.md + digest)
+- [x] Verify: local Jekyll build, grep `_site/projects/` for "pipeline", "Comparables",
+      "Granola", "notion.com" → must be zero; `check-built-site.sh`; mobile width
+
+---
+
 # Agent readiness — reach Level 3 without fabricating infrastructure
 
 ## What prompted this

@@ -1,0 +1,119 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include google-analytics.html %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Projects that excite us | Canonical</title>
+    <meta name="description" content="Problems Canonical would back a founding team on today, across physical AI and robotics, silicon and quantum, open infrastructure, and frontier systems." />
+    <meta name="keywords" content="venture capital, pre-seed, request for startups, physical AI, robotics, semiconductors, quantum computing, open infrastructure, AI agents, defense, space" />
+    <meta name="author" content="Canonical" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://canonical.cc/projects/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://canonical.cc/projects/" />
+    <meta property="og:title" content="Projects that excite us | Canonical" />
+    <meta property="og:description" content="Problems Canonical would back a founding team on today." />
+    <meta property="og:image" content="https://canonical.cc/images/site-logo.png" />
+    <meta property="og:site_name" content="Canonical" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://canonical.cc/projects/" />
+    <meta property="twitter:title" content="Projects that excite us | Canonical" />
+    <meta property="twitter:description" content="Problems Canonical would back a founding team on today." />
+    <meta property="twitter:image" content="https://canonical.cc/images/site-logo.png" />
+
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css?v={{ site.asset_version }}">
+</head>
+<body>
+    <div class="min-h-screen">
+        {% include header.html %}
+
+        <main>
+            <section class="portfolio-page-hero">
+                <div class="container mx-auto px-8">
+                    <div class="max-w-5xl mx-auto">
+                        <h1 class="section-title" style="font-size: 3rem; margin-bottom: 1rem;">Projects that excite us</h1>
+                        <p class="section-subtitle">
+                            Problems we'd back a team on today. If you're building one, we'd like to hear from you.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards are rendered at build time from _data/projects.json, which
+                 scripts/sync-projects.mjs writes from Notion. Edit Notion, not this. -->
+            <section class="section-padding" style="padding-top: 0;">
+                <div class="max-w-7xl mx-auto px-8">
+                    <div class="project-filters" role="group" aria-label="Filter by thesis" hidden>
+                        <button type="button" class="project-filter" data-thesis="all" aria-pressed="true">All</button>
+                        {% for t in site.data.projects.theses %}
+                        <button type="button" class="project-filter" data-thesis="{{ t.slug }}" aria-pressed="false">{{ t.name | escape }}</button>
+                        {% endfor %}
+                    </div>
+
+                    <div class="portfolio-grid" id="project-grid">
+                        {% for p in site.data.projects.projects %}
+                        <article class="portfolio-card project-card" data-thesis="{{ p.thesis_slug }}">
+                            <span class="project-thesis">{{ p.thesis | escape }}</span>
+                            <h2 class="company-name font-aeonik">{{ p.name | escape }}</h2>
+                            <p class="company-description font-aeonik">{{ p.one_liner | escape }}</p>
+                            {% if p.wedge != "" %}
+                            <p class="project-wedge"><span>First product</span> {{ p.wedge | escape }}</p>
+                            {% endif %}
+                            <div class="project-meta">
+                                {% if p.trigger != "" %}
+                                <p><span>Why now</span> {{ p.trigger | escape }}{% if p.trigger_date %} &middot; {{ p.trigger_date | date: "%b %-d, %Y" }}{% endif %}</p>
+                                {% endif %}
+                                {% if p.updated %}
+                                <p class="project-updated">Updated {{ p.updated | date: "%b %-d, %Y" }}</p>
+                                {% endif %}
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+
+                    <p class="project-cta">
+                        Building one of these? Write to <a href="mailto:hello@canonical.cc">hello@canonical.cc</a> &mdash; warm intros preferred.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        {% include footer.html %}
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Progressive enhancement: every card is in the HTML; the chips only
+        // toggle visibility, so the page reads fine without JS (and to agents).
+        (function () {
+            var bar = document.querySelector('.project-filters');
+            var cards = document.querySelectorAll('.project-card');
+            if (!bar) return;
+            bar.hidden = false;
+            bar.addEventListener('click', function (e) {
+                var btn = e.target.closest('.project-filter');
+                if (!btn) return;
+                var want = btn.getAttribute('data-thesis');
+                bar.querySelectorAll('.project-filter').forEach(function (b) {
+                    b.setAttribute('aria-pressed', String(b === btn));
+                });
+                cards.forEach(function (c) {
+                    c.hidden = want !== 'all' && c.getAttribute('data-thesis') !== want;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

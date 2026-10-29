@@ -6,7 +6,7 @@
       "type": "skill-md",
       "description": "What Canonical (the pre-seed venture firm at canonical.cc) invests in, at what stage and check size, what it looks for in founders, and how to reach it. Also disambiguates the firm from Canonical Ltd, the UK company behind Ubuntu Linux.",
       "url": "/.well-known/agent-skills/canonical-thesis/SKILL.md",
-      "digest": "sha256:251a81f5f8f4bc31b378c8a38cf3909f1253d05dd5691fb64b8b57b9c61b0128"
+      "digest": "sha256:941f37ffa9cb778b31d8463345667a439e4e8a99ca3c0d3e442f35ef33f25378"
     },
     {
       "name": "canonical-portfolio",

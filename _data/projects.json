@@ -1,0 +1,183 @@
+{
+  "generated_by": "scripts/sync-projects.mjs — do not edit by hand; edit Notion",
+  "theses": [
+    {
+      "slug": "physical-ai-robotics",
+      "name": "Physical AI & Robotics"
+    },
+    {
+      "slug": "silicon-quantum",
+      "name": "Silicon & Quantum"
+    },
+    {
+      "slug": "open-infrastructure",
+      "name": "Open Infrastructure"
+    },
+    {
+      "slug": "frontier-systems",
+      "name": "Frontier Systems"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Seafloor monitoring for deep-sea mining and undersea infrastructure",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "The US is close to deciding its first commercial deep-sea mining permit, and the seafloor is filling up with cables that now carry security rules. Every one of those activities will need someone to watch the seafloor continuously, and today that takes a research ship. We'd back the software that turns cheap seafloor sensors into monitoring a regulator accepts.",
+      "wedge": "Plume and impact analytics for mining permit conditions",
+      "trigger": "NOAA's decision on The Metals Company USA's consolidated exploration license and commercial recovery permit, which TMC projects before the end of Q1 2027.",
+      "trigger_date": "2027-03-31",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Autonomy for low-cost military drones",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "The Pentagon plans to buy more than 200,000 small attack drones by 2027 through a series of fly-off competitions. The airframes are getting cheap. What will be scarce is software that still finds and hits a target when GPS and radio links are jammed. We'd back that software, sold to every drone maker in the competition.",
+      "wedge": "Visual navigation and terminal guidance module for drone makers",
+      "trigger": "Drone Dominance Program Gauntlet 3, which the program schedules about six months after Gauntlet 2 (held Aug 2026).",
+      "trigger_date": "2027-02-28",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Software for orbital data centers",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "The first data center satellites aim to be fully operational in 2027. They need inference software that tolerates radiation and a way to decide what to send to the ground. We'd back that software, and we think the winner can become the company that runs the orbital cloud without building the satellites.",
+      "wedge": "Radiation-tolerant inference runtime for orbital compute",
+      "trigger": "Starcloud-2 fully operational in sun-synchronous orbit.",
+      "trigger_date": "2027-12-31",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Yield and process control for new fabs",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "New companies are trying to build fabs and lithography in the US for the first time in a generation. A new process needs new ways to measure and fix it. We'd back yield software for those fabs, and we think the winner can grow into the inspection and metrology company for the new process, the way KLA did for the last one.",
+      "wedge": "Small-data defect classification for new fabs",
+      "trigger": "Substrate says its US foundry will run wafers by 2028.",
+      "trigger_date": "2028-06-30",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Error correction and control software for quantum computers",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "Every team trying to build a fault-tolerant quantum computer needs a classical system that catches and fixes qubit errors in real time, plus a compiler that targets logical qubits. Two people can build the first version of that today. We'd back a team that starts with one decoder for one qubit type and grows into the control layer that sits under every vendor's machine.",
+      "wedge": "Real-time decoder for one non-superconducting qubit type, as FPGA IP",
+      "trigger": "DOE Quantum (Q) Competition initial selections, no earlier than Nov 13, 2026.",
+      "trigger_date": "2026-11-13",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Software for running lab instruments with AI",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "DOE's Genesis Mission pays national-lab facilities to run AI-driven experiments, and those facilities need software that lets an agent drive existing instruments safely. We'd back that control layer, and we think the winner ends up owning the largest record of machine-run experiments anywhere.",
+      "wedge": "Closed-loop driver for one instrument class at DOE facilities",
+      "trigger": "Phase II applications from Phase I awardees under DOE's Genesis Mission RFA (DE-FOA-0003612) are due.",
+      "trigger_date": "2026-12-17",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Neuron-on-chip assays now, biological computing later",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Computing on living neurons is at least a decade away. FDA's move away from animal testing makes neurons on electrode arrays useful as a drug-discovery assay now, and that can pay for the compute research. We'd back a team whose first revenue is pharma and whose end state is a new kind of computer.",
+      "wedge": "Analysis software and data standard for neuron-on-array readouts",
+      "trigger": "FDA's window for making animal studies the exception closes, three to five years after the April 2025 roadmap.",
+      "trigger_date": "2028-04-30",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Power for data centers that can flex",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Grid operators are rewriting the rules for large loads in 2026. Data centers that can prove they cut load on demand may get power years sooner. We'd back the software that proves it, and we think the winner grows into the energy company for compute.",
+      "wedge": "Curtailment attestation an RTO accepts",
+      "trigger": "PJM's Base Residual Auction for delivery year 2029/2030.",
+      "trigger_date": "2026-12-01",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Memory and optical interconnect tooling",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "Moving data now costs more energy than computing on it. The fixes are stacked memory, optics in place of copper, and weights built into the chip, and all three need billions of capex. We'd back the tooling those companies need, then look for the team that can grow from tools into silicon.",
+      "wedge": "Checkpoint-to-hardwired-silicon compiler",
+      "trigger": "SK hynix HBM4E mass production, which the company targets for 2027.",
+      "trigger_date": "2027-12-31",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Safety evidence for learning robots",
+      "thesis": "Physical AI & Robotics",
+      "thesis_slug": "physical-ai-robotics",
+      "one_liner": "From Jan 20, 2027, EU machinery whose safety depends on machine learning needs a notified body to sign off. Every retrained policy raises the same question again. We'd back the independent evidence and change-control system that answers it, starting in the EU and growing with every learning robot that ships.",
+      "wedge": "Log-to-conformity-file pipeline with change control on retrain",
+      "trigger": "EU Machinery Regulation (EU) 2023/1230 applies.",
+      "trigger_date": "2027-01-20",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "AI chip design tools for the work Synopsys and Cadence won't do",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "Synopsys and Cadence both ship verification agents by the end of 2026. Once that happens, a startup selling front-end verification is selling against a free bundle. We'd back back-end tools trained on a customer's own tape-outs, and work that spans more than one vendor's tools.",
+      "wedge": "Timing-closure agent trained on a customer's own tape-outs",
+      "trigger": "Synopsys AgentEngineer and Autopilot availability planned for end of 2026, and Cadence RTL Generation Agent early access in Q4 2026.",
+      "trigger_date": "2026-12-31",
+      "updated": "2026-10-28"
+    },
+    {
+      "name": "Identity and permissions for AI agents",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Companies are about to run thousands of agents that log into real systems with real credentials. Identity tools were built for people who sign in once a day. We'd back the company that gives each agent only the access one task needs, can revoke it in seconds, and can show afterwards who did what.",
+      "wedge": "Task-scoped credential broker for agents with an audit log",
+      "trigger": "EU AI Act high-risk obligations for Annex III systems apply, after the AI Omnibus delay.",
+      "trigger_date": "2027-12-02",
+      "updated": "2026-10-26"
+    },
+    {
+      "name": "Verifying and paying for agent work",
+      "thesis": "Open Infrastructure",
+      "thesis_slug": "open-infrastructure",
+      "one_liner": "Regulated US stablecoins arrive on Jan 18, 2027, and the issuers' anti-money-laundering programs assume a human customer. Agents with wallets break that assumption. We'd back the credential and verifier that tell an issuer or exchange which accountable person or company an agent acts for and what it may spend, and grow from there into checking the work itself.",
+      "wedge": "Know-your-agent credential and verifier for stablecoin issuers and exchanges, with an exportable audit trail",
+      "trigger": "The GENIUS Act and the OCC's implementing rule take effect (OCC final rule, Federal Register, Oct 23, 2026, effective Jan 18, 2027; OCC Bulletin 2026-50).",
+      "trigger_date": "2027-01-18",
+      "updated": "2026-10-26"
+    },
+    {
+      "name": "Software for agent CPUs",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "Agents spend most of their time on CPU work, and NVIDIA and Arm both start shipping CPUs sold for agents by the end of 2026. We think the software that packs thousands of agent sandboxes onto one rack is the opening, and nobody we found is funded to build it.",
+      "wedge": "Fast snapshot-and-fork sandbox runtime with an open density benchmark",
+      "trigger": "NVIDIA Vera systems from partners \"starting this fall\" and Arm AGI CPU first production shipments by end of 2026.",
+      "trigger_date": "2026-12-31",
+      "updated": "2026-10-26"
+    },
+    {
+      "name": "Proof checking for AI-written code",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Agents now write code faster than people can review it, and passing tests doesn't mean the code is right. The EU's Cyber Resilience Act fully applies in December 2027. We'd back an independent checker that verifies machine-made proofs and produces evidence a regulator or insurer accepts.",
+      "wedge": "Proof-checking CI service for one vertical, with CRA evidence",
+      "trigger": "EU Cyber Resilience Act fully applies.",
+      "trigger_date": "2027-12-11",
+      "updated": "2026-10-26"
+    },
+    {
+      "name": "Operations for mixed AI clusters",
+      "thesis": "Open Infrastructure",
+      "thesis_slug": "open-infrastructure",
+      "one_liner": "Inference racks now mix NVIDIA GPUs, inference chips and soon co-packaged optics. Neoclouds and enterprises can't hire hyperscaler-size ops teams to run them. We'd back the company that keeps those racks running to an SLA, in software and on site.",
+      "wedge": "Failure diagnosis and repair for neocloud racks, software plus technicians",
+      "trigger": "Vera Rubin systems and Spectrum-X Photonics switches reach neoclouds in H2 2026.",
+      "trigger_date": "2026-12-31",
+      "updated": "2026-10-26"
+    }
+  ]
+}

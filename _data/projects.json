@@ -20,6 +20,66 @@
   ],
   "projects": [
     {
+      "name": "RF data and models for contested spectrum",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Militaries and carriers are crowding into the same spectrum, and the models that classify signals in it are short of labeled data. A Navy topic asks for an 8-petabyte recorder because the department lacks the datasets, and the FCC plans to start auctioning 160 MHz of upper C-band in April 2027, which means more shared spectrum to monitor. We'd back the data engine that records, labels and curates RF data and fine-tunes models for each mission, and we think the winner becomes the reference spectrum layer for militaries, carriers and regulators.",
+      "wedge": "RF data engine that records, labels and curates I/Q data, plus a per-mission fine-tuned model that runs on COTS SDRs",
+      "trigger": "FCC Upper C-band Auction 115 is tentatively scheduled to begin Apr 27, 2027 (FCC DA 26-769). The Army's xTech Spectrum Enabled Warfare competition (ARM27BX01-DP001) runs Apr 19 to May 7, 2027 (DSIP).",
+      "trigger_date": "2027-04-27",
+      "updated": "2026-11-03"
+    },
+    {
+      "name": "Recovering technical data for aging weapons",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "The military keeps weapons in service for decades after the drawings, manuals and code behind them have gone stale, and it can't re-source a part it has no usable data for. The Air Force, Navy and DLA have posted 16 small-business topics since FY25 asking for software that turns scanned drawings and old manuals into models a supplier can build from. We'd back that software, and we think the winner becomes the system of record for the aftermarket of every long-lived machine.",
+      "wedge": "Scanned drawings, BOMs and manuals to a validated 3D model and model-based technical data package, with gaps and data-rights markings flagged",
+      "trigger": "Air Force SBIR topics DAF27BZ01-DV008 (technical data package modernization) and DAF27BZ01-DV012 (autonomous technical data package to robotic task spec) close Nov 25, 2026 at 9:00 AM PT (DSIP).",
+      "trigger_date": "2026-11-25",
+      "updated": "2026-11-03"
+    },
+    {
+      "name": "Licensing and safety software for microreactors",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "The NRC's new licensing rule for advanced reactors, Part 53, is now final and puts probabilistic risk assessment at the center of every application. The Army has awarded up to $2.2B to five microreactor makers, will regulate those reactors itself rather than through the NRC, and wants the first one running by September 2028. Every vendor now has to keep a safety case current for more than one regulator while its design is still changing. We'd back the digital twin that keeps that safety case current, and we think the winner becomes the licensing and operations system for small reactors.",
+      "wedge": "Living PRA and licensing-basis digital twin for one microreactor design, built for Part 53 and the Army's review",
+      "trigger": "First-stage pitches due for DOE's Fall 2026 SBIR/STTR Phase I opportunity, which includes a topic on reactor digital twins aimed at shortening licensing (DOE Office of Technology Commercialization, via ConnectWerx).",
+      "trigger_date": "2026-12-16",
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Risk underwriting for next-generation geothermal",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "Enhanced geothermal went from pilot to public company this year: Fervo listed in May and its first commercial plant came online in September, with non-recourse debt behind it and a 396 MW contract with Google. Every project after it has to convince a lender that its wells will keep producing for decades. We'd back the independent model that prices that subsurface risk, and we think the winner becomes the underwriting standard for energy below ground.",
+      "wedge": "Well-performance and decline model for EGS projects, sold to lenders and insurers",
+      "trigger": "Fervo's Cape Station Phase I reaches about 100 MW, with GeoBlocks 2 and 3 expected to reach initial power in Q1 2027 (Fervo Q2 2026 results).",
+      "trigger_date": "2027-03-31",
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Evidence and filings for on-demand gene editing",
+      "thesis": "Frontier Systems",
+      "thesis_slug": "frontier-systems",
+      "one_liner": "In February the FDA proposed approving gene editors on mechanism: one editor can cover many mutations, and new mutations could be added without a new trial. That turns each new patient into a small, repeated filing, and nearly all of this work still sits in academic labs with small teams. We'd back the software that builds those filings, and we think the winner becomes the system on-demand genetic medicine runs on.",
+      "wedge": "Per-variant evidence package for plausible-mechanism filings",
+      "trigger": "Penn and CHOP's umbrella trial for seven urea cycle disorders can begin once all seven INDs are in place, which the team expects in 2027 (Aldevron, Jun 2026).",
+      "trigger_date": "2027-12-31",
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Power systems for robots on solid-state batteries",
+      "thesis": "Physical AI & Robotics",
+      "thesis_slug": "physical-ai-robotics",
+      "one_liner": "Solid-state batteries keep slipping in cars, but humanoid robots can pay the premium and need the runtime. Samsung SDI plans to mass-produce them with humanoids as the first application in the second half of 2027, and Chinese cell makers are already shipping robot samples. Robot makers will be qualifying new cells with no agreed test standard, in packs that change with every redesign. We'd back the qualification and battery-management layer they need, and we think the winner grows into the power system for robots.",
+      "wedge": "Cell qualification and BMS for humanoid makers adopting solid-state cells, with a safety file buyers accept",
+      "trigger": "Samsung SDI begins mass production of all-solid-state batteries in the second half of 2027, with humanoid robots as the likely first application (Herald Corporation).",
+      "trigger_date": "2027-12-31",
+      "updated": "2026-11-02"
+    },
+    {
       "name": "The toolchain for designed biology",
       "thesis": "Frontier Systems",
       "thesis_slug": "frontier-systems",

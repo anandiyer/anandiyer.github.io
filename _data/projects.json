@@ -20,6 +20,16 @@
   ],
   "projects": [
     {
+      "name": "Error correction and control software for quantum computers",
+      "thesis": "Silicon & Quantum",
+      "thesis_slug": "silicon-quantum",
+      "one_liner": "Every team trying to build a fault-tolerant quantum computer needs a classical system that catches and fixes qubit errors in real time, plus a compiler that targets logical qubits. Two people can build the first version of that today. We'd back a team that starts with one decoder for one qubit type and grows into the control layer that sits under every vendor's machine.",
+      "wedge": "Real-time decoder for one non-superconducting qubit type, as FPGA IP",
+      "trigger": "DOE Quantum (Q) Competition initial selections, no earlier than Nov 13, 2026.",
+      "trigger_date": "2026-11-13",
+      "updated": "2026-11-05"
+    },
+    {
       "name": "RF data and models for contested spectrum",
       "thesis": "Frontier Systems",
       "thesis_slug": "frontier-systems",
@@ -127,16 +137,6 @@
       "wedge": "Small-data defect classification for new fabs",
       "trigger": "Substrate says its US foundry will run wafers by 2028.",
       "trigger_date": "2028-06-30",
-      "updated": "2026-10-28"
-    },
-    {
-      "name": "Error correction and control software for quantum computers",
-      "thesis": "Silicon & Quantum",
-      "thesis_slug": "silicon-quantum",
-      "one_liner": "Every team trying to build a fault-tolerant quantum computer needs a classical system that catches and fixes qubit errors in real time, plus a compiler that targets logical qubits. Two people can build the first version of that today. We'd back a team that starts with one decoder for one qubit type and grows into the control layer that sits under every vendor's machine.",
-      "wedge": "Real-time decoder for one non-superconducting qubit type, as FPGA IP",
-      "trigger": "DOE Quantum (Q) Competition initial selections, no earlier than Nov 13, 2026.",
-      "trigger_date": "2026-11-13",
       "updated": "2026-10-28"
     },
     {

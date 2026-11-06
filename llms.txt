@@ -12,7 +12,7 @@ Linux. Different company, same name.
 - [Home](https://canonical.cc/): Thesis, team, and portfolio overview
 - [FAQ](https://canonical.cc/faqs): What Canonical invests in, check sizes, how to pitch, who leads the firm
 - [Portfolio](https://canonical.cc/portfolio): Companies Canonical has backed
-- [Projects that excite us](https://canonical.cc/projects/): Problems Canonical would back a team on today, by thesis area
+- [Request for startups](https://canonical.cc/request-for-startups/): Problems Canonical would back a team on today, by thesis area, each with the problem, the solution and the timing
 - [Blog](https://blog.canonical.cc): Long-form writing on frontier infrastructure
 
 ## Labs — free interactive tools

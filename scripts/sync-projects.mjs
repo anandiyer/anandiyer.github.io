@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Sync "Projects that excite us" (/projects/) from the Canonical Frontier
- * Themes database in Notion.
+ * Sync "Request for startups" (/request-for-startups/) from the Canonical
+ * Frontier Themes database in Notion. (/projects/ is a redirect to it.)
  *
  * Notion is the source of truth; the page only prints it. This script reads
  * row PROPERTIES ONLY and writes _data/projects.json, which Jekyll renders at
@@ -15,6 +15,11 @@
  *
  *   NOTION_TOKEN=secret_… node scripts/sync-projects.mjs
  *   node scripts/sync-projects.mjs --rows rows.json   # pre-normalised rows, no API call
+ *
+ * Each card shows the row's Problem, Solution and Timing properties: short,
+ * plain-language copy written for the public page. One-liner, Wedge and Trigger
+ * are the research team's working fields; the page falls back to them only for
+ * a row whose Problem hasn't been written yet.
  *
  * Optional Notion properties, honoured when present:
  *   Publish (checkbox)     — once the property exists, only checked rows ship
@@ -83,6 +88,9 @@ function normalise(page) {
         category: prop('Category')?.select?.name || null,
         status: prop('Status')?.select?.name || null,
         oneLiner: plain(prop('One-liner')?.rich_text),
+        problem: plain(prop('Problem')?.rich_text),
+        solution: plain(prop('Solution')?.rich_text),
+        timing: plain(prop('Timing')?.rich_text),
         wedge: plain(prop('Wedge')?.rich_text),
         trigger: plain(prop('Trigger')?.rich_text),
         triggerDate: prop('Trigger date')?.date?.start || null,
@@ -120,7 +128,7 @@ async function fetchRows(token) {
 function build(rows) {
     const publishGate = rows.some((r) => r.publish !== undefined && r.publish !== null);
     const projects = rows
-        .filter((r) => r.name && r.oneLiner)
+        .filter((r) => r.name && (r.problem || r.oneLiner))
         .filter((r) => r.status !== 'Cut')
         .filter((r) => !publishGate || r.publish === true)
         .sort((a, b) =>
@@ -132,6 +140,9 @@ function build(rows) {
                 name: clean(r.name),
                 thesis: THESES.find((t) => t.slug === slug).name,
                 thesis_slug: slug,
+                problem: clean(r.problem),
+                solution: clean(r.solution),
+                timing: clean(r.timing),
                 one_liner: clean(r.oneLiner),
                 wedge: clean(r.wedge),
                 trigger: clean(r.trigger),

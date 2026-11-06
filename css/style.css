@@ -757,7 +757,7 @@ html {
     flex-direction: column;
 }
 
-/* Projects that excite us (/projects/) — portfolio cards, minus the click-through */
+/* Request for startups (/request-for-startups/) — portfolio cards, minus the click-through */
 
 .project-filters {
     display: flex;
@@ -828,6 +828,36 @@ html {
 
 .project-wedge {
     margin-bottom: 1rem;
+}
+
+/* Problem / Solution / Timing. Grows so the "Updated" line sits at the card's foot. */
+.project-pst {
+    flex-grow: 1;
+    margin: 0.25rem 0 1rem;
+}
+
+.project-pst dt {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.project-pst dd {
+    margin: 0 0 1rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: #475569;
+}
+
+.project-pst dd:first-of-type {
+    color: #1f2937;
+}
+
+.project-pst dd:last-child {
+    margin-bottom: 0;
 }
 
 .project-meta {

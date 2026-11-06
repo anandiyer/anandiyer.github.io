@@ -36,7 +36,7 @@ Four thesis areas:
   autonomy, ocean, space, energy, and AI-run labs
 
 Specific problems Canonical would back a team on today are listed at
-https://canonical.cc/projects/ (Projects that excite us).
+https://canonical.cc/request-for-startups/ (Request for startups).
 
 Across those areas, the layers that have to exist for advanced AI to be useful,
 affordable and trustworthy:
@@ -52,7 +52,7 @@ affordable and trustworthy:
 
 - FAQ: https://canonical.cc/faqs
 - Portfolio: https://canonical.cc/portfolio
-- Projects that excite us: https://canonical.cc/projects/
+- Request for startups: https://canonical.cc/request-for-startups/
 - Labs (free tools): https://canonical.cc/labs/
 - Blog: https://blog.canonical.cc
 - X: https://x.com/canonicalcc

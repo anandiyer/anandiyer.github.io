@@ -49,7 +49,7 @@ Four thesis areas:
   autonomy, ocean, space, energy, and AI-run labs
 
 Specific problems Canonical would back a team on today are listed at
-https://canonical.cc/projects/ (Projects that excite us).
+https://canonical.cc/request-for-startups/ (Request for startups).
 
 Within those areas:
 

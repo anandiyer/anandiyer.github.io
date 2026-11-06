@@ -83,8 +83,9 @@ Systems (agent security, defense, ocean, space, energy, and AI-run labs). Across
 and data infrastructure, AI agents, cryptographic coordination, quantum computing, and new rails
 for how money moves.
 
-**Projects that excite us:** `/projects/` lists specific problems the firm would back a team on
-today, grouped by thesis area and newest first.
+**Request for startups:** `/request-for-startups/` lists specific problems the firm would back a
+team on today, grouped by thesis area and newest first. Each one gives the problem, the company
+we'd back, and the timing. (`/projects/` redirects there.)
 
 **Labs:** free browser-based tools for founders, GPs and LPs at `/labs/`. No signup, no account.
 

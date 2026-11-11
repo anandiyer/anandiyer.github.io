@@ -12,6 +12,7 @@ function verdict(tvpi: number): { label: string; color: string } {
 }
 
 export function Hero({
+  scenarioLabel,
   fundName,
   fundSize,
   vintageYear,
@@ -19,6 +20,7 @@ export function Hero({
   result,
   onRenameFund,
 }: {
+  scenarioLabel?: string;
   fundName: string;
   fundSize: number;
   vintageYear: number;
@@ -32,6 +34,20 @@ export function Hero({
 
   return (
     <div style={{ marginBottom: "2rem" }}>
+      {scenarioLabel && (
+        <div
+          style={{
+            fontSize: "11px",
+            fontWeight: 600,
+            textTransform: "uppercase",
+            letterSpacing: "0.12em",
+            color: "rgba(255,255,255,0.55)",
+            marginBottom: "4px",
+          }}
+        >
+          {scenarioLabel}
+        </div>
+      )}
       {/* Editable fund name */}
       {editing ? (
         <input

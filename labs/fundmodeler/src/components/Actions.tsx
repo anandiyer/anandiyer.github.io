@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { FundInputs, YearRow } from "../model/types";
 
 function exportCsv(years: YearRow[], vintageYear: number) {
@@ -17,8 +18,13 @@ function exportCsv(years: YearRow[], vintageYear: number) {
   URL.revokeObjectURL(url);
 }
 
-function shareLink() {
-  navigator.clipboard.writeText(window.location.href).catch(() => {});
+async function copyShareLink(): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 const btnStyle: React.CSSProperties = {
@@ -36,17 +42,34 @@ const btnStyle: React.CSSProperties = {
 export function Actions({
   inputs,
   years,
+  comparing,
   onReset,
 }: {
   inputs: FundInputs;
   years: YearRow[];
+  comparing: boolean;
   onReset: () => void;
 }) {
+  const [shareState, setShareState] = useState<"idle" | "copied" | "failed">("idle");
+  const shareLabel =
+    shareState === "copied"
+      ? "Link copied"
+      : shareState === "failed"
+        ? "Copy the URL from the address bar"
+        : comparing
+          ? "Share A vs B link"
+          : "Share link";
   return (
     <div className="flex items-center" style={{ gap: "0.5rem" }}>
       <button
         style={btnStyle}
-        onClick={shareLink}
+        onClick={async () => {
+          const ok = await copyShareLink();
+          setShareState(ok ? "copied" : "failed");
+          window.setTimeout(() => setShareState("idle"), 2000);
+        }}
+        title="Copies a URL that opens this exact setup, including both scenarios when comparing"
+        aria-live="polite"
         onMouseOver={(e) => {
           e.currentTarget.style.background = "rgba(255,255,255,0.15)";
           e.currentTarget.style.color = "rgba(255,255,255,0.95)";
@@ -56,7 +79,7 @@ export function Actions({
           e.currentTarget.style.color = "rgba(255,255,255,0.75)";
         }}
       >
-        Share link
+        {shareLabel}
       </button>
       <button
         style={btnStyle}
@@ -75,7 +98,7 @@ export function Actions({
       <button
         style={btnStyle}
         onClick={() => {
-          if (window.confirm("Reset all inputs to defaults?")) onReset();
+          if (window.confirm(comparing ? "Reset to a single default scenario? Scenario B will be removed." : "Reset all inputs to defaults?")) onReset();
         }}
         onMouseOver={(e) => {
           e.currentTarget.style.background = "rgba(255,255,255,0.15)";

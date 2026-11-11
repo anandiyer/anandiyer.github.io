@@ -15,8 +15,9 @@ A free, browser-only fund-modeling tool for VC GPs. Served at `canonical.cc/labs
 
 - **`src/model/engine.ts`** is the single source of truth for fund math. Pure function, no React. **All math changes go here.** Update `engine.test.ts` for any new behavior.
 - **`src/model/types.ts`** — `FundInputs` is versioned (`SCENARIO_SCHEMA_VERSION`). Bump it on any breaking change so old URL-hash scenarios don't load garbage.
-- **`src/store.ts`** — single `useReducer` store. Don't add Zustand/Redux/etc. unless we hit a real complexity wall.
-- **`src/lib/url.ts`** — scenario encode/decode for URL sharing. Hash format: `#s=<base64url(JSON.stringify(FundInputs))>`.
+- **`src/store.ts`** — single `useReducer` store holding a workspace: scenario A, an optional comparison scenario B, and which one is being edited. Input actions apply to the active scenario. Don't add Zustand/Redux/etc. unless we hit a real complexity wall.
+- **`src/lib/url.ts`** — scenario encode/decode for URL sharing. Hash format: `#s=<base64url(JSON.stringify(FundInputs))>` for one scenario, `#s=<A>&b=<B>` when comparing. Single-scenario links must keep working.
+- **Compare mode** (`ScenarioBar`, `ComparePanel`) is additive: with no scenario B the page is the original single-fund modeler.
 - **`src/lib/storage.ts`** — localStorage with schema-version gating.
 
 ## Conventions
@@ -35,7 +36,7 @@ A free, browser-only fund-modeling tool for VC GPs. Served at `canonical.cc/labs
 
 ## Testing
 
-- `npm test` runs vitest on the engine. Engine tests are the only tests for now.
+- `npm test` runs vitest on the engine and on the URL hash encoding (`src/lib/url.test.ts`).
 - For UI, manual QA via `npm run dev`.
 
 ## Deploy

@@ -40,3 +40,44 @@ export function writeHashInputs(inputs: FundInputs): void {
   if (window.location.hash === next) return;
   window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${next}`);
 }
+
+/* ---------- Two-scenario workspace (A vs B) ----------
+ * Hash format: `#s=<A>` (single scenario, the original format — old links keep working)
+ * or `#s=<A>&b=<B>` when a comparison scenario exists. Both payloads are
+ * base64url(JSON) and contain no `&` or `=`, so they split cleanly. */
+
+export type Workspace = { a: FundInputs; b: FundInputs | null };
+
+export function encodeWorkspace(ws: Workspace): string {
+  const parts = [`s=${encodeInputs(ws.a)}`];
+  if (ws.b) parts.push(`b=${encodeInputs(ws.b)}`);
+  return `#${parts.join("&")}`;
+}
+
+export function decodeWorkspace(hash: string): Workspace | null {
+  const raw = hash.startsWith("#") ? hash.slice(1) : hash;
+  const params = new Map<string, string>();
+  for (const part of raw.split("&")) {
+    const i = part.indexOf("=");
+    if (i > 0) params.set(part.slice(0, i), part.slice(i + 1));
+  }
+  const s = params.get("s");
+  if (!s) return null;
+  const a = decodeInputs(s);
+  if (!a) return null;
+  const bRaw = params.get("b");
+  const b = bRaw ? decodeInputs(bRaw) : null;
+  return { a, b };
+}
+
+export function readHashWorkspace(): Workspace | null {
+  if (typeof window === "undefined") return null;
+  return decodeWorkspace(window.location.hash);
+}
+
+export function writeHashWorkspace(ws: Workspace): void {
+  if (typeof window === "undefined") return;
+  const next = encodeWorkspace(ws);
+  if (window.location.hash === next) return;
+  window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${next}`);
+}

@@ -13,8 +13,9 @@ Type your fund parameters — size, check sizes, reserves, outcome distribution 
 - Year-by-year cash flow (calls, fees, deployments, distributions, NAV)
 - Portfolio outcome contribution (which buckets drive returns)
 - Reserve adequacy check
+- Side-by-side comparison of two scenarios (A vs B): metrics with deltas and an overlaid J-curve
 
-Scenarios save to your browser and share via URL. No accounts, no backend, no tracking.
+Scenarios save to your browser and share via URL. When comparing, one link carries both scenarios. No accounts, no backend, no tracking.
 
 ## Local development
 
@@ -60,7 +61,6 @@ See `src/model/engine.test.ts` for the sanity tests.
 
 ## Roadmap
 
-- Multi-scenario comparison (side-by-side)
 - Monte Carlo over outcome buckets
 - American (deal-by-deal) carry waterfall
 - Hurdle rate + GP catch-up

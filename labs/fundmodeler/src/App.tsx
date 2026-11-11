@@ -8,6 +8,8 @@ import { OutcomesPanel } from "./components/OutcomesPanel";
 import { CashflowTable } from "./components/CashflowTable";
 import { Actions } from "./components/Actions";
 import { ShareStrip, ShareFab } from "./components/ShareWidget";
+import { ScenarioBar } from "./components/ScenarioBar";
+import { ComparePanel } from "./components/ComparePanel";
 import { useFundStore } from "./store";
 
 function Explainer() {
@@ -141,7 +143,7 @@ function Explainer() {
 }
 
 function App() {
-  const { inputs, result, dispatch } = useFundStore();
+  const { state, active, inputs, result, resultA, resultB, dispatch } = useFundStore();
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -184,11 +186,29 @@ function App() {
           <Actions
             inputs={inputs}
             years={result.years}
+            comparing={state.b !== null}
             onReset={() => dispatch({ type: "reset" })}
           />
         </div>
 
+        <ScenarioBar
+          a={state.a}
+          b={state.b}
+          active={active}
+          onSelect={(slot) => dispatch({ type: "select", slot })}
+          onAddB={() => dispatch({ type: "addB" })}
+          onRemoveB={() => dispatch({ type: "removeB" })}
+          onCopyAtoB={() => dispatch({ type: "copyAtoB" })}
+          onSwap={() => dispatch({ type: "swap" })}
+        />
+
+        {state.b && resultB && (
+          <ComparePanel a={state.a} b={state.b} ra={resultA} rb={resultB} />
+        )}
+
         <Hero
+          key={active}
+          scenarioLabel={state.b ? `Scenario ${active.toUpperCase()}` : undefined}
           fundName={inputs.fundName}
           fundSize={inputs.fundSize}
           vintageYear={inputs.vintageYear}

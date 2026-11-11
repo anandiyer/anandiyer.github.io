@@ -30,3 +30,40 @@ export function clearInputs(): void {
     /* noop */
   }
 }
+
+const WS_KEY = "fundmodeler:workspace";
+
+export type StoredWorkspace = { a: FundInputs; b: FundInputs | null };
+
+export function saveWorkspace(ws: StoredWorkspace): void {
+  try {
+    localStorage.setItem(WS_KEY, JSON.stringify(ws));
+    localStorage.setItem(KEY, JSON.stringify(ws.a)); // keep the single-scenario key current
+  } catch {
+    /* noop — quota or private mode */
+  }
+}
+
+export function loadWorkspace(): StoredWorkspace | null {
+  try {
+    const raw = localStorage.getItem(WS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      const okA = parsed?.a?.schemaVersion === SCENARIO_SCHEMA_VERSION;
+      const okB = parsed?.b == null || parsed.b.schemaVersion === SCENARIO_SCHEMA_VERSION;
+      if (okA) return { a: parsed.a as FundInputs, b: okB ? (parsed.b as FundInputs | null) : null };
+    }
+  } catch {
+    /* fall through */
+  }
+  const single = loadInputs();
+  return single ? { a: single, b: null } : null;
+}
+
+export function clearWorkspace(): void {
+  try {
+    localStorage.removeItem(WS_KEY);
+  } catch {
+    /* noop */
+  }
+}

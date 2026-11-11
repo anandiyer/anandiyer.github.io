@@ -2,10 +2,13 @@ import { useEffect, useMemo, useReducer } from "react";
 import { DEFAULT_INPUTS } from "./model/defaults";
 import { runModel } from "./model/engine";
 import type { FundInputs, OutcomeBucket } from "./model/types";
-import { loadInputs, saveInputs } from "./lib/storage";
-import { readHashInputs, writeHashInputs } from "./lib/url";
+import { loadWorkspace, saveWorkspace } from "./lib/storage";
+import { readHashWorkspace, writeHashWorkspace } from "./lib/url";
 
-type Action =
+export type Slot = "a" | "b";
+
+/** Edits to one scenario's inputs. Dispatched against whichever scenario is active. */
+type InputAction =
   | { type: "set"; patch: Partial<FundInputs> }
   | { type: "setOutcome"; id: string; patch: Partial<OutcomeBucket> }
   | { type: "addOutcome" }
@@ -13,7 +16,31 @@ type Action =
   | { type: "replace"; inputs: FundInputs }
   | { type: "reset" };
 
-function reducer(state: FundInputs, action: Action): FundInputs {
+/** Workspace-level actions: managing scenario A and the optional comparison scenario B. */
+type WorkspaceAction =
+  | { type: "select"; slot: Slot }
+  | { type: "addB" } // create B as a copy of A and switch to it
+  | { type: "removeB" }
+  | { type: "copyAtoB" }
+  | { type: "swap" };
+
+export type Action = InputAction | WorkspaceAction;
+
+export type WorkspaceState = {
+  a: FundInputs;
+  b: FundInputs | null;
+  active: Slot;
+};
+
+function freshDefaults(): FundInputs {
+  return { ...DEFAULT_INPUTS, outcomes: DEFAULT_INPUTS.outcomes.map((o) => ({ ...o })) };
+}
+
+function clone(inputs: FundInputs): FundInputs {
+  return { ...inputs, outcomes: inputs.outcomes.map((o) => ({ ...o })) };
+}
+
+function inputsReducer(state: FundInputs, action: InputAction): FundInputs {
   switch (action.type) {
     case "set":
       return { ...state, ...action.patch };
@@ -50,29 +77,64 @@ function reducer(state: FundInputs, action: Action): FundInputs {
     case "replace":
       return action.inputs;
     case "reset":
-      return { ...DEFAULT_INPUTS, outcomes: DEFAULT_INPUTS.outcomes.map((o) => ({ ...o })) };
+      return freshDefaults();
   }
 }
 
-function initial(): FundInputs {
-  const fromHash = readHashInputs();
-  if (fromHash) return fromHash;
-  const fromStorage = loadInputs();
-  if (fromStorage) return fromStorage;
-  return { ...DEFAULT_INPUTS, outcomes: DEFAULT_INPUTS.outcomes.map((o) => ({ ...o })) };
+export function workspaceReducer(state: WorkspaceState, action: Action): WorkspaceState {
+  switch (action.type) {
+    case "select":
+      if (action.slot === "b" && !state.b) return state;
+      return { ...state, active: action.slot };
+    case "addB":
+      return {
+        ...state,
+        b: { ...clone(state.a), fundName: `${state.a.fundName} (alt)` },
+        active: "b",
+      };
+    case "removeB":
+      return { ...state, b: null, active: "a" };
+    case "copyAtoB":
+      if (!state.b) return state;
+      return { ...state, b: { ...clone(state.a), fundName: state.b.fundName } };
+    case "swap":
+      if (!state.b) return state;
+      return { a: state.b, b: state.a, active: state.active === "a" ? "b" : "a" };
+    case "reset":
+      // Reset clears the comparison too, returning to a single default scenario.
+      return { a: freshDefaults(), b: null, active: "a" };
+    default: {
+      const slot = state.active === "b" && state.b ? "b" : "a";
+      const current = slot === "b" ? (state.b as FundInputs) : state.a;
+      return { ...state, [slot]: inputsReducer(current, action) };
+    }
+  }
+}
+
+function initial(): WorkspaceState {
+  const fromHash = readHashWorkspace();
+  if (fromHash) return { a: fromHash.a, b: fromHash.b, active: "a" };
+  const fromStorage = loadWorkspace();
+  if (fromStorage) return { a: fromStorage.a, b: fromStorage.b, active: "a" };
+  return { a: freshDefaults(), b: null, active: "a" };
 }
 
 export function useFundStore() {
-  const [inputs, dispatch] = useReducer(reducer, undefined, initial);
-  const result = useMemo(() => runModel(inputs), [inputs]);
+  const [state, dispatch] = useReducer(workspaceReducer, undefined, initial);
+  const resultA = useMemo(() => runModel(state.a), [state.a]);
+  const resultB = useMemo(() => (state.b ? runModel(state.b) : null), [state.b]);
 
   useEffect(() => {
     const id = window.setTimeout(() => {
-      saveInputs(inputs);
-      writeHashInputs(inputs);
+      saveWorkspace({ a: state.a, b: state.b });
+      writeHashWorkspace({ a: state.a, b: state.b });
     }, 250);
     return () => window.clearTimeout(id);
-  }, [inputs]);
+  }, [state.a, state.b]);
 
-  return { inputs, result, dispatch };
+  const active: Slot = state.active === "b" && state.b ? "b" : "a";
+  const inputs = active === "b" ? (state.b as FundInputs) : state.a;
+  const result = active === "b" && resultB ? resultB : resultA;
+
+  return { state, active, inputs, result, resultA, resultB, dispatch };
 }

@@ -31,6 +31,12 @@ jobs:
           cache: "npm"
           cache-dependency-path: labs/fundmodeler/package-lock.json
 
+      # AGENTS.md is a static file, so the request-for-startups list in it is
+      # rendered from _data/projects.json here rather than by Liquid. Covers
+      # hand edits to the data that never went through sync-projects.mjs.
+      - name: Render RFS into AGENTS.md
+        run: node scripts/render-agents-md.mjs
+
       - name: Install GitHub Pages Jekyll
         run: gem install github-pages --no-document
 

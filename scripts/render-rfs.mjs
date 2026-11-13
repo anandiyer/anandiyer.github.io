@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 /**
- * Render the "Request for startups" section of AGENTS.md from
- * _data/projects.json — the same data /request-for-startups/ is built from.
+ * Render the "Request for startups" section of AGENTS.md and llms-full.txt
+ * from _data/projects.json — the same data /request-for-startups/ is built from.
  *
- * AGENTS.md is served as a static file (Jekyll can't Liquid-render a .md and
- * still ship it as Markdown), so the RFS list is written in here between two
- * marker comments instead. Everything outside the markers is hand-written and
- * left untouched.
+ * Both are served as static files (Jekyll can't Liquid-render them and still
+ * ship them verbatim), so the RFS list is written into each between two marker
+ * comments instead. Everything outside the markers is hand-written and left
+ * untouched.
  *
  * Runs in three places, so the published copy can never lag the data:
  *   - scripts/sync-projects.mjs, after it writes new Notion data (daily)
  *   - .github/workflows/deploy.yml, before the Jekyll build (every deploy)
- *   - by hand:   node scripts/render-agents-md.mjs [--check]
+ *   - by hand:   node scripts/render-rfs.mjs [--check]
  *
- * --check exits 1 without writing if AGENTS.md is out of date.
+ * --check exits 1 without writing if either file is out of date.
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -21,10 +21,10 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const AGENTS_PATH = resolve(ROOT, 'AGENTS.md');
+const TARGETS = ['AGENTS.md', 'llms-full.txt'];
 const DATA_PATH = resolve(ROOT, '_data', 'projects.json');
 
-const START = '<!-- rfs:start — generated from _data/projects.json by scripts/render-agents-md.mjs; edit Notion, not this -->';
+const START = '<!-- rfs:start — generated from _data/projects.json by scripts/render-rfs.mjs; edit Notion, not this -->';
 const END = '<!-- rfs:end -->';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -80,29 +80,43 @@ export function renderSection(data) {
     return out.join('\n');
 }
 
-export function renderAgentsMd(markdown, data) {
+export function renderRfs(markdown, data) {
     const a = markdown.indexOf(START.slice(0, 16));
     const b = markdown.indexOf(END);
     if (a === -1 || b === -1 || b < a) {
-        throw new Error('AGENTS.md is missing the <!-- rfs:start … --> / <!-- rfs:end --> markers');
+        throw new Error('missing the <!-- rfs:start … --> / <!-- rfs:end --> markers');
     }
     return markdown.slice(0, a) + renderSection(data) + markdown.slice(b + END.length);
 }
 
+// Render every target; returns the names that changed. Shared with sync-projects.mjs.
+export function renderAll(data, { write = true } = {}) {
+    const changed = [];
+    for (const name of TARGETS) {
+        const path = resolve(ROOT, name);
+        const before = readFileSync(path, 'utf8');
+        let after;
+        try {
+            after = renderRfs(before, data);
+        } catch (err) {
+            throw new Error(`${name}: ${err.message}`);
+        }
+        if (after === before) continue;
+        changed.push(name);
+        if (write) writeFileSync(path, after);
+    }
+    return changed;
+}
+
 function main() {
     const data = JSON.parse(readFileSync(DATA_PATH, 'utf8'));
-    const before = readFileSync(AGENTS_PATH, 'utf8');
-    const after = renderAgentsMd(before, data);
-    if (process.argv.includes('--check')) {
-        if (after !== before) {
-            console.error('AGENTS.md is out of date with _data/projects.json — run: node scripts/render-agents-md.mjs');
-            process.exit(1);
-        }
-        console.log('AGENTS.md is up to date.');
-        return;
+    const check = process.argv.includes('--check');
+    const changed = renderAll(data, { write: !check });
+    if (check && changed.length) {
+        console.error(`Out of date with _data/projects.json: ${changed.join(', ')} — run: node scripts/render-rfs.mjs`);
+        process.exit(1);
     }
-    if (after !== before) writeFileSync(AGENTS_PATH, after);
-    console.log(`AGENTS.md: ${after === before ? 'unchanged' : 'updated'} (${data.projects.length} projects)`);
+    console.log(`${TARGETS.join(', ')}: ${changed.length ? `updated ${changed.join(', ')}` : 'up to date'} (${data.projects.length} projects)`);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {

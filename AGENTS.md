@@ -111,7 +111,7 @@ Each entry gives the **problem**, the **solution** — the company the firm woul
 with its first product — and the **timing**: the regulatory, technical, or market event that makes
 it timely now.
 
-<!-- rfs:start — generated from _data/projects.json by scripts/render-agents-md.mjs; edit Notion, not this -->
+<!-- rfs:start — generated from _data/projects.json by scripts/render-rfs.mjs; edit Notion, not this -->
 
 23 open problems, last updated Nov 5, 2026: Physical AI & Robotics (2), Silicon & Quantum (5), Open Infrastructure (2), Frontier Systems (14).
 

@@ -29,7 +29,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { renderAgentsMd } from './render-agents-md.mjs';
+import { renderAll as renderRfs } from './render-rfs.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, '..', '_data', 'projects.json');
@@ -175,9 +175,8 @@ async function main() {
     writeFileSync(OUT_PATH, JSON.stringify(data, null, 2) + '\n');
     const counts = THESES.map((t) => `${t.name}: ${data.projects.filter((p) => p.thesis_slug === t.slug).length}`);
     console.log(`Wrote ${data.projects.length} projects to _data/projects.json (${counts.join(', ')})`);
-    // AGENTS.md carries the same list for agents; keep it in step.
-    const agentsPath = resolve(__dirname, '..', 'AGENTS.md');
-    writeFileSync(agentsPath, renderAgentsMd(readFileSync(agentsPath, 'utf8'), data));
+    // AGENTS.md and llms-full.txt carry the same list for agents; keep them in step.
+    renderRfs(data);
 }
 
 main().catch((err) => {
